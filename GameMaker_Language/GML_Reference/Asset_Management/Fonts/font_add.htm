@@ -1,0 +1,157 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.10.0_13";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>font_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function font_add">
+  <meta name="rh-index-keywords" content="font_add">
+  <meta name="search-keywords" content="font_add">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_add_sprite.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_add_get_enable_aa.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="font_add">
+        <span>font_add</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">font_add</span></h1>
+  <p>此函数可用于从<a href="../../../../Settings/Included_Files.htm#h">包含的文件</a>中存在的字体文件向游戏添加字体。可以定义字体的大小 (以点数表示)，以及字体应该是<b>粗体</b>还是<i>斜体</i>, 也可以定义要包含的字符范围。该函数返回一个<i>index</i>值，该值应存储在变量中，因为在引用此字体的所有其他代码中都需要此值，或者如果该函数由于任何原因而失败，它将返回<span class="inline">- 1</span>。</p>
+  <p>请注意，字体文件必须是 <span class="inline2">*.ttf</span> 或 <span class="inline2">*.otf</span> 文件，对于添加亚洲或阿拉伯字体等非标准字体也很有用。</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span></b> 如果您在包含的文件中包含这样的字体，则它<b>必须获得许可</b>才能与游戏一起分发。</p>
+  <p>对于HTML5目标模块，此函数只能用于添加<b>Web字体</b>, 并且仅在启用WebGL<b>不启用</b>时才起作用-如果启用了WebGL，则必须使用通用字体资源 (即: 使用<a href="../../Drawing/Text/draw_set_font.htm"><span class="inline">draw_set_font()</span></a>连同来自资源浏览器的字体) 或位图字体 (参见<a href="font_add_sprite.htm"><span class="inline">font_add_sprite()</span></a>)。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span> 以 HTML5 为目标时，仅当字体资源或 Web 字体本身包含斜体和粗体文本时才支持这些字符。它们不会从基本字体合成。</p>
+  <p>从文件加载字体时，字体的<i>大小</i>以<b>像素</b>为单位，并且<i>的前</i>和<i>的最后</i>值将被忽略，这意味着字体中的所有字形将被添加。以这种方式添加的字体被分配到自己的纹理页面，因此在使用此函数时应格外小心，因为它会在绘制时增加纹理交换的数量。同样值得注意的是，字体在绘制时可能会显得稍大一些，因为字形可能具有在为字体定义的边界框之外绘制的部分。您也应该意识到，对于特定字体，可以在单个框架中呈现大约200个字形的限制。</p>
+  <p>默认情况下，添加的字体将启用抗锯齿。但是，您可以随时使用函数 <span class="inline3_func"><a href="font_add_get_enable_aa.htm">font_add_get_enable_aa</a></span> 检查抗锯齿的状态，并且可以使用函数 <span class="inline3_func"><a href="font_add_enable_aa.htm">font_add_enable_aa</a></span> 启用 / 禁用抗锯齿。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 当您将字体加载到 <span data-keyref="GameMaker Name">GameMaker</span> 时，您必须记住在不再需要时再次将其删除 (使用 <span class="inline3_func"><a href="font_delete.htm">font_delete</a></span>)，否则存在内存泄漏的风险，这将减慢速度并最终使您的游戏崩溃。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">font_add</span>(name, size, bold, italic, first, last);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>包含文件中的字体文件的路径 (*.<span class="inline">ttf</span>或<span class="inline">*. otf</span>)。</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>字体的大小-网页字体为点，文件字体为像素。</td>
+      </tr>
+      <tr>
+        <td>bold</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>字体是粗体(<span class="inline">true</span>)还是粗体(<span class="inline">false</span>)。</td>
+      </tr>
+      <tr>
+        <td>italic</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>字体是否为斜体(<span class="inline">true</span>)或(<span class="inline">false</span>)。</td>
+      </tr>
+      <tr>
+        <td>first</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要包含的第一个字符(如果您不确定，请选择32)。</td>
+      </tr>
+      <tr>
+        <td>last</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要包括的最后一个字符(如果您不确定，请选择128)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Asset_Font"><a target="_blank" href="../../../../../The_Asset_Editors/Fonts.htm">Font Asset</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">new_font = <span data-field="title" data-format="default">font_add</span>("gamefont.ttf", 24, true, true, 32, 128);</p>
+  <p>这将加载游戏包含的文件中存在的 <span class="inline2">gamefont.ttf</span> 文件，尺寸为 24pt。字体会是粗体和斜体，字体范围会包括大写和小写字母、数字和所有常见的标点符号。字体加载后，其 ID 将存储在 <span class="inline2">new_font</span> 变量中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Fonts.htm">字体</a></div>
+        <div style="float:right">Next:&nbsp;<a href="font_add_sprite.htm">font_add_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add
+-->
+  <!-- TAGS
+font_add
+-->
+
+</body></html>

@@ -1,0 +1,143 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.10.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>string_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="string_ext">
+  <meta name="search-keywords" content="string_ext">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="string_ext">
+        <span>string_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">string_ext</span></h1>
+  <p>此函数创建一个新字符串，允许您在主"格式化字符串"中插入占位符，并指定包含要插入这些占位符的值的数组。</p>
+  <p>当只向函数提供一个参数时，该参数被视为一个值，该值将从其原始<a href="../../GML_Overview/Data_Types.htm">数据类型</a>转换为字符串。当给定第二个参数时，第一个参数被视为<a href="string.htm#h">格式字符串</a>，第二个参数被视为包含要插入到格式字符串中的值的数组。</p>
+  <h2>格式化字符串</h2>
+  <p>有关格式化字符串的信息，请参阅：<span class="inline2"><a href="string.htm">string()</a></span></p>
+  <p>该函数的工作方式类似，但不是将值作为单独的参数传递，而是在第二个参数中作为数组传递。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">string_ext</span>(value_or_format [, values]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>value_or_format</td>
+        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(if value) or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>&nbsp;(if format)</td>
+        <td>要转换为字符串的值。</td>
+      </tr>
+      <tr>
+        <td>values</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 要插入到占位符位置的值的数组。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">numbers = [59, 23, 656, 8, 54];<br>
+    array_sort(numbers, true);<br>
+    <br>
+    var _str = string_ext("The three lowest numbers are: {0}, {1} and {2}", numbers);
+  </p>
+  <p>上面的代码首先定义一个包含一些数字的数组，并按升序对它们进行排序。然后，它在 <span class="inline2">string_ext()</span> 中使用该数组进行调用，将其前三个数字插入到格式字符串中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Strings.htm">字符串</a></div>
+        <div>Next:&nbsp;<a href="ansi_char.htm">ansi_char</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_ext
+-->
+  <!-- TAGS
+string_ext
+-->
+
+</body></html>

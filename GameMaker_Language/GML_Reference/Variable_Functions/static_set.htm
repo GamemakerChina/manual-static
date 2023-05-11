@@ -1,0 +1,149 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.1.0_21";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>static_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Reference page for the static_set function">
+  <meta name="rh-index-keywords" content="static_set">
+  <meta name="search-keywords" content="static_set">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="static_set">
+        <span>static_set</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">static_set</span></h1>
+  <p>此函数用于更改结构的 <a href="../../GML_Overview/Structs/Static_Structs.htm"> 静态结构 </a>。您需要提供要修改的结构，以及要应用于第一个结构的新静态结构，您可以使用 <span class="inline3_func"><a href="static_get.htm">static_get</a></span> 从其他结构或函数中获取该结构。</p>
+  <p>这将使用 <span class="inline3_func"><a href="is_instanceof.htm">is_instanceof</a></span> 覆盖结构的静态链，该静态链用于确定结构属于哪个构造函数。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span> 除了反序列化用例之外，不建议使用此函数，因为在这些用例中，您需要加载结构并对其应用构造函数。参见：<a href="../../GML_Overview/Structs/Static_Structs.htm#h1">更改静态结构</a></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">static_set</span>(struct, static_struct);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>struct</td>
+        <td><span data-keyref="Type_Struct"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span></td>
+        <td>要为其设置静态结构的结构</td>
+      </tr>
+      <tr>
+        <td>static_struct</td>
+        <td><span data-keyref="Type_Struct"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span></td>
+        <td>要用于结构的新静态结构</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <div data-conref="../../../assets/snippets/static_set_example.hts">
+  <p class="code">var _potion = json_parse(_json_string);<br>
+    <br>
+    show_debug_message(is_instanceof(_potion, potion)); // false (0)<br>
+    <br>
+    var _static_potion = static_get(potion);<br>
+    static_set(_potion, _static_potion);<br>
+    <br>
+    show_debug_message(is_instanceof(_potion, potion)); // true (1)
+  </p>
+  <p>在上面的代码中，在加载 potion 结构时，它只被创建为一个简单的结构，不属于构造函数，也没有任何静态变量。</p>
+  <p>在将 <span class="inline2">potion</span> 的静态结构应用于它之后，它将成为 <span class="inline2">potion</span> 的实例 (如用 <span class="inline2">is_instanceof()</span> 测试的那样)，并且还获得包含在 <span class="inline2">potion</span> 构造函数中的任何静态变量和静态方法。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Variable_Functions.htm">变量函数</a></div>
+        <div>Next:&nbsp;<a href="variable_instance_exists.htm">variable_instance_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+static_set
+-->
+  <!-- TAGS
+static_set
+-->
+
+</body></html>

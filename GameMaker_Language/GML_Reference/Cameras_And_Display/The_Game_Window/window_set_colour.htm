@@ -1,0 +1,129 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.7.2.0_16";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>window_set_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for window_set_colour">
+  <meta name="rh-index-keywords" content="window_set_colour,window_set_color">
+  <meta name="search-keywords" content="window_set_colour,window_set_color">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="window_set_colour">
+        <span>window_set_colour</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>window_set_colour</h1>
+  <p>该函数可以设置游戏窗口的背景色。此颜色表示将用于游戏窗口中未被任何视图占用的区域的颜色。下图说明了这一点：</p>
+  <p><img alt="Window colour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/window_set_colour.png">上面的图像有两个视图，每个视图有两个视口，每个视口绘制在不同的位置。这将拉伸游戏窗口以适应两个端口，并使用窗口颜色为未显示视图的背景上色。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">window_set_colour(colour);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>colour</td><td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>用于设置区域的颜色。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if window_get_colour() != c_black<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;window_set_colour(c_black);<br>
+    }</p>
+  <p>上面的代码将检查窗口颜色，看它是否设置为黑色，如果不是，则将其设置为黑色。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div>
+        <div style="float:right">Next: <a href="../The_Game_Window/window_set_fullscreen.htm">window_set_fullscreen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_set_colour
+window_set_color
+-->
+  <!-- TAGS
+window_set_colour
+-->
+
+</body></html>

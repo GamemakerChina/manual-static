@@ -1,0 +1,125 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.9.1.0_11";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>ds_grid_shuffle</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for ds_grid_shuffle">
+  <meta name="rh-index-keywords" content="ds_grid_shuffle">
+  <meta name="search-keywords" content="ds_grid_shuffle">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_sort.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_set_region.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="ds_grid_shuffle">
+        <span>ds_grid_shuffle</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_shuffle</h1>
+  <p>此函数可用于随机化网格中所有单元格中所有值的位置。</p>
+  <p class="note"><b><span class="note">注意</span></b>由于<span data-keyref="GameMaker Name">GameMaker</span>每次都会生成相同的初始随机种子，因此每次重新运行游戏时，此函数都会将网格单元格移动到相同的位置，从而使调试代码变得容易得多。为了避免此行为在游戏开始时使用<a href="../../Maths_And_Numbers/Number_Functions/randomise.htm"><span class="inline"><span style="font-size:14px;">randomise()</span></span></a>。只有在测试和调试游戏时才是这样，作为最终的可执行文件软件包不会显示这种行为，并且每次播放都是随机的。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">ds_grid_shuffle(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>index</td><td><span data-keyref="Type_ID_DS_Grid"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">DS Grid ID</a></span></td>
+        <td>要置乱的网格的索引。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">ds_grid_shuffle(grid)</p>
+  <p>这将采用变量"网格"中索引的DS网格中的所有值，并将它们四处移动以获得不同的顺序。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="DS_Grids.htm">网格 Grid</a></div>
+        <div style="float:right">Next:&nbsp;<a href="ds_grid_sort.htm">ds_grid_sort</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_shuffle
+-->
+  <!-- TAGS
+ds_grid_shuffle
+-->
+
+</body></html>

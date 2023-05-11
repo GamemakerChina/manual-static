@@ -1,0 +1,180 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.1.2.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Static Struct</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page explaining static structs for constructor functions">
+  <meta name="rh-index-keywords" content="Static Structs">
+  <meta name="search-keywords" content="Static Structs, static_get, static_set, is_instanceof">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Static Struct">
+        <span>Static Struct</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">静态结构</span></h1>
+  <p>每个函数都有一个"静态结构"，其中存储了它的静态变量。您可以使用<span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_get.htm">static_get</a></span>获取该结构：</p>
+  <p class="code">function counter() {<br>
+    &nbsp;&nbsp; &nbsp;static count = 0;<br>
+    &nbsp;&nbsp; &nbsp;return count ++;<br>
+    }<br>
+    <br>
+    repeat (10)&nbsp;counter()<br>
+    <br>
+    // Get static struct of counter()<br>
+    var _static_counter = static_get(counter);<br>
+    <br>
+    // Both of these read the same variable<br>
+    show_debug_message(counter.count); // 10<br>
+    show_debug_message(_static_counter.count); // 10
+  </p>
+  <p>对于<a href="../Structs.htm#constr">构造函数</a>也是如此。每个构造函数都有一个静态结构，其中存储了它的静态变量和静态方法。</p>
+  <p>从构造函数创建的每个结构都从该静态结构访问其静态变量。</p>
+  <h2 id="h">静态链</h2>
+  <p>当您使用构造函数继承时，这些构造函数形成一个"静态链" -- 一个静态结构链，其中每个子级都链接到其父级。</p>
+  <p>例如，假设您有一个构造函数 <span class="inline2">item</span>，以及一个构造函数 <span class="inline2">potion</span>，它是 <span class="inline2">item</span> 的子级：</p>
+  <p class="code">function item() constructor {}<br>
+    <br>
+    function potion() : item() constructor {}<br>
+    <br>
+    var _potion = new potion();
+  </p>
+  <p>您可以使用 <span class="inline2">static_get(potion)</span>&nbsp;获取 <span class="inline2">potion</span> 的静态结构-这是存储 <span class="inline2">potion</span> 的静态变量的位置。让我们将其称为 <span class="inline2">static_potion</span>。</p>
+  <p>现在，如果您调用 <span class="inline2">static_get(static_potion)</span>，您将获得 <span class="inline2">item</span> 的静态结构！这与您从 <span class="inline2">static_get(item)</span> 获得的结构相同。</p>
+  <p class="code">function item () constructor {}<br>
+    function potion () : item () constructor {}<br>
+    <br>
+    var _potion = new potion();<br>
+    var _static_potion = static_get(potion);<br>
+    <br>
+    show_debug_message(static_get(item) == static_get(_static_potion)); // true (1)
+  </p>
+  <p>这是因为 <span class="inline2">item</span> 是 <span class="inline2">potion</span> 构造函数的父级，因此 <span class="inline2">item</span> 的静态结构链接到 <span class="inline2">potion</span> 的静态结构。</p>
+  <h2>检查多重继承</h2>
+  <p>您可以使用 <span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/is_instanceof.htm">is_instanceof</a></span> 来检查结构是否属于给定的构造函数，或者是否将该构造函数作为父构造函数。</p>
+  <p>这是通过检查结构是否在其静态链中的任何位置具有给定构造函数的静态结构来完成的。</p>
+  <div data-conref="../../../assets/snippets/is_instanceof_example.hts">
+  <p class="code">function item() constructor {}<br>
+    <br>
+    function potion() : item() constructor {}<br>
+    <br>
+    function enemy() constructor {}<br>
+    <br>
+    var _potion = new potion();<br>
+    <br>
+    show_debug_message(is_instanceof(_potion, potion)); // true (1)<br>
+    show_debug_message(is_instanceof(_potion, item)); // true (1)<br>
+    show_debug_message(is_instanceof(_potion, enemy)); // false (0)
+  </p>
+  <p>上面的代码显示了三个构造函数：<span class="inline2">item</span>，<span class="inline2">potion</span>，它是 <span class="inline2">item</span> 的子类，以及 <span class="inline2">enemy</span>，它是一个单独的构造函数。</p>
+  <p>它从 <span class="inline2">potion</span> 构造函数创建一个结构。使用 <span class="inline2">is_instanceof()</span>，我们可以检查新结构：</p>
+  <ul class="colour">
+    <li>是一个 <span class="inline2">potion</span></li>
+    <li>是一个 <span class="inline2">item</span></li>
+    <li>不是一个 <span class="inline2">enemy</span></li>
+  </ul>
+  <p>通过这种方式，您可以检查结构是否"是"某物，因为 <strong>potion 是 item</strong>，因此它为两个构造函数返回 <span class="inline2">true</span>。然而，如果不是真的，反过来：<strong> item 不是 potion </strong>。</p>
+
+</div>
+  <h2 id="h1">改变静态结构</h2>
+  <p>函数 <span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_set.htm">static_set</a></span> 允许您更改函数的静态结构 (构造函数或非构造函数)。通过这种方式，您可以更改构造函数及其结构可用的静态变量，还可以更改构造函数所属的 " 静态链"。</p>
+  <p>此函数的推荐用例是反序列化。如果您从 JSON 加载结构，那么这些结构将不属于任何构造函数，但是您可以通过使用 <span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_set.htm">static_set</a></span> 将构造函数 " 应用 " 到一个结构，以便该结构接收其共享的静态变量，并且您可以运行 <span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/is_instanceof.htm">is_instanceof</a></span> 来检查其类型。</p>
+  <div data-conref="../../../assets/snippets/static_set_example.hts">
+  <p class="code">var _potion = json_parse(_json_string);<br>
+    <br>
+    show_debug_message(is_instanceof(_potion, potion)); // false (0)<br>
+    <br>
+    var _static_potion = static_get(potion);<br>
+    static_set(_potion, _static_potion);<br>
+    <br>
+    show_debug_message(is_instanceof(_potion, potion)); // true (1)
+  </p>
+  <p>在上面的代码中，从 JSON 字符串加载 potion 结构时，它只被创建为一个简单的结构，不属于构造函数，也没有任何静态变量。</p>
+  <p>在将 <span class="inline2">potion</span> 的静态结构应用于它之后，它将成为 <span class="inline2">potion</span> 的实例 (如用 <span class="inline2">is_instanceof()</span> 测试的那样)，并且还获得包含在 <span class="inline2">potion</span> 构造函数中的任何静态变量和静态方法。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Structs.htm">Structs</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../Struct_Forbidden_Variables.htm">结构禁止的变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Static Structs
+-->
+  <!-- TAGS
+static_structs
+-->
+
+</body></html>

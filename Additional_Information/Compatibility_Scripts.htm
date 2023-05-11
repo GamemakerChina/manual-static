@@ -1,0 +1,116 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.0_12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Compatibility Scripts</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains the compatibility scripts">
+  <meta name="rh-index-keywords" content="Compatibility Scripts">
+  <meta name="search-keywords" content="compatibility scripts">
+<meta name="brsnext" value="Additional_Information/Obsolete_Functions.htm"><meta name="brsprev" value="Additional_Information/Compatibility_Functions.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Compatibility Scripts">
+        <span>Compatibility Scripts</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>兼容脚本</h1>
+  <p>对于那些来自早期版本的<span data-keyref="GameMaker Name">GameMaker</span>的用户来说，一开始使用GameMaker可能会有些困惑，因为项目资源、编辑和编码的处理方式发生了许多变化。这些变化意味着<a class="tooltip" title="IDE，或集成开发环境，是一个软件应用程序，为计算机程序员提供软件开发的全面设施。在这种情况下，GameMaker Studio 2的整个前端都被认为是 IDE，包括创建图形、添加声音和添加代码以制作游戏的部分。">IDE</a>和<a href="../GameMaker_Language/GameMaker_Language_Index.htm">GameMaker语言(GML)</a>都不支持下面列出的项目。然而，这并不意味着你不能将之前版本的游戏导入到<span data-keyref="GameMaker Name">GameMaker</span>中。<span data-keyref="GameMaker Name">GameMaker</span>将自动将所有遗留函数转换为<strong>兼容脚本</strong>，这些脚本包含将遗留方法转换为更新方法的函数。</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>将解析你的项目中所有过时的函数和变量，然后使用这些函数名创建一系列脚本。这些脚本将包含新的等效<a href="../GameMaker_Language/GML_Overview/Runtime_Functions.htm">运行时函数</a>或一个简短的<a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">脚本函数</a>，该函数执行与过时函数相同的操作。</p>
+  <p>当您第一次导入一个<span data-keyref="GameMaker Name"> GameMaker </span>项目时，您将看到一个与下面这个非常相似的兼容性报告:</p>
+  <p><img alt="Compatibility Report" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Compatibility_Overview.png">报告的主体显示了哪些对象和脚本受到了影响，以及在哪里受到了影响，而在末尾，您可以找到为您的项目创建的脚本列表。您可以单击鼠标中键<img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">&nbsp;或在报告中列出的任何脚本上按<img alt="F1 Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_f1.png" width="55">&nbsp;以打开它并查看已经完成了什么。</p>
+  <p>请注意，如果您看到任何在名称前使用双下划线创建的脚本(例如:<span class="inline">__global_object_深度</span>)，那么这些脚本是由IDE创建的，以帮助实现兼容性，而不是从过时的函数转换而来的脚本，因此<strong>不应该修改</strong>这些脚本，因为其他兼容性脚本工作时需要这些脚本。</p>
+  <p>当您完成兼容性报告的修改后，您可以关闭工作区，但如果您需要修改报告中的任何内容，您可以通过转至<a href="../The_Asset_Editors/Notes.htm">资源浏览器</a>的<a href="../Introduction/The_Asset_Browser.htm">注释(Notes)</a>部分再次找到它。</p>
+  <p>请注意，您可以像使用旧版 GameMaker 中的函数一样继续使用这些兼容性脚本，但是，由于它们的工作方式，这会对性能产生影响。 我们建议您更新项目以直接使用新方法并尽可能删除兼容性脚本，因为这将提高性能并让您深入了解 <span data-keyref="GameMaker Name">GameMaker</span> 和 GameMaker 语言与旧产品相比的工作方式 .</p>
+  <p>另请注意，GameMaker 语言中引入了一些函数以确保与旧项目的兼容性，这些函数将出现在这些兼容性脚本中。 然而，这些函数不应该在您自己的项目中使用。 您可以从手册的以下部分找到这些函数的列表：</p>
+  <ul class="colour">
+    <li><a href="Compatibility_Functions.htm">兼容性函数</a></li>
+  </ul>
+  <p>您还可以在下面的页面中找到所有已过时的函数的完整列表，这些函数具有为它们创建的等效兼容脚本:</p>
+  <ul class="colour">
+    <li><a href="Obsolete_Functions.htm">过时的函数</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Additional_Information.htm">额外的信息</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Obsolete_Functions.htm">过时的函数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Compatibility Functions
+-->
+  <!-- TAGS
+compatibility_functions
+-->
+
+</body></html>

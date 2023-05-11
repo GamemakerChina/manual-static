@@ -1,0 +1,149 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.4.0_14";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_roundrect</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference for the function draw_roundrect">
+  <meta name="rh-index-keywords" content="draw_roundrect">
+  <meta name="search-keywords" content="draw_roundrect">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Basic_Forms/draw_roundrect_colour.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Basic_Forms/draw_rectangle_colour.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_roundrect">
+        <span>draw_roundrect</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_roundrect</h1>
+  <p>使用此函数，您可以绘制圆角矩形或填充圆角矩形的轮廓，其中 (x1,y1) 位置是左上角，(x2,y2) 位置是右下角。您可以使用函数 <a href="draw_set_circle_precision.htm"><span class="inline">draw_set_circle_precision()</span></a> 定义角点的绘制精度，但此函数使用固定半径 (如果需要更改角点半径，请使用函数 <a href="draw_roundrect_ext.htm"><span class="inline">draw_roundrect_ext()</span></a>)。请注意，由于各种支持的平台之间的差异，绘制的矩形可能需要使用所需尺寸绘制不同的值 (x、y、宽度或高度上的 +/-1)。</p>
+  <p class="note"><b>注意</b>：如果要使用着色器绘制形状，请注意，大多数着色器都需要以下输入：顶点、纹理、颜色。但是，使用此函数时，仅传入顶点和颜色数据，因此着色器可能无法绘制任何内容(或绘制某些内容但不正确)。如果需要以这种方式绘制形状，则应考虑到这一点对着色器进行自定义。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_roundrect(x1, y1, x2, y2, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>圆角矩形左上角的x坐标(如同正常矩形一样)。</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>圆角矩形左上角的y坐标(好像它是一个普通矩形)。</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>圆角矩形右下角的x坐标(如同正常矩形一样)。</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>圆角矩形右下角的y坐标(好像它是一个普通矩形)。</td>
+      </tr>
+      <tr>
+        <td>outline</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否绘制圆角矩形填充(false)或绘制为一个像素宽的轮廓(true)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">draw_set_colour(c_lime);<br>
+    draw_roundrect(50, 100, 250, 200, 0);</p>
+  <p>这将绘制一个填充的圆角矩形，其理论左上角 (弯曲前) 为 (50,100)，理论右下角为 (250,200)。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Basic_Forms.htm">基本绘制</a></div>
+        <div style="float:right">Next: <a href="draw_roundrect_colour.htm">draw_roundrect_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_roundrect
+-->
+  <!-- TAGS
+draw_roundrect
+-->
+
+</body></html>

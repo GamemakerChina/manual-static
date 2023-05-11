@@ -1,0 +1,134 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.1.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>layer_get_id_at_depth</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function layer_get_id_at_depth">
+  <meta name="rh-index-keywords" content="layer_get_id_at_depth">
+  <meta name="search-keywords" content="layer_get_id_at_depth">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_name.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_depth.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="layer_get_id_at_depth">
+        <span>layer_get_id_at_depth</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_id_at_depth</h1>
+  <p>可以使用此函数获得指定特定深度的所有层的 ID。指定要检查的深度，函数将返回具有一个或多个条目的<a href="../../../../GML_Overview/Arrays.htm">数组</a>，这取决于在给定深度处是否存在任何层。如果在给定深度处没有层，则数组将在[ 0]位置有一个条目，值为-1，但如果深度处有层，则在数组中为每个找到的层创建一个条目，条目值将是层的唯一ID值。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">layer_get_id_at_depth(depth)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>depth</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要从中检查和检索层ID的深度。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var a = layer_get_id_at_depth(0);<br>
+    if a[0] != -1<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; array_length(a); i++;)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer_destroy(a[i]);<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上面的代码检索关于深度为0的层的数据。进行检查以查看该深度是否存在任何层，如果存在，则解析返回的数组，并销毁所找到的每个层。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="General_Layer_Functions.htm">常规图层函数</a></div>
+        <div style="float:right">Next: <a href="layer_get_name.htm">layer_get_name</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_id_at_depth
+-->
+  <!-- TAGS
+layer_get_id_at_depth
+-->
+
+</body></html>

@@ -1,0 +1,129 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.17.6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Encoding And Hashing</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for the File Encoding And Hashing functions">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="File Encoding,File Hashing,encode,decode,sha1,md5,crc32,base64">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_encode.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/File_Handling/File_Directories/program_directory.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Encoding And Hashing">
+        <span>Encoding And Hashing</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>编码和哈希</h1>
+  <p>在处理外部文件时，最终用户总是有可能打开并更改其中包含的信息，从而改变你的游戏。这可能导致游戏玩法元素被破坏或在线欺诈分数，所以 <span data-keyref="GameMaker Name">GameMaker</span> 为你提供了一些基本的 <a class="tooltip" title="编码使用公开可用的方案将数据转换为另一种格式，以便可以轻松地将其反转。这与加密不同，因为它不需要密钥对其进行解码。编码通常用于将数据更改为易于由其他系统使用的格式（例如，将数据发送到服务器），或用于使人眼无法读取的数据。"> 编码</a> 函数，以及对字符串和文件执行 <a class="tooltip" title="哈希(散列)是一种创建与单个源（通常是文件）相关且仅与该源相关的字符串或值的方法。例如，在GameMaker中，您可以为保存文件生成一个哈希，然后在稍后对其进行访问之前，为其生成另一个哈希，并检查原始哈希和新哈希以确定文件是否已被篡改。"> 哈希</a> 检查的函数，以确保它们在使用之前保持完整性。还提供了一些用于编码和解码 <a class="tooltip" title="JSON代表JavaScript Object Notatio，并且是用于存储数据的轻量级格式。 JSON通常在将数据从服务器发送到网页时使用，并且被认为是“自我描述”的，易于查看和遵循。">JSON</a>&nbsp; 格式字符串的函数。</p>
+  <p class="note"><b><span class="note"> 注意</span></b> 编码不是加密！Base64 编码使文件无法用肉眼读取，并且需要用户代表进行解码，但它不能保证不被黑客攻击。建议您将这些函数与您自己的加密混合使用 (GameMaker 的加密和脚本函数在互联网上有很多种形式)。</p>
+  <ul class="colour">
+    <li><a href="json_encode.htm">json_encode</a></li>
+    <li><a href="json_decode.htm">json_decode</a></li>
+    <li><a href="json_stringify.htm">json_stringify</a></li>
+    <li><a href="json_parse.htm">json_parse</a></li>
+    <li><a href="base64_encode.htm">base64_encode</a></li>
+    <li><a href="base64_decode.htm">base64_decode</a></li>
+    <li><a href="md5_string_utf8.htm">md5_string_utf8</a></li>
+    <li><a href="md5_string_unicode.htm">md5_string_unicode</a></li>
+    <li><a href="md5_file.htm">md5_file</a></li>
+    <li><a href="sha1_string_utf8.htm">sha1_string_utf8</a></li>
+    <li><a href="sha1_string_unicode.htm">sha1_string_unicode</a></li>
+    <li><a href="sha1_file.htm">sha1_file</a></li>
+    <li><a href="zip_unzip.htm">zip_unzip</a></li>
+    <li><a href="load_csv.htm">load_csv</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>值得注意的是，还有许多与编码和哈希 <a href="../../Buffers/Buffers.htm"> 缓冲区 </a> 相关的函数，您可以在以下链接中找到它们:</p>
+  <ul class="colour">
+    <li><a href="../../Buffers/buffer_md5.htm">buffer_md5</a></li>
+    <li><a href="../../Buffers/buffer_sha1.htm">buffer_sha1</a></li>
+    <li><a href="../../Buffers/buffer_crc32.htm">buffer_crc32</a></li>
+    <li><a href="../../Buffers/buffer_base64_encode.htm">buffer_base64_encode</a></li>
+    <li><a href="../../Buffers/buffer_base64_decode.htm">buffer_base64_decode</a></li>
+    <li><a href="../../Buffers/buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../File_Handling.htm">文件处理</a></div>
+        <div style="float:right">Next: <a href="../File_System/File_System.htm">文件系统</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+File Encoding
+-->
+  <!-- TAGS
+file_encoding_functions
+-->
+
+</body></html>

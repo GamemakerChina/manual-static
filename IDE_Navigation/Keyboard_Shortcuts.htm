@@ -1,0 +1,1949 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.2.1_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Keyboard Shortcuts</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page with all the keyboard shortcuts">
+  <meta name="rh-index-keywords" content="IDE Shortcuts,Shortcuts,Keyboard Shortcuts">
+  <meta name="search-keywords" content="input shortcuts,keyboard shortcuts,shortcuts">
+<meta name="brsnext" value="IDE_Tools/Additional_IDE_Tools.htm"><meta name="brsprev" value="IDE_Navigation/Menus/The_Help_Menu.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Keyboard Shortcuts">
+        <span>Keyboard Shortcuts</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>键盘快捷键</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 有大量的键盘快捷键可用，虽然大多数快捷键在IDE中的菜单项旁边也有标记，但并不是所有快捷键在开始时对用户都是显而易见的。在这里，您可以找到所有键盘快捷键的完整列表，这是一个简单的参考指南。一般来说，快捷键分为以下三类：</p>
+  <ul class="colour">
+    <li><strong>全局</strong> - 全局快捷键是指无论您在 <span data-keyref="GameMaker Name">GameMaker</span> IDE 中的哪个位置都可以使用的快捷键，除非您将注意力放在覆盖它的特定窗口或小工具上。</li>
+    <li><strong>窗口</strong> - 窗口快捷键是特定于单个窗口或选项卡的窗口快捷键，除非小工具快捷键覆盖它。</li>
+    <li><strong>小工具</strong> - 小工具快捷方式非常具体，只有在使用单一小工具(例如，颜色选择器)时才会起作用。</li>
+  </ul>
+  <p>以下是完整的快捷键列表，根据编辑划分为不同的部分：</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">通用 IDE</span><span data-close-text="true">通用 IDE</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>F1</td>
+          <td>F1</td>
+          <td>通用</td>
+          <td>Launch the help file</td>
+        </tr>
+        <tr>
+          <td>F5</td>
+          <td>F5</td>
+          <td>通用</td>
+          <td>Run the current project using the current target settings</td>
+        </tr>
+        <tr>
+          <td>F6</td>
+          <td>F6</td>
+          <td>通用</td>
+          <td>Run the current project using the <a href="../IDE_Tools/The_Debugger.htm">Debugger</a></td>
+        </tr>
+        <tr>
+          <td>CTRL + f7</td>
+          <td>CMD + f7</td>
+          <td>通用</td>
+          <td>Clean the compiler cache</td>
+        </tr>
+        <tr>
+          <td>CTRL + f8</td>
+          <td>CMD + f8</td>
+          <td>通用</td>
+          <td>Create an executable package using the current target settings</td>
+        </tr>
+        <tr>
+          <td>CTRL + N</td>
+          <td>CMD + N</td>
+          <td>通用</td>
+          <td>Open the Start Page</td>
+        </tr>
+        <tr>
+          <td>CTRL + Z</td>
+          <td>CMD + Z</td>
+          <td>通用</td>
+          <td>Global Undo</td>
+        </tr>
+        <tr>
+          <td>CTRL + Y</td>
+          <td>CMD + Y</td>
+          <td>通用</td>
+          <td>Global Redo</td>
+        </tr>
+        <tr>
+          <td>CTRL + E</td>
+          <td>CMD + E</td>
+          <td>通用</td>
+          <td>Export the current project as a YYZ file</td>
+        </tr>
+        <tr>
+          <td>CTRL + S</td>
+          <td>CMD + S</td>
+          <td>通用</td>
+          <td>Save the current project</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CMD + C</td>
+          <td>通用</td>
+          <td>Copy the selected text from anywhere in the IDE</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Copy the selected text from anywhere in the IDE</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CMD + V</td>
+          <td>通用</td>
+          <td>Paste the clipboard text anywhere in the IDE</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Paste the clipboard text anywhere in the IDE</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CMD + X</td>
+          <td>通用</td>
+          <td>Cut the selected text anywhere in the IDE</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Cut the selected text anywhere in the IDE</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + S</td>
+          <td>CMD + SHIFT + S</td>
+          <td>通用</td>
+          <td>Save the current project using "Save as"</td>
+        </tr>
+        <tr>
+          <td>CTRL + O</td>
+          <td>CMD + O</td>
+          <td>通用</td>
+          <td>Load a project from disk</td>
+        </tr>
+        <tr>
+          <td>CTRL + F</td>
+          <td>CMD + F</td>
+          <td>通用</td>
+          <td>Open search in scripts</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + F</td>
+          <td>CMD + SHIFT + F</td>
+          <td>通用</td>
+          <td>Open the search window</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + P</td>
+          <td>CMD + SHIFT + P</td>
+          <td>通用</td>
+          <td>Open the preferences window</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + [Num0 ... Num9]</td>
+          <td>CMD + CTRL + [Num0 ... Num9]</td>
+          <td>通用</td>
+          <td>Set or remove a bookmark from 0 to 9</td>
+        </tr>
+        <tr>
+          <td>CTRL + [Num0 ... Num9]</td>
+          <td>CMD + [Num0 ... Num9]</td>
+          <td>通用</td>
+          <td>Go to the bookmark from 0 to 9</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Enter</td>
+          <td>CMD + ALT + Enter</td>
+          <td>通用</td>
+          <td>Pan and zoom in the currently active window</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Up Arrow</td>
+          <td>CMD + ALT + Up</td>
+          <td>通用</td>
+          <td>Move to the next window up</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Down Arrow</td>
+          <td>CMD + ALT + Down Arrow</td>
+          <td>通用</td>
+          <td>Move to the next window down</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Left Arrow</td>
+          <td>CMD + ALT + Left Arrow</td>
+          <td>通用</td>
+          <td>Move to the next window left</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Right Arrow</td>
+          <td>CMD + ALT + Right Arrow</td>
+          <td>通用</td>
+          <td>Move to the next window right</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Up + Left Arrow</td>
+          <td>CMD + ALT + Up + Left Arrow</td>
+          <td>通用</td>
+          <td>Move to the next window up and left</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Down + Left Arrow</td>
+          <td>CMD + ALT + Down + Left Arrow</td>
+          <td>通用</td>
+          <td>Move to the next window down and left</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Up + Right Arrow</td>
+          <td>CMD + ALT + Up + Right Arrow</td>
+          <td>通用</td>
+          <td>Move to the next window up and right</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Down + Right Arrow</td>
+          <td>CMD + ALT + Down + Right Arrow</td>
+          <td>通用</td>
+          <td>Move to the next window down and right</td>
+        </tr>
+        <tr>
+          <td>ALT + f4</td>
+          <td>ALT + f4</td>
+          <td>通用</td>
+          <td>Exit the IDE</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>f12</td>
+          <td>f12</td>
+          <td>停靠栏 (Dock)</td>
+          <td>Expand / Collapse all active docks in the workspace (manually contracted docks will not expand)</td>
+        </tr>
+        <tr>
+          <td>SHIFT + f12</td>
+          <td>SHIFT + f12</td>
+          <td>停靠栏 (Dock)</td>
+          <td>Force expansion of all docks in the workspace</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>CTRL + W</td>
+          <td>CMD + W</td>
+          <td>工作区</td>
+          <td>Close current tab</td>
+        </tr>
+        <tr>
+          <td>CTRL + T</td>
+          <td>CMD + T</td>
+          <td>工作区</td>
+          <td>Opens the <a href="../Setting_Up_And_Version_Information/IDE_Preferences/General/Go_To.htm">Go To</a> window to search through the project</td>
+        </tr>
+        <tr>
+          <td>CTRL + Tab</td>
+          <td>CTRL + Tab</td>
+          <td>工作区</td>
+          <td>Open workspace overview</td>
+        </tr>
+        <tr>
+          <td>CTRL + PageUp</td>
+          <td>CMD + PageUp</td>
+          <td>工作区</td>
+          <td>Focused window next tab</td>
+        </tr>
+        <tr>
+          <td>CTRL + PageDown</td>
+          <td>CMD + PageDown</td>
+          <td>工作区</td>
+          <td>Focused window previous tab</td>
+        </tr>
+        <tr>
+          <td>CTRL + Enter / Numpad Enter</td>
+          <td>CMD + Enter / Numpad Enter</td>
+          <td>工作区</td>
+          <td>Reset workspace zoom (with no animated transition)</td>
+        </tr>
+        <tr>
+          <td>CTRL + Plus(+) / Numpad Plus</td>
+          <td>CMD + Plus(+) / Numpad Plus</td>
+          <td>工作区</td>
+          <td>Zoom in the workspace</td>
+        </tr>
+        <tr>
+          <td>CTRL + Minus(-) / Numpad Minus</td>
+          <td>CMD + Minus(-) / Numpad Minus</td>
+          <td>工作区</td>
+          <td>Zoom out the workspace</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>f2</td>
+          <td>f2</td>
+          <td>资源浏览器</td>
+          <td>Rename the selected resource</td>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>资源浏览器</td>
+          <td>Delete the selected resource(s)</td>
+        </tr>
+        <tr>
+          <td>ALT + S</td>
+          <td>ALT + S</td>
+          <td>资源浏览器</td>
+          <td>Create a new sprite resource</td>
+        </tr>
+        <tr>
+          <td>ALT + U</td>
+          <td>ALT + U</td>
+          <td>资源浏览器</td>
+          <td>Create a new sound resource</td>
+        </tr>
+        <tr>
+          <td>ALT + B</td>
+          <td>ALT + B</td>
+          <td>资源浏览器</td>
+          <td>Create a new tile set resource</td>
+        </tr>
+        <tr>
+          <td>ALT + P</td>
+          <td>ALT + P</td>
+          <td>资源浏览器</td>
+          <td>Create a new path resource</td>
+        </tr>
+        <tr>
+          <td>ALT + C</td>
+          <td>ALT + C</td>
+          <td>资源浏览器</td>
+          <td>Create a new script resource</td>
+        </tr>
+        <tr>
+          <td>ALT + A</td>
+          <td>ALT + A</td>
+          <td>资源浏览器</td>
+          <td>Create a new shader resource</td>
+        </tr>
+        <tr>
+          <td>ALT + F</td>
+          <td>ALT + F</td>
+          <td>资源浏览器</td>
+          <td>Create a new font resource</td>
+        </tr>
+        <tr>
+          <td>ALT + T</td>
+          <td>ALT + T</td>
+          <td>资源浏览器</td>
+          <td>Create a new timeline resource</td>
+        </tr>
+        <tr>
+          <td>ALT + O</td>
+          <td>ALT + O</td>
+          <td>资源浏览器</td>
+          <td>Create a new object resource</td>
+        </tr>
+        <tr>
+          <td>ALT + R</td>
+          <td>ALT + R</td>
+          <td>资源浏览器</td>
+          <td>Create a new room resource</td>
+        </tr>
+        <tr>
+          <td>ALT + I</td>
+          <td>ALT + I</td>
+          <td>资源浏览器</td>
+          <td>Create a new included data file resource</td>
+        </tr>
+        <tr>
+          <td>ALT + N</td>
+          <td>ALT + N</td>
+          <td>资源浏览器</td>
+          <td>Create a new note resource</td>
+        </tr>
+        <tr>
+          <td>ALT + E</td>
+          <td>ALT + E</td>
+          <td>资源浏览器</td>
+          <td>Create a new extension resource</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">路径编辑器</span><span data-close-text="true">路径编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>路径编辑器</td>
+          <td>Remove selected points from the path</td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>T</td>
+          <td>路径编辑器</td>
+          <td>Holding down this key then clicking and dragging will translate the whole path</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>R</td>
+          <td>路径编辑器</td>
+          <td>Holding down this key then clicking and dragging will rotate the whole path</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>S</td>
+          <td>路径编辑器</td>
+          <td>Holding down this key then clicking and dragging will scale the whole path</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td>X</td>
+          <td>路径编辑器</td>
+          <td>Mirror the path</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>Y</td>
+          <td>路径编辑器</td>
+          <td>Flip the path</td>
+        </tr>
+        <tr>
+          <td>CTRL + P</td>
+          <td>CMD + P</td>
+          <td>路径编辑器</td>
+          <td>Pan to the path</td>
+        </tr>
+        <tr>
+          <td>CTRL + R</td>
+          <td>CMD + R</td>
+          <td>路径编辑器</td>
+          <td>Reverse the path</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">精灵编辑器</span><span data-close-text="true">精灵编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>CTRL + A</td>
+          <td>CTRL + A</td>
+          <td>精灵编辑器</td>
+          <td>Select all frames in the frame view</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CTRL + C</td>
+          <td>精灵编辑器</td>
+          <td>Copy the selected frames</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td>N/A</td>
+          <td>精灵编辑器</td>
+          <td>Copy the selected frames</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CTRL + V</td>
+          <td>精灵编辑器</td>
+          <td>Paste the selected frames</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td>N/A</td>
+          <td>精灵编辑器</td>
+          <td>Paste the selected frames</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CTRL + V</td>
+          <td>精灵编辑器</td>
+          <td>Cut the selected frames</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td>N/A</td>
+          <td>精灵编辑器</td>
+          <td>Cut the selected frames</td>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>精灵编辑器</td>
+          <td>Delete the selected frames</td>
+        </tr>
+        <tr>
+          <td>Insert <i>or</i> SHIFT + A</td>
+          <td>Insert <i>or</i> SHIFT + A</td>
+          <td>精灵编辑器</td>
+          <td>Add a new frame onto the end of the frame list</td>
+        </tr>
+        <tr>
+          <td>SHIFT + A</td>
+          <td>SHIFT + A</td>
+          <td>精灵编辑器</td>
+          <td>Add a new frame onto the end of the frame list</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">图块集编辑器</span><span data-close-text="true">图块集编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>Escape</td>
+          <td>Escape</td>
+          <td>笔刷编辑器</td>
+          <td>Deselect selected tiles</td>
+        </tr>
+        <tr>
+          <td>Plus(+) / Numpad Plus</td>
+          <td>Plus(+) / Numpad Plus</td>
+          <td>笔刷编辑器</td>
+          <td>Increase brush size</td>
+        </tr>
+        <tr>
+          <td>Minus(-) / Numpad Minus</td>
+          <td>Minus(-) / Numpad Minus</td>
+          <td>笔刷编辑器</td>
+          <td>Decrease brush size</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td>X</td>
+          <td>笔刷编辑器</td>
+          <td>Mirror the tile</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>Y</td>
+          <td>笔刷编辑器</td>
+          <td>Flip the tile</td>
+        </tr>
+        <tr>
+          <td>Z</td>
+          <td>Z</td>
+          <td>笔刷编辑器</td>
+          <td>Rotate the tile</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>自动图块/动画</td>
+          <td>Delete the current focused auto-tile or animation set</td>
+        </tr>
+        <tr>
+          <td>f2</td>
+          <td>f2</td>
+          <td>自动图块/动画</td>
+          <td>Rename the current focused auto-tile or animation set</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>Insert</td>
+          <td>Insert</td>
+          <td>动画</td>
+          <td>Add a new animation</td>
+        </tr>
+        <tr>
+          <td>Up Arrow</td>
+          <td>Up Arrow</td>
+          <td>动画</td>
+          <td>Select the previous animation set</td>
+        </tr>
+        <tr>
+          <td>Down Arrow</td>
+          <td>Down Arrow</td>
+          <td>动画</td>
+          <td>Select the next animation set</td>
+        </tr>
+        <tr>
+          <td>Left Arrow</td>
+          <td>Left Arrow</td>
+          <td>动画</td>
+          <td>Select the previous animation frame</td>
+        </tr>
+        <tr>
+          <td>Right Arrow</td>
+          <td>Right Arrow</td>
+          <td>动画</td>
+          <td>Select the next animation frame</td>
+        </tr>
+        <tr>
+          <td>SHIFT + Up Arrow</td>
+          <td>SHIFT + Up Arrow</td>
+          <td>动画</td>
+          <td>Move the current animation set up</td>
+        </tr>
+        <tr>
+          <td>SHIFT + Down Arrow</td>
+          <td>SHIFT + Down Arrow</td>
+          <td>动画</td>
+          <td>Move the current animation set down</td>
+        </tr>
+        <tr>
+          <td>SHIFT + Left Arrow</td>
+          <td>SHIFT + Left Arrow</td>
+          <td>动画</td>
+          <td>Move the current animation frame left</td>
+        </tr>
+        <tr>
+          <td>SHIFT + Right Arrow</td>
+          <td>SHIFT + Right Arrow</td>
+          <td>动画</td>
+          <td>Move the current animation frame right</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">图像编辑器</span><span data-close-text="true">图像编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>Escape</td>
+          <td>Escape</td>
+          <td>通用</td>
+          <td>Cancel current selection / break in progress arc or polygon</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>O</td>
+          <td>通用</td>
+          <td>Open the colour picker</td>
+        </tr>
+        <tr>
+          <td>f2</td>
+          <td>f2</td>
+          <td>通用</td>
+          <td>Rename Layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + S</td>
+          <td>CMD + S</td>
+          <td>通用</td>
+          <td>Save image</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CMD + X</td>
+          <td>通用</td>
+          <td>Cut selection</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Cut selection</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CMD + C</td>
+          <td>通用</td>
+          <td>Copy selection / copy frame</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Copy selection / copy frame</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CMD + V</td>
+          <td>通用</td>
+          <td>Paste clipboard to brush / paste copied frame</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Paste clipboard to brush / paste copied frame</td>
+        </tr>
+        <tr>
+          <td>CTRL + B</td>
+          <td>CMD + B</td>
+          <td>通用</td>
+          <td>Turn current selection into a custom brush<br>
+            (also when <em>Paste as Layer</em> is enabled in the&nbsp;<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Image_Editor_Preferences.htm">Image Editor Preferences</a>)</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + A</td>
+          <td>CMD + SHIFT + A</td>
+          <td>通用</td>
+          <td>Import image</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>帧视图</td>
+          <td>Delete the selected frames in the frame view</td>
+        </tr>
+        <tr>
+          <td>Insert</td>
+          <td>Insert</td>
+          <td>帧视图</td>
+          <td>Add a frame</td>
+        </tr>
+        <tr>
+          <td>SHIFT + A</td>
+          <td>SHIFT + A</td>
+          <td>帧视图</td>
+          <td>Add an empty frame</td>
+        </tr>
+        <tr>
+          <td>(keyboard) 1</td>
+          <td>(keyboard) 1</td>
+          <td>帧视图</td>
+          <td>Previous frame</td>
+        </tr>
+        <tr>
+          <td>(keyboard) 2</td>
+          <td>(keyboard) 2</td>
+          <td>帧视图</td>
+          <td>Next frame</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>B</td>
+          <td>工具箱</td>
+          <td>Toggle between the preset and the selection brush</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>D</td>
+          <td>工具箱</td>
+          <td>Select the draw (pencil) tool</td>
+        </tr>
+        <tr>
+          <td>E</td>
+          <td>E</td>
+          <td>工具箱</td>
+          <td>Select the eraser tool</td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>F</td>
+          <td>工具箱</td>
+          <td>Select the fill tool</td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td>L</td>
+          <td>工具箱</td>
+          <td>Select the line tool</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td>A</td>
+          <td>工具箱</td>
+          <td>Select the arc tool</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>R</td>
+          <td>工具箱</td>
+          <td>Select the rectangle tool</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>C</td>
+          <td>工具箱</td>
+          <td>Select the ellipse tool</td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td>P</td>
+          <td>工具箱</td>
+          <td>Select the polygon tool</td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>T</td>
+          <td>工具箱</td>
+          <td>Select the text tool</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>S</td>
+          <td>工具箱</td>
+          <td>Select the rectangle selection tool</td>
+        </tr>
+        <tr>
+          <td>Q</td>
+          <td>Q</td>
+          <td>工具箱</td>
+          <td>Select the paint selection tool</td>
+        </tr>
+        <tr>
+          <td>W</td>
+          <td>W</td>
+          <td>工具箱</td>
+          <td>Select the magic wand</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>M</td>
+          <td>工具箱</td>
+          <td>Select the pan tool</td>
+        </tr>
+        <tr>
+          <td>U</td>
+          <td>U</td>
+          <td>工具箱</td>
+          <td>Select the rotate tool</td>
+        </tr>
+        <tr>
+          <td>Z</td>
+          <td>Z</td>
+          <td>工具箱</td>
+          <td>Rotate the current brush 90°</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td>X</td>
+          <td>工具箱</td>
+          <td>Mirror the current brush along the X axis</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>Y</td>
+          <td>工具箱</td>
+          <td>Flip the current brush along the Y axis</td>
+        </tr>
+        <tr>
+          <td>SHIFT + R</td>
+          <td>SHIFT + R</td>
+          <td>工具箱</td>
+          <td>Select the filled rectangle tool</td>
+        </tr>
+        <tr>
+          <td>SHIFT + C</td>
+          <td>SHIFT + C</td>
+          <td>工具箱</td>
+          <td>Select the filled ellipse tool</td>
+        </tr>
+        <tr>
+          <td>SHIFT + P</td>
+          <td>SHIFT + P</td>
+          <td>工具箱</td>
+          <td>Select the filled polygon tool</td>
+        </tr>
+        <tr>
+          <td>SHIFT + Z</td>
+          <td>SHIFT + Z</td>
+          <td>工具箱</td>
+          <td>Stretch / scale current brush</td>
+        </tr>
+        <tr>
+          <td>Plus(+) / Numpad Plus</td>
+          <td>Plus(+) / Numpad Plus</td>
+          <td>工具箱</td>
+          <td>Increase current brush size</td>
+        </tr>
+        <tr>
+          <td>Minus(-) / Numpad Minus</td>
+          <td>Minus(-) / Numpad Minus</td>
+          <td>工具箱</td>
+          <td>Decrease current brush size</td>
+        </tr>
+        <tr>
+          <td>Period (.)</td>
+          <td>Period (.)</td>
+          <td>工具箱</td>
+          <td>Select brush</td>
+        </tr>
+        <tr>
+          <td>CTRL</td>
+          <td>CMD</td>
+          <td>工具箱</td>
+          <td>Toggle colour picker tool while held down</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>G</td>
+          <td>G</td>
+          <td>画布</td>
+          <td>Toggles the grid overlay</td>
+        </tr>
+        <tr>
+          <td>CTRL + G</td>
+          <td>CMD + G</td>
+          <td>画布</td>
+          <td>Toggle grid snap on/off</td>
+        </tr>
+        <tr>
+          <td>ALT + V</td>
+          <td>ALT + V</td>
+          <td>画布</td>
+          <td>Toggle vertical split view</td>
+        </tr>
+        <tr>
+          <td>ALT + H</td>
+          <td>ALT + H</td>
+          <td>画布</td>
+          <td>Toggle horizontal split view</td>
+        </tr>
+        <tr>
+          <td>ALT + C</td>
+          <td>ALT + C</td>
+          <td>画布</td>
+          <td>Center image with unit scale</td>
+        </tr>
+        <tr>
+          <td>ALT + F</td>
+          <td>ALT + F</td>
+          <td>画布</td>
+          <td>Center image and scale to fill current view</td>
+        </tr>
+        <tr>
+          <td>CTRL + A</td>
+          <td>CMD + A</td>
+          <td>画布</td>
+          <td>Select All</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + I</td>
+          <td>CMD + SHIFT + I</td>
+          <td>画布</td>
+          <td>Invert selection</td>
+        </tr>
+        <tr>
+          <td>Arrow Up</td>
+          <td>Arrow Up</td>
+          <td>画布</td>
+          <td>Move selected pixels 1pixel up</td>
+        </tr>
+        <tr>
+          <td>Arrow Down</td>
+          <td>Arrow Down</td>
+          <td>画布</td>
+          <td>Move selected pixels 1pixel down</td>
+        </tr>
+        <tr>
+          <td>Arrow Left</td>
+          <td>Arrow Left</td>
+          <td>画布</td>
+          <td>Move selected pixels 1pixel left</td>
+        </tr>
+        <tr>
+          <td>Arrow Right</td>
+          <td>Arrow Right</td>
+          <td>画布</td>
+          <td>Move selected pixels 1pixel right</td>
+        </tr>
+        <tr>
+          <td>CTRL + Plus (+)</td>
+          <td>CMD + Plus (+)</td>
+          <td>画布</td>
+          <td>Zoom in the canvas view</td>
+        </tr>
+        <tr>
+          <td>CTRL + Minus (-)</td>
+          <td>CMD + Minus (-)</td>
+          <td>画布</td>
+          <td>Zoom out the canvas view</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br>
+      &nbsp;</p>
+    <p><br>
+      &nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#"><span data-open-text="true" data-skip-index="true">房间编辑器</span><span data-close-text="true">房间编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th style="">macOS 键位绑定</th>
+          <th style="">范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td style="">P</td>
+          <td style="">通用</td>
+          <td>Holding this down while clicking will enable the "select from any layer" option. Releasing it will disable it again</td>
+        </tr>
+        <tr>
+          <td>CTRL +ALT + G</td>
+          <td style="">CMD + ALT + G</td>
+          <td style="">通用</td>
+          <td>Toggle grid snap</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td style="">CMD + X</td>
+          <td style="">通用</td>
+          <td>Cut selected items from the current layer</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td style="">N/A</td>
+          <td style="">通用</td>
+          <td>Cut selected items from the current layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td style="">CMD + C</td>
+          <td style="">通用</td>
+          <td>Copy selected items from the current layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td style="">N/A</td>
+          <td style="">通用</td>
+          <td>Copy selected items from the current layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td style="">CMD + V</td>
+          <td style="">通用</td>
+          <td>Paste clipboard items into the current layer</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td style="">N/A</td>
+          <td style="">通用</td>
+          <td>Paste clipboard items into the current layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + R</td>
+          <td style="">CMD + ALT + R</td>
+          <td style="">通用</td>
+          <td>Open the room properties window</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + P</td>
+          <td style="">CMD + ALT + P</td>
+          <td style="">通用</td>
+          <td>Open the layer properties window</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + L</td>
+          <td style="">CMD + ALT + L</td>
+          <td style="">通用</td>
+          <td>Open the layer view window</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + I</td>
+          <td style="">CMD + ALT + I</td>
+          <td style="">通用</td>
+          <td>Open the instance creation order window</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td style="">T</td>
+          <td style="">路径层编辑器</td>
+          <td>Holding down this key then clicking and dragging will translate the whole path</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td style="">R</td>
+          <td style="">路径层编辑器</td>
+          <td>Holding down this key then clicking and dragging will rotate the whole path</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td style="">S</td>
+          <td style="">路径层编辑器</td>
+          <td>Holding down this key then clicking and dragging will scale the whole path</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td style="">X</td>
+          <td style="">路径层编辑器</td>
+          <td>Mirror the path</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td style="">Y</td>
+          <td style="">路径层编辑器</td>
+          <td>Flip the path</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td style="">D</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the Pencil draw tool</td>
+        </tr>
+        <tr>
+          <td>E</td>
+          <td style="">E</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the Eraser draw tool</td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td style="">F</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the Fill draw tool</td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td style="">L</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the Line draw tool</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td style="">R</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the Rectangle draw tool</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td style="">S</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the tile Selection tool</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td style="">A</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the Autotile tool</td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td style="">I</td>
+          <td style="">图块层编辑器</td>
+          <td>Select the tile Inheritance tool</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td style="">X</td>
+          <td style="">图块层编辑器</td>
+          <td>Mirror the tile or brush</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td style="">Y</td>
+          <td style="">图块层编辑器</td>
+          <td>Flip the tile or brush</td>
+        </tr>
+        <tr>
+          <td>Z</td>
+          <td style="">Z</td>
+          <td style="">图块层编辑器</td>
+          <td>Rotate the tile or brush 90°</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>Left Arrow</td>
+          <td style="">Left Arrow</td>
+          <td style="">房间画布</td>
+          <td>Move selected items left</td>
+        </tr>
+        <tr>
+          <td>Right Arrow</td>
+          <td style="">Right Arrow</td>
+          <td style="">房间画布</td>
+          <td>Move selected items right</td>
+        </tr>
+        <tr>
+          <td>Up Arrow</td>
+          <td style="">Up Arrow</td>
+          <td style="">房间画布</td>
+          <td>Move selected items up</td>
+        </tr>
+        <tr>
+          <td>Down Arrow</td>
+          <td style="">Down Arrow</td>
+          <td style="">房间画布</td>
+          <td>Move selected items down</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br>
+      <br>
+      &nbsp;
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">时间线编辑器</span><span data-close-text="true">时间线编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>Insert</td>
+          <td>Insert</td>
+          <td>通用</td>
+          <td>Add a moment to the timeline</td>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>通用</td>
+          <td>Delete selected moments from the timeline</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CMD + X</td>
+          <td>通用</td>
+          <td>Cut selected moments from the timeline</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Cut selected moments from the timeline</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CMD + C</td>
+          <td>通用</td>
+          <td>Copy selected moments from the timeline</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Copy selected moments from the timeline</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CMD + V</td>
+          <td>通用</td>
+          <td>Paste clipboard moments to the timeline</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Paste clipboard moments to the timeline</td>
+        </tr>
+        <tr>
+          <td>CTRL + E</td>
+          <td>CMD + E</td>
+          <td>通用</td>
+          <td>Change the selected moment</td>
+        </tr>
+        <tr>
+          <td>CTRL + R</td>
+          <td>CMD + R</td>
+          <td>通用</td>
+          <td>Change the selected moment description</td>
+        </tr>
+        <tr>
+          <td>CTRL + D</td>
+          <td>CMD + D</td>
+          <td>通用</td>
+          <td>Duplicate the selected moment</td>
+        </tr>
+        <tr>
+          <td>CTRL + M</td>
+          <td>CMD + M</td>
+          <td>通用</td>
+          <td>Merge the selected moments</td>
+        </tr>
+        <tr>
+          <td>CTRL + A</td>
+          <td>CMD + A</td>
+          <td>通用</td>
+          <td>Select all moments</td>
+        </tr>
+        <tr>
+          <td>CTRL + U</td>
+          <td>CMD + U</td>
+          <td>通用</td>
+          <td>Un-select all moments</td>
+        </tr>
+        <tr>
+          <td>ALT + Enter</td>
+          <td>ALT + Enter</td>
+          <td>通用</td>
+          <td>Edit all selected moments</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br>
+      &nbsp;</p>
+    <p><br>
+      &nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">代码/脚本编辑器</span><span data-close-text="true">代码/脚本编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>ALT</td>
+          <td>ALT</td>
+          <td>通用</td>
+          <td>Holding ALT while clicking and dragging will select columns of text</td>
+        </tr>
+        <tr>
+          <td>HOME</td>
+          <td>HOME</td>
+          <td>通用</td>
+          <td>Skip the cursor to the start of the script or event</td>
+        </tr>
+        <tr>
+          <td>END</td>
+          <td>END</td>
+          <td>通用</td>
+          <td>Skip the cursor to the end of the script or event</td>
+        </tr>
+        <tr>
+          <td>CTRL + M</td>
+          <td>CMD + M</td>
+          <td>通用</td>
+          <td>Fold all open regions</td>
+        </tr>
+        <tr>
+          <td>CTRL + U</td>
+          <td>CMD + U</td>
+          <td>通用</td>
+          <td>Unfold all regions</td>
+        </tr>
+        <tr>
+          <td>CTRL + Enter</td>
+          <td>CMD + Enter</td>
+          <td>通用</td>
+          <td>Toggle a region between folded/unfolded states</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Up Arrow</td>
+          <td>CMD + Up Arrow</td>
+          <td>通用</td>
+          <td>Go to the previous region</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + Down Arrow</td>
+          <td>CMD + Down Arrow</td>
+          <td>通用</td>
+          <td>Go to the next region</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CMD + C</td>
+          <td>通用</td>
+          <td>Copy any selected text to the clipboard</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Cut any selected text to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CMD + X</td>
+          <td>通用</td>
+          <td>Cut any selected text to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Cut any selected text to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CMD + V</td>
+          <td>通用</td>
+          <td>Paste any text from the clipboard into the editor</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td>N/A</td>
+          <td>通用</td>
+          <td>Paste any text from the clipboard into the editor</td>
+        </tr>
+        <tr>
+          <td>CTRL + D</td>
+          <td>CMD + D</td>
+          <td>通用</td>
+          <td>Duplicate the current line (or multiple lines if they have been selected)</td>
+        </tr>
+        <tr>
+          <td>CTRL + K</td>
+          <td>CMD + K</td>
+          <td>通用</td>
+          <td>Comment out the selected line (or lines) of text</td>
+        </tr>
+        <tr>
+          <td>CTRL + F</td>
+          <td>CMD + F</td>
+          <td>通用</td>
+          <td>Open local search box</td>
+        </tr>
+        <tr>
+          <td>CTRL + H</td>
+          <td>CMD + H</td>
+          <td>通用</td>
+          <td>Open local search and replace box</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + K</td>
+          <td>CMD + SHIFT + K</td>
+          <td>通用</td>
+          <td>Uncomment the selected line (or lines) of text</td>
+        </tr>
+        <tr>
+          <td>f4</td>
+          <td>f4</td>
+          <td>通用</td>
+          <td>Open up the code snippets menu</td>
+        </tr>
+        <tr>
+          <td>f7</td>
+          <td>f7</td>
+          <td>通用</td>
+          <td>Decrease the font size in any of the code editors</td>
+        </tr>
+        <tr>
+          <td>f8</td>
+          <td>f8</td>
+          <td>通用</td>
+          <td>Increase the font size in any of the code editors</td>
+        </tr>
+        <tr>
+          <td>f9</td>
+          <td>f9</td>
+          <td>通用</td>
+          <td>Set a break point</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span data-open-text="true" data-skip-index="true">对象编辑器</span><span data-close-text="true">对象编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>通用</td>
+          <td>Delete currently focused object editor item</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>CTRL + D</td>
+          <td>CMD + D</td>
+          <td>事件编辑器</td>
+          <td>Duplicate the selected event</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CMD + C</td>
+          <td>事件编辑器</td>
+          <td>Copy the selected event to the clipboard</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td>N/A</td>
+          <td>事件编辑器</td>
+          <td>Cut any selected events to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CMD + X</td>
+          <td>事件编辑器</td>
+          <td>Cut any selected events to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td>N/A</td>
+          <td>事件编辑器</td>
+          <td>Cut any selected events to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CMD + V</td>
+          <td>事件编辑器</td>
+          <td>Paste any events from the clipboard into the editor</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td>N/A</td>
+          <td>事件编辑器</td>
+          <td>Paste any events from the clipboard into the editor</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>F9</td>
+          <td>F9</td>
+          <td>GML 可视化编辑器</td>
+          <td>Cancel the current selection</td>
+        </tr>
+        <tr>
+          <td>Escape</td>
+          <td>Escape</td>
+          <td>GML 可视化编辑器</td>
+          <td>Cancel the current selection</td>
+        </tr>
+        <tr>
+          <td>Delete</td>
+          <td>Delete</td>
+          <td>GML 可视化编辑器</td>
+          <td>Delete all selected actions</td>
+        </tr>
+        <tr>
+          <td>CTRL + A</td>
+          <td>CMD + A</td>
+          <td>GML 可视化编辑器</td>
+          <td>Select all actions in the workspace</td>
+        </tr>
+        <tr>
+          <td>CTRL + K</td>
+          <td>CMD + K</td>
+          <td>GML 可视化编辑器</td>
+          <td>Toggle enabled/disabled for selected actions</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CMD + C</td>
+          <td>GML 可视化编辑器</td>
+          <td>Copy any selected actions to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + INSERT</td>
+          <td>N/A</td>
+          <td>GML 可视化编辑器</td>
+          <td>Copy any selected actions to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CMD + X</td>
+          <td>GML 可视化编辑器</td>
+          <td>Cut any selected actions to the clipboard</td>
+        </tr>
+        <tr>
+          <td>SHIFT + DELETE</td>
+          <td>N/A</td>
+          <td>GML 可视化编辑器</td>
+          <td>Cut any selected actions to the clipboard</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CMD + V</td>
+          <td>GML 可视化编辑器</td>
+          <td>Paste any actions from the clipboard into the editor</td>
+        </tr>
+        <tr>
+          <td>SHIFT + INSERT</td>
+          <td>N/A</td>
+          <td>GML 可视化编辑器</td>
+          <td>Paste any actions from the clipboard into the editor</td>
+        </tr>
+        <tr>
+          <td>CTRL + P</td>
+          <td>CMD + P</td>
+          <td>GML 可视化编辑器</td>
+          <td>Pan to the specified action</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#"><span data-open-text="true" data-skip-index="true">序列编辑器</span><span data-close-text="true">序列编辑器</span></a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>CTRL + X</td>
+          <td>CMD + X</td>
+          <td>通用</td>
+          <td>Cut selected items from the current layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + C</td>
+          <td>CMD + C</td>
+          <td>通用</td>
+          <td>Copy selected items from the current layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + V</td>
+          <td>CMD + V</td>
+          <td>通用</td>
+          <td>Paste clipboard items into the current layer</td>
+        </tr>
+        <tr>
+          <td>CTRL + NUMPA D"+"</td>
+          <td>CMD + NUMPAD+</td>
+          <td>通用</td>
+          <td>Zoom in on the canvas or the dopesheet</td>
+        </tr>
+        <tr>
+          <td>CTRL + MouseWheel UP</td>
+          <td>CMD + MouseWheel UP</td>
+          <td>通用</td>
+          <td>Zoom in on the canvas or the dope sheet</td>
+        </tr>
+        <tr>
+          <td>CTRL + NUMPAD "-"</td>
+          <td>CMD + NUMPAD+</td>
+          <td>通用</td>
+          <td>Zoom in on the canvas or the dopesheet</td>
+        </tr>
+        <tr>
+          <td>CTRL + MouseWheel UP</td>
+          <td>CMD + MouseWheel UP</td>
+          <td>通用</td>
+          <td>Zoom in on the canvas or the dope sheet</td>
+        </tr>
+        <tr>
+          <td colspan="4" height="5px">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>CTRL + HOME</td>
+          <td>CMD + HOME</td>
+          <td>画布</td>
+          <td>Center align element</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + HOME</td>
+          <td>CMD + SHIFT + HOME</td>
+          <td>画布</td>
+          <td>Center align origin</td>
+        </tr>
+        <tr>
+          <td>CTRL + ALT + SHIFT+ ;</td>
+          <td>CMD + ALT + SHIFT + ;</td>
+          <td>画布</td>
+          <td>Lock and unlock rulers</td>
+        </tr>
+        <tr>
+          <td>CTRL + SHIFT + ;</td>
+          <td>CMD + SHIFT + ;</td>
+          <td>画布</td>
+          <td>Turn on/off snapping to rulers &amp; Guides</td>
+        </tr>
+        <tr>
+          <td>CTRL&nbsp;+ ALT + P</td>
+          <td>CMD + ALT + P</td>
+          <td>画布</td>
+          <td>Show/Hide Path</td>
+        </tr>
+        <tr>
+          <td>UP Arrow</td>
+          <td>UP Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item up 1px</span></td>
+        </tr>
+        <tr>
+          <td>DOWN Arrow</td>
+          <td>DOWN Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item down1px</span></td>
+        </tr>
+        <tr>
+          <td>LEFT Arrow</td>
+          <td>LEFT Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item left 1px</span></td>
+        </tr>
+        <tr>
+          <td>RIGHT Arrow</td>
+          <td>RIGHT Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item right 1px</span></td>
+        </tr>
+        <tr>
+          <td>SHIFT + UP Arrow</td>
+          <td>SHIFT + UP Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item up 10px</span></td>
+        </tr>
+        <tr>
+          <td>SHIFT + DOWN Arrow</td>
+          <td>SHIFT + DOWN Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item down10px</span></td>
+        </tr>
+        <tr>
+          <td>SHIFT + LEFT Arrow</td>
+          <td>SHIFT + LEFT Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item left 10px</span></td>
+        </tr>
+        <tr>
+          <td>SHIFT + RIGHT Arrow</td>
+          <td>SHIFT + RIGHT Arrow</td>
+          <td>画布</td>
+          <td><span>Move selected item right 10px</span></td>
+        </tr>
+        <tr>
+          <td>ALT + Drag item</td>
+          <td>ALT + Drag item</td>
+          <td>画布</td>
+          <td><span>Duplicates item</span></td>
+        </tr>
+        <tr>
+          <td>ALT + Transform tools</td>
+          <td>ALT + Transform tools</td>
+          <td>画布</td>
+          <td>Scale from origin</td>
+        </tr>
+        <tr>
+          <td>CTRL + Drag Item</td>
+          <td>CMD + Drag Item</td>
+          <td>画布</td>
+          <td>Disables snapping for precision control</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#"><span data-open-text="true" data-skip-index="true">调试模块</span><span data-close-text="true">调试模块</span></a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Windows 键位绑定</th>
+          <th>macOS 键位绑定</th>
+          <th>范围</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>f5</td>
+          <td>f5</td>
+          <td>通用</td>
+          <td>This starts the game again after it has been paused</td>
+        </tr>
+        <tr>
+          <td>f9</td>
+          <td>f9</td>
+          <td>通用</td>
+          <td>Add/remove a breakpoint to the line the cursor is on</td>
+        </tr>
+        <tr>
+          <td>f10</td>
+          <td>CMD + Shift + I</td>
+          <td>通用</td>
+          <td>Step over a code block or script</td>
+        </tr>
+        <tr>
+          <td>f11</td>
+          <td>CMD + Shift + O</td>
+          <td>通用</td>
+          <td>Step into a code block or script</td>
+        </tr>
+        <tr>
+          <td>SHIFT + f11</td>
+          <td>CMD + Shift + U</td>
+          <td>通用</td>
+          <td>Step out of a code block or script</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="IDE_Input.htm">IDE&nbsp;Input And Navigation</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Menus.htm">菜单</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Keyboard Shortcuts
+-->
+  <!-- TAGS
+keyboard_shortcuts
+-->
+
+</body></html>

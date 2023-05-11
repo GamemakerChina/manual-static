@@ -1,0 +1,328 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "5.3.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Syntax Errors (Feather Messages)</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains the various syntax errors">
+  <meta name="rh-index-keywords" content="Syntax Errors">
+  <meta name="search-keywords" content="syntax errors">
+<meta name="brsnext" value="Additional_Information/Errors/Compiler_Errors.htm"><meta name="brsprev" value="Additional_Information/Error_Reporting.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Syntax Errors (Feather Messages)">
+        <span>Syntax Errors (Feather Messages)</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">语法错误(羽毛信息)</span></h1>
+  <p>在<span data-keyref="GameMaker Name">GameMaker</span>中编写游戏时，错误报告的第一级是在代码或 GML 可视化编辑器中，它是<a class="tooltip" title="与人类语言类似，编程语言在如何传达语句方面也有自己的一套规则，这套规则称为语法。尽管许多编程语言共享许多功能，特性和功能，但是它们通常在语法上有所不同。如果没有正确使用语法，则无法编写可执行程序，并且错误的语法将导致编译时出错。">语法</a>检查器。当你编写代码或者添加动作时，<span data-keyref="GameMaker Name">GameMaker</span> 会检查它是否遵循语言的语法，并标记出它发现的任何问题，这样你就可以在运行游戏或者编译可执行文件之前解决这些问题。</p>
+  <p>根据您是否在<a href="../../The_Asset_Editors/Code_Editor_Properties/Feather_Features.htm">羽毛设置</a>中启用了<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽毛</a> ，语法错误检查会发生不同的情况。</p>
+  <h2>语法错误(羽毛禁用)</h2>
+  <p><img alt="Syntax Errors Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Errors_Syntax_Example.png"></p>
+  <p>这些错误分为两大类:</p>
+  <ul class="colour">
+    <li><img alt="Syntax Warning Icon" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png"><strong> 警告</strong> : 对于可能是错误，但也可能不是，并且可能不会阻止游戏编译，但可能引发运行时错误的情况，会显示这些信息。产生这些警告的最常见原因是: 在表达式中使用了变量，但尚未在其他任何地方定义该变量，或者已经定义了变量但尚未使用。</li>
+    <li><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"> <strong>错误</strong> : 这些问题不允许游戏编译，更不用说运行了。在进一步处理代码之前，应该修复这些问题。下表显示了这些错误最常见的原因。</li>
+  </ul>
+  <p>当你写代码的时候，语法错误会更新(在输入代码和窗口中出现的错误之间会有一个短暂的停顿，以防止未完成代码的错误被报告) ，并且会遵循以下格式:</p>
+  <p class="code">[object] - [event] - [Line Number] - [Position In Line]: [error string]</p>
+  <p>或者，如果错误出现在脚本中，那么它将是:</p>
+  <p class="code">[script] - [Line Number] - [Position in line]: [error string]</p>
+  <p>双击<img alt="Icon LMB" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">输出控制台中显示的任何错误，都会将您带到具有错误的对象事件或脚本中的行，以便您可以编辑它。</p>
+  <p>应该注意的是，其中一些错误将显示在代码中的特定位置，但实际错误可能是由其他地方引起的，或者一个问题可能引发多个错误消息:</p>
+  <p><img alt="Multiple Syntax Errors" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_MultipleSyntaxErrors.png">在上面的图像中，所有三个错误<img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14">都是由一个错误引起的——在第220行中对函数<span class="inline">variable_instance_exists()</span>使用了分号“<span class="inline">;</span>”而不是逗号“<span class="inline">,</span>”。</p>
+  <h3>语法错误列表</h3>
+  <p>下表列出了不同的语法错误及其主要原因:</p>
+  <p>&nbsp;</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>错误(Error)</th>
+        <th>类型(Type)</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Malformed reference [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着存在一个内部 AST 验证错误(您应该永远不会看到这个错误，但是如果您确实看到了，请考虑从<a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">帮助菜单</a>中提交错误报告)</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Malformed hexadecimal character escape sequence&nbsp;</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">如果在字符串中使用了转义字符的十六进制值，并且格式不正确，就会发生这种情况。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unexpected node [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着存在一个内部 AST 验证错误(您应该永远不会看到这个错误，但是如果您确实看到了，请考虑从<a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">帮助菜单</a>中提交错误报告)</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Exception while parsing [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着存在一个内部 AST 验证错误(您应该永远不会看到这个错误，但是如果您确实看到了，请考虑从<a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">帮助菜单</a>中提交错误报告)</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Malformed id reference [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unnecessary expression [val] used as a statement</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当语法检查器检测到一个表达式(在[val]中显示)时，将发生此错误。例如，下面的代码将抛出错误，因为它期望的三元运算符？错误的遇到了32<br> <span class="inline">temp_x = x &lt; (room_width / 2)&nbsp; 32: room_width - 32;</span></td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Malformed array reference [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着您试图以不正确的方式引用数组，[val]将显示引用。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unexpected binary operator [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您在不应该使用位操作符的位置使用位操作符时，会发生此错误，并且[val]显示位操作符的位置。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unterminated string literal</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您使用<span class="inline">@"</span>或<span class="inline">"</span>编写字符串但在代码结束前未关闭该字符串时，将发生此错误。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Single quotes no longer allowed for string</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您尝试使用以单引号包装的字符串(例如: 'Hello World'而不是双引号，例如: "Hello World")时，会发生此错误。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unexpected syntax error</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">此错误表示语法错误，解析器无法更具体地识别该错误。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Got "[val1]", expected "[val2]"</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当语法检查器期望某个值或符号，但得到一个不同的值或符号时，就会发生这种情况，其中[val1]是当前符号或值，[val2]是期望的符号或值。例如: <br> <span class="inline">Got "{", expected "("</span></td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Got "[val1]", expected "[val2]" or "[val3]"</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">如上所述，但当有多个可能的预期符号。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Expected expression</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当语法检查器期望一个表达式，但是没有给出该表达式时，就会发生此错误。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Empty [val] statement</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您终止一条语句并将其保留为空时，就会发生这种情况。例如，下面的代码将给出错误(注意终止分号) : <br><span class="inline">if(x&lt;0);</span></td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Nested function calls are not allowed</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您试图在语句中嵌套函数调用时，例如: <br> <span class="inline">ds_list_find_value(list, 0)).sprite_index</span></td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Number of arguments for function [val1] expected [val2] got val[3]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这个错误告诉您，您没有为[val1]所示的函数提供正确的参数数目，该函数期望得到[val2]中所示的参数数目，但是得到了[val3]中所示的参数数目。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Number of arguments for function [val1] expected [val2] - [val3] got [val4]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">如上所述，只适用于一系列参数。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Duplicate enum entry found</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">此错误告诉您已经复制了一个枚举变量条目名称</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Duplicate enum found</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">此错误告诉您已定义了两个或多个具有相同名称的枚举。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Missing variable name in globalvar</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这说明您已经使用了<span class="inline">globalvar</span>声明，但是没有提供变量名。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Missing variable name in var</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这说明您已经使用了<span class="inline">var</span>声明，但是忽略了提供变量名。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">No matching #region found for #endregion</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">此错误意味着您在代码中声明了一个结束区域，而没有定义开始区域。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unclosed #region found at end of script</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这个错误意味着您已经在代码中的某个地方声明了一个区域，但是还没有为它在任何地方定义一个结束区域。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unexpected terminal operator [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着存在一个内部 AST 验证错误(您应该永远不会看到这个错误，但是如果您确实看到了，请考虑从<a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">帮助菜单</a>中提交错误报告)</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unexpected unary operator [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当一元运算符(如 + 、-、 = 等)在您的代码中找到了一个不需要的位置，在那里[val]将向您显示操作符。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unexpected ternary operator [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这个错误意味着您在代码的某个地方错误地使用了三元运算符的一个部分，其中[val]显示了出错的部分。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Try needs to have catch or finally clause</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">此错误意味着您调用了<span class="inline">try</span>函数，但是忽略了包含<span class="inline">catch</span>或<span class="inline">finally</span>子句。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Macro [val] already exists</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您尝试定义与之前定义的宏同名的宏[val]时，可能会出现这个错误。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Malformed variable reference, got [val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着存在一个内部 AST 验证错误(您应该永远不会看到这个错误，但是如果您确实看到了，请考虑从<a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">帮助菜单</a>中提交错误报告)</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Assignment to multi-relational-equality expression - GML does not support multiple assignments in an expression</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">此错误告诉您存在一个 GameMaker Language 不支持的多操作符赋值(也称为复合赋值)问题。这包括“<span class="inline"> *= </span>”或“<span class="inline">/= </span>”等等。.</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Macro [val] is unused</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Warning Icon" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当宏[val]在代码中的任何地方未使用时，就会发生这种情况。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Variable [val] only referenced once</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Warning Icon" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着给定的变量[val]在代码中只引用一次。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unassigned variable [val] referenced</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Warning Icon" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这意味着变量[val]已经在您的代码中被引用，但是以前没有在任何地方被赋值。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Only functions that are declared as constructors can use inheritance</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这个错误告诉您，您已经尝试对未声明为构造函数的函数使用继承。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Unknown function attribute&nbsp;[val]</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">这个错误意味着您在声明 in-kine 函数时尝试使用无效或未标识的函数修饰符([val])(函数修饰符类似于受支持的<span class="inline">构造函数</span>关键字)。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Inherited argument \"[val]\" is not in function arguments</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您尝试引用未在父函数定义中声明的继承函数中的参数时，会发生此错误。</td>
+      </tr>
+      <tr>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">[val] Creation Code</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">当您在房间创建代码中的某个地方出现错误[val]时，就会发生这种情况。</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="h">羽毛信息(羽毛启用)</h2>
+  <p>当“羽毛”被启用时，“语法错误”窗口将被“羽毛消息”窗口替换:</p>
+  <p><img class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Output_Feather_Searchable_Sortable.png">羽毛信息窗口列出羽毛在代码中遇到的错误和警告，以及在找到特定的代码模式时给出的建议。此处显示的错误类型取决于您在消息严重程度下的<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽毛设置</a>中定义的配置文件。</p>
+  <p>在这个窗口中，消息列表可以按照消息代码、消息文本(按字母顺序)或资源(按资源名称的字母顺序)进行升序或降序排序。也可以使用窗口右上角的搜索框进行搜索。</p>
+  <p>羽毛信息分为三类:</p>
+  <ul class="colour">
+    <li><img src="../../assets/Images/Scripting_Reference/Additional_Information/i_Feather_Warning.png"> <strong>警告</strong> : 这些是针对可能的错误显示的，在大多数情况下，这不会停止游戏的编译，但可能会引发运行时错误。产生这些警告的最常见原因是: 在表达式中使用了变量，但尚未在其他任何地方定义该变量，或者已经定义了变量但尚未使用。</li>
+    <li><img src="../../assets/Images/Scripting_Reference/Additional_Information/i_Feather_Error.png"> <strong>错误</strong> : 这些问题不允许游戏编译，更不用说运行了。在进一步处理代码之前，应该修复这些问题。</li>
+    <li><img src="../../assets/Images/Scripting_Reference/Additional_Information/i_Feather_Suggestion.png"> <strong>建议</strong> : 这些是对代码的可能改进的建议，涉及到很多方面。</li>
+  </ul>
+  <h3>&nbsp;</h3>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Error_Reporting.htm">错误报告</a></div>
+        <div style="float:right">Next: <a href="Compiler_Errors.htm">编译器错误</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Syntax Errors
+-->
+  <!-- TAGS
+syntax_errors
+-->
+
+</body></html>

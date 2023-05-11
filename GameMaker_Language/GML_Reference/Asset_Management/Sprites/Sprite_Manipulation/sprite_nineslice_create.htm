@@ -1,0 +1,120 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.3.2.0_10";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>sprite_nineslice_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet Matharoo">
+  <meta name="topic-comment" content="Page explaining the function sprite_nineslice_create">
+  <meta name="rh-index-keywords" content="sprite_nineslice_create">
+  <meta name="search-keywords" content="sprite_nineslice_create">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_set_nineslice.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_collision_mask.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="sprite_nineslice_create">
+        <span>sprite_nineslice_create</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_nineslice_create</h1>
+  <p><em><span data-keyref="Nine Slicing">九切</span>是一种用于缩放矩形图像以保留细节的技术，使其在缩放后保持其原始形状。有关Nine Slice的信息，请参阅<a href="../../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm" title="Nine Slice">本页</a>。</em></p>
+  <p>此函数用于创建九宫格<a href="../../../../GML_Overview/Structs.htm" title="Structs">结构</a>，可以对其进行修改，然后将其应用于sprite.此结构的内容在<a href="../Nine_Slice_Struct.htm" title="The Nine Slice Struct">此页</a>上有详细说明。</p>
+  <p>您可以将此结构存储在变量中，修改其属性，并使用<span class="inline"><a href="sprite_set_nineslice.htm" title="sprite_set_nineslice">sprite_set_nineslice()</a></span>将其应用于任何sprite.</p>
+  <h4>语法:</h4>
+  <p class="code">sprite_nineslice_create();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Struct_NineSlice"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Struct.htm">Nine Slice Struct</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _nineslice = <strong>sprite_nineslice_create</strong>();<br>
+    <br>
+    _nineslice.enabled = true;<br>
+    _nineslice.left = 10;<br>
+    _nineslice.right = 10;<br>
+    _nineslice.top = 10;<br>
+    _nineslice.bottom = 10;<br>
+    <br>
+    sprite_set_nineslice(spr_box_0, _nineslice);
+  </p>
+  <p>上面的代码创建了一个新的九宫格结构，启用它并设置参考线的偏移量。然后将该结构应用于精灵，更改其九宫格属性。</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sprite_Manipulation.htm">精灵操作</a></div>
+        <div style="float:right">Next: <a href="sprite_set_nineslice.htm">sprite_set_nineslice</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_nineslice_create
+-->
+  <!-- TAGS
+sprite_nineslice_create
+-->
+
+</body></html>

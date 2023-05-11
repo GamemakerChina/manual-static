@@ -1,0 +1,215 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.2.0_28";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gpu_set_blendmode_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference for the function gpu_set_blendmode_ext">
+  <meta name="rh-index-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour">
+  <meta name="search-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode_ext_sepalpha.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gpu_set_blendmode_ext">
+        <span>gpu_set_blendmode_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_blendmode_ext</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>在绘制像素时，会显示源颜色(我们要绘制的像素的颜色)和目标颜色(我们要绘制的像素中已有的颜色)，因此在确定像素的新颜色时，会根据所选的混合模式计算源颜色和目标颜色。将颜色的每个分量存储为介于0和1之间的浮点值，并且通过将源颜色的每个分量乘以某个因子，并通过将目标颜色的每个分量乘以某个其他因子，然后将结果与分量相加来计算新颜色。</p>
+  <p>此函数允许您设置不同的零部件，这些零部件应该被系数化在一起以创建自定义混合模式。源和目的地都有红色、绿色、蓝色和Alpha分量，在下表中，源的 RGBA 被视为(R、G、B、As)，而目的地的 RGBA 被视为(Rd、Gd、Bd、Ad)。在此函数中使用时，可用的十一个常量可以是源或目标(或两者)。</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>常量</th>
+        <th>混合因子(红色、绿色、蓝色、透明度)</th>
+      </tr>
+      <tr>
+        <td>bm_zero</td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td>bm_one</td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td>bm_src_colour</td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_colour</td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha</td>
+        <td>(As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_alpha</td>
+        <td>(1-As, 1-As, 1-As, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_alpha</td>
+        <td>(Ad, Ad, Ad, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_alpha</td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_colour</td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_colour</td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha_sat</td>
+        <td>(f, f, f, 1) where f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><b>重要！</b>未启用WebGL的HTML5将无法<b>正确显示以下模式：</b></p>
+  <ul class="colour" style="padding-left: 120px">
+    <li><span class="inline">bm_src_colour</span></li>
+    <li><span class="inline">bm_inv_src_colour</span></li>
+    <li><span class="inline">bm_dest_colour</span></li>
+    <li><span class="inline">bm_inv_dest_colour</span></li>
+    <li><span class="inline">bm_src_alpha_sat</span></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>请注意，您可以为此函数提供两个单独的参数，也可以提供一个参数数组(例如，由函数<a href="gpu_get_blendmode_ext.htm"><span class="inline">gpu_get_blendmode_ext()</span></a>返回)。如果提供数组，则应具有以下两个元素：</p>
+  <ul class="colour">
+    <li>[ 0 ]=源混合模式(默认为<span class="inline">bm_src_alpha</span>)</li>
+    <li>[ 1 ]=目标混合模式(默认为<span class="inline">bm_inv_src_alpha</span>)</li>
+  </ul>
+  <p>为了帮助您充分利用混合模式，并帮助您了解它们如何工作以及它们如何影响绘制到屏幕的最终图像，建议您阅读以下指南：</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">混合模式使用指南</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gpu_set_blendmode(src, dest);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td><span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span></td>
+        <td>源混合模式因子(请参见上面的常量)。</td>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td><span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span></td>
+        <td>目标混合模式因子(参见上面的常量)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">gpu_set_blendmode_ext(bm_src_alpha, bm_one);<br>
+    draw_circle_colour(100, 100, 50, c_white, c_black, 0);<br>
+    gpu_set_blendmode(bm_normal);</p>
+  <p>这将使黑色变成透明，从白色在外面强烈到从圆心逐渐减弱的'发光'效果。绘制圆之后将重置混合模式，以确保在绘制圆之后不会将添加混合应用于其他任何对象。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="GPU_Control.htm">GPU 控制</a></div>
+        <div style="float:right">Next:&nbsp;<a href="gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_blendmode_ext
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_set_blendmode_ext
+-->
+
+</body></html>

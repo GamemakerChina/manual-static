@@ -1,0 +1,137 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.17.1.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>file_find_next</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for file_find_next">
+  <meta name="rh-index-keywords" content="file_find_next">
+  <meta name="search-keywords" content="file_find_next">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/File_Handling/File_System/file_find_close.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/File_Handling/File_System/file_find_first.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="file_find_next">
+        <span>file_find_next</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_find_next</h1>
+  <p>此函数返回满足先前给定掩码和属性 (由 <a href="file_find_first.htm"><span class="inline"> file_find_first()</span></a> 定义) 的下一个文件的名称。如果不存在这样的文件，则返回空字符串。</p>
+  <p class="note"><b></b> 警告: 由于 <span data-keyref="GameMaker Name">GameMaker</span> 沙箱限制，此函数可能无法正常工作！有关更多信息，请参见 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统 </a> 部分。</p>
+  <p class="note">注意: 此函数适用于所有 C++ 目标平台(Windows、 Mac、 iOS、 Android) ，但过滤器标志只适用于 Windows。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">file_find_next();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if directory_exists("\User Content")<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;fileA = file_find_first("/User Content/*.doc", fa_readonly);<br>
+    &nbsp; &nbsp; fileB = file_find_next();<br>
+    &nbsp; &nbsp; fileC = file_find_next();<br>
+    &nbsp; &nbsp; file_find_close();<br>
+    }</p>
+  <p>此代码检查指定的目录是否存在，如果存在，则返回第一个找到的“只读”<span class="inline">.doc </span>文件。<br>
+然后查找另外两个文件并关闭文件查找器。</p>
+  <p>您可以使用<a href="../../../GML_Overview/Language_Features/while.htm"> while </a>循环查找任意数量的文件:</p>
+  <p class="code">var files = [];<br>
+    var file_name = file_find_first("/User Content/*.doc", fa_readonly);<br>
+    <br>
+    while (file_name != "")<br>
+    {<br>
+    &nbsp; &nbsp; array_push(files, file_name);<br>
+    <br>
+    &nbsp; &nbsp; file_name = file_find_next();<br>
+    }<br>
+    <br>
+    file_find_close();
+  </p>
+  <p>上面的代码创建一个空数组来存储所有找到的文件名，然后开始只读 <span class="inline">.doc </span> 文件。<br>
+如果该文件名不是空字符串，则将其推送到 <span class="inline"> files </span> 数组中，然后尝试查找下一个文件。<br>
+循环将一直重复，直到找到一个空字符串 (意味着没有更多匹配的文件) ，这是当它结束循环并关闭文件查找器在结束。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="File_System.htm">文件系统</a></div>
+        <div style="float:right">Next: <a href="file_find_close.htm">file_find_close</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_find_next
+-->
+  <!-- TAGS
+file_find_next
+-->
+
+</body></html>

@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"序列画布","type":"item","tilePath":"","description":"Page detailing the sequence canvas","url":"The_Asset_Editors/Sequence_Properties/The_Sequence_Canvas.htm"},{"name":"轨道面板","type":"item","tilePath":"","description":"Page detailing the sequence canvas","url":"The_Asset_Editors/Sequence_Properties/The_Track_Panel.htm"},{"name":"序列文本","type":"item","tilePath":"","description":"Overview of text tracks in the Sequence Editor","url":"The_Asset_Editors/Sequence_Properties/Text_in_Sequences.htm"},{"name":"剪切蒙版","type":"item","tilePath":"","description":"Page detailing how to use clipping masks in the track editor","url":"The_Asset_Editors/Sequence_Properties/Clipping_Masks.htm"},{"name":"使用关键帧表","type":"item","tilePath":"","description":"Page detailing the dope sheet","url":"The_Asset_Editors/Sequence_Properties/Using_The_Dope_Sheet.htm"},{"name":"使用动画曲线","type":"item","tilePath":"","description":"Page detailing how to use animation curves with sequences\n","url":"The_Asset_Editors/Sequence_Properties/Using_Animation_Curves.htm"},{"name":"广播消息","type":"item","tilePath":"","description":"Page detailing the dope sheet","url":"The_Asset_Editors/Sequence_Properties/Broadcast_Messages.htm"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

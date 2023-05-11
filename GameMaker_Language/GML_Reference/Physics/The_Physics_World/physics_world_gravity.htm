@@ -1,0 +1,129 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.13.1.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>physics_world_gravity</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for physics_world_gravity">
+  <meta name="rh-index-keywords" content="physics_world_gravity">
+  <meta name="search-keywords" content="physics_world_gravity">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Physics/The_Physics_World/physics_world_update_iterations.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/The_Physics_World/physics_world_create.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="physics_world_gravity">
+        <span>physics_world_gravity</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_gravity</h1>
+  <p>与所有物理函数一样，<span class="inline">physics_world_gravity()</span> 只有在房间编辑器中为其定义了物理世界或使用 <a href="physics_world_create.htm"><span class="inline">physics_world_create()</span></a> 时才能在实例上工作。然后，它将使用物理世界的 0,0 定义点，根据 xg 和 yg 输入计算的矢量来计算重力的方向和强度。下面是一些图片来说明...</p>
+  <p><img alt="Physics world gravity illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_gravity_image.png">如您所见，xg、yg 坐标相对于为物理世界定义的 0,0 的位置，并且重力本身作为这两个分量的矢量进行计算。因此，默认值 0, 10 将为您提供向下(270 度)的重力方向以及每秒 10 米的加速度。请注意<i>米/秒平方</i>!与所有物理函数一样，重力也是使用米作为基本测量值进行计算的，因此在 <span class="inline">physics_world_create</span> 函数中设置的像素到米的比例非常重要。对象上的重力也是<i>累积</i>(但确切数量取决于您为设置的函数 <a href="../Fixtures/physics_fixture_set_linear_damping.htm"><span class="inline">physics_fixture_set_linear_damping()</span></a>)，这意味着在房间速度为 60 且没有阻尼的房间中，实例将以每秒 10 米的速度加速，如果您有 0.1 像素到米的比例，这与说它将以 60 步的速度加速到每秒 100 像素是相同的。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">physics_world_gravity(xg, yg)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>xg</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>重力矢量的 X 分量</td>
+     </tr>
+      <tr>
+        <td>yg</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>重力矢量的 Y 分量</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">physics_world_gravity(-5, 0);</p>
+  <p>上述代码将把重力设置为(假设房间物理学 0,0 设置为左上角)向右 -- 0 度，加速度为每秒平方 5 米。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="The_Physics_World.htm">物理世界</a></div>
+        <div style="float:right">Next:&nbsp;<a href="physics_world_update_iterations.htm">physics_world_update_iterations</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_gravity
+-->
+  <!-- TAGS
+physics_world_gravity
+-->
+
+</body></html>

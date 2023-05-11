@@ -1,0 +1,140 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../../..";
+    gCommonRootRelPath = "../../../../../..";
+    gTopicId = "8.2.2.3.3.4.1.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>skeleton_animation_mix</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_mix">
+  <meta name="rh-index-keywords" content="skeleton_animation_mix">
+  <meta name="search-keywords" content="skeleton_animation_mix">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Animation/skeleton_animation_list.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Animation/skeleton_animation_get_duration.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="skeleton_animation_mix">
+        <span>skeleton_animation_mix</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_mix</h1>
+  <p>您可以使用<a href="skeleton_animation_set.htm"><span class="inline">skeleton_animation_set()</span></a>函数轻松切换动画集，但这可能会在将一个动画切换为另一个动画时导致跳过或不连续。为了防止这种情况，可以在两个动画集之间设置混合值，精灵将在它们之间进行插值。通常情况下，您会希望在实例的创建事件中使用骨骼动画执行此操作，因为它只需要设置一次，并且<span data-keyref="GameMaker Name">GameMaker</span>将使用该实例中的动画设置对精灵的所有进一步更改进行插值。请注意，"持续时间"值是从0到1，其中值0.5将具有从一个集到另一个集的"对半"插值。</p>
+  <p class="note"><span class="note">注意</span>Spine 4.0更改了旋转动画的工作方式，因为它不再使用可能的最短路径对旋转进行插值，而是使用关键帧中的绝对值进行插值。如果您从旧版本升级脊椎动画，这可能会导致意外行为，并且可能需要在脊椎项目中进行更改才能使旋转按要求进行。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">skeleton_animation_mix(animfrom, animto, duration);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>animfrom</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要插值的第一个动画的名称(字符串)。</td>
+      </tr>
+      <tr>
+        <td>animto</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要插值的第二个动画的名称(字符串)。</td>
+      </tr>
+      <tr>
+        <td>duration</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>插值的持续时间(从0到1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">skeleton_animation_set("walk");<br>
+    skeleton_animation_mix("walk", "jump", 0.2);<br>
+    skeleton_animation_mix("jump", "walk", 0.4);</p>
+  <p>上面的代码将进入具有骨骼动画精灵的实例的创建事件，并设置动画混合持续时间，以便在两个动画设置"行走"和"跳跃"之间进行插值。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Animation.htm">动画</a></div>
+        <div style="float:right">Next:&nbsp;<a href="skeleton_animation_list.htm">skeleton_animation_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_mix
+-->
+  <!-- TAGS
+skeleton_animation_mix
+-->
+
+</body></html>

@@ -1,0 +1,139 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Game Options</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains how to setup the different Game options">
+  <meta name="rh-index-keywords" content="Game Options">
+  <meta name="search-keywords" content="Game Options,Options">
+<meta name="brsnext" value="Settings/Game_Options/Template_Info.htm"><meta name="brsprev" value="Settings/Game_Settings.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Game Options">
+        <span>Game Options</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>游戏设置</h1>
+  <p>游戏设置分为两个部分——主选项和平台设置。主选项以<strong>常规</strong>选项卡开始，您可以在该选项中设置某些可以影响游戏大局的内容，而不用考虑游戏所在的平台。</p>
+  <p><img alt="General Game Options" class="center" src="../assets/Images/Settings/Game_Options/General_Options.png">该窗口有以下几个部分:</p>
+  <ul class="colour">
+    <li><strong>默认脚本语言</strong> : 选择当前项目中的程序编写是使用<span data-keyref="GML_Code"> GML Code</span> 还是<span data-keyref="GML_Visual"> GML Visual </span> ，抑或是应该在创建脚本的时候始终询问。</li>
+    <li><strong>游戏帧率</strong> : 这个值确定了Gamemaker在运行游戏时应该尝试维持的帧率。帧率表示游戏在一秒钟内所循环的次数(一个游戏循环通常被认为是一帧) ，默认值为60，尽管也有人经常使用30。关于理想的游戏帧率是多少有很多争论，但是最终的答案应取决于你制作的游戏类型、房间的大小、数量以及代码的密集程度。例如，如果你有一个大房间，房间速度设置成了30，那么游戏可能就会出现“不流畅”的情况。你看到的区域越大，你的眼睛就越容易感知到低的帧率。但如果游戏有十分密集的物体，那么设置房间速度为120可能会导致游戏“卡顿”，因为 fps 下降了，游戏有大量的处理要解决，已经无法在规定的帧率上维持。所以一定要注意这个值，并始终调整它，直到满足您的游戏需要为止。</li>
+    <li><strong>默认绘制颜色</strong> : 当屏幕上什么都没有时的默认绘制颜色。</li>
+    <li><strong>房间区域外的默认绘制颜色</strong> : 用于填充游戏房间外，任何区域背景的默认颜色。</li>
+    <li><strong>生成项目图像</strong> : 单击此项将打开项目图像生成器工具。</li>
+    <li><strong>项目开始日期</strong> : 该项目被创建时的日期。</li>
+    <li><strong>项目使用时间</strong> : 自项目开始以来已经过去了多长时间。</li>
+    <li><strong>项目 GUID </strong> : 这是<span data-keyref="GameMaker Name"> GameMaker </span>中的每一个项目的唯一标识符。如果您希望换一个 GUID，您可以单击 CreateNewGUID 按钮来生成一个新的 GUID 按钮。</li>
+    <li><strong>为单独的纹理页面生成多级渐远纹理</strong> : 这个选项将会使<span data-keyref="GameMaker Name"> GameMaker </span>为那些在 Sprite 编辑器的纹理设置中标记了单独纹理页面选项的精灵创建多级渐远纹理。启用多级渐远纹理意味着要对精灵的原始纹理页面进行缩放，并将其过滤到纹理文件中的多个分辨率中。这通常是关闭的，但是如果你使用视图来放大或缩小游戏房间的面积区域，或者你正在处理一个3D 游戏，那么你可能需要启用这个功能，然后使用 Mipmap 函数来调整游戏处理不同的多级渐远纹理级别的方式。请注意，如果您没有将精灵标记为使用单独的纹理页面，您仍然可以从纹理组管理器启用每个纹理组的多级渐远纹理。默认情况下，此选项是关闭的。</li>
+    <li><strong>启用源码管理</strong> : 如果您希望项目通过 SCM (源代码管理系统) 管理，那么您需要看看这个。默认情况下它是关闭的(有关源码管理的更多信息，请参见此处)。</li>
+    <li><strong>作者 </strong> : 游戏作者 (个人或出版商或工作室) 的名称。</li>
+    <li><strong>项目最后更改时间</strong>: 此部分只显示项目上次更改时的日期/时间戳(这是不可编辑的)。</li>
+    <li><strong>允许 Spine 许可证</strong> : 在这里您可以勾选是否同意Spine运行时许可证。这将允许您在游戏中使用Spine精灵(这个许可证也将显示在您第一次尝试添加Spine精灵到您的项目时，在此之前该选项不会被勾选)</li>
+    <li><strong>碰撞兼容模式</strong> : 勾选后 GameMaker 将会使用2022版本之前的旧碰撞系统(使用整数值而不是浮点数)。有关更多信息，请阅读<a href="../GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/Collision_Compatibility_Mode.htm">碰撞兼容模式</a>。默认情况下禁用此选项，建议在新项目中保持禁用。</li>
+    <li><strong>为数组启用写入行为复制</strong> : 这将为当前打开的项目启用不推荐的<strong>写入复制数组</strong>行为。有关更多信息，请阅读<a href="../GameMaker_Language/GML_Overview/Arrays.htm#h">Copy on Write</a>。默认情况下禁用此选项，建议在新项目中保持禁用。</li>
+  </ul>
+  <p>主选项部分还包含<a href="Game_Options/Template_Info.htm">模板信息</a>的菜单。</p>
+  <p><a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>还将有其他的游戏选项可用，这将取决于您拥有的<a href="../Setting_Up_And_Version_Information/GMS2_Version_Information.htm">许可证</a>，并非所有这些平台设置都可用或可见。</p>
+  <h2>平台设置</h2>
+  <p>以下是一些特定平台的游戏选项:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/GX_Games.htm">GX.games</a></li>
+    <li><a href="Game_Options/Windows.htm">Windows</a></li>
+    <li><a href="Game_Options/macOS.htm">macOS</a></li>
+    <li><a href="Game_Options/Ubuntu.htm">Ubuntu</a></li>
+    <li><a href="Game_Options/HTML5.htm">HTML5</a></li>
+    <li><a href="Game_Options/Android.htm">Android</a></li>
+    <li><a href="Game_Options/iOS.htm">iOS</a></li>
+    <li><a href="Game_Options/tvOS.htm">tvOS</a></li>
+  </ul>
+  <p class="note"><span class="note">注意</span>由于不同公司的不同法律限制，各种<strong>控制台游戏选项</strong>没有在此列出。如果你有控制台许可证，你可以从YoYo Games服务台获得这些信息，但是你必须首先用你的控制台 ID 电子邮件联系YoYo Games，并请求查看不同部分的权限。</p>
+  <p>一些<span data-keyref="GameMaker Name">GameMaker</span>项目也可能显示<strong>Amazon Fire</strong>目标的游戏选项。这些是遗留的只读选项，因为<span data-keyref="GameMaker Name">GameMaker </span>现在直接使用<strong>Android</strong>游戏选项来支持 Fire 平台。如果你的项目仍然显示 Amazon Fire，你可以在下面的页面中找到关于这些选项的信息:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Amazon_Fire.htm">Amazon Fire (Legacy)</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Game_Settings.htm">游戏设置</a></div>
+        <div style="float:right">Next: <a href="Configurations.htm">配置</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Game Settings
+-->
+  <!-- TAGS
+game_settings
+-->
+
+</body></html>

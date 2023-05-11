@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"精灵信息","type":"book","tilePath":"","description":"Page outlining the different functions and variables associated with Sprite Information","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/Sprite_Information.htm","key":"toc78"},{"name":"精灵操作","type":"book","tilePath":"","description":"Page outlining the different functions and variables associated with Sprite Manipulation","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/Sprite_Manipulation.htm","key":"toc79"},{"name":"精灵实例变量","type":"book","tilePath":"","description":"Page outlining the different Sprite Instance Variables","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm","key":"toc80"},{"name":"骨骼动画","type":"book","tilePath":"","description":"Page outlining the different Skeletal Animation functions","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm","key":"toc81"},{"name":"九宫格","type":"book","tilePath":"","description":"Page outlining the different functions available for Nine Slicing in Sprites","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Functions.htm","key":"toc88"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

@@ -1,0 +1,151 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.5.0_22";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gamepad_hat_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for gamepad_hat_value">
+  <meta name="rh-index-keywords" content="gamepad_hat_value">
+  <meta name="search-keywords" content="gamepad_hat_value">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_get_mapping.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_hat_count.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gamepad_hat_value">
+        <span>gamepad_hat_value</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">gamepad_hat_value</span></h1>
+  <p>使用此函数，您可以获得游戏手柄"十字键"的当前值。返回的十字键值是不同方向的位掩码，其中：</p>
+  <ul class="colour">
+    <li>上 = 1 (二进制&nbsp;<span class="inline2">0b0001</span>)</li>
+    <li>右 = 2 (二进制&nbsp;<span class="inline2">0b0010</span>)</li>
+    <li>下 = 4 (二进制&nbsp;<span class="inline2">0b0100</span>)</li>
+    <li>左 = 8 (二进制&nbsp;<span class="inline2">0b1000</span>)</li>
+  </ul>
+  <p>请注意，这两个值可以组合在一起例如，十字键值 3 表示检查正确 (1 和 2 的总和)。您也可以使用<a href="../../../../Additional_Information/Bitwise_Operators.htm">位运算符</a>&nbsp;<span class="inline2">|</span> 将不同方向的值组合在一起，得到相同的结果，例如 <span class="inline2">0b0001|0b0010</span>。值为 0 表示未设置方向。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 只有设置了最多 2 位的值才能返回(例如，值 7 永远不会返回，因为不可能同时按上(1)、右(2)和下(4))。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;此函数还返回支持十字键模拟输入的游戏手柄的位掩码。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">gamepad_hat_value</span>(device, hatindex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>device</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查哪个游戏手柄设备 “插槽”。</td>
+      </tr>
+      <tr>
+        <td>hatindex</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查哪个 (或哪些) 游戏手柄十字键 (值从 0 到 <span class="inline2"><a href="gamepad_hat_count.htm">gamepad_hat_count</a>(device) - 1</span>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>&nbsp;(hat value as a bitmask)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _dir = <span data-field="title" data-format="default">gamepad_hat_value</span>(global.PadIndex, 0);<br>
+    switch (_dir)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 1: y -= 3; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 2: x += 3; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 3: y -= 3; x += 3; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 4: x -= 3; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 6: y += 3; x += 3; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 8: y += 3; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 9: y -= 3; x -= 3; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case 12: y += 3; x -= 3; break;<br>
+    }</p>
+  <p>上面的代码将游戏手柄设备插槽 <span class="inline2">global.PadIndex</span> 上索引为 0 的十字键的状态存储在本地变量 <span class="inline2">_dir</span> 中，然后检查返回的十字键值，并采取相应的操作。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">Next:&nbsp;<a href="gamepad_get_mapping.htm">gamepad_get_mapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_hat_value
+-->
+  <!-- TAGS
+gamepad_hat_value
+-->
+
+</body></html>

@@ -1,0 +1,184 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.7.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_primitive_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference for draw_primitive_begin">
+  <meta name="rh-index-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglefan,pr_trianglestrip">
+  <meta name="search-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip,pr_trianglefan">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Primitives/draw_primitive_begin_texture.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_primitive_begin">
+        <span>draw_primitive_begin</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_primitive_begin</h1>
+  <p>必须先调用此函数，然后才能定义任何基元。有6种类型的基元可以定义为以下常量：</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="2"><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/draw_primitive_begin.htm">基元类型常量</a></span></th>
+      </tr>
+      <tr>
+        <th>常量</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">pr_pointlist</span></td>
+        <td>A point list</td>
+      </tr>
+      <tr>
+        <td><span class="inline">pr_linelist</span></td>
+        <td>A line list</td>
+      </tr>
+      <tr>
+        <td><span class="inline">pr_linestrip</span></td>
+        <td>A line strip</td>
+      </tr>
+      <tr>
+        <td><span class="inline">pr_trianglelist</span></td>
+        <td>A triangle list</td>
+      </tr>
+      <tr>
+        <td><span class="inline">pr_trianglestrip</span></td>
+        <td>A triangle strip</td>
+      </tr>
+      <tr>
+        <td><span class="inline">pr_trianglefan</span></td>
+        <td>A triangle fan</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>下图基本上说明了这些顶点的外观以及定义顶点的顺序：</p>
+  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png">请注意，在某些平台(Windows、Xbox)上，<span class="inline">pr_trianglefan</span> 类型不受支持，因此 <span data-keyref="GameMaker Name">GameMaker</span> 在编译游戏以使其正常运行时执行转换。这意味着在这些平台上，<span class="inline">pr_trianglefan</span> 类型的使用速度将比其他类型慢得多。另请注意，要在HTML5上使用此函数，必须在<i>"游戏选项"</i>中启用WebGL。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_primitive_begin(kind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>kind</td>
+        <td><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/draw_primitive_begin.htm">基元类型常量</a></span></td>
+        <td>你要绘制的基元类型。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _steps = 20;<br>
+    var _xx = 50;<br>
+    var _yy = 50;<br>
+    var _radius = 30;<br>
+    draw_primitive_begin(pr_trianglefan);<br>
+    draw_vertex(_xx, _yy);<br>
+    for(var i = 0; i &lt;= _steps; ++i;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps));<br>
+    }<br>
+    draw_primitive_end();</p>
+  <p>上述代码将绘制由基元组成的圆的四分之三。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">Next:&nbsp;<a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_primitive_begin
+pr_pointlist
+pr_linelist
+pr_linestrip
+pr_trianglelist
+pr_trianglestrip
+pr_trianglefan
+-->
+  <!-- TAGS
+draw_primitive_begin
+-->
+
+</body></html>

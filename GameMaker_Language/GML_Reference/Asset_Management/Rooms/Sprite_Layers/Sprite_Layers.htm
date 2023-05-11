@@ -1,0 +1,128 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Sprite Layers</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sprite Layers">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Sprite Layers">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sprite_Layers/layer_sprite_get_id.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Background_Layers/layer_background_get_yscale.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Sprite Layers">
+        <span>Sprite Layers</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>精灵图层</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span><a href="../../../../../The_Asset_Editors/Rooms.htm">房间编辑器</a>允许您使用<i>层</i>将精灵添加到任何给定房间。 顾名思义，一个层只是一个资源的集合，这些资源都被认为位于房间内相同的深度，通过堆叠层，你可以使一些东西在其他层之上或之下。您还可以从代码、添加或删除对象、或更改层的某些属性或运行时包含的内容中控制层的某些方面。以下是可用于编辑<a href="../../Sprites/Sprites.htm">精灵</a>的所有函数列表，这些函数已添加到<a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm"><b>资源层</b></a>：</p>
+  <ul class="colour">
+    <li><a href="layer_sprite_get_id.htm">layer_sprite_get_id</a></li>
+    <li><a href="layer_sprite_exists.htm">layer_sprite_exists</a></li>
+    <li><a href="layer_sprite_create.htm">layer_sprite_create</a></li>
+    <li><a href="layer_sprite_destroy.htm">layer_sprite_destroy</a></li>
+    <li><a href="layer_sprite_change.htm">layer_sprite_change</a></li>
+    <li><a href="layer_sprite_index.htm">layer_sprite_index</a></li>
+    <li><a href="layer_sprite_speed.htm">layer_sprite_speed</a></li>
+    <li><a href="layer_sprite_xscale.htm">layer_sprite_xscale</a></li>
+    <li><a href="layer_sprite_yscale.htm">layer_sprite_yscale</a></li>
+    <li><a href="layer_sprite_angle.htm">layer_sprite_angle</a></li>
+    <li><a href="layer_sprite_blend.htm">layer_sprite_blend</a></li>
+    <li><a href="layer_sprite_alpha.htm">layer_sprite_alpha</a></li>
+    <li><a href="layer_sprite_x.htm">layer_sprite_x</a></li>
+    <li><a href="layer_sprite_y.htm">layer_sprite_y</a></li>
+    <li><a href="layer_sprite_get_sprite.htm">layer_sprite_get_sprite</a></li>
+    <li><a href="layer_sprite_get_index.htm">layer_sprite_get_index</a></li>
+    <li><a href="layer_sprite_get_speed.htm">layer_sprite_get_speed</a></li>
+    <li><a href="layer_sprite_get_xscale.htm">layer_sprite_get_xscale</a></li>
+    <li><a href="layer_sprite_get_yscale.htm">layer_sprite_get_yscale</a></li>
+    <li><a href="layer_sprite_get_angle.htm">layer_sprite_get_angle</a></li>
+    <li><a href="layer_sprite_get_blend.htm">layer_sprite_get_blend</a></li>
+    <li><a href="layer_sprite_get_alpha.htm">layer_sprite_get_alpha</a></li>
+    <li><a href="layer_sprite_get_x.htm">layer_sprite_get_x</a></li>
+    <li><a href="layer_sprite_get_y.htm">layer_sprite_get_y</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Rooms.htm">房间</a></div>
+        <div style="float:right">Next: <a href="../Sequence_Layers/Sequence_Layers.htm">序列图层</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprite Layers
+-->
+  <!-- TAGS
+sprite_layer_functions
+-->
+
+</body></html>

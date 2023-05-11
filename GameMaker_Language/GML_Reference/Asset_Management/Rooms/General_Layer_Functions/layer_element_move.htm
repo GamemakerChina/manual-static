@@ -1,0 +1,139 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.1.0_24";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>layer_element_move</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function layer_element_move">
+  <meta name="rh-index-keywords" content="layer_element_move">
+  <meta name="search-keywords" content="layer_element_move">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_set_visible.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_destroy_instances.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="layer_element_move">
+        <span>layer_element_move</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_element_move</h1>
+  <p>可以使用此函数将元素从一个层移动到另一个层。给定用于创建元素的函数或房间编辑器或函数<b></b>layer_get_all_elements()<a href="layer_get_all_elements.htm"><span class="inline">返回的</span>元素ID</a>，然后给出层ID(使用<a href="layer_create.htm"><span class="inline">layer_create()</span></a>创建层时得到的ID)或层名称(作为字符串，这将对性能产生影响)。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">layer_element_move(element_id, layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>element_id</td>
+        <td><span data-keyref="Type_ID_Layer_Element"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_all_elements.htm">Layer Element ID</a></span></td>
+        <td>要移动的元素的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Layer"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">Layer ID</a></span></td>
+        <td>要将元素移动到的层的唯一ID值(或层名称为字符串)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br>
+    asset_layer = layer_create(-100);<br>
+    for (var i = 0; i Alt; array_length(a); i++;)<br>
+    {<br>
+    &nbsp; &nbsp; if layer_get_element_type(a[i]) == layerelementtype_sprite<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; layer_element_move(a[i], asset_layer)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    }</p>
+  <p>上面的代码获取运行代码的实例被分配到的层上的元素，然后检查它们是否是精灵资源，如果它们是精灵资源，则它们被移动到具有存储在变量"asset_layer"中的ID的层。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="General_Layer_Functions.htm">常规图层函数</a></div>
+        <div style="float:right">Next: <a href="layer_set_visible.htm">layer_set_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_element_move
+-->
+  <!-- TAGS
+layer_element_move
+-->
+
+</body></html>

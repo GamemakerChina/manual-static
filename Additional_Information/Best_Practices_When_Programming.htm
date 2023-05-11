@@ -1,0 +1,230 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Best Practices When Programming</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains some best practices when programming using GameMaker">
+  <meta name="rh-index-keywords" content="Best Practices When Programming">
+  <meta name="search-keywords" content="best practices">
+<meta name="brsnext" value="Additional_Information/The_File_System.htm"><meta name="brsprev" value="Additional_Information/Additional_Information.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Best Practices When Programming">
+        <span>Best Practices When Programming</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>编程时的最佳实践</h1>
+  <p>在这一页，我们将介绍一些游戏编程的“最佳实践”，同时解释一下<span data-keyref="GameMaker Name">GameMaker</span>的内部工作原理。然而，在继续之前，有两点值得注意:</p>
+  <ul class="colour">
+    <li>这是一个<em>指南</em>，而不是编写游戏的100%完美的方法!这里提到的东西通常更多地是在组织和微观优化的范围内，当您对GML感到舒服并认为它们是合适的时候，应该将它们纳入到您的编程习惯中。</li>
+    <li>如果你的游戏运行得很好，你对现状也很满意，那么<em>就不要为了从</em>中挤出一些额外的FPS而急于改变一切。你必须在可读、灵活和模块化的代码之间取得平衡，同时还要花时间和精力去修改内容，以及最终的整体收益。基本上，如果它没有坏，就不要修复它，把你学到的东西保留到下一个项目中。</li>
+  </ul>
+  <p>说了这么多，让我们继续，看看编写好的GML代码的一些通用技巧，你可以在任何时候应用这些技巧……</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">Programming Style</span><span data-close-text="true">Programming Style</span> 编程风格</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">在编写代码时，每个人都有一个<em>风格</em>。你编程的风格就是你放置方括号的方式，行的缩进方式，以及声明和命名变量的方式等等，这些对于让你的代码清晰可读是必不可少的(当你在其他事情上花费了一段时间后回到这个项目时，对于你未来的自己来说也是必不可少的)。</p>
+    <p class="dropspot"><a href="http://en.wikipedia.org/wiki/Programming_style">有很多很多的</a>编程风格，有些人会说他们的风格是最好的，但事实是，几乎任何风格都是可以的，只要你在使用它的时候是<strong>一致的</strong>，<em>清晰的</em>和<em>明显的</em>。</p>
+    <p class="dropspot">上图是一个在脚本中声明函数的例子，用来说明上述几点。您可以看到，它使用JSDoc风格的注释清楚地解释了它所做的一切，并且编码风格是一致的，使用4个空格缩进、用于局部变量的下划线、日志输出等等……</p>
+    <p class="dropspot">还要注意的是，虽然脚本编辑器允许您在每个开/闭括号处折叠代码，但是您可以使用<span class="inline">#region</span>和<span class="inline">#endregion</span> 标记来分隔代码的一部分，并极大地增强可读性，特别是在处理包含多个函数的大型脚本时。区域也可以被注释-参见手册中该页的编辑部分):</p>
+    <p class="dropspot"><img alt="Example Of Using Regions" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BestPractice_Regions.png">在编写代码时，您应该注意，在编译您的最终游戏时，<span data-keyref="GameMaker Name">GameMaker</span> 会删除注释、删除不必要的换行符和空格、替换为常量/宏/枚举值，通常压缩你的代码作为过程的一部分。这意味着您可以根据需要在代码周围添加尽可能多的空白，而且您不需要担心保持注释的简短或只少量使用它们。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">Use Local Variables</span><span data-close-text="true">Use Local Variables</span> 使用局部变量</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">从上面关于编程风格的观点继续，很多初学者所做的一件事就是尽可能多地将代码塞进一行代码中。例如:</p>
+    <p class="code">draw_sprite(sprite_index, image_index, x + lengthdir_x(100, point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(100, point_direction(x, y, mouse_x, mouse_y)));</p>
+    <p class="dropspot">虽然不是完全不可读，但效率很低(例如，point_direction()函数被调用了两次)，而且看起来很混乱，很难看。表述为:</p>
+    <p class="code">var p_dir = point_direction(x, y, mouse_x, mouse_y);<br>
+      var local_x = x + lengthdir_x(100, p_dir);<br>
+      var local_y = y + lengthdir_y(100, p_dir);<br>
+      draw_sprite(sprite_index, image_index, local_x, local_y);</p>
+    <p class="dropspot">创建这些局部变量所需的内存和资源几乎可以忽略不计，而且您(或者稍后阅读代码的任何人)从其清晰性中获得的即时好处远远超过了这些内存和资源。同样的思想也应该应用于函数，在函数中，您应该为输入变量分配合理的名称，并在需要的地方使用明确的格式和局部变量，以使其尽可能具有可读性。</p>
+    <p class="dropspot">局部变量在游戏中处理起来很快，所以要充分利用它们，如果一个表达式在代码块或脚本中出现两次或两次以上，考虑为它创建一个局部变量。当使用<a class="tooltip" title="这是一个特殊的编译器，用于创建使用本机代码而不是解释性代码和运行程序的可执行程序包（由GameMaker VM编译使用）。编译后的代码运行速度更快，但是编译可执行文件需要更多时间。">YoYo Compiler (YYC)</a>目标时，如果在函数或代码块中多次引用<span class="inline">全局</span>或实例变量，那么在代码开始时将它们赋值给一个局部变量，然后再引用该局部变量是非常有益的，因为这将提供更好的性能。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">Arrays</span><span data-close-text="true">Arrays</span> 数组</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><a href="../GameMaker_Language/GML_Overview/Arrays.htm">数组</a>使用起来很快，比数据结构需要更少的内存，但它们还可以进一步优化。当你创建一个数组时，内存会根据它的大小分配给它，所以你应该先尝试初始化一个数组到它的最大大小，即使你不打算在以后填充它。例如，如果你知道你需要一个数组来保存最多100个值，你可以直接将它初始化为100个槽，使用<a href="../GameMaker_Language/GML_Reference/Variable_Functions/array_create.htm"><span class="inline">array_create()</span></a>&nbsp;函数:</p>
+    <p class="code">array = array_create(100, 0);</p>
+    <p class="dropspot">这将在一个“块”中为它分配内存，并将所有数组值设置为默认值0，这有助于保持速度，否则每次向数组添加新值时，整个内存都必须重新分配。</p>
+    <p class="note"><span class="note">注意</span>&nbsp;在HTML5目标上，这样分配数组是不适用的，你的数组应该从0开始初始化这个目标!你可以通过检查os_browser变量轻松地处理这个问题，例如:</p>
+    <p class="code"><span style="padding-left:1px;">if (os_browser == browser_not_a_browser)<br>
+        {<br>
+        &nbsp; &nbsp; array_create(100, 0);<br>
+        }<br>
+        else<br>
+        {<br>
+        &nbsp; &nbsp; for (var i = 0; i &lt; 100; ++i;)<br>
+        &nbsp; &nbsp; {<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; array[i] = 0;<br>
+        &nbsp; &nbsp; }<br>
+        }</span></p>
+    <p class="dropspot">还可以通过将所用变量设置为0来释放与数组相关的内存。因此，要从上面的代码示例中清除数组，你可以简单地使用:</p>
+    <p class="code">array = 0;</p>
+    <p class="dropspot">还要注意，数组是通过<strong>引用</strong>传递的，但对于旧版项目或开启写时复制时，进行更改时将复制整个内容(这种行为称为<strong>写时复制</strong>)。因此，如果你将一个数组传递给一个函数，你就是将一个<em>引用</em>传递给原始数组，从它中读取的任何值都将来自原始源。这很好也很快速，但是如果您需要修改任何数组值，数组本身会在写入时被复制，并且所做的任何更改<strong>都需要从函数中返回，否则它们将丢失</strong>。这要慢得多，并且消耗更多的内存，所以在函数中使用数组时要小心。</p>
+    <p class="dropspot">但是，您可以通过使用特殊的数组<a href="../GameMaker_Language/GML_Overview/Accessors.htm">访问器</a>&nbsp;<span class="inline">@</span>来避免这种写时复制行为，因为这提供了对底层数组的直接访问。例如:</p>
+    <p class="code">// Call a function, passing our array<br>
+      my_function(my_array);</p>
+    <p class="code">// The function looks like this:<br>
+      <br>
+      function my_function(_a)<br>
+      {<br>
+      &nbsp; &nbsp; // The array will be copied and the copy modified,<br>
+      &nbsp; &nbsp; // requiring you to use "return _a", later<br>
+      &nbsp; &nbsp; _a[0] = 100;<br>
+      <br>
+      &nbsp; &nbsp; // This will modify the ORIGINAL array directly and<br>
+      &nbsp; &nbsp; // does not require it to be returned<br>
+      &nbsp; &nbsp; _a[@ 0] = 100;<br>
+      }
+    </p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">Data Structures</span><span data-close-text="true">Data Structures</span> 数据结构</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">在 <span data-keyref="GameMaker Name">GameMaker</span> 中，<a href="../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm">数据结构</a>已经过优化，比以前的 GameMaker 版本快得多。 它们在不用于时仍然需要清理（销毁）释放内存，并且它们仍然可能比数组慢，但是易用性和处理它们包含的数据的额外功能通常可以胜过 最小的速度差异，所以不要害怕在游戏中使用它们。</p>
+    <p class="dropspot">应该注意的是，在所有的数据结构中，DS map的读和写速度特别快，这使它们成为所有类型任务的绝佳选择。</p>
+    <p class="dropspot">之前我们提到了用于数组的<a href="../GameMaker_Language/GML_Overview/Accessors.htm">访问器</a>，但它们也可用于数据结构，这有助于清理您的代码并使其更易于阅读。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">Collisions</span><span data-close-text="true">Collisions</span> 碰撞</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot"><span data-keyref="GameMaker Name">GameMaker</span> 中有<a href="../GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/Collisions.htm">多种处理碰撞的方法</a>，其中大多数都附带了一些额外的 CPU 开销。 <span class="inline">collision_</span> 和 <span class="inline">point_</span> 函数、<span class="inline">place_</span> 函数和 <span class="inline">instance_</span> 函数都依赖于对房间内给定类型的所有实例进行的<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a>检查，并且 虽然引擎内置了一些优化来限制这些检查，但碰撞从来都不是最有效的处理方法。 如果您开始使用精确碰撞，性能也会明显变差，因为您不仅会进行边界框检查，还会进行逐像素检查，这确实非常慢。</p>
+    <ul class="dropspotlist">
+    </ul>
+    <p class="dropspot">这并不是说您不应该使用这些函数，因为它们可能非常方便。但是，您应该知道使用哪个和什么时候使用，因为它们的工作方式和速度都略有不同。根据经验，<span class="inline">place_</span>函数比<span class="inline">instance_</span>函数快，<span class="inline">instance_</span>函数又比<span class="inline">collision_</span>和{}point_{}函数快，所以请阅读手册中的每一种类型的函数，并确保选择最适合每种情况的函数。</p>
+    <p class="dropspot">或者，考虑创建一个基于<strong>图块的碰撞系统</strong>，它可以使用<a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm"> tilemap 函数</a>甚至是一个自定义的2D数组或DS网格。这些将非常快，将有助于提高你的游戏速度。然而，如果你使用的是不规则的地形或墙壁和物体，它们可能不符合网格。你可以从下面的视频链接中找到一个非常简单的关于图块图碰撞的教程</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="https://youtu.be/UyKdQQ3UR_0">GameMaker中的图块碰撞</a></li>
+    </ul>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#"><span data-open-text="true" data-skip-index="true">Texture Swaps And Vertex Batches</span><span data-close-text="true">Texture Swaps And Vertex Batches</span> 纹理交换和顶点批次</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">如果您打开<a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><strong>调试覆盖</strong></a>，&nbsp;您将在测试时看到屏幕顶部的括号中有两个数字。第一个是正在进行的<strong>纹理交换</strong>的数量，第二个是<strong>顶点批次</strong>的数量。许多因素会影响这些数值，你不可能将其降低到(0)(0)，因为引擎每一步都需要1到2个数值，但你应该尽可能降低这些数值。</p>
+    <p class="dropspot"><img alt="The Debug Overlay Bar" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BestPractices_DebugOverlay.png">对于纹理交换，最好和最有效的方法是优化你的精灵和背景在纹理页面上的存储方式。这是通过<a href="../The_Asset_Editors/Sprites.htm">精灵属性</a>完成的，你可以在<a href="../Settings/Texture_Groups.htm">纹理组编辑器</a>中创建纹理页面。如果你有一些只在主菜单中使用的图像(例如)，那么把它们放在一个单独的<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页面</a>上。如果你有特定关卡的图像，或者玩家和敌人等，也是如此。基本上，您希望按使用对它们进行分组，以便尽可能减少交换。此外，为了帮助保持<a class="tooltip" title="VRAM是视频可用的内存量，即：可以存储纹理和图像的内存空间。">VRAM</a>的优化，你可以使用不同的<a href="../GameMaker_Language/GML_Reference/Drawing/Textures/Textures.htm">预取和刷新</a>函数&nbsp;根据需要从内存中加载和删除纹理。</p>
+    <p class="note"><span class="note">注意</span>正如本文开头所提到的，如果你的游戏运行良好，FPS也不错，那就不用太担心纹理交换了……特别是在桌面目标上创建项目时。这些优化在大型游戏或低端移动设备上使用时效果最好，如果使用不当，它们实际上会对性能产生负面影响。</p>
+    <p class="dropspot">顶点信息被“批量”发送到GPU进行绘制，通常批量越大越好。所以在绘制时应该避免“中断”批处理，因为这会增加发送到GPU的顶点批处理的数量。有许多事情会打破批处理，其中主要的是<strong>混合模式</strong>，改变&nbsp;<strong>shader</strong>，在绘制一些东西之前更改着色器的uniform，以及使用内置的形状和原语进行绘制。</p>
+    <p class="dropspot">因此，如果您有许多使用<span class="inline">bm_add</span>混合模式绘制的项目实例—例如—您将为每个实例创建一个新的顶点批处理，这绝对是一件坏事!相反地，在你的游戏中设置一个能够绘制所有子弹的控制器对象，就像这样:</p>
+    <p class="code">gpu_set_blendmode(bm_add);<br>
+      <br>
+      with (obj_BULLET)<br>
+      {<br>
+      &nbsp; &nbsp; draw_self();<br>
+      }<br>
+      <br>
+      gpu_set_blendmode(bm_normal);
+    </p>
+    <p class="note"><span class="note">注意</span>&nbsp;这不仅仅适用于使用<span class="inline" style="font-size: 14px">bm_add</span> -任何混合更改都会破坏批处理并会造成性能损失。</p>
+    <p class="dropspot">这样，所有的子弹都将在同一批次中取出。明智地使用函数<a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendenable.htm"><span class="inline">gpu_set_blendenable()</span></a>， <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_alphatestref.htm"><span class="inline">gpu_set_alphatestref()</span></a>，和<a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_alphatestenable.htm"><span class="inline">gpu_set_alphatestenable()</span></a>&nbsp;可以极大地提高性能，并且可以在整个项目代码中根据需要启用/禁用它们，尽管它们可能不适用于所有类型的图形或项目。</p>
+    <p class="note"><span class="note">注意</span> 如果你用这种方式使用控制器时不要求实例绘制自己，那么你可以简单地在绘制事件中添加一个注释来抑制默认的绘制，或者使实例不可见(尽管这将阻止在所有绘制事件中为实例运行所有代码)。</p>
+    <p class="dropspot">另一种减少这些数量的方法是禁用精灵的<strong> 单独的纹理页面 </strong>选项，除非绝对必要。以这种方式存储的每个图像都被发送到自己的纹理页面，并以不同的批处理方式进行处理，所以将这些图像放在常规的纹理页面上会更好。然后，您可以使用<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm"><span class="inline">sprite_get_uvs()</span></a>&nbsp;函数获取UVS坐标，并将它们存储在变量中以供以后使用。这可能需要少量额外的代码，但您将得到的提升是值得的。注意这个方法不允许纹理重复!</p>
+    <p class="dropspot">就像所有这些建议一样，如果它让你的生活变得更加困难，而你的游戏却运行得很好，那就不要太担心了。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">Particles</span><span data-close-text="true">Particles</span> 粒子</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particles.htm">粒子</a>提供了在游戏中创建动态效果的一种非常快速有效的方法，通常它们具有良好的性能。然而，值得注意的是，在粒子上使用添加混合，alpha混合和颜色混合可能会降低性能，特别是在移动目标上，所以如果你不需要它就不要使用它!特别是添加混合，可以大大增加顶点批次，应该谨慎使用。</p>
+    <p class="dropspot">注意，在非webgl的HTML5目标上，拥有多颜色、褪色的粒子将需要大量图像缓存，并且速度会非常慢。然而，因为粒子精灵可以被动画化，你可以创建一个带有改变颜色的子图像的动画精灵，然后将其用于粒子。它看起来仍然像一个渐变的颜色变化，但不需要不断创建缓存图像。</p>
+    <p class="dropspot">你可以从<a href="Guide_To_Using_Particles.htm">使用粒子指南</a>页面找到更多关于粒子的信息。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">Surfaces</span><span data-close-text="true">Surfaces</span> 表面</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">最后，我们将简要介绍一下 <a href="../GameMaker_Language/GML_Reference/Drawing/Surfaces/Surfaces.htm">表面</a> 的使用，因为<span data-keyref="GameMaker Name">GameMaker</span>在你的游戏中使用它们时有一个相当重要的优化:打开和关闭<strong>深度缓冲区</strong>的能力。</p>
+    <p class="dropspot">当你只是像普通一样使用表面时，<span data-keyref="GameMaker Name">GameMaker</span>实际上会创建一个表面和一个伴随的深度缓冲区，以确保在3D中绘制任何东西时正确的深度排序。然而，对于大多数2D游戏来说，这种额外的深度缓冲区是不需要的，它会占用额外的内存空间和处理时间，而这些时间本可以用于其他事情。这就是函数<a href="../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_depth_disable.htm"><span class="inline">surface_depth_disable()</span></a>&nbsp;发挥作用的地方…</p>
+    <p class="dropspot">这个函数可以在创建表面之前调用，以禁用深度缓冲区生成，并且之后创建的所有表面都不会为它们创建深度缓冲区。你可以根据需要启用/禁用这个功能，甚至可以在游戏开始时调用它一次，为所有后续的表面调用禁用深度缓冲(在大多数2D游戏中这是可以的)。它不会给你带来很大的性能提升，但如果你的游戏严重依赖于表面，这肯定是你需要记住的，可能会防止你的游戏在低规格设备上耗尽内存。</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>除了上面提到的主要事情之外，还有其他更普遍的事情可以帮助提高性能，也被认为是“良好实践”:</p>
+  <ul class="colour">
+    <li>不要害怕使用三角函数，因为(与流行的观点相反)它们非常快，特别是与粒子、碰撞、字符串等相比……</li>
+    <li>不要在绘制事件中放入非用于绘制事物的代码</li>
+    <li>使用一个警报来调用任何不需要每一步都调用的代码(而不是将其添加到步事件中)</li>
+  </ul>
+  <p>但是，正如我们在页面开始时所提到的，所有这些优化都是可选的，如果你的游戏能够顺利运行60个顶点批次，80个纹理交换，添加混合(additive blending)等等，那么你就不必太担心这些了!在编写你的下一款游戏时，请牢记这些内容。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Additional_Information.htm">额外的信息</a></div>
+        <div style="float:right">Next: <a href="The_File_System.htm">文件系统</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Nest Practices
+-->
+  <!-- TAGS
+best_practices
+-->
+
+</body></html>

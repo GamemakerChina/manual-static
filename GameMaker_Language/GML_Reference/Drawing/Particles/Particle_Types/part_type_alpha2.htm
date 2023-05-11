@@ -1,0 +1,136 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.6.10.2.0_20";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>part_type_alpha2</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for part_type_alpha2">
+  <meta name="rh-index-keywords" content="part_type_alpha2">
+  <meta name="search-keywords" content="part_type_alpha2">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_alpha3.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_alpha1.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="part_type_alpha2">
+        <span>part_type_alpha2</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_alpha2</h1>
+  <p>此函数可用于为给定类型创建的每个粒子设置Alpha值(透明度)渐变。第一个Alpha是所有粒子将开始的，第二个Alpha是粒子将结束的那个，并且在粒子从一个到另一个的寿命期间，Alpha将发生平滑的梯度变化。这可以是从0(透明)到1(不透明)。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">part_type_alpha2(ind, alpha1, alpha2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td><span data-keyref="Type_ID_PartType"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">Particle Type ID</a></span></td>
+        <td>要更改的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>alpha1</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>粒子的起始Alpha。</td>
+      </tr>
+      <tr>
+        <td>alpha2</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>粒子的末端Alpha。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">part_type_alpha2(global.Snow_Part, 0, 1);</p>
+  <p>上述代码将在全局变量"Snow_Part"中为粒子类型创建索引的所有粒子设置为Alpha值为0(透明)，然后在其生命周期结束时淡入淡出为Alpha值为1(不透明)。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">Next: <a href="part_type_alpha3.htm">part_type_alpha3</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_alpha2
+-->
+  <!-- TAGS
+part_type_alpha2
+-->
+
+</body></html>

@@ -1,0 +1,148 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Texture Groups</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains how to use Texture Groups
+">
+  <meta name="rh-index-keywords" content="Texture Groups">
+  <meta name="search-keywords" content="texture groups,texture pages,textures">
+<meta name="brsnext" value="Settings/Texture_Information/Texture_Pages.htm"><meta name="brsprev" value="Settings/Audio_Groups.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Texture Groups">
+        <span>Texture Groups</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>纹理组</h1>
+  <p><img alt="Texture Group Editor" class="center" src="../assets/Images/Settings/Texture_Groups.png"><strong>纹理组管理器</strong>可以从 IDE 中的<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具菜单</a>中获得。这里可以添加、删除和重命名<strong>纹理组</strong>。</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>允许您将项目中的每个图形资源(Sprites、 Tile Set 和 Fonts)分配给不同的纹理组，以优化硬件在游戏中任何给定时间进行的纹理交换的数量。</p>
+  <p>为此，您需要从这个窗口定义必要的纹理组，然后遍历资源列表并为它们分配组。</p>
+  <h2>纹理是如何工作的</h2>
+  <p>在我们深入创建和编辑纹理组之前，让我们了解一下纹理组是如何加载的。</p>
+  <div data-conref="../assets/snippets/How_Textures_Work.hts">
+  <p>纹理组在游戏开始时被加载到 RAM（内存）中，除非它是以后加载的<a href="Texture_Information/Dynamic_Textures.htm">动态纹理组</a>。</p>
+  <p>在RAM中，纹理组保持压缩状态，就像在磁盘上一样。</p>
+  <p>当从纹理组中绘制图像时，或者运行<a href="../GameMaker_Language/GML_Reference/Drawing/Textures/texture_prefetch.htm">预取</a>函数时，纹理组将会被解压并加载到 VRAM (视频内存)中。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 除了 GX.game 之外，所有平台上的纹理解压都是异步的，这可能会在游戏中解压纹理时造成卡顿。为了避免这种情况，请确保在加载屏幕或游戏的其他非活动部分时预取纹理。</p>
+  <p>您可以<a href="../GameMaker_Language/GML_Reference/Drawing/Textures/texture_flush.htm">刷新</a>一个纹理组来从 VRAM 中删除它(这不会从 RAM 中删除它们)。</p>
+
+</div>
+  <h2>添加纹理组</h2>
+  <p>默认情况下，游戏中的所有图像都将添加到“默认”纹理组，该组始终存在。您可以单击<strong> Add New </strong>按钮来创建一个新的纹理组，如果您选择该组的名称，您可以对其进行适当的更改。</p>
+  <p>组的每个部分(Sprites, Tile Sets 和 Fonts)将会显示"<em>此组为空</em>"。使用底部的<strong>添加资源</strong>按钮或在列表中选择多个资源并右键单击以将这些资源移动到其他组，从而添加资源：</p>
+  <p><img class="center" src="../assets/Images/Settings/Texture_Groups_MoveTo.png">或者，您也可以通过资源浏览器中的鼠标右键菜单<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">将资源添加到纹理组。您可以选择一个或多个Sprite/Tile Set/Font，然后使用RMB菜单将资源添加到任何组，如下面的Tile Sets所示：</p>
+  <p><img alt="Asset Browser RMB Menu For Tilesets" class="center" src="../assets/Images/Settings/QS_RMBMenu_Tilesets.png"></p>
+  <p>也可以随时删除除"默认"以外的纹理组，这样会将其内容移动到"默认"组中(如果您错误地删除了组，则可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+"<span class="inline">Z</span>"撤消操作)。</p>
+  <h2>编辑纹理组</h2>
+  <p>将资源添加到"纹理组"后，将在主"纹理组"编辑器窗口的左侧看到这些资源，单击此列表中的任何精灵将在右侧的图像预览窗口中显示这些资源。这在处理大型项目时尤其有用，因为您需要能够看到哪些图像已指定给哪个组。</p>
+  <p>如果分配给组的图像具有多个子图像(例如，已设置动画)，则在预览窗口中仅显示第一个子图像。也可以在资源上单击鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">以打开一个小菜单，从中可以选择将其移动到另一个纹理组或打开该资源的编辑器。</p>
+  <p>即使资源在列表中显示为单独的，所有精灵, Tile Sets 和字体也将添加到同一纹理页，并且无法获得每个资源类型的单独页面。此规则的唯一例外是当精灵资源已标记为"<strong>单独纹理页面</strong>"，在这种情况下，将为其提供自己的单独纹理页面(有关详细信息，请参阅<a href="../The_Asset_Editors/Sprites.htm">精灵编辑器</a>中的"纹理设置"部分)。</p>
+  <h2>纹理组与纹理页</h2>
+  <p>单个<strong>纹理组</strong>可以具有多个<strong>纹理页面</strong>，这些页面不等价。</p>
+  <p>如果游戏中每个级别都有许多唯一的图形，则可以为每个级别定义一个纹理<em>组</em>，但该组的图形可能需要两个或更多纹理<em>页面</em>。这取决于选定的纹理页面大小(在目标的<a href="Game_Options.htm">游戏选项</a>中)是否能够适合纹理组中的所有图形。</p>
+  <p>请参阅：<a href="Texture_Information/Texture_Pages.htm">纹理页面</a></p>
+  <h2>动态纹理</h2>
+  <p>可以设置动态纹理组，可以在运行时加载和卸载动态纹理组以节省内存。</p>
+  <p>请参阅：<a href="Texture_Information/Dynamic_Textures.htm">动态纹理</a></p>
+  <h2>组设置</h2>
+  <p><img class="center_shadow" src="../assets/Images/Settings/Texture_Groups_Settings.png"></p>
+  <p>"纹理组编辑器"(Texture Group Editor)中的<strong>组设置</strong>用于确定如何创建给定组的纹理页面，并提供以下选项：</p>
+  <ul class="colour">
+    <li><strong>允许缩放</strong>-取消标记将强制<span data-keyref="GameMaker Name">GameMaker</span>在任何情况下都不缩放纹理组。这可能非常有用，尤其是在处理通用应用时，因为它允许您将特定资源(如字体)放入自己的组中，以便在特定设备上运行应用程序时使用。例如，字体在视网膜显示器上看起来很好，但是当字体缩小到普通显示器上时，它们看起来很糟糕，所以你可以将它们指定给一个特殊的非缩放组——如果是为iPhone开发的，你可能希望检查这个，因为应用程序由于图像被纹理缩放模糊而被拒绝。默认情况下，标记为<em>启用</em>。</li>
+    <li><strong>自动裁剪</strong>-将图像添加到<span data-keyref="GameMaker Name">GameMaker</span>时，如果图像周围有任何"空格"(即100%透明度)，则会在将图像添加到纹理页面时自动裁剪，并标记"自动裁剪"。但是，例如，如果将图像用作基本体的非重复纹理或任何类似的纹理，这意味着纹理贴图的UV坐标将无法正确表示。在这些情况下，您可以取消标记此选项，并且sprite将按"原样"添加到纹理页面中，从而保持其在边缘周围可能具有的任何透明度。默认情况下，这将标记为<em>启动</em>。</li>
+    <li><strong>生成Mipmaps</strong>-标记此选项(默认情况下处于关闭状态)将告知<span data-keyref="GameMaker Name">GameMaker</span>原始纹理页面将被缩放并过滤为纹理文件中的多个分辨率。这通常是<em>关闭</em>，但是如果您正在使用相机放大或缩小游戏室的大面积，或者您正在使用3D游戏，则可能需要启用此功能，然后使用<a href="../GameMaker_Language/GML_Reference/Drawing/Mipmapping/Mipmapping.htm">Mipmap函数</a>来调整游戏如何处理不同的Mipmap级别。标记此复选框时，"边框大小"值将设置为8(如果最初设置为小于8)。这是因为，使用mipmap时，纹理页面上的图像之间需要更大的边界，否则它们会在更高的mip级别一起bleed。默认值8将允许在子图像一起开始bleed之前将图像缩小到原始大小的八分之一左右，但您可以将其更改为适合您需要的任何值。请注意，如果对Sprite使用"<strong>单独纹理页面</strong>"选项，则无需在此处浏览每个纹理并标记它以生成mipmap，而是可以转到<a href="Game_Options.htm">常规游戏选项</a>并标记选项"<strong>为单独纹理页面生成mipmap</strong>"。</li>
+    <li><strong>边框大小</strong>-边框大小将改变为纹理组生成的页面上所有资源的边缘周围的重叠(或“像素倍增”)数量，以便在缩放图像时，它们之间没有可见的间隙(或接缝)。默认值是2像素，但在极端情况下，如果您要大幅放大或缩小视图，那么您可能需要增加这个值。注意，<a href="../The_Asset_Editors/Tile_Sets.htm"> Tile Set Editor </a>有一个选项可以设置图块的输出边框(并且还提供了为什么需要这样做的解释) ，这个选项与边框设置是分开的——基本上，图块是用临时纹理上的每个图块的输出边框生成的，然后这个边框被添加到纹理页面中，在外边缘附近给出边框。还要注意，启用 Mipmap 会自动将纹理页面的默认边框大小设置为8，以帮助防止在较高 mip 级别的纹理之间“bleed”，但这可以更改。</li>
+    <li><strong>父纹理组</strong>-在这里，您可以选择任何一个现有组作为当前选定组的“父”组。“子”组将继承对父纹理组所做的任何更改，并且在处理跨平台游戏时主要用于资源管理。具有父元素的纹理组本身仍然是一个纹理组，它将生成与其他任何组相同的纹理页面，但是为它们分配一个父元素允许您为不同的平台排除大块。例如，您可以将整个负载的 Android 播放器精灵添加到一个“播放器”组，并将 Android 敌人精灵添加到一个“敌人”组，然后使它们都使用一个“ Android”父组。如果您随后从 Windows 或其他平台构建中排除“ android”父组，那么子组也将被排除在外。</li>
+    <li><strong>纹理组格式</strong>-您可以在<strong> BZ2 + QOI </strong>、<strong> QOI </strong>和<strong> PNG </strong>之间选择纹理页的格式。建议坚持使用默认选项<strong> BZ2 + QOI </strong> ，因为它在保持质量的同时提供了最佳的压缩。<br><br>如果 BZ2选项影响目标平台(如 Android)上的速度，可以选择<strong> QOI </strong> ; 如果希望修改导出的 PNG 或使用<strong> PNGCrush 选项</strong> ，可以选择<a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/gml_pragma.htm"> PNG </a>。</li>
+    <li><strong>纹理组类型</strong>-在此可以设置这是常规纹理组还是<a href="Texture_Information/Dynamic_Textures.htm">动态纹理组</a>。</li>
+    <li><strong>动态组路径</strong>-在此可以设置最终游戏包中将存储纹理组的路径。仅当组为"动态"时，此操作才起作用。如果为空，则导出的纹理将放置在游戏包的根目录中。</li>
+  </ul>
+  <p><img class="center" src="../assets/Images/Settings/Texture_Groups_Exports.png">除了这些设置之外，您还可以选择将任何给定的纹理组导出(或不导出)到任何给定的平台，只需从窗口的<strong>Use Group On...</strong>部分选中或取消选中相应的框即可。请注意，<span class="inline">&lt;Default&gt;</span>纹理组<em>总是导出到每个平台</em>，并且您不能选中/取消选中其中的任何一个(只有自定义纹理组允许这样做)。</p>
+  <p>纹理组也链接到<a href="Configurations.htm">配置</a>设置。这意味着，您可以为游戏的每个单独配置定义纹理组，然后将精灵、互动程序集或字体资源指定设置为这些不同的组，当您更改为不同的配置时，它将被"记住"。在"纹理组"(Texture Group)窗口中选择的任何导出选项也会发生同样的情况，因此可以将纹理组设置为按配置导出到特定平台。</p>
+  <p>这样做的一个用途是，例如，您可以为 iPad 配置并创建2048x2048px 的纹理页面(通过<a href="Game_Options.htm"> Game Options </a>设置)。然后将所有的图形资源分配给相应的纹理组，完成后，您将切换到一个不同的配置(例如，对于 HTML5) ，并从纹理组窗口创建512x512px 的新纹理组，将资源分配给这些新组。页面底部还有一个按钮，允许您将纹理组设置从一个配置复制到另一个配置。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Game_Settings.htm">游戏设置</a></div>
+        <div style="float:right">Next: <a href="Game_Options.htm">游戏设置</a>&nbsp;</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Texture Groups
+Texture Group Manager
+-->
+  <!-- TAGS
+texture_groups
+-->
+
+</body></html>

@@ -1,0 +1,138 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.2.0_35";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>tile_set_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function tile_set_index">
+  <meta name="rh-index-keywords" content="tile_set_index">
+  <meta name="search-keywords" content="tile_set_index">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tile_set_flip.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tile_set_empty.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="tile_set_index">
+        <span>tile_set_index</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tile_set_index</h1>
+  <p>此函数可用于为一组图块数据设置图块索引(图块在图块集图像中的位置)。给出可以使用函数<a href="tilemap_get.htm"><span class="inline">tilemap_get()</span></a>检索的图块数据，然后给出表示图块集内图块位置(其索引)的整数值。函数将返回修改的图块数据集，然后可以使用<a href="tilemap_set.htm"><span class="inline">tilemap_set()</span></a>函数应用该数据集。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">tile_set_index(tiledata, index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td><span data-keyref="Type_Real_Tile_Data"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get.htm">Tile Data</a></span></td>
+        <td>要设置的图块数据</td>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要使用的图块的整数索引值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real_Tile_Data"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get.htm">Tile Data</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var lay_id = layer_get_id("Tiles_sky");<br>
+    var map_id = layer_tilemap_get_id(lay_id);<br>
+    var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);<br>
+    var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);<br>
+    var data = tilemap_get(map_id, mx, my);<br>
+    var ind = tile_get_index(data);<br>
+    data = tile_set_index(data, irandom(23));<br>
+    tilemap_set(map_id, data, mx, my);</p>
+  <p>上面的代码从给定层获取块映射ID，然后使用它来获取鼠标位置下单元的块数据。然后，此数据用于将图块索引设置为随机数。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Tile_Map_Layers.htm">贴图层</a></div>
+        <div style="float:right">Next:&nbsp;<a href="tile_set_flip.htm">tile_set_flip</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+tile_set_index
+-->
+  <!-- TAGS
+tile_set_index
+-->
+
+</body></html>

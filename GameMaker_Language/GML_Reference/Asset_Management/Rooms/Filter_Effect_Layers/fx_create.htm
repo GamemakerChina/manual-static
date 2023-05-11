@@ -1,0 +1,148 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.6.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>fx_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page outlining the function fx_create">
+  <meta name="rh-index-keywords" content="fx_create">
+  <meta name="search-keywords" content="fx_create">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/fx_get_parameter.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/Filter_Effect_Functions.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="fx_create">
+        <span>fx_create</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fx_create</h1>
+  <p>此函数用于为给定效果类型创建新的 FX 结构，然后可以<a href="layer_set_fx.htm">应用于层</a>。</p>
+  <p>可以传递到此函数的过滤器/效果的名称在此页面中列出：<a href="../../../../../The_Asset_Editors/Room_Properties/FX/All_Filter_Effect_Types.htm">外汇类型 参数</a>。</p>
+  <h2>用途</h2>
+  <p>您可以通过在返回的结构上调用<a href="fx_get_parameter.htm"><span class="inline">fx_get_parameter</span></a>/<a href="fx_get_parameters.htm"><span class="inline">s</span></a>来读取所创建效果的参数，并通过调用<span class="inline"><a href="fx_set_parameter.htm">fx_set_parameter</a></span>/<span class="inline"><a href="fx_set_parameters.htm">s</a></span>为它们分配新值。</p>
+  <p>请注意，此函数返回的结构将不包含可见成员，只能通过<a href="Filter_Effect_Functions.htm">Filter/Effect 函数</a>之一进行修改。</p>
+  <h2>函数故障</h2>
+  <p>如果结构因任何原因无法创建，函数将返回-1; 如果指定的 FX 名称错误或 FX 未加载到游戏包中，则可能发生这种情况。</p>
+  <p>为确保此函数正常工作，请确保将所需的 FX 加载到游戏包中，如<a href="Filter_Effect_Functions.htm">筛选器和效果函数</a>页面所述：</p>
+  <div class="snippet_quote">
+    <div data-conref="../../../../../assets/snippets/FX_only_added_through_IDE.hts">
+  <p>请注意，目前只有两种方法可确保GameMaker在游戏中加载特定过滤器/效果：</p>
+  <ul class="colour">
+    <li>通过IDE在<strong>至少一个房间</strong>中添加滤镜/效果</li>
+    <li>调用<span class="inline"><a href="fx_create.htm">fx_create()</a></span>，将过滤器/效果名称作为字符串<a class="tooltip" title="在代码中写入的显式值，例如，当您编写“A TEXT STRING”时，您使用的是字符串字面量，而不是通过变量或函数返回字符串。类似地，[0,1,2]是数组字面值。">literal</a></li>
+  </ul>
+  <p>这意味着要在运行时使用特定的过滤器/效果，必须首先将其添加到房间(因此 GameMaker 知道要使用它)，或者在<span class="inline"><a href="fx_create.htm">fx_create()</a></span>调用中明确指定。</p>
+
+</div>
+  </div>
+  <p>如果不满足这些条件，即您没有传入字符串文本<em>并且</em>过滤器/效果在任何房间中都不存在，则函数将无法加载该过滤器/效果，并将返回-1。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">fx_create(filter_or_effect_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>filter_or_effect_name</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要创建的过滤器/效果的名称(从<a href="../../../../../The_Asset_Editors/Room_Properties/FX/All_Filter_Effect_Types.htm">外汇类型获取)参数</a>)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Struct_FX"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/fx_create.htm">FX Struct</a></span>&nbsp;or -1 (on failure)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _fx_tint = fx_create("_filter_tintfilter");<br>
+    fx_set_parameter(_fx_tint, "g_TintCol", [1, 0, 0, 1]);<br>
+    layer_set_fx("EffectLayer", _fx_tint);</p>
+  <p>上面的代码从<span class="inline2">"_filter_tintfilter"</span>效果创建一个新的FX结构，该效果是在房间编辑器中找到的"色调"过滤器。它为其<span class="inline2">" g_TintCol"</span>参数分配一个值，该参数是色调的颜色，由于它在内部是<span class="inline">vec4</span>，它采用包含四个值(对应于其红色、绿色、蓝色和alpha值)的数组。然后，将色调的 FX 结构应用于 FX 层。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Filter_Effect_Functions.htm">过滤器和效果函数</a></div>
+        <div style="float:right">Next:&nbsp;<a href="fx_get_parameter.htm">fx_get_parameter</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+fx_create
+-->
+  <!-- TAGS
+fx_create
+-->
+
+</body></html>

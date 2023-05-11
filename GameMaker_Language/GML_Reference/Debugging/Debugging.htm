@@ -1,0 +1,128 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.21";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Debugging</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for Debugging  functions and variables">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Debugging">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Debugging/debug_mode.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Debugging">
+        <span>Debugging</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">调试</span></h1>
+  <p>在制作游戏时，了解特定时间点的游戏机制的某些细节，或者能够为某些函数输入某些键值以测试游戏的不同方法和想法，通常是非常重要的。为此，<span data-keyref="GameMaker Name">GameMaker</span>为您提供了许多调试函数，这些函数将在调试模式下(或在Windows目标上)显示消息并要求输入，但在为其他目标模块编译时将被忽略，因为这些函数将游戏置于闭环中，直到输入被解析。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;尽管它们可能在某些平台上工作，但除了调试之外，不能用于任何其他用途。</p>
+  <ul class="colour">
+    <li><a href="debug_mode.htm">debug_mode</a></li>
+    <li><a href="debug_event.htm">debug_event</a></li>
+    <li><a href="debug_get_callstack.htm">debug_get_callstack</a></li>
+    <li><a href="exception_unhandled_handler.htm">exception_unhandled_handler</a></li>
+    <li><a href="get_integer.htm">get_integer</a></li>
+    <li><a href="get_string.htm">get_string</a></li>
+    <li><a href="show_error.htm">show_error</a></li>
+    <li><a href="show_message.htm">show_message</a></li>
+    <li><a href="show_question.htm">show_question</a></li>
+    <li><a href="show_debug_message.htm">show_debug_message</a></li>
+    <li><a href="../Strings/show_debug_message_ext.htm">show_debug_message_ext</a></li>
+    <li><a href="show_debug_overlay.htm">show_debug_overlay</a></li>
+    <li><a href="code_is_compiled.htm">code_is_compiled</a></li>
+    <li><a href="fps.htm">fps</a></li>
+    <li><a href="fps_real.htm">fps_real</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>除了这些专业函数外，为了帮助您创建游戏，<span data-keyref="GameMaker Name">GameMaker</span>还提供了一个很长的错误消息列表，可以在编写游戏代码、编译游戏或运行游戏本身时显示。这些消息指向有问题的特定错误，并可用于查明特定对象或脚本函数中的问题，这对调试游戏的过程有很大帮助。但是，错误消息的确切含义可能并不总是很明显，因此以下部分列出了所有可能的消息，并解释了它们的含义，以使您的工作更轻松：</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Errors/Syntax_Errors.htm">语法错误</a></li>
+    <li><a href="../../../Additional_Information/Errors/Compiler_Errors.htm">编译器错误</a></li>
+    <li><a href="../../../Additional_Information/Errors/Runner_Errors.htm">Runner错误</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>您还可以在<a href="../../../IDE_Tools/The_Debugger.htm">调试器</a>一节中找到有关如何调试游戏的更多信息。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../GML_Reference.htm">GML Reference</a></div>
+        <div style="float:right">Next: <a href="../Garbage_Collection/Garbage_Collection.htm">垃圾回收</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Debugging
+-->
+  <!-- TAGS
+debug_functions
+-->
+
+</body></html>

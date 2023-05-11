@@ -1,0 +1,131 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.6.1.0_10";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>path_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function path_delete">
+  <meta name="rh-index-keywords" content="path_delete">
+  <meta name="search-keywords" content="path_delete">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/Path_Manipulation/path_duplicate.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/Path_Manipulation/path_assign.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="path_delete">
+        <span>path_delete</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_delete</h1>
+  <p>可以使用此代码从内存中删除路径。如果此路径已使用<a href="path_add.htm"><span class="inline">path_add()</span></a>动态创建，则保存路径索引的变量将不再对访问该路径有效，因为它不再存在;如果路径是使用<a href="../../../../../The_Asset_Editors/Paths.htm">路径编辑器</a>创建的，则无法在<i>整个游戏</i>中访问该路径，因为您将永久删除该路径。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">path_delete(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>index</td><td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
+        <td>要删除的路径的索引。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p>&nbsp;</p>
+  <p class="code">var t_path&nbsp;= path_add();<br>
+    if mp_grid_path(grid, t_path, x, y, obj_Player.x, obj_Player.y, 1)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;path_assign(mypath, t_path);<br>
+    }<br>
+    path_delete(t_path);</p>
+  <p>上面的代码将创建一个路径并将其索引存储在局部变量中。然后，此路径用于存储<a href="../../../Movement_And_Collisions/Motion_Planning/mp_grid_path.htm"><span class="inline">mp_grid_path()</span></a>生成的路径，如果成功找到通向目标的路径，则将其分配给在"mypath"中索引的路径。最后删除"t_path"。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Path_Manipulation.htm">路径操控</a></div>
+        <div style="float:right">Next: <a href="path_duplicate.htm">path_duplicate</a></div>
+        
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_delete
+-->
+  <!-- TAGS
+path_delete
+-->
+
+</body></html>

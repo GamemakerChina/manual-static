@@ -1,0 +1,108 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.2.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>iOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that details the iOS Platform Preferences">
+  <meta name="rh-index-keywords" content="Prefs - iOS">
+  <meta name="search-keywords" content="iOS Platform Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/Platform_Preferences/tvOS.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/Platform_Preferences/GX_Games_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="iOS">
+        <span>iOS</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>iOS 首选项</h1>
+  <p>iOS 首选项有以下选项：</p>
+  <p><img alt="iOS Preferences" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/iOS_Prefs.png"></p>
+  <ul class="colour">
+    <li><strong>取消构建并运行</strong>：默认情况下，当您创建 iOS 项目，然后构建最终可执行程序包时，<span data-keyref="GameMaker Name">GameMaker</span> 将构建该包，然后尝试在任何连接的设备上运行它。选中此选项将禁止在设备上构建和运行应用程序，而只是在主机 Mac 上创建一个 XCode 项目</li>
+    <li><strong>macOS 安装路径</strong>：构建 Mac 上项目文件的安装路径。</li>
+    <li><strong>默认团队识别符</strong>：您可以在此处添加<a href="https://help.apple.com/xcode/mac/current/#/dev23aab79b4"> Apple 分配</a>给您的默认团队识别符。当您的游戏文件被发送到 Xcode 以构建应用程序时，将使用此团队 ID，并将允许 Xcode 生成所需的签名证书。请注意，默认情况下，此设置将应用于为 iOS 构建的所有游戏，但它可以从常规 iOS<a href="../../Settings/Game_Options/iOS.htm"> 游戏选项 </a> 中覆盖每个项目。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Platform_Preferences.htm">Platform&nbsp;Preferences</a></div>
+        <div style="float:right">Next: <a href="tvOS.htm">tvOS</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+iOS Preferences
+-->
+  <!-- TAGS
+prefs_ios
+-->
+
+</body></html>

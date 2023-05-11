@@ -1,0 +1,168 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"><script src="../../../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <title>Video Playback</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Overview of video drawing functions">
+  <meta name="template" content="../../../../assets/masterpages/Manual_Page.htt">
+  <meta name="rh-index-keywords" content="videos">
+  <meta name="search-keywords" content="videos">
+  <meta name="condition-tags" content="">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Videos/video_open.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Textures/texturegroup_get_status.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Video Playback">
+        <span>Video Playback</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1 id="h1">视频播放</h1>
+  <h2>如何播放视频？</h2>
+  <p>按照以下步骤在运行时加载和播放视频：</p>
+  <ul class="colour">
+    <li>将视频文件添加到项目的<a href="../../../../Settings/Included_Files.htm#h">包含文件</a>(<span class="inline2">/datafiles</span>目录)。</li>
+    <li>使用<span class="inline"><a href="video_open.htm">video_open()</a></span>加载视频。<ul><li>或者，从URL加载视频。</li></ul></li>
+    <li>使用<span class="inline"><a href="video_draw.htm">video_draw()</a></span>在绘制事件中绘制它。<ul><li>此函数将视频绘制到内部表面，并将其作为返回数组的一部分返回。</li><li>要显示视频，必须使用<span class="inline"><a href="../Surfaces/draw_surface.htm">draw_surface()</a></span>手动绘制该表面。<ul><li>绘制<a href="YUV_Videos.htm"> YUV  视频</a>将需要额外的步骤。</li></ul></li></ul></li>
+    <li>视频完成后，通过调用<span class="inline"><a href="video_close.htm">video_close()</a></span>将其从内存中删除。<ul><li>使用<a href="#h">异步回调</a>在视频结束时运行代码。</li></ul></li>
+  </ul>
+  <h2>视频编解码器和许可</h2>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>不随附任何编解码器，并使用运行游戏的平台上存在的编解码器。这意味着您的视频必须以可在目标平台上解码的格式进行编码。</p>
+  <p>使用某些格式可能需要根据相关编解码器的许可证和游戏的收入来支付许可费，在这种情况下，开发者将对支付给编解码器所有者的任何费用承担法律责任。编解码器在每个平台上的授权也不同，因此必须注意在多个平台上分发的游戏。</p>
+  <p>请注意，视频格式(如<span class="inline2">.mp 4</span>、<span class="inline2">.avi</span>、<span class="inline2">.mkv</span>等)只是包装<strong>视频</strong>和<strong>音频</strong>流的容器，这两种格式可以单独编码，并且可能需要单独的许可证。</p>
+  <p>对于在控制台平台上的分发，请咨询您的客户代表，了解您可以使用哪些格式，而无需支付额外的许可费用。</p>
+  <h2>格式</h2>
+  <p>您可以在游戏中加载和播放的视频格式将取决于您的目标平台以及该平台支持的编解码器。</p>
+  <h2>函数</h2>
+  <p>您可以使用以下函数在运行时加载、播放和操作视频文件：</p>
+  <ul class="colour">
+    <li><a href="video_open.htm">video_open</a></li>
+    <li><a href="video_close.htm">video_close</a></li>
+    <li><a href="video_draw.htm">video_draw</a></li>
+    <li><a href="video_set_volume.htm">video_set_volume</a></li>
+    <li><a href="video_pause.htm">video_pause</a></li>
+    <li><a href="video_resume.htm">video_resume</a></li>
+    <li><a href="video_enable_loop.htm">video_enable_loop</a></li>
+    <li><a href="video_seek_to.htm">video_seek_to</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>以下函数用于获取有关当前加载的视频的信息：</p>
+  <ul class="colour">
+    <li><a href="video_is_looping.htm">video_is_looping</a></li>
+    <li><a href="video_get_volume.htm">video_get_volume</a></li>
+    <li><a href="video_get_duration.htm">video_get_duration </a></li>
+    <li><a href="video_get_position.htm">video_get_position</a></li>
+    <li><a href="video_get_status.htm">video_get_status</a></li>
+    <li><a href="video_get_format.htm">video_get_format </a></li>
+  </ul>
+  <h2 id="h">异步回调</h2>
+  <p><a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">异步社交</a>事件在下面给定的阶段触发，其<span class="inline2">async_load</span>映射中的<span class="inline2">类型"</span>"键设置为给定值：</p>
+  <ul class="colour">
+    <li><span class="inline2">"video_start"</span>：当视频开始播放时，即其<a href="video_get_status.htm">状态</a>从<span class="inline2">视频状态准备</span>变为<span class="inline2">视频状态播放</span>。</li>
+    <li><span class="inline2">" video_end"</span>:视频结束时。当视频<a href="video_enable_loop.htm">设置为循环</a>时，此操作不会触发。</li>
+  </ul>
+  <p>以下是Async Social事件监听视频回调的示例：</p>
+  <p class="code">var _type = async_load[? "type"];<br>
+    <br>
+    if (_type == "video_start")<br>
+    {<br>
+    &nbsp; &nbsp; obj_video.display_video = true;<br>
+    }<br>
+    else if (_type == "video_end")<br>
+    {<br>
+    &nbsp; &nbsp; obj_video.display_video = false;<br>
+    &nbsp; &nbsp; video_close();<br>
+    }
+  </p>
+  <p>以上代码从<span class="inline2">async_load</span>映射读取类型。视频启动时，会将对象中的变量设置为<span class="inline2">true</span>，以便可以显示视频。</p>
+  <p>视频结束时，会将相同的变量设置为<span class="inline2">假</span>，然后调用<span class="inline"><a href="video_close.htm">video_close()</a></span>从内存中删除视频。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="../Drawing.htm">绘制</a></div>
+        <div>Next:&nbsp;<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色和 Alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+	Videos
+-->
+  <!-- TAGS
+-->
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+</body></html>

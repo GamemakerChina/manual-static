@@ -1,0 +1,161 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>array_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function array_copy">
+  <meta name="rh-index-keywords" content="array_copy">
+  <meta name="search-keywords" content="array_copy">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/array_equals.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/array_create.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="array_copy">
+        <span>array_copy</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_copy</h1>
+  <p>使用此函数，您可以在任何位置将数组的全部或部分复制到另一个数组中。您需要提供源和目标数组 (两者都需要先前创建)，以及要从中复制的源数组中的位置和要复制到的目标数组中的位置。最后，您需要指定要复制的数组的长度 (或要复制的部分的长度)。如果复制的数据超过目标数组的长度，则数组将被扩展以接受数据。</p>
+  <p>该函数也可以用于多维数组，只要您在提供数组索引时指定要复制的维度，就可以遵循以下模式:</p>
+  <p class="code">// Copy to the first dimension of an array<br>
+    // from the second dimension of an array<br>
+    array_copy(item_array, 0, inventory_array[0], 0, len);<br>
+    <br>
+    // Copy to the third dimension of an array<br>
+    // from the first dimension of an array<br>
+    array_copy(item_array[0][0], 0, inventory_array, 0, len);<br>
+    <br>
+    // etc...
+  </p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">array_copy(dest, dest_index, src, src_index, length);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>要复制到的数组的ID。</td>
+      </tr>
+      <tr>
+        <td>dest_index</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要复制到的数组内的索引。</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>要从中复制的数组的ID。</td>
+      </tr>
+      <tr>
+        <td>src_index</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>从开始复制的具有数组的索引。</td>
+      </tr>
+      <tr>
+        <td>length</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要复制的长度 (数组索引数)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if !array_equals(inventory_array, item_array)<br>
+    {<br>
+    &nbsp; &nbsp; var len = array_length(inventory_array);<br>
+    &nbsp; &nbsp; array_copy(item_array, 0, inventory_array, 0, len);<br>
+    }</p>
+  <p>上面的代码将检查两个数组以查看它们是否保存等效值，如果它们不保存，则代码将把数组 “inventory_array” 的全部内容复制到数组 “item_array” 中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Array_Functions.htm">数组函数</a></div>
+        <div style="float:right">Next:&nbsp;<a href="array_equals.htm">array_equals</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_copy
+-->
+  <!-- TAGS
+array_copy
+-->
+
+</body></html>

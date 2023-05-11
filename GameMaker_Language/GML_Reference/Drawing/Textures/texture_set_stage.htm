@@ -1,0 +1,136 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.11.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>texture_set_stage</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for ​texture_set_stage">
+  <meta name="rh-index-keywords" content="texture_set_stage">
+  <meta name="search-keywords" content="texture_set_stage">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Textures/texture_global_scale.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Textures/texture_get_uvs.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="texture_set_stage">
+        <span>texture_set_stage</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>texture_set_stage</h1>
+  <p>此函数将为给定的舞台"时隙"设置要使用的纹理。可用的阶段"插槽"的数量将取决于您正在编译的平台，Windows、Mac和Linux最多可用8个，但在低端Android设备(例如)上，此数量可以低至2个。另外值得注意的是，<span data-keyref="GameMaker Name">GameMaker</span>始终自动使用第一级插槽(1 )。</p>
+  <p class="note"><b>注意</b>:此函数在运行着色器的上下文之外不会执行任何操作！有关详细信息，请参见<a href="../../Asset_Management/Shaders/Shaders.htm">着色器</a>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">texture_set_stage(stage, tex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>stage</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要使用的纹理"槽"。</td>
+      </tr>
+      <tr>
+        <td>tex</td>
+        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span></td>
+        <td>要使用的纹理。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">glassshader_bgsampler = shader_get_sampler_index(GlassShader, "s_BackgroundSampler")<br>
+    spr = sprite_get_texture(sprite_index, 0);<br>
+    shader_set(GlassShader);<br>
+    texture_set_stage(glassshader_bgsampler, spr);<br>
+    shader_reset();</p>
+  <p>以上代码将获取着色器索引为"GlassShader"的采样器的<i>句柄</i>，然后将该着色器设置为给定精灵纹理的常量。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Textures.htm">纹理</a></div>
+        <div style="float:right">Next:&nbsp;<a href="texture_global_scale.htm">texture_global_scale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_set_stage
+-->
+  <!-- TAGS
+texture_set_stage
+-->
+
+</body></html>

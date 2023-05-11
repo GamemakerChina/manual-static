@@ -1,0 +1,160 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "8.2.1.1_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Addressing Variables In Other Instances</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining hoe to address variables in other instances">
+  <meta name="rh-index-keywords" content="Addressing Variables In Other Instances">
+  <meta name="search-keywords" content="">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Expressions_And_Operators.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Language_Features/If_Else_and_Conditional_Operators.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Addressing Variables In Other Instances">
+        <span>Addressing Variables In Other Instances</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>在其他实例中处理变量</h1>
+  <p>在专门讨论<a href="Variables_And_Variable_Scope.htm">变量</a>的章节中，你发现了如何在单个实例中或在全局范围内创建和使用变量，但如果你想让一个实例访问另一个不同实例中的变量，会发生什么？有很多情况下你可能想这样做，例如在与子弹物体的碰撞中，你可能想通过访问子弹中的一个变量来了解子弹的伤害程度，或者你可能想在一个谜题中停止所有球的运动，或者你可能想把主角移动到一个特定的位置，或者你在任何游戏中通常遇到的任何其他情况。值得庆幸的是，GameMaker语言配备了实现这一目的的机制。</p>
+  <p>访问或改变<em>另一个</em>实例中的变量的最常见方法之一是使用其对象名称作为标识符，然后使用点"<span class="inline">.</span>"来告诉<span data-keyref="GameMaker Name">GameMaker</span>，被引用的变量应该在该特定对象的实例中被分配或改变。这被称为 "点符号"，其语法如下。</p>
+  <p class="code">&lt;object_id&gt;.&lt;<em>variable</em>&gt; = &lt;value&gt;;&nbsp;</p>
+  <p>在实践中，它看起来像这样。</p>
+  <p class="code">obj_ball.speed = 0;</p>
+  <p>通过上述代码，你正在设置"<span class="inline">obj_ball</span>"的一个实例的速度。然而，如果你在房间里有一个以上的对象实例，<em>那么它将同样适用于所有对象</em>--除非你使用<b>HTML5</b>，在这种情况下，它将只影响<em>一个</em>，但你无法知道它将影响哪一个--所以如果你需要访问一个对象的所有实例，你应该使用<a href="Language_Features/with.htm"><span class="inline">with()</span></a>，因为那是100%跨平台兼容。一般来说，只有当你的房间里只有一个对象的实例，或者(正如你将在下一部分看到的)你有一个特定的<i>实例<b>ID</b></i>时，才应该使用这种格式。</p>
+  <p>当房间内有多个实例时，您也可以使用唯一的<b>实例名称</b>来确切告诉<span data-keyref="GameMaker Name">GameMaker</span>我们要处理的实例，从而访问该对象的单个实例。<b>实例名称常量</b>是游戏中添加到房间的每个实例的唯一标识常数。你可以在<a href="../../The_Asset_Editors/Rooms.htm">房间编辑器</a>中双击一个实例来找到这个常量：</p>
+  <p><img alt="The instance constant in the room editor" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Instance_Constant.png">请注意，可以编辑此名称并赋予更描述性的名称-尽管名称<em>必须</em>对于整个游戏而言是唯一的-并且可以用作点的左侧:</p>
+  <p class="code">inst_4DB70D2.speed = 0;</p>
+  <p>然而，到目前为止，最常见和实用的方法是在点左侧使用<i>变量</i>，只要有问题的变量<i>存储了有效的<b>实例id</b></i>。下面的例子说明了这一点。</p>
+  <p class="code">// Example 1<br>
+    var _inst = instance_position(mouse_x, mouse_y, all);<br>
+    if instance_exists(_inst)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;_inst.speed = 0;<br>
+    }<br>
+    <br>
+    // Example 2<br>
+    var _inst = instance_create_layer(mouse_x, mouse_y, "Enemies", obj_E_Parent);<br>
+    _inst.direction = point_direction(_inst.x, _inst.y, x, y);<br>
+    _inst.target = id;
+  </p>
+  <p>在上面例1的代码中，有一个<a href="../GML_Reference/Asset_Management/Instances/instance_exists.htm"><span class="inline">instance_exists()</span></a>代码块的调用。这是因为使用点方法来访问或改变另一个实例的值，如果该实例不存在，就会出现错误并使游戏崩溃，而在这个例子中就有可能出现这种情况。然而在例2和例3中我们不需要检查，因为我们<i>知道</i>实例是存在的，因为在例2中我们创建了它，而在例3中，是碰撞事件中的另一个实例。然而，如果在使用这个方法时，有<i>任何</i>可能性，即实例可能被销毁、停用或以其他方式从房间中移除，你应该<i>总是</i>事先使用<span class="inline">instance_exists()</span>函数或<a href="../GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a>函数来检查。</p>
+  <p>注意，你不能在这个方法中使用特殊的<a href="Instance_Keywords.htm">关键字</a>"<span class="inline">all</span>"来针对所有实例(例如 <span class="inline">all.val= 10</span>会出错)，但你<i>可以</i>使用关键字"<span class="inline">other</span>"和"<span class="inline">self</span>"，不会有问题。例如，在一个<span class="inline">碰撞事件</span>中使用<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">other</a>。</p>
+  <p class="code">// Example 3 other.hp -= 10;<br>
+    if other.hp &lt;= 0<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;other.sprite_index = spr_E_Dead;<br>
+    }</p>
+  <p>同样重要的是要注意，你不能使用任何函数本身作为赋值的左边。例如，下面的代码会给你一个错误。</p>
+  <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
+  <p>该代码示例中表达式的返回值是一个整数(最近实例的唯一Id值)，因此必须将其括在括号<span class="inline">()</span>中，才能以这种方式使用并正确处理所需的实例。上述代码将正确写入为：</p>
+  <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+    <br>
+    //or<br>
+    <br>
+    var inst = instance_nearest(x, y, obj);<br>
+    inst.speed = 0;
+  </p>
+  <p>这些都是读取、改变和设置其他实例中的变量的完全有效的方法，之所以有效是因为 点 实际上是一个<i>操作符</i>。它把一个值作为左<a class="tooltip" title="是用来表示可以使用不同运算符操作的值的术语。在表达式A + B + C中，A, B和C是运算对象。">操作数</a>，把一个变量作为右操作数，并返回指定对象或实例中这个特定变量的地址。所有的对象名称、常量、ID等等......都只是代表值，这些都可以像其他值一样被处理。</p>
+  <p>另一种引用另一个实例中的变量的方法是使用GameMaker语言函数<span class="inline">with()</span>，<a href="Language_Features/with.htm">这里详细讨论过</a>。</p>
+  <p class="code">// This will affect all instances of the object "obj_Enemy"<br>
+    with (obj_Enemy)<br>
+    {<br>
+    &nbsp; &nbsp; target = other.parent;<br>
+    }<br>
+    <br>
+    // This will affect one instance of the object "obj_Enemy"<br>
+    var _enemy = instance_nearest(x, y, obj_Enemy);<br>
+    if instance_exists(_enemy)<br>
+    {<br>
+    &nbsp; &nbsp; with (_enemy)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; target.x = mouse_x;<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; target.y = mouse_y;<br>
+    &nbsp; &nbsp; }<br>
+    }
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="GML_Overview.htm">GML&nbsp;Overview</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Expressions_And_Operators.htm">表达式和运算符</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables - addressing
+addressing variables
+-->
+  <!-- TAGS
+addressing_variables
+-->
+
+</body></html>

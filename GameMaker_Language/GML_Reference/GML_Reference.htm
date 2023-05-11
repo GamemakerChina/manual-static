@@ -1,0 +1,129 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "8.2.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>GML Code Reference</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for GML">
+  <meta name="rh-index-keywords" content="GML">
+  <meta name="search-keywords" content="GML Reference,GameMaker Language Reference">
+  <meta name="description" content="Become a GameMaker Language (GML) pro with the GML Code Reference section of the GameMaker Manual, including examples of available functions and professional code.">
+  <meta property="og:description" content="Become a GameMaker Language (GML) pro with the GML Code Reference section of the GameMaker Manual, including examples of available functions and professional code.">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/Variable_Functions.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Language_Features/delete.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="GML Code Reference">
+        <span>GML Code Reference</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-keyref="GML_Code">GML代码</span>参考</h1>
+  <p><span>本手册的这一部分是</span><span data-keyref="GameMaker Name">GameMaker</span><span>语言 (GML) 的参考指南。您可以找到此处记录的所有可用函数以及所需的参数和代码示例，以显示如何使用它们。有关如何使用GML的信息，请参阅手册的</span><a href="../GML_Overview/GML_Overview.htm">GML概述</a><span>部分。</span></p>
+  <p class="note"><span class="note">注意</span>任何手册中有“ N/A”作为函数返回值的地方，都意味着该函数不应作为其操作的一部分返回任何值。如果您尝试检查这些函数的返回值，那么您将得到未定义的值<span class="inline">。</span></p>
+  <ul class="colour">
+    <li><a href="Variable_Functions/Variable_Functions.htm">变量函数</a></li>
+    <li><a href="Asset_Management/Asset_Management.htm">资源管理</a>&nbsp;</li>
+    <li><a href="General_Game_Control/General_Game_Control.htm">通用游戏控制</a></li>
+    <li><a href="Movement_And_Collisions/Movement_And_Collisions.htm">运动与碰撞</a></li>
+    <li><a href="Drawing/Drawing.htm">绘制</a></li>
+    <li><a href="Cameras_And_Display/Cameras_And_Display.htm">相机及显示</a></li>
+    <li><a href="Game_Input/Game_Input.htm">游戏输入</a></li>
+    <li><a href="Data_Structures/Data_Structures.htm">数据结构</a></li>
+    <li><a href="Strings/Strings.htm">字符串</a></li>
+    <li><a href="Maths_And_Numbers/Maths_And_Numbers.htm">数学与数字</a></li>
+    <li><a href="Time_Sources/Time_Sources.htm">时间源</a></li>
+    <li><a href="Physics/Physics.htm">物理</a></li>
+    <li><a href="In_App_Purchases/In_App_Purchases.htm">应用内购买</a></li>
+    <li><a href="Asynchronous_Functions/Asynchronous_Functions.htm">异步函数</a></li>
+    <li><a href="Networking/Networking.htm">网络</a></li>
+    <li><a href="Web_And_HTML5/Web_And_HTML5.htm">Web 和 HTML5</a></li>
+    <li><a href="File_Handling/File_Handling.htm">文件处理</a></li>
+    <li><a href="Buffers/Buffers.htm">缓冲区</a></li>
+    <li><a href="OS_And_Compiler/OS_And_Compiler.htm">操作系统和编译器</a></li>
+    <li><a href="Debugging/Debugging.htm">调试</a></li>
+    <li><a href="Garbage_Collection/Garbage_Collection.htm">垃圾回收</a></li>
+    <li><a href="Steam/Steam.htm">Steam</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../GameMaker_Language_Index.htm">GML 代码</a></div>
+        <div style="float:right">&nbsp;</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+GML Reference
+-->
+  <!-- TAGS
+gml_reference
+-->
+
+</body></html>

@@ -1,0 +1,132 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.6.0_12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>path_get_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function path_get_speed">
+  <meta name="rh-index-keywords" content="path_get_speed">
+  <meta name="search-keywords" content="path_get_speed">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/path_get_x.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/path_get_precision.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="path_get_speed">
+        <span>path_get_speed</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_get_speed</h1>
+  <p>此函数返回路径上任何给定位置的速度系数。位置应介于 0 和 1 之间(例如，如果需要实例的当前位置，可以使用<a href="Path_Variables/path_position.htm"><span class="inline">path_position</span></a>)，0 为起始位置，1 为结束。返回的值是设置实际<span class="inline"><a href="Path_Variables/path_speed.htm">path_speed</a></span>的系数。例如，在仅具有两点0和1的路径上，其中点0速度因子是100，点1速度因子是0，函数<span class="inline">path_get_speed(path，0.5)</span>将返回50。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">path_get_speed(ind, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
+        <td>要检查的路径的索引。</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>通过路径检查有多远。在0(开始)和1(结束)之间，可以是十进制。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">speed = path_get_speed(pth_Patrol, 0.5) / 20;</p>
+  <p>这会将调用实例的速度设置为给定路径中点的点的速度因子除以20。因此，如果找到的速度因子是默认的100，它会将调用实例的速度设置为5。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Paths.htm">路径</a></div>
+        <div style="float:right">Next: <a href="path_get_x.htm">path_get_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_speed
+-->
+  <!-- TAGS
+path_get_speed
+-->
+
+</body></html>

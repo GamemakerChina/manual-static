@@ -1,0 +1,128 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.6.1.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>path_clear_points</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function path_clear_points">
+  <meta name="rh-index-keywords" content="path_clear_points">
+  <meta name="search-keywords" content="path_clear_points">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/Path_Manipulation/path_append.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/Path_Manipulation/path_delete_point.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="path_clear_points">
+        <span>path_clear_points</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_clear_points</h1>
+  <p>使用该函数，您可以从路径中删除所有点定义，有效地使路径"为空"。此<i>不会</i>删除路径，因为您应该使用<a href="path_delete.htm"><span class="inline">path_delete()</span></a>，但应注意<strong>此函数更改了实际路径资源</strong>，因此将永久影响从使用函数到游戏结束期间游戏中所有实例使用路径的方式。如果这不是您需要的，那么您应该使用像<span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span>这样的函数来首先创建路径的副本，然后在复制的资源上调用该函数(不要忘记在不再需要资源时调用<span class="inline"><a href="path_delete.htm">path_delete()</a></span>)。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">path_clear_points(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>index</td><td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
+        <td>要清除的路径的索引。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if path_get_number(mypath) &gt; 0<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;path_clear_points(mypath);<br>
+    }</p>
+  <p>上面的代码检查在变量" myPath "中索引的路径上是否有任何点，如果有，则清除该路径。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Path_Manipulation.htm">路径操控</a></div>
+        <div style="float:right">Next: <a href="path_append.htm">path_append</a></div>
+        
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_clear_points
+-->
+  <!-- TAGS
+path_clear_points
+-->
+
+</body></html>

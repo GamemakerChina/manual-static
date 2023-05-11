@@ -1,0 +1,135 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.3.2.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>External Merge/Diff Tools</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Section that covers Source Control merge and diff tools">
+  <meta name="rh-index-keywords" content="Source Control - Esternal Merge/Dif Tools">
+  <meta name="search-keywords" content="merge,diff,external tools">
+<meta name="brsnext" value="Settings/Game_Settings.htm"><meta name="brsprev" value="IDE_Tools/Source_Control/Conflicts.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="External Merge/Diff Tools">
+        <span>External Merge/Diff Tools</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>外部合并/差异工具</h1>
+  <h2>合并工具</h2>
+  <p>当您与其他人一起处理一个项目时，总是存在冲突的可能性，因为多个人编辑同一个文件，并且大多数源代码控制系统可以很好地尝试合并任何冲突的文件，但是当在同一位置有更改时，它需要一些帮助才能知道该做什么 -- 这就是<strong>合并工具</strong>发挥作用的地方，它会向您显示更改，并让您做出决定。</p>
+  <p>由于每个合并工具都不同，因此有四个宏可用于帮助为其指定文件，您可以通过单击标记为<strong>选择合并工具</strong>的按钮，在<strong>冲突</strong>窗口中设置这些文件<strong></strong>：</p>
+  <p><img alt="Source Control Conflict Window" class="center" src="../../assets/Images/IDE Tools/SCM_ConflictsWindow.png"></p>
+  <p>当您单击该按钮时，将在 Git 插件上打开<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">首选项</a>窗口：</p>
+  <p><img alt="Source Control Choose Merge Tool" class="center" src="../../assets/Images/IDE Tools/SCM_ChooseMergeTool.png">在此处提供所选合并工具的路径，然后提供在决定要执行什么操作时使用的<strong>合并工具选项</strong>宏(或多个宏)，并提供以下选项：</p>
+  <ul class="colour">
+    <li><span class="inline">${scm_mine}</span>: 您的版本的路径</li>
+    <li><span class="inline">${scm_theirs}</span>: 指向其他版本的路径</li>
+    <li><span class="inline">${scm_base}</span>: 冲突更改发生前版本的路径</li>
+    <li><span class="inline">${scm_merged}</span>: 合并工具应保存到的路径</li>
+  </ul>
+  <p>作为设置的帮助，当您提供某些合并工具的路径时，根据所选的工具，<span data-keyref="GameMaker Name">GameMaker</span> 将填写一些要开始使用的默认设置：</p>
+  <ul class="colour">
+    <li><strong>KDiff3</strong>: <span class="inline"><span>"${scm_theirs} "${scm_mine}" -o "${scm_merged}"</span></span></li>
+    <li><strong>Meld</strong>: <span class="inline"><span>"${scm_mine}" "${scm_merged}" "${scm_theirs}"</span></span></li>
+    <li><strong>Notepad++</strong>: <span class="inline">${scm_merged}</span></li>
+    <li><strong>TortoiseMerge</strong>: <span class="inline"><span>/base:"${scm_base}" /theirs:"${scm_theirs}" /mine:"${scm_mine}" /merged:"${scm_merged}"</span></span></li>
+    <li><strong>DiffMerge</strong>:<strong> "<span class="inline"><span>${scm_mine}" "${scm_merged}" "${scm_theirs}"</span></span></strong></li>
+  </ul>
+  <p>请注意，如果您没有(或不想使用)合并工具，则可以在 IDE 中打开脚本并尝试从那里修复它。</p>
+  <p>因此，回到我们的示例冲突，如关于<a href="Conflicts.htm">冲突</a>的部分所述...。我们已从 master 获取，其中一个文件冲突。这将打开源代码控制<strong>冲突</strong>窗口，您可以在其中单击冲突的脚本，然后单击<strong>合并</strong>，因为您已经配置了合并工具。现在，单击合并将打开工具，您可以在其中处理冲突，然后使用提供的宏进行所需的更改。完成并关闭合并工具后，<span data-keyref="GameMaker Name">GameMaker</span> IDE 将显示以下确认窗口：</p>
+  <p><img alt="Source Control Merge Confirm" class="center" src="../../assets/Images/IDE Tools/SCM_MergeConfirm.png">只需对此提示回答"是"，因为您刚刚使用合并工具自己完成了这项工作，然后您需要提交此更改以表示合并操作的结束(<strong>源代码管理</strong>&gt;<strong>提交更改</strong>)。提交窗口现在将显示合并正在进行，并显示一些未转移的文件：</p>
+  <p><img alt="Source Control Merge In Progress" class="center" src="../../assets/Images/IDE Tools/SCM_MergeInProgress.png">这些未暂存的文件是我们的脚本文件，添加了 <span class="inline">.base</span>、<span class="inline">.ours</span> 和 <span class="inline">.theirs</span>。我们可以安全地删除所有这些内容，因此请单击顶部的 <img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" style="cursor: nwse-resize;" width="20">，然后单击底部的 <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55">+<img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" style="cursor: nwse-resize;" width="20"> 将其全部选中。接下来，我们在所选文件上单击鼠标右键并选择 <strong> 删除路径 </strong> 以删除它们。还为我们预先填充了一条提交消息，声明这是一个合并，并且存在冲突 (我们可以根据需要添加或编辑它)。</p>
+  <p>我们现在可以单击<strong>提交</strong>。</p>
+  <p>由于您可能会遇到其他文件的问题，这意味着您在使用远程或共享仓库时的工作流程应如下所示：</p>
+  <p class="code">Make Changes &gt; Save &gt; Commit &gt; Pull &gt; Merge &gt; Push</p>
+  <h2>比较工具</h2>
+  <p>您还应该设置一个<strong>比较工具</strong>，以便在提交到仓库时使用。这是从<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">首选项</a>设置的，与合并工具的设置相同：</p>
+  <p><img alt="Source Control Choose Diff Tool" class="center" src="../../assets/Images/IDE Tools/SCM_ChooseDiffTool.png" style="cursor: nwse-resize;"> 比较工具的配置方式与合并工具大致相同，但只使用了 <span class="inline">${scm_base}</span> 和 <span class="inline">${scm_theirs}</span> 选项-在本例中，<span class="inline">${scm_base}</span> 表示未修改的文件，而 <span class="inline">${scm_theirs}</span> 表示文件的当前状态。工具选项应该预先填充 <strong>Meld</strong>、<strong>KDiff 3</strong> 和 <strong>TortoiseMerge</strong> 的默认选项，就像它们用于合并工具一样。请注意，<span data-keyref="GameMaker Name">GameMaker</span> <em>不支持</em>输出单个文件的不同补丁，因此没有默认的 <strong>Notepad++</strong>。</p>
+  <p>要使用比较工具查看当前版本和以前版本之间的更改，只需打开提交窗口，然后双击文件。如果该工具已正确设置，它将被启动，您将能够看到文件之间的更改。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Source_Control.htm">源码控制</a></div>
+        <div style="float:right">Next: <a href="Setting_Up_Git_Plugin.htm">设置 Git 插件</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control External Tools
+Source Control Diff
+Source Control Merge
+Merge
+Diff
+-->
+  <!-- TAGS
+source_control_tools
+-->
+
+</body></html>

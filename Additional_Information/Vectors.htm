@@ -1,0 +1,143 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Vectors</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains how vectors work">
+  <meta name="rh-index-keywords" content="Vectors">
+  <meta name="search-keywords" content="Vectors,vector maths">
+<meta name="brsnext" value="Additional_Information/Guide_To_Using_Buffers.htm"><meta name="brsprev" value="Additional_Information/Type_Tables.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Vectors">
+        <span>Vectors</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>向量</h1>
+  <p>在创造一款复杂的游戏时，你可能需要处理<strong>向量</strong>。它们被用在物理学、AI、三角函数和许多其他情况中，但什么是向量呢?简单地说，向量是一个<em>有方向的量</em>。让我们从一个一维向量开始，它和一个数字是一样的，画一条从0开始，到5结束的有箭头的线。这是向量a，它等于5。如果，我们再画一个箭头，从5开始，到8结束，我们得到向量b，等于3</p>
+  <p><img alt="1D Vector Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_1D.png">你应该意识到，一个向量从哪里开始并不重要，重要的是它有多长，朝什么方向走。所以向量b从5开始，长3个单位，指向右边，这和从0开始到3的向量是一样的。现在，你也可以把这些向量相加，通过把a和b两个向量首尾相连得到向量c等于8。那么负数呢?好吧，如果在上面的图像中，一个指向“右”的向量对应一个正数，你可以看到一个指向“左”的向量对应一个负数，使得一个一维向量仅仅是一个带符号(+/-)的数。这解释了向量的基本概念:只计算<em>长度</em>和<em>方向</em>(在本例中为“左”或“右”)，而不计算位置。</p>
+  <p>那么，二维向量呢?嗯，我们可以认为它们不仅包括“左”和“右”，还包括“上”和“下”:</p>
+  <p><img alt="Various 2D Vectors" class="center" height="310" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Various.png" width="406">现在，它们实际上还不是向量，因为我们仍然需要使用它们的开始和结束坐标来减去它们。 查看向量“a”，我们可以看到它的起始坐标为 [2,2]，结束坐标为 [4,3]，所以为了得到这个向量，我们需要通过从起始坐标减去结束坐标来减少它，就像这样:</p>
+  <p class="code">a = [(x2-x1), (y2-y1)] = [(4-2), (3-2)] = [2,1]</p>
+  <p>现在让我们对向量 b 做同样的事情:</p>
+  <p class="code">b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]</p>
+  <p>注意些什么吗?这两个向量是一样的!这是向量没有位置，只有方向和长度的另一个证明，我们可以围绕局部[0,0]轴画出这些向量之间的相对关系:</p>
+  <p><img alt="2D Vectors aroun [0, 0]" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_2D.png">这意味着2D向量由两个值定义，相对于局部[0,0]轴的“x”和“y”位置。那么三维向量呢?嗯，它们有一个额外的“深度”维度，可以用“x”、“y”和“z”位置围绕局部轴进行计算，就像这样:</p>
+  <p><img alt="3D Vectors" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_3D.png"><span data-keyref="GameMaker Name">GameMaker</span>中使用向量的一个很好的例子是room编辑器中的物理 <strong>gravity</strong> 属性。重力被计算为一个围绕[0,0]位置的向量。所以，如果你定义重力为[x0, y10]，重力将是<em>向下</em>，力为10。</p>
+  <p>通常，向量可以在很多情况下使用，但有时你想约束它们的值(比如处理角度时)，这就是为什么我们<strong>归一化</strong>它们。这本质上是一种数学技巧，用于将长度为<em>n</em>的向量转换为长度为1的向量，这意味着向量分量将<em>归一化</em>在0到1之间。这些向量也被称为<strong>单位向量</strong>:</p>
+  <p><img alt="Unit Vector example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_1D.png">要计算一个归一化的向量，我们必须首先有原始的向量分量，然后用它们来得到向量的长度。然后，我们将每个向量分量除以这个长度，得到归一化的向量分量，它们形成了归一化的向量，其中所有坐标的平方和的<strong>之和等于1</strong>。方法如下:</p>
+  <p>首先，我们取向量的坐标并得到分量:</p>
+  <p class="code">vx = (x2 - x1) = (7 - 1) = 6<br>
+    vy = (y2 - y1) = (4 - 1) = 3</p>
+  <p>然后我们使用这些值来计算向量的长度:</p>
+  <p class="code">len = sqr(vx2 + vy2);&nbsp;// = sqr(36 + 9) = sqr(45) = 6.708203932499369</p>
+  <p>现在，我们得到了向量“a”的确切长度，所以让我们用它来归一化两个向量分量<span class="inline">vx</span>和<span class="inline">vy</span>:</p>
+  <p class="code">vx = (vx/len); //&nbsp;= (6 / 6.708203932499369) = 0.8944271909999159<br>
+    vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579</p>
+  <p>太棒了!我们现在已经归一化了向量的分量!但这在<span data-keyref="GameMaker Name">GameMaker</span>上下文中有什么实际用途呢?好吧，让我给你一个实际的例子…</p>
+  <p>假设你在一款游戏中，玩家必须向敌人射击，你需要知道子弹物体在每一步中需要沿x轴和y轴移动多少距离才能击中它:</p>
+  <p><img alt="Vector Game Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_2.png">为此，你可以使用玩家和敌人坐标来获得向量组件和长度，然后将其归一化，得到0到1之间的值，最后乘以你希望子弹在每一步中移动的速度。最后这两个值将存储并添加到每一步的起始x和y坐标上。听起来很复杂?它不是，看(为了简单起见，值被四舍五入到小数点后一位):</p>
+  <p class="code">px = 100;<br>
+    py = 425;<br>
+    ex = 356;<br>
+    ey = 83;<br>
+    bullet_speed = 5;<br>
+    <br>
+    vx = (ex - px); // = 256<br>
+    vy = (ey - py); // = -342<br>
+    <br>
+    len = sqrt(vx2 + vy2); // = sqrt(65536 + 116964) = 427.2<br>
+    <br>
+    vx = vx / len; //&nbsp;= 0.6<br>
+    vy = vy / len; // = 0.8<br>
+    <br>
+    speed_x = vx * bullet_speed; //&nbsp;= 3<br>
+    speed_y = vy * bullet_speed; // = 4
+  </p>
+  <p>所以，为了击中目标，每一步我们需要在子弹的x坐标上增加3，在y坐标上增加4。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Additional_Information.htm">额外的信息</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Guide_To_Using_Buffers.htm">缓冲区使用指南</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Vectors
+Vector Maths
+-->
+  <!-- TAGS
+vector_maths
+-->
+
+</body></html>

@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.13.6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Physics Variables</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for Physics Variables">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Physics Variables">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Physics/Physics_Variables/phy_active.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_draw_ext.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Physics Variables">
+        <span>Physics Variables</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>物理变量</h1>
+  <p>与"传统"碰撞和运动系统一样，物理系统也有一系列<a href="../../Asset_Management/Instances/Instance_Variables/Instance_Variables.htm">实例变量</a>在创建对象时分配给对象的每个实例。其中一些属性可以由用户在 GML 中定义，但许多属性是只读的，而且更多属性仅适用于<strong>碰撞</strong>事件。</p>
+  <p><i>所有启用</i>物理的对象中都存在以下变量，可以使用实例和脚本函数中的代码读取和写入这些变量(即已更改)：</p>
+  <ul class="colour">
+    <li><a href="phy_active.htm">phy_active</a></li>
+    <li><a href="phy_angular_velocity.htm">phy_angular_velocity</a></li>
+    <li><a href="phy_angular_damping.htm">phy_angular_damping</a></li>
+    <li><a href="phy_linear_velocity_x.htm">phy_linear_velocity_x</a></li>
+    <li><a href="phy_linear_velocity_y.htm">phy_linear_velocity_y</a></li>
+    <li><a href="phy_linear_damping.htm">phy_linear_damping</a></li>
+    <li><a href="phy_speed_x.htm">phy_speed_x</a></li>
+    <li><a href="phy_speed_y.htm">phy_speed_y</a></li>
+    <li><a href="phy_position_x.htm">phy_position_x</a></li>
+    <li><a href="phy_position_y.htm">phy_position_y</a></li>
+    <li><a href="phy_position_xprevious.htm">phy_position_xprevious</a></li>
+    <li><a href="phy_position_yprevious.htm">phy_position_yprevious</a></li>
+    <li><a href="phy_rotation.htm">phy_rotation</a></li>
+    <li><a href="phy_fixed_rotation.htm">phy_fixed_rotation</a></li>
+    <li><a href="phy_bullet.htm">phy_bullet</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>某些变量为 <b> 只读 </b> 变量，这意味着它们包含的信息不能通过实例代码或脚本函数进行更改 (但 <i>GameMaker</i> <span data-keyref="GameMaker Name">可以</span>在内部更改，这就是为什么这些变量是变量而不是 <b> 常量 </b>)。以下列表显示了<b>只读</b>变量，这些变量存在于<i>所有启用了</i>物理的对象中：</p>
+  <ul class="colour">
+    <li><a href="phy_speed.htm">phy_speed</a></li>
+    <li><a href="phy_com_x.htm">phy_com_x</a></li>
+    <li><a href="phy_com_y.htm">phy_com_y</a></li>
+    <li><a href="phy_dynamic.htm">phy_dynamic</a></li>
+    <li><a href="phy_kinematic.htm">phy_kinematic</a></li>
+    <li><a href="phy_inertia.htm">phy_inertia</a></li>
+    <li><a href="phy_mass.htm">phy_mass</a></li>
+    <li><a href="phy_sleeping.htm">phy_sleeping</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>最后，在启用了物理的对象中存在许多临时变量，这些变量<i>仅在碰撞事件</i>中创建。<b>这些变量类似于上面列出的变量，并且是只读的</b>：</p>
+  <ul class="colour">
+    <li><a href="phy_collision_points.htm">phy_collision_points</a></li>
+    <li><a href="phy_collision_x.htm">phy_collision_x</a></li>
+    <li><a href="phy_collision_y.htm">phy_collision_y</a></li>
+    <li><a href="phy_col_normal_x.htm">phy_col_normal_x</a></li>
+    <li><a href="phy_col_normal_y.htm">phy_col_normal_y</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Physics.htm">物理</a></div>
+        <div style="float:right">Next: <a href="../The_Physics_World/The_Physics_World.htm">物理世界</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Physics Variables
+-->
+  <!-- TAGS
+physics_variables
+-->
+
+</body></html>

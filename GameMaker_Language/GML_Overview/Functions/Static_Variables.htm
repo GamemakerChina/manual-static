@@ -1,0 +1,219 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.1.1_8";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Static Variables</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page outlining the use of Static Variables">
+  <meta name="rh-index-keywords" content="Static Variables">
+  <meta name="search-keywords" content="Static Variables,static">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Arrays.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Script_Functions_vs_Methods.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Static Variables">
+        <span>Static Variables</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">静态变量</span></h1>
+  <p><a href="../Script_Functions.htm">脚本函数</a>和<a href="../Method_Variables.htm">方法变量</a>的一个有趣特征是，它们可以有<strong>静态变量</strong>。静态变量是指在函数第一次被调用时定义的变量，它将从那时起保持其数值。要创建静态变量，需要使用<span class="inline">static</span>关键字来定义它，如这个简单的例子所示。</p>
+  <p class="code">counter = function()<br>
+    {<br>
+    &nbsp; &nbsp; static num = 0;<br>
+    &nbsp; &nbsp; return num++;<br>
+    }</p>
+  <p>上面的例子中，变量 <span class="inline">num</span> 是一个静态变量，所以在第一次调用函数时将被定义为 <span class="inline">0</span>，但之后每次调用函数时，变量的初始化都会被忽略。因此，如果你再这样调用这个函数：</p>
+  <p class="code">repeat (10)<br>
+    {<br>
+    &nbsp; &nbsp; show_debug_message(counter());<br>
+    }</p>
+  <p>输出将为：</p>
+  <p class="code">0<br>
+    1<br>
+    2<br>
+    3<br>
+    4<br>
+    5<br>
+    6<br>
+    7<br>
+    8<br>
+    9</p>
+  <p>如果此处没有使用<span class="inline">static</span>关键字，则循环的每次迭代的输出都将是<span class="inline">0</span>，因为在返回之前，每次调用函数时，变量<span class="inline">num</span>都将被定义为<span class="inline">0</span>。请注意，静态变量只能在原始函数内部进行更改，返回它将简单地为您提供其值的副本-实际上，共享的静态变量只能由包含它的函数进行更改。</p>
+  <h2>在构造函数中使用静态变量</h2>
+  <p>还可以在<a href="../Structs.htm#constr">构造函数</a>中使用静态变量。这些函数用于创建包含函数中定义的变量的新结构。</p>
+  <p>构造函数中的静态变量只为该构造函数初始化一次，并且<strong>不会为从该构造函数生成的每个新结构复制</strong>它们。</p>
+  <p>这意味着无论从构造函数创建多少个结构，它们都将为它们拥有的每个静态变量共享相同的值<strong>。</strong></p>
+  <p class="code">function weapon() constructor<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;static number_of_weapons = 0;<br>
+    &nbsp;&nbsp; &nbsp;number_of_weapons++;<br>
+    }<br>
+    <br>
+    var _weapon1 = new weapon();<br>
+    var _weapon2 = new weapon();<br>
+    <br>
+    show_debug_message(_weapon1.number_of_weapons); // Prints 2
+  </p>
+  <p>在上面的示例中，<span class="inline2">weapons</span> 构造函数包含一个名为 <span class="inline2">number_of_weapons</span> 的静态变量，该变量在其所有结构中共享。每次新调用 <span class="inline2">weapons</span> 构造函数时，<span class="inline2">number_of_weapons</span> 值就会增加 1。</p>
+  <p>在被调用两次之后，该变量的值变成了 <span class="inline2">2</span>，可以从它的任何结构中读取，也可以通过编写 <span class="inline2">weapon.number_of_weapons</span> 直接从构造函数中读取。</p>
+  <h2>访问静态变量</h2>
+  <p>您可以使用 <span class="inline2">&lt;function_name&gt;.&lt;static_variable&gt;</span> 语法读取函数的静态值。</p>
+  <p>比方说，对于一个名为 <span class="inline2">count</span> 的函数，您有一个静态变量 <span class="inline2">count</span>。您可以在它的第一次调用之后输入 <span class="inline2">counter.count</span> 来访问它。</p>
+  <p class="code">function counter() {<br>
+    &nbsp;&nbsp; &nbsp;static count = 0;<br>
+    &nbsp;&nbsp; &nbsp;return count ++;<br>
+    }<br>
+    <br>
+    repeat (10)&nbsp;<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;counter()<br>
+    }<br>
+    <br>
+    show_debug_message(counter.count);
+  </p>
+  <p>您不能从从未调用过的函数访问静态变量，因为静态变量是在第一次调用函数时初始化的。尝试这样做会给你一个错误，并使你的游戏崩溃。</p>
+  <p>对于构造函数，可以直接从构造函数访问静态变量，也可以从构造函数创建的任何结构访问静态变量：</p>
+  <p class="code">function weapon() constructor<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;static number_of_weapons = 0;<br>
+    &nbsp;&nbsp; &nbsp;number_of_weapons ++;<br>
+    }<br>
+    <br>
+    var _weapon1 = new weapon();<br>
+    var _weapon2 = new weapon();<br>
+    <br>
+    show_debug_message(weapon.number_of_weapons); &nbsp; // Accessing from constructor directly<br>
+    show_debug_message(_weapon1.number_of_weapons); // Accessing from a struct<br>
+    show_debug_message(_weapon2.number_of_weapons); // Accessing from a struct
+  </p>
+  <p>上面的所有三个 <span class="inline2">show_debug_message()</span> 调用都将打印相同的值，因为它们读取的是完全相同的变量。</p>
+  <p>就像使用常规函数一样，如果构造函数从未被调用过，则不能从该构造函数访问该静态变量。</p>
+  <h3>静态结构</h3>
+  <p>属于一个函数的所有静态变量都存储在一个结构中，您可以使用 <span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_get.htm">static_get</a></span> 检索该结构。您可以使用&nbsp;<span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_set.htm">static_set</a></span> 修改函数的静态结构以更改其拥有的静态变量，但此函数仅用于反序列化目的的结构。</p>
+  <p>静态结构主要用于从构造函数创建的结构。请参阅：<a href="../Structs/Static_Structs.htm">静态结构</a></p>
+  <h2>初始化顺序</h2>
+  <p>静态变量总是在函数的顶部进行初始化，因此无论您在函数中的哪个位置定义静态变量，都始终可以在整个函数中读取和更改它(即使它是在定义之前使用的)。请参阅以下示例：</p>
+  <p class="code">function add_health()<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;my_health++;<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message(my_health);<br>
+    &nbsp;&nbsp; &nbsp;static my_health = 1;<br>
+    }</p>
+  <p>这里，在初始化<em>之前，静态变量 "<span class="inline">my_health</span>" 被更改并打印到编译器输出</em>。虽然这看起来是错误的，但它完全没有问题，因为静态变量是在<em>任何函数代码执行之前</em>初始化的。请注意，如果函数中有多个静态变量，则在顶部初始化它们时，它们的定义顺序将保持不变。</p>
+  <p>当将继承与构造函数一起使用时，子构造函数中的任何静态变量仅在父构造函数执行后才会被初始化，因此子构造函数的静态变量不会覆盖父构造函数的静态变量。请参阅以下示例：</p>
+  <p class="code">function parent() constructor<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
+    &nbsp;&nbsp; &nbsp;static value = 10;<br>
+    }<br>
+    <br>
+    function child() : parent() constructor<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
+    &nbsp;&nbsp; &nbsp;static value = 20;<br>
+    }<br>
+    <br>
+    var _child = new child();
+  </p>
+  <p>调用 <span class="inline">child()</span> 构造函数会将以下内容打印到输出日志：</p>
+  <p class="code">10<br>
+    20</p>
+  <p>第一个值来自父构造函数，第二个值来自子构造函数。这表明，在父构造函数完成之前，子对象的静态变量<span class="inline">值</span>才被初始化，并且在每个构造函数中，静态变量在调用 <span class="inline">show_debug_message()</span> 之前被初始化。</p>
+  <h2>静态方法</h2>
+  <p>你也可以在一个函数中使用<span class="inline">static</span>关键字来创建一个<strong>static函数</strong>，这和变量一样，只是意味着该函数只被定义一次，也就是第一次调用该函数的时候，例如。</p>
+  <p class="code">function(_x, _y) Vector2 constructor<br>
+    {<br>
+    &nbsp; &nbsp; x = _x;<br>
+    &nbsp; &nbsp; y = _y;<br>
+    <br>
+    &nbsp; &nbsp; static Add = function( _other )<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; x += _other.x;<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; y += _other.y;<br>
+    &nbsp; &nbsp; }<br>
+    }
+  </p>
+  <p>在上面的示例中，<a href="../Structs.htm#constr">构造函数 </a><span class="inline">Vector2<span class="inline"></span></span>可以用来创建结构，并且该结构将有一些变量，其中一个是方法变量<span class="inline"><span class="inline">Add</span></span>。由于此变量已被定义为静态变量，因此它包含的函数仅在首次调用<em>Vector2</em>时初始化<span class="inline">一次</span>，使用此构造函数创建的所有其他结构将引用最初创建的函数<span class="inline">Add</span>，而不是为每个结构创建一个新函数(有关结构和<span class="inline">构造函数</span>的更多信息，请参阅<a href="../Structs.htm">此处</a>)。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../GML_Overview.htm">GML&nbsp;Overview</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../Arrays.htm">数组</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Static Variables
+static
+-->
+  <!-- TAGS
+static
+-->
+
+</body></html>

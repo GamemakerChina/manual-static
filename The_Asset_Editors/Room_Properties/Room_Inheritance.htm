@@ -1,0 +1,109 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "6.5.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Room Inheritance</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page detailing the inheritance functionality of rooms">
+  <meta name="rh-index-keywords" content="Rooms - Inheritance">
+  <meta name="search-keywords" content="room inheritance,inherit,inheritance">
+<meta name="brsnext" value="The_Asset_Editors/Room_Properties/Filters_and_Effects.htm"><meta name="brsprev" value="The_Asset_Editors/Room_Properties/Room_Properties.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Room Inheritance">
+        <span>Room Inheritance</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">房间继承</span></h1>
+  <p>房间编辑器的一个重要功能就是<strong>继承</strong>。继承意味着您可以创建一个"父"房间，然后从该房间创建一个"子"房间，它将继承父房间的所有属性。此子房间本质上是父房间的<em>克隆</em>，其中的所有内容都<strong>链接到父房间</strong>。这意味着，如果您在父房间中更改视图、移动图块或添加实例，它将反映在子房间中。不仅如此，在子房间中，您可以有选择地关闭特定层、实例、资源或任何其他所需的继承。</p>
+  <p>具有继承属性的房间将亮起继承按钮，如下图所示，然后您可以使用它们来打开或关闭给定层或资源的继承，等等。</p>
+  <p><img alt="Room Inherit Buttons" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Inheritance.png">起初这可能有点难想象，所以让我们来看一个例子：假设你有一个房间，中间有一座城市和一座城堡。城市和城堡是使用不同的图块层绘制的，您也有实例和一些路径供NPC走动。你想拥有它，以便在游戏中城堡被摧毁，但城市中的其他一切看起来和行为都是一样的。您将创建一切正常的初始房间，然后创建继承父房间层的子房间。在儿童房间中，你可以<em>关闭</em>城堡区域的图块层(甚至是单个图块)的继承，然后他们移动/添加/删除图块来创建被摧毁的城堡外观。当玩家进入该房间时，来自母房间的所有实例和所有的图块等。将保持完全相同，除了被摧毁的城堡的那些。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;如果您编辑任何继承属性，它将自动关闭其所属部分中的继承，而无需首先切换继承按钮。</p>
+  <p>要创建房间继承，只需在<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中选择要从中创建子对象的房间，然后在<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">上单击鼠标右键。这将打开房间菜单，您可以在其中选择<strong>创建儿童房间&nbsp;</strong>以创建新的儿童房间。这将在资源浏览器中创建：</p>
+  <p><img alt="Room Inheritance" class="center" height="353" src="../../assets/Images/Asset_Editors/Editor_RoomInheritance.png" width="412">若要更改房间顺序和/或继承，您需要使用<a href="../../Settings/The_Room_Manager.htm">房间管理器</a>，您可以使用资源浏览器右上角的菜单打开该管理器。在这里，您可以转到<em>继承</em>选项卡，然后单击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;并将任何房间拖到任何其他房间上，以使其成为该房间的子房间(或将子房间拖离父房间并中断继承)。</p>
+  <p><img class="center" height="298" src="../../assets/Images/Asset_Editors/Editor_Room_Inheritance_Manager.png" width="281">请注意，在房间内，继承是多层的，您可以选中单个项目、单个层上的项目组、项目属性或整个房间作为继承，也可以从连续的房间继承(因此房间C继承自房间B，而房间B又继承自房间A)。如果创建的基本房间中除视图设置外没有其他内容，则可以将所有其他房间创建为其子房间，并且这些房间都将继承父房间的视图属性。但您可以更进一步，创建另一个基本房间，将"view"房间作为其父房间，该房间包含通用的<a class="tooltip" title="“图形用户界面”（Graphical User Interface）的缩写，它是一个包含图形元素（例如窗口，图标和按钮）的用户界面。在GameMaker中，您有一组特定的对象事件（绘制GUI事件），可以将其吸引到专门为得分，生命，存货等事物设计的这一层。">图形用户界面</a>实例和每个游戏室所需的控制器。现在您可以从中创建子房间，它们将继承来自父房间的控制器和图形用户界面，以及来自该房间父房间的视图设置！</p>
+  <p>正如您希望看到的，继承是非常强大的，您可以使用它来维护更干净的房间结构，加快工作流程，并总体上优化您花费在制作和设计房间上的时间。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Rooms.htm">The Room Editor</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Filters_and_Effects.htm">滤镜和效果</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Inheritance
+-->
+  <!-- TAGS
+rooms_inheritance
+-->
+
+</body></html>

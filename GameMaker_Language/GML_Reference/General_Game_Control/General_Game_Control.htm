@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>General Game Control</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for General Game Control functions">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="General Game Control,Game Functions">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/General_Game_Control/game_id.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Extensions/extension_exists.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="General Game Control">
+        <span>General Game Control</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>通用游戏控制</h1>
+  <p>这些函数和变量都与游戏特定函数有关，例如加载/保存，重新启动等。</p>
+  <p>以下<a href="../../GML_Overview/Variables/Global_Variables.htm">全局范围</a><strong>内置</strong>变量对于调试您的游戏很有用-例如，在出现问题的情况下，它们可以用作日志文件的输出-以及显示当前构建ID等...对用户:</p>
+  <ul class="colour">
+    <li><a href="game_id.htm">game_id</a></li>
+    <li><a href="game_save_id.htm">game_save_id</a></li>
+    <li><a href="game_display_name.htm">game_display_name</a></li>
+    <li><a href="game_project_name.htm">game_project_name</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>以下函数用于一般的游戏控制:</p>
+  <ul class="colour">
+    <li><a href="game_end.htm">game_end</a></li>
+    <li><a href="game_restart.htm">game_restart</a></li>
+    <li><a href="game_load.htm">game_load</a></li>
+    <li><a href="game_load_buffer.htm">game_load_buffer</a></li>
+    <li><a href="game_save.htm">game_save</a></li>
+    <li><a href="game_save_buffer.htm">game_save_buffer</a></li>
+    <li><a href="game_get_speed.htm">game_get_speed</a></li>
+    <li><a href="game_set_speed.htm">game_set_speed</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>为了帮助您创建和维护游戏的高分，<span data-keyref="GameMaker Name">GameMaker</span>创建了一个包含10个位置的全局高分<a href="../../GML_Overview/Arrays.htm">数组</a>，您可以访问、添加和更改该数组，以创建您自己的自定义高分列表，而不会有太多麻烦。此函数是游戏的本地函数，适用于所有平台，因此您可以使用这些函数以及<a href="../File_Handling/File_Handling.htm">文件处理函数</a>轻松存储和维护基本的高分表。</p>
+  <p>存在以下处理内部高分列表的函数。</p>
+  <ul class="colour">
+    <li><a href="highscore_add.htm">highscore_add</a></li>
+    <li><a href="highscore_name.htm">highscore_name</a></li>
+    <li><a href="highscore_value.htm">highscore_value</a></li>
+    <li><a href="highscore_clear.htm">highscore_clear</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>还包括一个函数，用于将屏幕上的高分作为列表绘制出来，然而，这是非常基本的，建议您使用它进行调试，而不是其他任何事情，因为制作自己的高分表很容易，并且可以让您更好地控制它的显示方式:</p>
+  <ul class="colour">
+    <li><a href="../Drawing/Text/draw_highscore.htm">draw_highscore</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>最后，我们有一个函数，允许您为鼠标光标分配一个精灵:</p>
+  <ul class="colour">
+    <li><a href="cursor_sprite.htm">cursor_sprite</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../GML_Reference.htm">GML Reference</a></div>
+        <div style="float:right">Next: <a href="../Movement_And_Collisions/Movement_And_Collisions.htm">运动与碰撞</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+General Game Control
+Game Control Functions
+Game Functions
+-->
+  <!-- TAGS
+game_functions
+-->
+
+</body></html>

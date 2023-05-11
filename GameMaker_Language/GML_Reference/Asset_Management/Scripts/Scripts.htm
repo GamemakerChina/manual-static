@@ -1,0 +1,111 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Scripts</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Scripts">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Scripts">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Scripts/script_exists.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/Path_Variables/path_endaction.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Scripts">
+        <span>Scripts</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>脚本</h1>
+  <p>以下函数用于检查和运行已写入<a href="../../../../The_Asset_Editors/Scripts.htm">脚本编辑器</a>的脚本：</p>
+  <ul class="colour">
+    <li><a href="script_exists.htm">script_exists</a></li>
+    <li><a href="script_get_name.htm">script_get_name</a></li>
+    <li><a href="script_execute.htm">script_execute</a></li>
+    <li><a href="script_execute_ext.htm">script_execute_ext</a></li>
+  </ul>
+  <div data-conref="../../../../assets/snippets/Script_empty_reference_error.hts">
+  <p class="note"><span class="note">注意</span>请记住，如果您的脚本<strong>完全为空</strong>，它将不会被加载到编译的游戏中，并将变得不存在。这意味着尝试引用这样的脚本资源将使您的游戏崩溃。请注意，这仅适用于完全为空的脚本，因此即使您的脚本仅包含注释，它仍将包含在编译的游戏中。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Asset_Management.htm">资源管理</a></div>
+        <div style="float:right">Next: <a href="../Shaders/Shaders.htm">着色器</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Scripts
+-->
+  <!-- TAGS
+script_functions
+-->
+
+</body></html>

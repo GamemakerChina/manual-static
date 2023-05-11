@@ -1,0 +1,138 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.12.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"><script src="../../../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <title>video_set_volume</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <meta name="template" content="../../../../assets/masterpages/Manual_Keyword_Page.htt">
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Reference page for video_set_volume">
+  <meta name="rh-index-keywords" content="video_set_volume">
+  <meta name="search-keywords" content="video_set_volume, video volume">
+  <meta name="condition-tags" content="">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Videos/video_pause.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Videos/YUV_Videos.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="video_set_volume">
+        <span>video_set_volume</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1>video_set_volume</h1>
+  <p>此函数可更改当前加载的视频的音频音量。它采用介于<span class="inline2">0</span>和<span class="inline2">1</span>之间的值，其中<span class="inline2">0</span>是静默的，<span class="inline2">1</span>是最大卷。</p>
+  <p>请确保仅在<span class="inline"><a href="video_open.htm">video_open()</a></span>调用之后但在<span class="inline"><a href="video_close.htm">video_close()</a></span>调用之前调用此函数，否则它将不执行任何操作(因为不会加载视频)。</p>
+  <p>在某些平台上，此函数只能在视频完全加载后才能工作，因此请使用<a href="Videos.htm#h">异步回调</a>查看视频何时准备就绪，然后更改音量。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">video_set_volume(value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>卷值介于0和1之间</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">my_video = video_open("splash.mp4");<br>
+    video_set_volume(0.5);</p>
+  <p>上面的代码从游戏的"包含的文件"中加载<span class="inline2">splash.mp4</span>，并将其卷更改为<span class="inline2">0.5</span>(最大卷的50%)。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Videos.htm">视频播放</a></div>
+        <div>Next:&nbsp;<a href="video_pause.htm">video_pause</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+video_set_volume
+-->
+  <!-- TAGS
+video_set_volume
+-->
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+</body></html>

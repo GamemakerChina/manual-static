@@ -1,0 +1,153 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.2.0_26";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gpu_set_cullmode</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference for the function gpu_set_cullmode">
+  <meta name="rh-index-keywords" content="gpu_set_cullmode,cull_noculling,cull_clockwise,cull_counterclockwise">
+  <meta name="search-keywords" content="gpu_set_cullmode,cull_noculling,cull_clockwise,cull_counterclockwise">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_fog.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gpu_set_cullmode">
+        <span>gpu_set_cullmode</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_cullmode</h1>
+  <p>此函数可用于设置背面剔除模式。多边形(基元)具有<i>前</i>和<i>后</i>侧。正面被认为是以<b>逆时针</b>顺序定义顶点的一侧。通常两边都是绘制的，但是如果你做一个封闭的形状(像一个金字塔)，那么这是浪费处理能力，因为三角形的背面永远看不到。在这些情况下，您可以打开背面消隐，因为这样可以节省大约一半的绘制时间，尽管这意味着您需要以正确的方式定义多边形以防止出现问题。</p>
+  <p>使用的剔除模式值必须是以下常量之一(默认值为<span class="inline">cull_noculling</span>)：</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>常量</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">cull_noculling</span></td>
+        <td>No culling will be done</td>
+      </tr>
+      <tr>
+        <td><span class="inline">cull_clockwise</span></td>
+        <td>All clockwise triangles will be culled</td>
+      </tr>
+      <tr>
+        <td><span class="inline">cull_counterclockwise</span></td>
+        <td>All counter-clockwise triangles will be culled</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gpu_set_cullmode(cullmode);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>cullmode</td>
+        <td><span data-keyref="Type_Constant_CullMode"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_cullmode.htm">Culling Mode Constant</a></span></td>
+        <td>要使用的剔除模式(请参阅上面的列表)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if gpu_get_cullmode() != cull_clockwise<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;gpu_set_cullmode(cull_clockwise);<br>
+    }</p>
+  <p>以上代码获取当前剔除模式，如果不是<span class="inline">cull_clockwise</span>，则将其设置为该常量。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="GPU_Control.htm">GPU 控制</a></div>
+        <div style="float:right">Next:&nbsp;<a href="gpu_set_blendmode.htm">gpu_set_blendmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_cullmode
+cull_noculling
+cull_clockwise
+cull_counterclockwise
+-->
+  <!-- TAGS
+gpu_set_cullmode
+-->
+
+</body></html>

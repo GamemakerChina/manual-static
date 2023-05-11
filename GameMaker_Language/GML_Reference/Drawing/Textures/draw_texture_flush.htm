@@ -1,0 +1,114 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.11.0_8";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_texture_flush</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for ​draw_texture_flush">
+  <meta name="rh-index-keywords" content="draw_texture_flush">
+  <meta name="search-keywords" content="draw_texture_flush">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Textures/texture_prefetch.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Textures/texture_global_scale.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_texture_flush">
+        <span>draw_texture_flush</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_texture_flush</h1>
+  <p>使用此函数，您可以从视频内存中删除所有纹理，然后将在首次使用时重新加载这些纹理。当游戏有多个纹理页面时，这是管理视频内存的唯一有效方法，并且应该刷新纹理内存并使用纹理组函数组织图形，以确保使用的纹理数量最少。</p>
+  <p>值得注意的是，默认情况下，在所有目标上的<i>，纹理页面将仅在需要时加载，并且您可以对精灵使用各种预取和刷新函数(在此处找到</i>)来管理事物以及这个函数。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_texture_flush();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">draw_texture_flush();</p>
+  <p>上述代码将刷新纹理数据的视频内存，并可能放置在房间中放置的对象的第一个实例的创建事件中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Textures.htm">纹理</a></div>
+        <div style="float:right">Next:&nbsp;<a href="texture_prefetch.htm">texture_prefetch</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_texture_flush
+-->
+  <!-- TAGS
+draw_texture_flush
+-->
+
+</body></html>

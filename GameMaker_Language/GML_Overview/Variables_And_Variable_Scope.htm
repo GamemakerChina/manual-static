@@ -1,0 +1,158 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "8.2.1.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Variables And Variable Scope</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining variables and their scoping in GML">
+  <meta name="rh-index-keywords" content="Variables And Variable Scope">
+  <meta name="search-keywords" content="variables,scope,local variables,instance variables,global variables">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Variables/Local_Variables.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Runtime_Functions.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Variables And Variable Scope">
+        <span>Variables And Variable Scope</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>变量和变量范围</h1>
+  <p>与任何编程语言<b>一样，GML </b>使用<i>变量</i>作为大多数编程操作的基本单位。变量用于将信息存储在设备内存中供以后(或即时)使用，并且为它们指定了一个名称，以便您可以在运行时和脚本函数中引用它们。<b>GML </b>中的变量可以存储许多不同的<a href="Data_Types.htm"><strong>数据类型</strong></a>，如实数(例如：100、2.456575、-56等等，字符串(例如："Hello world！")，整数(例如：1, 556,-7 )或布尔值(<span class="inline">true</span>或<span class="inline">false</span>)，以及其他内容：</p>
+  <p class="code">var _num = 126.4545;<br>
+    var _str = "Hello World";<br>
+    new_num = _num * 100;<br>
+    global.my_string = _str + " I said";</p>
+  <p>也可以使用变量保存从函数返回的值，例如：</p>
+  <p class="code">var _id = instance_nearest(x, y, obj_Tree);<br>
+    root = sqrt(1000);<br>
+    global.str = string_upper("Hello World");</p>
+  <p>因此，变量是我们可以命名并用于存储值的对象，以便以后在一个或多个操作中使用。变量的一个很好的"真实世界"示例是<b>pi 𝜋</b>...它是一个变量，每个变量都知道并保留值3.14159265(等等...)。为什么我们有我们的语言？好吧，对某人说"pi"比"3点14159265"要容易得多！这样命名会使生活变得简单许多，这也意味着如果该变量的值发生变化，我们不必随处更改数字，因为变量<i>名称</i>仍然相同。</p>
+  <p>在<b>GML </b>中构成变量时，名称必须以字母或下划线符号"_"开头，并且只能包含字母、数字和下划线符号"_"，最大长度为64个符号。因此，有效变量包括<span class="inline">fish</span>、<span class="inline">foo_bar</span>、<span class="inline">num 1</span>或<span class="inline">_str</span>，而无效变量为<span class="inline">6 fish</span>、<span class="inline">foo bar</span>或<span class="inline"> *num</span>。</p>
+  <p>现在，在许多编程语言中，您需要创建一个"变量"赋值才能使用它。这基本上意味着您告诉计算机要用于变量的名称，并为其指定初始值。然后在内存中为变量指定一个存储值或对其执行操作的位置。赋值变量的形式为：</p>
+  <p class="code">&lt;variable&gt; = &lt;expression&gt;;</p>
+  <p>表达式可以是简单的值，但也可以更加复杂，因此，与其为变量赋值，还可以使用<span class="inline"><b>+=</b></span>将值添加到变量的当前值，例如：</p>
+  <p class="code">a = 100;&nbsp;&nbsp;&nbsp;// Assigning a simple value<br>
+    b = 200;<br>
+    c = 300;<br>
+    a += b;&nbsp;&nbsp;&nbsp;&nbsp;// Assigning with operation<br>
+    a = b + c; // Assigning with expression</p>
+  <p class="note"><span class="note">注意</span>GameMaker语言还将接受"<span class="inline">:=</span>"作为赋值，尽管这通常不是最常用的方法：</p>
+  <p class="code">&lt;variable&gt; := &lt;expression&gt;;</p>
+  <p>类似地,您可以使用减 <span class="inline"><b>-=</b></span>, 乘 <span class="inline"><b>*=</b></span>, 除 <span class="inline"><b>/=</b></span>, 或者使用位操作符使用 <span class="inline"><b>|=</b></span>, <span class="inline"><b>&amp; =</b></span>,或 <span class="inline"><b>^=</b></span>.您还可以使用<i></i><span class="inline"><b>++</b></span>, <span class="inline"><b>--</b></span>从一个值添加或减去1。有关更多信息，请参见<a href="Expressions_And_Operators.htm">表达式和运算符</a>一节。</p>
+  <p>请注意，您<i>无法</i>执行以下操作(或任何变更)：</p>
+  <p class="code">a = b = c = 4;</p>
+  <p>相反，应该按如下方式进行：</p>
+  <p class="code">a = 4;<br>
+    b = 4;<br>
+    c = 4;</p>
+  <p>上面显示的变量赋值是所有<strong>实例</strong>变量，但是当您使用<span data-keyref="GameMaker Name">GameMaker</span>进行编程并且每个变量都有自己的<strong>范围</strong>(可视为其操作区域或到达范围)时，实际上还有其他三个主要变量类别。以下各页概述了不同类型的变量及其范围：</p>
+  <ul class="colour">
+    <li><a href="Variables/Local_Variables.htm">局部变量</a></li>
+    <li><a href="Variables/Instance_Variables.htm">实例变量</a></li>
+    <li><a href="Variables/Global_Variables.htm">全局变量</a></li>
+    <li><a href="Variables/Constants.htm">常量</a></li>
+  </ul>
+  <p>GameMaker语言还具有多个不同的内置变量，这些变量可以具有上述任何范围(<i>local</i>除外)。这些变量是特殊的，因为默认情况下它们是游戏世界中对象和房间的一部分。上述部分列出了一些内置的全局变量，手册中针对精灵、房间、对象等的不同部分也概述了每种情况下可用的内置变量。此类内置实例变量的示例如下：</p>
+  <ul class="colour">
+    <li><span class="inline"><a href="../GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></span></li>
+    <li><a href="../GML_Reference/Asset_Management/Paths/Path_Variables/path_index.htm"><span class="inline">path_scale</span></a></li>
+    <li><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/speed.htm"><span class="inline">speed</span></a></li>
+  </ul>
+  <p>内置全局变量的示例如下：</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm"><span class="inline">view_xport</span></a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/GM_version.htm"><span class="inline">GM_version</span></a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room.htm"><span class="inline">room</span></a></li>
+  </ul>
+  <p>大多数内置变量可以像其他变量一样进行更改和设置，有些变量甚至可以是<a href="Arrays.htm">数组</a>，只是您不必像创建常规变量那样设置它们，因为它们已经初始化为默认值。</p>
+  <p>最后，还有一些专门用于设置、获取或以某种方式检查变量的函数，可从以下页面获得：</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">变量函数</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="GML_Overview.htm">GML&nbsp;Overview</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Data_Types.htm">数据类型</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables
+variables - built-in
+variables - scope
+declaring variables
+scope
+built-in variables
+-->
+  <!-- TAGS
+variables
+-->
+
+</body></html>

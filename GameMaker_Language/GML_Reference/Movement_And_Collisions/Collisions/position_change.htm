@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.5.3.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>position_change</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_change">
+  <meta name="rh-index-keywords" content="position_change">
+  <meta name="search-keywords" content="position_change">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/position_destroy.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/position_meeting.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="position_change">
+        <span>position_change</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>position_change</h1>
+  <p>此函数将检查某个位置是否在给定点与<i>个实例</i>发生碰撞，如果存在碰撞，则会将碰撞中的<b>个全部</b>实例更改为所选对象的实例。您可以将"perf"参数设置为<span class="inline">true</span>，这将强制<span data-keyref="GameMaker Name">GameMaker</span>对找到的实例执行<strong>销毁</strong>和<strong>清理</strong>事件，以及新实例的<strong>创建</strong>事件，或者<span class="inline">假</span>不执行这些事件中的任何一个。请注意，如果您选择不执行"销毁"、"清理"和"创建"事件，则任何使用"创建"事件中通常定义的变量创建的实例都将导致游戏崩溃，因为该变量将不再存在。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">position_change(x, y, obj, perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要更改碰撞实例的位置的x坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要更改碰撞实例的位置的y坐标。</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
+        <td>调用对象将更改为的新对象。</td>
+      </tr>
+      <tr>
+        <td>perf</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否执行该新对象的创建事件(true)或(false)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">position_change(200, 200, obj_Bird, true);</p>
+  <p>这将把在点(200, 200 )处发生碰撞的所有实例更改为"obj_Bird"的实例，在此过程中为每个实例执行"obj_Bird"的创建事件。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">Next: <a href="position_destroy.htm">position_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_change
+-->
+  <!-- TAGS
+position_change
+-->
+
+</body></html>

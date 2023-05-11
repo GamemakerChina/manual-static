@@ -1,0 +1,130 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.3.1.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>sprite_get_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function sprite_get_speed">
+  <meta name="rh-index-keywords" content="sprite_get_speed">
+  <meta name="search-keywords" content="sprite_get_speed">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_speed_type.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_number.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="sprite_get_speed">
+        <span>sprite_get_speed</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_speed</h1>
+  <p>此函数可用于检索<a href="../../../../../The_Asset_Editors/Sprites.htm">sprite编辑器</a>中针对精灵资源定义的精灵速度。然后可以使用返回的值，例如，计算如何可能会为不同的<a href="../Sprite_Instance_Variables/image_speed.htm"><span class="inline">image_speed</span></a>绘制许多帧。请注意，返回值将根据速度的<i>类型</i>而有很大不同在精灵编辑器中应用了每秒<i>帧</i>或每游戏帧<i>。以下两个例子说明了这一点:</i></p>
+  <ul class="colour">
+    <li>如果您有一个精灵，每<i>秒绘制1帧</i>并将图像速度设置为0.5，它将以每秒0.5帧的速度绘制。如果你的游戏帧速率是每秒60帧，那么精灵将为每120画1帧游戏框架。</li>
+    <li>如果您有一个精灵，每个<i>游戏帧</i>绘制1帧，并将图像速度设置为0.5，它将每个游戏帧绘制0.5帧。如果你的游戏帧速率是每秒60帧，那么精灵将为每60个游戏帧。</li>
+  </ul>
+  <p>您可以找出使用函数<a href="sprite_get_speed_type.htm"><span class="inline">sprite_get_speed_type()</span></a>定义精灵时使用的动画速度类型，并且可以设置动画速度<i>和</i>类型使用函数<a href="../Sprite_Manipulation/sprite_set_speed.htm"><span class="inline">sprite_set_speed()</span></a>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">sprite_get_speed(index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>index</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>精灵的索引，以获得</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">s_speed = sprite_get_speed(sprite_index);<br> s_type = sprite_get_speed_type(sprite_index);</p>
+  <p>上面的代码获取了精灵速度和精灵动画类型，并将它们存储在实例变量中，以备将来使用。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sprite_Information.htm">精灵信息</a></div>
+        <div style="float:right">Next:&nbsp;<a href="sprite_get_speed_type.htm">sprite_get_speed_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_speed
+-->
+  <!-- TAGS
+sprite_get_speed
+-->
+
+</body></html>

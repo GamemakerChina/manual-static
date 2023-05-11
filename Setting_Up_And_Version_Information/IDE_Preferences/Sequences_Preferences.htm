@@ -1,0 +1,137 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.2_8";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Sequences Preferences</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Sequences Preferences">
+  <meta name="rh-index-keywords" content="Prefs - Sequences">
+  <meta name="search-keywords" content="Prefs Sequences,Sequences Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/Platform_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Asset_Browser_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Sequences Preferences">
+        <span>Sequences Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>序列首选项</h1>
+  <p><img alt="The Sequences Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Sequences_Prefs.png"><strong>序列首选项</strong>用于定义<a href="../../The_Asset_Editors/Sequences.htm">序列编辑器</a>及其元素如何运行的某些属性。主要选项包括：</p>
+  <ul class="colour">
+    <li><strong>在新创建的序列上显示画布框</strong>：启用后，所有新序列的画布框智能参考线将显示在序列编辑器的画布中。该选项也可以根据需要从编辑器本身的画布属性中启用/禁用。默认值为启用。</li>
+    <li><strong>新建序列的画布边框宽度</strong>：您可以在此设置所有新序列的默认边框宽度。默认值为1366px。</li>
+    <li><strong>新建序列的画布边框高度</strong><strong></strong>：您可以在此处设置所有新序列的默认帧高度。默认值为768px。</li>
+    <li><strong>在画布上单击时暂停</strong>：选中此选项后，在序列编辑器画布中的任何位置单击将暂停序列回放。这在默认情况下是启用的。</li>
+    <li><strong>重叠选择延迟(以毫秒为单位)</strong>：这控制您需要等待多长时间才能在序列编辑器画布上为重叠项弹出项目工具箱。默认值为1000ms。</li>
+    <li><strong>平移路径点插入页边距</strong>：在序列编辑器画布中，当您添加资源，然后创建位置参数轨迹时，将绘制虚线以演示资源在移动时将采用的路径。如果将鼠标放在靠近这条线的位置，则可以向其添加一个新的参数轨迹点，该选项设置鼠标在点标记显示之前与平移线的距离。默认值为6px。</li>
+    <li><strong>自动创建默认参数轨迹</strong>：启用后，此选项将自动将位置、比例、旋转和原点参数轨迹添加到序列的轨迹面板中创建的任何新轨迹。默认设置为禁用。</li>
+    <li><strong>自动拉伸新创建的资源</strong>：此选项将拉伸所有新创建的资源密钥以匹配序列的长度。默认设置为禁用。</li>
+    <li><strong>动画曲线轨迹在多普表中的高度</strong>：此选项可用于设置在关键帧视图中使用曲线的轨迹线参数轨迹的数量。&nbsp;默认为2，但您也可以选择1或3。</li>
+    <li><strong>新建文本轨道的默认文本</strong>：在序列中创建新文本轨道时使用的文本字符串。</li>
+    <li><strong>检查器选择颜色</strong>：用于突出显示在检查员器<a href="../../IDE_Tools/The_Inspector.htm#h">多选</a>列表中选择的轨道的颜色。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">确认对话框</span><span data-close-text="true">确认对话框</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot"><img alt="Sequences confirm dialog preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Sequences_Confirm_Prefs.png">当您执行某些操作时，可使用<strong>确认对话框</strong>首选项来更改序列编辑器中显示的消息。您可以更改的消息包括：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>自动选择嵌入已编辑的曲线</strong>：如果您尝试嵌入已编辑的动画曲线，则默认情况下将显示一条消息，要求您确认操作。但是，如果将此选项设置为"是"，则不会每次都显示和嵌入消息。将其设置为"否"将阻止每次嵌入。</li>
+      <li class="dropspot"><strong>自动选择将曲线转换为关键点</strong>：&nbsp;如果您尝试将动画曲线转换为关键帧，默认情况下将显示一条消息，询问您是否要继续。但是，将此选项设置为"OK"不会显示该消息，也不会让您转换曲线。</li>
+    </ul>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">智能参考线</span><span data-close-text="true">智能参考线</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot"><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Sequences_SmartGuides_Prefs.png">您可以在此处选择在序列编辑器中工作时智能参考线的行为。可用选项包括：</p>
+    <ul class="dropspotlist">
+      <li><strong>启用智能参考线</strong>：您可以在此处启用或禁用序列编辑器画布中的智能参考线。这在默认情况下是启用的。</li>
+      <li><strong>启用尺子</strong>：您可以在此处启用或禁用序列编辑器画布中的智能参考线。这在默认情况下是启用的。</li>
+      <li><strong>将尺子对齐边缘</strong>：此选项将使尺子能够在序列画布中将资源的边缘对齐(反之亦然)。默认为已启用。</li>
+      <li><strong>对齐距离</strong>：这是一个项目需要到标尺(或标尺到项目)的距离(以像素为单位)，它才能"对齐"到该位置。默认值为6px。</li>
+    </ul>
+    <p><br>
+      &nbsp;</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+        <div style="float:right">Next: <a href="General_Preferences.htm">常规首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Sequences
+-->
+  <!-- TAGS
+prefs_sequences
+-->
+
+</body></html>

@@ -1,0 +1,168 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.1_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Image Editor Preferences</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Image Editor Preferences">
+  <meta name="rh-index-keywords" content="Prefs - Images">
+  <meta name="search-keywords" content="Image Prefs,Image Editor Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/Sprite_Editor_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Start_Screen_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Image Editor Preferences">
+        <span>Image Editor Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图像编辑器首选项</h1>
+  <p><img alt="Image Editor Prefs" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Image_Editor_Prefs.png"></p>
+  <p><strong>图像编辑器首选项</strong>用于定义<a href="../../The_Asset_Editors/Image_Editor.htm">图像编辑器</a>窗口的外观。以下是常规选项：</p>
+  <ul class="colour">
+    <li><strong>图像选择复制/粘贴</strong>：选择是按 CTRL+V (粘贴)将复制的图像作为画笔插入，还是作为新层插入。</li>
+    <li><strong>默认展开精灵控件覆盖</strong>：选中此选项后，每次打开精灵进行编辑时，都会在图像编辑器中显示精灵控件和边框信息(可以使用折叠按钮<img alt="Collapse Nodes Icon" class="icon" src="../../assets/Images/Icons/Icon_Collapse.png">再次关闭，但稍后再次编辑精灵时将重新打开)。如果取消选中此选项，则在打开精灵时将隐藏精灵控件和帧信息。默认情况下，取消选中此选项。</li>
+    <li><strong>默认循环模式</strong>：图像编辑器中的循环按钮可以设置为两种不同的模式：播放一次，动画在到达最后一帧时将停止从开始循环，动画结束时将返回到第一帧或乒乓，动画将通过图像向上移动到结束，然后再次通过图像向下返回到开始。这里的默认值是"循环"。</li>
+    <li><strong>绘制细的选择轮廓</strong>：如果选中此选项，则无论图像的比例如何，选择的轮廓都将是绝对 1px 的宽度，而取消选中它将使选择轮廓的宽度和比例与图像相对为 1px。默认情况下，选中此选项。</li>
+    <li><strong>选择轮廓原色</strong>：截面轮廓是一条在两种颜色之间交替的虚线。此选项允许您设置要使用的第一种颜色(包括Alpha)，其缺省值为 <a class="tooltip" title="这是Alpha，Red，Green，Blue的缩写，用于指代指定为十六进制值的颜色分量，例如：＃FF53E270，其中每两位数字代表一个分量。分解上面的ARGB示例可以得到以下分量值：Alpha（FF），Red（53），Green（E2）和Blue（70）。">ARGB</a>&nbsp;#FFFFFD0。</li>
+    <li><strong>选择轮廓二次色</strong>：截面轮廓为两种颜色交替的虚线。该选项允许您设置要使用的第二种颜色(包括 Alpha)，其缺省值为 ARGB #0000D0。</li>
+    <li><strong>编辑器背景色</strong>：编辑精灵边框时，图像可能会被放大或缩小，或者可能不适合窗口中的整个图形，在这种情况下，将显示背景颜色，您可以在此处设置背景颜色。默认值为 ARGB #282828FF。</li>
+  </ul>
+  <p>图像编辑器首选项还具有以下子项：</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">背景</span><span data-close-text="true">背景</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_Background_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_Background_Prefs.png" class="center" alt="Image Editor Background Prefs">
+    </p>
+    <p class="dropspot">您可以在此设置编辑精灵图像时使用的背景选项。默认情况下，这是由灰色方块组成的网格，但您可以使用以下设置来更改它：</p>
+    <ul class="dropspotlist">
+      <li><strong>画布样式</strong>：您可以在这里设置背景的样式，可以是"<em>块图案</em>"或"<em>单色</em>"。单色只需将背景设置为您选择的颜色(使用颜色1设置，如下所述)，而块图案是默认设置(也可以使用下面显示的其余对话框选项进行编辑)。默认设置为"<em>块模式</em>"。</li>
+      <li><strong>画布块大小</strong>：背景选择了<em>块图案</em>后，可以在这里设置单个块的大小。默认为 16px，最小值为 2px，最大允许为 256px。</li>
+      <li><strong>画布原色</strong>：如果您选择了<em>单色</em>作为背景，则使用的颜色是这一种。您可以单击色样打开颜色编辑器并对其进行更改。当使用<em>块图案</em>选项时，这将设置交替块的第一种颜色。默认颜色为 (<a class="tooltip" title="这是Alpha，Red，Green，Blue的缩写，用于指代指定为十六进制值的颜色分量，例如：＃FF53E270，其中每两位数字代表一个分量。分解上面的ARGB示例可以得到以下分量值：Alpha（FF），Red（53），Green（E2）和Blue（70）。">ARGB</a>) #FFC3C3C3。</li>
+      <li><strong>画布第二色(方块图案样式)</strong>：如果您选择了<em>方块图案</em>作为背景，则用于与颜色1(上图)交替的颜色是此颜色。您可以单击色样打开颜色编辑器并对其进行更改。默认颜色为 (ARGB) #FF808080。</li>
+    </ul>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">确认对话框</span><span data-close-text="true">确认对话框</span></a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_Confirm_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_Confirm_Prefs.png" alt="Image Editor Confirm Prefs" class="center" width="822" height="463">
+    </p>
+    <p class="dropspot">您可以在此处选择在当前精灵上执行不同操作时确认对话框的行为。它们是：</p>
+    <ul class="dropspotlist">
+      <li><strong>删除帧的自动响应</strong>：默认情况下删除帧时，会显示一条消息，询问您是否确实要执行此操作。通过将此选项设置为"OK"，您可以删除此消息并允许在不显示其他消息的情况下删除帧。默认为"显示消息"。</li>
+      <li><strong>在条带导入期间自动响应替换图像</strong>：当您从图像下拉菜单中选择导入条带时，您将收到一条消息，警告您将覆盖精灵资源中已有的任何图像，并提供是否继续的选项。您可以在此处设置是否显示此消息，或者让 IDE 简单地选择"是"或"否"选项。缺省值为"显示消息"。</li>
+      <li><strong>对提交工具更改的自动响应</strong>：在编辑框架后更换绘制工具时，默认情况下会显示一条消息，询问您是否要提交所做的更改。通过将此选项设置为"OK"，您可以删除此消息并允许提交框架编辑，而不会在您更改工具时显示进一步的消息。如果您选择"否"，那么当您更换工具时，框架编辑将被静默取消。默认为"显示消息"。</li>
+      <li><strong>自动响应锁定的层警告</strong>：如果您尝试编辑锁定的层，默认情况下会收到一条消息，通知您无法执行此操作。如果将此选项设置为"OK"，则不会显示任何消息，编辑将静默失败。</li>
+      <li><strong>自动响应分组选定警告</strong>：如果您在层编辑器中选择多个层，然后尝试绘制或编辑，则默认情况下会显示一条消息，通知您这是不可能的。您可以在此处选择"确定"以删除此消息，并且在仅选择一个层之前，不会同时编辑图像。默认为"显示消息"。</li>
+    </ul>
+    <p>
+      <br><br>
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">网格设置</span><span data-close-text="true">网格设置</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_GridSettings_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_GridSettings_Prefs.png" class="center" alt="Image Editor Grid Settings">网格设置首选项用于设置图像网格的显示方式，可用选项如下：</p>
+    <ul class="dropspotlist">
+      <li><strong>网格水平间距(像素)</strong>：此值设置图像网格水平线的间距。默认值为 1px。</li>
+      <li><strong>网格垂直间距(像素)</strong>：此值设置图像网格垂直线的间距。默认值为 1px。</li>
+      <li><strong>显示网格</strong>：如果选中此选项，则打开图像编辑器时会打开图像网格。默认设置为禁用。</li>
+      <li><strong>对齐到网格</strong>：如果选中此选项，则图像编辑器会自动将某些工具对齐到图像网格。默认设置为禁用。</li>
+      <li><strong>网格线颜色</strong>：在这里可以设置图像网格的颜色(包括 Alpha 值)。默认为 (<a class="tooltip" title="这是Alpha，Red，Green，Blue的缩写，用于指代指定为十六进制值的颜色分量，例如：＃FF53E270，其中每两位数字代表一个分量。分解上面的ARGB示例可以得到以下分量值：Alpha（FF），Red（53），Green（E2）和Blue（70）。">ARGB</a>) #FF000000。</li>
+    </ul>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">工具</span><span data-close-text="true">工具</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"><img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_Tools_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/ImageEditor_Tools_Prefs.png" class="center">您可以在此设置一些绘制工具的操作和显示方式的不同选项。<br><br></p>
+    <p class="dropspot">如果您使用的是<strong>圆弧工具</strong><img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Prefs_Arctool_Icon.png" src="../../assets/Images/Setup_And_Version/Preferences/Prefs_Arctool_Icon.png" class="icon" alt="Arc Tool Icon" width="32" height="32">，则可以在此处设置用于绘制节点属性的不同颜色：</p>
+    <ul class="dropspotlist">
+      <li><strong>锚点颜色</strong>：设置样条线/圆弧上不同锚点的颜色。默认为 (<a class="tooltip" title="这是Alpha，Red，Green，Blue的缩写，用于指代指定为十六进制值的颜色分量，例如：＃FF53E270，其中每两位数字代表一个分量。分解上面的ARGB示例可以得到以下分量值：Alpha（FF），Red（53），Green（E2）和Blue（70）。">ARGB</a>) #FFFF0000。</li>
+      <li><strong>控制点颜色</strong>：设置锚点上每个控制点"手柄"的颜色。默认为 (ARGB) #FFFF0000。</li>
+      <li><strong>切线颜色</strong>：设置将控制点连接到锚点的线的颜色。默认为 (ARGB) #FF00FFFF。</li>
+      <li><strong>选定点颜色</strong>：设置用于样条线/圆弧上任何选定锚点的颜色。默认为 (ARGB) #FF00FF00。</li>
+      <li><strong>点大小</strong>：设置要使用的不同锚点和控制点的大小。默认为 10px。</li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+        <div style="float:right">Next: <a href="Sprite_Editor_Preferences.htm">精灵编辑器首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Image Editor
+-->
+  <!-- TAGS
+prefs_image_editor
+-->
+
+</body></html>

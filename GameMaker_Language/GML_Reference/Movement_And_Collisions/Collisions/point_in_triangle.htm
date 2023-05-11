@@ -1,0 +1,164 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.5.3.0_19";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>point_in_triangle</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that gives an overview of the funtion point_in_triangle">
+  <meta name="rh-index-keywords" content="point_in_triangle">
+  <meta name="search-keywords" content="point_in_triangle">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/point_in_circle.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/point_in_rectangle.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="point_in_triangle">
+        <span>point_in_triangle</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>point_in_triangle</h1>
+  <p>使用此函数时，定义一个三角形区域，<span data-keyref="GameMaker Name">GameMaker</span>将确定给定点是否在其范围内。如果点落在定义的三角形内，则函数将返回<span class="inline">true</span>，否则函数将返回<span class="inline">false</span>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">point_in_triangle(px, py, x1, y1, x2, y2, x3, y3);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>px</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的点的x坐标。</td>
+     </tr>
+      <tr>
+        <td>py</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的点的y坐标。</td>
+     </tr>
+      <tr>
+        <td>x1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的三角形第一个角点的x坐标。</td>
+     </tr>
+      <tr>
+        <td>y1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的三角形第一个角点的y坐标。</td>
+     </tr>
+      <tr>
+        <td>x2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的三角形第二个角点的x坐标。</td>
+     </tr>
+      <tr>
+        <td>y2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的三角形第二个角点的y坐标。</td>
+     </tr>
+      <tr>
+        <td>x3</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的三角形第三个角点的x坐标。</td>
+     </tr>
+      <tr>
+        <td>y3</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的三角形第三个角点的y坐标。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var inst = instance_nearest(x, y, obj_Player);<br>
+    if instance_exists(inst)<br>
+    {<br>
+    &nbsp; &nbsp; var x1 = x + lengthdir_x(100, image_angle - 45);<br>
+    &nbsp; &nbsp; var y1 = y + lengthdir_y(100, image_angle - 45);<br>
+    &nbsp; &nbsp; var x2 = x + lengthdir_x(100, image_angle + 45);<br>
+    &nbsp; &nbsp; var y2 = y + lengthdir_y(100, image_angle + 45);<br>
+    &nbsp; &nbsp; if point_in_triangle(inst.x, inst.y, x, y, x1, y1, x2, y2)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; can_see = true;<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上述代码使用<span class="inline">point_in_triangle</span>函数作为"视锥"来检查"obj_player"的实例，如果对象x/y位置落在定义的三角形内，则将变量设置为<span class="inline">true</span>。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">Next: <a href="point_in_circle.htm">point_in_circle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+point_in_triangle
+-->
+  <!-- TAGS
+point_in_triangle
+-->
+
+</body></html>

@@ -1,0 +1,133 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.1.0_33";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>layer_shader</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function layer_shader">
+  <meta name="rh-index-keywords" content="layer_shader">
+  <meta name="search-keywords" content="layer_shader">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_script_begin.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_script_end.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="layer_shader">
+        <span>layer_shader</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_shader</h1>
+  <p>使用此函数，可以将着色器资源分配给任何给定层，然后将使用该着色器渲染该层。提供图层的唯一 ID 值或图层名称(作为字符串，这将影响性能)，以及要使用的着色器的 ID。着色器必须以前在资源浏览器中创建过，然后将着色器索引(着色器资源的名称)传递给该函数。如果分配的层添加了实例，则着色器将应用于<i>实例使用的所有</i>绘制事件。例如，如果实例具有"绘制GUI开始"事件，则该着色器将自动应用于该层。着色器还将影响在该层上绘制的任何其他图形元素，如精灵资源或图块贴图。</p>
+  <p>请注意，函数<i>不是</i>意在在任何绘制事件或步骤事件中调用，而只是需要在<b>房间创建代码</b>或实例的<b>创建事件</b>/<b>房间开始事件</b>中的房间开始{}开始时调用。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">layer_shader(layer_id, shader)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Layer"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">Layer ID</a></span></td>
+        <td>目标层的唯一ID值(或作为字符串的层名)</td>
+      </tr>
+      <tr>
+        <td>shader</td>
+        <td><span data-keyref="Type_Asset_Shader"><a target="_blank" href="../../../../../../The_Asset_Editors/Shaders.htm">Shader Asset</a></span></td>
+        <td>要分配给图层的着色器索引</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var lay_id = layer_get_id("Instances");<br>
+    layer_shader(lay_id, shd_Sepia);</p>
+  <p>上面的代码将把着色器资源"shd_Sepia"分配给所有图形的给定层。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="General_Layer_Functions.htm">常规图层函数</a></div>
+        <div style="float:right">Next: <a href="layer_get_script_begin.htm">layer_get_script_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_shader
+-->
+  <!-- TAGS
+layer_shader
+-->
+
+</body></html>

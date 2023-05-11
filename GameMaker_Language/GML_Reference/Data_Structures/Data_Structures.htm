@@ -1,0 +1,125 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Data Structures</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for Data Structures">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Data Structures">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/DS_Grids.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/keyboard_virtual_height.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Data Structures">
+        <span>Data Structures</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>数据结构</h1>
+  <p>在游戏中，您通常需要以精确有序的方式存储信息。例如，您可能需要存储某人携带的项目列表，或者您可能希望存储仍需要访问的网格位置。现在，您<i>可以</i>使用数组来执行此操作，但如果您想执行更复杂的操作，如对数据进行排序或搜索特定项目，则需要编写大量GML 代码，这些代码的执行速度可能很慢，很难进行调试，而且写起来非常麻烦！</p>
+  <p>为了解决此问题，<span data-keyref="GameMaker Name">GameMaker</span>具有许多内置的<b>数据结构</b>，可以通过专家函数访问。有六种不同类型的数据结构可用，每种数据结构都有自己的优点，具体取决于您希望存储的信息类型以及希望以后如何操作它：堆栈、队列、列表、映射、优先级队列和网格。</p>
+  <p class="note"><strong>注意</strong>：建议在DS列表和映射上使用<a href="../../GML_Overview/Arrays.htm">数组</a>和<a href="../../GML_Overview/Structs.htm">结构</a>，因为它们具有相似的函数，更易于使用，并且是垃圾自动收集的。</p>
+  <p>基本上，所有数据结构都以相同的方式工作-创建数据结构并将其<i>索引值</i>存储在变量中。然后，使用此索引在所有可对其执行操作的进一步函数调用中引用数据结构。最后，完成后，再次销毁数据结构以将其从内存中删除。您可以根据需要同时使用任意多个结构，并且所有结构都可以存储任何可用的<a href="../../GML_Overview/Data_Types.htm">数据类型</a>。</p>
+  <p class="note"><b><span class="note">注意</span></b>与所有动态资源一样，数据结构占用内存，因此当不再需要<b>防止内存泄漏时，应始终销毁</b>，这将降低速度并最终导致游戏崩溃。</p>
+  <p>创建数据结构时，用于标识该数据结构的索引值是从0开始的整数值。这意味着不同的数据结构可以具有<b>相同的</b>索引值，因此如果您有疑问，应在访问之前使用<span style="font-size:1px;"><span class="inline"><a href="ds_exists.htm">ds_exists</a></span></span>函数。另请注意，索引将被重复使用，因此新创建的索引之后可能会使用已销毁的数据结构索引值，我们建议您在销毁数据结构之后将保留Ds索引的任何变量设置为-1。</p>
+  <p>有关不同数据结构的信息，请参阅以下各节：</p>
+  <ul class="colour">
+    <li><a href="DS_Grids/DS_Grids.htm">网格 Grids</a></li>
+    <li><a href="DS_Lists/DS_Lists.htm">列表 Lists</a></li>
+    <li><a href="DS_Maps/DS_Maps.htm">映射 Maps</a></li>
+    <li><a href="DS_Priority_Queues/DS_Priority_Queues.htm">优先队列 Priority Queues</a></li>
+    <li><a href="DS_Queues/DS_Queues.htm">队列 Queues</a></li>
+    <li><a href="DS_Stacks/DS_Stacks.htm">堆栈 Stacks</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>在游戏中使用数据结构之前，您还应该注意，在某些时刻，由于舍入错误，您可能会得到不符合预期的结果。这可以通过使用以下函数更改D的精度来解决：</p>
+  <ul class="colour">
+    <li><a href="ds_set_precision.htm">ds_set_precision</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>还有一个特殊函数，用于检查是否存在任何给定类型的数据结构：</p>
+  <ul class="colour">
+    <li><a href="ds_exists.htm">ds_exists</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../GML_Reference.htm">GML Reference</a></div>
+        <div style="float:right">Next: <a href="../Strings/Strings.htm">字符串</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Data Structures
+-->
+  <!-- TAGS
+data_structure_functions
+-->
+
+</body></html>

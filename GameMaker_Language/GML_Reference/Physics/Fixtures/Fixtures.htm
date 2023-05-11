@@ -1,0 +1,153 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.13.3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Fixtures</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for Physics Fixture functions">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Fixtures,Density,Friction,Linear Damping,Angular Damping,Restitution">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Physics/Fixtures/physics_fixture_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/Forces/physics_apply_angular_impulse.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Fixtures">
+        <span>Fixtures</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>装置</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 中的实例必须具有指定给它的装置，才能具有物理属性。装置将形状或形状绑定到实例，这会添加材质属性，如密度、摩擦力和恢复力。装置可以是长方体、圆形、多边形或任何其他您希望的简单形状 <span data-keyref="GameMaker Name">GameMaker</span> 提供的函数使您可以逐点定义自己的形状，然后，一旦获得形状，您就可以继续定义其物理属性。这些属性控制具有指定给它的装置的实例与物理世界中其他实例的反应方式，如下所示：</p>
+  <ul class="colour">
+    <li><b>密度：</b>材质的密度定义为其每单位体积的质量。它本质上是一种测量物质被挤在一起的紧密程度的方法。如果希望装置为<i>静态</i>(即：不可移动)，则应将密度设置为 0，从而使其无限密集。以恒定速度运动且物理上不受碰撞影响的<i>运动学</i>对象也使用 0 密度进行定义。</li>
+    <li><b>摩擦力：</b>摩擦力是阻止固体表面、流体层和材料元件相对运动的力。</li>
+    <li><b>线性阻尼：</b>这是导致运动物体失去动量的一般力。在"现实世界"中，事情通常不会永远发生。例如，纸飞机将飞行一小段时间，但最终会由于作用在纸飞机上的空气摩擦而坠落，从而导致纸飞机减速。在物理学世界中，我们创造这样的东西是很难建模的，所以每个装置都有自己的线性阻尼来模拟这种类型的"广义摩擦"。</li>
+    <li><b>角度阻尼：</b>如上所述，这是施加在物体上的广义力，可以阻止物体永远旋转。</li>
+    <li><b>复原：</b>在物理学中，复原被定义为"物体或系统在弹性变形后恢复到其原始状态"，但由于 <span data-keyref="GameMaker Name">GameMaker</span> 中的装置确实是刚体并且不能变形，因此请将其视为装置的基本"反弹"状态。</li>
+  </ul>
+  <p>正如您所看到的，<span data-keyref="GameMaker Name">GameMaker</span> 只需几个简单的函数，就可以帮助您创建复杂的系统和交互，让您的游戏获得前所未有的真实感。</p>
+  <p class="note"><b><span class="note">注意</span></b> 您可以定义一个装置并将其绑定到多个实例(想象一下池表，其中所有球具有相同的物理属性，但每个球都是一个独立的实体)。也可以将多个装置绑定到单个实例并合并物理属性(例如，使用两个三角形多边形装置创建星形)</p>
+  <p>以下函数用于创建、绑定、设置碰撞，然后删除装置：</p>
+  <ul class="colour">
+    <li><a href="physics_fixture_create.htm">physics_fixture_create</a></li>
+    <li><a href="physics_fixture_bind.htm">physics_fixture_bind</a></li>
+    <li><a href="physics_fixture_bind_ext.htm">physics_fixture_bind_ext</a></li>
+    <li><a href="physics_fixture_set_collision_group.htm">physics_fixture_set_collision_group</a></li>
+    <li><a href="physics_fixture_delete.htm">physics_fixture_delete</a></li>
+    <li><a href="physics_remove_fixture.htm">physics_remove_fixture</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>一个装置必须被赋予一个形状，否则它将不会被物理世界检测到，这个形状可以由以下函数来定义：</p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_box_shape.htm">physics_fixture_set_box_shape</a></li>
+    <li><a href="physics_fixture_set_circle_shape.htm">physics_fixture_set_circle_shape</a></li>
+    <li><a href="physics_fixture_set_edge_shape.htm">physics_fixture_set_edge_shape</a></li>
+    <li><a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></li>
+    <li><a href="physics_fixture_set_polygon_shape.htm">physics_fixture_set_polygon_shape</a></li>
+    <li><a href="physics_fixture_add_point.htm">physics_fixture_add_point</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>为了使启用了物理的实例能够正确地对周围的世界做出反应，您使用的装置必须具有定义的特定属性，以提供装置的反弹、摩擦、质量等，以下函数用于设置装置的这些属性：</p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_density.htm">physics_fixture_set_density</a></li>
+    <li><a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></li>
+    <li><a href="physics_fixture_set_linear_damping.htm">physics_fixture_set_linear_damping</a></li>
+    <li><a href="physics_fixture_set_angular_damping.htm">physics_fixture_set_angular_damping</a></li>
+    <li><a href="physics_fixture_set_restitution.htm">physics_fixture_set_restitution</a></li>
+    <li><a href="physics_fixture_set_sensor.htm">physics_fixture_set_sensor</a></li>
+    <li><a href="physics_fixture_set_kinematic.htm">physics_fixture_set_kinematic</a></li>
+    <li><a href="physics_fixture_set_awake.htm">physics_fixture_set_awake</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>您还可以在将装置绑定到某个实例<i>后</i>设置该装置的某些属性。绑定"基础"装置时，可以选择在变量中存储绑定物理属性的唯一索引。然后，可以在以下函数中使用此选项来更改某些属性，或者获取这些属性的当前值：</p>
+  <ul class="colour">
+    <li><a href="physics_get_friction.htm">physics_get_friction</a></li>
+    <li><a href="physics_get_density.htm">physics_get_density</a></li>
+    <li><a href="physics_get_restitution.htm">physics_get_restitution</a></li>
+    <li><a href="physics_set_friction.htm">physics_set_friction</a></li>
+    <li><a href="physics_set_density.htm">physics_set_density</a></li>
+    <li><a href="physics_set_restitution.htm">physics_set_restitution</a></li>
+    <li><a href="../physics_mass_properties.htm">physics_mass_properties</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Physics.htm">物理</a></div>
+        <div style="float:right">Next: <a href="../Joints/Joints.htm">关节</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Fixtures
+-->
+  <!-- TAGS
+physics_fixture_functions
+-->
+
+</body></html>

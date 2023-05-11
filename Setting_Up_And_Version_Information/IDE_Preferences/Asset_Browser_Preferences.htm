@@ -1,0 +1,138 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.2_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Asset Browser Preferences</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Asset Browser Preferences">
+  <meta name="rh-index-keywords" content="Prefs - Asset Browser">
+  <meta name="search-keywords" content="Prefs Asset Browser,Asset Browser Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/Sequences_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Anim_Curve_Editor_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Asset Browser Preferences">
+        <span>Asset Browser Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>资源浏览器首选项</h1>
+  <p><img alt="The Asset Browser Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/AssetBrowser_Prefs.png"><strong>资源浏览器首选项</strong>用于定义<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器</a>及其元素的运行方式的某些属性。主要选项包括：</p>
+  <ul class="colour">
+    <li><strong>显示快速访问</strong>：启用后，此选项将在资源浏览器的顶部显示"快速访问"部分。默认情况下，此选项处于启用状态。</li>
+    <li><strong>在新项目中创建默认文件夹</strong>：如果启用该选项，则所有新项目将从已经创建的默认资源文件夹开始如果禁用，则仅使用所有项目所需的默认房间创建房间文件夹。默认情况下，此选项处于启用状态。</li>
+    <li><strong>同时打开的资源的最大数量没有警告</strong>：您可以选择一次打开多个资源，方法是使用<img alt="Icon Control" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/<img alt="Icon Cmd" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;+&nbsp;<img alt="Icon LMB" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">选中这些资源，然后用鼠标右键单击<img alt="Icon RMB" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">&nbsp;，然后选择[全部打开]。如果您选择的数量超过此选项中指定的数量，则会显示一条警告，因为一次打开的资源太多可能会导致低端计算机的性能出现问题。默认值为10。</li>
+    <li><strong>最近编辑的最大项目数</strong>：此设置控制在资源浏览器的"最近"部分中列出的资源数量。默认值为10。</li>
+    <li><strong>调色板大小</strong>：您可以在此设置资源浏览器调色板中可用于资源组的颜色数量。默认值为16，最小值为16，最大值为100。</li>
+    <li><strong>在快速访问中应用资源颜色</strong>：选中后，此选项将使用为任何给定资源类型设置的颜色来为浏览器的快速访问部分中的资源着色。取消选中此选项将不使用资源颜色。这在默认情况下是启用的。</li>
+    <li><strong>组颜色优先于子颜色</strong>：选中后，将使用顶级组颜色为组内的所有资源上色，忽略为单个资源设置的任何颜色。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>创建资源对话样式</strong>：当您在资源浏览器中单击"添加资源"按钮时，您将看到一个窗口，其中显示了可以添加到项目中的不同资源。此窗口可以在列表视图或网格视图中显示，此设置控制默认显示的内容。默认值为栅格。</li>
+    <li><strong>默认排序顺序</strong>：可用于设置浏览器中资源的默认排序顺序，按字母顺序从A到Z或从Z到A。默认顺序为从A到Z。</li>
+    <li><strong>首先对文件夹进行默认排序</strong>：启用该选项后，资源浏览器将首先对文件夹进行排序，然后再对任何"松散"资源进行排序，而如果禁用该选项，则所有资源和文件夹都将一起进行排序。这在默认情况下是启用的。</li>
+    <li><strong>精灵双击打开图像编辑器</strong>：默认情况下，在任何资源上双击<img alt="Icon LMB" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">都会打开该资源进行编辑，但通常在处理精灵时，在创建新资源的初始设置后，您会打开它来编辑图像，而不是精灵属性。选择此选项将打开精灵资源的图像编辑器，而不是精灵资源本身。您仍然可以通过右键单击<img alt="Icon RMB" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">并选择<em>编辑</em>来打开精灵编辑器。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>对象双击打开所有对象事件</strong>：默认情况下，在任何资源上双击都会打开该资源进行编辑，但通常在处理对象时，在创建新资源的初始设置后，您只打开它来编辑事件，而不是对象属性。选择此选项将在新工作区中打开不同的对象事件，每个事件在新工作区中都有自己的选项卡。您仍然可以通过右键单击<img alt="Icon LMB" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">并选择编辑来打开对象编辑器。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>房间顺序取消分组会删除空组</strong>：启用后，取消分组属于某个组文件夹的所有房间也会删除组文件夹。禁用后，相同的操作将取消对房间进行分组，但会在资源浏览器中保留空组文件夹。这在默认情况下是启用的。</li>
+    <li><strong>默认缩放比例(%)</strong>：这将在您启动新项目时设置资源浏览器的默认缩放百分比。默认值为100%。</li>
+    <li><strong>最小缩放比例(%)</strong>：此选项设置资源浏览器允许的最小缩放值。默认值为50%。</li>
+    <li><strong>最大缩放比例(%)</strong>：此选项设置资源浏览器允许的最大缩放值。默认值为250%。</li>
+    <li><strong>显示树线</strong>：在此可以启用/禁用在资源浏览器中显示在资源一侧的树线。默认情况下，该选项处于选中状态，以显示树线。</li>
+    <li><strong>更改过滤器时展开树</strong>：当您更改过滤器选项时，此选项将强制资源浏览器展开任何折叠的树节点。禁用该选项将防止出现这种情况。默认为已启用。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">确认对话框</span><span data-close-text="true">确认对话框</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot"><img alt="The Asset Browser Confirm Dialog Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/AssetBrowser_Confirm_Prefs.png">在此，您可以从资源浏览器中选择使用资源时确认对话框的行为。可用选项包括：</p>
+    <ul class="dropspotlist">
+      <li><strong>自动响应资源删除</strong>：从资源浏览器中删除资源时，通常会收到一条警告，询问您是否确实要继续。通过将此选项设置为"OK"，消息将被忽略，就像您已经单击了"OK"按钮以继续。默认值为"显示消息"。</li>
+      <li><strong>自动响应房间顺序组删除</strong>：从资源浏览器中删除包含房间的组文件夹时，通常会收到一条警告，询问您是否确定并要继续(其中列出了组中要删除的所有房间)。通过将此选项设置为"OK"，消息将被忽略，就好像您已经单击了OK按钮以继续并删除组中的所有房间以及组文件夹本身。默认值为"显示消息"。</li>
+      <li><strong>自动响应打开多个资源</strong>：如上所述，在常规资源浏览器首选项中提到，当您从资源浏览器一次打开多个资源时，如果数量超过指定的数量，则会收到警告。通过将此选项设置为"OK"，警告将被忽略，就像您已经单击了"OK"按钮以继续。默认值为"显示消息"。</li>
+      <li><strong>自动响应 GML 可视化转换为 GameMaker 语言</strong>：当您选择将 GML 可视化节点转换为 GML 的选项时，系统将提示您确认更改，因为此操作无法撤消。通过将此选项设置为 "OK"，警告将被忽略，就像您已经单击了 "OK" 按钮以继续。默认值为 "显示消息"。</li>
+      <li><strong>自动响应通过节点拖动设置房间父级</strong>：在房间管理器窗口的继承部分，您可以将一个房间拖到另一个房间上，将其设置为被拖动到的房间的子级。执行此操作时，您将收到一条警告，询问您是否确定并要继续。通过将此选项设置为"OK"，消息将被忽略，就像您已经单击了OK按钮以继续。默认值为"显示消息"。</li>
+      <li><strong>自动响应重复组名称错误</strong>：当您创建一个用于组织资源的组文件夹并将其命名为浏览器中的另一个文件夹时，将显示一条消息，询问您是否要继续并拥有两个同名的文件夹。通过将此选项设置为"OK"，警告将被忽略，就像您已经单击了"OK"按钮以继续。默认值为"显示消息"。</li>
+      <li><strong>自动响应通过节点拖动设置父房间</strong>：当您在房间管理器中将一个房间拖到另一个房间上并将其释放时，将显示一条消息，询问您是否希望将该房间设置为所放房间的"孩子"。通过将此选项设置为"OK"，警告将被忽略，就像您已经单击了"OK"按钮以继续。默认值为"显示消息"</li>
+    </ul>
+    <p>&nbsp;</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+        <div style="float:right">Next: <a href="Sequences_Preferences.htm">序列首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Asset Browser
+-->
+  <!-- TAGS
+prefs_asset_browser
+-->
+
+</body></html>

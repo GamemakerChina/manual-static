@@ -1,0 +1,148 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.20.0_21";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gml_pragma</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for gml_pragma">
+  <meta name="rh-index-keywords" content="gml_pragma">
+  <meta name="search-keywords" content="gml_pragma">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/OS_And_Compiler/parameter_count.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/gml_release_mode.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gml_pragma">
+        <span>gml_pragma</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_pragma</h1>
+  <p><span class="inline">gml_pragma</span>函数会影响给定目标编译代码的方式，应使用不同的命令调用该函数，以进一步优化项目的最终编译。这些命令在游戏编译之前得到了有效的<i>预处理</i>，因此该函数可以放置在您项目中的任何位置，并且在游戏完全编译之前仍然会得到处理。可用命令如下：</p>
+  <ul class="colour">
+    <li><b>forceinline</b>-在<b>脚本函数</b>中使用"forceinline"程序调用函数时，yyc将使用内嵌函数编译项目，而不是引用。这将进一步提高处理速度，但在使用时必须小心，因为它还会增加最终可执行文件的大小，特别是在内嵌代码较大和/或用于多个不同位置的情况下，以及大大增加编译时间。请注意，<b>只有在使用yyc生成</b>时，此命令才有效。</li>
+    <li>"<b>global</b>", "<b>[gml code]</b>" - The "global" pragma permits you to call some GML code formatted as a string, at a <b>global</b> scope, at compile time, before the first room of the game executes. For example:
+      <p class="code">gml_pragma("global", "Init()");</p>
+      This will call the script function "Init" before the first room of the game is run. Note that the GML supplied as the second argument <b>must be a compile time constant</b>, and also note that you cannot use this pragma to create instances or perform any operations that require a room (or anything in a room) to function.
+    </li>
+    <li>"<b>PNGCush</b>"-"PNGCush"程序将在创建的每个纹理上使用<a href="https://pmt.sourceforge.io/pngcrush/" target="_blank">PNGCush</a>程序。请注意，这会显着增加编译游戏所需的时间，因此您不希望它一直开着，尽管它可以显着节省最终文件大小。此选项仅适用于使用PNG格式的纹理组(请参阅<a href="../../../Settings/Texture_Groups.htm#h">组设置</a>)。</li>
+    <li>"<b>Texgroup.Scale</b>", "<b>[TextureGroupName]</b>", "<b>[Scale Divisor]</b>" - The "Texgroup.Scale" will scale the given texture group on compile. You need to give an additional two arguments here: the "[TexGroupName]", which is the name (a string) of the texture group to scale, and the "[Scale Divisor]" (also a string), which is the divisor you wish to use for the scaling, i.e:
+      <p class="code">gml_pragma("Texgroup.Scale", "level1", "2");</p>
+      This will half all the textures in the "level1" texture group.
+    </li>
+    <li>"<b>UnityBuild</b>", "<b>[enable/disable]</b>" - If you call the function with this pragma and set the enable/disable argument to <span class="inline">true</span> then on compile it will collapse all the .cpp files in the project into a single file which it then uses to build everything, for example:
+      <p class="code">gml_pragma("UnityBuild", "true");</p>
+      The benefit of doing a unity build is that builds are faster but the down side is that it does a <i>full</i> build each time so even if you change a single part of the code it will build everything again without using any cached files. This has been added specifically for the Xbox One export using the YYC although it can be called for other builds (<b>YYC only</b>). For more information on unity builds, please see <a href="http://buffered.io/posts/the-magic-of-unity-builds/" target="_blank">here</a>.
+    </li>
+  </ul>
+  <p class="note"><b>注意</b>：<span class="inline">gml_pragma</span>函数的第一个参数<b>必须</b>是编译时字符串常量，而不是变量。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gml_pragma(command, [optional...]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>command</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>带有上面列出的命令之一的字符串。</td>
+      </tr>
+      <tr>
+        <td>[optional]</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>一些可用的命令需要一个或多个可选参数。上面为每个命令解释了这些。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">gml_pragma("forceinline");</p>
+  <p>上面的示例代码将强制编译时使用内联的脚本函数。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">Next: <a href="parameter_count.htm">parameter_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_pragma
+-->
+  <!-- TAGS
+gml_pragma
+-->
+
+</body></html>

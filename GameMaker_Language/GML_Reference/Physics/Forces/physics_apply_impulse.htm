@@ -1,0 +1,144 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.13.2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>physics_apply_impulse</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for physics_apply_impulse">
+  <meta name="rh-index-keywords" content="physics_apply_impulse">
+  <meta name="search-keywords" content="physics_apply_impulse">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Physics/Forces/physics_apply_local_force.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/Forces/physics_apply_force.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="physics_apply_impulse">
+        <span>physics_apply_impulse</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_impulse</h1>
+  <p>您不仅可以对 <span data-keyref="GameMaker Name">GameMaker</span> 中的物理对象施加力和重力，还可以施加脉冲。这与力略有不同，因为当施加力时，它会<i>立即</i>影响速度，并且可能影响对象的扭矩(或旋转)，特别是当选择施加脉冲的点与质心不对齐时(注意：质心<i>不一定</i>与原点相同!)。下面是一个例子：</p>
+  <p><img alt="Apply physics impulse illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_impulse_image.png">正如您可以看到的，球员已经点击了球，这给了它一个移动到右上角的冲动，随着它的移动而旋转。确切的脉冲由我们从与 xpos/ypos 坐标相关的分量 ximpulse/yimpulse 得到的矢量定义-这只是意味着脉冲被计算为从 xpos/ypos 到 ximpulse/yimpulse 的距离，以牛顿为单位，方向是我们从 xpos/ypos 到 ximpulse/yimpulse 的角度。</p>
+  <p class="note"><b>注意</b>：物理世界使用仪表进行所有计算，每米像素的比率在房间编辑器中定义或使用 <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><span class="inline">physics_world_create()</span></a></span>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">physics_apply_impulse(xpos, ypos, ximpulse, yimpulse)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>xpos</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>将应用脉冲的<i>房间中</i>的 X 坐标</td>
+     </tr>
+      <tr>
+        <td>ypos</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>将应用脉冲的<i>房间中</i>的 Y 坐标</td>
+     </tr>
+      <tr>
+        <td>ximpulse</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>脉冲矢量的 X 分量</td>
+     </tr>
+      <tr>
+        <td>yimpulse</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>脉冲矢量的 Y 分量</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;with (place_meeting(mouse_x, mouse_y, all))<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;physics_apply_impulse(mouse_x, mouse_y, -10 + irandom(20), -10 + irandom(20));<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>按下左键时，上面的代码将向位于鼠标位置的实例应用带有随机向量的脉冲。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Forces.htm">力</a></div>
+        <div style="float:right">Next:&nbsp;<a href="physics_apply_local_force.htm">physics_apply_local_force</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_impulse
+-->
+  <!-- TAGS
+physics_apply_impulse
+-->
+
+</body></html>

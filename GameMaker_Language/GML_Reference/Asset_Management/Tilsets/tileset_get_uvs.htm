@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.4.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>tileset_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function tileset_get_uvs">
+  <meta name="rh-index-keywords" content="tileset_get_uvs">
+  <meta name="search-keywords" content="tileset_get_uvs">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Tilsets/tileset_get_texture.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="tileset_get_uvs">
+        <span>tileset_get_uvs</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">tileset_get_uvs</span></h1>
+  <p>此函数返回一个 <a href="../../../GML_Overview/Arrays.htm"> 数组 </a>，其中包含在纹理页面上设置的给定图块纹理的 UV 坐标和其他数据。该函数返回包含以下 8 个元素的数组：</p>
+  <ul class="colour">
+    <li>[0] = 左侧</li>
+    <li>[1] = 顶部</li>
+    <li>[2] = 右侧</li>
+    <li>[3] = 底部</li>
+    <li>[4] = 资源编译器已从图块集左侧修剪的像素数量</li>
+    <li>[5] = 资源编译器从图块设置顶部修剪的像素数量</li>
+    <li>[6] = 已保存到纹理页面的原始拼贴集宽度的归一化像素数据百分比</li>
+    <li>[7] = 已保存到纹理页面的原始拼贴集高度的归一化像素数据百分比</li>
+  </ul>
+  <p>然后，可以在其他绘制函数中使用此数组，特别是在3D中工作或使用<a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">2D图元</a>函数时，以及在使用<a href="../Shaders/Shaders.htm">着色器</a>函数时。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">tileset_get_uvs</span>(tileset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tileset</td>
+        <td><span data-keyref="Type_Asset_Tile_Set"><a target="_blank" href="../../../../../The_Asset_Editors/Tile_Sets.htm">Tile Set Asset</a></span></td>
+        <td>要使用的图块集的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回</h4>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span> (1D, 8 elements)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var tex = <span data-field="title" data-format="default">tileset_get_uvs</span>(tl_Grass);<br>
+    tex_left = tex[0];<br>
+    tex_top = tex[1];<br>
+    tex_right = tex[2];<br>
+    tex_bottom = tex[3];</p>
+  <p>上面的代码将在局部数组中存储给定图块集的UV坐标，然后将值分配给实例变量。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Tile_Sets.htm">图块集</a></div>
+        <div style="float:right">Next:&nbsp;<a href="tileset_get_info.htm">tileset_get_info</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+tileset_get_uvs
+-->
+  <!-- TAGS
+tileset_get_uvs
+-->
+
+</body></html>

@@ -1,0 +1,146 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.18.0_26";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>buffer_copy_from_vertex_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for buffer_copy_from_vertex_buffer">
+  <meta name="rh-index-keywords" content="buffer_copy_from_vertex_buffer">
+  <meta name="search-keywords" content="buffer_copy_from_vertex_buffer">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Buffers/buffer_get_type.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Buffers/buffer_copy.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="buffer_copy_from_vertex_buffer">
+        <span>buffer_copy_from_vertex_buffer</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_copy_from_vertex_buffer</h1>
+  <p>此函数可用于将存储在一个顶点缓冲区中的部分(或全部)顶点数据复制到先前创建的常规缓冲区中。使用此函数从顶点缓冲区复制到常规缓冲区时，两个缓冲区必须事先创建过(例如，使用<a href="../Drawing/Primitives/vertex_create_buffer.htm"><span class="inline">vertex_create_buffer()</span></a>和<a href="buffer_create.htm"><span class="inline">buffer_create()</span></a>函数)。您可以指定要复制到缓冲区的顶点数据的范围，其中起始顶点可以介于 0 和顶点数 1 之间的任何位置，并且可以给出从该点开始复制的顶点数。你可以使用顶点缓冲区上的函数<a href="../Drawing/Primitives/vertex_get_number.htm"><span class="inline">vertex_get_number()</span></a>来获取存储的顶点总数。最后，你给出要将顶点数据复制到的缓冲区索引，以及一个数据偏移量，用于定义将顶点数据复制到目标缓冲区中的位置。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>vertex_buffer</td>
+        <td><span data-keyref="Type_ID_Buffer_Vertex"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_create_buffer.htm">Vertex Buffer ID</a></span></td>
+        <td>要从<i>复制</i>的顶点缓冲区的索引。</td>
+      </tr>
+      <tr>
+        <td>start_vertex</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>起始顶点。</td>
+      </tr>
+      <tr>
+        <td>num_vertices</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要使用的顶点总数。</td>
+      </tr>
+      <tr>
+        <td>dest_buffer</td>
+        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span></td>
+        <td>要复制<i>到</i>的缓冲区索引。</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>将数据复制到(以字节为单位)的偏移位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var v_num = vertex_get_number(model_buff); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0);</p>
+  <p>上述代码将复制存储在变量"model_buffer"中索引的顶点缓冲区中的顶点数据，然后将其粘贴到变量"player_buffer"中索引的缓冲区中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Buffers.htm">缓冲区</a></div>
+        <div style="float:right">Next:&nbsp;<a href="buffer_get_type.htm">buffer_get_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_copy_from_vertex_buffer
+-->
+  <!-- TAGS
+buffer_copy_from_vertex_buffer
+-->
+
+</body></html>

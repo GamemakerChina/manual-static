@@ -1,0 +1,130 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Creating Sprites</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Overview of what a sprite is and how to make one.">
+  <meta name="rh-index-keywords" content="Quick Start - Sprites">
+  <meta name="search-keywords" content="sprites">
+  <meta name="robots" content="NOODP">
+<meta name="brsnext" value="Quick_Start_Guide/Creating_Tile_Sets.htm"><meta name="brsprev" value="Quick_Start_Guide/What_Is_Programming_.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Creating Sprites">
+        <span>Creating Sprites</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>创建精灵</h1>
+  <p>现在，您已经<a href="What_Is_Programming_.htm">了解了程序是什么</a>，接下来来看看可以在 <strong>GameMaker</strong> 中使用的一些不同的<span data-keyref="GameMaker Name">资源</span>来制作您的游戏。首先，我们将查看<strong>精灵</strong>，它们通常是您在进行任何项目时首先需要做的事情之一。如<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>一节中所述，精灵是一种可以设置动画(尽管不必设置)然后绘制到屏幕上的图像。一般来说，精灵会与对象相关联，但你可以自己绘制精灵，可以从代码中绘制，也可以在房间编辑器中绘制<strong>资源层</strong>(我们将在后面关于<a href="Rooms.htm">房间</a>的小节中更详细地讨论这一点)。您也可以创建一个精灵作为一个<a class="tooltip" title="图块图块集是作为单个图像布局在网格上的正方形或矩形图形资源的集合。网格中的每一项都可以在一个房间中放置多次，从而创建一个更大的场景，称为“图块地图”。">图块集</a>，但我们将在后面的部分探索该选项。</p>
+  <p>从<a href="../Introduction/The_Start_Page.htm">开始页</a>创建新项目时，资源浏览器将只包含您可能需要的资源的空文件夹，因此需要在精灵资源文件夹上单击鼠标右键<img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png">，然后选择选项<strong>Create</strong>&nbsp;；(如果没有精灵资源文件夹，则可以从右键单击菜单中创建一个精灵资源文件夹，然后创建精灵，或者只需在资源浏览器中的任意位置单击鼠标右键并创建它)。这将创建一个新的精灵资源，并为您打开<a href="../The_Asset_Editors/Sprites.htm"><strong>精灵编辑器</strong></a>(如果精灵编辑器没有打开，只需在新资源上双击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">)：</p>
+  <p><img alt="The Sprite Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteEditor.png">如您所见，窗口左上角有一个字段，用于表示精灵的<strong>名称</strong>。所有精灵 (和所有其他资源) 都必须有一个名称，这样你 (和 <span data-keyref="GameMaker Name">GameMaker</span>) 才能很容易地识别它们，尽管你应该注意到这个名称实际上只是一个<strong><a class="tooltip" title="变量是程序中的命名值，可以在需要时对其进行修改，存储和显示。例如，如果我们有一个名为XYZ的整数变量，并且它存储的值为10，则可以执行A = XYZ + 10之类的操作，这将把变量A的值设置为20，因为XYZ为10，我们正在添加10。您还可以使用运算符更改变量值，因此XYZ = XYZ + 100会将XYZ变量的值修改为等于110。变量也可以用于存储标识符和对不同资源的引用。">变量</a></strong>，它保存了一个 ID 值，在本例中是一个指向资源的 ID 值。最好为每个精灵指定一个描述性名称，以便您可以一目了然地识别特定资源是精灵、对象还是其他东西，许多人通过在资源前缀或后缀字母 "<span class="inline">spr</span>" 来做到这一点-例如，"<span class="inline">spr_ball</span>"。请注意，资源名称仅限于使用字母、数字和下划线符号 "_"，并且所有资源的名称必须以字母开头，而不能以数字开头。</p>
+  <p>我们将在本节结束时讨论精灵编辑器的其他功能，但首先我们需要解释如何绘制精灵。此操作在<a href="../The_Asset_Editors/Image_Editor.htm"><strong>图像编辑器</strong></a>中完成。图像编辑器是在游戏中创建图形的一个非常强大的工具，可通过单击<em>编辑图像</em>按钮打开。</p>
+  <p><img alt="The Image Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_ImageEditor.png"></p>
+  <p>我们不会太深入地介绍这里提供的工具 -- 因为我们有手册的图像编辑器部分 -- 但简要地说，您有：</p>
+  <ul class="colour">
+    <li>在左上角，<strong>帧视图</strong> - 这显示了精灵的帧，并且可以使用放大镜图标来调整大小。</li>
+    <li>在中间我们有绘制<strong>画布</strong> - 这显示了当前选定的框架已准备好绘制，您可以使用鼠标中键<img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21">平移，并使用鼠标滚轮<img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21">进行放大和缩小。</li>
+    <li>在右上角我们有基本的<strong>画笔</strong> - 在这里你可以选择画笔，任何自定义的画笔也将被添加到这里。</li>
+    <li>在右中我们有<strong>颜色选择器</strong> - 在这里我们可以选择鼠标左键和/或右键所使用的颜色，因为您可以同时使用一个或另一个按钮在画布上绘制。</li>
+    <li>就在颜色选择器下面，我们有我们的<strong>工具</strong> - 这些是不同的绘制工具，包括画笔、填充、蒙版和形状工具。请注意，有些工具是对角线拆分的，它们将绘制轮廓形状或填充形状，具体取决于您单击线条的哪一侧来选择它们。</li>
+    <li>在右下角我们有<strong>图层视图</strong> - 就像许多其他的绘制工具一样，你可以创建不同的图层来绘制，允许你尝试位置和颜色等。而不必担心破坏地下的东西。</li>
+  </ul>
+  <p>在图像编辑器中绘制一些内容，并花一些时间处理选项，然后当您准备好时，关闭图像编辑器工作区(这将保存图像)，将您带回到包含精灵编辑器的主工作区。我们将讨论精灵编辑器的其他几个功能，这些功能在刚开始使用时需要知道这些功能很重要……</p>
+  <p>您需要知道的第一件事是如何设置精灵的<strong>原点</strong>。原点只是一个点，它将被用来在房间内“锚定”我们的精灵，在本例中，我们希望将它设置在中心。</p>
+  <p>因此，我们在设置原点的下拉菜单上点击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">，然后选择"居中"：</p>
+  <p><img alt="Example Showing The Sprite Origin" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteOrigin.png"></p>
+  <p>您将看到预览图像中的蓝色原点标记移动到精灵的中心。请注意，您只需在预览图像上单击 <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 即可将原点放置在您想要的任何位置，也可以通过在顶部的 X/Y 字段中添加值来手动输入原点位置。</p>
+  <p>另一件需要了解的重要事情是如何为精灵设置<strong>碰撞遮罩</strong>。碰撞遮罩是 <span data-keyref="GameMaker Name">GameMaker</span> 将检查是否与游戏中的任何其他对象实例发生碰撞的区域，默认情况下设置为矩形(这也是解决速度最快的)。请注意，您可以将<strong><a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a></strong>的检测模式设置为自动(默认值)或手动。如果您选择手动，您将能够设置边界框值左侧、右侧、顶部和底部。</p>
+  <p><img alt="Example Showing The Sprite Mask" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteMask.png"></p>
+  <p>除矩形之外的任何类型的冲突遮罩都会比较慢，但在制作一个小而简单的游戏时，这通常不是问题。请注意，您也可以通过单击精灵编辑器中的 <em> 导入 </em> 按钮来导入在其他软件中制作的精灵，也可以将图像文件拖动到 <span data-keyref="GameMaker Name">GameMaker</span> IDE 中，以将它们作为精灵添加到资源浏览器中。也可以从资源浏览器拖动精灵以将其直接添加到对象中，在这种情况下，IDE 将高亮显示可以将精灵添加到的位置：</p>
+  <p><img alt="Where To Drop A Sprite On An Object" class="center" src="../assets/Images/QS_Guide/QS_DropSprite.png">如果您想了解有关精灵编辑器和图像编辑器的更多详细信息，请参阅手册的以下部分：</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Sprites.htm">编辑器：精灵编辑器</a></li>
+    <li><a href="../The_Asset_Editors/Image_Editor.htm">编辑器：图像编辑器</a></li>
+  </ul>
+  <p>您现在可以关闭精灵编辑器，因为我们将继续讨论<strong>图块集</strong>。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Content.htm">索引</a></div>
+        <div style="float:right">Next: <a href="Creating_Tile_Sets.htm">Creating Tilesets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Sprites
+Quick Start: Creating Sprites
+-->
+  <!-- TAGS
+qs_sprites
+-->
+
+</body></html>

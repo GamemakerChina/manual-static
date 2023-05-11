@@ -1,0 +1,179 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.6.0_11";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_text_ext_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for draw_text_ext_colour">
+  <meta name="rh-index-keywords" content="draw_text_ext_colour,draw_text_ext_color">
+  <meta name="search-keywords" content="draw_text_ext_colour,draw_text_ext_color">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Text/draw_text_ext_transformed.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Text/draw_text_transformed.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_text_ext_colour">
+        <span>draw_text_ext_colour</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_text_ext_colour</h1>
+  <p>此函数是基于<a href="draw_text.htm"><span class="inline">draw_text</span><span class="inline">()</span><span class="inline"></span></a>函数与<a href="draw_text_ext.htm"><span class="inline">draw_text_ext</span><span class="inline">()</span><span class="inline"></span></a>和<a href="draw_text_colour.htm"><span class="inline">draw_text_colour</span><span class="inline">()</span><span class="inline"></span></a>函数的组合，允许您一起定义文本的渐变色以及每行的行距和最大宽度。</p>
+  <p class="note"><b><span class="note">注意</span></b>梯度混合对于HTML5目标来说是不可用的，除非启用了WebGL，尽管你仍然可以设置混合颜色，它将把字体与第一个给定的颜色混合。然而，所有以这种方式进行的混合都会创建一个重复的字体，然后存储在缓存中并在需要时使用，这远非最佳状态，而且如果你使用多种颜色变化，会降低你的游戏性能。如果有必要，你可以使用函数<a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><span class="inline">font_set_cache_size()</span></a>来设置字体缓存大小，以尝试限制这种情况。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_text_ext_colour(x, y, string, sep, w, c1, c2, c3, c4, alpha);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>绘制字符串的x坐标。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>绘制字符串的y坐标。</td>
+      </tr>
+      <tr>
+        <td>string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>绘制的字符串。</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>文本行之间的距离，以像素为单位。</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>换行前字符串的最大宽度(以像素为单位)。</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>绘制文本左上角的颜色。</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>绘制文本右上角的颜色。</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>绘制文本右下角的颜色。</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>绘制文本左下角的颜色。</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>文本的Alpha。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">draw_text_ext_colour(200, 200, keyboard_string, 5, 300, c_blue, c_blue, c_navy, c_navy, 1);</p>
+  <p>上述代码将绘制用户在键盘中键入的任何文本，每当该行的字符串长度超过300像素时，就将其拆分为新行。如果发生这种情况，代码还将在行之间保持5像素的分隔。文本的每一行都将使用蓝色渐变进行着色，顶部为浅蓝色，底部为深蓝色。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Text.htm">文本</a></div>
+        <div style="float:right">Next: <a href="draw_text_ext_transformed.htm">draw_text_ext_transformed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_ext_colour
+draw_text_ext_color
+-->
+  <!-- TAGS
+draw_text_ext_colour
+-->
+
+</body></html>

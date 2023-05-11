@@ -1,0 +1,115 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.1.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>io_clear</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for io_clear">
+  <meta name="rh-index-keywords" content="io_clear">
+  <meta name="search-keywords" content="io_clear">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/keyboard_check.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="io_clear">
+        <span>io_clear</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>io_clear</h1>
+  <p>该函数将清除当前的键盘和鼠标状态。请注意，调用此函数后的下一步会发生什么将取决于正在检查的内容和正在检查的平台。通过鼠标输入，鼠标按钮将必须释放并再次按下以检测任何进一步的输入，但是使用键盘并不是那么简单。通常，仅在该步骤<i>中会清除键盘</i>，但是下一步将再次检测到该键，但是在所有平台和键盘上，这可能并不相同，在某些情况下，该函数可能会像鼠标一样起作用，并且需要抬起并再次按下键。</p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">io_clear();</p>
+  <p>&nbsp;</p>
+  <h4><b>返回:</b></h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4><b>示例:</b></h4>
+  <p class="code">io_clear();</p>
+  <p>这将清除所有键盘和鼠标状态。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Keyboard_Input.htm">键盘输入</a></div>
+        <div style="float:right">Next:&nbsp;<a href="keyboard_check.htm">keyboard_check</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+io_clear
+-->
+  <!-- TAGS
+io_clear
+-->
+
+</body></html>

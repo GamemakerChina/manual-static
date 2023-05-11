@@ -1,0 +1,381 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.5.3.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>AudioEffect Struct</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Reference page for the AudioEffect struct">
+  <meta name="rh-index-keywords" content="AudioEffect">
+  <meta name="search-keywords" content="AudioEffect">
+  <meta name="template" content="assets/masterpages/Manual_Page.htt">
+  <meta name="condition-tags" content="">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="AudioEffect Struct">
+        <span>AudioEffect Struct</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">AudioEffect Struct</span></h1>
+  <p>AudioEffect 结构存储音频效果使用的参数。您可以更改这些值以实时调整效果。</p>
+  <p>这个结构必须用<span class="inline3_func"><a href="audio_effect_create.htm">audio_effect_create</a></span>&nbsp;函数创建。该结构中可用的参数取决于你传递给该函数的音频效果类型(见&nbsp;<span class="inline2"><a href="AudioEffectType.htm">AudioEffectType Enum</a></span>)</p>
+  <div data-conref="../../../../../assets/snippets/Note_GM_Managed_Structs.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;这是一个内置结构，因此<span data-keyref="GameMaker Name">GameMaker</span>对其内容有更多控制。 这意味着对其成员的访问是有限的，如果分配了无效的值，一些值可能会自动改变。 你可能还需要通过&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>提供的内置函数来创建和销毁这个结构，而不是通过<span class="inline2"><a href="../../../../GML_Overview/Language_Features/new.htm">new</a></span>&nbsp;和<span class="inline2"><a href="../../../../GML_Overview/Language_Features/delete.htm">delete</a></span>操作符。</p>
+
+</div>
+  <p>这种类型的所有结构都有一个<span class="inline2">type</span>和<span class="inline2">bypass</span>属性。 所有其他属性都是特定于某些类型的效果。</p>
+  <p>下面是一个结构成员的列表，取决于创建的效果类型。</p>
+  <h2 id="h5">混响(<a href="AudioEffectType.htm#h">AudioEffectType.Reverb1</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>一个<i>只读</i>属性，用于存储本结构中的音频效果类型。 它被设置为&nbsp;<a href="AudioEffectType.htm#h">AudioEffectType.Reverb1</a>&nbsp;用于混响。</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过(忽略)</span></td>
+      </tr>
+      <tr>
+        <td><span>size</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>空间的大小[范围:0.0 - 1.0]<br> <br> 较大的尺寸意味着更多的反射和更长的混响。 </td>
+      </tr>
+      <tr>
+        <td><span>damp</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>较高频率应被衰减的量 [范围: 0.0 - 1.0].</span></td>
+      </tr>
+      <tr>
+        <td><span>mix</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>输出中原始/混响信号的比例 [范围: 0.0 - 1.0].<br> <br> 0.0的值可以得到100%的原始信号。值为1.0时，给出100%的混响信号。 一个0.5的值导致50%的原始信号和50%的混响信号。</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="h1">延迟 (<a href="AudioEffectType.htm#h1">AudioEffectType.Delay</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>一个<i>只读</i>属性，用于存储本结构中的音频效果类型。 它被设置为&nbsp;<a href="AudioEffectType.htm#h1">AudioEffectType.Delay</a>&nbsp;用于延迟</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td><span>time</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>延迟的长度(以秒为单位)</span></td>
+      </tr>
+      <tr>
+        <td><span>feedback</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>被延迟的信号反馈到延迟线的比例[范围: 0.0 - 1.0]</span></td>
+      </tr>
+      <tr>
+        <td>mix</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>原始/延时信号在输出中的比例 [范围: 0.0 - 1.0]<br> <br> <span>值为0.0时给出100%的原始信号，值为1.0时给出100%的延迟信号。 值为0.5时，会出现50%的原始信号和50%的<span><span>延迟</span></span>信号。</span></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="h">失真 (<a href="AudioEffectType.htm#h2">AudioEffectType.Bitcrusher</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>一个<i>只读</i>属性，用于存储本结构中的音频效果类型。 它被设置为&nbsp;<a href="AudioEffectType.htm#h2">AudioEffectType.Bitcrusher</a>&nbsp;的失真</td>
+      </tr>
+      <tr>
+        <td>bypass</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td>gain</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The input gain going into the effect.&nbsp;<span>There is a hard clipper (clipping at <span>±</span>1.0) directly after this stage.</span></span></td>
+      </tr>
+      <tr>
+        <td>factor</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span><span>原始信号</span>被降采样的系数 [range: 0.0 - 100.0].<br> <br> <span>这被四舍五入为一个整数。</span></span></td>
+      </tr>
+      <tr>
+        <td>resolution</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span><span>信号</span>被重采样的比特深度 [范围: 1.0 - 16.0].<br> <br> <span>这被四舍五入为一个整数</span></span></td>
+      </tr>
+      <tr>
+        <td>mix</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>原始/失真信号在输出中的比例 [range: 0.0 - 1.0].<br> <br> <span><span>0.0的值给出100%的原始信号，1.0的值给出100%的<span>失真</span>信号。0.5的值会导致50%的原始信号和50%的<span><span><span>失真</span></span></span>的信号</span></span></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="h4">低通滤波器(<a href="AudioEffectType.htm#h3">AudioEffectType.LPF2</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>一个<i>只读</i>属性，用于存储本结构中的音频效果类型。 它被设置为&nbsp;<a href="AudioEffectType.htm#h3">AudioEffectType.LPF2</a>&nbsp;用于LPF。</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td><span>cutoff</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>滤波器的截止频率。 高于截止点的频率将被衰减。</span></td>
+      </tr>
+      <tr>
+        <td><span>q</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>滤波器的质量系数 [范围: 1.0 - 100.0].<br> <br> 这是一个无尺寸的参数，表示频率在截止点附近的峰值(增益)程度。 数值越大，峰值越大。 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="h3">高通滤波器 (<a href="AudioEffectType.htm#h4">AudioEffectType.HPF2</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>一个<i>只读</i>属性，用于存储本结构中的音频效果类型。 它被设置为&nbsp;<a href="AudioEffectType.htm#h4">AudioEffectType.HPF2</a>&nbsp;用于HPF。</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td><span>cutoff</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The cutoff frequency of the filter. Frequencies lower than the cutoff will be attenuated.</span></td>
+      </tr>
+      <tr>
+        <td><span>q</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>滤波器的质量系数 [范围: 1.0 - 100.0].<br> <br> 这是一个无尺寸的参数，表示频率在截止点附近的峰值(增益)程度。 数值越大，峰值越大。 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="h2">增益 (<a href="AudioEffectType.htm#h5">AudioEffectType.Gain</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>一个<i>只读</i>属性，用于存储本结构中的音频效果类型。 它被设置为&nbsp;<a href="AudioEffectType.htm#h5">AudioEffectType.Gain</a>&nbsp;的Gain。</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td><span>gain</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>应用于输入信号的增益值</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="h6">颤音 (<a href="AudioEffectType.htm#h6">AudioEffectType.Tremolo</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>存储此结构中存储的音频效果类型的 <i> 只读 </i> 属性。对于颤音，它设置为&nbsp;<a href="AudioEffectType.htm#h6">AudioEffectType.Tremolo</a>&nbsp;。</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td><span>rate</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>调制增益的 LFO 的频率 (0.0-20.0 赫兹)</td>
+      </tr>
+      <tr>
+        <td>intensity</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>应由 LFO 调制的输入信号的比例 (0.0-1.0)。换句话说，受 LFO 影响的是信号 / 样本的幅度的比例 (或分数)。</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>应由 LFO 调制的输入信号的比例 (0.0-1.0)。换句话说，受 LFO 影响的是信号 / 样本的幅度的比例 (或分数)。</td>
+      </tr>
+      <tr>
+        <td>shape</td>
+        <td><a href="AudioLFOType.htm">AudioLFOType Enum</a></td>
+        <td>LFO 应输出的波形形状。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <!--</div>-->
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Audio_Effects.htm">音效</a></div>
+        <div>Next:&nbsp;<a href="AudioEffectType.htm">AudioEffectType 枚举</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+AudioEffect
+-->
+  <!-- TAGS
+AudioEffect
+-->
+
+</body></html>

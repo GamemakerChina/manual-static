@@ -1,0 +1,118 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "6.3.1.1.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HTTP</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page detailing the HTTP async event.">
+  <meta name="rh-index-keywords" content="Objects - Async HTTP Event">
+  <meta name="search-keywords" content="HTTP,ev_web_async">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+<meta name="brsnext" value="The_Asset_Editors/Object_Properties/Async_Events/IAP.htm"><meta name="brsprev" value="The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="HTTP">
+        <span>HTTP</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>HTTP</h1>
+  <p><img alt="HTTP Event" class="center" src="../../../assets/Images/Asset_Editors/Async_HTTP.png">Http 事件是由来自 <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/HTTP.htm"><span class="inline">http_*()</span> 函数 </a> 之一的 <a class="tooltip" title="回调仅是一个函数，该函数先运行，然后在完成分配的工作后触发另一个函数（或代码块）。例如，功能sprite_add()将在加载精灵后在异步Image Loaded事件中触发回调。"> 回调 </a> 触发的事件，如 <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_post_string.htm"><span class="inline">http_post_string()</span></a>。它实际上会生成一个 <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">Ds Map</a>，该映射专用于此事件，并存储在特殊变量 <span class="inline"><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span> 中 (请参阅各个函数，了解有关此事件使用的详细代码示例)。此 Ds 映射具有以下一般结构：</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">"<span class="inline">id</span>"：从命令返回的id。如果您发出一系列<span class="inline">http_</span>请求，那么您需要知道您正在得到哪个回复，因此您将使用此值与最初发送请求时存储的值进行比较，以找到正确的请求。</li>
+    <li class="dropspot">"<span class="inline">status</span>"：返回小于0的错误值，0表示成功，1表示正在下载内容。</li>
+    <li class="dropspot">"<span class="inline">result</span>"：接收到的数据(仅限字符串)，或下载文件的路径(如果您使用了<a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_get_file.htm"><span class="inline">http_get_file()</span></a>. 您只能在状态为0时获得此密钥，但这取决于平台。</li>
+    <li class="dropspot">"<span class="inline">url</span>"：您请求的完整URL。</li>
+    <li class="dropspot">"<span class="inline">http_status</span>"：原始超文本传输协议状态码(如果可用)。这将返回大多数浏览器的标准Web状态代码，例如：304代表"未修改"或204代表"无内容"等…</li>
+  </ul>
+  <p>上面显示了使用 <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_post_string.htm"><span class="inline">http_post_string()</span></a> 函数时得到的结果，但每个 <span class="inline">http_</span> 函数可能返回略有不同的映射，因此请参考每个函数的手动条目以查找为其返回的精确数据。</p>
+  <p class="note"><strong> 注意 </strong>：当 <span style="font-size:14px;"><span class="inline" style="font-size: 14px">async_load</span></span> 创建 DS 映射时，这些函数与 <a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline" style="font-size: 14px">json_encode()</span></a> 和 <a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_decode.htm"><span class="inline" style="font-size: 14px">json_decode()</span></a> 函数结合使用时特别有用。</p>
+  <p>如果您请求下载文件，此地图还可能提供其他数据。在这种情况下，"状态"的值为1，DS映射将保存这些额外的键：</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">"<span class="inline">contentLength</span>"：这是Web服务器表示您应该收到的文件大小(如果服务器不返回此数据，可能是-1)。</li>
+    <li class="dropspot">"<span class="inline">sizeDownloaded</span>"：已下载数据的大小。</li>
+  </ul>
+  <p>请注意，该事件不会为收到的每个封包触发，而是会在主游戏循环中的下载过程中随时更新。另请注意，目前此功能仅适用于常规Windows目标平台。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Async_Events.htm">异步事件</a></div>
+        <div style="float:right">Next: <a href="IAP.htm">In App Purchase</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous HTTP Event
+ev_web_async
+-->
+  <!-- TAGS
+ev_web_async
+-->
+
+</body></html>

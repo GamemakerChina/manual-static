@@ -1,0 +1,147 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.6.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>path_start</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function path_start">
+  <meta name="rh-index-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse">
+  <meta name="search-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/path_end.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/Paths.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="path_start">
+        <span>path_start</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_start</h1>
+  <p>路径由一系列链接在一起的定义点创建，然后用于规划实例的移动。可以在路径编辑器中使用代码、<i>或</i>创建它们，并将它们分配给一个实例以在游戏中使用。然后，您可以使用此函数告诉您的实例要遵循的路径、遵循路径的速度(以每步像素为单位)、到达路径末端时的行为以及是遵循<i>绝对</i>还是<i>相对</i>路径位置。这最后一部分意味着，它要么完全按照您在<a href="../../../../The_Asset_Editors/Paths.htm">路径编辑器</a>中设计并放置的路径开始并跟随该路径(绝对)，要么从创建实例的位置开始并跟随该路径(相对)。</p>
+  <p><img alt="Relative or Absolute path examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/path_relative_image.png">正如您在上图中所看到的，两个实例遵循以<span class="inline">path_start()</span>开头的相同路径，但是其中一个实例遵循绝对路径，而另一个则遵循相对路径。需要注意的是，当RELATIVE设置为FALSE(ABSOLUTE)时，实例将"跳转"到路径的起点，无论它位于房间中的哪个位置。</p>
+  <p>本页<a href="Path_Variables/path_endaction.htm">给出了用于定义实例到达路径末端时的行为的常量</a>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">path_start(path, speed, endaction, absolute);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>path</td>
+        <td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
+        <td>要启动的路径索引。</td>
+      </tr>
+      <tr>
+        <td>speed</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>以每步像素为单位跟踪路径的速度，负数表示后退。</td>
+      </tr>
+      <tr>
+        <td>endaction</td>
+        <td><span data-keyref="Type_Constant_Path_End_Action"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Paths/Path_Variables/path_endaction.htm">Path End Action Constant</a></span></td>
+        <td>到达路径终点时要执行的操作(请参阅上面列出的常量)。</td>
+      </tr>
+      <tr>
+        <td>absolute</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>调用实例应遵循编辑器中的绝对路径(true)还是其当前位置的相对路径(false)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">path_start(path, 4, path_action_reverse, 0);</p>
+  <p>这将使调用实例以每步4个像素的速度跟随变量" path "中索引的路径。它会沿着相对于自己位置的路径前进，当它到达终点时，它会改变方向，回到它来的地方。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Paths.htm">路径</a></div>
+        <div style="float:right">Next: <a href="path_end.htm">path_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_start
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+  <!-- TAGS
+path_start
+-->
+
+</body></html>

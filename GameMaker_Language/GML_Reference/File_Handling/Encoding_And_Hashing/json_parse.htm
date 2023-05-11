@@ -1,0 +1,172 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.17.6.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>json_parse</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for json_parse">
+  <meta name="rh-index-keywords" content="json_parse">
+  <meta name="search-keywords" content="json_parse">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/base64_encode.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_stringify.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="json_parse">
+        <span>json_parse</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_parse</h1>
+  <p>此函数可用于解析 JSON 字符串 (之前使用 <a href="json_stringify.htm">json_stringify</a> 创建或来自任何有效来源)，并将其转换为数组或结构的集合，其中数组等同于 JSON 数组和 结构 相当于一个 JSON 对象。 您提供要解析的字符串，该函数将返回顶级数组或结构，然后可以在您的代码中使用它们。 如果您不确定 JSON 的内容，您可以使用不同的 <a href="../../Variable_Functions/Variable_Functions.htm"> 变量函数 </a>( 例如 <a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a> 和 <a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a> 如果是一个结构) 检查返回的内容。 请注意，尝试解析无效值 (即：不是字符串) 将引发异常错误。</p>
+  <p>在使用这个函数时，有一些重要的事情需要注意:</p>
+  <ul class="colour">
+    <li>如果提供的 JSON 字符串包含 <span class="inline">undefined</span> 作为任何属性的值，它将在解析时转换为 <span class="inline">pointer_null</span>。</li>
+    <li>此函数仅允许您加载最大嵌套限制为 128 的 JSON 文件。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">json_parse(json)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>json</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要解析的 JSON 字符串</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Struct"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">json = "{\"myObj\": { \"apples\":10, \"oranges\":12, \"potatoes\":100000, \"avocados\":0 }, \"myArray\":[0, 1, 2, 2, 4, 0, 1, 5, 1]}";<br>
+    <br>
+    data = json_parse(json);<br>
+    show_debug_message(data);
+  </p>
+  <p>上面的代码创建了一个包含有效 JSON 对象的新字符串，然后调用 <span class="inline">json_parse()</span> 将该字符串转换为 GML 结构。然后将结果打印到调试日志。</p>
+  <p class="note"><span class="note">注意</span>&nbsp;你会注意到 JSON 字符串中每个双引号 (<span class="inline2">"</span>) 之前都包含一个反斜杠 (<span class="inline2">\</span>): <br><br><span class="inline2">json = "{<strong>\"&nbsp;</strong>myObj</span><br><br> 这是为了确保双引号作为字符串中的一个实际字符被读取，而不是作为代码的一部分被读取并过早地关闭字符串。在这种情况下，我们使用反斜杠来“转义”双引号。<br><br> 但是，如果从外部文件加载 JSON，则不需要转义该文件中的字符，这样做可能会在解析过程中导致错误。</p>
+  <hr>
+  <p>解析完上面的 JSON 字符串，如果你知道它的结构，你可以使用各种&nbsp;<a href="../../Variable_Functions/Variable_Functions.htm"> 变量函数 </a>&nbsp;来检查和读取它的内容:</p>
+  <p class="code">data = json_parse(json);<br>
+    <br>
+    // Check if the struct has myObj variable<br>
+    if variable_struct_exists(data, "myObj")<br>
+    {<br>
+    &nbsp; &nbsp; // Check if it's a struct<br>
+    &nbsp; &nbsp; if is_struct(data.myObj)<br>
+    &nbsp;&nbsp; &nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; // Print all struct members to the log<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; var _names = variable_struct_get_names(data.myObj);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; var _str = "";<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; for (var i = 0; i &lt; array_length(_names); i++;)<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;_str = _names[i] + ": " +&nbsp;string(variable_struct_get(data.myObj, _names[i]));<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; show_debug_message(_str);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    }<br>
+    <br>
+    // Check if the struct has myArray variable<br>
+    if variable_struct_exists(data, "myArray")<br>
+    {<br>
+    &nbsp; &nbsp; // Check if it's an array<br>
+    &nbsp; &nbsp; if is_array(data.myArray)<br>
+    &nbsp;&nbsp; &nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; show_debug_message(data.myArray);<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    }
+  </p>
+  <p>上面的代码将解析给定的 JSON 字符串，生成以下控制台输出:</p>
+  <p class="code">oranges: 12<br>
+    potatoes: 100000<br>
+    avocados: 0<br>
+    apples: 10<br>
+    [ 0,1,2,2,4,0,1,5,1 ]</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Encoding_And_Hashing.htm">File Encoding</a></div>
+        <div style="float:right">Next: <a href="base64_encode.htm">base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_parse
+-->
+  <!-- TAGS
+json_parse
+-->
+
+</body></html>

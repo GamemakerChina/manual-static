@@ -1,0 +1,149 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.2.0_30";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>array_intersection</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="array_intersection">
+  <meta name="search-keywords" content="array_intersection">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="array_intersection">
+        <span>array_intersection</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">array_intersection</span></h1>
+  <p><span>此函数返回一个<strong>新的</strong>数组，其中包含您提供给它的所有数组的<a href="https://en.wikipedia.org/wiki/Intersection_(set_theory)">交集</a>。交集是指出现在所有提供的数组中的所有值。</span></p>
+  <p>该函数还删除在交叉点中找到的任何重复项，因此它只返回唯一值。</p>
+  <div data-conref="../../../assets/snippets/function_order_not_ensured.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>新数组中元素的顺序是<strong>没有</strong>保证的。如果您需要对数组进行排序，则需要在之后进行排序。</p>
+
+</div>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">array_intersection</span>(array1, array2 [, array3, ... array_n]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>array1</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>第一个数组</td>
+      </tr>
+      <tr>
+        <td>array2</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>第二个数组</td>
+      </tr>
+      <tr>
+        <td>[array3, ... array_n]</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>要包含在交集中的附加数组</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span>&nbsp;(the intersection of the provided arrays)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _array1 = [1, 1, 2, 7, 12];<br>
+    var _array2 = [1, 2, 4, 5, 7];<br>
+    var _array3 = [1, 4, 5, 7];<br>
+    <br>
+    var _array_intersection = <span data-field="title" data-format="default">array_intersection</span>(_array1, _array2, _array3);
+  </p>
+  <p>上面的代码首先创建三个临时数组 <span class="inline2">_array1</span>、<span class="inline2">_array2</span> 和 <span class="inline2">_array3</span>。然后，它调用 <span class="inline2"><span data-field="title" data-format="default">array_intersection</span></span> 来创建一个新数组，该数组是这三个数组的交集。</p>
+  <p><span class="inline2">_array_intersection</span> 数组将设置为 <span class="inline2">[1，7]</span>，因为这些值在所有三个数组中都是唯一的。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Array_Functions.htm">数组函数</a></div>
+        <div>Next:&nbsp;<a href="array_filter.htm">array_filter</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_intersection
+-->
+  <!-- TAGS
+array_intersection
+-->
+
+</body></html>

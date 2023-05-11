@@ -1,0 +1,154 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.5.0_11";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_sprite_tiled_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for draw_sprite_tiled_ext">
+  <meta name="rh-index-keywords" content="draw_sprite_tiled_ext">
+  <meta name="search-keywords" content="draw_sprite_tiled_ext">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_enable_swf_aa.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_tiled.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_sprite_tiled_ext">
+        <span>draw_sprite_tiled_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_tiled_ext</h1>
+  <p>此函数将采用精灵，然后在整个视图(如果未定义视图，则为房间)中重复图块它，从函数中给定的坐标开始，从每个图块缩放、混合颜色和定义的Alpha开始(这些属性与<a href="draw_sprite_ext.htm"><span class="inline">draw_sprite_ext()</span></a>中使用的属性相同)。此函数仅用于2D(正交)投影，并且在使用3D摄影机投影时无法正常工作。</p>
+  <p class="note"><b>注意</b>：只有在启用WebGL时，才建议对HTML5目标使用颜色混合，但如果未启用混合颜色，则仍可以设置该混合颜色，并且该混合颜色会将sprite混合为正常颜色。但是，以这种方式进行的所有混合都会创建一个副本精灵，然后将其存储在缓存中并在需要时使用。这远远不是最佳状态，如果您使用多种颜色更改，则除非您激活WebGL，否则会降低游戏性能。如果您不希望使用WebGL，则可以设置这个字体缓存大小来尝试，并且如果必须使用函数<a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><span class="inline">sprite_set_cache_size()</span></a>来限制这个值。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_sprite_tiled_ext(sprite, subimg, x, y, xscale, yscale, colour, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>sprite</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>要绘制的精灵的索引。</td>
+     </tr>
+      <tr>
+        <td>subimg</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要绘制的精灵的subimg(帧)(image_index或-1)与对象中动画的当前帧相关联。</td>
+     </tr>
+      <tr>
+        <td>x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>绘制精灵的位置的x坐标。</td>
+     </tr>
+      <tr>
+        <td>y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>绘制精灵的位置的y坐标。</td>
+     </tr>
+      <tr>
+        <td>xscale</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>精灵的水平缩放。乘数'1 =正常缩放，0.5等于一半。</td>
+     </tr>
+      <tr>
+        <td>yscale</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>精灵的垂直缩放。乘数'1 =正常缩放，0.5等于一半。</td>
+     </tr>
+      <tr>
+        <td>colour</td><td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>混合精灵的颜色。c_white将正常显示精灵。</td>
+     </tr>
+      <tr>
+        <td>alpha</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>精灵的alpha(从0到1，其中0是透明的，1是不透明的)。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">draw_sprite_tiled_ext(sprite_index, image_index, x, y, 2, 2, c_red, 0.5);</p>
+  <p>这将在实例自己的x和y位置绘制指定了sprite(sprite_index)及其当前动画帧(image_index)的实例，但缩放为正常大小的两倍，混合为红色并具有正常alpha的一半。精灵将被图块水平和垂直穿过视图。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sprites_And_Tiles.htm">精灵和 Tiles</a></div>
+        <div style="float:right">Next: <a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_tiled_ext
+-->
+  <!-- TAGS
+draw_sprite_tiled_ext
+-->
+
+</body></html>

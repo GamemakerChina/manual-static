@@ -1,0 +1,120 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.1_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Object Editor Preferences</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Object Editor Preferences">
+  <meta name="rh-index-keywords" content="Prefs - Objects">
+  <meta name="search-keywords" content="Object Prefs,Object Editor Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/Font_Editor_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Sprite_Editor_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Object Editor Preferences">
+        <span>Object Editor Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>对象编辑器首选项</h1>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Object_Editor_Prefs.png"></p>
+  <p><strong>对象编辑器首选项</strong>用于定义<a href="../../The_Asset_Editors/Objects.htm">对象编辑器</a>；窗口的某些属性。主要部分包含以下选项：</p>
+  <ul class="colour">
+    <li><strong>点击打开事件方法</strong>：此选项控制是否需要在对象事件上执行双击或单击才能打开它。默认情况下，此选项设置为双击。</li>
+    <li><strong>继承事件 Alpha</strong>：此选项允许您更改在对象的事件列表中绘制任何继承事件时使用的 Alpha。默认情况下，该值设置为 0.5 (值应介于 0 和 1 之间)。</li>
+    <li><strong>事件标签格式</strong>：您可以在此启用或禁用可应用于对象编辑器事件列表中的事件标签的不同可能文本。默认情况下，仅启用事件描述。</li>
+    <li><strong>添加默认事件内容</strong>：默认情况下，此选项处于启用状态，它所做的只是为所有新事件在代码编辑器中添加一个简单的注释，以提醒您可以在那里添加代码。</li>
+    <li><strong>默认事件内容</strong>：您可以在这里编辑新事件的代码窗口中默认添加的备注。</li>
+  </ul>
+  <p>对象编辑器还存在以下子项：</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">确认对话框</span><span data-close-text="true">确认对话框</span></a>&nbsp;</p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p><img alt="The Object Editor Confirm Dialog Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Object_Editor_Confirm_Prefs.png"></p>
+    <p class="dropspot">本节介绍使用对象编辑器时可能显示的对话框，可用选项如下：</p>
+    <ul class="dropspotlist">
+      <li><strong>GML 可视化转换为 GML 代码的自动响应 </strong>：您可以在 GML 可视化工作区内或在事件上使用鼠标右键 <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">，选择将该事件的所有 GML 可视化转换为 GML 代码的选项。这里的默认操作是显示一条警告消息，询问您是否要继续，但您可以将其设置为"OK"，并且在转换之前不会显示该对话框。</li>
+      <li><strong>删除事件时自动选择</strong>：此选项可用于控制在删除对象编辑器事件列表中的事件时显示的弹出消息。这里的默认操作是显示一条警告消息，但您可以将其设置为"OK"，对话框不会显示。</li>
+      <li><strong>自动响应超出物理顶点限制</strong>：此选项可用于控制当您超过物理形状编辑器中允许的顶点数时显示的弹出消息。这里的默认操作是显示一条警告消息，但您可以将其设置为"OK"，对话框不会显示。</li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+        <div style="float:right">Next: <a href="Font_Editor_Preferences.htm">字体编辑器首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Object Editor
+-->
+  <!-- TAGS
+prefs_object_editor
+-->
+
+</body></html>

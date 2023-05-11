@@ -1,0 +1,145 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.2.0_40";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>array_shuffle_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="array_shuffle_ext">
+  <meta name="search-keywords" content="array_shuffle_ext">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="array_shuffle_ext">
+        <span>array_shuffle_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">array_shuffle_ext</span></h1>
+  <p>此函数将现有数组<em>放在原地</em>，即它修改(或<em>改变</em>)现有数组。</p>
+  <div data-conref="../../../assets/snippets/Note_randomise_shuffle.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;此函数将在每次重新运行游戏时将物品拖到相同的位置，因为 <span data-keyref="GameMaker Name">GameMaker</span> 每次都会生成相同的初始随机种子，从而使调试代码变得容易得多。要避免这种行为，请在游戏开始时使用 <span class="inline2"><a href="../Maths_And_Numbers/Number_Functions/randomise.htm">randomise</a></span>。这只有在测试和调试游戏时才是正确的，因为最终的可执行包不会显示这种行为，并且在每次游戏中都是随机的。</p>
+
+</div>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">array_shuffle_ext</span>(array, [offset], [length]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>array</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>要打乱的数组</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 要开始打乱的数组中的偏移量或起始索引。默认为0。设置负值将从数组的末尾开始计数。然后，起始索引将是 <span class="inline2">array_length(array)+offset</span>。请参阅：<a href="Array_Functions.htm#h1">偏移量和长度</a></td>
+      </tr>
+      <tr>
+        <td>length</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;要打乱的元素数。&nbsp;默认为&nbsp;<span class="inline2">(array_length(array) - 1)</span>。请参阅：<a href="Array_Functions.htm#h1">偏移量和长度</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];<br>
+    <span data-field="title" data-format="default">array_shuffle_ext</span>(_numbers);<br>
+    show_debug_message(_numbers);
+  </p>
+  <p>上面的代码首先创建一个数字介于 1 到 10 之间的数组 <span class="inline2">_numbers</span>。然后它使用 <span class="inline2"><span data-field="title" data-format="default">array_shuffle_ext</span></span> 对该数组进行打乱。这会更改数组中的实际值。最后，在调试消息中显示打乱后的版本。</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Array_Functions.htm">数组函数</a></div>
+        <div>Next:&nbsp;<a href="array_create.htm">array_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_shuffle_ext
+-->
+  <!-- TAGS
+array_shuffle_ext
+-->
+
+</body></html>

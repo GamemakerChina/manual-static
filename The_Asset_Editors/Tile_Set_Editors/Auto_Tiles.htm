@@ -1,0 +1,112 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "6.9.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Auto Tiles</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page detailing how the tile set editor auto tiles  works">
+  <meta name="rh-index-keywords" content="Tile Sets - Autotiles">
+  <meta name="search-keywords" content="16 tiles,47 tiles,autotile,auto tile">
+<meta name="brsnext" value="The_Asset_Editors/Timelines.htm"><meta name="brsprev" value="The_Asset_Editors/Tile_Set_Editors/Animated_Tiles.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Auto Tiles">
+        <span>Auto Tiles</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>自动图块</h1>
+  <p><strong>自动图块</strong>功能是一个非常强大的工具，可以用来使水平面的建设更加容易，无论是自上而下还是从侧面看项目。从本质上讲，你可以创建一个自动图块<em>库</em>，然后每当你从该库中铺设一块图块时，它就会与周围的图块 "连接 "起来，以创建一个无缝的墙或平台。</p>
+  <p>然而，在你开始使用自动图块功能之前，非常重要的一点是，你已经正确地设置了图块组精灵，并且选择了适当的自动图块类型。你可以选择的类型是<strong>47瓦</strong>自动图块，或<strong>16瓦</strong>自动图块，（一般来说）16瓦用于俯视或风景（因为它们提供了更好的过渡），47瓦用于平台/侧视或俯视的墙需要多个连接，但这绝不是一个硬性规定，将取决于你希望你的最终项目是如何看。</p>
+  <p>下面的图片显示了一个典型的47瓦和16瓦的自动图块组合：</p>
+  <p><img alt="Two Autotile Examples" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Autotiles.png">现在，只看图片并不能真正告诉你它们将如何组合在一起，所以我们将从<strong>图块集编辑器</strong>中打开<a href="../Tile_Sets.htm">自动图块编辑器</a>，并添加它们。自动图块编辑器看起来像这样：</p>
+  <p><img alt="Autotile Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AutotileEditor.png">注意，正在使用的图块集精灵有我们需要的所有图块，也可以有其他图块，因为你可以挑选哪些图块放在自动图块中。你现在可以点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;模板区的47瓦按钮，创建一个新的47瓦库条目，它将调出模板，用于选择你需要的图块：</p>
+  <p><img alt="47 Tile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_47tiles.png">在模板中，浅灰色区域代表正在使用的图块的外边缘，深灰色是 "填充 "区域。要在模板中添加图块，只需点击第一个可用的模板单元，然后从左边选择要添加的图块：</p>
+  <p><img alt="Adding Auto Tiles To The Library" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Add_AutoTiles.gif">如果你犯了一个错误，只需选择你想删除的自动图块，并从图块组中选择 "空 "图块。当你把它们全部加入后，你可以通过点击顶部的 "显示模板 "按钮<img alt="Show Template Icon" class="icon" src="../../assets/Images/Icons/Icon_Tiles_Template.png">&nbsp;来检查图块与模板的关系，这将在最后的自动图块上切换模板覆盖，如下图所示：</p>
+  <p><img alt="Show The Autotile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Show_Template.gif">如果你想制作一个16瓦的自动图块，程序和上面解释的完全一样，只是不使用47瓦的模板，而使用16瓦的模板。</p>
+  <p><img alt="16 Tile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_16Tiles.gif">我们现在的自动图块库里有一些自动图块，取自一个图块集。这些图块可以在房间编辑器中使用，只需创建一个图块地图层，然后从库中选择一个自动图块（这将自动选择房间编辑器顶部的自动图块刷），并在你的房间中绘画。图块现在将 "自动神奇地 "连接起来，以创建正确的图块地图顺序。</p>
+  <p><img alt="Autotile In The Room Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_RoomTile.gif">请注意，房间边缘的自动图块的行为将取决于<strong>开放或封闭边缘</strong>按钮<img alt="Open Close Edges Icon" class="icon" src="../../assets/Images/Icons/Icon_Tiles_OpenCloseEdges.png">。默认情况下，当自动图块沿着房间边缘放置时，它将选择一块图块，就像房间外面是空的一样（即：它将给房间一个 "边缘"）。然而，如果你点击这个按钮，自动图块将在房间里铺设图块，就像外面的区域被图块填满一样，所以选择的图块是混合的，没有 "边缘"。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Tile_Sets.htm">图块集</a></div>
+        <div style="float:right">Next: <a href="Brush_Builder.htm">The Brush Builder</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Auto Tile
+Autotiles
+-->
+  <!-- TAGS
+tile_set_editor_autotiles
+-->
+
+</body></html>

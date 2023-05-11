@@ -1,0 +1,138 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.5.0_22";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>audio_sound_set_track_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function audio_sound_set_track_position">
+  <meta name="rh-index-keywords" content="audio_sound_set_track_position">
+  <meta name="search-keywords" content="audio_sound_set_track_position">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_sound_get_track_position.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_destroy_stream.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="audio_sound_set_track_position">
+        <span>audio_sound_set_track_position</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">audio_sound_set_track_position</span></h1>
+  <p>此函数将设置给定声音 ID 或资源的位置(以秒为单位)。</p>
+  <p>提供的"索引"可以是声音的单个实例(从<a href="audio_play_sound.htm"><span class="inline">audio_play_sound()</span></a>返回)或声音资源(例如，通过资源浏览器添加的)。根据您指定的索引类型，该函数的行为将不同：</p>
+  <ul class="colour">
+    <li>如果您使用的唯一声音 ID 正在播放，则其位置将立即改变至给定时间。</li>
+    <li>如果是健全的资源，那么给定声音资源的所有进一步播放将在新的时间开始。</li>
+  </ul>
+  <p>此函数仅更改当前播放声音或其下一播放的曲目位置(如果提供声音资源)。如果在启用循环的情况下播放声音，后续播放将始终从开始(0.0 秒)开始，<em>而不是</em>从使用此函数定义的曲目位置开始。例如，以5.7秒开始一个声音循环将播放从那个点开始的第一个声音，然而，之后它将从开始到结束继续重复整个音轨。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">audio_sound_set_track_position</span>(index, time);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td><span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../../The_Asset_Editors/Sounds.htm">Sound Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Sound_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">Sound Instance ID</a></span></td>
+        <td>要改变的声音的索引。</td>
+      </tr>
+      <tr>
+        <td>time</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>将起点设置为的时间(以秒为单位)。超出声音末端的值被限制到其长度。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var snd = audio_play_sound(snd_MainTrack, 0, false);<br>
+    <span data-field="title" data-format="default">audio_sound_set_track_position</span>(snd, 32);
+  </p>
+  <p>上述代码播放声音，然后使用返回的ID值将声音的起始位置设置为32秒。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Audio.htm">音频</a></div>
+        <div style="float:right">Next:&nbsp;<a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_set_track_position
+-->
+  <!-- TAGS
+audio_sound_set_track_position
+-->
+
+</body></html>

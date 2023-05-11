@@ -1,0 +1,129 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.1.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>keyboard_check_direct</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for keyboard_check_direct">
+  <meta name="rh-index-keywords" content="keyboard_check_direct">
+  <meta name="search-keywords" content="keyboard_check_direct">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/keyboard_clear.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/keyboard_check_released.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="keyboard_check_direct">
+        <span>keyboard_check_direct</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>keyboard_check_direct</h1>
+  <p>如果按下带有特定键码的键，此函数将返回 <span class="inline">true</span>，如果不按下，则返回 <span class="inline">false</span>，方法是直接检查硬件。它允许进行更多检查，特别是您可以使用键码 <b> vk_lshift </b>,<b> vk_lcontrol </b>,<b> vk_lalt </b>,<b> vk_rshift </b>,<b> vk_rcontrol </b> 和 <b> vk_ralt </b> 来检查是否按下了左或右 shift，control 或 alt 键。该函数将采用函数 <a href="../../Strings/ord.htm"><span class="inline">ord()</span></a> 返回的 keycode 值 (仅 <i>a-Z 的大写字母 </i> 或 0- 9 的数字)，或主<a href="Keyboard_Input.htm">键盘输入</a>页面上列出的 <span class="inline">vk_ *</span> 常量中的任何一个。</p>
+  <p class="note"><b><span class="note">注意</span></b>此函数仅适用于标准Windows目标，并且结果与哪个应用程序具有重点无关。</p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">keyboard_check_direct(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>key</td><td><span data-keyref="Type_Constant_VK"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">Virtual Key Constant (vk_*)</a></span></td>
+        <td>检查按键按下的状态。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4><b>返回:</b></h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4><b>示例:</b></h4>
+  <p class="code">if keyboard_check_direct(vk_ralt) || keyboard_check_direct(vk_lalt)<br>
+    {<br>
+    &nbsp; &nbsp; crouch = true;<br>
+    }</p>
+  <p>上面的代码将检查是否已按下左或右alt键，以及是否将变量 “crouch” 设置为true。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Keyboard_Input.htm">键盘输入</a></div>
+        <div style="float:right">Next:&nbsp;<a href="keyboard_clear.htm">keyboard_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_check_direct
+-->
+  <!-- TAGS
+keyboard_check_direct
+-->
+
+</body></html>

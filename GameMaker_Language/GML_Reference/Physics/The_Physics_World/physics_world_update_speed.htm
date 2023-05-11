@@ -1,0 +1,127 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.13.1.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>physics_world_update_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for physics_world_update_speed">
+  <meta name="rh-index-keywords" content="physics_world_update_speed">
+  <meta name="search-keywords" content="physics_world_update_speed">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Physics/The_Physics_World/physics_world_draw_debug.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/The_Physics_World/physics_world_update_iterations.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="physics_world_update_speed">
+        <span>physics_world_update_speed</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_update_speed</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 根据房间速度更新内容，因此如果您将其设置为 30，<span data-keyref="GameMaker Name">GameMaker</span> 将在一秒钟内运行 30 个步骤。但是，对于可能不够的物理函数，您可能希望以稍快的速度更新事物，以提高稳定性或精度。为此，我们使用函数 <span class="inline">physics_world_update_speed()</span>，该函数<i>独立</i>设置物理系统的更新速度和房间速度。这意味着，可以将房间速度设置为 30，但将物理设置为 60，从而有效地将物理系统更新和执行其计算的速度与更新步骤的速度相比提高了一倍。</p>
+  <p class="note"><b>注意</b>：当前无法将此设置为小于房间速度，但以后的更新可能会更改此设置。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">physics_world_update_speed(speed)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>speed</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>物理系统每秒更新的次数</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">physics_world_update_speed(room_speed * 2);</p>
+  <p>上面的代码将物理系统更新速度设置为房间速度的两倍。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="The_Physics_World.htm">物理世界</a></div>
+        <div style="float:right">Next:&nbsp;<a href="physics_world_draw_debug.htm">physics_world_draw_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_update_speed
+-->
+  <!-- TAGS
+physics_world_update_speed
+-->
+
+</body></html>

@@ -1,0 +1,161 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../../assets/css/default.css"><script src="../../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <title>Time Sources</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <meta name="template" content="../../../assets/masterpages/Manual_Page.htt">
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page detailing Time Sources in GML">
+  <meta name="rh-index-keywords" content="Time Source">
+  <meta name="search-keywords" content="Time Sources">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Time_Sources/Built_In_Time_Sources.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Maths_And_Numbers/Matrix_Functions/matrix_stack_top.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Time Sources">
+        <span>Time Sources</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1>时间源</h1>
+  <p>"<span data-keyref="Type_Resource_TimeSource">时间源</span>"是您创建的自定义计时器。它在给定的时间段内运行，并在结束时过期。</p>
+  <p><span data-keyref="Type_Resource_TimeSource">时间源</span>(TS)能够在过期时调用自定义方法("回调")。</p>
+  <p><img class="center" src="../../../assets/Images/Scripting_Reference/GML/Reference/Time_Sources/time_sources_flow.png">它也可以重复一定的次数，或者永远重复。一个<span data-keyref="Type_Resource_TimeSource">时间源</span>的每一次重复被称为"重复"。</p>
+  <h2>如何使用时间源？</h2>
+  <p>创建并启动调用自定义方法的<span data-keyref="Type_Resource_TimeSource">时间源</span>：</p>
+  <ul class="colour">
+    <li>调用<a href="time_source_create.htm"><span class="inline">time_source_create()</span></a>/<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">创建时间源</a>创建一个<span data-keyref="Type_Resource_TimeSource">时间源</span><ul><li>指定这是继承自全局<span data-keyref="Type_Resource_TimeSource">时间源</span>, 游戏<span data-keyref="Type_Resource_TimeSource">时间源</span>还是自定义<span data-keyref="Type_Resource_TimeSource">时间源</span></li><li>指定它运行的时间段，以及使用的单位(秒或帧)</li><li>指定自定义方法或脚本函数，并带有要传递给该方法的参数数组</li><li>可选地，指定它应该重复的次数<ul><li>默认情况下它只运行一次</li></ul></li></ul></li>
+    <li>调用<a href="time_source_start.htm"><span class="inline">time_source_start()</span></a>/<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">开始时间源</a>立即启动该<span data-keyref="Type_Resource_TimeSource">时间源</span>，或者在需要启动时稍后调用</li>
+  </ul>
+  <p>这样做会导致<span data-keyref="Type_Resource_TimeSource">时间源</span>运行，并且在指定的时间段之后，它将过期并调用您指定的方法。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 即使<span data-field="title" data-format="default">时间源</span>随时可能过期，<span data-keyref="GameMaker Name">GameMaker</span> 只有在<span data-field="title" data-format="default">时间源</span>被更新/"勾选"后，才会"知道"这一点，这是在所有<span data-field="title" data-format="default">时间源</span>的开始步骤和步骤事件之间发生的。此时，还将对那些已过期或即将过期的<span data-field="title" data-format="default">时间源</span>执行回调函数(取决于它们的<a href="Time_Source_Expiry_Types.htm">到期类型</a>)。有关详细信息，请参阅<a href="../../../The_Asset_Editors/Object_Properties/Event_Order.htm">事件顺序</a>。</p>
+  <h2>内置时间源</h2>
+  <p><span data-keyref="Type_Resource_TimeSource">时间源</span>可以从两个内置的<span data-keyref="Type_Resource_TimeSource">时间源</span>中继承，也可以从自定义<span data-keyref="Type_Resource_TimeSource">时间源</span>继承。</p>
+  <p>请参阅：<a href="Built_In_Time_Sources.htm">内置时间源</a></p>
+  <h2 id="h">简单计时器</h2>
+  <p>虽然设置时间源不需要很多行代码，但使用单个函数可以方便地快速设置和管理计时器。</p>
+  <p>以下两个函数提供了创建<span data-keyref="Type_Resource_TimeSource">时间源</span>并停止它的更简单的简写方式:</p>
+  <ul class="Disc">
+    <li><a href="call_later.htm">call_later</a></li>
+    <li><a href="call_cancel.htm">call_cancel</a></li>
+  </ul>
+  <p class="note"><span class="note">注意</span>您不能将<span data-keyref="Type_Resource_TimeSource">时间源</span>函数与这些函数使用的<span data-keyref="Type_Resource_TimeSource">时间源</span>id一起使用。有关更多信息，请参见<a href="call_later.htm">call_later</a>。</p>
+  <h2>函数列表</h2>
+  <p>下列函数用于创建和修改<span data-keyref="Type_Resource_TimeSource">时间源</span>：</p>
+  <ul class="colour">
+    <li><a href="time_source_create.htm">time_source_create</a></li>
+    <li><a href="time_source_destroy.htm">time_source_destroy</a></li>
+    <li><a href="time_source_start.htm">time_source_start</a></li>
+    <li><a href="time_source_stop.htm">time_source_stop</a></li>
+    <li><a href="time_source_pause.htm">time_source_pause</a></li>
+    <li><a href="time_source_resume.htm">time_source_resume</a></li>
+    <li><a href="time_source_reconfigure.htm">time_source_reconfigure</a></li>
+    <li><a href="time_source_reset.htm">time_source_reset</a></li>
+    <li><a href="time_source_get_children.htm">time_source_get_children</a></li>
+    <li><a href="time_source_get_parent.htm">time_source_get_parent</a></li>
+    <li><a href="time_source_get_period.htm">time_source_get_period</a></li>
+    <li><a href="time_source_get_reps_completed.htm">time_source_get_reps_completed</a></li>
+    <li><a href="time_source_get_reps_remaining.htm">time_source_get_reps_remaining</a></li>
+    <li><a href="time_source_get_state.htm">time_source_get_state</a></li>
+    <li><a href="time_source_get_time_remaining.htm">time_source_get_time_remaining</a></li>
+    <li><a href="time_source_get_units.htm">time_source_get_units</a></li>
+    <li><a href="time_source_exists.htm">time_source_exists</a></li>
+  </ul>
+  <p>如果指定的<span data-keyref="Type_Resource_TimeSource">时间源</span>不存在，每个<span class="inline2">get_*</span>函数都将返回<span class="inline2">undefined</span>。</p>
+  <p>提供了以下辅助函数用于转换时间段：</p>
+  <ul class="colour">
+    <li><a href="time_seconds_to_bpm.htm">time_seconds_to_bpm</a></li>
+    <li><a href="time_bpm_to_seconds.htm">time_bpm_to_seconds</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>另请参阅:<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Time_Sources_(GML_Visual).htm">GML可视时间来源</a></p>
+  <h2>常数</h2>
+  <p>以下常量用于<span data-keyref="Type_Resource_TimeSource">时间源</span>函数：</p>
+  <ul class="colour">
+    <li><a href="Built_In_Time_Sources.htm">内置时间源</a></li>
+    <li><a href="Time_Source_Units.htm">时间源单位</a></li>
+    <li><a href="Time_Source_Expiry_Types.htm">时间源过期类型</a></li>
+    <li><a href="Time_Source_States.htm">时间源状态</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="../GML_Reference.htm">GML 代码参考</a></div>
+        <div>Next:&nbsp;<a href="../Physics/Physics.htm">物理</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+</body></html>

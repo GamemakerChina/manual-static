@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"网格 Grid","type":"book","tilePath":"","description":"Reference section for DS Grids","url":"GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/DS_Grids.htm","key":"toc152"},{"name":"列表 List","type":"book","tilePath":"","description":"Reference section for DS Lists","url":"GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/DS_Lists.htm","key":"toc153"},{"name":"映射 Map","type":"book","tilePath":"","description":"Reference section for DS Maps","url":"GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm","key":"toc154"},{"name":"优先队列 Priority Queues","type":"book","tilePath":"","description":"Reference section for DS Priority Queues","url":"GameMaker_Language/GML_Reference/Data_Structures/DS_Priority_Queues/DS_Priority_Queues.htm","key":"toc155"},{"name":"队列 Queues","type":"book","tilePath":"","description":"Reference section for DS Queues","url":"GameMaker_Language/GML_Reference/Data_Structures/DS_Queues/DS_Queues.htm","key":"toc156"},{"name":"堆栈 Stacks","type":"book","tilePath":"","description":"Reference section for DS Stacks","url":"GameMaker_Language/GML_Reference/Data_Structures/DS_Stacks/DS_Stacks.htm","key":"toc157"},{"name":"ds_exists","type":"item","tilePath":"","description":"Reference page for ds_exists","url":"GameMaker_Language/GML_Reference/Data_Structures/ds_exists.htm"},{"name":"ds_set_precision","type":"item","tilePath":"","description":"Reference page for ds_set_precision","url":"GameMaker_Language/GML_Reference/Data_Structures/ds_set_precision.htm"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

@@ -1,0 +1,124 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.19";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>UWP And Xbox Live</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for the UWP And XBox Live functions">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="UWP And XBox Live,UWP,XBox Live">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/Users_And_Accounts.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Buffers/buffer_set_used_size.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="UWP And Xbox Live">
+        <span>UWP And Xbox Live</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>UWP 和 Xbox Live&nbsp;<span data-conref="../../../assets/snippets/Tag_obsolete.hts"><span class="warning">OBSOLETE</span></span></h1>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> UWP 函数现在已过时，因为 UWP 目标不再存在于<span data-keyref="GameMaker Name"> GameMaker </span>中。<br><big>微软终止了UWP 以及 XDK 支持，所以GM自然也取消了，不再能使用UWP作为跳板发布到 Xbox，Xbox 支持使用 GDK 具体信息参考官网。<br>所以本大项都是针对UWP的，没有翻译的必要。故之后不会更新任何翻译</big></p>
+  <p>本节概述了专门针对 UWP 目标平台使用的函数。最初的一组函数是用来控制创建 UWP 应用程序时的一般游戏行为:</p>
+  <ul class="colour">
+    <li><a href="uwp_suspend.htm">uwp_suspend</a></li>
+    <li><a href="uwp_is_suspending.htm">uwp_is_suspending</a></li>
+    <li><a href="uwp_is_constrained.htm">uwp_is_constrained</a></li>
+    <li><a href="uwp_was_terminated.htm">uwp_was_terminated</a></li>
+    <li><a href="uwp_was_closed_by_user.htm">uwp_was_closed_by_user</a></li>
+    <li><a href="uwp_show_help.htm">uwp_show_help</a></li>
+    <li><a href="uwp_license_trial_version.htm">uwp_license_trial_version</a></li>
+    <li><a href="uwp_license_trial_user.htm">uwp_license_trial_user</a></li>
+    <li><a href="uwp_license_trial_time_remaining.htm">uwp_license_trial_time_remaining</a></li>
+    <li><a href="uwp_check_privilege.htm">uwp_check_privilege</a></li>
+  </ul>
+  <p>UWP还允许您使用以下函数使用XBox Live API为XBox One平台创建游戏。这些函数需要你勾选UWP游戏选项中的<b>Enable XBox Live</b>选项。其中一些函数需要用户登录到XBox Live，当你运行项目时<span data-keyref="GameMaker Name">GameMaker</span>将尝试自动执行。这个“静默”登录将生成一个<a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">系统异步事件</a>，在继续之前可以检查它是否成功。注意，与Xbox One控制台导出不同的是，Xbox Live的UWP导出一次只允许一个用户登录。</p>
+  <p class="note"><strong>重要!</strong> UWP目标在作为<strong>创建者程序</strong>的一部分设置时，只对XBox Live提供最低限度的支持，它仅限于一些基本的用户和账户函数(有关设置的更多信息，请参阅<a href="https://help.yoyogames.com/hc/en-us/articles/115002091531-Adding-Xbox-Live-Support-To-Your-UWP-Projects">这里的</a>)。要使用这里列出的所有函数，您需要有一个<a href="https://www.xbox.com/es-ES/developers/id">ID@XBox账户</a>。</p>
+  <p>您可以在下面列出的部分中找到所有用于 UWP 导出目标的 Xbox Live 函数:</p>
+  <ul class="colour">
+    <li><a href="Users_And_Accounts/Users_And_Accounts.htm">Users And Accounts</a></li>
+    <li><a href="Saving_Data/Saving_Data.htm">Saving Data</a></li>
+    <li><a href="Stats_And_Leaderboards/Stats_And_Leaderboards.htm">Stats And Leaderboards</a></li>
+    <li><a href="Match_Making/Match_Making.htm">Match Making</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../GML_Reference.htm">GML Reference</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../OS_And_Compiler/OS_And_Compiler.htm">操作系统和编译器</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+UWP And XBox Live
+-->
+  <!-- TAGS
+uwp_xbox_functions
+-->
+
+</body></html>

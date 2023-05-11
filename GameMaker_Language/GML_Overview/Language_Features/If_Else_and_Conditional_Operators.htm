@@ -1,0 +1,192 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.1.1_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>if / else and Conditional Operators</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the If / Else and Conditional Operators">
+  <meta name="rh-index-keywords" content="?,if,else,ternary operator,then">
+  <meta name="search-keywords" content="if,else,then,?,ternary,conditional">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Addressing_Variables_In_Other_Instances.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Data_Types.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="if / else and Conditional Operators">
+        <span>if / else and Conditional Operators</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>if / else 和条件运算符</h1>
+  <p>大多数编程语言的基本特征是能够提出一个简单的问题，给出一个布尔<span class="inline">true</span>或<span class="inline">false</span>的答案，而在GML中，这是用<span class="inline">if</span>关键字实现的。一个简单的<span class="inline">if</span>条件需要一个<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>，如果表达式解析为<span class="inline">true</span>，就会执行一个或多个<a class="tooltip" title="在编程中，语句是用编程语言合法编写的单行代码，表示要执行的操作。语句可能具有自己的内部组件，包括表达式，运算符和函数。语句的一个示例是A = B +5。GameMakerStudio 2程序不过是一系列一起执行任务（如移动玩家）的一个或多个语句的序列。">语句</a><span class="glossextra"> </span>，其基本形式如下。</p>
+  <p class="code">if (&lt;expression&gt;)<br>
+    {<br>
+    &nbsp; &nbsp; &lt;statement&gt;;<br>
+    &nbsp; &nbsp; &lt;statement&gt;;<br>
+    &nbsp; &nbsp; ...<br>
+    }</p>
+  <p><br>这里是说，如果一个表达式解析为<span class="inline">true</span>，那么就做什么。注意，条件的 "then "部分是<em>隐式</em>的，但有一个<span class="inline">then</span>关键字可以使用（尽管它几乎总是被省略），所以你也可以创建这样的条件。</p>
+  <p class="code">if (&lt;expression&gt;) then<br>
+    {<br>
+    &nbsp; &nbsp; &lt;statement&gt;;<br>
+    &nbsp; &nbsp; &lt;statement&gt;;<br>
+    &nbsp; &nbsp; ...<br>
+    }</p>
+  <p>除了<span class="inline">if</span>和<span class="inline">then</span>之外，如果要检查的表达式的计算结果为<span class="inline">false</span>，您还可以使用<span class="inline">else</span>关键字执行其他操作。此"<span class="inline">if... then ... else ...</span>"形式如下所示：</p>
+  <p class="code">if (&lt;expression&gt;)<br>
+    {<br>
+    &nbsp; &nbsp; &lt;statement&gt;;<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp; &nbsp; &lt;statement&gt;;<br>
+    }</p>
+  <p>在这种情况下，将计算表达式，如果它的计算结果为<span class="inline">false</span>，则执行在<span class="inline">else</span>之后的语句，否则将执行初始语句(当它为<span class="inline">true</span>)。</p>
+  <p class="note"><span class="note">注意</span>在GameMaker语言中，任何小于或等于0的值将被评估为<span class="inline">false</span>，而任何大于0的值将被评估为<span class="inline">true</span>。</p>
+  <p>最好始终在<span class="inline">if</span>中的表达式周围加括号，在语句周围加大括号{}(否则将只执行第一条语句)，并在块中为每条语句添加新的一行，例如：</p>
+  <p class="code">// This will work<br>
+    if &lt;expression&gt; &lt;statement&gt;;<br>
+    <br>
+    // Example:<br>
+    if test == true variable = false else variable = true;
+  </p>
+  <p class="code">// This is better<br>
+    if (&lt;expression&gt;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement&gt;<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement&gt;<br>
+    }<br>
+    <br>
+    // Example<br>
+    if (test == true)<br>
+    {<br>
+    &nbsp; &nbsp; variable = false;<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp; &nbsp; variable = true;<br>
+    }
+  </p>
+  <p>请注意，虽然这稍微比较冗长，但它意味着代码中没有歧义，并且它将始终在所有平台上正确编译。但是，初始示例可能不是，如<a href="../Expressions_And_Operators.htm">表达式和运算符</a>页中的部分所述。</p>
+  <p class="note"><strong>注</strong>：比较两个值以确定它们是否相等时，应使用"<span class="inline">==</span>"运算符，并且仅使用"<span class="inline">=</span>"运算符进行赋值。当前GameMaker会将它们视为可互换的，但这种情况在将来可能会改变，并且在使用正确的运算符进行比较和分配时，您的代码更干净、更清晰。</p>
+  <p>要给出使用<span class="inline">if</span>的正确示例，请考虑以下代码，当放置在Step Event中时，这些代码将使实例朝向房间中的位置<span class="inline">x= 200</span>移动：</p>
+  <p class="code">if (x &lt; 200)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;x += 4;<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;x = 200;<br>
+    }</p>
+  <p>请注意，您还可以在<i>if</i>中执行<span class="inline">复合</span>检查，即：检查同一语句中的各种值或表达式。这些检查可以使用各种<a href="../Expressions_And_Operators.htm">组合运算符</a>(<span class="inline"> &amp;&amp; </span> 和 <span class="inline"> || </span>或<span class="inline"> ^^ </span>异或)。执行此操作时，<span data-keyref="GameMaker Name">GameMaker</span> 将一次对它们中的每一个进行评估，并根据它们的评估方式，然后可能会跳过其余部分。例如：</p>
+  <p class="code">if (keyboard_check_pressed(vk_enter)) &amp;&amp; (instance_exists(obj_Player))<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;go = false;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
+    }</p>
+  <p>在这里，我们使用 <span class="inline">&amp;&amp;</span>“和”运算符进行检查，因此它检查 <em>if</em> 中的<span class="inline">两个</span>条件是否计算为 <span class="inline">true</span>，以及第一个条件是否为 <span class="inline">false</span> 那么第二个甚至不会被检查。这称为“短路”代码，因此在组合表达式进行检查时，您应确保性能“最便宜”的始终是第一个，以避免在第一个计算结果为 <span class="inline">false</span> 时计算更昂贵的表达式。同样，如果一个条件可以在编译时被评估为<span class="inline">真</span>或<span class="inline">假</span>，那么整个条件将从代码中移除，例如，假设您有一个<a href="../Variables/Constants.htm">宏</a> <span class="inline">DEBUG_ON </span>用于调试，它可以是 <span class="inline">true</span> 或 <span class="inline">false</span> - 当它设置为 <span class="inline">false</span> 时，以下代码块将在编译时从游戏中删除:</p>
+  <p class="code">if DEBUG_ON == true<br>
+    {<br>
+    &nbsp; &nbsp; show_debug_message("Instances = " + string(instance_count));<br>
+    }</p>
+  <p>您还可以执行<b>条件运算</b>（也称为<b>三元</b>运算），这本质上是执行基本 <span class="inline">if</span> 的“快捷方式”。它具有以下语法：</p>
+  <p class="code">variable = &lt;condition&gt; ? &lt;statement1 (if <i>true</i>)&gt; : &lt;statement2 (if <i>false</i>)&gt;</p>
+  <p>条件运算符"<span class="inline">?</span>"将返回两个给定值中的一个，具体取决于条件表达式的计算结果是<span class="inline">true</span>还是<span class="inline">false</span>，例如：</p>
+  <p class="code">var temp_x = (x &lt; (room_width / 2)) ? 32 : (room_width - 32);</p>
+  <p>上述代码将根据房间宽度的一半的值检查"x"的值，如果该值小于该值，则将"<span class="inline">temp_x</span>"设置为32，否则"<span class="inline">temp_x</span>"将为房间宽度-32。以下是更多的使用示例：</p>
+  <p class="code">draw_text(x, y, "The fee is " + (global.Member ? "$2.00" : "$10.00"));<br>
+    path_start(((global.level &gt; 10) ? path_hard : path_easy;), 2, path_action_reverse, true);<br>
+    (--hp &lt;= 0) ? instance_destroy() : score += 10;</p>
+  <p>值得注意的是，您可以嵌套有条件的操作，但如果这样做，则需要将每个操作放在括号中，例如：</p>
+  <p class="code">var c = a ? "foo" : (b ? "bar" : "whee"); // Correct<br>
+    var c = a ? "foo" : b ? "bar" : "whee";&nbsp;&nbsp; // Will cause an error</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../GML_Overview.htm">GML 代码概述</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../Addressing_Variables_In_Other_Instances.htm">在其他实例中处理变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+if
+else
+then
+ternary operators
+conditional operators
+-->
+  <!-- TAGS
+if
+else
+then
+-->
+
+</body></html>

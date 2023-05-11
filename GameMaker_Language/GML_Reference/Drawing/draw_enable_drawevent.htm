@@ -1,0 +1,133 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.6.12_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_enable_drawevent</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function draw_enable_drawevent">
+  <meta name="rh-index-keywords" content="draw_enable_drawevent">
+  <meta name="search-keywords" content="draw_enable_drawevent">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/draw_flush.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Videos/video_get_format.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_enable_drawevent">
+        <span>draw_enable_drawevent</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_enable_drawevent</h1>
+  <p>使用此函数，您可以为游戏<span class="inline">中的</span>所有实例选择启用(<span class="inline">true</span>)或禁用(<b>false</b>)绘制事件，从而使您可以控制绘制内容的方式和时间，如果您希望实现"跳帧"技术，这将非常有用。请注意，这不仅会阻止实例绘制到屏幕，还会完全抑制绘制事件，这意味着应该注意，因为该事件中存在的任何游戏逻辑也不会运行。</p>
+  <p>了解此函数的一个重要事项是，如果您在游戏开始时调用它，则在渲染初始帧之前(例如，游戏第一个房间中第一个对象的"创建事件")，<b>则不会渲染游戏窗口</b>。这对于需要不需要渲染任何内容的专用服务器的多人项目可能非常有用，但请记住，这<strong>不会</strong>使它无头，因为GameMaker不支持这一点，所以您将无法在没有图形界面的服务器上运行它。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_enable_drawevent(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>Enable</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>设置为<span class="inline">真</span>或<span class="inline">假</span>。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">frame_skip ++;<br>
+    if (frame_skip mod 5) == 0<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;draw_enable_drawevent(true);<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;draw_enable_drawevent(false);<br>
+    }</p>
+  <p>以上代码检查变量，如果返回<span class="inline">个true</span>，则启用绘制事件，否则将禁用绘制事件。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Drawing.htm">绘制</a></div>
+        <div style="float:right">Next: <a href="draw_flush.htm">draw_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_enable_drawevent
+-->
+  <!-- TAGS
+draw_enable_drawevent
+-->
+
+</body></html>

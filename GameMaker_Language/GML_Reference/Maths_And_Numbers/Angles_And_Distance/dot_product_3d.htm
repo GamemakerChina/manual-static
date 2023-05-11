@@ -1,0 +1,165 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.11.3.0_23";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>dot_product_3d</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for dot_product_3d">
+  <meta name="rh-index-keywords" content="dot_product_3d">
+  <meta name="search-keywords" content="dot_product_3d">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/dot_product_normalised.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/dot_product.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="dot_product_3d">
+        <span>dot_product_3d</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dot_product_3d</h1>
+  <p>点积是一个表示两个向量之间角度关系的值，它是通过取两个向量，将它们相乘，然后将结果相加得到的。“点积”这个名称来源于通常用于指定此操作的居中点“·”(另一个名称“标量积”强调结果的标量性质而不是向量性质)。</p>
+  <p>实际的数学公式可以这样写:</p>
+  <p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png"></p>
+  <p>在二维中，向量<span class="inline">a[x1,y1]</span>和<span class="inline">b[x2,y2]</span>的点积是<span class="inline">x1x2 + y1y2</span>，在三维中，向量<span class="inline">a[x1,y1,z1]</span>和<span class="inline">b[x1,y1,z1]</span>的点积是<span class="inline">x1x2 + y1y2 + z1z2</span>。所以，<span data-keyref="GameMaker Name">GameMaker</span>中的dot_product_3d被计算为:</p>
+  <p class="code">a · b = (x1*x2) + (y1*y2) + (z1*z2);</p>
+  <p>点积的奇妙之处在于它与输入向量形成的角度之间的关系，可以表示为:</p>
+  <p class="code">a · b = (length of a) * (length of b) * cos(angle)</p>
+  <p>也就是说，两个向量的点积等于这两个向量夹角的余弦，乘以它们各自的长度。这里有一张图片来说明:</p>
+  <p><img alt="Dot Product ilustration" class="center" height="143" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_2.png" width="406"></p>
+  <p class="note"><strong>注意</strong>:有关向量的更多信息，请参见<a href="../../../../Additional_Information/Vectors.htm">这里</a>。</p>
+  <p>我们现在可以从任意两个向量，关于它们的点积的结果，来说明一些事情:</p>
+  <ul class="colour">
+    <li>如果 a 和 b 彼此垂直(90度) ，点乘的结果将为零，因为<span class="inline"> cos (ang)</span>将为零</li>
+    <li>如果 a 和 b 之间的夹角小于90度，则点乘为正(大于零) ，因为<span class="inline"> cos (ang)</span>为正</li>
+    <li>如果 a 和 b 之间的夹角大于90度，则点乘为负(小于零) ，因为<span class="inline"> cos (ang)</span>为负</li>
+  </ul>
+  <p>这对我们这些游戏开发者来说意味着什么呢?这种数学关系可以用在很多情况下，但最好的方法是建立一个实际的场景，自己看看发生了什么。最简单的方法之一就是在平台游戏中为敌人生成一个简单的“高度”检查，这样如果敌人位于敌人<i>法向量和3d地板组成的平面之上，敌人就会“看到”玩家。</i></p>
+  <p><img alt="Dot product 3D example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_3d_image.png">基本上，我们得到的是敌人垂直于地面的法向量，然后我们得到的是玩家到敌人的向量。然后我们将得到这些向量的点积，如果结果是正的，那么玩家就在敌人平面的“上方”，如果结果是负的，那么他就在敌人平面的下方。下面的示例中提供了实现此函数的实际代码。</p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">dot_product_3d(x1, y1, z1, x2, y2, z2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>x1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>第一个向量的 x 坐标。</td>
+     </tr>
+      <tr>
+        <td>y1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>第一个向量的 y 坐标。</td>
+     </tr>
+      <tr>
+        <td>z1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>第一个向量的 z 坐标。</td>
+     </tr>
+      <tr>
+        <td>x2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>第二个向量的 x 坐标。</td>
+     </tr>
+      <tr>
+        <td>y2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>第二个向量的 y 坐标。</td>
+     </tr>
+      <tr>
+        <td>z2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>第二个向量的 z 坐标。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var x1, y1, x2, y2;<br> x1 = 0;<br> y1 = 1;<br> z1 = 0;<br> x2 = o_Player.x - x;<br> y2 = o_Player.y - y;<br> z2 = o_Player.z - z; if dot_product_3d(x1, y1, z1, x2, y2, z2) &gt; 0 above=true else above=false;</p>
+  <p>上面的代码创建了一个沿实例y(向上)轴的向量，然后获取播放器对象“o_Player”的向量。最后，它计算这两个向量的点积，如果它大于tan0，它将变量above设为真，如果它小于或等于0，它将设为假。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Angles_And_Distance.htm">角度和距离</a></div>
+        <div style="float:right">Next:&nbsp;<a href="dot_product_normalised.htm">dot_product_normalised</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+dot_product_3d
+-->
+  <!-- TAGS
+dot_product_3d
+-->
+
+</body></html>

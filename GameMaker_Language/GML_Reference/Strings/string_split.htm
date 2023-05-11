@@ -1,0 +1,166 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.10.0_33";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>string_split</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="string_split">
+  <meta name="rh-index-keywords" content="string_split">
+  <meta name="search-keywords" content="string_split">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="string_split">
+        <span>string_split</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">string_split</span></h1>
+  <p>此函数使用给定的<em>分隔符</em>将一个字符串分割为多个单独的字符串。分隔的字符串在新数组中返回。</p>
+  <p>分隔符字符串是导致字符串拆分的边界(单个字符或字符串)。</p>
+  <p>例如，如果字符串是<span class="inline2">"This is the string"</span>，则可以使用单个空格字符<span class="inline2">" "</span>作为分隔符进行拆分。生成的数组将如下所示：<span class="inline2">["this"，"is"，"the"，"string"]</span>，无论分隔符在哪里，原始字符串都是"分割的"。</p>
+  <p>分隔符本身永远不会包含在结果字符串中。</p>
+  <p>另请参阅：<a href="string_split_ext.htm">string_split_ext</a></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">string_split</span>(string, delimiter, [remove_empty], [max_splits]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要使用给定分隔符拆分的字符串</td>
+      </tr>
+      <tr>
+        <td>delimiter</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要使用的分隔符</td>
+      </tr>
+      <tr>
+        <td>remove_empty</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;此参数确定是否应从数组中移除空数组元素(默认为 <span class="inline2">false</span>)。对于字符串中两个分隔符紧挨着且中间没有任何分隔符的情况，它非常有用。默认情况下，在这种情况下，会向数组中添加一个空字符串(表示这两个分隔符之间的空字符串)。如果您不希望数组中包含这些空字符串，则应该将此参数设置为 <span class="inline2">true</span>。</td>
+      </tr>
+      <tr>
+        <td>max_splits</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 此参数确定要进行的最大拆分数。之后的任何分隔符都将 <span class="inline2">max_splits</span> 成为最后一个字符串的一部分，例如，拆分 <span class="inline2">"1|2|3|4|5"</span>，其中 <span class="inline2">max_splits</span> 为 3，并且 <span class="inline2">|</span> 作为分隔符将返回 <span class="inline2">["1"，"2"，"3"，"4|5"]</span>。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></p>
+  <p>&nbsp;</p>
+  <h4>示例1：</h4>
+  <p class="code">file_path = "C:/Users/someone/Documents/data.json";<br>
+    <br>
+    var _path_parts = <span data-field="title" data-format="default">string_split</span>(file_path, "/");<br>
+    <br>
+    show_debug_message(_path_parts);<br>
+    <br>
+    drive_name = _path_parts[0];<br>
+    file_name = array_last(_path_parts);
+  </p>
+  <p>上面的代码首先创建存储文件路径的字符串 <span class="inline2">path</span>。然后，它使用正斜杠 "/" 作为分隔符在路径上调用 <span class="inline2"><span data-field="title" data-format="default">string_split</span></span>，并将其返回的数组存储在临时变量 <span class="inline2">_path_parts</span> 中。</p>
+  <p>然后，它显示一条调试消息，其中显示了 <span class="inline2">_path_parts</span> 数组的内容。最后，它将第一个数组条目 (驱动器号) 存储在变量 <span class="inline2">drive_name</span> 中，将最后一个数组条目 (文件名) 存储在变量 <span class="inline2">file_name</span>。</p>
+  <p>&nbsp;</p>
+  <h4>示例2：</h4>
+  <p class="code">the_string = "abc|def||ghi|jkl|mno|pqrs|tuv|wxyz";<br>
+    string_parts =&nbsp;<span data-field="title" data-format="default">string_split</span>(the_string, "|", true, 5);<br>
+    <br>
+    show_debug_message_ext("{0}, {1}, {2}, {3}, {4}", string_parts);
+  </p>
+  <p>上面的代码创建了一个字符串 <span class="inline2">the_string</span>&nbsp;，并使用&nbsp;<span class="inline2"><span data-field="title" data-format="default">string_split</span></span> 将其拆分成总共 5 个 (值为&nbsp;<span class="inline2">max_plits</span>) 的独立字符串。通过将 <span class="inline2">remove_empty</span> 设置为 <span class="inline2">true</span>，首先删除空数组元素，例如 "def" 之后的分隔符和 "ghi" 之前的分隔符之间的空格。最后，它使用&nbsp;<span class="inline2"><a href="show_debug_message_ext.htm">show_debug_message_ext</a></span> 显示调试消息，打印数组中的前五个插槽。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Strings.htm">字符串</a></div>
+        <div>Next:&nbsp;<a href="string_split_ext.htm">string_split_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_split
+-->
+  <!-- TAGS
+string_split
+-->
+
+</body></html>

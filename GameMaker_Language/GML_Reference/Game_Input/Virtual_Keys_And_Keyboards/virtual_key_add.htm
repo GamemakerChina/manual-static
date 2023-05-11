@@ -1,0 +1,148 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.6.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>virtual_key_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for virtual_key_add">
+  <meta name="rh-index-keywords" content="virtual_key_add">
+  <meta name="search-keywords" content="virtual_key_add">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/virtual_key_show.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="virtual_key_add">
+        <span>virtual_key_add</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>virtual_key_add</h1>
+  <p>此函数使您能够将屏幕区域的“触摸”映射到键盘事件。这意味着，一旦您将某个区域分配给某个虚拟键，该区域上的所有触摸都将触发与您映射到该区域的键相对应的键盘事件。您也可以将您定义的每个虚拟键分配给一个变量，然后可以在进一步的虚拟键函数中使用该变量来显示、隐藏和删除它们。这些钥匙是以<i>每个房间</i>为基础分配的，并将在更换房间时由<span data-keyref="GameMaker Name">GameMaker</span>自动删除。</p>
+  <p>虚拟键的实际位置基于<i>屏幕</i>位置而不是房间位置，因此X/Y值在屏幕上是绝对的。这意味着您无需担心视图或相对房间坐标的使用，并且可以简单地在对象的<strong>创建事件</strong>中定义按键(您只需为每个房间定义一次虚拟按键)，然后在<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">绘制GUI事件</a>中绘制您的按键精灵，将GUI层的大小调整为与屏幕相同。</p>
+  <p>&nbsp;</p>
+  <h4>语法</h4>
+  <p class="code">virtual_key_add(x, y, w, h, keycode);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>虚拟按键<i>在屏幕</i>上的X坐标(左侧)</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>虚拟按键<i>在屏幕</i>上的Y坐标(顶边)</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>虚拟键的宽度</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>虚拟键的高度</td>
+      </tr>
+      <tr>
+        <td>keycode</td>
+        <td><span data-keyref="Type_Constant_VK"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">Virtual Key Constant (vk_*)</a></span></td>
+        <td>触摸此区域应触发哪个键盘键事件</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_ID_Virtual_Key_OnScreen"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Virtual_Keys_And_Keyboards/virtual_key_add.htm">Virtual Key ID</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">global.Left = virtual_key_add(32, 32, 64, 64, vk_left);</p>
+  <p>上面的代码创建了一个64x64像素的正方形虚拟键，位于屏幕上的(32，32)处，当被触摸时，它将触发 vk_left 事件，并将该虚拟键的索引分配给一个全局变量。</p>
+  <p><b></b></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Virtual_Keys_And_Keyboards.htm">Virtual Keys And Keyboards</a></div>
+        <div style="float:right">Next:&nbsp;<a href="virtual_key_show.htm">virtual_key_show</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+virtual_key_add
+-->
+  <!-- TAGS
+virtual_key_add
+-->
+
+</body></html>

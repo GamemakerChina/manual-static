@@ -1,0 +1,140 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../../..";
+    gCommonRootRelPath = "../../../../../..";
+    gTopicId = "8.2.2.3.3.4.2.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>skeleton_skin_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../../../assets/css/default.css">
+  <script src="../../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Page documenting skeleton_skin_create">
+  <meta name="rh-index-keywords" content="skeleton_skin_create">
+  <meta name="search-keywords" content="skeleton_skin_create">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skins/skeleton_skin_get.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skins/Skins.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="skeleton_skin_create">
+        <span>skeleton_skin_create</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">skeleton_skin_create</span></h1>
+  <p>此函数通过代码为骨骼动画精灵创建新的<a href="http://esotericsoftware.com/spine-runtime-skins">runtime skin</a>。</p>
+  <p>新蒙皮使用您提供的名称创建，并采用骨骼动画精灵中的现有蒙皮列表。链接到这些外观的附件将包含在新外观中。通过以这种方式组合现有皮肤，您可以创建自定义角色(通过<a href="http://esotericsoftware.com/spine-runtime-skins#Grouping-attachments">grouping attachments</a>)。</p>
+  <p>以这种方式创建皮肤在视觉上对应于<i>pinning</i>动画工具的<a href="http://en.esotericsoftware.com/spine-skins-view#Pinned-skins">Skins view</a>中现有皮肤的组合。</p>
+  <p class="note"><span data-conref="../../../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 对于使用此函数创建的皮肤，必须将它返回的结构传递给<a href="skeleton_skin_set.htm">skeleton_skin_set</a>，而不是皮肤名称。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">skeleton_skin_create</span>(name, skins);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>新皮肤的名称</td>
+      </tr>
+      <tr>
+        <td>skins</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>将在新皮肤中使用的骨骼动画精灵中现有皮肤的名称数组(as<span data-keyref="Type_String"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Struct_Skeleton_Skin"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skins/skeleton_skin_create.htm">Skeleton Skin Struct</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var skin = <span data-field="title" data-format="default">skeleton_skin_create</span>("new_skin", ["hat/red", "shirt/green", "trousers/blue"]);<br>
+    skeleton_skin_set(skin);</p>
+  <p>上面的代码首先调用<span class="inline2"><span data-field="title" data-format="default">skeleton_skin_create</span></span>来添加一个新的称为"new_skin"的运行时皮肤。皮肤由骨骼动画精灵中的三个现有皮肤创建："hat/red色"、"shirt/green"和"trousers/blue"。结果存储在临时变量<span class="inline2">skin</span>中。</p>
+  <p>然后，它将当前实例的骨骼动画精灵的蒙皮设置为此新蒙皮。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="../Skeletal_Animation.htm">骨骼动画</a></div>
+        <div>Next:&nbsp;<a href="skeleton_skin_set.htm">skeleton_skin_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_skin_create
+-->
+  <!-- TAGS
+skeleton_skin_create
+-->
+
+</body></html>

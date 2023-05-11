@@ -1,0 +1,179 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.1.3.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>continue</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the continue function">
+  <meta name="rh-index-keywords" content="continue">
+  <meta name="search-keywords" content="continue">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Language_Features/exit.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Language_Features/break.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="continue">
+        <span>continue</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>continue</h1>
+  <p><span class="inline">continue</span> 语句具有以下基本语法：</p>
+  <p class="code">continue;</p>
+  <p>如果在形成循环的语句内部使用（<a href="for.htm"><span class="inline">for</span></a>、<a href="repeat.htm"><span class="inline">repeat</span></a>、<a href="while.htm"><span class="inline">while</span></a> 或 <a href="do___until.htm"><span class="inline">do / until</span> </a>)，它将立即结束当前的<a class="tooltip" title="迭代是对项目代码中的一组操作的一次遍历。计算机编程中一种迭代形式是通过循环。循环将重复一段代码，直到满足条件为止，然后循环可以继续进行。每次计算机运行一个循环，就称为迭代。简单来说，迭代是一遍又一遍地重复执行特定代码段以执行特定操作的过程。">迭代</a>并跳回到循环的开头，开始新的迭代并忽略循环中 <span class="inline">continue</span> 之后的任何代码。它也可以在 <a href="with.htm"><span class="inline">with</span></a> 语句中使用，它会导致代码跳到下一个实例并再次运行。请注意，如果在任何这些上下文之外使用 <span class="inline">continue</span>，则会报错。</p>
+  <p>下面是在 <span class="inline">for</span> 循环中使用的示例：</p>
+  <p class="code">var _val = 0;<br>
+    <br>
+    for (var i = 0; i &lt; 10; i += 1)<br>
+    {<br>
+    &nbsp; &nbsp; if (val_array[i] &lt;=&nbsp;0)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; continue;<br>
+    &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp; _val += val_array[i];<br>
+    }<br>
+    <br>
+    draw_text(32, 32, "Positive Values Total = " + string(_val));
+  </p>
+  <p>下面是在 <span class="inline">while</span> 循环中使用的示例：</p>
+  <p class="code">var file = file_text_open_read("Game_Data.txt");<br>
+    var _num = 0;<br>
+    <br>
+    while (!file_text_eof(file))<br>
+    {<br>
+    &nbsp; &nbsp; var _s =&nbsp;file_text_readln(file);<br>
+    &nbsp; &nbsp; if (_s == "")<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; continue;<br>
+    &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp;&nbsp;str[num++] = _s;<br>
+    }<br>
+    <br>
+    file_text_close(file);
+  </p>
+  <p>下面是在 <span class="inline">do / until</span> 循环中使用的示例：</p>
+  <p class="code">do<br>
+    {<br>
+    &nbsp; &nbsp; var _x = random(room_width);<br>
+    &nbsp; &nbsp; var _y = random(room_height);<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (instance_position(_x, y, obj_Enemy)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    <br>
+    &nbsp; &nbsp; instance_create_layer(_x, _y, "Instances", obj_Enemy);<br>
+    }<br>
+    until (instance_count(obj_Enemy) &gt;= 10);
+  </p>
+  <p>下面是在 <span class="inline">repeat</span> 循环中使用的示例：</p>
+  <p class="code">repeat(10)<br>
+    {&nbsp; &nbsp;<br>
+    &nbsp; &nbsp; var _x = random(room_width);<br>
+    &nbsp; &nbsp; var _y = random(room_height);<br>
+    <br>
+    &nbsp; &nbsp; if (instance_position(_x, y, obj_Enemy)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    <br>
+    &nbsp; &nbsp; instance_create_layer(_x, _y, "Instances", obj_Enemy);<br>
+    }
+  </p>
+  <p>最后，在 <span class="inline">with</span> 语句中使用示例：</p>
+  <p class="code">with (obj_Enemy_Parent)<br>
+    {<br>
+    &nbsp; &nbsp; if (object_index == obj_Enemy_InDestructible)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; continue;<br>
+    &nbsp; &nbsp; }<br>
+    <br>
+    &nbsp; &nbsp; hp -= 100;<br>
+    <br>
+    &nbsp; &nbsp; if (hp &lt;= 0)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; instance_destroy();<br>
+    &nbsp; &nbsp; }<br>
+    }
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Language_Features.htm">Language&nbsp;Features</a></div>
+        <div style="float:right">Next: <a href="exit.htm">exit</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+continue
+-->
+  <!-- TAGS
+continue
+-->
+
+</body></html>

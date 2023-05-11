@@ -1,0 +1,108 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.5.3.0_24";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Collision Compatibility Mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page describing the Collision Compatibility Mode">
+  <meta name="rh-index-keywords" content="Collision Compatibility">
+  <meta name="search-keywords" content="Collision, Compatibility, Mode, integer collisions, floating point collisions, rounded bounding box">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Drawing.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/rectangle_in_circle.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Collision Compatibility Mode">
+        <span>Collision Compatibility Mode</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>碰撞兼容模式</h1>
+  <p>在项目的<a href="../../../../Settings/Game_Options.htm">常规游戏选项</a>中，您可以启用"<strong>碰撞兼容模式</strong>"以切换到旧式碰撞系统。只有在升级到<span data-keyref="GameMaker Name">GameMaker</span>2022.1后发现现有项目中存在奇怪的碰撞行为时，才需要执行此操作。{}GameMaker{}2022.1改变了碰撞的工作方式。</p>
+  <p><img alt="Collision Compatibility Mode option in Game Options" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_compatibility_mode.png"></p>
+  <h2>碰撞中的更改</h2>
+  <p>在遗留的碰撞系统中，所有边界框坐标都四舍五入为整数，并且是"独占的"，即它们将排除碰撞遮罩的最底部和最右侧的边。例如，16 x 16碰撞遮罩的边界框将从<span class="inline2">(0,0 )</span>到<span class="inline2">(15,15 )</span>(相对)生成。对于仅使用整数值进行定位和缩放的实例，这将非常有效，但是使用<a class="tooltip" title="浮点数是包含浮点小数的数字。例如，数字5.5、0.001和-2,345.6789是浮点数。没有小数位的数字称为整数。">浮点</a>值会导致意外行为，并导致渲染和碰撞检查之间的轻微断开，因为GameMaker随后会始终舍入边界框值以执行碰撞检查。</p>
+  <p>在当前碰撞系统中，边界框值不是四舍五入的，而是按原样使用，这意味着碰撞更加精确，并且行为与预期的一样。边界框现在也是"包含"的，也就是说，它们包含最底部和最右侧的边。例如，16 x 16碰撞遮罩的边界框现在从<span class="inline2">(0.0,0.0 )</span>到<span class="inline2">(16.0, 16.0 )</span>(相对)生成。</p>
+  <h2>兼容性模式</h2>
+  <p>上述碰撞更改可能会导致某些现有项目中断，您可以通过为此类项目启用<strong>碰撞兼容模式</strong>来轻松修复这些碰撞，以便使用传统的碰撞系统;但是，建议测试并升级您的碰撞代码，以便与新系统一起使用，因为它应该允许您的游戏具有更准确和更合理的碰撞。</p>
+  <p>对于新项目或不使用现有碰撞代码的项目，无需启用此选项。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">Next:&nbsp;<a href="place_empty.htm">place_empty</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Collision Compatibility Mode
+-->
+  <!-- TAGS
+Collision Compatibility Mode
+-->
+
+</body></html>

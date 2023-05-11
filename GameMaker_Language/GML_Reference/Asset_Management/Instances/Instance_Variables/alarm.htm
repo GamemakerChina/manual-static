@@ -1,0 +1,124 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.13.1.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>alarm</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the variable alarm">
+  <meta name="rh-index-keywords" content="alarm">
+  <meta name="search-keywords" content="alarm">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/direction.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/layer.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="alarm">
+        <span>alarm</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>alarm</h1>
+  <p>此一维<a href="../../../../GML_Overview/Arrays.htm">数组</a>用于获取实例可能具有的任何报警的当前值，或者可用于设置这些报警。对象的每个实例中都内置了十二个报警，每个实例都有自己的<a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">事件</a>，当该变量达到0时，这些事件将运行。</p>
+  <p>在每个步骤的开始、<strong>在</strong>开始步骤事件之后但<strong>在</strong>主步骤事件之前，以及在为帧呈现任何内容之前，对警报进行倒计时。这意味着，如果在BEGIN STEP事件中将警报设置为<span class="inline2">1</span>，则其事件将在同一帧中运行(因为在BEGIN STEP完成后，警报将递减计数到0)，但如果在STEP事件中将警报设置为<span class="inline2">1</span>，则它将在下一帧中运行。</p>
+  <p>需要注意的是，当警报达到0(尽管事件已被触发)时，警报尚未结束，作为下一步，它将下降到-1，因此，如果您出于任何原因需要停止报警，应将其数组值设置为-1<i>而不是</i>0。报警时间以<i>游戏步数</i>计算，30表示30步，60表示60步等...</p>
+  <p class="note"><span class="note">注意</span>没有动作或代码的报警将不会运行。然而，即使只有一个注释，没有代码，警报也会倒计时。</p>
+  <p>您可以直接设置报警数组(也可以直接使用该数组来检索当前报警值)，但在某些情况下这不是最合适的方法，因此您也可以使用函数<span class="inline"><a href="../alarm_set.htm">alarm_set()</a></span>设置报警，使用函数<a href="../alarm_get.htm"><span class="inline">alarm_get()</span></a>来获取报警值。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">alarm[val];</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (-1 if the alarm isn't running)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if canshoot<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if keyboard_check_pressed(vk_space)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;canshoot = false;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance_create_layer(x, y, "Bullets", obj_Bullet);<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上面的代码检查一个变量，然后如果它为真，则检查按键，如果它为真，则最终将变量设置为假，设置警报(其中它将再次设置为真)并创建一个实例。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Instance_Variables.htm">实例变量</a></div>
+        <div style="float:right">Next: <a href="direction.htm">direction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+alarm
+-->
+  <!-- TAGS
+alarm
+-->
+
+</body></html>

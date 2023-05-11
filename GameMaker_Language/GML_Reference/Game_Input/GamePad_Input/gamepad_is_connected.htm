@@ -1,0 +1,130 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.5.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gamepad_is_connected</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for gamepad_is_connected">
+  <meta name="rh-index-keywords" content="gamepad_is_connected">
+  <meta name="search-keywords" content="gamepad_is_connected">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_get_guid.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_is_supported.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gamepad_is_connected">
+        <span>gamepad_is_connected</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_is_connected</h1>
+  <p>此函数将返回游戏手柄是否连接到给定的 “插槽”(返回<span class="inline">true</span>)(返回<span class="inline">false</span>)。你通常会将此函数与<a href="gamepad_get_device_count.htm"><span class="inline">gamepad_get_device_count()</span></a>函数结合使用，以获得正确数量的可用游戏手柄和/或游戏手柄 “插槽”。请注意，用户连接游戏手柄和<span data-keyref="GameMaker Name">GameMaker</span>检测到游戏手柄处于连接状态之间可能会有轻微的延迟(在处理连接蓝牙的控制器时尤其如此)。</p>
+  <p class="note"><strong>注意</strong>: 在某些平台上-尤其是控制台-此函数可能会在已连接/选择游戏手柄后立即返回false，并且可能需要在几帧 (步骤) 后的警报中进行检查才能正确检测游戏手柄。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gamepad_is_connected(numb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>device</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查哪个游戏手柄 “插槽”。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var gp_num = gamepad_get_device_count();<br>
+    for (var i = 0; i &lt; gp_num; i++;)<br>
+    {<br>
+    &nbsp; &nbsp; if gamepad_is_connected(i) global.gp[i] = true else global.gp[i] = false;<br>
+    }</p>
+  <p>上面的代码循环通过可用的游戏手柄(或游戏手柄插槽)，然后检查每个连接的游戏手柄。然后使用返回值将全局数组设置为<span class="inline">true</span>或<span class="inline">false</span>，以便在将来的检查中使用。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">Next: <a href="gamepad_get_guid.htm"> gamepad_get_guid </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_is_connected
+-->
+  <!-- TAGS
+gamepad_is_connected
+-->
+
+</body></html>

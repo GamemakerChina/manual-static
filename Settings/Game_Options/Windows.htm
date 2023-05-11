@@ -1,0 +1,134 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "5.1.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Windows</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that details the Windows Game Options">
+  <meta name="rh-index-keywords" content="Game Options - Windows">
+  <meta name="search-keywords" content="Windows Game Options">
+<meta name="brsnext" value="Settings/Game_Options/macOS.htm"><meta name="brsprev" value="Settings/Game_Options/GX_Games.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Windows">
+        <span>Windows</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Windows 游戏选项</h1>
+  <p>本节概述了可用于控制如何编译Windows游戏项目的不同选项。不同的部分包括：</p>
+  <h2>常规</h2>
+  <p><img alt="Windows General Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_General_Options.png">Windows游戏的<strong>常规</strong>页面应为Windows提供安装和运行游戏时显示的必要信息。此信息位于<strong>产品信息</strong>部分，应完整填写。</p>
+  <p>通过此窗口的<strong>选项</strong>部分，您可以选择将游戏安装到“<span class="inline">%localappdata%</span>”或“<span class="inline">%appdata%</span>”文件夹中的位置，以及设置是否<strong>将exe复制到输出文件夹</strong>。通常，您永远不需要此选项，但它是为那些具有相互交流您的游戏的各种Dll的用户提供的。在启用此选项后，它将在测试时将EXE保留在输出文件夹中，而不是将其放在<em>临时文件夹</em>中。</p>
+  <p>接下来，您可以设置<strong>Windows睡眠边距</strong>。此选项与在特定系统上运行游戏时减少卡顿有关。基本上，如果您的游戏运行速度快于您的房间速度，<span data-keyref="GameMaker Name">GameMaker</span> 将在剩余时间内“睡眠”，但此睡眠可能非常不准确，并且通常睡眠会超过必要的时间，从而导致花费更长时间，导致卡顿。为了避免这种情况，我们可以减少睡眠时间，然后在剩余时间内保持紧张的循环状态，使其更加准确——尽管循环状态的问题在于它会导致CPU使用量增加，进而会导致CPU温度上升，风扇运行速度加快。默认情况下，此值设置为10，在99.99%的情况下，您可以接受此值，但对于低端计算机或运行大量后台进程的计算机，此值可能不是理想的解决方案（对于非常高端的计算机也是如此），可能需要1或15或其他值。但请注意，这在很大程度上是系统特定的配置，在您的构建计算机上工作的内容可能不适合其他用户，如果有疑问，请将其设置为10。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>除了睡眠边距，您还可以通过在运行时调整<a href="../../GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm">线程调度程序的分辨率</a>来进一步控制Windows上的性能和功耗。</p>
+  <p>下一个选项是为你的游戏<strong>启动Steam</strong>。如果启用此选项，请确保已安装Steamworks Sdk（请参阅<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">此处</a>），并且已将<strong>Steamworks应用程序ID</strong>添加到游戏的<a href="../Game_Options.htm">常规选项</a>中。请注意，如果您正在Windows的Steam版本上运行<span data-keyref="GameMaker Name">GameMaker</span>，并且正在为Steam开发游戏，则可能还需要选中<strong>使用Steam的备用启动器</strong>应用程序选项。此选项的作用是在使用替代启动程序进行测试时启动游戏，以防Steam使用<span data-keyref="GameMaker Name">GameMaker</span>的应用程序ID（而不是游戏自己的应用程序ID）标记游戏。只有在为Steam开发时，发现在启动游戏时遇到问题，才应启用此功能。</p>
+  <p>倒数第二个选项是<strong>禁用文件系统沙盒</strong>。选中此项将禁用<span data-keyref="GameMaker Name">GameMaker</span>沙盒以保存和加载文件，允许您的游戏从运行游戏的系统上的任何位置访问文件。默认情况下此选项是被取消的，因为我们建议您为所有系统上的文件保留<span data-keyref="GameMaker Name">GameMaker</span>沙盒。如果选中此选项，则依据系统级别的权限，某些保存/加载区域可能将不可用。有关沙盒的详细信息，请参阅<span data-keyref="GameMaker Name">GameMaker</span><a href="../../Additional_Information/The_File_System.htm">文件系统</a>上的页面。</p>
+  <h2>图形</h2>
+  <p><img alt="Windows Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Graphics_Options.png">图形选项是您应该配置的选项，以确定您的游戏将如何使用目标为Windows PC的显卡。您可以修改以下选项：</p>
+  <ul class="colour">
+    <li><strong>显示光标</strong>：选中此选项后，将显示常规的 Windows 光标，取消选中将意味着不会显示任何光标，除非您在游戏代码中创建了一个光标。默认情况下，该选项处于启用状态。</li>
+    <li><strong>全屏开始</strong>：如果选中此项，游戏将以全屏模式开始，否则将以窗口模式开始。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>允许全屏切换</strong>：选中此选项后，用户可以使用标准的Windows快捷方式从全屏切换到窗口，然后再次切换回窗口。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>像素间插值颜色</strong>：启用<a class="tooltip" title="线性插值是通过用一条直线连接两个相邻的已知值来估计一个新值。然后你可以通过检查直线上的任意一点来得到插值值。在图形学中，线性插值是指平滑像素边缘的一种基本方法。">线性插值</a>，基本上是“平滑”像素。对于清晰的像素图形，它应该处于禁用状态，但如果您有漂亮的Alpha混合和平滑的边缘图形，则最好保持启用状态。默认情况下，此选项处于启用状态。</li>
+    <li><strong>使用同步以避免撕裂</strong>：这将打开或关闭<a class="tooltip" title="垂直同步用于将游戏更新速度与监视器的刷新率同步。这样可以减少屏幕撕裂（即屏幕一次显示多帧的一部分）的情况，但也会导致性能问题或刷新率较高的显示器出现问题。">v-sync</a>。请注意，如果您有一个房间速度为120的游戏，并且玩家有一个刷新率为60的显示器，则启用此选项也会将您的游戏速度锁定为60。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>允许调整窗口大小</strong>:选中此选项将允许用户更改游戏窗口的大小(需要关闭“无边框窗口”选项才能正常工作)。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>无边框窗口</strong>：选中此项将使您的游戏在无边框窗口中运行，从而删除正常的最小化、最大化和关闭按钮以及游戏标题。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>缩放比例</strong>：您可以在此处选择保持纵横比(这样4：3的房间将以16：9的比例显示)或完全缩放(拉伸图像以适应整个屏幕)。<br><br><span style="font-size:16px;"><em><span data-conref="../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span>&nbsp;关闭应用程序界面将禁用在Windows游戏选项中设置的所有缩放选项，直到再次打开为止。有关更多详细信息，请参阅应用程序界面。</em></span></li>
+  </ul>
+  <p>最后，您可以选择设置<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页面</a>的大小。默认 (也是最兼容的) 大小是 2048x2048，但您可以从 256x256 到 8192x8192 之间的任意大小进行选择。还有一个标记为 <strong><strong> 预览 </strong></strong> 的按钮，它将为该平台生成纹理页面，然后打开一个窗口，以便您可以查看它们的外观。如果您希望了解纹理页面的结构，并防止纹理页面过大 (或过小)，这将非常有用。有关纹理页的更多信息，请参阅 <a href="../Texture_Information/Texture_Pages.htm"> 纹理页 </a>。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 请注意，纹理页面越大，您的游戏在规格较低的 PC 上的兼容性就越差。</p>
+  <h2>图像</h2>
+  <p><img alt="Windows Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Images_Options.png">图像部分是您提供游戏所需图像的位置。对于Windows，您需要提供<strong>图标</strong>文件（必须为<span class="inline">.ico</span>格式）和启动屏（可以为<span class="inline">.png</span>、<span class="inline">.bmp</span>、<span class="inline">.jpg</span>或<span class="inline">.gif</span>格式）。加载游戏时将显示启动屏，并且可以通过选中<strong>使用启动屏</strong>选项（默认情况下处于关闭状态）来启用或禁用启动屏。</p>
+  <p>值得注意的是，<span data-keyref="GameMaker Name">GameMaker</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可用于自动创建正在编译游戏的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保这些图像符合您的要求。</p>
+  <h2>安装程序</h2>
+  <p><img alt="Windows Installer Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Installer_Options.png">可以使用<strong>安装程序</strong>创建Windows游戏，您可以在此处定义<span data-keyref="GameMaker Name">GameMaker</span>在创建时将使用的各种设置和图形。首先，我们有定义安装程序本身外观的图形选项：</p>
+  <ul class="colour">
+    <li><strong>已完成</strong>：出现在安装程序的“已完成”页面上的图形。必须为<span class="inline">*.bmp</span>格式并且大小为164 x 314 px。</li>
+    <li><strong>标题</strong>：安装程序运行时出现的图形。必须为<span class="inline">*.bmp</span>格式并且大小为150 x 57 px。</li>
+  </ul>
+  <p>如果需要，您还可以指向特定的<strong>许可协议</strong>文件(随 <span data-keyref="GameMaker Name">GameMaker</span> 提供的示例)和自定义的 <strong>NSIS脚本文件</strong> (详细信息请参阅&nbsp;<a href="https://nsis.sourceforge.io/Docs/">NSIS用户手册</a>)，或者单击相应的按钮返回到随 <span data-keyref="GameMaker Name">GameMaker</span> 提供的默认文件。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../Game_Options.htm">游戏设置</a></div>
+        <div style="float:right">Next:&nbsp;<a href="macOS.htm">macOS</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Windows Game Options
+NSIS
+Installer
+-->
+  <!-- TAGS
+windows_options
+-->
+
+</body></html>

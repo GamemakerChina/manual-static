@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"设置 Git 插件","type":"item","tilePath":"","description":"Section that covers Source Control and setting GIT up.","url":"IDE_Tools/Source_Control/Setting_Up_Git_Plugin.htm"},{"name":"仓库选项","type":"item","tilePath":"","description":"Section that covers Source Control and the repository options","url":"IDE_Tools/Source_Control/Repository_Options.htm"},{"name":"标准工作流程","type":"item","tilePath":"","description":"Section that covers Source Control standard workflow\n","url":"IDE_Tools/Source_Control/Standard_Workflow.htm"},{"name":"回滚文件","type":"item","tilePath":"","description":"Section that covers Source Control reverting files","url":"IDE_Tools/Source_Control/Reverting_Files.htm"},{"name":"克隆一个仓库","type":"item","tilePath":"","description":"Section that covers Source Control cloning a repository","url":"IDE_Tools/Source_Control/Cloning_A_Repository.htm"},{"name":"冲突","type":"item","tilePath":"","description":"Section that covers Source Control standard workflow\n","url":"IDE_Tools/Source_Control/Conflicts.htm"},{"name":"外部合并/差异工具","type":"item","tilePath":"","description":"Section that covers Source Control merge and diff tools","url":"IDE_Tools/Source_Control/External_Merge_Diff_Tools.htm"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

@@ -1,0 +1,164 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "5.4.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../assets/css/default.css"><script src="../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <title>Compiler Batch Files / Scripts</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+  <meta name="template" content="../../assets/masterpages/Manual_Page.htt">
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page explaining the batch files that can be used with the compiler">
+  <meta name="rh-index-keywords" content="Compiler Batch Files Scripts">
+  <meta name="search-keywords" content="compiler, batch, files, shell, scripts, asset compiler, run, build">
+<meta name="brsnext" value="Settings/Command_Line_Parameters.htm"><meta name="brsprev" value="Settings/Building_via_Command_Line.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Compiler Batch Files / Scripts">
+        <span>Compiler Batch Files / Scripts</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1>编译器批处理文件/脚本</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker </span>编译器允许您将批处理文件(Windows)或 Shell 脚本(在 macOS 和 Linux 上)放在项目目录中，并放在项目中每个扩展的目录中。</p>
+  <h2>安置</h2>
+  <p>脚本文件可以放置在项目目录的根目录中，与项目的<span class="inline2">.yyp</span>文件放在一起。</p>
+  <p>脚本文件也可以放置在扩展名的目录中，这个目录可能像下面这样:<span class="inline2">project_directory/extensions/extension_folder/</span>.</p>
+  <p>脚本文件的扩展版本将首先执行，其根目录版本将最后执行。扩展的执行顺序无法控制，因此扩展开发人员必须确保一个扩展的脚本不依赖于另一个扩展的脚本。</p>
+  <h2>执行</h2>
+  <p>具有特定名称的脚本文件，放置在上面描述的任何目录中，在编译过程的不同点执行:</p>
+  <table border="1" cellpadding="1" cellspacing="1">
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Windows 批处理文件名</th>
+        <th>MacOS/Linux Shell 脚本名称</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><strong>pre_run_step.bat</strong></td>
+        <td><strong>pre_run_step.sh</strong></td>
+        <td>这是在游戏部署即将开始之前执行的</td>
+      </tr>
+      <tr>
+        <td><strong>post_run_step.bat</strong></td>
+        <td><strong>post_run_step.sh</strong></td>
+        <td>这是在游戏准备好并准备运行时执行的。在脚本执行之后，游戏就开始了</td>
+      </tr>
+      <tr>
+        <td><strong>pre_build_step.bat</strong></td>
+        <td><strong>pre_build_step.sh</strong></td>
+        <td>这是在资源编译器开始构建游戏之前执行的</td>
+      </tr>
+      <tr>
+        <td><strong>post_build_step.bat</strong></td>
+        <td><strong>post_build_step.sh</strong></td>
+        <td>这是在资源编译器已经开始构建游戏之后执行的</td>
+      </tr>
+      <tr>
+        <td><strong>pre_package_step.bat</strong></td>
+        <td><strong>pre_package_step.sh</strong></td>
+        <td>这在最终打包步骤之前执行，最终打包步骤是所有文件都准备就绪但即将创建最终 ZIP 文件或存储包的时候</td>
+      </tr>
+      <tr>
+        <td><strong>post_package_step.bat</strong></td>
+        <td><strong>post_package_step.sh</strong></td>
+        <td>这是在最终打包步骤完成并准备好最终的 ZIP 文件或存储包之后执行的</td>
+      </tr>
+      <tr>
+        <td><strong>post_textures.bat</strong></td>
+        <td><strong>post_textures.sh</strong></td>
+        <td>这是在游戏的纹理生成之后执行的。您可以使用此步骤手动优化游戏纹理。<br><br>这个脚本接收一个名为 <span class="inline2">TexturesDir</span> 的环境变量，它存储到生成的纹理的路径。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>在所有目标平台上构建时都支持这些脚本文件。</p>
+  <h2>禁用扩展脚本</h2>
+  <p>如果您使用多个运行脚本的扩展，例如 Steamworks 和 GDK，那么在导出到 GDK 时，您将希望禁用 Steamworks，反之亦然。</p>
+  <p>有关这一点，请参见: <a href="../../The_Asset_Editors/Extension_Creation/Disabling_Extensions.htm">如何禁用扩展? </a></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Runner_Details.htm">运行器和编译器</a></div>
+        <div>Next:&nbsp;<a href="../Command_Line_Parameters.htm">命令行参数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+</body></html>

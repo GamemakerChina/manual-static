@@ -1,0 +1,143 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "5.4.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Command Line Parameters</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains how to use Command Line Parameters when running your game">
+  <meta name="rh-index-keywords" content="Command Line Parameters">
+  <meta name="search-keywords" content="command line,AB testing,command line parameters">
+<meta name="brsnext" value="Settings/YoYo_Compiler.htm"><meta name="brsprev" value="Settings/Runner_Details/Compiler_Batch_Files.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Command Line Parameters">
+        <span>Command Line Parameters</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>命令行参数</h1>
+  <p>在创建游戏时，一定要测试可执行文件，以确保最终编译是正确的，没有不可预见的错误或差异。但是，创建可执行文件意味着，由于无法访问调试控制台或编译器窗口，因此很难确定和调试可能发现的任何问题。但是有一个解决办法，那就是在游戏的可执行版本运行时，使用<strong>命令行参数</strong>来设置某些属性，从而允许您创建输出日志文件并测试其他特殊情况。</p>
+  <p class="note"><span class="note"><strong>注意</strong></span>这<strong>仅能</strong>在标准<strong>Windows</strong>目标模块上可用。</p>
+  <p>要让这个工作，你必须首先创建一个 Windows 可执行文件的游戏，并有它安装在您的测试机。一旦你这样做了，你需要创建一个<em>快捷方式</em>到桌面上的游戏。在这里，我们将添加要传递给<span class="inline">*.exe</span>的参数(要创建快捷方式，请右击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">游戏可执行文件，然后选择<em>发送到</em> &gt; <em>桌面(创建快捷方式)</em>)。</p>
+  <p>一旦你制定了快捷方式，你就可以在目标路径中使用下列任何一个参数:</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-noaudio </span> : 这会关闭游戏中的所有音频。</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-inawindow</span> : 强制游戏在窗口中启动，即使设置为在全屏模式下运行也是如此。</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-output &lt;<em>filename</em>&gt; </span> : 将控制台输出发送到文件名，包括代码基中的所有调试消息。</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-debugoutput &lt;<em>filename</em>&gt;</span> : 将控制台输出发送到文件名，不包括任何自定义调试消息，但包括来自运行程序的用于 bug 报告的额外信息。</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-software</span> : 将强制游戏使用软件顶点处理代替硬件来呈现游戏图形。这对于那些使用英特尔 GFX 芯片组或显示老机器上显示问题的 PC 尤其有用。</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-intel</span> : 无论使用什么 GPU，都会打开对糟糕的 Intel 驱动程序的修复程序。这些垃圾驱动程序会拖累你的游戏，给你的游戏一个明显的性能打击，所以如果你不需要修复不使用它。</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-vanillaGFX</span> : 关闭驱动程序制造商的任何检查，可以非常有用的测试您的游戏。</p>
+  <p>值得注意的是，如果需要，<span class="inline">-output</span>和<span class="inline">-debugoutput</span>中的<span class="inline">&lt;<em>filename</em>&gt;</span>可以是相同的，因为在每次写入时都会打开和关闭该文件。</p>
+  <p>您现在应该到创建游戏可执行文件快捷方式的位置，然后右键单击它并选择“属性”。</p>
+  <p><img alt="Command Line Shortcut" class="center" src="../assets/Images/Settings/CommandLine_Shortcut.png">这将打开一个类似于上面的窗口。在这里，您可以将命令行添加到<strong>目标</strong>路径中。只需向前滚动到给定路径的末尾，添加一个空格，然后添加参数字符串。因此，例如，要创建一个调试文件输出，您需要这样的东西:</p>
+  <p class="code">D:\Users\Me\GameMaker\CustomLoadBar-Default-1.0.0.0\CustomLoadBar.exe -debugoutput debug.txt</p>
+  <p>现在将在可执行文件的相同位置(不是快捷方式位置，而是安装游戏的位置)创建一个名为“<span class="inline">debug.txt</span>”的文件，其中包含完成的游戏的调试和编译信息。点击“确定”，然后使用快捷方式运行您的游戏，让它使用这些参数帮助您的调试。</p>
+  <p>有关如何调试游戏的详细信息，请参阅<a href="../Introduction/Debugging.htm">调试</a>手册部分。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">使用命令行进行A/B测试</span><span data-close-text="true">使用命令行进行A/B测试</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">YoYo运行器还得益于一个特殊的命令行参数:</p>
+    <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: 加载给定的游戏文件 <br> </p>
+    <p class="dropspot">你为什么要用这个?通常情况下你是不会这么做的，但如果你希望同时运行多个版本的游戏，你便可以使用这一方法，让 A/B 比较测试变得更加简单。使用这种方法，你可以和其他人一起进行重点测试，或者作为设计师，通过并行测试来获得更好的感觉。</p>
+    <p class="dropspot">要设置这个，你需要事先知道几件事。首先，你需要找到通往运行器的路径。这可以在你的Windows操作系统的<strong>Program Data</strong>文件夹中找到(这可能在默认情况下是隐藏的，所以你需要改变查看属性来查看它)，典型的格式如下: <br> <br> </p>
+    <p class="code">C:\ProgramData\GameMaker\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe
+      <br>
+    </p>
+    <p class="dropspot">注意，runtime_version文件夹将取决于您当前安装的运行时。你还需要<span class="inline">&lt;<em>yourgame</em>&gt;.Win</span> 的路径文件，因为这是我们要将运行程序指向的对象。找到它的最简单的方法是进入<strong>Temp</strong>文件夹(通常位于<span class="inline">%localappdata%\Temp\GameMakerStudio\<game_name>\</game_name></span>)，然后搜索 <span class="inline">*.Win </span>，因为它会显示所有可用的选项，你可以简单地选择你需要获得完整路径的选项。</p>
+    <p class="dropspot">现在，我们可以创建到运行器的快捷方式，就像为可执行文件所做的那样，然后根据需要更改参数，但这意味着必须在测试之间打开并编辑它，这违背了我们将此功能用于并行测试的目的。相反，我们将创建几个小的“批处理”文件来处理这个问题。</p>
+    <p class="dropspot">为此，首先在桌面上创建一个新的文本文档，并在记事本(或任何其他文本编辑器)中打开它。添加以下内容: <br> <br> </p>
+    <p class="code">START C:\ProgramData\GameMaker\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe -game &lt;LOCAL TEMP PATH&gt;\&lt;GAMENAME&gt;.win
+      <br>
+    </p>
+    <p class="dropspot">你需要设置临时路径指向你的游戏<span class="inline"> *.win</span>文件，然后将其保存为“<span class="inline">GM_Test_1.bat</span>”到您的桌面(注意记事本将自动保存为<span class="inline">*.txt</span>文件，除非您从保存对话框选项中选择“所有文件”)。最后的命令应该是这样的: <br> </p>
+    <p class="code">START C:\ProgramData\GameMaker\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\Users\Mark\AppData\Local\Temp\GameMaker\AlphaDog_Reboot\AlphaDog_Reboot.win
+      <br>
+    </p>
+    <p class="dropspot">现在，创建另一个文本文件并添加同样的行，只是这次你要将其指向你想要进行并行测试的游戏的第二个版本的路径，你可以将其保存为“<span class="inline">GM_Test_2.bat</span>”。你可以双击<img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" width="21">它们中的任何一个来显示你的游戏的不同版本，将它们作为批处理文件意味着你可以很容易地再次打开它们来编辑它们并修改测试的游戏。</p>
+    <p class="dropspot">
+      <br>
+    </p>
+    <p class="dropspot"></p>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Runner_Details/Runner_Details.htm">运行器和编译器</a></div>
+        <div style="float:right">Next:&nbsp;<a href="YoYo_Compiler.htm">YoYo 编译器</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Command Line Pararmeters
+A/B Testing
+-->
+  <!-- TAGS
+command_line_params
+-->
+
+</body></html>

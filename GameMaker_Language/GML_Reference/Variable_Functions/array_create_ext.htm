@@ -1,0 +1,161 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.2.0_35";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>array_create_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="The reference page for array_create_ext">
+  <meta name="rh-index-keywords" content="array_create_ext">
+  <meta name="search-keywords" content="array_create_ext">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="array_create_ext">
+        <span>array_create_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">array_create_ext</span></h1>
+  <p><span>此函数创建给定大小的数组。对于新数组中的每个元素，它调用给定的回调函数，并将返回值应用于该元素。</span></p>
+  <p>使用此函数，您可以使用根据数组索引更改的值来初始化数组。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="../../../assets/snippets/Syntax_predicate_general.hts#"><span data-open-text="true" data-skip-index="true">回调函数</span><span data-close-text="true">回调函数</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p>第二个参数中提供的<span>回调</span>函数应采用 1 个参数，这是当前数组元素的索引。它可以返回任何类型的值，这些值存储在该索引处的数组中。</p>
+    <h4>语法:</h4>
+    <p class="code">function(index);</p>
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>参数</th>
+          <th>类型</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>index</td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+          <td>当前数组索引</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">array_create_ext</span>(size, function);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>数组的大小</td>
+      </tr>
+      <tr>
+        <td>function</td>
+        <td><span data-keyref="Type_Function"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></span></td>
+        <td>用于初始化每个条目的<span>回调</span>函数</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _f = function(_index)<br>
+    {<br>
+    &nbsp; &nbsp; return _index + 1;<br>
+    }<br>
+    array = <span data-field="title" data-format="default">array_create_ext</span>(100, _f);<br>
+    show_debug_message(array);</p>
+  <p>上面的代码首先创建一个临时函数 <span class="inline2">_f</span>，该函数接受一个索引作为参数，并返回该索引并将其加 1。</p>
+  <p>然后，它将 <span class="inline2"><span data-field="title" data-format="default">array_create_ext</span></span> 与函数 <span class="inline2">_f</span> 配合使用，该函数将创建一个填充了从 1 到 100 的整数的数组。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Array_Functions.htm">数组函数</a></div>
+        <div>Next:&nbsp;<a href="array_filter_ext.htm">array_filter_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_create_ext
+-->
+  <!-- TAGS
+array_create_ext
+-->
+
+</body></html>

@@ -1,0 +1,125 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.20.0_20";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gml_release_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for gml_release_mode">
+  <meta name="rh-index-keywords" content="gml_release_mode">
+  <meta name="search-keywords" content="gml_release_mode">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/OS_And_Compiler/gml_pragma.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/GM_project_filename.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gml_release_mode">
+        <span>gml_release_mode</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_release_mode</h1>
+  <p>当您的游戏被编译时，它还包括某些内部函数，用于在运行时进行错误检查。这些内部检查涵盖了游戏代码的许多方面，包括范围、参数和内部GML编译器的一些一般方面，并且是在许多情况下，是什么产生了最终的错误消息。然而，此函数可用于关闭这些内部检查(即：将它们完全从编译的游戏中删除)，从而加快最终项目的速度。</p>
+  <p>请注意，这意味着如果您在游戏代码中执行了不正确的操作，编译后的游戏<i>可能会简单地崩溃</i>，或者可能会遇到一些<i>非常意外的行为</i>。例如，如果在定义大小之外的坐标处访问<span class="inline">DS网格</span>，则在开发人员模式下，您将收到编译器窗口错误消息，但适当的检查将允许游戏继续运行。然而，在发布模式下，这些检查将不存在，因此代码可能返回一个空指针，或者一个坏指针，而该指针又将指向某个随机内存。因此，在最好的情况下，您可能会返回错误的数据，或者在最坏的情况下，您可能会覆盖内存中的某些内容-数据、图形甚至代码本身。另一个例子是在构建基元(图元)时-如果您提供颜色，位置，纹理等。数据的顺序与您在创建顶点格式时定义的顺序不同，则当release模式打开时，游戏可能会崩溃或产生意外的结果。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gml_release_mode(flag);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>flag</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span class="inline">true</span>设置发布模式或false用于一般开发。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">gml_release_mode(true);</p>
+  <p>上面的示例代码将在编译时将游戏设置为使用发布模式。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">Next: <a href="gml_pragma.htm">gml_pragma</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_release_mode
+-->
+  <!-- TAGS
+gml_release_mode
+-->
+
+</body></html>

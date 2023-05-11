@@ -1,0 +1,105 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.1_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Timeline Preferences</title>
+    <meta name="generator" content="Adobe RoboHelp 2020">
+    <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+    <script src="../../assets/scripts/main_script.js" type="module"></script>
+    <meta name="rh-authors" content="Mark Alexander">
+    <meta name="topic-comment" content="The Timeline Preferences">
+    <meta name="rh-index-keywords" content="Prefs - Timelines">
+    <meta name="search-keywords" content="Timeline Prefs,Timeline Preferences">
+  <meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/Extension_Editor_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Tile_Set_Editor_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Timeline Preferences">
+        <span>Timeline Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+<!--<div class="body-scroll" style="top: 150px;">-->
+    <h1>时间线首选项</h1>
+    <p><img alt="The Timeline Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Timeline_Prefs.png"></p>
+    <p><strong>时间线首选项</strong>用于在使用<a href="../../The_Asset_Editors/Timelines.htm">时间线编辑器</a>时定义某些属性。可用的选项有:</p>
+    <ul class="colour">
+      <li><strong>自动响应 GML 可视化转换为 GameMaker 语言</strong>：当您在时间线时刻使用鼠标右键菜单选项将 GML 可视化操作转换为脚本(代码)时，您将得到一个提示，询问您是否要继续，因为这是单向转换。将此选项更改为"OK"将隐藏消息，并继续进行转换，就像您在对话框中单击了"OK"一样。默认设置为"显示消息"。</li>
+      <li><strong>自动响应永久操作警告</strong>：时间线内的某些操作无法撤消，当发生这种情况时，您将收到一条警告消息，询问您是否要继续。将此选项更改为"OK"将取消该消息，并继续操作，就像您在对话框中单击了"OK"一样。默认设置为"显示消息"。</li>
+      <li><strong>创建时打开新的时刻进行编辑</strong>：通常情况下，当您向时间线添加新的时刻时，<span data-keyref="GameMaker Name">GameMaker</span> 会自动打开编辑器，让您将代码或 GML 可视化添加到其中。但是，如果取消选中此选项，则不会打开编辑器即可添加时刻(此时可通过双击 <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> 将其打开)。默认情况下，此选项处于启用状态。</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="footer">
+      <div class="buttons">
+        <div class="clear">
+          <div style="float:left">Back: <a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+          <div style="float:right">Next: <a href="Extension_Editor_Preferences.htm">扩展编辑器首选项</a></div>
+        </div>
+      </div>
+      <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    </div>
+    <!-- KEYWORDS
+Preferences - Timeline Editor
+--><!-- TAGS
+prefs_timelines
+-->
+</body></html>

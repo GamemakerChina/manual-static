@@ -1,0 +1,108 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "4.1.1.1.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Background</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Background Preferences from the General Preferences section">
+  <meta name="rh-index-keywords" content="Prefs - General - Background">
+  <meta name="search-keywords" content="Background Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/General/Compiling.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/General_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Background">
+        <span>Background</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>背景首选项</h1>
+  <p><img alt="Background Preferences" class="center" height="463" src="../../../assets/Images/Setup_And_Version/Preferences/General_Background_Prefs.png" width="787"></p>
+  <p><strong>背景</strong>首选项处理工作区背景以及它将显示的内容和显示方式。选项包括：</p>
+  <ul class="colour">
+    <li><strong>背景图像</strong>：这是将用作不同工作区背景的图像文件。系统提供了一个默认图像，默认情况下会启用该图像，但您可以在此处选择您自己的图像。您可以选择的图片类型有：<span class="inline">*.png</span>、<span class="inline">*.gif</span>、<span class="inline">*.jpg</span>、<span class="inline">*.jpeg</span>、<span class="inline">*.tif</span>、<span class="inline">*.tiff</span>、<span class="inline">*.ico</span>、<span class="inline">*.bmp</span>、<span class="inline">*.2bp</span> 或 <span class="inline">*.mdi</span>，但请注意，无论初始图片格式如何，所有文件都会被保存为 <span class="inline">*.png</span> 文件。因此，动画文件 (例如，<span class="inline">*.gif</span>) 将仅渲染为单个初始帧。</li>
+    <li><strong>图像缩放</strong>：控制背景图像在不同工作区内的缩放方式。选项是：<ul class="colour"> <li><strong> 拉伸 </strong>- 图像将被拉伸以适应工作空间，根据可见的停靠点改变比例 </li> <li><strong> 图块 </strong>- 图像将被图块以覆盖工作空间 </li> <li><strong> 最佳匹配 </strong>- 图像将按比例缩放以适应工作空间，如果不是 1:1 大小，则会在边缘周围添加条 </li> <li><strong> 桌面拉伸 </strong>- 背景将覆盖整个工作空间，并且在打开 / 关闭停靠时将移动而不是更改比例 </li> <li><strong> 屏幕拉伸 </strong>- 背景将覆盖窗口大小的区域，并将在打开 / 关闭停靠时裁剪 / 扩展以显示或多或少的图像。</li></ul></li>
+    <li><strong>在工作区上显示背景图像</strong>：此选项控制是否应显示选定的背景图像。默认情况下，该选项处于启用状态。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../General_Preferences.htm">常规首选项</a></div>
+        <div style="float:right">Next: <a href="Compiling.htm">编译首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - General, Background
+-->
+  <!-- TAGS
+prefs_background
+-->
+
+</body></html>

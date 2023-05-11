@@ -1,0 +1,125 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.3.2.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>sprite_duplicate</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function sprite_duplicate">
+  <meta name="rh-index-keywords" content="sprite_duplicate">
+  <meta name="search-keywords" content="sprite_duplicate">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_assign.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_replace.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="sprite_duplicate">
+        <span>sprite_duplicate</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_duplicate</h1>
+  <p>此函数将返回新创建的精灵的索引，该sprite是作为“ index ”参数输入的一个副本。如果函数失败，则返回-1。此函数<i>必须</i>用于从原始资源中复制任何精灵，然后才能对其进行任何转换。例如，如果您希望更改精灵的边界框，或从另一个精灵设置其alpha，则必须首先复制它，然后对复制的精灵执行操作并使用它。复制的精灵在创建时将放置在其自己独特的纹理页面上，这意味着复制多个精灵将创建多个纹理页面并对性能产生影响，因此仅在必要时使用此函数。</p>
+  <p class="note"><b>注意</b>：在<span data-keyref="GameMaker Name">GameMaker</span>中复制精灵时，必须记住在不再需要时再次删除它(使用<span style="font-size:1px;"><a href="sprite_delete.htm"><span class="inline">sprite_delete()</span></a></span>)，否则会有内存泄漏的风险，这将降低游戏速度并最终使游戏崩溃。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">sprite_duplicate(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>index</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>要复制的精灵的索引。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回</h4>
+  <p class="code"><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span>&nbsp;or -1</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">new_spr = sprite_duplicate(sprite_index)</p>
+  <p>上述代码复制当前用作实例的精灵索引的精灵，并将该新精灵的索引存储在变量“新_SPR ”中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sprite_Manipulation.htm">精灵操作</a></div>
+        <div style="float:right">Next:&nbsp;<a href="sprite_assign.htm">sprite_assign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_duplicate
+-->
+  <!-- TAGS
+sprite_duplicate
+-->
+
+</body></html>

@@ -1,0 +1,128 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Gesture Input</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for Gesture Input">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Gesture Input,gestures,drag,swipe,zoom,rotate">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_get_drag_time.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Device_Input/device_get_tilt_x.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Gesture Input">
+        <span>Gesture Input</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>手势输入</h1>
+  <p><a href="../Device_Input/Device_Input.htm">设备输入</a>函数都很好，很适合处理简单的屏幕触摸或获取设备方向，但有时您会希望您的项目能够检测到更复杂的事情，例如能够拖动或 “轻拂” 一个房间的实例。这些事情<i>可以通过设备函数完成</i>，但是为了使事情变得更容易<span data-keyref="GameMaker Name">GameMaker</span>具有完整的<a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">手势事件</a>范围，可以在实例和全局级别上检测双击，拖动，轻弹，捏和旋转，以及返回有关事件的信息。这里列出的函数都是为了让您更好地控制这些事件将如何以及何时触发。</p>
+  <p class="note"><span class="important">重要</span>这些函数在HTML5目标平台上不起作用。如果使用它们，它们不会给出错误，而是简单地被忽略。</p>
+  <p>可以使用以下不同的手势函数：</p>
+  <ul class="colour">
+    <li><a href="gesture_get_drag_time.htm">gesture_get_drag_time</a></li>
+    <li><a href="gesture_get_drag_distance.htm">gesture_get_drag_distance</a></li>
+    <li><a href="gesture_get_flick_speed.htm">gesture_get_flick_speed</a></li>
+    <li><a href="gesture_get_double_tap_time.htm">gesture_get_double_tap_time</a></li>
+    <li><a href="gesture_get_double_tap_distance.htm">gesture_get_double_tap_distance</a></li>
+    <li><a href="gesture_get_tap_count.htm">gesture_get_tap_count</a></li>
+    <li><a href="gesture_get_pinch_distance.htm">gesture_get_pinch_distance</a></li>
+    <li><a href="gesture_get_pinch_angle_towards.htm">gesture_get_pinch_angle_towards</a></li>
+    <li><a href="gesture_get_pinch_angle_away.htm">gesture_get_pinch_angle_away</a></li>
+    <li><a href="gesture_get_rotate_time.htm">gesture_get_rotate_time</a></li>
+    <li><a href="gesture_get_rotate_angle.htm">gesture_get_rotate_angle</a></li>
+    <li><a href="gesture_drag_time.htm">gesture_drag_time</a></li>
+    <li><a href="gesture_drag_distance.htm">gesture_drag_distance</a></li>
+    <li><a href="gesture_flick_speed.htm">gesture_flick_speed</a></li>
+    <li><a href="gesture_double_tap_time.htm">gesture_double_tap_time</a></li>
+    <li><a href="gesture_double_tap_distance.htm">gesture_double_tap_distance</a></li>
+    <li><a href="gesture_tap_count.htm">gesture_tap_count</a></li>
+    <li><a href="gesture_pinch_distance.htm">gesture_pinch_distance</a></li>
+    <li><a href="gesture_pinch_angle_towards.htm">gesture_pinch_angle_towards</a></li>
+    <li><a href="gesture_pinch_angle_away.htm">gesture_pinch_angle_away</a></li>
+    <li><a href="gesture_rotate_time.htm">gesture_rotate_time</a></li>
+    <li><a href="gesture_rotate_angle.htm">gesture_rotate_angle</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Game_Input.htm">游戏输入</a></div>
+        <div style="float:right">Next: <a href="../GamePad_Input/Gamepad_Input.htm">游戏手柄输入</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Gesture Input Functions
+-->
+  <!-- TAGS
+gesture_functions
+-->
+
+</body></html>

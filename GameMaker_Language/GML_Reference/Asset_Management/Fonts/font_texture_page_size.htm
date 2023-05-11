@@ -1,0 +1,119 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.10.0_19";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>font_texture_page_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function font_texture_page_size">
+  <meta name="rh-index-keywords" content="font_texture_page_size">
+  <meta name="search-keywords" content="font_texture_page_size">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Timelines/Timelines.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_delete.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="font_texture_page_size">
+        <span>font_texture_page_size</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_texture_page_size</h1>
+  <p>这个<b>内置变量</b>可以用于在使用函数<a href="font_add.htm"><span class="inline">font_add()</span></a>时获取或设置纹理页面大小。在使用该函数添加字体时 ，<span data-keyref="GameMaker Name">GameMaker</span>将创建所需字形的纹理页面缓存，其大小达到此变量定义的大小。流程如下:</p>
+  <ul class="colour">
+    <li>您使用的每个字符都会从字体缓存到纹理页面中。</li>
+    <li>当纹理页面已满时(因为您使用了大字符或许多不同的字符)，<span data-keyref="GameMaker Name">GameMaker</span>将从缓存中删除字符，并用您需要的新字符替换它们</li>
+    <li><span data-keyref="GameMaker Name">GameMaker</span>尝试不使纹理太大，因为不是所有的设备都可以处理大的纹理，并且它尝试不使纹理太小，因为删除和重新添加字符到纹理会占用CPU时间并导致游戏运行缓慢</li>
+  </ul>
+  <p>如果您认为需要比<span data-keyref="GameMaker Name">GameMaker</span>使用的默认1024px更大或更小的纹理页面大小，则可以使用此内置变量设置值。如果您没有使用<span class="inline">font_add()</span>函数，然后，设置此设置不会影响您的游戏性能，因为在IDE中添加的字体会缓存在常规纹理页面上 (您可以从<a href="../../../../The_Asset_Editors/Fonts.htm">字体编辑器</a>和目标平台的<a href="../../../../Settings/Game_Options.htm">游戏选项</a>进行控制)。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">font_texture_page_size;</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>&nbsp;(maximum width/height in pixels)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">font_texture_page_size = 512;<br>
+    newfont = font_add("Arial", 24, true, true, 32, 128);</p>
+  <p>上面的代码将字体缓存纹理页面设置为最大512px，然后将新字体添加到游戏中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Fonts.htm">字体</a></div>
+        <div style="float:right">Next:&nbsp;<a href="font_set_cache_size.htm">font_set_cache_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_texture_page_size
+-->
+  <!-- TAGS
+font_texture_page_size
+-->
+
+</body></html>

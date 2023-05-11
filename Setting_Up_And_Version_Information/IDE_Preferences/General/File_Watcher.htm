@@ -1,0 +1,108 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "4.1.1.1.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>File Watcher</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The File Watcher Preferences from the General Preferences section">
+  <meta name="rh-index-keywords" content="Prefs - General - File Watcher">
+  <meta name="search-keywords" content="File Watcher Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/General/Go_To.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/General/Debugging.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="File Watcher">
+        <span>File Watcher</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文件监视器首选项</h1>
+  <p><img alt="File Watcher Preferences" class="center" src="../../../assets/Images/Setup_And_Version/Preferences/General_FileWatcher_Prefs.png"></p>
+  <p><strong>文件监视器</strong>&nbsp;是对IDE部分的名称，该部分用于监视与项目相关的文件是否有因外部软件(即：在外部编辑器中编辑图像)或由于内部更改(如编辑脚本资源)而发生的任何更改。通常，这些设置不需要编辑，但在某些系统上--例如使用 SSD 作为项目文件的保存驱动器--当您执行诸如简单保存项目之类的操作或编辑任何项目资源时，文件观察器可能会通知您更改，在这种情况下，您可能需要更改这些设置。</p>
+  <p>可用的设置包括：</p>
+  <ul class="colour">
+    <li><strong>启用文件监视器</strong>：可用于启用或禁用文件监视器系统。如果禁用此功能，则<strong>IDE将不再拾取由外部源更改的任何文件</strong>，因此在禁用此功能时应小心。默认情况下会启用文件观察器。</li>
+    <li><strong>在IDE中保存后设置文件监视器容差(以毫秒为单位)</strong>：这会调整保存文件和文件监视器检查更改之间的时间。如果您要保存项目，而文件观察器错误地显示某些内容已更改，则您可以调整此值，在这种情况下，您将增加延迟，直到消息不再出现。默认值为 2000ms，但范围可以从 1ms 到 10000ms。&nbsp;</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../General_Preferences.htm">常规首选项</a></div>
+        <div style="float:right">Next: <a href="Go_To.htm">Go To Preferences</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - General, File Watcher
+-->
+  <!-- TAGS
+prefs_filewatcher
+-->
+
+</body></html>

@@ -1,0 +1,115 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.4.0_22";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gesture_rotate_angle</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for gesture_rotate_angle">
+  <meta name="rh-index-keywords" content="gesture_rotate_angle">
+  <meta name="search-keywords" content="gesture_rotate_angle">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/Gamepad_Input.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_rotate_time.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gesture_rotate_angle">
+        <span>gesture_rotate_angle</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gesture_rotate_angle</h1>
+  <p>此函数用于设置一对触摸必须超过的角度，以触发<a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">旋转开始手势</a>。 角度测量单位为度，默认值为5°。</p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">gesture_rotate_angle();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (inches)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if gesture_get_rotate_angle() != 5<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;gesture_rotate_angle(5);<br>
+    }</p>
+  <p>上述代码检查手势的旋转角度是否设置为5°，如果不是，则将其设置为该值。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Gesture_Input.htm">手势输入</a></div>
+        <div style="float:right">Next:&nbsp;<a href="event_data.htm">event_data</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gesture_rotate_angle
+-->
+  <!-- TAGS
+gesture_rotate_angle
+-->
+
+</body></html>

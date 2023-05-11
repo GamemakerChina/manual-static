@@ -1,0 +1,135 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.6.10.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Particle Systems</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for the Particle System functions and variables">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Particle Systems">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_exists.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/effect_clear.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Particle Systems">
+        <span>Particle Systems</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">Particle Systems</span></h1>
+  <p>在创建粒子之前，需要创建粒子系统。这是一个"容器"，你可以把你的粒子和发射器(如果你需要的话)放在那里准备好使用，你可以在任何一个系统中放入你认为必要的尽可能多或尽可能少的粒子，你也可以有你认为必要的尽可能多的系统。但是，由于每个系统、发射器和粒子都占用内存，并且它们太多可能会减慢游戏速度或导致问题，因此最好保持这个数字尽可能小。例如，如果需要某些效果显示在实例上方，而其他效果显示在实例下方，则需要创建两个系统并设置其深度以获得所需的效果，并以指定的深度绘制添加到每个系统的所有粒子。</p>
+  <p>由于粒子系统是动态创建的资源，因此必须创建粒子系统并将返回的索引存储在变量中，以便在所有进一步的函数调用中引用该系统，并且非常重要的是，当不再需要粒子系统时，还要销毁该系统，否则会出现内存泄漏，从而降低速度并最终导致游戏崩溃。另外值得注意的是，粒子系统在创建后将永远存在，即使索引不再存储。因此，即使您更换空间或重新启动游戏，系统和粒子仍将保留，并且可以在所有其他房间中看到，这样您最好确保在不再需要它们时将其销毁。</p>
+  <div data-conref="../../../../../assets/snippets/Note_tip_use_particle_system_editor.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您更喜欢使用更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，也可以使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。</p>
+
+</div>
+  <p>下面列出了设置粒子系统的基本函数：</p>
+  <ul class="colour">
+    <li><a href="part_system_exists.htm">part_system_exists</a></li>
+    <li><a href="part_system_create.htm">part_system_create</a></li>
+    <li><a href="part_system_create_layer.htm">part_system_create_layer</a></li>
+    <li><a href="part_system_get_layer.htm">part_system_get_layer</a></li>
+    <li><a href="part_system_layer.htm">part_system_layer</a></li>
+    <li><a href="part_system_depth.htm">part_system_depth</a></li>
+    <li><a href="part_system_position.htm">part_system_position</a></li>
+    <li><a href="part_system_clear.htm">part_system_clear</a></li>
+    <li><a href="part_system_destroy.htm">part_system_destroy</a></li>
+    <li><a href="part_particles_clear.htm">part_particles_clear</a></li>
+    <li><a href="part_particles_count.htm">part_particles_count</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>一旦粒子添加到粒子系统，然后爆发或流入房间，它们通常会在每个步骤中自动更新，并根据用于定义粒子系统的参数进行绘制。但是，有时可能需要控制何时以及如何更新系统，以及如何绘制系统，并且<span data-keyref="GameMaker Name">GameMaker</span>提供以下函数：</p>
+  <ul class="colour">
+    <li><a href="part_system_automatic_update.htm">part_system_automatic_update</a></li>
+    <li><a href="part_system_automatic_draw.htm">part_system_automatic_draw</a></li>
+    <li><a href="part_system_update.htm">part_system_update</a></li>
+    <li><a href="part_system_drawit.htm">part_system_drawit</a></li>
+    <li><a href="part_system_draw_order.htm">part_system_draw_order</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>可以使用 <a href="../Particle_Emitters/Particle_Emitters.htm"> 粒子发射器 </a> 从某个区域爆发或流化粒子，但在许多情况下，这些不是必需的，实际上最好直接使用以下函数创建粒子：</p>
+  <ul class="colour">
+    <li><a href="part_particles_create.htm">part_particles_create</a></li>
+    <li><a href="part_particles_create_colour.htm">part_particles_create_colour</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../Particles.htm">粒子</a></div>
+        <div style="float:right">Next: <a href="../Particle_Types/Particle_Types.htm">粒子类型</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Particle Systems
+-->
+  <!-- TAGS
+particle_system_functions
+-->
+
+</body></html>

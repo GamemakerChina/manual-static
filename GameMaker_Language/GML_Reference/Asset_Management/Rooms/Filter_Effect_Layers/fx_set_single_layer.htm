@@ -1,0 +1,149 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.6.0_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../../../../assets/css/default.css"><script src="../../../../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <title>fx_set_single_layer</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../../../../assets/css/default.css">
+  <meta name="template" content="../../../../../assets/masterpages/Manual_Keyword_Page.htt">
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="rh-index-keywords" content="fx_set_single_layer">
+  <meta name="search-keywords" content="fx_set_single_layer">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_set_fx.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/fx_set_parameters.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="fx_set_single_layer">
+        <span>fx_set_single_layer</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1>fx_set_single_layer</h1>
+  <p>此函数用于启用或禁用滤镜/效果的"单层"模式。默认情况下，过滤器/效果将应用于<a href="layer_set_fx.htm">指定给</a>的层以及该层下的所有层，但是，您可以在FX结构上启用单层模式，以确保它仅应用于它指定给的层。</p>
+  <p>指定 FX 结构(从<span class="inline"><a href="fx_create.htm">fx_create()</a></span>或<span class="inline"><a href="layer_get_fx.htm">layer_get_fx()</a></span>返回)和<a class="tooltip" title="布尔值是一种变量类型，可根据其值返回true或false，可用于条件和表达式中。常量'false'或'true'可以应用于布尔值，这相当于实值0和1。">布尔</a>值以启用(<span class="inline">true</span>)或禁用(<span class="inline">false</span>)单层模式。</p>
+  <p>下图显示了在禁用单层模式(这是所有FX层的默认行为)和启用单层模式时使用同一过滤器的过滤器：</p>
+  <div class="image_columns">
+    <figure><img alt="Fire Jump man is woozy with the universe" class="center_shadow" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/FX_single_layer_off.png" title="Fire Jump man is woozy with the universe">
+      <figcaption>Single Layer Mode OFF</figcaption>
+    </figure>
+    <figure><img alt="Fire Jump man is woozy... alone" class="center_shadow" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/FX_single_layer_on.png" style="cursor: nesw-resize;" title="Fire Jump man is woozy... alone">
+      <figcaption>Single Layer Mode ON</figcaption>
+    </figure>
+  </div>
+  <p class="note"><span class="note">注意</span>为 FX 启用单层模式时，请确保将其应用于不是<a href="../../../../../The_Asset_Editors/Room_Properties/Filters_and_Effects.htm">FX 层</a>的层，因为 FX 层本身不包含任何内容，因此看不到过滤器/效果。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">fx_set_single_layer(filter_or_effect, enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>filter_or_effect</td><td><span data-keyref="Type_Struct_FX"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/fx_create.htm">FX Struct</a></span></td>
+        <td>要修改的FX结构</td>
+     </tr>
+      <tr>
+        <td>enable</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>用于启用(<a class="tooltip" title="布尔值是一种变量类型，可根据其值返回true或false，可用于条件和表达式中。常量'false'或'true'可以应用于布尔值，这相当于实值0和1。">真</a>)或禁用(<span class="inline">假</span>)单层模式的<span class="inline">布尔值</span></td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">shake_fx = fx_create("_filter_screenshake");<br>
+    fx_set_single_layer(shake_fx, true);<br>
+    layer_set_fx("ShakeyThings", shake_fx);</p>
+  <p>上面的代码创建一个新的屏幕交换FX，在它上启用单层模式，然后应用到房间层。这意味着屏幕切换过滤器将只应用于<span class="inline2">"ShakeyThings"</span>层。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Filter_Effect_Functions.htm">过滤器和效果函数</a></div>
+        <div>Next:&nbsp;<a href="layer_set_fx.htm">layer_set_fx</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+fx_set_single_layer
+-->
+  <!-- TAGS
+fx_set_single_layer
+-->
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+</body></html>

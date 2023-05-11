@@ -1,0 +1,147 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "5.1.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HTML5</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that details the HTML5 Game Options">
+  <meta name="rh-index-keywords" content="Game Options - HTML5">
+  <meta name="search-keywords" content="HTML5 Game Options">
+<meta name="brsnext" value="Settings/Game_Options/Amazon_Fire.htm"><meta name="brsprev" value="Settings/Game_Options/Ubuntu.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="HTML5">
+        <span>HTML5</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1 id="h">HTML5 游戏选项</h1>
+  <p>本节概述了可用于控制如何编译 HTML5游戏项目的不同选项。不同的章节是:</p>
+  <p>&nbsp;</p>
+  <h2>常规</h2>
+  <p><img alt="HTML5 General Options" class="center" src="../../assets/Images/Settings/HTML5_General_Options.png">在本节中，您需要填写以下关于您的游戏的信息:</p>
+  <ul class="colour">
+    <li><strong>浏览器标题</strong> : 在这里，您可以在浏览器中为游戏的标签页标题栏提供文本。</li>
+    <li><strong>版本</strong> : 您游戏的版本号。</li>
+    <li><strong>文件夹名称</strong> : 存储 HTML5游戏文件的文件夹名称(默认为“<span class="inline">html5game</span>”)。</li>
+    <li><strong>输出名称</strong> : 这是输出的 HTML 文件名，可以更改为默认的“<span class="inline">index.html</span>”以外的其他名称。</li>
+  </ul>
+  <p>在游戏信息栏下面你也有以下选项:</p>
+  <ul class="colour">
+    <li><strong>输出调试到控制台</strong> : 这将把所有调试输出发送到浏览器的 JS 控制台。默认关闭。</li>
+    <li><strong>显示光标</strong> : 这将在游戏画布上禁用鼠标光标。这是默认打开的。</li>
+    <li><strong>显示“正在运行的外部服务器”警告</strong> : 如果你正在本地测试一个游戏(例如: 从你的电脑上点击索引文件而不是服务器——不推荐) ，那么你通常会得到一个警告，告诉你由于本地文件的浏览器安全性，可能不会像你预期的那样工作。可以通过取消选中此选项来禁止显示此警告。默认开启。</li>
+  </ul>
+  <p>在常规设置下面，有<strong>高级</strong>选项，它们是:</p>
+  <ul class="colour">
+    <li><strong>包含的文件作为 index.html </strong> : 这是为了添加一个自定义的“ index.html”文件来使用，而不是<span data-keyref="GameMaker Name"> GameMaker </span>默认生成的预定义文件。如果您已经实现了一个网站设计，或者希望在所有 HTML5构建中包含某些特性，那么这将非常有用。要使用的文件必须包含在游戏项目中作为<a href="../Included_Files.htm">包含的文件</a>。</li>
+    <li><strong>加载栏扩展</strong> : 这将更改作为<span data-keyref="GameMaker Name">扩展</span>添加到您的<a href="../../The_Asset_Editors/Extensions.htm"> GameMaker </a>项目中的默认加载栏。</li>
+    <li><strong>预置输出 .js </strong> : 这里您可以在前面加上<span class="inline">*.js </span>输出，包含游戏所需的任何额外 JavaScript。例如，一个 Chrome Store 应用程序可能要求您将<span class="inline"> window.localStorage = unDefinition; </span>添加到输出 JS 中，为此您将使用此选项。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h2>分析</h2>
+  <p><img alt="HTML5 Analytics Options" class="center" src="../../assets/Images/Settings/HTML5_Analytics_Options.png">此部分允许您添加游戏分析，允许您使用某些第三方产品来跟踪您的游戏及其销售或播放。您可以指定是否使用<a href="https://www.flurry.com/">Flurry分析</a>或<a href="https://marketingplatform.google.com/about/analytics/">Google分析</a>来跟踪您的游戏。由于这些功能的性质，你一次只能有一个活动，一旦你标记了启用 Flurry Analytics <strong>或</strong>启用 Google Analytics <strong> ，你也应该添加唯一的 ID，你已经分配到适当的区域。</strong></p>
+  <p>有关可用于发送分析数据的函数的信息，请参见<a href="../../GameMaker_Language/GML_Reference/Web_And_HTML5/Web_And_HTML5.htm">此处</a>。</p>
+  <p>&nbsp;</p>
+  <h2>图形</h2>
+  <p><img alt="HTML5 Graphics Options" class="center" src="../../assets/Images/Settings/HTML5_Graphics_Options.png">在这里，你可以更改下面有关游戏显示方式的细节(注意，不是所有浏览器都以相同的方式显示你的游戏，所以在尽可能多的浏览器上测试这些选项，以确保它们达到预期的效果) :</p>
+  <ul class="colour">
+    <li><strong>允许切换到全屏</strong>: 如果选中此选项，用户可以使用 Mac 上的<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" style="cursor: nwse-resize;" width="55"> + “<span class="inline">F</span>”和 Windows 上的<span class="inline">F10</span>将游戏从窗口切换到全屏模式。这是默认开启的。</li>
+    <li><strong>像素间插值颜色</strong>：启用<a class="tooltip" title="线性插值是通过用一条直线连接两个相邻的已知值来估计一个新值。然后你可以通过检查直线上的任意一点来得到插值值。在图形学中，线性插值是指平滑像素边缘的一种基本方法。">线性插值</a>，基本上是“平滑”像素。对于清晰的像素图形，它应该处于禁用状态，但如果您有漂亮的Alpha混合和平滑的边缘图形，则最好保持启用状态。默认情况下，此选项处于启用状态。</li>
+    <li><strong>在浏览器中将游戏居中</strong> : 选中此选项将自动在运行游戏的浏览器中将游戏屏幕居中。默认关闭。</li>
+    <li><strong>使用内置粒子</strong> : 此选项将导出内置粒子系统所需的精灵以及您的游戏。这些粒子被存储在单独的纹理页面中，这意味着它们不是为这个平台生成粒子的最有效的方法，因此建议(除非使用 WebGL)你取消选中这个选项，使用你自己的粒子，它们将被存储在主纹理页面上，以供你的游戏使用。这是默认开启的。</li>
+    <li><strong>使用内置字体</strong> : 此选项将导出<span data-keyref="GameMaker Name">内置字体的 GameMaker </span>以及其他游戏文件。这会稍微增加纹理页面的大小，并且需要少量额外的内存和存储空间，所以如果你的游戏没有使用 Arial 字体，这个功能应该被禁用。默认开启。</li>
+    <li><strong>WebGL</strong> : 选择是否关闭 WebGL 支持，使其可选(自动检测) ，还是将其作为游戏的一个需求。应该注意的是，为了在所有情况下测试性能，您应该禁用此选项，然后通常将其设置为自动检测以便发布。将其作为一个需求可能会大大降低游戏与不同浏览器类型的兼容性。默认情况下设置为自动检测。</li>
+    <li><strong>缩放</strong> : 您的游戏可以配置为自动缩放画布以保持浏览器内的<strong>高宽比</strong> ，或者您可以选择让它运行<strong>全尺寸</strong>。全尺寸选项将不会在浏览器中全屏显示游戏，而是拉伸所绘制的内容以适应画布大小，如游戏的第一个房间所定义的那样。这被设置为默认情况下保持纵横比。</li>
+  </ul>
+  <p>最后，可以选择设置<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页面</a>的大小。默认（最兼容）大小为2048 x 2048，但您可以从256 x 256和8192 x 8192之间的任意位置进行选择。还有一个标记为<strong><strong>预览</strong></strong>的按钮，它将生成此平台的纹理页面，然后打开一个窗口，以便您可以看到它们的外观。如果希望了解纹理页面的结构以及防止纹理页面大于或小于所需的页面，这将非常有用。有关纹理页面的详细信息，请参阅<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p>
+  <p class="note">注意: 纹理页面的大小越大，游戏对不同浏览器和设备的兼容性就越差。</p>
+  <p>&nbsp;</p>
+  <h2>图像</h2>
+  <p><img alt="HTML5 Images Options" class="center" src="../../assets/Images/Settings/HTML5_Images_Options.png">这个部分是您可以定义<strong>收藏夹</strong>和<strong>启动画面</strong>的地方。图标应该编写为<span class="inline"> *.ico</span>文件，大小可以是16x16、32x32、48x48或64x64像素，颜色深度可以是8位、24位或32位。启动画面的大小应该是画布的大小，这样可以容纳你的游戏，如果你勾选了使用启动画面选项(例如: 你可以有一个加载栏，或者一个启动画面，但不能两个都有) ，它将覆盖所有的加载栏。较小或较大的图像是允许的，但将被缩放以适应。启动画面应该是<span class="inline"> *.png </span>图像。</p>
+  <p>值得注意的是，<span data-keyref="GameMaker Name">GameMaker</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可用于自动创建正在编译游戏的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保这些图像符合您的要求。</p>
+  <p>&nbsp;</p>
+  <h2>社交</h2>
+  <p><img alt="HTML5 Social Options" class="center" src="../../assets/Images/Settings/HTML5_Social_Options.png">社交选项卡用于在你的游戏中设置 <strong>Facebook</strong> 交流。如果您需要 Facebook 功能，您需要单击“使用 Facebook”复选框，然后提供<strong> Facebook 应用程序 ID </strong>和<strong> Facebook 应用程序显示名称</strong>。请注意，所有的 Facebook 功能都是通过一个扩展来访问的，当你第一次选择<strong>使用 Facebook</strong>时，你会被提示从<a href="../../Introduction/The_Marketplace.htm">市场</a>下载并安装 Facebook 扩展(你可能需要在下载之前登录到你的<a href="https://help.yoyogames.com/hc/en-us/articles/216757288-Creating-a-YoYo-Account">YoYo账户</a>)。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Game_Options.htm">游戏设置</a></div>
+        <div style="float:right">Next: <a href="Amazon_Fire.htm">Amazon Fire</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+HTML5 Game Options
+-->
+  <!-- TAGS
+html5_options
+-->
+
+</body></html>

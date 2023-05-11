@@ -1,0 +1,127 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.13.2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>instance_activate_object</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function instance_activate_object">
+  <meta name="rh-index-keywords" content="instance_activate_object">
+  <meta name="search-keywords" content="instance_activate_object">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Instances/Deactivating_Instances/instance_activate_region.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Instances/Deactivating_Instances/instance_activate_all.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="instance_activate_object">
+        <span>instance_activate_object</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_activate_object</h1>
+  <p>使用此函数，您可以从先前已停用的所有对象中激活特定对象的单个实例或所有实例。请注意，如果您已停用已标记为<b>持久性</b>的实例或对象，则在换房之前，您需要使用此函数再次重新激活它，否则它将<i>不被携带</i>，而会被丢弃。也要注意，激活不是瞬时的，而是在此中激活的实例在调用函数的事件结束之前，不会认为 way 处于活动状态。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">instance_activate_object(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>obj</td><td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
+        <td>要激活的对象或实例(也可以使用关键字<b>all</b>)。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, false, false);<br> instance_activate_object(obj_Lights);
+  </p>
+  <p>上述代码激活房间内的所有实例，然后停用当前摄像机视图限制之外的实例，但对象"obj_Lights"除外，对象"obj_Lights"在结束时再次重新激活。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Deactivating_Instances.htm">停用实例</a></div>
+        <div style="float:right">Next:&nbsp;<a href="instance_activate_region.htm">instance_activate_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_activate_object
+-->
+  <!-- TAGS
+instance_activate_object
+-->
+
+</body></html>

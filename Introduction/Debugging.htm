@@ -1,0 +1,140 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "1.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Debugging</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Debugging Projects In GameMaker">
+  <meta name="rh-index-keywords" content="Debugging">
+  <meta name="search-keywords" content="debugging,error reporting,debug mode,performance">
+<meta name="brsnext" value="Introduction/The_Output_Window.htm"><meta name="brsprev" value="Introduction/Compiling.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Debugging">
+        <span>Debugging</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>调试</h1>
+  <p>在编程游戏时，无论使用<span data-keyref="GML_Code">GML Code</span>还是<span data-keyref="GML_Visual">GML Visual</span>，都很容易犯错误——使用错误的变量、传递错误的参数或使用错误的函数只是我们所有人犯的一些最常见的错误——而且脚本/动作编辑器附带的<a class="tooltip" title="与人类语言类似，编程语言在如何传达语句方面也有自己的一套规则，这套规则称为语法。尽管许多编程语言共享许多功能，特性和功能，但是它们通常在语法上有所不同。如果没有正确使用语法，则无法编写可执行程序，并且错误的语法将导致编译时出错。">语法</a>检查器并不总是能检测到这些错误。这意味着只有当你实际运行或编译游戏时，这些错误才会变得明显，即便如此，有时也很难确切知道出了什么问题。因此，了解游戏在所选设备上的表现以及查看房间里有哪些实例、创建了哪些全局变量以及大量其他细节可能至关重要。检查这些内容称为 "<strong>调试你的代码</strong>"，你可能发现的任何错误或问题都被称为 "<strong>bugs</strong>"。</p>
+  <p>现在，你可以通过在游戏中添加所谓的 "调试代码" 来在屏幕上显示你需要的信息，或者你可以让它在出现错误时显示消息，但这通常需要大量的工作，如果你一开始不确定问题出在哪里，那么追踪错误可能是一个耗时的反复试验。为此，<span data-keyref="GameMaker Name">GameMaker</span>有一个名为<strong>调试模式</strong>的特殊测试模式，它将启动<strong>调试模块</strong>，还有一个全面的<strong>错误报告系统</strong>它在<a class="tooltip" title="编译是指GameMaker接受您的代码并将其收集在一起的方式，以创建可执行的程序包，该程序包将作为游戏在设备上运行。">Comilil</a>上显示消息，以帮助您追踪游戏中的任何问题。</p>
+  <p>以下部分介绍了调试游戏的不同方式：</p>
+  <p>&nbsp;</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#"><span data-open-text="true" data-skip-index="true">错误报告</span><span data-close-text="true">错误报告</span></a></p>
+  <div class="droptext" data-targetname="drop_down6">
+    <p class="dropspot">如果在编译和执行项目期间发生错误，则会在<a href="The_Output_Window.htm">编译错误输出窗口</a>中报告此错误并显示一条消息，如下所示：</p>
+    <p class="dropspot"><img alt="Compile Errors" class="center" src="../assets/Images/Introduction/QS_Debug_CompileError.png">大多数编译器错误消息遵循相同的大纲，一条消息说明错误发生在哪个对象，然后是事件和行号，最后是错误本身的简短描述。错误报告提供的此类信息非常重要，因为它可以检测并报告语法和语言相关的错误，这些错误会导致你完成的游戏崩溃，但它不会报告更细微的错误，也不会提供性能反馈。对于这些类型的东西，你应该使用调试模式(如下所述)。</p>
+    <p class="dropspot">除了这些编译错误，你还可能遇到语法错误。这些将在您添加 GML 可视化操作或代码时被检测到，并显示在<a href="The_Output_Window.htm">语法错误输出窗口</a>中，如下图所示：</p>
+    <p class="dropspot"><img alt="Syntax Errors" class="center" src="../assets/Images/Introduction/QS_Debug_SyntaxError.png">与编译器错误一样，语法错误窗口将引导您找到对象、事件和出现问题的特定行，并且通常会显示错误的简要说明。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#"><span data-open-text="true" data-skip-index="true">调试模式</span><span data-close-text="true">调试模式</span></a></p>
+  <div class="droptext" data-targetname="drop_down7">
+    <p class="dropspot">如果你需要更仔细地检查一下，你可以点击调试运行按钮<strong>在</strong>调试模式<img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png">下运行游戏。完成后，<strong>调试模块</strong>将与您的游戏一起打开。这个模块允许你监控游戏中所有事物的运行情况，从全局性能到单个实例中单个变量的值。您可以从以下页面了解有关调试模块及其可能性以及如何使用它的更多信息：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../IDE_Tools/The_Debugger.htm">调试器</a></li>
+    </ul>
+    <p class="dropspot">请注意，在使用调试模块时，还可以在代码或 GML Visual 中添加<strong>Breakpoints</strong>。断点是游戏循环中的一个点，你希望调试模块暂停并让你逐行浏览实际的游戏代码。您可以使用密钥 "F9" 添加断点，它们将显示在<a href="The_Output_Window.htm">输出窗口</a>中，您可以根据需要启用/禁用断点。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down8" href="#"><span data-open-text="true" data-skip-index="true">其他工具</span><span data-close-text="true">其他工具</span></a></p>
+  <div class="droptext" data-targetname="drop_down8">
+    <p class="dropspot">作为调试已编译游戏的额外工具，当您在 Windows 上运行最终游戏包时，可以使用某些<strong>命令行参数</strong>。有关其工作原理的信息，请在此处查看<a href="../Settings/Command_Line_Parameters.htm">。</a></p>
+    <p class="dropspot">您还可以在测试运行游戏时生成<strong>调试叠加层</strong>，该叠加层将在游戏运行时显示有关游戏性能的更多调试信息，还可以将<strong>调试消息</strong>输出到编译控制台，您可以在其中提供自己的文本来帮助调试游戏的行为。有关更多信息，请参阅以下页面：<span class="inline"></span></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_overlay</span></a></li>
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message</span></a></li>
+      <li class="dropspot"><span class="inline"><a href="../GameMaker_Language/GML_Reference/Debugging/debug_event.htm">debug_event</a></span></li>
+    </ul>
+    <p>&nbsp;</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>还有一组与调试和使用调试工具相关的首选项。您可以从以下页面找到更多信息：</p>
+  <ul class="colour">
+    <li><a href="Debugging.htm">调试首选项</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Introduction_To_GameMaker_Studio_2.htm"><span data-keyref="GameMaker Name">GameMaker 简介</span></a></div>
+        <div style="float:right">Next: <a href="The_Output_Window.htm">输出窗口</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Debugging
+Debug Mode
+Command Line Parameters
+-->
+  <!-- TAGS
+debugging
+-->
+
+</body></html>

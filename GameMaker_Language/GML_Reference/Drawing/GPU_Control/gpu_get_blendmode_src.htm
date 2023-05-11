@@ -1,0 +1,179 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.2.0_10";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gpu_get_blendmode_src</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference for the function gpu_get_blendmode_src">
+  <meta name="rh-index-keywords" content="gpu_get_blendmode_src,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour">
+  <meta name="search-keywords" content="gpu_get_blendmode_src,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_dest.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext_sepalpha.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gpu_get_blendmode_src">
+        <span>gpu_get_blendmode_src</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_blendmode_src</h1>
+  <p>此函数可用于检索用于绘制的当前<i>源</i>扩展混合模式因子。返回的值将是以下常量之一("s"表示从源获取的值，而"d"表示从目标获取的值)：</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>常量</th>
+        <th>混合因子(红色、绿色、蓝色、透明度)</th>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_zero</span></td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_one</span></td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_src_colour</span></td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_inv_src_colour</span></td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_src_alpha</span></td>
+        <td>(As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_inv_src_alpha</span></td>
+        <td>(1-As, 1-As, 1-As, 1-As)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_dest_alpha</span></td>
+        <td>(Ad, Ad, Ad, Ad)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_inv_dest_alpha</span></td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_dest_colour</span></td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_inv_dest_colour</span></td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td><span class="inline">bm_src_alpha_sat</span></td>
+        <td>(f, f, f, 1) where f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gpu_get_blendmode_src();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>&nbsp;(see above table)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var bm;<br>
+    bm[0] = gpu_get_blendmode_src();<br>
+    bm[1] = gpu_get_blendmode_dest();<br>
+    gpu_set_blendmode_ext_sepalpha(bm[0], bm[1], bm_inv_src_alpha, bm_inv_dest_colour);</p>
+  <p>以上代码创建本地数组并获取当前源和目标混合因子。然后使用该数组来操纵混合因子的Alpha分量。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="GPU_Control.htm">GPU 控制</a></div>
+        <div style="float:right">Next:&nbsp;<a href="gpu_get_blendmode_dest.htm">gpu_get_blendmode_dest</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_blendmode_src
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_get_blendmode_src
+-->
+
+</body></html>

@@ -1,0 +1,137 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.1.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>IDE Preferences</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Section dedicated to all the IDE specific preferences">
+  <meta name="rh-index-keywords" content="IDE Preferences">
+  <meta name="search-keywords" content="prefs,IDE prefs,preferences,IDE preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/General_Preferences.htm"><meta name="brsprev" value="The_IDE/Preferences_And_Information/Preferences_And_Features.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="IDE Preferences">
+        <span>IDE Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>IDE 首选项</h1>
+  <p><img alt="Preferences" class="center" src="../assets/Images/Setup_And_Version/Getting_Started_Prefs.png"><strong> 首选项窗口 </strong> 是 <span data-keyref="GameMaker Name">GameMaker</span> 的重要组成部分，因为您可以在其中使用 IDE 设置和定制您的体验，以及设置任何特定的平台 SDK 等。在本节中，我们将介绍首选项窗口的 IDE 特定区域-有关各个目标平台的信息，请参阅 <a href="Platform_Preferences.htm"> 目标平台首选项 </a> 一节。请注意，在从此窗口更改任何首选项后，您需要单击 <strong> 应用 </strong> 按钮才能使其生效。</p>
+  <p>在将此处的选项更改为根据您自己的喜好定制 <span data-keyref="GameMaker Name">GameMaker</span> 之后，如果您希望备份您已设置的首选项，则需要转到 Windows 上的此文件夹：</p>
+  <p class="code">%AppData%/GameMaker/&lt;your_account_name&gt;/</p>
+  <p>或 Mac 上的此文件夹：</p>
+  <p class="code">~/.config/GameMaker</p>
+  <p>然后将以下两个文件复制到安全位置：</p>
+  <ul class="colour">
+    <li><span class="inline">local_settings.json</span></li>
+    <li><span class="inline">cloud_settings.json</span></li>
+  </ul>
+  <p>但是，如果要重置已更改的首选项，则需要单击窗口顶部的<strong>恢复默认设置</strong>按钮。请注意，这将仅恢复当前正在编辑的节的默认设置。</p>
+  <p>您可以从 IDE 左上角的 <span data-keyref="GameMaker Name"> 文件 </span> 菜单中打开 <strong>GameMaker</strong> 首选项：</p>
+  <p><img alt="Open Preferences" class="center" src="../assets/Images/Setup_And_Version/Getting_Started_OpenPrefs.png">首选项窗口打开后，您将有以下不同的选项(此列表忽略所有特定于平台的首选项，有关这些选项，请参阅<a href="Platform_Preferences.htm">此处</a>)：</p>
+  <ul class="colour">
+    <li><a href="IDE_Preferences/General_Preferences.htm">常规</a></li>
+    <li><a href="IDE_Preferences/Start_Screen_Preferences.htm">开始屏幕</a></li>
+    <li><a href="IDE_Preferences/Image_Editor_Preferences.htm">图像编辑器</a></li>
+    <li><a href="IDE_Preferences/Sprite_Editor_Preferences.htm">精灵编辑器</a></li>
+    <li><a href="IDE_Preferences/Object_Editor_Preferences.htm">对象编辑器</a></li>
+    <li><a href="IDE_Preferences/Font_Editor_Preferences.htm">字体编辑器</a></li>
+    <li><a href="IDE_Preferences/Room_Editor_Preferences.htm">房间编辑器</a></li>
+    <li><a href="IDE_Preferences/Spline_Editor.htm">样条编辑器</a></li>
+    <li><a href="IDE_Preferences/Tile_Set_Editor_Preferences.htm">图块图块集编辑器</a></li>
+    <li><a href="IDE_Preferences/Timeline_Preferences.htm">时间线</a></li>
+    <li><a href="IDE_Preferences/Extension_Editor_Preferences.htm">扩展编辑器</a></li>
+    <li><a href="IDE_Preferences/Text_Editor_Preferences.htm">文本编辑器</a></li>
+    <li><a href="IDE_Preferences/Language_Preferences.htm">语言首选项</a></li>
+    <li><a href="IDE_Preferences/Feather_Settings.htm">羽毛首选项</a></li>
+    <li><a href="IDE_Preferences/Marketplace_Preferences.htm">市场</a></li>
+    <li><a href="IDE_Preferences/Plugin_Preferences.htm">插件</a></li>
+    <li><a href="IDE_Preferences/Runtime_Feed_Preferences.htm">运行时源</a></li>
+    <li><a href="IDE_Preferences/Redefine_Keys_Preferences.htm">重定义快捷键</a></li>
+    <li><a href="IDE_Preferences/Anim_Curve_Editor_Preferences.htm">动画曲线编辑器</a></li>
+    <li><a href="IDE_Preferences/Asset_Browser_Preferences.htm">资源浏览器</a></li>
+    <li><a href="IDE_Preferences/Sequences_Preferences.htm">序列编辑器</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../The_IDE/Preferences_And_Information/Preferences_And_Features.htm">Preferences And Features</a></div>
+        <div style="float:right">Next: <a href="Platform_Preferences.htm">平台首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+IDE Preferences
+-->
+  <!-- TAGS
+preferences_ide
+-->
+
+</body></html>

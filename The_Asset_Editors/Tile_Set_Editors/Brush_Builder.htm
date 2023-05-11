@@ -1,0 +1,149 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "6.9.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Brush Builder</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page detailing how the tile set editor brush builder works">
+  <meta name="rh-index-keywords" content="Tile Sets - Brush Builder">
+  <meta name="search-keywords" content="brush builder,brushes,tile brushes">
+<meta name="brsnext" value="The_Asset_Editors/Tile_Set_Editors/Animated_Tiles.htm"><meta name="brsprev" value="The_Asset_Editors/Tile_Sets.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Brush Builder">
+        <span>Brush Builder</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>图块集笔刷生成器</h1>
+  <p>默认情况下，当你在房间编辑器的<a class="tooltip" title="图块地图是从图块图块集中获取的图块集合的名称，用于在游戏中创建关卡。">图块地图</a>层上 "涂抹 "图块时，你会选择一块图块，然后用它涂抹。然而，图块集几乎总是被设计成有一些部分，以不同的方式组合在一起，形成整个区域或项目。例如，一个RPG图块组可能有景观特征图块，可以连接起来形成更大或更小的特征--如树木和建筑--这取决于使用的图块数量。现在，在一个房间层上放置这样的多个特征，需要你来回多次更换图块，这对你的工作流程不利。为了解决这个问题，<span data-keyref="GameMaker Name">GameMaker</span>使你能够在图块集编辑器中创建图块<strong>刷</strong>，当你点击<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;上的<strong>Brush Builder</strong>按钮时，就可以使用。</p>
+  <p><img alt="Brushes" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Brushes.png">在<strong>刷子生成器</strong>中，左边是原始图块集，右边是空白的 "画布"。你现在可以从左边选择任何图块，然后在右边涂抹，创建自定义的 "画笔"，然后你可以在房间编辑器中使用。注意，你可以点击并按住鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;，然后在图块集上拖动，选择多块图块画到画笔画布上，你也可以按住&nbsp;<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;来添加图块。+ <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;来添加特定的单个图块，或者按住<img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55">&nbsp;+ <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;来删除特定的图块。</p>
+  <p>下图显示了我们之前提到的景观特征，作为一个例子，三个定制的刷子由一个图块集制成：</p>
+  <p><img alt="Features As Brushes Example" class="center" height="534" src="../../assets/Images/Asset_Editors/Editor_Tilesets_FeaturesBrushes.png" width="940">在右边，你可以看到我们所做的三个特征（在图片中用橙色方框突出）。注意我们在每个特征之间留了一个图块的间隙--这是因为<em>在房间编辑器中，任何触摸的图块集都会被当作一个画笔</em>，所以我们留了一个图块的间隙，以表明每一组都是我们要创建的一个不同的画笔。在创建画笔时，你用鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;涂抹，用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">删除。你也可以用<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;和鼠标滚轮<img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21">&nbsp;当鼠标在其中一个窗口上时，放大图块表或画布，或者你可以用&nbsp;<img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55">&nbsp;+ <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;或鼠标中键<img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21">&nbsp;和拖动来平移。请注意，你也可以使用编辑器窗口内<strong>工具箱</strong>中的缩放工具来改变任一窗口的缩放级别，以及切换网格的可见性和颜色。</p>
+  <p>在右上方，你可以看到当前选择的工具，你也可以设置你想用的画笔的大小。默认的大小是1，也就是一个图块，但是如果你把它设置成更高的数值，那么你就可以用一个由所选图块重复组成的更大的画笔来画（和擦除），如下图所示。</p>
+  <p><img alt="Tile Size Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Tile_Size.gif">工具箱是你可以在图块集编辑器中选择用于许多不同任务的工具，其中一些将取决于你是否在<a href="Auto_Tiles.htm">自动图块</a>库中定义了什么。下面给出了每个工具的简要概述（注意，当你在房间编辑器中选择了一个图块层，那么这个工具箱就会显示在房间工作区的顶部，同时还有其他绘制工具）。</p>
+  <table class="icons" style="margin-left: 32auto">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Pencil Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Draw.png" style="margin-left: 24px;"></td>
+        <td class="icons"><strong>Pencil</strong></td>
+        <td class="text">这就是铅笔工具。它使用选定的图块，用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;在画笔窗口中作画，你可以用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">擦除。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Eraser Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Erase.png" style="margin-left: 24px;"></td>
+        <td class="icons"><strong>Eraser</strong></td>
+        <td class="text">使用橡皮擦工具，你可以使用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;来擦除画笔窗口中的一个特定的图块。从本质上讲，这只是把图块的索引设置为0，也就是保留的 "空 "图块。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Selection Tool Icon" height="24" src="../../assets/Images/Icons/Icon_TileSelect.png" style="margin-left: 24px;" width="24"></td>
+        <td class="icons"><strong>Selection</strong></td>
+        <td class="text">这是选择工具，可以用来定义画笔窗口的一个区域，以便进行工作。你可以点击鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;，然后拖动鼠标来创建一个矩形区域，或者你可以按&nbsp;<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">+<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;来添加多个选区。+ <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55">&nbsp;来添加多个选区，<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;+ <img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55">&nbsp;来清除一部分选区。要清除整个选择，你可以按<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">。当你选择了画笔窗口中的一个区域，其余的工具（铅笔、翻转、旋转等......）将只在所选区域内工作。注意，你也可以在窗口中选择图块，然后复制（&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;/&nbsp;<span class="inline">+"</span>C<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">"），剪切（&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;/&nbsp;<span class="inline">+"</span>X<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">"）和粘贴（&nbsp; <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;/&nbsp;<font face="Lucida Console">+"<span style="font-size: 16px;"><b>V</b></span></font>"），然后将工具切换到铅笔，允许你用它们 "画"。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Autotile Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Auto.png" style="margin-left: 24px;"></td>
+        <td class="icons"><strong>AutoTile</strong></td>
+        <td class="text">点击这个工具可以启用<strong>自动图块</strong>的绘画风格。当这个功能被激活时，你可以从自动图块库标签中选择任何图块，然后在画笔窗口中绘画，<span data-keyref="GameMaker Name">GameMaker</span>会自动改变它以匹配周围的图块，只要你正确设置了<a href="Auto_Tiles.htm">自动图块标签</a>。请注意，从图块集中选择一个不属于自动图块库的图块，将重置绘制工具为标准的铅笔工具。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Flip Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Flip.png" style="margin-left: 24px;"></td>
+        <td class="icons"><strong>Flip</strong></td>
+        <td class="text">用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;（或使用键盘快捷键"<span class="inline">X</span>"）点击翻转工具，将沿<em>水平</em>轴翻转当前选择的图块或图块，而不改变绘制工具（如果你选择了一个自定义画笔进行绘制，整个画笔将翻转）。如果你没有选择要画的图块，但在画笔窗口中选择了一组图块，那么翻转工具将翻转所选的图块。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Mirror Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Mirror.png" style="margin-left: 24px;"></td>
+        <td class="icons"><strong>Mirror</strong></td>
+        <td class="text">用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;（或使用键盘快捷键"<span class="inline">Y</span>"）点击镜像工具，将沿<em>垂直</em>轴镜像当前选择的图块，而不改变绘制工具（如果你选择了一个自定义画笔进行绘制，整个画笔将被镜像）。如果你没有选择要绘制的图块，但在画笔窗口中选择了一组图块，那么镜像工具将镜像所选的图块。</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Rotate Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Rotate.png" style="margin-left: 24px;"></td>
+        <td class="icons"><strong>Rotate</strong></td>
+        <td class="text">用鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;（或使用键盘快捷键"<span class="inline">Z</span>"）点击 "旋转 "工具，将把当前选择的图块旋转90°<em>逆时针</em>，而不改变绘制工具（如果你选择了一个自定义画笔进行绘制，整个画笔将旋转）。如果你没有选择要画的图块，但在画笔窗口中选择了一组图块，那么旋转工具将旋转所选的图块。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>在工具下面，你可以找到两个不同的部分，用于选择任何<a href="Auto_Tiles.htm"><strong>自动图块</strong></a>或<a href="Animated_Tiles.htm"><strong>动画</strong>图块</a>，这些图块是用当前图块组图像创建的。一个用于图块组的单一精灵可以有很多很多的单格图像，这些图像可以在动画或自动图块编辑器中组合起来，创建自定义的刷子，这些刷子将显示在这些部分，可以与普通的静态图块一起使用，创建刷子（注意，无论你是从库中还是从基本图块组中选择，一个动画图块都会产生动画）。</p>
+  <p>一旦你设置了所有你需要的画笔，你就可以用它们在<a href="../Rooms.htm">房间编辑器</a>内的任何图块地图层上绘制图块。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Tile_Sets.htm">图块集</a></div>
+        <div style="float:right">Next: <a href="Animated_Tiles.htm">动画图块</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Tile Brushes
+Brush Builder
+-->
+  <!-- TAGS
+tile_set_editor_brushes
+-->
+
+</body></html>

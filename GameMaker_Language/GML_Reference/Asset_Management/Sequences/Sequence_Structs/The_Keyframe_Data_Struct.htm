@@ -1,0 +1,309 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.9.1.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>The&nbsp;Keyframe&nbsp;Data Struct</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining The&nbsp;Keyframe&nbsp;Data Struct">
+  <meta name="rh-index-keywords" content="Sequence Keyframe Data Struct">
+  <meta name="search-keywords" content="The&nbsp;Keyframe&nbsp;Data Struct,seqaudiokey_loop,seqaudiokey_oneshot,channel,spriteIndex,soundIndex,playbackMode,curve,value,colour,sequence,objectIndex,events,event">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/Fonts.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Struct.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="The&nbsp;Keyframe&nbsp;Data Struct">
+        <span>The&nbsp;Keyframe&nbsp;Data Struct</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>关键帧数据结构</h1>
+  <p>为轨迹定义<a href="The_Keyframe_Struct.htm">关键帧结构</a>时，还需要定义与其关联的数据。这由不同的<i>通道</i>组成，其中每个通道仅是关键帧数据结构。根据要设置关键帧数据的曲目类型，可以为通道指定特定类型的数据。</p>
+  <p>关键帧数据结构包含以下变量：</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="3"><span data-keyref="Type_Struct_Sequence_Keyframe_Data"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm">序列关键帧数据结构</a></span></th>
+      </tr>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">channel</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>这是应用关键帧数据的通道。这是一个从0开始的正整数值，值得注意的是，在为"位置"或"缩放"关键帧创建参数轨迹时，您需要使用非常特定的通道值。这些是：通道0是X位置或X比例，通道1是Y位置或Y比例。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">spriteIndex</span></td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>用于轨迹的精灵资源的索引。此属性仅适用于类型为<span class="inline">SeqTrackType_Graphic</span>的轨道，您可以获取或设置它。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">soundIndex</span></td>
+        <td><span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../../../The_Asset_Editors/Sounds.htm">Sound Asset</a></span></td>
+        <td>要用于音轨的音频资源的索引。此属性仅对类型为<span class="inline">SeqTrackType_Audio</span>的轨道可用，您可以获取或设置它。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">playbackMode</span></td>
+        <td><span data-keyref="Type_Constant_Sequence_Audio_Key"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm">序列音频键常数</a></span></td>
+        <td>声音的播放模式。此属性仅对类型为<span class="inline">SeqTrackType_Audio</span>的轨道可用，您可以获取或设置它。属性应该是下表中给出的常量之一。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">curve</span></td>
+        <td><span data-keyref="Type_Struct_AnimCurve"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get.htm">Animation Curve Struct</a></span></td>
+        <td>此属性需要动画曲线结构(有关详细信息，请参见此处<a href="../../Animation_Curves/animcurve_channel_new.htm">)，并且仅适用于类型为</a>seqtracktype_real<span class="inline">的轨迹。 如果没有使用曲线结构，则该属性的值为-1。</span></td>
+      </tr>
+      <tr>
+        <td><span class="inline">value</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>此属性只是一个与关键帧数据通道关联的值，并且仅在未提供<span class="inline">曲线</span>结构时可用于类型<span class="inline">seqtracktype_real</span>的轨迹。例如，如果放置在<strong>"位置"</strong>参数轨道内，则可以是轨迹的X或Y位置。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">colour</span></td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span>&nbsp;of&nbsp;<span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>s</td>
+        <td>此属性返回(或需要，如果已设置)<a href="../../../../GML_Overview/Arrays.htm">数组</a>，用于格式为[A，R，G，B]的关键帧的颜色值。这仅适用于类型为<span class="inline">seqtracktype_colour</span>的曲目。 注意，每个组件的值应表示为0和1之间，其中0对应于十六进制值# 00，1对应于十六进制值# FF(0- 255，如序列编辑器中颜色轨迹的颜色选择器所示)。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">sequence</span></td>
+        <td><span data-keyref="Type_Struct_Sequence_Object"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Sequence_Object_Struct.htm">Sequence Object Struct</a></span></td>
+        <td>此属性将返回(或需要(如果已设置))<a href="The_Sequence_Object_Struct.htm">序列对象结构</a>，并且仅适用于类型为<span class="inline">seqtracktype_sequence</span>的轨迹。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">objectIndex</span></td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
+        <td>此属性将返回(或需要(如果已设置))对象索引，并且仅适用于类型为<span class="inline">seqtracktype_instance</span>的轨迹。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">events</span></td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span>&nbsp;of&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>s</td>
+        <td>此属性允许访问与关键帧数据结构关联的<b>事件</b>和<b>广播消息</b>。可以获取或设置此属性，获取时返回字符串数组，设置时应指定字符串数组。有关事件的更多信息，请参阅"<a href="../Sequence_Events_Moments_Broadcast.htm">事件和时刻</a>序列"部分。 此属性仅适用于类型<span class="inline">seqtracktype_message</span>的轨迹。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">event</span></td>
+        <td><span data-keyref="Type_Method"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">Method</a></span></td>
+        <td>此属性将返回(或可以设置为)与关键帧数据结构关联的<a href="../../../../GML_Overview/Method_Variables.htm">方法</a>。如果未指定方法或希望删除该方法，则属性应为-1。此属性仅适用于类型<span class="inline">seqtracktype_moment</span>的轨迹。</td>
+      </tr>
+      <tr>
+        <td colspan="3"><em>Any additional variables listed in the table(s) below</em></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p><span class="inline">playbackMode</span>变量可以是以下常量之一：</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="3"><span data-keyref="Type_Constant_Sequence_Audio_Key"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm">序列音频键常数</a></span></th>
+      </tr>
+      <tr>
+        <th>常量</th>
+        <th>描述</th>
+        <th>值</th>
+      </tr>
+      <tr>
+        <td><span class="inline">seqaudiokey_loop</span></td>
+        <td>The sound will loop when played.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><span class="inline">seqaudiokey_oneshot</span></td>
+        <td>The sound will only play once then stop.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h2 id="text">文本跟踪数据</h2>
+  <p>如果分配给<a href="../../../../../The_Asset_Editors/Sequence_Properties/Text_in_Sequences.htm">文本轨道</a>(<span class="inline">seqTrackType_text</span>)，则该结构将包含以下附加变量：</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="3"><span data-keyref="Type_Struct_Sequence_Keyframe_Data"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm">序列关键帧数据结构</a></span></th>
+      </tr>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">text</span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>这是在轨道上绘制的文本字符串。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">wrap</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>这是一个布尔值，指示文本是否应该换行(<span class="inline">true</span>)或不换行(<span class="inline">false</span>)。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">alignmentH</span></td>
+        <td><span data-keyref="Type_Constant_Sequence_TextKey_Alignment"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm#text">序列文本对齐常量</a></span></td>
+        <td>这是文本的水平对齐方式，将是下面给出的<span data-keyref="Type_Constant_Sequence_TextKey_Alignment"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm#text">序列文本对齐常数</a></span>之一。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">alignmentV</span></td>
+        <td><span data-keyref="Type_Constant_Sequence_TextKey_Alignment"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm#text">序列文本对齐常量</a></span></td>
+        <td>这是文本的垂直对齐，将是下面给出的<span data-keyref="Type_Constant_Sequence_TextKey_Alignment"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm#text">序列文本对齐常数</a></span>之一。</td>
+      </tr>
+      <tr>
+        <td><span class="inline">fontIndex</span></td>
+        <td><span data-keyref="Type_Asset_Font"><a target="_blank" href="../../../../../../The_Asset_Editors/Fonts.htm">Font Asset</a></span></td>
+        <td>这是文本音轨使用的<span data-keyref="Type_Asset_Font"><a target="_blank" href="../../../../../../The_Asset_Editors/Fonts.htm">字体资源</a></span>。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p><span class="inline">alignmentH</span> 可以是以下任何常量：</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="2"><span data-keyref="Type_Constant_Sequence_TextKey_Alignment"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm#text">序列文本对齐常量</a></span>&nbsp;(<span class="inline">alignmentH</span>)</th>
+      </tr>
+      <tr>
+        <th>常量</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">seqtextkey_left</span></td>
+        <td>The text will be aligned to the left of the frame</td>
+      </tr>
+      <tr>
+        <td><span class="inline">seqtextkey_right</span></td>
+        <td>The text will be aligned to the right of the frame</td>
+      </tr>
+      <tr>
+        <td><span class="inline">seqtextkey_center</span></td>
+        <td>The text will be centred horizontally within the frame</td>
+      </tr>
+      <tr>
+        <td><span class="inline">seqtextkey_justify</span></td>
+        <td>The text will be justified within the frame</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p><span class="inline">alignmentV</span> 可以是以下任何常量：</p>
+  <table>
+    <tbody>
+      <tr>
+        <th colspan="2"><span data-keyref="Type_Constant_Sequence_TextKey_Alignment"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Keyframe_Data_Struct.htm#text">序列文本对齐常量</a></span>&nbsp;(<span class="inline">alignmentV</span>)</th>
+      </tr>
+      <tr>
+        <th>常量</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">seqtextkey_top</span></td>
+        <td>The text will be aligned to the top of the frame</td>
+      </tr>
+      <tr>
+        <td><span class="inline">seqtextkey_bottom</span></td>
+        <td>The text will be aligned to the bottom of the frame</td>
+      </tr>
+      <tr>
+        <td><span class="inline">seqtextkey_middle</span></td>
+        <td>The text will be centred vertically within the frame</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Sequences.htm">序列</a></div>
+        <div style="float:right">Next: <a href="The_Sequence_Object_Struct.htm">序列对象结构</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Keyframe Data Struct
+-->
+  <!-- TAGS
+sequence_keyframe_data
+-->
+
+</body></html>

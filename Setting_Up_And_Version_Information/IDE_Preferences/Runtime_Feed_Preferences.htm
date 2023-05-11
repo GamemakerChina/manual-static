@@ -1,0 +1,168 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.2_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Runtime Feeds Preferences</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Runtime Feed Preferences">
+  <meta name="rh-index-keywords" content="Prefs - Runtime Feeds">
+  <meta name="search-keywords" content="Runtimes,Runtime Feed Preferences,Runtime Feed Prefs,Prefs Runtime">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/Redefine_Keys_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Runtime Feeds Preferences">
+        <span>Runtime Feeds Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">运行时源首选项</span></h1>
+  <p><strong><span data-field="title" data-format="default">运行时源首选项</span></strong>用于显示和更改当前安装的<a class="tooltip" title="GameMaker Studio 2中的运行时是程序为给定目标平台创建最终可执行包所需的编译器资源的集合。它们是从IDE中独立安装的，并且可以在任何时候进行更改和更新。">运行时</a>以及当前使用的运行时。</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 可以同时安装多个不同的运行时版本，您可以从此菜单中设置要使用的版本。</p>
+  <p>理想情况下，您希望使用最新的运行时，但有时可能会出现问题，或者您可能需要使用较旧的运行时来实现兼容性等，因此您可以在此处更改 <span data-keyref="GameMaker Name">GameMaker</span> 用来构建游戏的运行时工具。</p>
+  <p><img alt="The Runtime Feeds Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Runtime_Prefs.png"></p>
+  <h2 id="h">记住上次选择的<span><span><span></span></span></span>模块</h2>
+  <p>如果以及如何显示<a href="../installation_Guide.htm#h">运行时模块对话框</a>，则此选项会更改。</p>
+  <p>可以在此处设置以下选项：</p>
+  <table>
+    <colgroup>
+      <col style="width:50%">
+      <col style="width:50%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Option</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>OK</td>
+        <td>This option remembers your choice of modules and will not show the&nbsp;<a href="../installation_Guide.htm#h">Runtime Modules Dialog</a>&nbsp;each time you install any runtime. Instead, it will just automatically install those same runtime modules. It corresponds to the "Remember Selection" checkbox ticked in the Runtime Modules Dialog.</td>
+      </tr>
+      <tr>
+        <td>Show Message</td>
+        <td>This option always show the dialog when installing a different runtime.&nbsp;It corresponds to the "Remember Selection" checkbox unticked in the&nbsp;<a href="../installation_Guide.htm#h">Runtime Modules Dialog</a>.<span data-sk="tooltip_parent"></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>修改当前运行时模块</h2>
+  <p>您可以点击此按钮，随时再次调出<a href="../installation_Guide.htm#h">运行时模块对话框</a>。通过此按钮打开对话框允许您更改为<em>当前</em>运行时安装的模块。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 当前运行时版本可在 IDE 右上角显示的版本详细信息中找到(请参阅<a href="../../Introduction/The_Start_Page.htm#h">起始页元素</a>)。</p>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Runtime_Modules_Modify.png"></p>
+  <p>该对话框显示您已经为当前运行时安装的模块，并允许您安装其他模块。</p>
+  <h2>使用替代 DNS</h2>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>&nbsp;允许您使用替代 <a class="tooltip" title="域名系统——该系统将域名(如gamemaker.io)与其他信息(如IP地址)相关联。DNS记录从DNS查找返回。">DNS</a>&nbsp;服务器，如果您愿意或在获取更新的 RSS 提要时遇到延迟。</p>
+  <p>要使用此选项，请选中"使用替代 DNS "复选框并输入要使用的替代 DNS 服务器的 IP 地址：</p>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Runtime_Prefs_DNS_alternative.png" title=""></p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 如果您将文本字段留空，则 <span data-keyref="GameMaker Name">GameMaker</span> 将继续使用您的系统 DNS 设置。</p>
+  <p>单击"应用"保存更改。&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;将测试是否可以从给定的 IP 地址获得有效的 DNS 结果。如果不是，将显示错误消息：&nbsp;</p>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Runtime_Prefs_DNS_test_failed.png"></p>
+  <p>您可以使用的替代 IP 地址有 1.1.1.1 和 9.9.9.9。</p>
+  <h2>运行时 RSS 源</h2>
+  <p><span data-field="title" data-format="default">运行时源首选项</span>的这一部分与您从中提取运行时工具的位置相关，并要求您输入 <a class="tooltip" title="“通用资源定位器”的缩写，基本上是互联网上某物的地址。统一资源定位符 (Uniform Resource Locator, URL)">RSS</a> 源的 <a class="tooltip" title="是“丰富网站摘要'Rich Site Summary'”的缩写，是一个用于将内容从在线出版商分发给互联网用户的标准化系统。">URL</a>。然后将扫描此提要以查找运行时工具的更新，然后可以下载和安装这些工具。</p>
+  <p>默认情况下，此部分将显示主运行时源 URL，但您可以单击 <em> 添加 </em> 按钮来创建一个新的运行时源，您可以在其中提供 RSS 源的名称和 URL，然后单击应用以告知 <span data-keyref="GameMaker Name">GameMaker</span> 访问它。您需要关闭并重新打开首选项窗口，才能显示新源 。</p>
+  <h2>运行时源</h2>
+  <p>创建运行时源后，它将作为子类别在本节中列出，并且您应该始终至少列出一个源 (默认情况下，这将是 <em>Master</em> 源)。无论使用哪种运行时，它们都将具有相同的功能，下面以 Master 源为例进行了概述：</p>
+  <p><img alt="The Runtime Feed Master Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Runtime_Master_Prefs.png">您可以在此处选择、安装和卸载不同的运行时。顶部是当前正在使用的运行时、创建它的日期以及它在硬盘上的位置。</p>
+  <p>下面是所有可用运行库的列表。您可以从该列表中选择任何一个来将其设置为用于编译项目的"运行"运行库。</p>
+  <p>对于每个运行时，您可以找到版本号、发布日期以及-(如果已安装)-安装位置的路径。右侧还显示了不同的状态图标：</p>
+  <table class="icons">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Status Running" height="16" src="../../assets/Images/Icons/Icon_Running.png" width="48"></td>
+        <td class="text">This marks the current runtime that has been selected for use when building your projects.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Status Download" src="../../assets/Images/Icons/Icon_Download.png"></td>
+        <td class="text">Clicking this will initiate the download and installation of the selected runtime (a status bar will be shown in the top right of the <a class="tooltip" title="IDE，或集成开发环境，是一个软件应用程序，为计算机程序员提供软件开发的全面设施。在这种情况下，GameMaker Studio 2的整个前端都被认为是 IDE，包括创建图形、添加声音和添加代码以制作游戏的部分。">IDE</a>). If&nbsp;<a href="#h">Remember last selection of modules</a>&nbsp;is set to "No" or "Show Message" you will first be shown the&nbsp;<a href="../installation_Guide.htm#h">Runtime Modules Dialog</a>&nbsp;where you can select the modules that should be included.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Status Delete" src="../../assets/Images/Icons/Icon_Delete_Runtime.png"></td>
+        <td class="text">Clicking this will remove the selected runtime from your hard drive.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>您可以通过单击刷新按钮<img alt="Refresh Feed Icon" class="icon" src="../../assets/Images/Icons/Icon_Refresh.png">，随时从给定的 RSS 提要更新此列表，还可以通过单击 " 立即清除运行时 " 按钮，清除硬盘上的旧运行时。您还可以选中 " 自动删除旧运行时 " 复选框，以便&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;自动执行此操作。</p>
+  <p>要选择不同的运行时来使用，请在列表中找到它，然后在左栏中双击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">它的版本号。如果尚未下载和安装运行库，系统将提示您进行下载和安装。根据<a href="Runtime_Feed_Preferences.htm#h">记住上次选择的模块</a>的设置，<a href="../installation_Guide.htm#h">运行时模块对话框</a>在下载和安装开始之前可能会显示，也可能不显示：</p>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Runtime_Modules_Default_Windows.png"></p>
+  <p>一旦安装了新的运行时，系统将要求您关闭并重新启动 IDE，以便可以初始化运行时。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Redefine_Keys_Preferences.htm">重定义快捷键首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Runtime Feeds
+-->
+  <!-- TAGS
+prefs_runtimes
+-->
+
+</body></html>

@@ -1,0 +1,149 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.9.0_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>sequence_instance_override_object</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining function sequence_instance_override_object">
+  <meta name="rh-index-keywords" content="sequence_instance_override_object">
+  <meta name="search-keywords" content="sequence_instance_override_object">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sequences/sequence_get_objects.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="sequence_instance_override_object">
+        <span>sequence_instance_override_object</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">sequence_instance_override_object</span></h1>
+  <p>使用此函数，您可以用另一个实例覆盖(替换)序列中使用的对象的所有实例，或用现有实例覆盖对象的单个实例。</p>
+  <p>为要替代的对象提供序列实例结构 ID(在房间中创建序列实例时返回，或使用房间层函数之一时返回)，请参见<a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">here</a>)，以及对象索引(如资源浏览器中定义)。最后，您给出一个对象索引或实例ID作为要覆盖序列的对象(提供实例ID将简单地使用创建实例的对象作为替代)。请注意，这只能在序列实例(而不是序列对象)上完成，并且必须在序列开始播放之前完成，否则它将不起作用。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>如果将此函数与具有相同对象资源的多个对象轨迹的序列实例一起使用，并且提供了实例 ID 作为第二个参数，则只有第一个实例被给定实例替换。其他对象轨迹将不会获得实例。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>如果提供现有实例 ID，则实例将停留在它已经所在的层上。实例未移动到序列实例/元素所在的层。这与使用<a href="../Rooms/Sequence_Layers/layer_sequence_create.htm">layer_sequence_create</a>在层上创建序列实例不同，在该层上，所有实例都与sequence元素一起添加到层中。</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">sequence_instance_override_object</span>(sequence_instance_struct, object_id, instance_or_object_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_instance_struct</td>
+        <td><span data-keyref="Type_Struct_Sequence_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">Sequence Instance Struct</a></span></td>
+        <td>要修改的序列实例结构。</td>
+      </tr>
+      <tr>
+        <td>object_id</td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
+        <td>序列中要覆盖的对象的对象索引。</td>
+      </tr>
+      <tr>
+        <td>instance_or_object_id</td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></td>
+        <td>用于覆盖序列对象的对象索引或实例ID.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例 1：用另一个对象 ID 替换对象 ID</h4>
+  <p class="code">var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);<br>
+    var _seq_inst = layer_sequence_get_instance(_seq);<br>
+    <span data-field="title" data-format="default">sequence_instance_override_object</span>(_seq_inst, obj_Trees_Winter, obj_Trees_Summer);
+  </p>
+  <p>上述代码在给定层上创建新的序列实例，然后对其进行修改，使得对象"obj_Trees_Winter"的所有实例被对象"obj_Trees_Summer"的实例替换。</p>
+  <h4>示例 2：将对象 ID 的第一个实例替换为实例 ID</h4>
+  <p class="code">var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);<br>
+    var _seq_inst = layer_sequence_get_instance(_seq);<br>
+    var _inst = instance_find(obj_Tree_Christmas, 0);<br>
+    if (_inst != noone)<br>
+    {<br>
+    &nbsp; &nbsp;&nbsp;<span data-field="title" data-format="default">sequence_instance_override_object</span>(_seq_inst, obj_Trees_Winter, _inst);<br>
+    }</p>
+  <p>上面的代码在"背景"层上创建一个新的序列实例。然后，它尝试使用<span class="inline2">instance_find</span>查找"obj_Tree_Christmas"的实例。 如果找到此对象的实例，则使用<span class="inline2">sequence_instance_override_object</span>用此实例替换序列中对象"obj_Trees_Winter"的第一个实例。 具有"obj_Trees_Winter"的所有其他对象轨迹<i>将不</i>具有实例。</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sequences.htm">序列</a></div>
+        <div style="float:right">Next:&nbsp;<a href="in_sequence.htm">in_sequence</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_instance_override_object
+-->
+  <!-- TAGS
+sequence_instance_override_object
+-->
+
+</body></html>

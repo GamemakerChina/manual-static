@@ -1,0 +1,155 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.14";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Rooms</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Rooms">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Rooms">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/room_first.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Instances/alarm_set.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Rooms">
+        <span>Rooms</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>房间</h1>
+  <p>房间是在<a href="../../../../The_Asset_Editors/Rooms.htm">GameMaker</a><span data-keyref="GameMaker Name">中的</span>房间编辑器<span>中创建的，</span>是游戏中发生一切的地方。你必须在任何游戏中至少有一个房间来运行它，但你可能需要更多，这取决于游戏的类型和你如何构建你的项目。本节包含与房间相关的所有通用GML函数和变量，用于获取有关房间的信息以及设置房间中的某些属性。</p>
+  <p>以下<a href="../../../GML_Overview/Variables/Global_Variables.htm">全局变量</a>和函数可用于获取有关任何给定房间的基本信息：</p>
+  <ul class="colour">
+    <li><a href="room_first.htm">room_first</a></li>
+    <li><a href="room_last.htm">room_last</a></li>
+    <li><a href="room_next.htm">room_next</a></li>
+    <li><a href="room_previous.htm">room_previous</a></li>
+    <li><a href="room.htm">room</a></li>
+    <li><a href="room_speed.htm">room_speed</a></li>
+    <li><a href="room_height.htm">room_height</a></li>
+    <li><a href="room_width.htm">room_width</a></li>
+    <li><a href="room_persistent.htm">room_persistent</a></li>
+  </ul>
+  <p class="note"><span class="note">注意</span>上面列出的变量在脚本中无效，因为脚本在加载第一个房间之前执行。<br><br>这仅适用于在脚本根处编写的代码，但不适用于在脚本中创建的函数，因为这些函数可以在游戏中的任何时间执行。</p>
+  <p>您还可以使用以下函数来获取当前房间的名称(如<a href="../../../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中所定义)以及在房间之间移动：</p>
+  <ul class="colour">
+    <li><a href="room_get_name.htm">room_get_name</a></li>
+    <li><a href="room_goto.htm">room_goto</a></li>
+    <li><a href="room_goto_next.htm">room_goto_next</a></li>
+    <li><a href="room_goto_previous.htm">room_goto_previous</a></li>
+    <li><a href="room_restart.htm">room_restart</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>接下来，我们有一系列函数可以用来更改房间及其内容，甚至可以创建新房间并添加到其中。应该注意的是，这些函数<i>不应在你想要更改的房间内运行</i>，而应先从另一个房间的实例中运行。另请注意，如果你以这种方式更改任何房间资源，则更改将是<strong>永久的</strong>，即使你调用了 room_restart() 函数(但关闭和重启游戏会重置房间属性)，更改将在游戏的整个持续时间内保持不变。</p>
+  <ul class="colour">
+    <li><a href="room_exists.htm">room_exists</a></li>
+    <li><a href="room_add.htm">room_add</a></li>
+    <li><a href="room_duplicate.htm">room_duplicate</a></li>
+    <li><a href="room_assign.htm">room_assign</a></li>
+    <li><a href="room_instance_add.htm">room_instance_add</a></li>
+    <li><a href="room_instance_clear.htm">room_instance_clear</a></li>
+    <li><a href="room_set_height.htm">room_set_height</a></li>
+    <li><a href="room_set_width.htm">room_set_width</a></li>
+    <li><a href="room_set_persistent.htm">room_set_persistent</a></li>
+    <li><a href="room_set_view_enabled.htm">room_set_view_enabled</a></li>
+    <li><a href="room_set_viewport.htm">room_set_viewport</a></li>
+    <li><a href="room_get_viewport.htm">room_get_viewport</a></li>
+    <li><a href="room_set_camera.htm">room_set_camera</a></li>
+    <li><a href="room_get_camera.htm">room_get_camera</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>还有许多与创建和操作不同类型的元素相关的不同函数，这些元素可以放置在房间中的层上。这些函数在下面列出的每个元素类型的相应部分中列出：</p>
+  <ul class="colour">
+    <li><a href="General_Layer_Functions/General_Layer_Functions.htm">常规图层函数</a></li>
+    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">图块集层</a></li>
+    <li><a href="Background_Layers/Background_Layers.htm">背景图层</a></li>
+    <li><a href="Sprite_Layers/Sprite_Layers.htm">精灵图层</a></li>
+    <li><a href="Sequence_Layers/Sequence_Layers.htm">序列图层</a></li>
+    <li><a href="Filter_Effect_Layers/Filter_Effect_Functions.htm">滤镜和效果函数</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>创建房间图层时需要注意的是，<i>在一个层上可以有多个不同的元素类型</i>。 所以，例如，你可能有一个敌人的层，在这个层上有敌人实例以及某些与敌人有关的精灵资源。或者，您可以使用带有图块地图元素的背景元素来创建房间的外观。这在房间编辑器中是不允许的，但在动态创建对象时，可以执行此操作，这就是为什么存在类似<a href="General_Layer_Functions/layer_get_all_elements.htm"><span class="inline">layer_get_all_elements()</span></a>的函数的原因。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Asset_Management.htm">资源管理</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../Extensions/Extensions.htm">扩展</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Rooms
+Room Layers
+Layer Functions
+-->
+  <!-- TAGS
+room_functions
+-->
+
+</body></html>

@@ -1,0 +1,116 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.4.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gesture_get_tap_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for gesture_get_tap_count">
+  <meta name="rh-index-keywords" content="gesture_get_tap_count">
+  <meta name="search-keywords" content="gesture_get_tap_count">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_get_pinch_distance.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_get_double_tap_distance.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gesture_get_tap_count">
+        <span>gesture_get_tap_count</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gesture_get_tap_count</h1>
+  <p>该函数用于检查点击计数是否已启用或禁用。如果启用，该函数将返回<span class="inline">true</span>，否则返回<span class="inline">false</span>，您可以使用函数启用或禁用点击计数<a href="gesture_tap_count.htm"><span class="inline">gesture_tap_count()</span></a>。启用后，每个tap事件将具有一个附加的 “tapcount” DS map条目，该条目将注册tap的数量，并且启用后，这意味着<i>所有</i>tap事件将被触发，即: 两次tap将同时触发单次tap事件和双击事件，单击事件抽头计数为1，双击事件抽头计数为2。在为双重抽头检测设置的时间过去之后，抽头计数值将重置为0 (请参阅函数<a href="gesture_get_double_tap_time.htm"><span class="inline">gesture_double_tap_time()</span></a>)。如果禁用了轻击计数，则直到双击时间过去且未检测到第二次轻击之前，才会注册初始轻击。请注意，默认情况下，这是<b>启用的</b>。</p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">gesture_get_tap_count();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if !gesture_get_tap_count()<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;getsure_tap_count(true);<br>
+    }</p>
+  <p>上面的代码检查是否启用了点击计数，如果没有启用，则将其打开。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Gesture_Input.htm">手势输入</a></div>
+        <div style="float:right">Next:&nbsp;<a href="gesture_get_pinch_distance.htm">gesture_get_pinch_distance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gesture_get_tap_count
+-->
+  <!-- TAGS
+gesture_get_tap_count
+-->
+
+</body></html>

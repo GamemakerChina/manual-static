@@ -1,0 +1,117 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.1_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Spline Editor</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Spline Editor Preferences">
+  <meta name="rh-index-keywords" content="Prefs - Splines">
+  <meta name="search-keywords" content="Spline Prefs,Spline Editor Prefs">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/Tile_Set_Editor_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Room_Editor_Preferences.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Spline Editor">
+        <span>Spline Editor</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>样条线编辑器首选项</h1>
+  <p><img alt="The Spline Editor Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Spline_Editor_Prefs.png"><strong><a class="tooltip" title="样条基本上是用于连接点的平滑曲线。从数学上讲，它被定义为一个足够光滑的多项式函数，它是分段定义的，并且在多项式片段连接的地方具有高度的平滑。">样条线</a>编辑器首选项</strong>主要用于定义<a href="../../The_Asset_Editors/Paths.htm">路径编辑器</a>中的平滑路径的外观，尽管它们会影响 <a class="tooltip" title="IDE，或集成开发环境，是一个软件应用程序，为计算机程序员提供软件开发的全面设施。在这种情况下，GameMaker Studio 2的整个前端都被认为是 IDE，包括创建图形、添加声音和添加代码以制作游戏的部分。">IDE</a> 的某些其他方面(如物理形状编辑器)。存在以下选项：</p>
+  <ul class="colour">
+    <li><strong>插入路径点精度(像素)</strong>：此选项设置在路径上插入点的精确值(以像素为单位)，即：鼠标必须在此范围内才能插入点，而不是添加新点。默认大小为 20px。</li>
+    <li><strong>锚点宽度</strong>：设置锚点的宽度，单位为像素。默认为 8px</li>
+    <li><strong>锚点高度</strong>：设置锚点的高度，单位为像素。默认为 8px</li>
+    <li><strong>路径颜色</strong>：编辑时用于显示路径的颜色。默认为 (<a class="tooltip" title="这是Alpha，Red，Green，Blue的缩写，用于指代指定为十六进制值的颜色分量，例如：＃FF53E270，其中每两位数字代表一个分量。分解上面的ARGB示例可以得到以下分量值：Alpha（FF），Red（53），Green（E2）和Blue（70）。">ARGB</a>) #FFFFFFFF。</li>
+    <li><strong>突出显示路径段颜色</strong>：用于突出显示任何选定路径段的颜色。默认为 (ARGB) #FFFFFFFF。</li>
+    <li><strong>无效路径颜色</strong>：用于突出显示无效路径的颜色。默认为 (ARGB) #FF0000FF。</li>
+    <li><strong>锚点颜色</strong>：用于绘制路径锚点的颜色。默认为 (ARGB) #FFC0C0C0。</li>
+    <li><strong>无效锚点颜色</strong>：用于绘制路径锚点的颜色。默认为 (ARGB) #FF800000。</li>
+    <li><strong>选定锚点颜色</strong>：用于绘制已突出显示(选定)的路径锚点的颜色。默认为 (ARGB) #FF00A4FF。</li>
+    <li><strong>选择无效的锚点颜色</strong>：用于绘制突出显示但无效的锚点的颜色。默认为 (ARGB) #FFA400FF。</li>
+    <li><strong>鼠标悬停锚点颜色</strong>：用于绘制活动锚点的颜色。默认为 (ARGB) #FFFFFFFF。</li>
+    <li><strong>将鼠标悬停在无效锚点颜色上：用于绘制活动但无效的锚点的颜色。默认为 (ARGB) #FF0000FF。</strong></li>
+    <li><strong>蒙版覆盖颜色</strong>：设置蒙版的覆盖颜色(如果启用)(请参见上文)。默认为 (ARGB) #FF404040。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+        <div style="float:right">Next: <a href="Tile_Set_Editor_Preferences.htm">图块集编辑器首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Spline Editor
+-->
+  <!-- TAGS
+prefs_spline_editor
+-->
+
+</body></html>

@@ -1,0 +1,118 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.2.1.0_8";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>The Help Menu</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Section on the Help Menu">
+  <meta name="rh-index-keywords" content="Menu - Help">
+  <meta name="search-keywords" content="help,file a bug,report a bug,manual,help menu">
+<meta name="brsnext" value="IDE_Navigation/Keyboard_Shortcuts.htm"><meta name="brsprev" value="IDE_Navigation/Menus/The_Layouts_Menu.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="The Help Menu">
+        <span>The Help Menu</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>帮助菜单</h1>
+  <p><img alt="The Help Menu" class="center" src="../../assets/Images/IDE_Input/Help_Menu.png"></p>
+  <p>此菜单与使用 <span data-keyref="GameMaker Name">GameMaker 时获取帮助有关。它包含以下菜单项：</span></p>
+  <ul class="colour">
+    <li><strong>打开手册</strong> - 打开帮助手册。请注意，单击菜单栏中的帮助按钮<img alt="The Help Button" class="icon" height="24" src="../../assets/Images/Icons/Icon_Help.png" width="24">也会打开文档，按下<img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55">也会打开文档。</li>
+    <li><strong>知识库</strong> - 这将把您带到 <a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2"><span data-keyref="GameMaker Name">GameMaker</span> 知识库</a>，在那里您可以找到有关平台设置、已知问题、使用 <span data-keyref="GameMaker Name">GameMaker</span> 以及其他许多内容的文章。</li>
+    <li><strong>报告错误</strong> - 如果您在使用 <span data-keyref="GameMaker Name">GameMaker</span> 时发现任何错误或有任何问题，您可以在此处<a href="https://accounts.yoyogames.com/contact-us">报告它们</a>。</li>
+    <li><strong>在资源管理器中打开日志</strong> - 这将打开您系统上的目录，您可以在其中找到 <strong>ui.log</strong> 文件，该文件通常用于提交与 IDE 相关的错误报告。<hr></li>
+    <li><b>GameMaker.io</b> - 打开 <a href="https://www.gamemaker.io/">GameMaker 网站 </a>。</li>
+    <li><strong>GameMaker 社区</strong> - 这将在您的浏览器中打开 <a href="https://forum.yoyogames.com/index.php">GameMaker 社区论坛</a>。请注意，这是一个<em>社区</em>运作的论坛，所以如果您有错误报告或需要技术帮助，您应该首先转到官方支持站点(见上文)。<hr></li>
+    <li><strong>发行说明</strong> - 这将在您的浏览器中打开适用于 <a href="https://gms.yoyogames.com/ReleaseNotes.html"><span data-keyref="GameMaker Name">GameMaker</span> 的发行说明</a>。如果您需要回滚更新，您可以通过单击此页面上的版本号链接获取以前版本的安装程序。</li>
+    <li><strong>当前运行时发行说明</strong> - 由于<a class="tooltip" title="GameMaker Studio 2中的运行时是程序为给定目标平台创建最终可执行包所需的编译器资源的集合。它们是从IDE中独立安装的，并且可以在任何时候进行更改和更新。">运行时</a>可以独立于IDE进行更新，因此它有自己的一套<a href="https://gms.yoyogames.com/release-notes-runtime.html">运行时发行说明</a>。选择此选项将在您的浏览器中打开它们，但请注意，最新的运行时可能不是您正在使用的运行时。要了解您使用的运行时，或有关如何添加、删除或激活运行时的信息，请参阅<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Runtime_Feed_Preferences.htm">运行时首选项</a>部分。</li>
+    <li><strong>所需SDK</strong> - 由于 <span data-keyref="GameMaker Name">GameMaker</span> 的跨平台特性，需要许多第三方 SDK。单击此链接将转到一篇<a href="https://help.yoyogames.com/hc/en-us/articles/227860547-GMS2-Required-SDKs">支持文章</a>，其中详细介绍了您在每个平台上需要什么。<hr></li>
+    <li><strong>在资源管理器中打开项目</strong> - 这将在操作系统文件资源管理器中打开当前加载项目的保存位置。<hr></li>
+    <li><strong>刷新系统字体</strong> - 这将刷新 <span data-keyref="GameMaker Name">GameMaker</span> 能够看到的系统字体，并有助于检测您在打开 IDE 时安装的新字体。<hr></li>
+    <li><strong>许可证</strong> - 这将打开一个窗口，其中包含&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> 中使用的所有第三方库的许可证。</li>
+    <li><strong>关于</strong> - 这将打开"关于 <span data-keyref="GameMaker Name">GameMaker</span>"窗口，您可以在其中获取产品的版本信息(报告任何错误或问题所必需的)并查看制作者名单。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Menus.htm">菜单</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Version_&amp;_Account_Details.htm">版本和账户详细信息</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Help Menu
+-->
+  <!-- TAGS
+help_menu
+-->
+
+</body></html>

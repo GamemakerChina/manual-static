@@ -1,0 +1,125 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.1.2_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Marketplace Preferences</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="The Marketplace Preferences">
+  <meta name="rh-index-keywords" content="Prefs - Marketplace">
+  <meta name="search-keywords" content="Marketplace Prefs,Marketplace Preferences,Marketplace Certificate,Certificate,Create Certificate">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Marketplace Preferences">
+        <span>Marketplace Preferences</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>市场首选项</h1>
+  <p><img alt="The Marketplace Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_Prefs.png"></p>
+  <p><strong>市场首选项</strong>用于设置用于上传或购买资源的<strong>市场证书</strong>。证书表单由以下部分组成，供您在创建证书时使用(有关如何创建证书的详细信息，请参阅本页下面的详细信息)：</p>
+  <ul class="colour">
+    <li><strong>证书文件</strong>：此部分用于指定市场用于资源认证的 <span class="inline">*.pem</span> 文件。如果您有以前创建的证书，则可以单击此处的文件浏览器按钮并将其添加到论坛中，但如果您没有证书并希望制作证书，则应省略此处的任何信息，而改为单击<strong>创建新证书</strong>按钮(如下所述)。</li>
+    <li><strong>证书密码</strong>：您必须在此处输入上面选择的文件的证书密码。密码是在您首次创建 <span class="inline">*.pem</span> 文件时创建的(请参阅下面的<strong>创建新证书</strong>)，并且将不可逆转地链接到创建的证书文件。</li>
+    <li><strong>检查</strong>：填写完上述字段后，您应该点击此按钮，以确保密码和文件选择正确并协同工作。</li>
+  </ul>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">确认对话框</span><span data-close-text="true">确认对话框</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot"><img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_Confirm_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_Confirm_Prefs.png" class="center" alt="The Marketplace Confirm Dialog Preferences" width="716" height="463">在此，您可以选择在资源浏览器中使用资源时确认对话框的行为。可用选项包括：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>自动响应脱机内容删除</strong>：当您在没有 Web 连接的情况下从库中删除市场资源时，您通常会收到一条警告，询问您是否确实要继续。通过将此选项设置为 "OK"，消息将被抑制，就像您已经单击了 "OK" 按钮以继续。缺省值为 " 显示消息"。</li>
+    </ul>
+    <p class="dropspot"></p>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h1>创建新证书</h1>
+  <p>如果您以前没有创建用于使用商店的证书文件，则应单击此表单底部标记为<strong>创建新证书</strong>的按钮。执行此操作时，将打开一个新窗口，要求您输入以下信息：</p>
+  <ul class="colour">
+    <li><strong>发布者名称</strong>：这是将用作资源的发布者名称的名称。在市场仪表板中，如果需要，您可以设置不同的发布者，并且每个发布者都应该有自己对应的 *.pem 证书文件。</li>
+    <li><strong>证书密码</strong>：您必须在此处为要创建的证书文件提供唯一的密码。请注意您选择的内容，因为您以后无法更改它，如果您没有上述部分中证书文件的正确密码，您将无法更新任何现有的市场资源(也无法上传新的资源)。</li>
+  </ul>
+  <p><img alt="The Marketplace New Certificate Window" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_NewCert_Prefs.png">给出这些详细信息后，您可以单击<strong>创建证书</strong>按钮以生成 <span class="inline">*.pem</span> 文件。系统将提示您提供文件的保存位置和名称，您应该注意这一点以备将来参考。完成此操作后，新文件和密码将自动添加到上面列出的表单域中，您可以单击<strong>检查</strong>按钮以测试证书是否已正确生成。</p>
+  <p class="note"><strong>注意</strong>：我们建议您拍摄实际设置的屏幕截图，并复制 <span class="inline">*.pem</span> 文件。这两个都应该一起保存到一个安全的位置，以备将来参考，或者在某个时候需要重新安装<span data-keyref="GameMaker Name">GameMaker</span>。您无法更新已上载的资源，除非使用创建原始包时使用的相同证书对更新后的包进行签名。<br></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../IDE_Preferences.htm">IDE 首选项</a></div>
+        <div style="float:right">Next: <a href="Plugin_Preferences.htm">插件首选项</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Marketplace
+-->
+  <!-- TAGS
+prefs_marketplace
+-->
+
+</body></html>

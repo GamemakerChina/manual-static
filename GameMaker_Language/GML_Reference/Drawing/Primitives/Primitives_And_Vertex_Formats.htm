@@ -1,0 +1,156 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Primitives&nbsp;And Vertex Formats</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for the Primitive&nbsp;And Vertex Format functions and variables">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Primitives&nbsp;And Vertex Formats,Primitives,Vertex Buffers,Vertex Formats">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Primitives/draw_primitive_begin.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Text/draw_highscore.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Primitives&nbsp;And Vertex Formats">
+        <span>Primitives&nbsp;And Vertex Formats</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>基元和顶点格式</h1>
+  <p>基元(图形基元,图元,图形输出原语)是一种使用点来定义屏幕上显示的内容的绘制类型。它们可以由单点、线或三角形组成，可以着色，有阿尔法混合，甚至可以赋予纹理，这意味着它们可以用来在2D游戏中创造一些非常令人兴奋的效果！例如，您可以使用多个三角形基元创建一个矩形，然后使用标志精灵对其进行纹理化，并且在实例的绘制事件中，通过简单地修改形成基元的点来使标志"波浪"在风中扭曲您使用的精灵。</p>
+  <p class="note"><b>警告！</b>除非您在<a href="../../../../Settings/Game_Options/HTML5.htm">游戏选项</a>中启用了OpenGL，否则这些函数不能与HTML5模块一起使用。</p>
+  <p>有关绘制基元的信息，请参见以下页面：</p>
+  <ul class="colour">
+    <li><a href="draw_primitive_begin.htm">draw_primitive_begin</a></li>
+    <li><a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></li>
+    <li><a href="draw_primitive_end.htm">draw_primitive_end</a></li>
+    <li><a href="draw_vertex.htm">draw_vertex</a></li>
+    <li><a href="draw_vertex_colour.htm">draw_vertex_colour</a></li>
+    <li><a href="draw_vertex_texture.htm">draw_vertex_texture</a></li>
+    <li><a href="draw_vertex_texture_colour.htm">draw_vertex_texture_colour</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>允许您定义自己的<strong>顶点格式</strong>，您可以从中创建自己的自定义基元。这可以大大加快着色器操作，或者可以用来扩展它们的函数并创建令人惊讶的效果。您可以在以下部分中找到相关信息：</p>
+  <ul class="colour">
+    <li><a href="vertex_format_begin.htm">vertex_format_begin</a></li>
+    <li><a href="vertex_format_add_colour.htm">vertex_format_add_colour</a></li>
+    <li><a href="vertex_format_add_position.htm">vertex_format_add_position</a></li>
+    <li><a href="vertex_format_add_position_3d.htm">vertex_format_add_position_3d</a></li>
+    <li><a href="vertex_format_add_texcoord.htm">vertex_format_add_texcoord</a></li>
+    <li><a href="vertex_format_add_normal.htm">vertex_format_add_normal</a></li>
+    <li><a href="vertex_format_add_custom.htm">vertex_format_add_custom</a></li>
+    <li><a href="vertex_format_end.htm">vertex_format_end</a></li>
+    <li><a href="vertex_format_delete.htm">vertex_format_delete</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>创建顶点格式后(请参阅上面的部分)，您可以使用它来构建要使用以下veretx缓冲区函数绘制的基元：</p>
+  <ul class="colour">
+    <li><a href="vertex_create_buffer.htm">vertex_create_buffer</a></li>
+    <li><a href="vertex_create_buffer_ext.htm">vertex_create_buffer_ext</a></li>
+    <li><a href="vertex_create_buffer_from_buffer.htm">vertex_create_buffer_from_buffer</a></li>
+    <li><a href="vertex_create_buffer_from_buffer_ext.htm">vertex_create_buffer_from_buffer_ext</a></li>
+    <li><a href="vertex_get_buffer_size.htm">vertex_get_buffer_size</a></li>
+    <li><a href="vertex_get_number.htm">vertex_get_number</a></li>
+    <li><a href="vertex_delete_buffer.htm">vertex_delete_buffer</a></li>
+    <li><a href="vertex_begin.htm">vertex_begin</a></li>
+    <li><a href="vertex_colour.htm">vertex_colour</a></li>
+    <li><a href="vertex_normal.htm">vertex_normal</a></li>
+    <li><a href="vertex_position.htm">vertex_position</a></li>
+    <li><a href="vertex_position_3d.htm">vertex_position_3d</a></li>
+    <li><a href="vertex_argb.htm">vertex_argb</a></li>
+    <li><a href="vertex_texcoord.htm">vertex_texcoord</a></li>
+    <li><a href="vertex_float1.htm">vertex_float1</a></li>
+    <li><a href="vertex_float2.htm">vertex_float2</a></li>
+    <li><a href="vertex_float3.htm">vertex_float3</a></li>
+    <li><a href="vertex_float4.htm">vertex_float4</a></li>
+    <li><a href="vertex_ubyte4.htm">vertex_ubyte4</a></li>
+    <li><a href="vertex_end.htm">vertex_end</a></li>
+    <li><a href="vertex_freeze.htm">vertex_freeze</a></li>
+    <li><a href="vertex_submit.htm">vertex_submit</a></li>
+  </ul>
+  <p class="note"><b>重要！</b>您构建的基元应遵循使用顶点格式函数设置的格式，因此，如果您仅使用位置数据定义了顶点格式，则使用颜色数据构建基元是没有意义的。您应该注意，您向正在构建的原语添加属性的顺序是由您在创建顶点格式时添加这些属性的顺序定义的，因此如果您使用顺序位置、颜色和纹理坐标定义了向量格式，则<i>必须</i>将这些属性以相同的顺序添加到正在构建的基元中，否则您将获得错误。</p>
+  <p>有关如何使用顶点函数构建基元的概述，请参阅：</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm">基元和顶点构建指南</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Drawing.htm">绘制</a></div>
+        <div style="float:right">Next: <a href="../Surfaces/Surfaces.htm">表面</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Primitives And Vertex Formats
+-->
+  <!-- TAGS
+primitive_vertex_functions
+-->
+
+</body></html>

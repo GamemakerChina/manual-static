@@ -1,0 +1,168 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.5.0_13";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gamepad_set_option</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for gamepad_set_option">
+  <meta name="rh-index-keywords" content="gamepad_set_option">
+  <meta name="search-keywords" content="gamepad_set_option">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_axis_count.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_set_colour.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gamepad_set_option">
+        <span>gamepad_set_option</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_option</h1>
+  <p>此函数可用于设置任何可用的游戏手柄选项。您可以提供游戏手柄“插槽”来设置选项，以及要设置的选项字符串和要使用的值。可用的选项字符串将取决于运行项目的平台，如下所示：</p>
+  <p>&nbsp;</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Option</th>
+        <th>平台</th>
+        <th>描述</th>
+        <th>值</th>
+      </tr>
+      <tr>
+        <td>"allow_rotation"</td>
+        <td>tvOS</td>
+        <td>设置Siri遥控器是否旋转锁定(即：只能垂直使用)。当解锁时(值为<span class="inline">true</span>)，旋转控件将改变输入，例如向左旋转90º将使触摸板的“右”侧返回“向上”等。使得所有输入将相对于设备的定向。当锁定时(值为<span class="inline">false</span>)，则输入将不会相对于控制器的位置发生变化，并且将始终被视为控制器处于垂直位置。</td>
+        <td>Boolean</td>
+      </tr>
+      <tr>
+        <td>"dpad_absolute"</td>
+        <td>tvOS</td>
+        <td>设置 Siri Remote 触摸板是接受绝对输入还是相对输入。在绝对模式(值为<span class="inline">true</span>)下，触摸板的中心被视为 (0,0) 位置——即：模拟摇杆处于静止位置或 dpad 中心所在位置——围绕该位置移动将生成输入。当设置为相对位置(值为<span class="inline">false</span>)时，(0,0) 位置将被视为在触摸板上进行初始触摸的任何位置，所有输入都将从该位置生成，而不是从触摸板的中心生成。</td>
+        <td>Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gamepad_set_option(device, option_name, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>device</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要设置哪个游戏手柄设备 “插槽”。</td>
+      </tr>
+      <tr>
+        <td>option_name</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要设置的选项的名称(字符串，参见上表)</td>
+      </tr>
+      <tr>
+        <td>value</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>,&nbsp;<span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span>, or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>将选项设置为的值(可以是布尔值、实数或字符串——参见上表)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">for(var i = 0; i &lt; 12; ++i;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if gamepad_is_connected(i) &amp;&amp; gamepad_get_description(i) == "tvOS Siri Remote"<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if gamepad_get_option(i, "allow_rotation") == false<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gamepad_set_option(i, "allow_rotation", true);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上述代码循环通过所有游戏板插槽，并检查tvOS平台上的“Siri Remote”。如果检测到一个，则设置遥控器以允许输入旋转。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+        <div style="float:right">Next: <a href="gamepad_axis_count.htm"> gamepad_axis_count </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_option
+-->
+  <!-- TAGS
+gamepad_set_option
+-->
+
+</body></html>

@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.6.10.3.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>part_emitter_burst</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for part_emitter_burst">
+  <meta name="rh-index-keywords" content="part_emitter_burst">
+  <meta name="search-keywords" content="part_emitter_burst">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_stream.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_region.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="part_emitter_burst">
+        <span>part_emitter_burst</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_emitter_burst</h1>
+  <p>此函数允许您将发射器设置为爆发特定类型的粒子，并且通常用于报警和销毁事件，因为它是一次性代码，可以根据函数<a href="part_emitter_region.htm"><span class="inline">part_emitter_region()</span></a>设置的分布、形状和位置一次性创建指定的粒子数。如果需要每个步骤都显示粒子，则应使用函数<a href="part_emitter_stream.htm"><span class="inline">part_emitter_stream()</span></a>，而不是每个步骤都调用此函数。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">part_emitter_burst(ps, ind, parttype, number);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td><span data-keyref="Type_ID_PartSys"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">Particle System ID</a></span></td>
+        <td>发射器所在的粒子系统。</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td><span data-keyref="Type_ID_PartEmitter"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_create.htm">Particle Emitter ID</a></span></td>
+        <td>要突发的发射器的索引。</td>
+      </tr>
+      <tr>
+        <td>parttype</td>
+        <td><span data-keyref="Type_ID_PartType"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">Particle Type ID</a></span></td>
+        <td>要创建的粒子的索引(类型)。</td>
+      </tr>
+      <tr>
+        <td>number</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要创建的粒子数。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30));</p>
+  <p>上述代码将从选定的发射器中突发出30到60之间的随机粒子数。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Particle_Emitters.htm">粒子发射器</a></div>
+        <div style="float:right">Next: <a href="part_emitter_stream.htm">part_emitter_stream</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_burst
+-->
+  <!-- TAGS
+part_emitter_burst
+-->
+
+</body></html>

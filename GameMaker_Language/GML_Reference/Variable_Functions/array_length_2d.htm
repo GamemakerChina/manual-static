@@ -1,0 +1,139 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.2.0_19";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>array_length_2d</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function array_length_2d">
+  <meta name="rh-index-keywords" content="array_length_2d (Deprecated)">
+  <meta name="search-keywords" content="array_length_2d">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/array_height_2d.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/array_length_1d.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="array_length_2d">
+        <span>array_length_2d</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_length_2d&nbsp;<span data-conref="../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></h1>
+  <p class="note"><b> 警告！</b> 此函数已弃用(替换为 <span class="inline"><a href="array_length.htm">array_length()</a></span>)，因为数组不再局限于 1 或 2 维，因此提供此函数仅用于支持传统项目。所有新项目都应使用当前创建和访问多维数组的方式(有关更多信息，请参见此处 <a href="../../GML_Overview/Arrays.htm"></a>)。</p>
+  <p>使用此函数，您可以获取数组第二维的长度(条目数)。您提供第一个维度的条目编号，该函数将返回数组具有的第二维条目数(要查找第一个维度的长度，请使用函数 <a href="array_height_2d.htm"> <span class="inline"> array_Height_2d () </span> </a>)。如果给定的变量不是数组，则该函数将返回 0；如果变量是一维数组(因为还有 1 行)，则返回 1。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">array_length_2d(array_index, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>array_index</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>要检查的数组的索引。</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要获取长度的数组的入口。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">for (var i = 0; i &lt; array_height_2d(a); ++i;)<br>
+    {<br>
+    &nbsp; &nbsp; for (var j = 0; j &lt; array_length_2d(a, i); ++j;)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; a[i, j] = -1;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    }</p>
+  <p>上面的代码将循环遍历二维数组并将每个条目设置为 -1。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Array_Functions.htm">数组函数</a></div>
+        <div style="float:right">Next:&nbsp;<a href="array_height_2d.htm">array_height_2d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_length_2d (deprecated)
+-->
+  <!-- TAGS
+array_length_2d
+-->
+
+</body></html>

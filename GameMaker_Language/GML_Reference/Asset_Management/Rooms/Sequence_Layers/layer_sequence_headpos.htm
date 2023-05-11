@@ -1,0 +1,144 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.5.0_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>layer_sequence_headpos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_headpos">
+  <meta name="rh-index-keywords" content="layer_sequence_headpos">
+  <meta name="search-keywords" content="layer_sequence_headpos">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_headdir.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_yscale.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="layer_sequence_headpos">
+        <span>layer_sequence_headpos</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_headpos</h1>
+  <p>使用此函数，可以将序列元素的<a class="tooltip" title="序列文件或精灵编辑器帧视图中时间轴内的当前“播放”位置。在序列(和精灵)中，这将随着动画预览而移动，你可以将其放置在特定的帧上以查看和编辑该位置的键和关键帧。">播放头</a>位置设置为特定帧。提供由<a href="layer_sequence_create.htm"><span class="inline">layer_sequence_create()</span></a>或<a href="../General_Layer_Functions/General_Layer_Functions.htm">层元素函数</a>之一返回的序列元素 ID 以及要设置的新位置。请注意，位置在<i>帧</i>中，如果设置的值大于总帧数(或小于0)，则实际的最终播放头位置将取决于所选的序列回放类型，遵循以下规则：</p>
+  <ul class="colour">
+    <li><strong>无循环</strong>： 播放头将夹紧到循环的末尾(如果给定值为负，则夹到开始)</li>
+    <li><strong>循环</strong>： 播放头将回退到序列的开头加上额外的帧，例如： 如果将 30 帧序列上的播放头设置为第 45 帧的位置，实际的播放头位置将结束为 15。如果您给出一个负值，那么顺序播放头将反向缠绕。</li>
+    <li><strong>乒乓循环</strong>：播放头将前进到结尾，然后返回超过总帧长度的额外帧数，反转播放方向，例如：如果顺序为30帧，且将播放头设置为40，则最终播放头位置将为20，且方向将反转(下降至0)。请注意，您不应给<i>一个序列的乒乓回放负值，因为它可能具有未定义的结果。</i></li>
+  </ul>
+  <p>以这种方式设置磁头位置不会停止播放，除非暂停，否则该序列将从新的播放头位置继续。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">layer_sequence_headpos(sequence_element_id, position)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td><span data-keyref="Type_ID_Element_Sequence"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">Sequence Element ID</a></span></td>
+        <td>序列元素到目标的唯一ID值</td>
+      </tr>
+      <tr>
+        <td>position</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>设置播放头位置的序列(以帧为单位)内的位置(可以是小数值)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br>
+    for (var i = 0; i &lt; array_length(a); i++;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if layer_get_element_type(a[i]) == layerelementtype_sequence<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer_sequence_headpos(a[i], 0)<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上面的代码获取分配给运行代码的实例层的所有元素的ID。然后，代码检查返回的元素是否为序列资源，如果是序列资源，则它们的播放头位置设置为0。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sequence_Layers.htm">序列图层</a></div>
+        <div style="float:right">Next:&nbsp;<a href="layer_sequence_headdir.htm">layer_sequence_headdir</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_headpos
+-->
+  <!-- TAGS
+layer_sequence_headpos
+-->
+
+</body></html>

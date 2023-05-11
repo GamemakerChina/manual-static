@@ -1,0 +1,130 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.17.6.0_11";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>sha1_string_unicode</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for sha1_string_unicode">
+  <meta name="rh-index-keywords" content="sha1_string_unicode">
+  <meta name="search-keywords" content="sha1_string_unicode">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/sha1_file.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/sha1_string_utf8.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="sha1_string_unicode">
+        <span>sha1_string_unicode</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sha1_string_unicode</h1>
+  <p>在密码学中，SHA-1 是一种由美国 <i> 国家安全局 </i> 设计的加密哈希函数，被广泛用于多种应用和协议中，例如流行的 <b>Git</b>，它用于检查文件更改 . 此函数将采用输入 unicode 字符串并返回 ASCII 格式的 160 位消息摘要，例如：</p>
+  <p class="code">sha1 input string = "The quick brown fox jumps over the lazy dog"<br> sha1 output hash = "2fd4e1c6 7a2d28fc ed849ee1 bb76e739 1b93eb12"</p>
+  <p>通过这种方式，您可以生成一个安全密钥，该密钥可以存储并用于检查发送到 (或从) 外部服务器 (例如) 的信息的完整性。</p>
+  <p class="note"><b>注意</b>：SHA-1 编码有两种格式，UTF-8 和 unicode。提供两者都是为了促进与不同服务器设置的通信，但最常用的是 unicode。</p>
+  <p class="note"><strong>注意</strong>：SHA-1 并不完全安全，可能会被破解。查看&nbsp;<a href="https://en.wikipedia.org/wiki/SHA-1">此页面</a>&nbsp;了解更多信息。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">sha1_string_unicode(string)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>string</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要散列的字符串。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var hash, str;<br> str = base64_encode(game_data);<br> hash = sha1_string_unicode(str);<br> http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?hash=" + hash); http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?data="
+    + str);</p>
+  <p>上面的代码将对一个字符串进行 base64 编码，然后生成一个 sha1 散列。 最后，哈希和编码后的字符串都被发送到服务器。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Encoding_And_Hashing.htm">File Encoding</a></div>
+        <div style="float:right">Next: <a href="sha1_file.htm">sha1_file</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+sha1_string_unicode
+-->
+  <!-- TAGS
+sha1_string_unicode
+-->
+
+</body></html>

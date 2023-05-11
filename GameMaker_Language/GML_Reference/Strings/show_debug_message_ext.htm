@@ -1,0 +1,149 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.21.0_11";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>show_debug_message_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="show_debug_message_ext">
+  <meta name="search-keywords" content="show_debug_message_ext">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="show_debug_message_ext">
+        <span>show_debug_message_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">show_debug_message_ext</span></h1>
+  <p>此函数在<a href="../../../Introduction/The_Output_Window.htm">输出窗口</a>中显示自定义调试消息。</p>
+  <p>此函数的语法与 <span class="inline2"><a href="string_ext.htm">string_ext</a></span> 函数的语法相同除了单个参数外，它还可以接受带有占位符的<a href="string.htm#h">格式字符串</a>，以及带有要替换占位符的附加参数的数组。</p>
+  <div data-conref="../../../assets/snippets/String_conversion_rules.hts">
+  <p><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>&nbsp;类型为整数的值在字符串中不会有小数位。具有小数部分的&nbsp;<span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>&nbsp;类型的值在字符串中有两个小数位。如果在输出字符串中需要更多的小数位，可以使用函数<span class="inline2"><a href="string_format.htm">string_format</a></span>。</p>
+  <p>类型为<a href="../../GML_Overview/Structs.htm">结构</a>或<a href="../Asset_Management/Instances/Instances.htm">实例</a>的值将使用该结构或实例的 <a href="Strings.htm#h3">toString() 方法</a>(如果存在)转换为字符串，或者隐式转换为字符串。</p>
+  <p><a href="../../GML_Overview/Arrays.htm">数组</a>&nbsp;类型的值将被转换为格式为<span class="inline2">[Element1，Element2，Element3，Element4，Element5]</span>的字符串，即数组中所有元素的串联。如果数组中的任何元素是结构或实例，则将调用其&nbsp;<a href="Strings.htm#h3">toString()方法</a>将其转换为字符串。</p>
+
+</div>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">show_debug_message_ext</span>(value_or_format, values_array);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>value_or_format</td>
+        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(if value) or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>&nbsp;(if format)</td>
+        <td>要转换为字符串的值。</td>
+      </tr>
+      <tr>
+        <td>values_array</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span>&nbsp;of&nbsp;<span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;包含要插入到占位符位置的值的数组。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例1：</h4>
+  <p class="code"><span data-field="title" data-format="default">show_debug_message_ext</span>("{0} - {1}", [1, "First item"]);</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h4>示例2：</h4>
+  <p class="code">numbers = [59, 23, 656, 8, 54];<br>
+    array_sort(numbers, true);<br>
+    <br>
+    show_debug_message_ext("The three lowest numbers are: {0}, {1} and {2}", numbers);
+  </p>
+  <p>上面的代码首先定义一个包含一些数字的数组，并按升序对它们进行排序。然后，它在 <span class="inline2">show_debug_message_ext()</span> 中使用该数组来调用以将其前三个数字插入到格式字符串中，然后将结果字符串打印到输出日志。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="../Debugging/Debugging.htm">调试</a></div>
+        <div>Next:&nbsp;<a href="../Debugging/show_debug_overlay.htm">show_debug_overlay</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_debug_message_ext
+-->
+  <!-- TAGS
+show_debug_message_ext
+-->
+
+</body></html>

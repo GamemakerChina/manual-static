@@ -1,0 +1,197 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "6.2.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Source Examples</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page containing extended examples for extensions">
+  <meta name="rh-index-keywords" content="Source Extension Examples">
+  <meta name="search-keywords" content="source android ios extensions native">
+<meta name="brsnext" value="The_Asset_Editors/Fonts.htm"><meta name="brsprev" value="The_Asset_Editors/Extension_Creation/iOS_Extensions.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Source Examples">
+        <span>Source Examples</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>示例代码</h1>
+  <p>本页包含Android和iOS的扩展源代码的例子和信息，以帮助你为这些平台创建你自己的本地扩展。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">Android (Base Example)</span><span data-close-text="true">Android (Base Example)</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p>我们为Android提供的扩展实例将包含做以下工作的函数。</p>
+    <ul class="dropspotlist">
+      <li>返回两个数字相加的结果</li>
+      <li>返回一个由输入字符串和值组成的字符串</li>
+      <li>返回由两个输入字符串组成的字符串</li>
+      <li>触发<a href="../Object_Properties/Async_Events/Social.htm">Async - Social</a>事件，并在其<span class="inline">async_load</span>映射中填充数值。</li>
+    </ul>
+    <p>这个扩展将利用一个<span class="inline">.java</span>文件，其内容在下面给出&nbsp;（点击可打开）。</p>
+    <p class="note"><a data-height="800" data-rhwidget="HyperlinkPopover" data-width="1000" href="Source_Files/GenericTest.htm">GenericTest.java</a></p>
+    <p>要在你的扩展中添加这样的文件，你需要在它的&nbsp;<a href="Android_Extensions.htm">Android Properties</a>&nbsp;下，首先输入一个类名（在这个例子中，是 "GenericTest"），&nbsp;然后&nbsp;点击 "Add Source"，选择<span class="inline">.java</span>文件。这将把选中的文件添加到你的项目目录中--&nbsp;你可以&nbsp;右键点击你的扩展名，选择 "在资源管理器中打开"，并在那里看到源文件。</p>
+    <p>现在你可以在你的扩展中添加一个新的占位符文件，并在其中创建具有以下属性的函数&nbsp;。</p>
+    <ul class="dropspotlist">
+      <li><em>function / external name:</em><span><span>&nbsp;</span></span><span class="inline">AddTwoNumbers</span><br>
+        <em>help:</em><span><span>&nbsp;</span></span><span class="inline">AddTwoNumbers(value1, value2)</span><br>
+        <em>arguments:</em><span><span>&nbsp;</span></span><span class="inline">double,&nbsp;</span><span class="inline">double</span><br>
+        <em>return type:</em><span><span>&nbsp;</span></span><span class="inline">double</span>
+      </li>
+      <li><em>function / external name:</em><span>&nbsp;</span><span class="inline">HowManyObjects</span><br>
+        <em>help:</em><span><span>&nbsp;</span></span><span class="inline">HowManyObjects(value1, value2, string)</span><br>
+        <em>arguments:</em><span><span>&nbsp;</span></span><span class="inline">double,&nbsp;</span><span class="inline">double,&nbsp;</span><span class="inline">string</span><br>
+        <em>return type:</em><span><span>&nbsp;</span></span><span class="inline">string</span>
+      </li>
+      <li><em>function / external name:</em><span><span>&nbsp;</span></span><span class="inline">BuildAString</span><br>
+        <em>help:</em><span><span>&nbsp;</span></span><span class="inline">BuildAString(string1, string2)</span><br>
+        <em>arguments:</em><span><span>&nbsp;</span></span><span class="inline">string,&nbsp;</span><span class="inline">string</span><br>
+        <em>return type:</em><span><span>&nbsp;</span></span><span class="inline">string</span>
+      </li>
+      <li><em>function / external name:</em><span><span>&nbsp;</span></span><span class="inline">ReturnAsync</span><br>
+        <em>help:</em><span><span>&nbsp;</span></span><span class="inline">ReturnAsync(value1, value2)</span><br>
+        <em>arguments:</em><span><span>&nbsp;</span></span><span class="inline">double,</span><span>&nbsp;</span><span class="inline">double</span><br>
+        <em>return type:</em><span><span>&nbsp;</span></span><span class="inline">double</span>
+      </li>
+    </ul>
+    <p>下面是<span class="inline">AddTwoNumbers()</span>函数的一个例子。</p>
+    <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_EE1_Function.png">你现在可以从你的游戏代码中调用这些函数，并像其他内置函数一样使用它们。</p>
+    <p class="code">var result1 = string(AddTwoNumbers(irandom(100), 50));<br>
+      var result2 = BuildAString("Hello", "World");<br>
+      var result3 = HowManyObjects(irandom(1000), irandom(1000), "Targets");<br>
+      ReturnAsync(irandom(1000), irandom(1000));</p>
+    <p><span class="inline">ReturnAsync()</span>函数将触发&nbsp;<a href="../Object_Properties/Async_Events/Social.htm">Async - Social</a>事件，所以你需要将该事件添加到你的对象中，并从其<span class="inline">async_load</span>映射中读取数据（该映射由上面给出的扩展的源代码填充）。</p>
+    <p class="code">var type = async_load[? "type"];<br>
+      <br>
+      if (type == "finished")<br>
+      {<br>
+      &nbsp; &nbsp; var result4 = "value1: " + string(async_load[? "argument0"]) + ", ";<br>
+      &nbsp; &nbsp; result4 += "value2: " + string(async_load[? "argument1"]);<br>
+      }
+    </p>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">iOS (Base Example)</span><span data-close-text="true">iOS (Base Example)</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p>为iOS提供的例子与上面给出的Android例子相同；只有源文件不同，我们将在本节介绍。</p>
+    <p>iOS扩展使用一个<span class="inline">.h</span>和一个<span class="inline">.mm</span>文件，两者的内容如下（点击打开）。</p>
+    <p class="note"><a data-height="800" data-rhwidget="HyperlinkPopover" data-width="1000" href="Source_Files/GenericTest-iOS.htm">GenericTest iOS Source Files</a></p>
+    <p>要将这些文件添加到你的扩展中，你首先需要在它的<a href="iOS_Extensions.htm">iOS Properties</a>下，输入一个类名（在这个例子中是 "GenericTest"）。&nbsp;然后你可以使用 "输入框架路径 "选项（如果这些文件存在于你用于构建的macOS机器上）或 "添加源代码 "选项（如果它们在你的开发机器上）；无论你使用哪个选项，你都需要将它们指向包含<span class="inline">.h</span>和<span class="inline">.mm</span>文件的那个目录。</p>
+    <p>你可以将这些源文件添加到上一节为Android设置的同一个扩展中，这意味着该扩展中已经定义的任何函数现在也可以在iOS上使用（鉴于Android和iOS上所有函数的<em>外部名称</em>都是一样的）。如果你正在创建一个新的扩展，你可以简单地创建函数&nbsp;，与之前描述的方式相同。</p>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#"><span data-open-text="true" data-skip-index="true">Android (Callbacks)</span><span data-close-text="true">Android (Callbacks)</span></a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p>你可以在你的<span class="inline">.java</span>扩展文件中使用以下回调函数。</p>
+    <p class="code">public void onStart()<br>public void onRestart()<br>public void onStop()<br>public void onDestroy()<br>public void onPause()<br>public void onResume()<br>public void onActivityResult(int requestCode, int resultCode, Intent data)<br>public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults)<br>public void onNewIntent(android.content.Intent newIntent)<br>public void onWindowFocusChanged(boolean hasFocus)<br>public void onConfigurationChanged(Configuration newConfig)<br></p>
+    <p><br></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">iOS (Callbacks)</span><span data-close-text="true">iOS (Callbacks)</span></a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p>你可以在你的<span class="inline">.mm</span>扩展文件中使用以下回调函数。</p>
+    <p class="code">-(void) Init<br>
+      -(void) onLaunch:(NSDictionary*)launchOptions<br>
+      -(void) onResume<br>
+      -(void) onPause<br>
+      -(void) applicationDidEnterBackground:(UIApplication *)application<br>
+      -(void) applicationWillEnterForeground:(UIApplication *)application<br>
+      -(void) onStop<br>
+      -(void) applicationProtectedDataDidBecomeAvailable:(UIApplication *)application<br>
+      -(void) applicationProtectedDataWillBecomeUnavailable:(UIApplication *)application<br>
+      -(void) applicationDidReceiveMemoryWarning:(UIApplication *)application<br>
+      -(void) applicationSignificantTimeChange:(UIApplication *)application<br>
+      -(void) application:(UIApplication *)application willEncodeRestorableStateWithCoder:(NSCoder *)coder<br>
+      -(void) application:(UIApplication *)application didDecodeRestorableStateWithCoder:(NSCoder *)coder<br>
+      -(void) application:(UIApplication *)application didUpdateUserActivity:(NSUserActivity *)userActivity<br>
+      -(void) application:(UIApplication *)application didFailToContinueUserActivityWithType:(NSString *)userActivityType error:(NSError *)error<br>
+      -(void) application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *replyInfo))reply<br>
+      -(void) applicationShouldRequestHealthAuthorization:(UIApplication *)application<br>
+      -(void) openURL:(NSURL *)url sourceApplication:(NSString *) sourceApplication annotation:(id)annotation<br>
+      -(void) application:(UIApplication *)application userDidAcceptCloudKitShareWithMetadata:(CKShareMetadata *)cloudKitShareMetadata</p>
+    <p>&nbsp;</p>
+  </div>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Extensions.htm">The Extension Editor</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Creating_An_Extension.htm">创建扩展</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Android Extensions
+iOS Extensions
+Source
+Native
+java
+mm
+h
+-->
+  <!-- TAGS
+source_extensions
+-->
+
+</body></html>

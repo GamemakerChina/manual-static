@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>The File System</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains how the GMS file system works for compiled games">
+  <meta name="rh-index-keywords" content="The File System">
+  <meta name="search-keywords" content="File System,sandbox,sandboxing,working directory,local storage">
+<meta name="brsnext" value="Additional_Information/Bitwise_Operators.htm"><meta name="brsprev" value="Additional_Information/Best_Practices_When_Programming.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="The File System">
+        <span>The File System</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>文件系统</h1>
+  <p>当<a href="../GameMaker_Language/GML_Reference/File_Handling/File_Handling.htm">文件系统函数</a>或<a href="../Settings/Included_Files.htm">包含文件</a>与<span data-keyref="GameMaker Name">GameMaker</span>一起使用时，非常重要的是要确切地知道文件系统是如何工作的以及幕后发生了什么。为此，本节旨在解释和明确<em>如何存储</em>内容，<em>在哪里存储</em>内容，以及该系统可能存在哪些限制或解决方案。</p>
+  <p>关于文件函数，首先要注意的也是最重要的一点是，它们在一般情况下和默认情况下仅限于<strong> 沙盒 </strong>。 这意味着 <span data-keyref="GameMaker Name">GameMaker</span> 在没有用户<strong>显式</strong>输入的情况下，<em>无法从不属于游戏包或设备本地存储的任何地方保存或加载文件</em>，即便如此 此输入仅限于 Windows、macOS 和 Ubuntu (Linux) 目标平台。</p>
+  <p class="note"><strong>重要!</strong>在桌面目标(Windows, macOS，和Ubuntu (Linux))上，沙箱可以关闭的，通过检查目标平台<strong>Game Options</strong>中的<a href="../Settings/Game_Options.htm">禁用文件系统沙箱</a>选项。您这样做的风险由您自己承担，虽然这将打开文件保存和加载，并允许您访问给定系统上的任何位置的文件，但它仍然可能受到操作系统权限的限制。以及您仍然不能写入<a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/program_directory.htm"><span style="font-size:1px;"><span class="inline" style="font-size: 14px">program_directory</span></span></a>&nbsp;文件夹。</p>
+  <p>要理解沙盒，首先需要了解文件有两个不同的区域:</p>
+  <ul class="colour">
+    <li><strong>捆绑包文件</strong> --这是存储与可执行游戏打包在一起的所有文件的地方，包括你从<span data-keyref="GameMaker Name">GameMaker IDE</span>中添加到<strong>包含文件</strong>资源列表中的文件(这些文件是你想要与游戏打包的外部文件)。</li>
+    <li><strong>保存区域</strong> --这是一个设备存储区域，可以被游戏安全地写入，并且游戏保证这是一个可写入的区域。</li>
+  </ul>
+  <p>下面的图表可以帮助你更好地理解这一点:</p>
+  <p><img alt="File System Save Areas" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Files_SaveAreas.png"></p>
+  <p class="note"><strong>注意</strong>:你永远不能写捆绑包(程序)目录。</p>
+  <p>当您的游戏被沙盒化时，两个目标区域 --捆绑目录和本地存储区域 --在每个目标平台上都可用，但它们在每个平台上的工作方式略有不同。 然而，<span data-keyref="GameMaker Name">GameMaker</span> 已经抽象出可以做什么和不能做什么的主要本质，从而更容易将游戏重新定位到多种环境。</p>
+  <p>首先，您应该了解我们所说的 <a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/working_directory.htm"><span class="inline">working_directory</span></a> 是什么意思。 这是两个可能的保存位置的同义词（如上图所示），当您使用该目录时，它会执行以下两项操作之一，具体取决于您是在读取还是写入，以及您正在读取的文件是否已被保存。 改变与否：</p>
+  <ul class="colour">
+    <li><strong>读取操作</strong> - working_directory 将首先检查保存区域以查看正在访问的文件是否存在，以及它是否正在使用该区域。 但是，如果保存区域中不存在该文件，它会检查文件包区域并使用它（如果要查找的文件是游戏中包含的文件）。</li>
+    <li><strong>写入操作</strong> - 这只能发生在保存区域中。</li>
+  </ul>
+  <p class="note"><strong>注意</strong>：一般来说，<span data-keyref="GameMaker Name">GameMaker</span> 会为您处理所有这些，您<strong>很少</strong>需要使用内置变量 <span class="inline" style="font-size: 14px">working_directory</span>。</p>
+  <p>使用这两个简单的规则，我们现在可以看到以下函数是如何工作的（这些示例可帮助您可视化不同可用函数的过程）：</p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/directory_create.htm"><span class="inline">directory_create() </span></a>(以及其他目录函数) 仅在<strong>保存</strong>区域中起作用。</li>
+    <li><a href="../GameMaker_Language/GML_Reference/File_Handling/File_System/File_System.htm">文件系统函数</a>将从<em></em>捆绑包和<strong></strong><strong>保存</strong>区域返回文件信息，但只会<em>写入</em>到<strong>保存</strong>区域。</li>
+    <li>用于写入文本、二进制或 <span class="inline">INI</span> 文件的函数将在保存区域中创建一个新文件（如果尚不存在），并复制游戏捆绑包中包含的原始文件（如果存在）中的任何信息。 请注意，原始文件仍将保留在保存目录的只读部分，但只要保存区域存在可读写的版本，它们就不会被引用。</li>
+  </ul>
+  <p>在<strong>Windows</strong>上，<strong> macOS Ubuntu</strong>和<strong></strong>(Linux)平台有两种方法可以保存和加载文件以外的沙箱,要么是使用<a href="../GameMaker_Language/GML_Reference/File_Handling/File_System/get_open_filename.htm"><span class="inline">get_open_filename功能()</span></a>,<a href="../GameMaker_Language/GML_Reference/File_Handling/File_System/get_save_filename.htm">和<span class="inline">get_save_filename()</span></a>,(这两个函数将要求用户选择一个区域加载和保存并返回字符串可以使用在其他文件中函数来绕过沙箱——看到的语言部分的功能描述手册获得更多信息)。另一种方法是在目标平台的<a href="../Settings/Game_Options.htm">Game Options</a>中完全禁用沙盒(仅适用于Desktop目标，如本页面后面所述)。</p>
+  <p>在HTML5上，也可以从沙盒外部从服务器加载文件，但这只能使用函数<a href="../GameMaker_Language/GML_Reference/Buffers/buffer_load_async.htm"><span class="inline">buffer_load_async()</span></a> 因为同步加载在大多数浏览器上已经被弃用，最终将被淘汰。这意味着以这种方式加载的文件应该被保存为二进制文件 --例如，您可以将<span class="inline">*.ini</span>保存为字符串(参见<a href="../GameMaker_Language/GML_Reference/File_Handling/Ini_Files/Ini_Files.htm"><span class="inline">ini_close()</span></a> 了解详细信息)，然后将其写入缓冲区，然后可以使用异步函数保存和加载该缓冲区。注意，如果您正在使用<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm"><span class="inline">sprite_add()</span></a> 加载图像，那么这些图像已经被异步处理了。</p>
+  <p>您还应该知道，每个目标平台都有自己的保存区，可以在其中写入和读取文件和目录。以下是沙盒时每个目标的区域列表:</p>
+  <ul class="colour">
+    <li><strong>Windows</strong>：Windows的所有文件都位于<span class="inline">%localappdata%\&lt;游戏名称&gt;</span>目录(在Windows 7上，这是<span class="inline">/Users/&lt;用户名&gt;/AppData/Local/&lt;游戏名称&gt;</span>目录)。</li>
+    <li><strong>HTML5</strong>，<strong>GX.games</strong>：一切都通过本地存储完成。</li>
+    <li><strong>macOS</strong>: 存储将取决于应用程序是否被沙盒化(遵循苹果的规则，路径通常是<span class="inline">~/Library/application Support/&lt;游戏名称&gt;</span>)。</li>
+    <li><strong>Ubuntu (Linux)</strong>: 文件存储在<span class="inline"> Home/.config/gamename</span> 其中“Home”是用户的主目录 -<span class="inline">/Home/&lt;用户名&gt;</span></li>
+    <li><strong>iOS</strong> / <strong>tvOS</strong>: 存储是标准的位置(通过iTunes查看)。</li>
+    <li><strong>Android</strong>: 文件位于标准位置<span class="inline"> /data/&lt;包名&gt;</span> (除非设备处于root，否则不可见)。</li>
+  </ul>
+  <p>值得注意的是，HTML5目标模块对本地存储有限制(根据浏览器的不同，本地存储可能在1MB到5MB之间)，这意味着你不允许保存大型精灵、截图等。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Additional_Information.htm">额外的信息</a></div>
+        <div style="float:right">Next: <a href="Bitwise_Operators.htm">Bitwise Operators And Binary</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+The File System
+Sandbox
+Sandboxing
+Working Directory
+Local Storage
+-->
+  <!-- TAGS
+file_system
+-->
+
+</body></html>

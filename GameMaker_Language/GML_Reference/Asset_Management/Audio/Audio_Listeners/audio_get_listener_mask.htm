@@ -1,0 +1,127 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.5.2.0_10";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>audio_get_listener_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function audio_get_listener_mask">
+  <meta name="rh-index-keywords" content="audio_get_listener_mask">
+  <meta name="search-keywords" content="audio_get_listener_mask">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Listeners/audio_set_listener_mask.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Listeners/audio_get_listener_info.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="audio_get_listener_mask">
+        <span>audio_get_listener_mask</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">audio_get_listener_mask</span></h1>
+  <p>此函数将返回为音频监听器定义当前默认(全局)掩码的位掩码数据。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">audio_get_listener_mask</span>();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var g_mask = <span data-field="title" data-format="default">audio_get_listener_mask</span>();<br>
+    if g_mask != global.Audio_Mask<br>
+    {<br>
+    &nbsp; &nbsp; var num = audio_get_listener_count();<br>
+    &nbsp; &nbsp; global.Audio_Mask = 0;<br>
+    <br>
+    &nbsp; &nbsp; for(var i = 0; i &lt; num; ++i)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; var info = audio_get_listener_info(i);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; var m = audio_listener_get_data(info[? "mask"]);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; global.Audio_Mask = global.Audio_Mask | m;<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;ds_map_destroy(info);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp; &nbsp; audio_set_listener_mask(mask);<br>
+    }
+  </p>
+  <p>上面的代码获取当前监听器掩码数据，并将其与存储在全局变量中的数据进行比较。如果它们不相同，代码将检查可用监听器的数量，然后循环通过它们并获取它们的掩码位，然后将其组合以创建应用于音频系统以定义全局监听器的单个掩码。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Audio_Listeners.htm">音频监听器</a></div>
+        <div style="float:right">Next:&nbsp;<a href="audio_set_listener_mask.htm">audio_set_listener_mask</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_listener_mask
+-->
+  <!-- TAGS
+audio_get_listener_mask
+-->
+
+</body></html>

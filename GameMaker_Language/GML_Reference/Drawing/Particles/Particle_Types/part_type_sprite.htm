@@ -1,0 +1,157 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.6.10.2.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>part_type_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for part_type_sprite">
+  <meta name="rh-index-keywords" content="part_type_sprite">
+  <meta name="search-keywords" content="part_type_sprite">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_size.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_shape.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="part_type_sprite">
+        <span>part_type_sprite</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_sprite</h1>
+  <p>此函数可用于设置粒子类型以使用游戏资源中的自定义sprite。您可以选择精灵，然后告诉<span data-keyref="GameMaker Name">GameMaker</span>使用精灵并设置其动画或不设置其动画，如果选择动画，则还可以选择以一定的间隔更改子图像，以便动画在创建的每个粒子的生命周期的开始和结束时开始和结束(因此，如果将生命周期设置为最小15步和最大30步，则无论生命周期的值如何，都将使动画适合，并且在较短的生命周期内运行得更快，在较长的生命周期内运行得更慢)。也可以选择选择随机子图像，以便如果精灵未设置动画，则将随机选择不同的图像来创建精灵，或者如果粒子已设置动画，则将从随机点开始动画。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">part_type_sprite(ind, sprite, animate, stretch, random);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td><span data-keyref="Type_ID_PartType"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">Particle Type ID</a></span></td>
+        <td>要更改的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>要将粒子类型设置为的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>animate</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否正常跟随精灵的动画(true)或不跟随精灵的动画(false)。</td>
+      </tr>
+      <tr>
+        <td>stretch</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否拉伸精灵的动画以匹配粒子寿命(true)或不匹配(false)。</td>
+      </tr>
+      <tr>
+        <td>random</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否选择随机子图像(true)或不选择(false)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">global.p1 = part_type_create();<br>
+    part_type_sprite(global.p1 , spr_Coins, 1, 0, 0);<br>
+    part_type_size(global.p1, 1, 3, 0, 0);<br>
+    part_type_scale(global.p1, 1, 1);<br>
+    part_type_colour1(global.p1, c_white);<br>
+    part_type_alpha2(global.p1, 1, 0);<br>
+    part_type_speed(global.p1, 2, 4, 0, 0);<br>
+    part_type_direction(global.p1, 0, 180, 0, 0);<br>
+    part_type_gravity(global.p1, 0.20, 270);<br>
+    part_type_orientation(global.p1, 0, 0, 0, 0, 1);<br>
+    part_type_blend(global.p1, 1);<br>
+    part_type_life(global.p1, 15, 60);</p>
+  <p>上述代码将全局变量"p1"中索引的粒子类型设置为spr_Coins中索引的精灵的形状，然后设置各种其他粒子属性。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">Next: <a href="part_type_size.htm">part_type_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_sprite
+-->
+  <!-- TAGS
+part_type_sprite
+-->
+
+</body></html>

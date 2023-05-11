@@ -1,0 +1,114 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.1.2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HTML5</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that details the HTML5 Platform Preferences">
+  <meta name="rh-index-keywords" content="Prefs - HTML5">
+  <meta name="search-keywords" content="HTML5 Platform Preferences">
+<meta name="brsnext" value="Setting_Up_And_Version_Information/Platform_Preferences/GX_Games_Preferences.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/Platform_Preferences/Android.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="HTML5">
+        <span>HTML5</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1 id="h"><span data-field="title" data-format="default">HTML5</span> 首选项</h1>
+  <p>HTML5 首选项有以下选项：<img alt="HTML5 Preferences" class="center" src="../../assets/Images/Setup_And_Version/Platform_Preferences/HTML5_Prefs.png"></p>
+  <ul class="colour">
+    <li><strong>混淆</strong>：是否应在调试模式下对 HTML5 运行器代码进行混淆处理。</li>
+    <li><strong>美化打印</strong>：游戏代码是否需要美化打印(格式化)。</li>
+    <li><strong>删除未使用的函数</strong>：是否应从最终的 JavaScript 代码中删除未使用的函数(同时删除未使用的内置 GameMaker 函数和自定义 GML 函数)。</li>
+    <li><strong>详细</strong>：在为 HTML5 生成时启用或禁用输出日志中的详细日志记录。</li>
+    <li><strong>默认打包类型</strong>：在构建最终的 HTML5 可执行包时，您可以选择<strong>打包为松散文件</strong>-这将只是在文件夹中生成所有必需的文件-或者<strong>打包为 ZIP</strong>-将创建一个压缩的 <span class="inline">ZIP</span> 文件，其中将包含游戏和任何其他文件。默认情况下，您可以选择在编译时选择这两个选项中的哪一个，但您可以将此首选项设置为始终使用其中之一。请注意，当此选项设置为<em>显示对话框</em>时，在编译时弹出的实际对话框窗口中，选择"记住打包选项"会将此首选项设置为您选择的选项。</li>
+    <li><strong>默认 Web 服务器端口</strong>：这允许您更改 HTML5 Web 服务器的默认端口。默认值为 51264。</li>
+    <li><strong>默认 Web 服务器地址</strong>：您可以在此处更改 HTML5 Web 服务器的默认 Web 服务器地址。&nbsp;默认值为127.0.0.1。</li>
+    <li><strong>默认 Web 服务器允许的 IP</strong>：您可以在此处添加 Web 服务器的任何允许 IP，这些 IP 将被设置为通过目标管理器添加的所有设备的默认 IP。</li>
+    <li><strong>HTML5 Runner 路径</strong>：您可以在此处更改 HTML5 Runner 的路径，以使用自定义版本的 Runner。缺省值为&nbsp;<span class="inline2">${html5_runner_path}</span>，它指向通过 IDE 下载的 HTML5 运行器。</li>
+  </ul>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 使用特定目标设备(即浏览器)时，将使用为该特定设备设置的IP和端口值，而不使用这些首选项。检查<a href="../The_Device_Manager.htm#h">设备管理器</a>&nbsp;以查看您的设备列表及其详细信息。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Platform_Preferences.htm">Platform&nbsp;Preferences</a></div>
+        <div style="float:right">Next:&nbsp;<a href="GX_Games_Preferences.htm">GX.games</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+HTML5 Preferences
+-->
+  <!-- TAGS
+prefs_html5
+-->
+
+</body></html>

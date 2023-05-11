@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"起始页","type":"item","tilePath":"","description":"The GameMaker Start Page","url":"Introduction/The_Start_Page.htm"},{"name":"工作空间","type":"item","tilePath":"","description":"GameMaker Workspaces Overview","url":"Introduction/Workspaces.htm"},{"name":"资源浏览器","type":"item","tilePath":"","description":"GameMaker Asset Browser Overview","url":"Introduction/The_Asset_Browser.htm"},{"name":"编译","type":"item","tilePath":"","description":"Compiling Projects In GameMaker","url":"Introduction/Compiling.htm"},{"name":"调试","type":"item","tilePath":"","description":"Debugging Projects In GameMaker","url":"Introduction/Debugging.htm"},{"name":"输出窗口","type":"item","tilePath":"","description":"Debugging Projects In GameMaker","url":"Introduction/The_Output_Window.htm"},{"name":"我们的知识库","type":"item","tilePath":"","description":"Links and information on the YYG Knowledge Base","url":"Introduction/Our_Knowledge_Base.htm"},{"name":"我们的联系方式","type":"item","tilePath":"","description":"Links to social media accounts and the GMC","url":"Introduction/Our_Social_Links.htm"},{"name":"<del>市场(重制中)","type":"book","tilePath":"","description":"The GameMaker Marketplace","url":"Introduction/The_Marketplace.htm","key":"toc2"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

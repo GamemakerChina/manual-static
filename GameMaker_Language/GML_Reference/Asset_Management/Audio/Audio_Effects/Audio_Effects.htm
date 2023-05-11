@@ -1,0 +1,171 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.5.3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../../../../assets/css/default.css"><script src="../../../../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <title>Audio Effects</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../../../../assets/css/default.css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="template" content="../../../../../assets/masterpages/Manual_Page.htt">
+  <meta name="search-keywords" content="audio,effects">
+  <meta name="rh-index-keywords" content="audio,effects">
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="The overview page for audio effects">
+  <meta name="condition-tags" content="">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Audio Effects">
+        <span>Audio Effects</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1><span data-field="title" data-format="default">音效</span></h1>
+  <p>GameMaker提供了一系列音频效果，如混响、延迟、Bitcrusher等。</p>
+  <p>声音总是通过"总线"播放。GameMaker中的所有声音都通过其<a href="audio_bus_main.htm">主总线</a>播放。</p>
+  <p>效果应用于总线。GameMaker允许您：</p>
+  <ul class="colour">
+    <li>将效果应用于<a href="audio_bus_main.htm">主总线</a>，因此将效果应用于<em>所有声音</em></li>
+    <li>创建<a href="audio_bus_create.htm">自定义总线</a>并将效果应用于该总线<ul><li>自定义总线只能用于<a href="../Audio_Emitters/Audio_Emitters.htm">音频发射器</a><span><span></span></span></li></ul></li>
+  </ul>
+  <h2>设置音频效果</h2>
+  <h3>音频总线</h3>
+  <p>音频效果在"audio bus"上处理。</p>
+  <p>默认情况下，<span data-keyref="GameMaker Name">GameMaker</span>有一条音频总线，即主音频总线，您可以通过内置的<span class="inline2"><a href="audio_bus_main.htm">audio_bus_main</a></span>struct来访问它。</p>
+  <p>在<span data-keyref="GameMaker Name">GameMaker</span>中播放的所有音频都会在此音频总线上结束，无论是<a href="../audio_play_sound.htm">2D 音频</a>、<a href="../audio_play_sound_at.htm">3D 音频</a>还是<a href="../Audio_Emitters/audio_play_sound_on.htm">发射器音频</a>。 这称为<em>路由</em>到主总线的所有音频<em>。</em></p>
+  <p>您可以<a href="audio_bus_create.htm">创建自己的总线</a>，以对一些声音应用效果。所有自定义总线均路由至主总线，因此对主总线的参数和效果适用于所有其他总线。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>音频总线最多可以有8个效果分配给其<span class="inline2">效果</span>阵列。将槽设置为<span class="inline2">未定义</span>以移除效果。</p>
+  <h3>将效果添加到主总线</h3>
+  <p>将效果应用于所有音频的最快方法是将它们添加到主总线：</p>
+  <p class="code">var _ef_reverb = audio_effect_create(AudioEffectType.Reverb1);<br>
+    _ef_reverb.size = 0.6;<br>
+    _ef_reverb.mix = 0.5;<br>
+    audio_bus_main.effects[0] = _ef_reverb;</p>
+  <p>此操作首先创建新的音频效果类型<span class="inline2"><a href="AudioEffectType.htm#h">AudioEffectType.Reverb1</a></span>。 然后，通过直接设置返回的<a href="AudioEffect.htm">AudioEffect Struct</a>的成员来设置其参数。</p>
+  <p>混响效果的大小设置为0.6，混合值设置为0.5(从0-1可以听到多少效果，类似于<span class="inline3_func"><a href="../../../Maths_And_Numbers/Number_Functions/lerp.htm">lerp</a></span>)。</p>
+  <p>然后将效果分配给主音频总线的<span class="inline2">效果</span>阵列。将效果指定给阵列中的槽可以启用效果。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>因为效果是从分配的那一刻开始处理的，所以最好先设置效果的参数，然后再将效果分配给效果数组。这将确保不会发生从无效果到可听效果的过渡。</p>
+  <h3>绕过效果</h3>
+  <p>有时您可能想关闭单个效果或关闭总线上的所有效果。通过将效果或总线的<span class="inline2">旁路</span>设置为<span class="inline2">true</span>，可以执行此操作：</p>
+  <p class="code">// Bypassing an effect<br>
+    audio_bus_main.effects[0].bypass = true;</p>
+  <p class="code">// Bypassing all effects on a bus<br>
+    audio_bus_main.bypass = true;</p>
+  <p>将<span class="inline2">旁路</span>设置为<span class="inline2">真</span>意味着从总线或效果出来的与进入的相同，输入就是输出。</p>
+  <p>对于单个效果，这意味着跳过该效果，对于总线，这意味着跳过总线上的所有效果。</p>
+  <h3><span></span>将效果应用于音频发射器</h3>
+  <p>默认情况下，音频发射器直接输出到主总线，因此在发射器上播放的音频将在那里结束，并具有与所有其他音频相同的效果。</p>
+  <p>通过使用<a href="../Audio_Emitters/Audio_Emitters.htm">audio_bus_create</a>创建新的音频总线并使用<span class="inline3_func"><a href="audio_bus_create.htm">audio_emitter_bus</a></span>将其分配给发射器，可以向<span class="inline3_func">音频发射器<a href="../Audio_Emitters/audio_emitter_bus.htm">添加效果：</a></span></p>
+  <p class="code">emitter = audio_emitter_create(); // Emitter is created<br>
+    emitter_bus = audio_bus_create(); // Bus is created<br>
+    audio_emitter_bus(emitter, emitter_bus); // Emitter is assigned to bus</p>
+  <p>将发射器分配给总线将使发射器输出到该总线。可以将任意数量的发射器指定给总线。</p>
+  <p>使用<span class="inline3_func"><a href="audio_bus_create.htm">audio_bus_create</a></span>创建的总线上的任何音频输出仍然在<span data-keyref="GameMaker Name">GameMaker</span>的主音频总线上结束。</p>
+  <p>这意味着您可以将延迟效果应用于在发射器上播放的所有声音，并在主音频总线上应用混响效果。在发射器上播放的音频由分配给它的音频总线处理，因此它将与来自发射器总线的延迟效果和来自主总线的混响效果一起被听到。直接在主总线上播放的音频将<i>仅</i>应用混响效果。</p>
+  <p>To get the audio bus that is assigned to an emitter, use <span class="inline3_func"><a href="../Audio_Emitters/audio_emitter_get_bus.htm">audio_emitter_get_bus</a></span>.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>如前所述，音频只能在不同于主总线的总线上通过在发射器上播放来处理(使用<span class="inline3_func"><a href="../Audio_Emitters/audio_play_sound_on.htm">audio_play_sound_on</a></span>)。</p>
+  <h3>音效的多重赋值</h3>
+  <p>可以将&nbsp;<span class="inline3_func"><a href="audio_effect_create.htm">audio_effect_create</a></span> 返回的单个音频效果结构分配给多个效果槽 (在同一总线上或在不同的总线上)：&nbsp;</p>
+  <p class="code">ef_lpf&nbsp;= audio_effect_create(AudioEffectType.LPF2, {cutoff: 300, q: 1.5});<br>
+    <br>
+    bus_1.effects[0] = ef_lpf;<br>
+    bus_1.effects[4] = ef_lpf;<br>
+    bus_2.effects[0] = ef_lpf;
+  </p>
+  <p>对于这些赋值中的每一个，都会有一个新的效果被实例化。&nbsp;<em>您可以将其与</em>对象和实例<a href="../../../../../Quick_Start_Guide/Objects_And_Instances.htm">进行比较</a>。结构返回给<span class="inline3_func"><a href="audio_effect_create.htm">audio_effect_create</a></span>的一个"对象"，并且每个赋值都会创建它的一个新的"实例"。"实例"是指为其分配的效果槽实际处理音频的对象。每个效果槽都有自己的效果"实例"。</p>
+  <p>当您对此处的 <span class="inline2">ef_lpf</span> 结构的任何变量进行更改时，效果的参数将在 <span class="inline2">bus_1.effects[0]</span>、<span class="inline2">bus_1.effects[4]</span> 和 <span class="inline2">bus_2.effects[0]</span> 上相应地更改。</p>
+  <h2>平台限制</h2>
+  <p>当以 <strong>HTML5</strong> 为目标时，音频总线和特效功能在以下情况下将受到限制：</p>
+  <ul class="Disc">
+    <li>这款游戏<strong>在 iOS Safari 上运行</strong>(由于 WebKit 中的一个重大错误)。</li>
+    <li>游戏<strong>在不安全的环境中运行</strong>(其中音频工作区不可用)。这方面的一个例子是使用您的手机访问同一网络上本地托管的游戏。</li>
+  </ul>
+  <p>在这些情况下，仍然可以使用音频总线和效果函数、枚举和结构，而不会产生 GML 错误，但它们<strong>大多不会有声音效果</strong>(音频总线增益和总线布线除外)。</p>
+  <h2>代码参考</h2>
+  <div class="seealso" style="">
+    <p class="seealso-caption" style=""></p>
+    <ol class="seealso-list" data-keywords="" style="">
+      
+    <li><a href="audio_bus_create.htm" class="seealso-list-item" style="">audio_bus_create</a></li><li><a href="audio_bus_main.htm" class="seealso-list-item" style="">audio_bus_main</a></li><li><a href="audio_effect_create.htm" class="seealso-list-item" style="">audio_effect_create</a></li><li><a href="../Audio_Emitters/audio_emitter_bus.htm" class="seealso-list-item" style="">audio_emitter_bus</a></li><li><a href="../Audio_Emitters/audio_emitter_get_bus.htm" class="seealso-list-item" style="">audio_emitter_get_bus</a></li><li><a href="AudioBus.htm" class="seealso-list-item" style="">AudioBus 结构</a></li><li><a href="AudioEffect.htm" class="seealso-list-item" style="">AudioEffect 结构</a></li><li><a href="AudioEffectType.htm" class="seealso-list-item" style="">AudioEffectType 枚举</a></li><li><a href="audio_bus_get_emitters.htm" class="seealso-list-item" style="">audio_bus_get_emitters</a></li><li><a href="AudioLFOType.htm" class="seealso-list-item" style="">AudioLFOType 枚举</a></li><li><a href="audio_bus_clear_emitters.htm" class="seealso-list-item" style="">audio_bus_clear_emitters</a></li></ol>
+  </div>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="../Audio.htm">音频</a></div>
+        <div>Next:&nbsp;<a href="../Audio_Groups/Audio_Groups.htm">音频组</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+</body></html>

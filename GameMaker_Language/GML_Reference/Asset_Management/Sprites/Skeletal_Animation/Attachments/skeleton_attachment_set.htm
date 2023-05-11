@@ -1,0 +1,135 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../../..";
+    gCommonRootRelPath = "../../../../../..";
+    gTopicId = "8.2.2.3.3.4.3.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>skeleton_attachment_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function skeleton_attachment_set">
+  <meta name="rh-index-keywords" content="skeleton_attachment_set">
+  <meta name="search-keywords" content="skeleton_attachment_set">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Attachments/skeleton_attachment_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Attachments/skeleton_attachment_get.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="skeleton_attachment_set">
+        <span>skeleton_attachment_set</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">skeleton_attachment_set</span></h1>
+  <p>骨骼动画精灵可以将其他图像添加为附件，这些图像将添加到命名槽(在动画程序中创建附件槽时给出名称)，并且它们将与当前精灵的动画一起绘制。使用此函数，您可以将附件设置为给定的插槽，其中您需要给出插槽和附件的名称(作为字符串)。这些名称由所使用的动画程序定义，或者(对于附件)在调用<a href="skeleton_attachment_create.htm"><span class="inline">skeleton_attachment_create()</span></a>时定义。</p>
+  <p>请注意，您还可以将<span class="inline">sprite_index</span>作为附件传入，并且将使用该精灵，或者您可以使用-1从插槽中删除附件。当您将sprite索引作为参数传入时，它将创建一个使用sprite名称作为字符串来命名插槽的附件插槽(例如，使用<span class="inline">SPR_SWORD</span>将创建一个" SPR_SWORD "的附件插槽)，并且该插槽将使用精灵的第一个图像索引(0)及其X和Y原点偏移。比例为(1，1)，旋转为0。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">skeleton_attachment_set(slot, attachment);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>slot</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要获取其附件的插槽名称(字符串)。</td>
+      </tr>
+      <tr>
+        <td>attachment</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>附件图像的名称(作为字符串或sprite_索引)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if skeleton_attachment_get("slot_leftHand") == ""<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;skeleton_attachment_set("slot_leftHand", choose("sword", "spear", "knife"));<br>
+    }</p>
+  <p>上面的代码将检查当前为名为"slot_leftHand "的插槽分配的附件名称，如果返回空字符串，则附加新的精灵。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Attachments.htm">附件</a></div>
+        <div style="float:right">Next:&nbsp;<a href="skeleton_attachment_exists.htm">skeleton_attachment_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_attachment_set
+-->
+  <!-- TAGS
+skeleton_attachment_set
+-->
+
+</body></html>

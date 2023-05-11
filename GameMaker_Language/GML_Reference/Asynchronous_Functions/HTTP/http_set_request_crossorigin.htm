@@ -1,0 +1,132 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.14.1.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>http_set_request_crossorigin</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for http_set_request_crossorigin">
+  <meta name="rh-index-keywords" content="http_set_request_crossorigin">
+  <meta name="search-keywords" content="http_set_request_crossorigin">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/Dialog/Dialog.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_get_request_crossorigin.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="http_set_request_crossorigin">
+        <span>http_set_request_crossorigin</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>http_set_request_crossorigin</h1>
+  <p>通过该函数，您可以设置从文件加载图片时使用的跨域类型 (使用 <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm"><span class="inline">sprite_add()</span></a>)，或者向服务器发送自定义的 HTTP 请求 (例如使用 <a href="http_post_string.htm"><span class="inline">http_post_string()</span></a>)。该函数仅适用于 HTML5 平台。</p>
+  <p>当设置为 <span class="inline2">"use-credentials"</span> 时，您不再需要给出要加载的精灵的绝对路径，而是给出一个 <i> 相对路径 (如下例所示)。</i></p>
+  <p>默认情况下跨域类型设置为 <span class="inline2">"anonymous"</span>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">http_set_request_crossorigin(origin_type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>origin_type</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要使用的跨域类型(字符串)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if string_lower(http_get_request_crossorigin()) != "use-credentials"<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;http_set_request_crossorigin("use-credentials");<br>
+    }<br>
+    sprite_add("sprites/player_outfit_1.png", 0, false, false, 0, 0);</p>
+  <p>上面的代码将首先检查当前设置的跨域类型，如果它不是“use-credentials(使用凭据)”，那么它被设置为“use-credentials”，然后从文件中添加一个精灵。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="HTTP.htm">HTTP</a></div>
+        <div style="float:right">Next:&nbsp;<a href="http_request.htm">http_request</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_set_request_crossorigin
+-->
+  <!-- TAGS
+http_set_request_crossorigin
+-->
+
+</body></html>

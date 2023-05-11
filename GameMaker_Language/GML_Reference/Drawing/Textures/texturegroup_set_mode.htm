@@ -1,0 +1,146 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.11.0_19";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>texturegroup_set_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Reference page for function texturegroup_set_mode">
+  <meta name="rh-index-keywords" content="texturegroup_set_mode">
+  <meta name="search-keywords" content="texturegroup_set_mode">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Textures/texturegroup_get_status.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Textures/texturegroup_unload.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="texturegroup_set_mode">
+        <span>texturegroup_set_mode</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">texturegroup_set_mode</span></h1>
+  <p>此函数允许您设置三件事：</p>
+  <ol class="Decimal">
+    <li><strong>模式</strong>：您可以设置动态纹理组是使用<strong>隐式</strong>(默认值)还是<strong>显式</strong>加载，方法是：对隐式使用<span class="inline2">假</span>，对显式使用<span class="inline2">真</span>。<br><br>有关模式的信息，请参阅：<a href="../../../../Settings/Texture_Information/Dynamic_Textures.htm#h1">动态组模式</a></li>
+    <li><strong>调试</strong>：您可以启用调试，这将显示游戏中的所有纹理页面以及游戏中的<a href="texturegroup_get_status.htm">状态</a>。<br><img class="center" src="../../../../assets/Images/Settings/Texture_Groups_Debug_Info.png" style="cursor: nwse-resize;"></li>
+    <li><strong>默认Sprite</strong>：当模式设置为"显式"，并且要绘制的纹理尚未加载时，将显示默认sprite。<br><br>有关详细信息，请参阅：<a href="../../../../Settings/Texture_Information/Dynamic_Textures.htm#h2">显式</a></li>
+  </ol>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">texturegroup_set_mode(explicit, [debug=false, default_sprite=-1]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>explicit</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>用于动态纹理组的模式：隐式(<span class="inline2">false</span>)或显式(<span class="inline2">true</span>)</td>
+      </tr>
+      <tr>
+        <td>debug</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>启用/禁用纹理组调试</td>
+      </tr>
+      <tr>
+        <td>default_sprite</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>仅在显式模式下使用：未加载另一个纹理时用作"回退"纹理的精灵(绘制整个纹理页面)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">texturegroup_set_mode(true, false, spr_fallback);</p>
+  <p>这将启用"显式"模式，禁用调试，并将<span class="inline2">spr_fallback</span>设置为卸载纹理的回退子程序。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Textures.htm">纹理</a></div>
+        <div>Next:&nbsp;<a href="texturegroup_get_status.htm">texturegroup_get_status</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+texturegroup_set_mode
+-->
+  <!-- TAGS
+texturegroup_set_mode
+-->
+
+</body></html>

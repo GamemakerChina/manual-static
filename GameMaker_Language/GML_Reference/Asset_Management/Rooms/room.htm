@@ -1,0 +1,115 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.14.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>room</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function room">
+  <meta name="rh-index-keywords" content="room">
+  <meta name="search-keywords" content="room">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/room_speed.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/room_previous.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="room">
+        <span>room</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room</h1>
+  <p>此变量保存游戏正在运行的当前房间的房间索引。这<i>不是</i>只读变量，但更改此变量不会更改当前房间的索引值，而是更改房间以匹配已设置该变量的索引。执行此操作时应小心，因为如果将变量更改为无效的索引，游戏将抛出错误并关闭。一般来说，使用<a href="room_goto.htm"><span class="inline">room_goto()</span></a>更改房间是更好的做法。</p>
+  <p class="note"><strong>注意</strong>：房间ID不基于其在资源浏览器或房间管理器中的顺序，因此应避免直接提供数值。相反，对于要引用的资源(只是其名称)，请使用房间<a class="tooltip" title="常量是一个术语，用于描述在程序执行期间不会更改的命名值。 GameMaker Studio 2具有许多内置常量（例如os_windows），但您也可以创建自己的常量值以用于项目（称为宏）和扩展。">常量</a>或通过函数检索它。</p>
+  <h4>语法:</h4>
+  <p class="code">room;</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if (room == rm_level1)<br>
+    {<br>
+    &nbsp; &nbsp; audio_play_sound(snd_level1, 1, 1);<br>
+    }</p>
+  <p>上面的代码将检查当前房间是否是第一层，并在这种情况下播放该层的音乐。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Rooms.htm">房间</a></div>
+        <div style="float:right">Next:&nbsp;<a href="room_speed.htm">room_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+room
+-->
+  <!-- TAGS
+room
+-->
+
+</body></html>

@@ -1,0 +1,163 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.3.2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>sprite_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function sprite_add">
+  <meta name="rh-index-keywords" content="sprite_add">
+  <meta name="search-keywords" content="sprite_add">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_replace.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_exists.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="sprite_add">
+        <span>sprite_add</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_add</h1>
+  <p>使用此函数，您可以将图像添加为精灵，从外部源加载它，其中要加载的图像文件应<b>始终</b>在 <span class="inline">*.png</span> 中，<span class="inline">*.gif</span>，<span class="inline">*.jpg/jpeg</span> 或 <span class="inline">*.json</span> 格式(<span class="inline">*.json</span> 文件用于加载使用spine制作的<a href="../Skeletal_Animation/Skeletal_Animation.htm">骨骼动画精灵</a>)。该函数返回新的精灵索引，然后必须在与该sprite相关的所有其他代码中使用该索引。如果您将此函数与 HTML5 一起使用，或者从 URL 获取图像，则此函数还将生成一个 <b>image loaded</b> 异步事件。有关详细信息，请参阅<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">本页</a>。</p>
+  <p>要转换为动画精灵的所有图像-<span class="inline">*.gif</span>除外。(见下图)-应具有<a href="../../../../../The_Asset_Editors/Sprite_Properties/Sprite_Strips.htm">条带</a>格式(见下图)，并将按照规则 <b>精灵宽度=条带宽度/子图像</b> 将其拆分为指定数量的子图像。</p>
+  <p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png"></p>
+  <p>正如您在上图中所看到的，精灵被放置在深紫色的背景上，这可以通过将“ removeBack ”参数设置为<span class="inline">true</span>来删除。它的工作原理是检查精灵的<i>左下角</i>像素的颜色，然后将其用作要删除的颜色。例如，在上面的图像中，如果我们将左下角的像素颜色设置为绿色，则精灵的所有绿色部分都将被删除，而紫色背景的其余部分将被忽略。</p>
+  <p>当启用 "removeback" 时，源图像的 Alpha 通道被忽略，这意味着除 " 背景色 " 之外的所有像素都变得完全不透明。</p>
+  <p>如果您选择“ RemoveBack ”选项，您可能还希望<span data-keyref="GameMaker Name">GameMaker</span>通过将“ Smooth ”参数设置为<span class="inline">true</span>来平滑精灵的边缘。所有这些都是在精灵的背景被移除后，在精灵的边缘周围创建一个半透明的边界。</p>
+  <p>最后，您还可以指定精灵的X和Y<i>原点</i>。这是精灵被“固定”到使用它的实例上的点，并且总是相对于一个精灵子图像的左上角0，0来计算。因此，例如，将这些值设置为(16，16)的32 X 32像素的精灵将使其原点位于中心。</p>
+  <p>如果您正在添加一个<span class="inline">*.GIF</span>格式图像，则只需指定文件名和图像编号(第一帧的图像编号应为1)，并且可以将所有其他参数保留为0，注意<b>只会加载GIF的第一个图像</b>。对于<span class="inline">*.JSON</span>精灵，图像编号应为1，并且“ RemoveBack ”和“ Smooth ”设置将被忽略。</p>
+  <p>默认情况下，所有新的精灵都会自动计算其边界框(确切的边界框将取决于精灵的大小和透明度)，但是您可能希望对此进行自定义，在这种情况下，您还应该使用函数<a href="sprite_collision_mask.htm"><span class="inline">sprite_collision_mask()</span></a>。</p>
+  <p>需要注意的是，以这种方式添加精灵时所使用的内存将比您预期的要大。这是因为<span data-keyref="GameMaker Name">GameMaker</span>会将精灵存储为纹理页<i>，并且</i>它还会存储在GPU内存中，因此总内存将大于相同精灵的图像文件的预期内存。</p>
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span></b> 当你把一个精灵加载到 <span data-keyref="GameMaker Name">GameMaker</span> 中时，你必须记住在不再需要的时候再次移除它 (用 <a href="sprite_delete.htm"><span class="inline">sprite_delete()</span></a>)，否则会有内存泄漏的风险，这会减慢你的游戏速度，最终导致游戏崩溃。</p>
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span></b>：在 <b>iOS</b> 上，如果您要从文件夹加载包含的文件，即：路径类似于 "<span style="font-size:1px;"><span class="inline">Backgrounds/background1.png</span></span>"，则不需要将该文件夹作为路径的一部分，只需提供文件名即可。在所有其他平台上，您必须将文件夹作为文件路径的一部分提供。</p>
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span></b>：在 <b>HTML5</b> 上，如果您从安全服务器加载精灵，则可能需要设置跨域类型，并使用相对路径而不是绝对路径。更多详细信息请参阅 <span style="font-size:1px;"><a href="../../../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm"><span class="inline">http_set_request_crossorigin()</span></a></span>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">sprite_add(fname, imgnumb, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要添加的文件的名称(字符串文件路径)。</td>
+      </tr>
+      <tr>
+        <td>imgnum</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>用于指示子图像的数量(1表示单个图像或<span class="inline">*.GIF</span>)。</td>
+      </tr>
+      <tr>
+        <td>removeback</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>指示是否将具有背景色的所有像素(左下像素)设置为透明。</td>
+      </tr>
+      <tr>
+        <td>smooth</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>指示透明时是否平滑边缘。</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>指示原点在精灵中的X位置。</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>指示原点在精灵中的Y位置。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">spr = sprite_add("player_5.png", 16, true, true, 0, 0);</p>
+  <p>上面的代码将sprite加载到游戏中，并将其索引存储在变量“ SPR ”中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sprite_Manipulation.htm">精灵操作</a></div>
+        <div style="float:right">Next:&nbsp;<a href="sprite_replace.htm">sprite_replace</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_add
+-->
+  <!-- TAGS
+sprite_add
+-->
+
+</body></html>

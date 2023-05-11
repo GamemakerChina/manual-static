@@ -1,0 +1,192 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.13.4.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>physics_joint_pulley_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for physics_joint_pulley_create">
+  <meta name="rh-index-keywords" content="physics_joint_pulley_create">
+  <meta name="search-keywords" content="physics_joint_pulley_create">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Physics/Joints/physics_joint_gear_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/Joints/physics_joint_prismatic_create.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="physics_joint_pulley_create">
+        <span>physics_joint_pulley_create</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_pulley_create</h1>
+  <p>滑轮关节是用来连接物理世界中的两个实例的，其方式是移动一个实例将直接影响另一个实例的运动。这些关节首先锚定在世界空间的两个点上，每个点都与一个实例的质心相连。这可以通过设置相对于实例原点的局部锚点 x/y 坐标来改变，也就是说，从实例到物理世界锚点的实际连接可以偏移到原点以外的地方。下面的图片说明了这一点。</p>
+  <p><img alt="Pulley joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/pulley_joint_image.png">如果您查看 inst2，可以看到其本地锚点已偏移 20 像素到其原点的 " 左侧 "( 请记住！使用房间坐标定义世界定位点，而相对于实例的原点定义局部定位点)。也可以为滑轮关节指定一个比率，该比率指示一侧或另一侧移动得更快，值小于 1 会使第一个实例移动得更快 (例如，0.5 会使其移动得快一倍)，值大于 1 会使第二个实例移动得更快 (例如，2 会使其移动得快一倍)。</p>
+  <p>与所有关节一样，如果将 "col" 值设置为 <span class="inline">true</span>，则两个实例可以相互作用并发生碰撞，但是如果它们发生碰撞事件，则<i>只能</i>发生碰撞，但是如果设置为 <span class="inline">false</span>，则无论发生什么情况，它们都不会发生碰撞。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">physics_joint_pulley_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, l_anchor1_x, l_anchor1_y, l_anchor2_x, l_anchor2_y, ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></td>
+        <td>与关节连接的第一个实例</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></td>
+        <td>与关节连接的第二个实例</td>
+      </tr>
+      <tr>
+        <td>w_anchor1_x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>游戏世界中关节第一部分定位的 X 坐标</td>
+      </tr>
+      <tr>
+        <td>w_anchor1_y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>游戏世界中关节第一部分定位的 Y 坐标</td>
+      </tr>
+      <tr>
+        <td>w_anchor2_x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>游戏世界中关节第二部分定位的 X 坐标</td>
+      </tr>
+      <tr>
+        <td>w_anchor2_y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>游戏世界中关节第二部分定位的 Y 坐标</td>
+      </tr>
+      <tr>
+        <td>l_anchor1_x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>关节 1 定位到第一个实例的局部 X 坐标</td>
+      </tr>
+      <tr>
+        <td>l_anchor1_y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>关节 1 定位到第一个实例的局部 Y 坐标</td>
+      </tr>
+      <tr>
+        <td>l_anchor2_x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>关节 2 定位到第二个实例的局部 X 坐标</td>
+      </tr>
+      <tr>
+        <td>l_anchor2_y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>关节 2 定位到第二个实例的局部 Y 坐标</td>
+      </tr>
+      <tr>
+        <td>ratio</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>设置两个实例之间的速度比率</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>这两个实例是否可以碰撞 (true) 或不碰撞 (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_ID_Physics_Joint"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Physics/Joints/Joints.htm">Physics Joint ID</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var t_fix, inst1, inst2;<br>
+    t_fix = physics_fixture_create();<br>
+    physics_fixture_set_circle_shape(t_fix, 20);<br>
+    inst1 = instance_create_layer(150, room_height - 90, "Instances", obj_Block);<br>
+    inst2 = instance_create_layer(300, room_height - 90, "Instances", obj_block);<br>
+    physics_fixture_bind(t_fix, inst1);<br>
+    physics_fixture_bind(t_fix, inst2);<br>
+    physics_joint_pulley_create(inst1, inst2, 150, room_height - 140, 300, room_height - 140, 0, 0, 0, 0, 2, 0);<br>
+    physics_fixture_delete(t_fix);</p>
+  <p>上述代码创建并定义了一个新的装置，创建了两个 "obj_Block" 实例，然后将此装置绑定为两个。然后，它继续在这些实例之间定义一个滑轮关节，关节没有偏移，比率为 2:1( 意味着 inst2 将移动得更快)。滑轮中的两个实例之间不会发生碰撞。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Joints.htm">关节</a></div>
+        <div style="float:right">Next:&nbsp;<a href="physics_joint_gear_create.htm">physics_joint_gear_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_pulley_create
+-->
+  <!-- TAGS
+physics_joint_pulley_create
+-->
+
+</body></html>

@@ -1,0 +1,144 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.11.3.0_17";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>point_direction</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for point_direction">
+  <meta name="rh-index-keywords" content="point_direction">
+  <meta name="search-keywords" content="point_direction">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/point_distance.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/radtodeg.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="point_direction">
+        <span>point_direction</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>point_direction</h1>
+  <p>这个函数返回由指定的组件[x1,y1]和[x2,y2]组成的向量的方向，该向量与房间的固定x/y坐标有关。例如，在下图中，如果我们想要获得从玩家舰船位置到敌人位置的方向，这样我们就可以向敌人发射导弹，那么我们就可以使用这个函数(确切代码见下图示例):</p>
+  <p><img alt="Point direction example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/point_direction.png"></p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">point_direction(x1, y1, x2, y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>x1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>矢量第一个分量的 x 坐标</td>
+     </tr>
+      <tr>
+        <td>y1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>矢量第一个分量的 y 坐标</td>
+     </tr>
+      <tr>
+        <td>x2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>矢量的第二个分量的 x 坐标</td>
+     </tr>
+      <tr>
+        <td>y2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>矢量的第二个分量的 y 坐标</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var ex, ey;<br>
+    ex = instance_nearest(x, y, enemy).x;<br>
+    ey = instance_nearest(x, y, enemy).y;<br>
+    with (instance_create_layer(x, y, "Bullets", obj_Missile))<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;direction = point_direction(x, y, ex, ey);<br>
+    }</p>
+  <p>上面的代码将获取最近敌人的x和y坐标，然后将它们传递给一个子弹对象，以便在point_direction函数中使用，以正确设置其移动方向。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Angles_And_Distance.htm">角度和距离</a></div>
+        <div style="float:right">Next:&nbsp;<a href="point_distance.htm">point_distance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+point_direction
+-->
+  <!-- TAGS
+point_direction
+-->
+
+</body></html>

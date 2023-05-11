@@ -1,0 +1,136 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.17.1.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>file_find_close</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for file_find_close">
+  <meta name="rh-index-keywords" content="file_find_close">
+  <meta name="search-keywords" content="file_find_close">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/File_Handling/File_System/file_attributes.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/File_Handling/File_System/file_find_next.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="file_find_close">
+        <span>file_find_close</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_find_close</h1>
+  <p>该函数必须在处理使用 <a href="file_find_first.htm"><span class="inline">file_find_first()</span></a> 和 <a href="file_find_next.htm"><span class="inline">file_find_next()</span></a> 函数打开的文件后调用，以释放内存。<br>
+文件查找函数打开文件目录中的句柄，这些句柄只占用最小的内存量，随着时间的推移，这些句柄会增加。<br>
+因此，您应该总是在找到所需的文件后调用此函数来“关闭”这些句柄。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">file_find_close();</p>
+  <p>&nbsp;</p>
+  <h4>返回</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if directory_exists("\User Content")<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;fileA = file_find_first("/User Content/*.doc", fa_readonly);<br>
+    &nbsp; &nbsp; fileB = file_find_next();<br>
+    &nbsp; &nbsp; fileC = file_find_next();<br>
+    &nbsp; &nbsp; file_find_close();<br>
+    }</p>
+  <p>这段代码检查指定的目录是否存在，如果存在 &amp; nbsp; 则返回找到的第一个“只读”<span class="inline">.doc</span> 文件。然后查找另外两个文件并关闭文件查找器。</p>
+  <p>你可以使用 <a href="../../../GML_Overview/Language_Features/while.htm">while</a>&nbsp; 循环查找任意数量的文件:</p>
+  <p class="code">var files = [];<br>
+    var file_name = file_find_first("/User Content/*.doc", fa_readonly);<br>
+    <br>
+    while (file_name != "")<br>
+    {<br>
+    &nbsp; &nbsp; array_push(files, file_name);<br>
+    <br>
+    &nbsp; &nbsp; file_name = file_find_next();<br>
+    }<br>
+    <br>
+    file_find_close();
+  </p>
+  <p>上面的代码创建一个空数组来存储找到的所有文件名，并开始查找只读的.doc文件。<br>
+如果该文件名不是空字符串，则将其推入files数组，然后尝试查找下一个文件。<br>
+循环将继续重复，直到找到一个空字符串(意味着没有更多匹配的文件)，这时循环结束并在结束时关闭文件查找器。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="File_System.htm">文件系统</a></div>
+        <div style="float:right">Next: <a href="file_attributes.htm">file_attributes</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_find_close
+-->
+  <!-- TAGS
+file_find_close
+-->
+
+</body></html>

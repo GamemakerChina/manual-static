@@ -1,0 +1,225 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.4.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>tileset_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="tileset_get_info">
+  <meta name="search-keywords" content="tileset_get_info">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="tileset_get_info">
+        <span>tileset_get_info</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">tileset_get_info</span></h1>
+  <p>此函数返回一个包含有关图块集信息的<a href="../../../GML_Overview/Structs.htm#struct">结构</a>。</p>
+  <p>返回的结构包含以下变量：&nbsp;</p>
+  <table>
+    <caption><span data-keyref="Type_Struct_TileSet_Info"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Tilsets/tileset_get_info.htm">图块集信息结构</a></span></caption>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量名</th>
+        <th style="">数据类型</th>
+        <th style="">描述</th>
+      </tr>
+      <tr>
+        <td>width</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">整个图块集纹理的宽度(像素)</td>
+      </tr>
+      <tr>
+        <td>height</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">整个图块集纹理的高度(像素)</td>
+      </tr>
+      <tr>
+        <td>texture</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">纹理 ID</td>
+      </tr>
+      <tr>
+        <td>tile_width</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">单个图块的宽度(以像素为单位)</td>
+      </tr>
+      <tr>
+        <td>tile_height</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">单个图块的高度(以像素为单位)</td>
+      </tr>
+      <tr>
+        <td>tile_horizontal_separator</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">每个图块每一面的水平像素数 (使两个图块之间的间距为 <span class="inline2">2 * tile_horizontal_separator</span>)</td>
+      </tr>
+      <tr>
+        <td>tile_vertical_separator</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">每个图块每一面的垂直像素数 (使两个图块之间的间距为 <span class="inline2">2 * tile_vertical_separator</span>)</td>
+      </tr>
+      <tr>
+        <td>tile_columns</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">图块集每行上的列数</td>
+      </tr>
+      <tr>
+        <td>tile_count</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">图块数量</td>
+      </tr>
+      <tr>
+        <td>frame_count</td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">每个动画的动画帧数</td>
+      </tr>
+      <tr>
+        <td>frame_length_ms</td>
+        <td style=""><span data-keyref="Type_Real_int64"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">int64 (signed 64-bit integer)</a></span></td>
+        <td style="">帧动画的毫秒数</td>
+      </tr>
+      <tr>
+        <td>frames</td>
+        <td style=""><span data-keyref="Type_Struct"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span></td>
+        <td style="">包含所有动画帧的结构。每个图块编号在结构中都有一个键，每个条目都是要使用的帧的数组 (每个数组的长度应该是 <span class="inline2">frame_count</span>)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">tileset_get_info</span>(index);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>index</td>
+        <td><span data-keyref="Type_Asset_Tile_Set"><a target="_blank" href="../../../../../The_Asset_Editors/Tile_Sets.htm">Tile Set Asset</a></span></td>
+        <td>要从中获取信息的图块集</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Struct_TileSet_Info"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Tilsets/tileset_get_info.htm">图块集信息结构</a></span>&nbsp;(in case of a valid&nbsp;<span data-keyref="Type_Asset_Tile_Set"><a target="_blank" href="../../../../../The_Asset_Editors/Tile_Sets.htm">Tile Set Asset</a></span>) or&nbsp;<span data-keyref="Type_Undefined"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">undefined</a></span>&nbsp;(no valid tile set given)</p>
+  <p>&nbsp;</p>
+  <h4>示例1：显示输出</h4>
+  <p class="code">var _info =&nbsp;<span data-field="title" data-format="default">tileset_get_info</span>(ts_Forest);<br>
+    show_debug_message(_info);</p>
+  <p>上面的代码调用 <span class="inline2"><span data-field="title" data-format="default">tileset_get_info</span></span> 以获取有关现有图块集 <span class="inline2">ts_Forest</span> 的信息，并将结果存储在临时变量 <span class="inline2">_info</span> 中。然后，该信息将显示在调试消息中。</p>
+  <p>&nbsp;</p>
+  <h4>示例2：查找拼贴的左上角位置</h4>
+  <p class="code">// tnumber is the number of the tile that you want to find<br>
+    var _tnumber = 7;<br>
+    var _ts_info = <span data-field="title" data-format="default">tileset_get_info</span>(ts_Forest);<br>
+    if is_undefined(_ts_info) == false<br>
+    {<br>
+    &nbsp; &nbsp; var _twidth = _ts_info.tile_width + 2 * _ts_info.tile_horizontal_separator;<br>
+    &nbsp; &nbsp; var _theight = _ts_info.tile_height + 2 * _ts_info.tile_vertical_separator;<br>
+    &nbsp; &nbsp; var _tile_x = (_tnumber mod _ts_info.tile_columns) * _twidth;<br>
+    &nbsp; &nbsp;&nbsp;var _tile_y = (_tnumber div _ts_info.tile_columns) * _theight;<br>
+    &nbsp; &nbsp; show_debug_message("The top-left coordinates of tile index {0} are: ({1}, {2})", _tnumber, _tile_x, _tile_y);<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp; &nbsp; show_debug_message("No valid tile set was provided to the function");<br>
+    }</p>
+  <p>上面的代码查找给定图块索引的左上角的坐标。首先，图块的索引被定义并存储在临时变量 <span class="inline2">_tnumber</span> 中。然后 <span class="inline2"><span data-field="title" data-format="default">tileset_get_info</span></span> 在现有磁贴集 <span class="inline2">ts_Forest</span> 上调用并且返回的结构存储在 <span class="inline2">_ts_info</span> 中。接下来，if 语句检查变量是否包含有效的结构(否则在接下来的步骤中访问变量将抛出错误)<br> 如果包含，则会计算一些变量。<span class="inline2">_twidth</span> 和 <span class="inline2">_theight</span> 是图块集上的图块的总宽度和高度，包括两侧的边框(<span class="inline2">_ts_info.tile_horizontal_separator</span> 和 <span class="inline2">_ts_info.tile_vertical_separator</span><br><span class="inline2">_tile_x</span> 是图块索引的剩余部分除以列数和 <span class="inline2">_tile_y</span> 是 <span class="inline2">_ts_info.tile_columns</span> 适应图块索引的次数。之后，将显示带有左上角坐标的调试消息(尚未包括分隔符偏移)<br> 如果向函数提供了无效的图块集，则会显示不同的调试消息。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Tile_Sets.htm">图块集</a></div>
+        <div>Next:&nbsp;<a href="tileset_get_name.htm">tileset_get_name</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+tileset_get_info
+-->
+  <!-- TAGS
+tileset_get_info
+-->
+
+</body></html>

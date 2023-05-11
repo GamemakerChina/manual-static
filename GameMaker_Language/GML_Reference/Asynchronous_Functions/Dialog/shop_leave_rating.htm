@@ -1,0 +1,151 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.14.2.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>shop_leave_rating</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for shop_leave_rating">
+  <meta name="rh-index-keywords" content="shop_leave_rating">
+  <meta name="search-keywords" content="shop_leave_rating">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/Cloud_Saving/Cloud_Saving.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/Dialog/show_question_async.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="shop_leave_rating">
+        <span>shop_leave_rating</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>shop_leave_rating</h1>
+  <p>此函数会打开一个依赖于操作系统的对话框，您可以在其中要求用户对特定页面发表评级或评论。 您可以定义要出现在对话框中的文本，以及您希望出现在两个按钮上的文本和必须发布评论的 URL。</p>
+  <p class="note"><b>注意</b>：此函数仅适用于 Android 和 iOS 目标。</p>
+  <p class="note"><b>重要！</b>在 <b>iOS</b> 上，当使用 TestFlight 时，在开发过程中会显示提示，但您实际上无法执行任何操作。 一旦您的应用程序出现在 App Store 中，此按钮就会变为活动状态，用户可以选择撰写评论或留下评分。 请注意，如果您通过 TestFlight 分发游戏，则此窗口甚至可能不会显示。</p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">shop_leave_rating(text, yes_string, no_string, url)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>text</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>显示在对话框上的文本。</td>
+      </tr>
+      <tr>
+        <td>yes_string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>出现在“是”按钮上的文本。</td>
+      </tr>
+      <tr>
+        <td>no_string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>出现在“否”按钮上的文本。</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>必须发送评论的完整 URL。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if timer &lt;= 0<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;shop_leave_rating("Thanks for playing the game! Why not leave a comment?", "Okay!", "Not Today!", "http://MacSweeney/comments");<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;timer = 10000000;<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;timer -= 1;<br>
+    }</p>
+  <p>如果变量“timer”倒计时到 0，上面的代码将要求用户发表评论。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Dialog.htm">对话框</a></div>
+        <div style="float:right">Next:&nbsp;<a href="get_login_async.htm">get_login_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+shop_leave_rating
+-->
+  <!-- TAGS
+shop_leave_rating
+-->
+
+</body></html>

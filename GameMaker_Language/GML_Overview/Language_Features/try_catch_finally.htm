@@ -1,0 +1,186 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.1.3.0_12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>try / catch / finally</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the try / catch / finally functions">
+  <meta name="rh-index-keywords" content="try,catch,finally">
+  <meta name="search-keywords" content="try,catch,finally">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Language_Features/throw.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Language_Features/begin_end.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="try / catch / finally">
+        <span>try / catch / finally</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>try / catch / finally</h1>
+  <p><span class="inline">try</span>、<span class="inline">catch</span> 和 <span class="inline">finally</span> 语句可在您的游戏中用于错误检查并允许您测试代码块并控制发生任何<a href="../../../Additional_Information/Errors/Runner_Errors.htm">运行时异常</a>时发生的情况.使用这些将防止异常结束游戏并向用户显示标准错误消息，但这意味着您将必须处理在这种情况下接下来发生的事情，例如保存日志文件 - 并优雅地结束游戏（请注意，如果您选择什么都不做，您的游戏可能会变得不稳定并且无法正常运行）。</p>
+  <p>最基本的 <span class="inline">try</span> 语法如下：</p>
+  <p class="code">try<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement1&gt;;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement2&gt;;<br>
+    &nbsp; &nbsp; ...<br>
+    }</p>
+  <p>但是，如果 <span class="inline">try</span> 没有任何内容来实际处理代码可能产生的任何异常，将不会很有帮助，因此我们通常将其与 <span class="inline">catch</span> 配对，语法如下：</p>
+  <p class="code">try<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement1&gt;;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement2&gt;;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+    }<br>
+    catch(&lt;variable&gt;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement1&gt;;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement2&gt;;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+    }</p>
+  <p><span class="inline">catch</span> 的作用是允许您在捕获到前一个 <span class="inline">try</span> 的异常时运行以下块中提供的额外代码。如果这是运行时异常，则提供的变量可用于访问包含以下信息的 <a href="../Structs.htm">struct</a>：</p>
+  <p class="code">{<br>
+    message : "",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// a string that is a short message for this exception<br>
+    longMessage : "",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// a string that is a longer message for this exception<br>
+    script : "",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// a string that describes where the exception came from<br>
+    stacktrace : [ "", "" ],&nbsp;&nbsp;&nbsp;&nbsp;// an array of strings that is the stack frame the exception was generated<br>
+    }</p>
+  <p>一个简单的使用示例如下所示：</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br>
+    try<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;c = a div b;<br>
+    }<br>
+    catch( _exception)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.message);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.longMessage);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.script);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.stacktrace);<br>
+    }</p>
+  <p>您可能希望无论是否抛出异常都运行一些代码，因此您可以添加一个 <span class="inline">finally</span> 块。 <span class="inline">finally</span> 语法是：</p>
+  <p class="code">finally<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement1&gt;;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;statement2&gt;;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;etc...<br>
+    }</p>
+  <p>值得注意的是，您可以将这些组合在一起，即：</p>
+  <ul class="colour">
+    <li><span class="inline">try</span> / <span class="inline">finally</span></li>
+    <li><span class="inline">try</span> / <span class="inline">catch</span></li>
+    <li><span class="inline">try</span> / <span class="inline">catch</span> / <span class="inline">finally</span></li>
+  </ul>
+  <p>注意，在<span class="inline">finally</span>块中，你<em>不能</em>使用<a href="break.htm"><span class="inline">break</span></a>、<a href="continue.htm"><span class="inline">continue</span></a>、<a href="exit.htm"><span class="inline">exit</span></a>或<a href="return.htm"><span class="inline">return</span></a>语句，因为它们在这里没有意义，如果使用它们，编译器将产生错误。</p>
+  <p>最后，您还可以将各种 <span class="inline">try</span> / <span class="inline">catch</span> / <span class="inline">finally</span> 相互嵌套，例如：</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br>
+    try<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;try<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = a div b;<br>
+    &nbsp; &nbsp; }<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;finally<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++a;<br>
+    &nbsp; &nbsp; }<br>
+    }<br>
+    catch(_exception)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;++a;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.message);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.longMessage);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.script);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_exception.stacktrace);<br>
+    }<br>
+    finally<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("a = " + string(a));<br>
+    }</p>
+  <p>值得注意的是，您可以接管默认的 GML 错误消息并通过调用函数 <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm"><span class="inline">exception_unhandled_handler()</span></a> 使用您自己的处理程序代码。此<a href="../Runtime_Functions.htm">运行时函数</a>允许您提供自定义<a href="../Method_Variables.htm">方法</a>以供您在游戏中发生任何未处理的异常时调用。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Language_Features.htm">Language&nbsp;Features</a></div>
+        <div style="float:right">Next: <a href="throw.htm">throw</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+try
+catch
+finally
+-->
+  <!-- TAGS
+try
+catch
+finally
+-->
+
+</body></html>

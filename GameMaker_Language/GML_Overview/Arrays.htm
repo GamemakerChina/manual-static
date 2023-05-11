@@ -1,0 +1,314 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "8.2.1.1_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Arrays</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining Arrays">
+  <meta name="rh-index-keywords" content="Arrays">
+  <meta name="search-keywords" content="Arrays">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Structs.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Functions/Static_Variables.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Arrays">
+        <span>Arrays</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>数组</h1>
+  <p>数组非常有用，是制作游戏的重要组成部分。它本质上是一种可以将多个值保存为"list"的变量类型--请考虑以下代码：</p>
+  <p class="code">numbers = [ 0, 1, 2, 3, 4, 5 ];<br>
+    <br>
+    fruits = [ "Apples", "Oranges", "Mangoes" ];
+  </p>
+  <p>使用<span class="inline2">[item ,item ,item]</span>语法，我们将创建一个存储在变量中的数组。稍后可以使用整数(从<span class="inline">0</span>开始)通过该变量访问存储在数组中的项目，该整数位于<span class="inline2">[]</span>括号内：</p>
+  <p class="code">first_fruit = fruits[ 0 ];<br>
+    second_fruit = fruits[ 1 ];<br>
+    // ...and so on.</p>
+  <p><label for="aone">一个基本的数组被归类为有1<strong>个维度</strong>，但是你也可以有不止一个维度的数组。下面的章节解释了这两种类型的数组：</label>。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">1-Dimensional Arrays</span><span data-close-text="true">1-Dimensional Arrays</span> 一维数组</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">在进一步讨论之前，让我们先澄清一下数组究竟是什么，以及它是如何结构的。数组只是一个分配给变量的<a href="Data_Types.htm">数据类型</a>，它不仅可以包含一个值，而且可以包含多个值。下面的图片显示了一个基本数组的示意图。</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/1DArrayExample.png"></p>
+    <p class="dropspot">这被称为<strong>1D</strong>(一维)数组，正如你所看到的，该数组存储在变量"<span class="inline">a</span>"中，包含多个值。要访问这个数组，你需要做如下的事情。</p>
+    <p class="code">var _val = a[0];<br>
+      show_debug_message(_val);</p>
+    <p class="dropspot">上面的代码从数组"<span class="inline">a</span>"的第0个位置获取数值，然后将其输出到控制台，根据上图中数组的内容，将输出125。如果你做了以下事情。</p>
+    <p class="code">var _val = a[3];<br>
+      show_debug_message(_val);</p>
+    <p class="dropspot">输出将显示"Hi!"。</p>
+    <p class="dropspot">如您所见，为数组指定一个变量名称，然后在方括号<span class="inline">[]</span>中指定一个值，其中该值是数组中用于获取数据的位置。因此，实质上，数组是一个具有多个存储值的插槽的容器，容器中的每个位置都有一个特定的编号来标识它，这就是我们在<span class="inline">[]</span>中输入的内容。值得注意的是，数组<b>的内容始终从0</b>开始，并且<i>永远不能为负</i><em>!</em></p>
+    <h3 class="dropspot">创建数组</h3>
+    <p class="dropspot">我们已经演示了如何检查阵列中的数据，但是我们应该如何创建阵列？首先必须对其进行<i>初始化</i>才能使用，否则<span data-keyref="GameMaker Name">GameMaker</span>将给出错误消息。初始化数组只是意味着我们为数组的每个插槽提供一个初始值，以便在项目代码的其他位置使用它。请务必记住这一点，因为这意味着您必须在使用阵列之前进行一定数量的规划，但是使用如下重复循环来初始化阵列非常容易：</p>
+    <p class="code">var i = 9;<br>
+      <br>
+      repeat(10)<br>
+      {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;array[i] = 0;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;i -= 1;<br>
+      }
+    </p>
+    <p class="dropspot">这个简单的代码将初始化一个十槽的数组(从0到9) 以保持0，即: 数组中的每个槽都包含值0。您会注意到数组已向后<i>初始化</i>，最后一个值是首先定义的。这不是严格必要的，但这是最好的方式来做到这一点，因为它将在内存中保留一个空间，这是数组的确切大小，而如果你初始化一个数组从0<em>向上</em>，内存必须重新分配每增加一个额外的值(所以对于一个十槽数组，在循环中初始化它会改变内存分配十次)。对于较小的数组，速度差异可以忽略不计，但是较大的数组应以这种方式尽可能地优化。</p>
+    <p class="note"><b>注意</b>：HTML5导出是上述规则的例外情况，当确定要从0向上连续初始化数组时。</p>
+    <p class="dropspot">您还可以使用GML 函数<a href="../GML_Reference/Variable_Functions/array_create.htm"><span class="inline">array_create()</span></a>初始化具有固定大小的数组，甚至可以使用<em>否</em>值创建"清空"数组，例如：</p>
+    <p class="code">my_array = [];</p>
+    <p class="dropspot">这告诉GameMaker，变量"<span class="inline">my_array</span>"是一个数组，然后你可以<a href="../GML_Reference/Variable_Functions/array_push.htm">在未来的任何时候向它添加值</a>。然而，如果你试图访问一个空数组中的值，那么你会得到一个错误。</p>
+    <p class="dropspot">如果已经知道要放入数组的项，则可以在声明数组时在括号内添加逗号分隔的值：</p>
+    <p class="code">my_array = ["Steve", 36, "ST-3V3 - Steve Street"];</p>
+    <h3 class="dropspot">数组边界</h3>
+    <p class="dropspot">应始终注意只访问有效的数组位置，因为尝试访问数组外部的值也会导致错误。例如，这将导致项目在运行时崩溃：</p>
+    <p class="code">my_array = array_create(5, 0);<br>
+      var _val = my_array[6];</p>
+    <p class="dropspot">数组只用5个位置进行了初始化，但我们尝试获取位置7-因为数组的编号是从0开始的，<span class="inline">array[6]</span>是位置7-因此游戏会生成错误并崩溃。</p>
+    <h3 class="dropspot">使用数组</h3>
+    <p class="dropspot">现在，我们如何实际使用阵列？与使用普通变量完全相同，如以下示例所示：</p>
+    <p class="code">// Add two array values together<br>
+      total = array[0] + array[5];<br>
+      <br>
+      // Check an array value<br>
+      if array[9]&nbsp;== 10<br>
+      {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;// Do something<br>
+      }<br>
+      <br>
+      // Draw an array value<br>
+      draw_text(32, 32, array[3]);
+    </p>
+    <p class="dropspot">由于数组是按顺序编号的，这意味着您也可以循环浏览它们以执行额外的操作，就像我们初始化它们一样：</p>
+    <p class="code">var total = 0;<br>
+      <br>
+      for (var i = 0; i &lt; 10; ++i)<br>
+      {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;total += array[i];<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;draw_text(32, 32 + (i * 32), array[i]);<br>
+      }<br>
+      <br>
+      draw_text(32, 32 + (i * 32), total);
+    </p>
+    <p class="dropspot">以上代码将我们数组中的所有值相加，每个值绘制一个，然后在最后绘制总值。</p>
+    <h3 class="dropspot">删除数组</h3>
+    <p class="dropspot">关于数组的最后一点需要提及的是，您可以简单地通过"重新分配"将数组定义为单个值的变量来删除数组。这将释放与该数组的所有位置和值关联的内存。例如：</p>
+    <p class="code">// Create an array<br>
+      for (var i = 9; i &gt; -1; --i)<br>
+      {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;a[i] = i;<br>
+      }<br>
+      <br>
+      // Delete the array<br>
+      a = -1;
+    </p>
+    <p class="dropspot">如果数组有多个维度(见下文)，它们也会被清理，请注意，当您在实例中创建数组时，这些不需要在实例从游戏中移除时被清理，因为它们将在销毁或房间结束时由<a class="tooltip" title="垃圾回收是游戏代码中的一部分，是一种自动化工具，用于在代码中不再引用某些东西（如数组和结构）时从内存中删除它们，而无需您明确删除它们。">垃圾收集器</a>自动删除。但是，如果任何数组位置都保留了对<em>动态</em>资源的引用，例如粒子系统，缓冲区或数据结构，那么这些<em>将需要在删除数组，实例被销毁或房间结束之前销毁</em>。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">Multi-Dimensional Arrays</span><span data-close-text="true">Multi-Dimensional Arrays</span> 多维数组</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><span style="text-align: justify;">我们现在知道什么是一维数组，但是在<span data-keyref="GameMaker Name">GameMaker</span>中，您可以有多个维度的数组，这些数组本质上是作为数组内部的数组构成的...例如，以下是<strong>2D</strong>(二维)数组：</span></p>
+    <p class="code">array[0][0] = 5;</p>
+    <p class="dropspot">这实质上是告诉GameMaker，阵列实际上是由各种1D阵列组成的。下面是一个扩展示例：</p>
+    <p class="code">array<strong>[0]</strong>[0] = 0;<br>
+      array<strong>[0]</strong>[1] = 1;<br>
+      array<strong>[0]</strong>[2] = 2;<br>
+      <br>
+      array<strong>[1]</strong>[0] = 3;<br>
+      array<strong>[1]</strong>[1] = 4;<br>
+      <strong></strong>array<strong>[1]</strong>[2] = 5;
+    </p>
+    <p class="dropspot">在上面的代码中，<span class="inline">array[0]</span>持有另一个数组，<span class="inline">array[1]</span>也是如此。</p>
+    <p class="dropspot">或者，要访问2D数组，还可以使用以下语法：</p>
+    <p class="code">array[0, 0] = 5;</p>
+    <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 以上语法仅适用于2D数组。</p>
+    <p class="dropspot">多维数组在使用前需要进行初始化，与单个1D数组相同，并且可以保存实数、字符串和任何其他<a href="Data_Types.htm">数据类型</a>，就像任何变量一样，使它们成为任何需要以易于访问的方式存储大量数据的游戏的理想候选对象(请记住，您可以轻松循环浏览数组)。</p>
+    <p class="dropspot">也可以通过嵌套一维数组在一个语句中初始化多维数组：</p>
+    <p class="code">two_dimensional_array =&nbsp;<br>
+      [<br>
+      &nbsp; &nbsp; ["Apple", 10, 2],<br>
+      &nbsp; &nbsp; ["Orange", 5, 2],<br>
+      &nbsp; &nbsp; ["Mango", 15, 4],<br>
+      &nbsp; &nbsp; // ...and so on.<br>
+      ]</p>
+    <p class="dropspot">多维数组也不限于<em>只是</em>两个维度，只需添加<span class="inline">[n]</span>其他参数，就可以根据代码中的要求为数组添加3、4或更多维度，例如：</p>
+    <p class="code">array[0][0][0] = 1;&nbsp; &nbsp; &nbsp;// A three dimensional array<br>
+      array[0][0][0][0] = 1;&nbsp; // A four dimensional array<br>
+      // etc...</p>
+    <p class="dropspot">还应该注意的是，数组中每个维度的长度可以不同，所以你可以让数组初始维度的长度为3，但第二个维度条目可以是第一个维度中每个槽的不同长度;例如。</p>
+    <p class="code">array[2][2] = "3";<br>
+      array[2][1] = "2";<br>
+      array[2][0] = "1";<br>
+      <br>
+      array[1][3] = "four";<br>
+      array[1][2] = "three";<br>
+      array[1][1] = "two";<br>
+      array[1][0] = "one";<br>
+      <br>
+      array[0][1] = 2;<br>
+      array[0][0] = 1;
+    </p>
+    <p class="dropspot">在上述代码中，<span class="inline">array[0]</span>有2个槽，<span class="inline">array[1]</span>有4个槽，<span class="inline">array[2]</span>有3个槽。</p>
+    <h3 class="dropspot">扩展示例</h3>
+    <p class="dropspot">下面是一个最后的示例，说明如何在实际游戏中使用这种方法：假设您希望根据随机值在游戏中的四个不同点生成四个不同的敌人。好吧，我们可以使用一个具有2维的数组来执行此操作，并节省写出一大堆代码的时间。</p>
+    <p class="dropspot">首先，我们应该初始化要在"controller"对象的创建事件中使用的数组(请注意，使用注释来提醒您每个数组条目的作用)：</p>
+    <p class="code">enemy[3][2] = 448; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//y position<br>
+      enemy[3][1] = 32; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//x position<br>
+      enemy[3][0] = obj_Slime; //Object<br>
+      enemy[2][2] = 448;<br>
+      enemy[2][1] = 608;<br>
+      enemy[2][0] = obj_Skeleton;<br>
+      enemy[1][2] = 32;<br>
+      enemy[1][1] = 608;<br>
+      enemy[1][0] = obj_Knight;<br>
+      enemy[0][2] = 32;<br>
+      enemy[0][1] = 32;<br>
+      enemy[0][0] = obj_Ogre;</p>
+    <p class="dropspot">我们现在有了要生成实例的对象，以及它们在房间里相应的X和Y的生成坐标，都存储在我们的数组中。现在可以在控制器对象的另一个事件中使用(例如，一个警报，或一个按键事件)。</p>
+    <p class="code">//get a random number from 0 to 3, inclusive<br>
+      var i = irandom(3);<br>
+      <br>
+      //Use the array to create the object<br>
+      instance_create_layer(enemy[i][1], enemy[i][2], "Enemy_Layer", enemy[i][0]);
+    </p>
+    <p class="dropspot">这段简短的代码现在将在游戏室中生成一个随机的敌人，它使用的代码比"<span class="inline">if/ then/ else</span>"结构甚至"<span class="inline">switch</span>"少得多，而且由于数组是在创建事件中一起初始化的，编辑和改变这些值要容易得多，因为它们没有<a class="tooltip" title="在计算机编程中，术语“硬编码”用于描述被认为是固定的并且不太可能更改的代码。硬编码功能以无法稍后修改的方式内置于硬件或软件中。例如，如果您要制作游戏并将玩家的健康状况“硬编码”为10，那么您将在整个游戏代码中使用值10，而不是使用变量。">硬编码</a>到项目代码的其他部分。</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>另请参阅：<a href="../GML_Reference/Variable_Functions/Variable_Functions.htm#h"></a></p>
+  <h2>作为函数参数的数组</h2>
+  <p>你可以将数组作为参数传入<a href="Script_Functions.htm">脚本函数</a>和<a href="Method_Variables.htm">方法变量</a>，并在函数中的任何地方修改这些数组。这样做也会修改原来的数组。</p>
+  <p>例如，这个函数只是改变了传入数组的前三个元素。</p>
+  <p class="code">modify_array = function (array)<br>
+    {<br>
+    &nbsp; &nbsp; array[0] = 2;<br>
+    &nbsp; &nbsp; array[1] = 4;<br>
+    &nbsp; &nbsp; array[2] = 6;<br>
+    }</p>
+  <p>现在你可以创建一个数组并将其传入该函数，该函数将修改数组。</p>
+  <p class="code">my_array = [100, 4, 214];<br>
+    <br>
+    modify_array(my_array);<br>
+    <br>
+    show_debug_message(my_array); // Prints [2, 4, 6];
+  </p>
+  <p>在以前的GameMaker版本中，情况并非如此，因为在一个函数中修改数组会创建一个副本。如果需要的话，这种<em>被废弃的</em>行为仍然可以被启用：阅读下面的"<strong>写时复制</strong>"部分以了解更多信息。Write{}时的拷贝 "一节，以了解更多信息。</p>
+  <h2 id="h">写时复制</h2>
+  <p>不推荐使用 "写入时复制" 行为，仅在<strong>General Game Options</strong>中启用 "<a href="../../Settings/Game_Options.htm">为数组启用写入时复制</a>" 时使用。本节描述了启用此选项时数组的行为。</p>
+  <p>正如上一节所述，数组可以作为参数传入函数。要做到这一点，你只需要指定数组变量(不需要每个单独的位置，也不需要<span class="inline">[]</span>括号)，整个数组将通过<b>引用</b>传递到函数中。</p>
+  <p class="code">my_array = [1, 2, 4, 8, 16];<br>
+    <br>
+    do_something(my_array);
+  </p>
+  <p>但是，如果启用了<strong>写入时复制</strong>，则更改函数内部的任何数组值会创建一个包含您的修改的临时副本。不会修改原始数组。此行为称为写入时拷贝。</p>
+  <p>要实际修改传递到函数中的原始数组，您必须将其返回或使用<span class="inline">@</span>访问器。</p>
+  <p>例如，上面调用的函数<span class="inline2">do_something()</span>可能会做这样简单的事情：</p>
+  <p class="code">do_something = function(array)<br>
+    {<br>
+    &nbsp; &nbsp; array[1] = 200;<br>
+    }</p>
+  <p>现在，您将期望<span class="inline2">my_array</span>保存值<span class="inline2">1、200、4</span>等，这通常是正确的-但是当启用<strong>写时复制</strong>时，原始数组不受影响。</p>
+  <p>为了解决这个问题，你可以让函数<strong>返回</strong>修改后的数组副本，然后将其应用于原始变量。</p>
+  <p class="code">my_array = [1, 2, 4, 8, 16];<br>
+    <br>
+    my_array = do_something(my_array);
+  </p>
+  <p>该函数本身将返回修改后的数组。</p>
+  <p class="code">do_something = function(array)<br>
+    {<br>
+    &nbsp; &nbsp; array[1] = 200;<br>
+    <br>
+    &nbsp; &nbsp; return array;<br>
+    }
+  </p>
+  <p class="note"><span class="note">注意</span><b></b>如果您不更改数组的任何值，而是引用它们，则不需要上面的代码。引用数组不会复制它，解析速度会更快。</p>
+  <p>第二种解决方案是使用<span class="inline">@</span>访问器直接更改数组值，这节省了必须进行临时复制的CPU开销。这意味着你不需要从函数返回数组，可以直接编辑它:</p>
+  <p class="code">do_something = function(array)<br>
+    {<br>
+    &nbsp; &nbsp; array[@ 1] = 200;<br>
+    }</p>
+  <p>使用此访问器可以绕过 写时复制 行为，直接修改引用的数组。这可用于有选择地为特定语句禁用 写时复制，同时保持该选项处于启用状态。</p>
+  <p>同样，如果<strong>写时复制</strong><strong>禁用</strong>(这是默认和推荐的选项)，则所有这些都不是必需的。</p>
+  <p>有关访问器及其工作方式的详细信息，以及阵列示例，请参阅以下页面：</p>
+  <ul class="colour">
+    <li><a href="Accessors.htm">访问器</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="GML_Overview.htm">GML&nbsp;Overview</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Structs.htm">结构与构造函数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Arrays
+passing arrays to scripts
+deleting arrays
+-->
+  <!-- TAGS
+arrays
+-->
+
+</body></html>

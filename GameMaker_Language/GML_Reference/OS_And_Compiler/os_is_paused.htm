@@ -1,0 +1,122 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.20.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>os_is_paused</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for os_is_paused">
+  <meta name="rh-index-keywords" content="os_is_paused">
+  <meta name="search-keywords" content="os_is_paused">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_is_network_connected.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_version.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="os_is_paused">
+        <span>os_is_paused</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_is_paused</h1>
+  <p>在为移动设备开发时，您需要有一种方法来检查设备是否仍然专注于您的游戏，尤其是如果您的游戏在iOS、Android或Windows Phone设备上，那么它可能会被电话和其他应用程序打断。您可以使用此函数检查设备是否暂停。</p>
+  <p>值得注意的是，此函数将在设备上运行代码块中包含的任何代码，但随后<span data-keyref="GameMaker Name">GameMaker</span>将立即暂停，因为设备将游戏缓存为后台进程。因此，如果您有类似于下面提供的示例代码，则在游戏从缓存状态<i>重新启动之前，要创建的实例将不会实际出现或运行其任何事件</i>。这意味着您可能更喜欢让 <span class="inline">os_is_paused</span> 函数调用警报，然后在警报事件中(当设备暂停时设置，但直到取消暂停才运行)创建暂停菜单，重新启动音乐等。</p>
+  <p>如果您在Windows、Ubuntu(Linux)、MacOS或HTML5平台上使用此函数，则当游戏失去焦点时，该函数仅切换<b>一步</b>至<span class="inline">true</span>，然后它将再次返回<span class="inline">false</span>，直到游戏返回焦点(并再次失去焦点)。这是因为这些平台不会缓存应用程序和游戏，因此这些应用程序和游戏将继续在后台运行。</p>
+  <p class="note"><b>注意</b>：在移动设备上，当操作系统暂停时，声音和音乐将会停止。除非您特别使用适当的函数启动它们，否则它们将<b>不会</b>再次重新启动。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">os_is_paused()</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if os_is_paused()<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if !instance_exists(obj_PauseMenu)<br>
+    &nbsp; &nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance_create_layer(0, 0, "Controllers", obj_PauseMenu);<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上面的代码检查游戏是否已暂停，如果已暂停，则创建对象" obj_pausemenu "的实例(如果不存在)。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">Next: <a href="os_is_network_connected.htm">os_is_network_connected</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_is_paused
+-->
+  <!-- TAGS
+os_is_paused
+-->
+
+</body></html>

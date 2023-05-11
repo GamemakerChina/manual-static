@@ -1,0 +1,153 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.5.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>gamepad_get_guid</title>
+    <meta name="generator" content="Adobe RoboHelp 2020">
+    <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+    <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+    <meta name="rh-authors" content="Mark Alexander">
+    <meta name="topic-comment" content="Reference page for gamepad_get_guid">
+    <meta name="rh-index-keywords" content="gamepad_get_guid">
+    <meta name="search-keywords" content="gamepad_get_guid">
+    <meta name="is_pure" content="true">
+  <meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_get_device_count.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/GamePad_Input/gamepad_is_connected.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gamepad_get_guid">
+        <span>gamepad_get_guid</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+<!--<div class="body-scroll" style="top: 150px;">-->
+    <h1>gamepad_get_guid</h1>
+    <p>使用此函数，您可以检索连接到给定插槽索引的游戏手柄的GUID。您提供了要检查的游戏手柄插槽 (从0- 11)，该函数将返回以下字符串之一:</p>
+    <ul class="colour">
+      <li>“<b>none</b>”，如果没有GUID可用或没有连接游戏手柄</li>
+      <li>“<b>device index out of range</b>”，如果游戏手柄插槽索引超出范围</li>
+      <li>如果插槽分配了游戏手柄并可以为其获取GUID，则GUID字符串 (类似于 “050000005e040000fd020000ffff3f00”)</li>
+    </ul>
+    <p>此函数通常将与<a href="gamepad_get_description.htm"><span class="inline">gamepad_get_description()</span></a>结合使用，以生成Windows，Android和macOS上重新映射控制器所需的SDL字符串的一部分。</p>
+    <table>
+      <colgroup>
+        <col style="width: 147px;">
+        <col style="width: 640px;">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="2"><img src="../../../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png">平台专用注释</th>
+        </tr>
+        <tr>
+          <th style="">平台</th>
+          <th style="">Note</th>
+        </tr>
+        <tr>
+          <td style="">GX.games</td>
+          <td style="">On the GX.games target platform, this function will always return <strong>"none"</strong> for non-DirectInput devices</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <h4>语法:</h4>
+    <p class="code">gamepad_get_guid(index);</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>参数</th>
+          <th>类型</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>index</td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+          <td>要检查哪个Gamepad“插槽”索引</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <h4>返回:</h4>
+    <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+    <p>&nbsp;</p>
+    <h4>例子:</h4>
+    <p class="code">var _guid = gamepad_get_guid(global.PadIndex);
+      <br>
+      var _desc = gamepad_get_description(global.PadIndex);
+      <br>
+      global.GamepadID = _guid + "," + _desc;</p>
+    <p>上面的代码获取GUID和name描述字符串，然后将它们连接起来，并将最终字符串存储在全局变量中，以备将来参考。</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="footer">
+      <div class="buttons">
+        <div class="clear">
+          <div style="float:left">Back: <a href="Gamepad_Input.htm">游戏手柄输入</a></div>
+          <div style="float:right">Next: <a href="gamepad_get_device_count.htm"> gamepad_get_device_count </a></div>
+        </div>
+      </div>
+      <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    </div>
+    <!-- KEYWORDS
+gamepad_get_guid
+--><!-- TAGS
+gamepad_get_guid
+-->
+</body></html>

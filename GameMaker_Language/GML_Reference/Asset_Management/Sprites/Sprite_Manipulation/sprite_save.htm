@@ -1,0 +1,148 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.3.2.0_20";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>sprite_save</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function sprite_save">
+  <meta name="rh-index-keywords" content="sprite_save">
+  <meta name="search-keywords" content="sprite_save">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_save_strip.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="sprite_save">
+        <span>sprite_save</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_save</h1>
+  <p>此函数可用于将精灵的任何子图像保存到光盘，并为其提供指定的文件名。精灵必须在运行时<a href="sprite_add.htm">添加</a>(不能保存通过IDE添加的精灵)，并且必须使用<span class="inline">*保存文件。PNG</span>扩展名。</p>
+  <p class="note"><b>注意</b>：根据所选的目标平台，保存和加载文件的位置会受到限制。有关详细信息，请参阅<a href="../../../../../Additional_Information/The_File_System.htm">文件处理</a>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">sprite_save(ind, subimg, fname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>要保存的精灵的索引。</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要保存的精灵的子图像。</td>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>保存的精灵的文件名。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var surf, spr_custom;<br>
+    surf = surface_create(32, 32);<br>
+    surface_set_target(surf);<br>
+    draw_clear_alpha(c_black, 0);<br>
+    draw_sprite(spr_Body, 0, 0, 0);<br>
+    draw_sprite(spr_Clothes, 0, 0, 0);<br>
+    draw_sprite(spr_Hair, 0, 0, 0);<br>
+    spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16);<br>
+    surface_reset_target();<br>
+    surface_free(surf);<br>
+    sprite_save(spr_custom, 0, "Player_Custom_Sprite.png");<br>
+    sprite_delete(spr_Custom);</p>
+  <p>上面的代码创建了一个表面，并将其索引存储在局部变量“ surf ”中。然后，它以该表面为目标，清除该表面，并在彼此的顶部绘制多个精灵。它从绘制在表面上的合成图像创建一个新的精灵，并在释放表面使用的内存之前，将其索引分配给局部变量“ SPR_自定义”。最后，将生成的精灵保存到文件中，然后也从内存中删除。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sprite_Manipulation.htm">精灵操作</a></div>
+        <div style="float:right">Next:&nbsp;<a href="sprite_save_strip.htm">sprite_save_strip</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_save
+-->
+  <!-- TAGS
+sprite_save
+-->
+
+</body></html>

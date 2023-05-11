@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"文件菜单","type":"item","tilePath":"","description":"Section on the File Menu","url":"IDE_Navigation/Menus/The_File_Menu.htm"},{"name":"编辑菜单","type":"item","tilePath":"","description":"Section on the Edit Menu","url":"IDE_Navigation/Menus/The_Edit_Menu.htm"},{"name":"构建菜单","type":"item","tilePath":"","description":"Section on the Build Menu","url":"IDE_Navigation/Menus/The_Build_Menu.htm"},{"name":"窗口菜单","type":"item","tilePath":"","description":"Section on the Windows Menu","url":"IDE_Navigation/Menus/The_Windows_Menu.htm"},{"name":"工具菜单","type":"item","tilePath":"","description":"Section on the Tools Menu","url":"IDE_Navigation/Menus/The_Tools_Menu.htm"},{"name":"市场菜单","type":"item","tilePath":"","description":"Section on the Marketplace Menu","url":"IDE_Navigation/Menus/The_Marketplace_Menu.htm"},{"name":"布局菜单","type":"item","tilePath":"","description":"Section on the Layouts Menu","url":"IDE_Navigation/Menus/The_Layouts_Menu.htm"},{"name":"帮助菜单","type":"item","tilePath":"","description":"Section on the Help Menu","url":"IDE_Navigation/Menus/The_Help_Menu.htm"},{"name":"版本和账户详细信息","type":"item","tilePath":"","description":"Section on the Version & Account Details","url":"IDE_Navigation/Menus/Version_&_Account_Details.htm"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

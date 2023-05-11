@@ -1,0 +1,173 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.7.2_23";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gif_add_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for gif_add_surface">
+  <meta name="rh-index-keywords" content="gif_add_surface">
+  <meta name="search-keywords" content="gif_add_surface">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Cameras_And_Display/gif_save.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Cameras_And_Display/gif_open.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gif_add_surface">
+        <span>gif_add_surface</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gif_add_surface</h1>
+  <p>使用此函数，可以将框架从表面保存到 GIF 文件。提供 GIF 文件 ID (由函数 <a href="gif_open.htm"><span class="inline">gif_open()</span></a> 返回)和表面 ID (由函数 <a href="../Drawing/Surfaces/surface_create.htm"><span class="inline">surface_create()</span></a> 返回)，以及帧之间的延迟时间。延迟时间以 1/100 秒为单位计算，但请注意，创建 GIF 后，如果您将其用于促销目的(例如，不同的浏览器对帧延迟的解释可能略有不同-有关详细信息，请参阅<a href="https://www.deviantart.com/humpy77/journal/Frame-Delay-Times-for-Animated-GIFs-214150546" target="_blank">此处</a>)。您可以(可选)为用于添加到 GIF 的表面提供 X 和 Y 偏移值，在这种情况下，绘制到 GIF 的零件将从偏移开始，而不是默认 (0,0)位置，从而允许您仅选择要添加的表面的一部分。您还可以提供一个量化值，它是介于 0 和 3 之间的整数，其中 0 表示完全量化，3 表示零量化(值越低，质量越差，但会创建越小的 GIF)。请注意，默认质量 2 和最高质量 3 之间没有太大差异，使用3将显著减慢 GIF 的创建速度，因此在使用最大值时应小心。</p>
+  <p>请注意，对于 GIF 中的帧数或这些帧的大小没有内置限制，但如果使用了太多内存，则函数将失败并返回 -1，否则将返回 0。</p>
+  <div data-conref="../../../assets/snippets/Note_surface_only_rgba8unorm.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">备注</span></span>&nbsp;此函数仅适用于使用&nbsp;<a href="../Drawing/Surfaces/surface_create.htm"><span class="inline2">surface_rgba8unorm</span></a> (默认)表面 格式的表面 。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gif_add_surface(gif_index, surface, delay_time, [xoffset], [yoffset]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>gif_index</td>
+        <td><span data-keyref="Type_ID_GIF"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/gif_open.htm">GIF ID</a></span></td>
+        <td>要将表面数据添加到的 GIF 的 ID</td>
+      </tr>
+      <tr>
+        <td>surface</td>
+        <td><span data-keyref="Type_ID_Surface"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">Surface ID</a></span></td>
+        <td>用来作为添加框架的表面的 ID</td>
+      </tr>
+      <tr>
+        <td>delay_time</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>帧的延迟时间(以 100 秒为单位)</td>
+      </tr>
+      <tr>
+        <td>[xoffset]</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span class="optional">可选</span> 要添加的表面沿 X 轴的偏移</td>
+      </tr>
+      <tr>
+        <td>[yoffset]</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span class="optional">可选</span> 要添加的表面沿 Y 轴的偏移</td>
+      </tr>
+      <tr>
+        <td>[quantization]</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span class="optional">可选</span> 从 0 到 3 的量化数量 (0 最低质量，3 最高质量，默认值为 2)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if save_gif == true<br>
+    {<br>
+    &nbsp; &nbsp; if count == 0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;gif_image = gif_open(room_width, room_height);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp; &nbsp; else if count &lt; 30<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;gif_add_surface(gif_image, application_surface, 6/100);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp; &nbsp; else<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;gif_save(gif_image, "GameCapture.gif");<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; count = 0;<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;save_gif = false;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp; &nbsp; count++;<br>
+    }</p>
+  <p>以上代码将创建从应用程序表面获取的具有 30 帧的 GIF 图像文件，然后保存该文件。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Cameras_And_Display.htm">相机及显示</a></div>
+        <div style="float:right">Next: <a href="gif_save.htm">gif_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gif_add_surface
+-->
+  <!-- TAGS
+gif_add_surface
+-->
+
+</body></html>

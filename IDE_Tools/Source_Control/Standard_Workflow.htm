@@ -1,0 +1,124 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.3.2.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Standard Workflow</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Section that covers Source Control standard workflow
+">
+  <meta name="rh-index-keywords" content="Source Control - Workflow">
+  <meta name="search-keywords" content="using source control,source control workflow">
+<meta name="brsnext" value="IDE_Tools/Source_Control/Reverting_Files.htm"><meta name="brsprev" value="IDE_Tools/Source_Control/Repository_Options.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Standard Workflow">
+        <span>Standard Workflow</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>标准工作流程</h1>
+  <p>当您在项目中工作时，您将很自然地创建精灵、编辑脚本、删除时间线，以及随着项目随着时间的推移而发展所需要的任何其他东西。这些都是您可能想要跟踪并在出现错误时返回的操作。这是使用源代码管理的主要原因 -- 这样任何意外都可以恢复 -- 我们将从开始快速向您介绍基本的工作流程，以便您了解它是如何工作的。</p>
+  <p>从头开始，创建一个新的 GML 项目，然后通过<a href="../../Settings/Game_Options.htm">主选项</a>激活源代码管理。这使我们可以访问顶部的源代码管理菜单，因此我们将立即选择<strong>创建项目仓库</strong>。如果您查看房间资源，您可以看到默认的房间已获得红色感叹号<img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png">，这意味着它已从上次状态<strong>修改</strong>。如果我们在项目中有其他资源，您将看到它们都有相同的图标，如下图所示：</p>
+  <p><img alt="Source Control Modified Assets" class="center" src="../../assets/Images/IDE Tools/SCM_ModifiedState.png">我们现在可以选择是按原样提交空白项目，还是将其转换为基本状态。目前，我们将进行第一次提交，因此请单击<strong>源代码管理</strong>&gt;<strong>提交更改</strong>。现在我们将打开一个新窗口，该窗口分为三个区域：</p>
+  <p><img alt="Source Control Commit Window" class="center" src="../../assets/Images/IDE Tools/SCM_CommitWindow.png"></p>
+  <ul class="colour">
+    <li><strong>已暂存的更改</strong>：这表示将提交到源的更改。这可能是空白的，但它可能会显示主要选项的变化，这是好的。</li>
+    <li><strong>未暂存的更改</strong>：这显示了已经更改的文件，但我们还没有告诉 Git 我们想要提交它们 -- 它们是"挂起"的更改。</li>
+    <li><strong>提交消息</strong>：这是一个注释，我们可以添加它来解释更改是什么。</li>
+  </ul>
+  <p>现在，点击<strong>暂存所有</strong>按钮，因为我们想要提交所有更改，然后输入类似于 "First Commit!" 到提交消息，然后单击<strong>提交</strong>。我们的所有资源现在都应该有一个绿色的勾号<img alt="SCM Committed Icon" class="icon" src="../../assets/Images/Icons/SCM_Committed.png">，这意味着没有找到任何修改。</p>
+  <p>值得注意的是，当您在此窗口中工作时，各种<strong>已分段的</strong>和<strong>未分段的</strong>消息将带有一个符号前缀。使用的符号将根据操作和文件的不同而有所不同，使用的符号如下：</p>
+  <ul class="colour">
+    <li><span class="inline">[...]</span> - 已暂存的更改(以前为[A])</li>
+    <li><span class="inline">[+]</span> - 新增</li>
+    <li><span class="inline">[-&gt;]</span> - 重命名/移动</li>
+    <li><span class="inline">[-]</span> - 删除</li>
+    <li><span class="inline">[M]</span> - 未暂存的更改</li>
+    <li><span class="inline">[?]</span> - 未被跟踪的文件</li>
+    <li><span class="inline">[!]</span> - 丢失的文件</li>
+  </ul>
+  <p>我们的工作流程现在可以开始了，我们可以开始构建项目并保存和提交更改，就像我们在上面段落中所做的那样。</p>
+  <p>在工作一段时间后，您可能希望在任何给定时间检查和查看您已提交的内容，因此您需要打开<strong>提交历史记录</strong>。要打开历史记录窗口，只需转到<strong>源代码管理</strong>&gt;<strong>查看历史记录</strong>，这将打开另一个包含三个窗格的窗口：</p>
+  <p><img alt="Source Control History Window" class="center" src="../../assets/Images/IDE Tools/SCM_HistoryWindow.png">顶部窗格描述提交，中间窗格描述对所选提交的注释，底部窗格描述在此提交中修改的文件。请注意，如果您已设置了<a href="External_Merge_Diff_Tools.htm">比较工具</a>，则双击此窗口中的任何文件都将打开比较工具，您将能够看到文件之间的变化。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Source_Control.htm">源码控制</a></div>
+        <div style="float:right">Next: <a href="Reverting_Files.htm">回滚文件</a>&nbsp;</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Workflow
+-->
+  <!-- TAGS
+source_control_workflow
+-->
+
+</body></html>

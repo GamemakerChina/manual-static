@@ -1,0 +1,146 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.6.10.2.0_11";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>part_type_gravity</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for part_type_gravity">
+  <meta name="rh-index-keywords" content="part_type_gravity">
+  <meta name="search-keywords" content="part_type_gravity">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_orientation.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_direction.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="part_type_gravity">
+        <span>part_type_gravity</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_gravity</h1>
+  <p>该函数将设置影响创建的给定类型的每个粒子的重力。重力强度值每一步都添加到粒子速度中，并且通常是一个小值，如0.5，而方向是重力"拉"的方向，并遵循<span data-keyref="GameMaker Name">GameMaker</span>的标准{}方向，0 °是右边，90 °是上边，180 °是左边，270 °是下边。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">part_type_gravity(ind, grav_amount, grav_direction);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td><span data-keyref="Type_ID_PartType"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">Particle Type ID</a></span></td>
+        <td>要更改的粒子类型的索引。</td>
+      </tr>
+      <tr>
+        <td>grav_amount</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>重力的强度。</td>
+      </tr>
+      <tr>
+        <td>grav_direction</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>重力的方向。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">part_type_shape(global.p1, pt_shape_pixel);<br>
+    part_type_size(global.p1, 1, 3, 0, 0);<br>
+    part_type_scale(global.p1, 1, 1);<br>
+    part_type_colour1(global.p1, c_white);<br>
+    part_type_alpha2(global.p1, 1, 0);<br>
+    part_type_speed(global.p1, 2, 4, 0, 0);<br>
+    part_type_direction(global.p1, 0, 180, 0, 0);<br>
+    part_type_gravity(global.p1, 0.20, 270);<br>
+    part_type_orientation(global.p1, 0, 0, 0, 0, 1);<br>
+    part_type_blend(global.p1, 1);<br>
+    part_type_life(global.p1, 15, 60);</p>
+  <p>上述代码将设置包括重力在内的各种粒子值，这将使每个步骤的速度增加0.2，方向为270 º,因此将粒子"向下"拉向屏幕底部。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Particle_Types.htm">粒子类型</a></div>
+        <div style="float:right">Next: <a href="part_type_orientation.htm">part_type_orientation</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_gravity
+-->
+  <!-- TAGS
+part_type_gravity
+-->
+
+</body></html>

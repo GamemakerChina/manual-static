@@ -1,0 +1,137 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.10.0_11";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>font_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function font_get_uvs">
+  <meta name="rh-index-keywords" content="font_get_uvs">
+  <meta name="search-keywords" content="font_get_uvs">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_get_info.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_get_texture.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="font_get_uvs">
+        <span>font_get_uvs</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">font_get_uvs</span></h1>
+  <p>此函数返回具有纹理页面上字体纹理的 UV 坐标的<a href="../../../GML_Overview/Arrays.htm">数组</a>，并用以下值填充数组：</p>
+  <ul class="colour">
+    <li>[0] = 左侧</li>
+    <li>[1] = 顶部</li>
+    <li>[2] = 右侧</li>
+    <li>[3] = 底部</li>
+  </ul>
+  <p>然后，此值可用于其他绘制函数，特别是在使用<a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">基元</a>以及<a href="../Shaders/Shaders.htm">着色器</a>函数的一般绘制中。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">font_get_uvs</span>(font);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>font</td>
+        <td><span data-keyref="Type_Asset_Font"><a target="_blank" href="../../../../../The_Asset_Editors/Fonts.htm">Font Asset</a></span></td>
+        <td>要使用的字体的索引。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var tex = <span data-field="title" data-format="default">font_get_uvs</span>(fnt_Main);<br>
+    tex_left = tex[0];<br>
+    tex_top = tex[1];<br>
+    tex_right = tex[2];<br>
+    tex_left = tex[3];</p>
+  <p>上面的代码将在局部数组中存储给定背景的UV坐标，然后将值分配给实例变量。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Fonts.htm">字体</a></div>
+        <div style="float:right">Next:&nbsp;<a href="font_cache_glyph.htm">font_cache_glyph</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_uvs
+-->
+  <!-- TAGS
+font_get_uvs
+-->
+
+</body></html>

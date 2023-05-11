@@ -1,0 +1,128 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.3.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Source Control</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Section that covers Source Control integration
+">
+  <meta name="rh-index-keywords" content="Source Control">
+  <meta name="search-keywords" content="Source Control,SCM,Git">
+<meta name="brsnext" value="IDE_Tools/Source_Control/Setting_Up_Git_Plugin.htm"><meta name="brsprev" value="IDE_Tools/Sound_Mixer.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Source Control">
+        <span>Source Control</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>源码控制</h1>
+  <p><strong>源代码管理</strong>(SCM) 是通过仓库和本地源处理项目的 <strong> 子版本 </strong> 或备份的方法的名称。基本上，SCM 解决方案是一个独立的软件包，它控制您在处理项目时维护、更改和比较项目版本的所有方面。这对那些在团队中工作并且需要能够控制谁做什么并且不担心丢失数据或进行可能需要在以后撤消的更改的人特别有用，但个人也可以从这个强大而灵活的系统中受益。</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 将 <a href="https://git-scm.com/" title="Git">Git</a> 用于其 SCM，必须单独安装和设置才能在 GameMaker 中使用 SCM。有关 Git 的更多具体信息，请参阅 <a href="https://git-scm.com/doc" title="Git Documentation">Git 文档 </a>。</p>
+  <p>在下面的链接中，您可以找到一个关于如何设置此插件并在项目中使用配置管理工具的小教程。</p>
+  <p class="note"><strong>重要！</strong> 我们建议您在尝试在 <span data-keyref="GameMaker Name">GameMaker</span> 中使用源代码管理之前，先了解源代码管理的工作原理。</p>
+  <ul class="colour">
+    <li><a href="Source_Control/Setting_Up_Git_Plugin.htm">设置 Git 插件</a></li>
+    <li><a href="Source_Control/Repository_Options.htm">仓库选项</a></li>
+    <li><a href="Source_Control/Standard_Workflow.htm">标准工作流程</a></li>
+    <li><a href="Source_Control/Reverting_Files.htm">回滚文件</a></li>
+    <li><a href="Source_Control/Cloning_A_Repository.htm">克隆一个仓库</a></li>
+    <li><a href="Source_Control/Conflicts.htm">冲突</a></li>
+    <li><a href="Source_Control/External_Merge_Diff_Tools.htm">外部合并/差异工具</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 将在源代码管理的菜单栏中显示一个下拉菜单，一旦为您的项目激活了源代码管理，该下拉菜单将填充以下选项 (有关详细信息，请参阅上面的<a href="Source_Control/Setting_Up_Git_Plugin.htm">设置 Git 插件</a>一节)：</p>
+  <p><img alt="Source Control Context Menu" class="center" src="../assets/Images/IDE Tools/SCM_ContextMenu.png">我们在这里概述了每个可用选项(上面的教程部分对其中大多数进行了更深入的说明)：</p>
+  <ul class="colour">
+    <li><strong>创建项目仓库</strong>：此选项允许您在与项目文件相同的目录中创建本地仓库。</li>
+    <li><strong>克隆仓库</strong>：此选项允许您将仓库从源克隆到新目标。</li>
+    <li><strong>提交更改</strong>：使用此选项，您可以在项目中存放已更改的文件，然后将它们提交到仓库。</li>
+    <li><strong>推送更改</strong>：在执行提交或合并后，此选项用于将更改推送到主仓库。</li>
+    <li><strong>拉取更改</strong>：使用此选项，您可以通过从主仓库中拉取已更改的文件来更新本地仓库。</li>
+    <li><strong>查看历史记录</strong>：打开历史记录窗口，可以查看项目的所有版本历史记录，并选择回滚特定文件路径或整个修订版本。</li>
+    <li><strong>显示冲突</strong>：这将打开冲突窗口并列出项目中可能存在的任何冲突文件，允许您通过 <span data-keyref="GameMaker Name">GameMaker</span> IDE 或使用特定的合并工具来处理它们。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Additional_IDE_Tools.htm">附加 IDE 工具</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Source_Control/Setting_Up_Git_Plugin.htm">设置 Git 插件</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control
+SCM
+Git
+-->
+  <!-- TAGS
+source_control
+-->
+
+</body></html>

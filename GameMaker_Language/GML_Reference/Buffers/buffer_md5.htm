@@ -1,0 +1,134 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.18.0_35";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>buffer_md5</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for buffer_md5">
+  <meta name="rh-index-keywords" content="buffer_md5">
+  <meta name="search-keywords" content="buffer_md5">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Buffers/buffer_sha1.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Buffers/buffer_sizeof.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="buffer_md5">
+        <span>buffer_md5</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_md5</h1>
+  <p>在密码学中，MD5(Message-Digest 5 算法)是一种广泛使用的加密<a class="tooltip" title="哈希(散列)是一种创建与单个源（通常是文件）相关且仅与该源相关的字符串或值的方法。例如，在GameMaker中，您可以为保存文件生成一个哈希，然后在稍后对其进行访问之前，为其生成另一个哈希，并检查原始哈希和新哈希以确定文件是否已被篡改。">哈希</a>函数，具有 128 位哈希值，已用于各种安全应用程序。它也常用于检查数据的完整性。此函数将从给定缓冲区(或部分缓冲区)获取输入数据，并返回该数据独有的 32 个字符的十六进制 MD5 哈希。通过这种方式你可以生成一种安全密钥，可以存储并用于检查发送到(或从)外部服务器(例如)接收的信息的完整性。使用此函数将其应用于缓冲区时，必须将缓冲区的缓冲区 ID 指定为使用，然后是起始位置的偏移值(以字节为单位)，然后是要进行哈希处理的区域的大小(同样以字节为单位)。</p>
+  <p class="note"><strong>注意</strong>：MD5并不完全安全，可能会被破坏。有关详细信息，请参阅<a href="https://en.wikipedia.org/wiki/MD5">本页</a>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">buffer_md5(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>buffer</td><td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span></td>
+        <td>要使用的缓冲区的索引。</td>
+     </tr>
+      <tr>
+        <td>offset</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>数据偏移值。</td>
+     </tr>
+      <tr>
+        <td>size</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>缓冲区的大小。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">check_string = buffer_md5(buff, 0, buffer_get_size(buff));</p>
+  <p>上述代码将为存储在由变量"buff"索引的缓冲区中的完整数据创建一个md5哈希，并将返回的哈希存储在变量"check_string"中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Buffers.htm">缓冲区</a></div>
+        <div style="float:right">Next:&nbsp;<a href="buffer_sha1.htm">buffer_sha1</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_md5
+-->
+  <!-- TAGS
+buffer_md5
+-->
+
+</body></html>

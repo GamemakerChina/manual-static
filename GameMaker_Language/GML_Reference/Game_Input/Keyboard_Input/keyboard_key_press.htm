@@ -1,0 +1,126 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.8.1.0_12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>keyboard_key_press</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for keyboard_key_press">
+  <meta name="rh-index-keywords" content="keyboard_key_press">
+  <meta name="search-keywords" content="keyboard_key_press">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/keyboard_key_release.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/keyboard_get_numlock.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="keyboard_key_press">
+        <span>keyboard_key_press</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>keyboard_key_press</h1>
+  <p>有了这个函数，你可以模拟键盘上任何键的按下。使用时，该键将被标记为被按下，直到相应的释放函数被调用 (参见 <a href="keyboard_key_release.htm"><span class="inline">keyboard_key_release()</span></a>)。该函数将采用函数 <a href="../../Strings/ord.htm"><span class="inline">ord()</span></a> 返回的 keycode 值 (仅 <i>a-Z 的大写字母 </i> 或 0-9 的数字)，或主<a href="Keyboard_Input.htm">键盘输入</a>页面上列出的 <span class="inline">vk_*</span> 常量中的任何一个。</p>
+  <p>注意，调用此函数后，如果键盘上的键<i>被物理</i>按下，此按下事件将<i>不会</i>再被注册，直到键被物理释放(触发释放事件并停止此函数)。或相应的释放键函数已被调用，并再次按下该键。</p>
+  <p>&nbsp;</p>
+  <h4><b>语法:</b></h4>
+  <p class="code">keyboard_key_press(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>key</td><td><span data-keyref="Type_Constant_VK"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">Virtual Key Constant (vk_*)</a></span></td>
+        <td>模拟按下的键。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4><b>返回:</b></h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4><b>示例:</b></h4>
+  <p class="code">keyboard_key_press(vk_space);</p>
+  <p>这将模拟空格键按压。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Keyboard_Input.htm">键盘输入</a></div>
+        <div style="float:right">Next:&nbsp;<a href="keyboard_key_release.htm">keyboard_key_release</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_key_press
+-->
+  <!-- TAGS
+keyboard_key_press
+-->
+
+</body></html>

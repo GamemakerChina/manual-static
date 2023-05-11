@@ -1,0 +1,167 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.10.0_43";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>string_foreach</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="string_foreach">
+  <meta name="rh-index-keywords" content="string_foreach">
+  <meta name="search-keywords" content="string_foreach">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="string_foreach">
+        <span>string_foreach</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">string_foreach</span></h1>
+  <p>此函数对给定字符串的所有字符执行回调函数。</p>
+  <p>该函数可选地接受起始位置和长度，用于定义要迭代的字符范围和迭代方向(从左到右或从右到左)。</p>
+  <p>回调函数将为字符串中的每个字符接收两个参数：字符本身及其在字符串中的位置。</p>
+  <div data-conref="../../../assets/snippets/Note_String_Indices_Start_At_1.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 与 <span data-keyref="GameMaker Name">GameMaker</span> 中的其他数据类型都是<a href="https://en.wikipedia.org/wiki/Zero-based_numbering">从 0</a> 开始的其他数据类型相比，<span data-keyref="GameMaker Name">GameMaker</span> 中的字符串位置从 1 开始(表示它们从<em>从1</em>开始)。因此，字符串中的第一个字符的位置为 1，第二个字符的位置为 2，依此类推。最后一个字符是<span class="inline2"><a href="string_length.htm">string_length</a>(string)</span>。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">string_foreach</span>(string, function, [pos], [length]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要重复的字符串</td>
+      </tr>
+      <tr>
+        <td>function</td>
+        <td><span data-keyref="Type_Function"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></span></td>
+        <td>要为范围中的每个字符执行的函数，参数为 <span class="inline2">character</span> 和 <span class="inline2">position</span></td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 起始位置 (字符串的默认位置为 1)。负值从字符串的末尾开始计数 (例如，-1 是最后一个字符的位置，-2 是最后一个字符之前的位置，依此类推)。0 被视为与 1 相同。</td>
+      </tr>
+      <tr>
+        <td>length</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 要重复的字符数和重复方向(从左到右(正值)或从右到左(负值))。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例1：</h4>
+  <p class="code">function debug_character(character, position)<br>
+    {<br>
+    &nbsp; &nbsp; show_debug_message(character);<br>
+    }<br>
+    <br>
+    <span data-field="title" data-format="default">string_foreach</span>("test", debug_character);
+  </p>
+  <p>上面的代码首先定义了一个函数 <span class="inline2">debug_character</span>，该函数使用 <span class="inline2"><a href="../Debugging/show_debug_message.htm">show_debug_message</a></span> 将字符打印到日志。然后，它对字符串 <span class="inline2">"test"</span> 调用函数 <span class="inline2"><span data-field="title" data-format="default">string_foreach</span></span>，以对其所有字符执行 <span class="inline2">debug_character</span> 函数。</p>
+  <p>&nbsp;</p>
+  <h4>示例2：</h4>
+  <p class="code">function debug_extended(character, position)<br>
+    {<br>
+    &nbsp; &nbsp; show_debug_message("{0}: {1}", position, character);<br>
+    }<br>
+    <br>
+    <span data-field="title" data-format="default">string_foreach</span>("1234567890", debug_extended, -1, -infinity);
+  </p>
+  <p>上面的代码首先定义了一个函数 <span class="inline2">debug_extended</span>，该函数显示包含位置和字符的调试消息。然后，使用字符串 <span class="inline2">"1234567890"</span> 上的 <span class="inline2">debug_extended</span> 函数调用 <span class="inline2"><span data-field="title" data-format="default">string_foreach</span></span>。因为偏移量是 -1，所以函数将在其上执行的第一个字符是最后一个字符 (<span class="inline2">"0"</span>)。由于长度为负数 ("0"、"9"、"8"、"7"、"6"、……、"1")，字符按降序遍历。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Strings.htm">字符串</a></div>
+        <div>Next:&nbsp;<a href="string.htm">string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_foreach
+-->
+  <!-- TAGS
+string_foreach
+-->
+
+</body></html>

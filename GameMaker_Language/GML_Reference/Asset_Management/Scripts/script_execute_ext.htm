@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.7.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>script_execute_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function script_execute_ext">
+  <meta name="rh-index-keywords" content="script_execute_ext">
+  <meta name="search-keywords" content="script_execute_ext">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Shaders/Shaders.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Scripts/script_execute.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="script_execute_ext">
+        <span>script_execute_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">script_execute_ext</span></h1>
+  <p>此函数的工作方式与函数 <span class="inline2"><a href="script_execute.htm">script_execute()</a></span> 相似，但只能提供一个<a href="../../../GML_Overview/Arrays.htm">数组</a>，其中包含调用函数/脚本所需的参数。</p>
+  <p>还可以为函数提供两个可选参数，以指定数组的偏移量以从中获取参数，以及要从数组使用的参数数(必须是 array_length - offset 的最大值)。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">script_execute_ext</span>(scr, array_args, [offset], [num_args]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>scr</td>
+        <td><span data-keyref="Type_Asset_Script"><a target="_blank" href="../../../../../The_Asset_Editors/Scripts.htm">Script Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Function_Script"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Script Function</a></span></td>
+        <td>要调用的函数/脚本</td>
+      </tr>
+      <tr>
+        <td>array_args</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>包含函数/脚本的参数的数组</td>
+      </tr>
+      <tr>
+        <td>[offset]</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 参数数组的偏移量</td>
+      </tr>
+      <tr>
+        <td>[num_args]</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 要使用的参数数(从偏移量开始)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Any"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(Will depend on the return value from the function/script being called)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code"><span data-field="title" data-format="default">script_execute_ext</span>(move_inst, move_array, floor(random(4)), 1);</p>
+  <p>上面的示例代码将使用 <span class="inline2"><span data-field="title" data-format="default">script_execute_ext</span></span> 调用给定函数，提供四个参数的数组，但随机仅使用其中一个参数。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Scripts.htm">脚本</a></div>
+        <div style="float:right">Next:&nbsp;<a href="script_exists.htm">script_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+script_execute_ext
+-->
+  <!-- TAGS
+script_execute_ext
+-->
+
+</body></html>

@@ -1,0 +1,143 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.5.3.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>place_empty</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_empty">
+  <meta name="rh-index-keywords" content="place_empty">
+  <meta name="search-keywords" content="place_empty">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/place_free.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Movement_And_Collisions/Collisions/Collisions.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="place_empty">
+        <span>place_empty</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>place_empty</h1>
+  <p>您可以使用此函数检查并查看调用实例是否会与游戏中某个对象的<i>任何其他实例</i>或所有实例发生碰撞。为了正确解决此碰撞，运行代码的实例必须具有有效的碰撞遮罩(对于sprite本身或通过<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><span class="inline">mask_index</span></a>)，并且它只会注册与同样具有有效遮罩的实例的碰撞。</p>
+  <p>如果将调用实例放置在特定位置，则此函数将测试是否不存在碰撞，并且您可以提供一个可选参数来细化检查，以便仅检查某个位置是否与给定类型的实例没有碰撞。请注意，如果未提供可选的对象Id，将对房间内的<i>个all</i>实例进行检查。碰撞检查要么精确，要么基于实例的边界框，具体取决于选择了哪种碰撞遮罩，但要使精确碰撞正常工作，检查中的所有实例都应具有精确碰撞遮罩。</p>
+  <p>请注意，在执行检查之前，给定的x/y坐标将泛洪到最近的整数。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">place_empty(x, y, [object_id]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的x位置。</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要检查的y位置。</td>
+      </tr>
+      <tr>
+        <td>[object_id]</td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
+        <td><span class="optional">可选</span>要检查的对象。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if place_empty(mouse_x, mouse_y, obj_Enemy)<br>
+    {<br>
+    &nbsp; &nbsp; x = mouse_x;<br>
+    &nbsp; &nbsp; y = mouse_y;<br>
+    }</p>
+  <p>上述代码将检查是否与对象"obj_Enemy"的任何其他实例发生碰撞，就好像将调用实例放置在与鼠标相同的位置一样。如果未检测到碰撞，则将实例的x/y坐标设置为鼠标的坐标。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Collisions.htm">碰撞</a></div>
+        <div style="float:right">Next: <a href="place_free.htm">place_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_empty
+-->
+  <!-- TAGS
+place_empty
+-->
+
+</body></html>

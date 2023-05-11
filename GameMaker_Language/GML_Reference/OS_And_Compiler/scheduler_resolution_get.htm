@@ -1,0 +1,114 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.20.0_25";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>scheduler_resolution_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for scheduler_resolution_get">
+  <meta name="rh-index-keywords" content="scheduler_resolution_get">
+  <meta name="search-keywords" content="scheduler_resolution_get">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/external_free.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="scheduler_resolution_get">
+        <span>scheduler_resolution_get</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>scheduler_resolution_get</h1>
+  <p>此函数用于以毫秒为单位检索Windows线程调度程序的解析度。如果调度程序的解析度设置为默认值(由Windows设置)，则该函数将返回-1。</p>
+  <p>有关线程调度程序的信息，请参见<span class="inline"><a href="scheduler_resolution_set.htm">scheduler_resolution_set()</a></span>.</p>
+  <p class="note"><strong>注意</strong>：此函数仅适用于<strong>Windows</strong>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">scheduler_resolution_get();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (or -1 for default)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">scheduler_resolution = scheduler_resolution_get();</p>
+  <p>此示例检索Windows线程调度程序的解析度，并将其存储在<span class="inline">"</span><span class="inline">scheduler_resolution"</span>变量中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">Next:&nbsp;<a href="scheduler_resolution_set.htm">scheduler_resolution_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+scheduler_resolution_get
+-->
+  <!-- TAGS
+scheduler_resolution_get
+-->
+
+</body></html>

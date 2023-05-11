@@ -1,0 +1,150 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.5.3.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>audio_effect_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../../assets/css/default.css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Reference page for audio_effect_create">
+  <meta name="rh-index-keywords" content="audio_effect_create">
+  <meta name="search-keywords" content="audio_effect_create">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+  <meta name="condition-tags" content="">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="audio_effect_create">
+        <span>audio_effect_create</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">audio_effect_create</span></h1>
+  <p id="p">此函数创建新的音频效果，并返回<a href="AudioEffect.htm">AudioEffect 结构</a>，您可以通过它访问和修改它。或者，您可以将结构传递给函数以立即初始化效果的参数。</p>
+  <p>有关可创建的音频效果列表，请参见<a href="AudioEffectType.htm">AudioEffectType 枚举</a>。</p>
+  <p>返回结构的成员取决于创建的音频效果的类型。有关所有可能的音频效果结构，请参见：<a href="AudioEffect.htm">音频效果结构</a></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">audio_effect_create</span>(type, [params]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>要创建的音频效果类型(例如<span class="inline2">AudioEffectType.Reverb1</span>)</td>
+      </tr>
+      <tr>
+        <td>params</td>
+        <td><span data-keyref="Type_Struct"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span></td>
+        <td><span data-conref="../../../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 音效参数(可选参数见<a href="AudioEffect.htm">音效结构</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><a href="AudioEffect.htm">AudioEffect Struct</a></p>
+  <p>&nbsp;</p>
+  <h4>示例1：</h4>
+  <p class="code">var _ef_distortion = <span data-field="title" data-format="default">audio_effect_create</span>(AudioEffectType.Bitcrusher);<br>
+    _ef_distortion.gain = 1.1;<br>
+    _ef_distortion.factor = 20;<br>
+    _ef_distortion.resolution = 8;<br>
+    _ef_distortion.mix = 0.5;<br>
+    audio_bus_main.effects[0] = _ef_distortion;</p>
+  <p>上面的代码首先使用 <span class="inline2"><a href="audio_effect_create.htm">audio_effect_create</a></span> 创建新的失真效果类型 <a href="AudioEffectType.htm#h2">AudioEffectType.Bitcrusher</a>。然后通过设置效果参数来配置效果。</p>
+  <p>最后，它将效果分配给主音频总线，由主音频总线开始处理效果。</p>
+  <p>&nbsp;</p>
+  <h4>示例2：</h4>
+  <p class="code">audio_bus_main.effects[0] = <span data-field="title" data-format="default">audio_effect_create</span>(AudioEffectType.Bitcrusher, {<br>
+    &nbsp; &nbsp; gain: 1.1, factor: 20, resolution: 8, mix: 0.5<br>
+    });</p>
+  <p>上面的代码首先创建一个新的失真效果，如示例1所示，并通过传递一个包含某些参数的值的结构来立即初始化其参数。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Audio_Effects.htm">音效</a></div>
+        <div>Next:&nbsp;<a href="audio_bus_create.htm">audio_bus_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_effect_create
+-->
+  <!-- TAGS
+audio_effect_create
+-->
+
+</body></html>

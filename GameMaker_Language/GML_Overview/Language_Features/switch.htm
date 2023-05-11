@@ -1,0 +1,173 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.1.3.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>switch</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the switch function">
+  <meta name="rh-index-keywords" content="switch,case">
+  <meta name="search-keywords" content="switch,default">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Language_Features/break.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Language_Features/for.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="switch">
+        <span>switch</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>switch</h1>
+  <p>在许多情况下，您希望让实例根据特定值执行不同的操作。你可以使用一系列连续的<a href="If_Else_and_Conditional_Operators.htm"><span class="inline">if / else</span></a>语句来做到这一点，但是当可能的选择超过两个或三个时，通常更容易使用<span class="inline">switch</span>语句。</p>
+  <p><span class="inline">switch</span>语句的语法如下:</p>
+  <p class="code">switch (&lt;expression&gt;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case &lt;constant1&gt;:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;code&gt;<br>
+    &nbsp; &nbsp; break;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case &lt;constant2&gt;:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;code&gt;<br>
+    &nbsp; &nbsp; break;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<br>
+    &nbsp; &nbsp; // more cases (with breaks)<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &lt;code&gt;;<br>
+    }
+  </p>
+  <p>它的工作原理如下:</p>
+  <ul class="colour">
+    <li>首先执行<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>。</li>
+    <li>接下来，将其结果与<span class="inline">case</span><a class="tooltip" title="在编程中，语句是用编程语言合法编写的单行代码，表示要执行的操作。语句可能具有自己的内部组件，包括表达式，运算符和函数。语句的一个示例是A = B +5。GameMakerStudio 2程序不过是一系列一起执行任务（如移动玩家）的一个或多个语句的序列。">语句</a><span class="glossextra"> </span>后面的不同常量进行比较。当我们说“常量”时，我们的意思是在这种情况下的值不能是一个变量&nbsp;表达式，必须是任何<a href="../Data_Types.htm">数据类型</a>的固定值，如<span class="inline2">"fight"</span>或<span class="inline2">3</span>或关键字<span class="inline2"><span class="inline"><a href="../Instance_Keywords.htm">noone</a></span></span>.&nbsp;</li>
+    <li>执行从第一个具有匹配值的<span class="inline">case</span>语句开始，<i>直到遇到<a href="break.htm">break</a>语句</i>。</li>
+    <li>如果没有<span class="inline">case</span>语句匹配，则执行<span class="inline">default</span>语句。它不需要有<span class="inline">default</span>语句，如果没有提供，那么在没有匹配的情况下将不采取任何操作。<span class="inline">default</span>语句可以放置在switch块中的任何位置，但它通常被放置在所有情况之后的底部。</li>
+  </ul>
+  <p class="note"><span class="note">注意</span>switch语句将继续执行<span class="inline">case</span>内的代码，直到遇到<span class="inline">break</span>。如果在用例的末尾不使用<span class="inline">break</span>，它将导致switch“泄漏”到下一个<span class="inline">case</span>，甚至是一个<span class="inline">default</span>部分，如果没有<span class="inline">break</span>在中间。这可能会导致意外的行为，因为执行一个<span class="inline">case</span>可能会导致多个<span class="inline">case</span>被执行，所以确保在适当的地方使用<span class="inline">break</span>。</p>
+  <p>使用switch语句的一个简单示例如下:</p>
+  <p class="code">switch (player_lives)<br>
+    {<br>
+    &nbsp; &nbsp; case 3:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; draw_sprite(20, 20, spr_face_healthy);<br>
+    &nbsp; &nbsp; break;<br>
+    <br>
+    &nbsp; &nbsp; case 2:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; draw_sprite(20, 20, spr_face_hurt);<br>
+    &nbsp; &nbsp;&nbsp;break;<br>
+    <br>
+    &nbsp; &nbsp; case 1:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; draw_sprite(20, 20, spr_face_fatal);<br>
+    &nbsp; &nbsp; break;<br>
+    <br>
+    &nbsp; &nbsp; default:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; draw_sprite(20, 20, spr_face_fainted);<br>
+    &nbsp; &nbsp; break;<br>
+    }
+  </p>
+  <p>注意，可以使用多个<span class="inline">case</span>语句来执行同一条语句，因为并不总是每个<span class="inline">case</span>都需要&nbsp;<span class="inline">break</span>。如果对于特定的<span class="inline">case</span>没有<span class="inline">break</span>语句，则简单地继续执行下一个case的代码，例如:</p>
+  <p class="code">switch (keyboard_key)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case vk_left:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case ord("A"):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x -= 4;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case vk_right:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case ord("D"):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x += 4;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case vk_up:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case ord("W"):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y -= 4;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case vk_down:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;case ord("S"):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y += 4;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+    }
+  </p>
+  <p>上面的代码使用<span class="inline">switch</span>检查键盘事件，然后将其与列出的每个<span class="inline">case</span>&nbsp;进行比较。如果它满足任何所需的值，则执行相应的代码。注意&nbsp;<span class="inline">switch</span>可以检查多个<span class="inline">cases</span>并执行代码，直到下一个&nbsp;<span class="inline">break</span>，以允许使用各种键来获得相同的结果。</p>
+  <p>每个<span class="inline">case</span>都可以有自己的代码，所以您可以设置一种“继承”系统，其中一个case执行自己的代码，然后执行下一个case的代码。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Language_Features.htm">Language&nbsp;Features</a></div>
+        <div style="float:right">Next: <a href="break.htm">break</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+switch
+-->
+  <!-- TAGS
+switch
+-->
+
+</body></html>

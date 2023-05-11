@@ -1,0 +1,147 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.1.0_20";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>static_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Reference page for the function static_get">
+  <meta name="rh-index-keywords" content="static_get">
+  <meta name="search-keywords" content="static_get">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="static_get">
+        <span>static_get</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">static_get</span></h1>
+  <p>此函数&nbsp;返回给定函数的静态结构，如果没有静态结构，则返回 <span class="inline2">undefined</span>。静态结构是存储函数的所有静态变量的地方。</p>
+  <p>您还可以提供一个结构，在这种情况下，它将为您提供用于创建该结构的构造函数的静态结构 (或者，如果它是使用 <span class="inline3_func"><a href="static_set.htm">static_set</a></span> 更改的，则它可能是一个不同的结构)。</p>
+  <p>在使用构造函数继承时，静态结构是链接的，也就是说，如果构造函数有父构造函数，则可以获得静态结构的静态结构。</p>
+  <p>请参阅：<a href="../../GML_Overview/Structs/Static_Structs.htm">静态结构</a></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">static_get</span>(struct_or_func_name);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>struct_or_func_name</td>
+        <td><span data-keyref="Type_Struct"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Function"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></span></td>
+        <td>要获取其静态结构的结构或函数</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Struct"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Undefined"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">undefined</a></span>&nbsp;if no static struct is set</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">function counter() {<br>
+    &nbsp;&nbsp; &nbsp;static count = 0;<br>
+    &nbsp;&nbsp; &nbsp;return count ++;<br>
+    }<br>
+    <br>
+    repeat (10)&nbsp;counter()<br>
+    <br>
+    // Get static struct of counter()<br>
+    var _static_counter = static_get(counter);<br>
+    <br>
+    // Both of these read the same variable<br>
+    show_debug_message(counter.count); // 10<br>
+    show_debug_message(_static_counter.count); // 10
+  </p>
+  <p>上面的代码创建了带有静态变量的函数 <span class="inline2">counter()</span>。该函数被重复调用，因此其静态变量的值会增加。</p>
+  <p>然后返回该函数的静态结构，并将其存储在变量 (<span class="inline2">_static_counter</span>) 中。然后，它打印函数中的静态变量，方法是首先直接从函数中读取静态变量 (<span class="inline2">counter.count</span>)，然后从静态结构中读取它 (<span class="inline2">_static_counter.count</span>)。两者都打印相同的值，因为它们引用完全相同的变量。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Variable_Functions.htm">变量函数</a></div>
+        <div>Next:&nbsp;<a href="static_set.htm">static_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+static_get
+-->
+  <!-- TAGS
+static_get
+-->
+
+</body></html>

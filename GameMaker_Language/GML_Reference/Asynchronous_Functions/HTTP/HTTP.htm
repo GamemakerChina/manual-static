@@ -1,0 +1,115 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.14.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HTTP</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for all the HTTP functions">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="HTTP">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_request.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="HTTP">
+        <span>HTTP</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>HTTP</h1>
+  <p>本部分列出了 <span data-keyref="GameMaker Name">GameMaker</span> 中可用的所有不同异步 HTTP 函数。 这些函数将在所有具有它的实例中生成一个<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">异步 HTTP 事件</a>：</p>
+  <ul class="colour">
+    <li><a href="http_request.htm">http_request</a></li>
+    <li><a href="http_get.htm">http_get</a></li>
+    <li><a href="http_get_file.htm">http_get_file</a></li>
+    <li><a href="http_post_string.htm">http_post_string</a></li>
+  </ul>
+  <h2 id="h">跨域问题</h2>
+  <p>请注意，由于<strong>跨域安全问题</strong>，上述 <span class="inline">http_*</span> 函数可能无法正常运行。这意味着对您的服务器的请求或从跨域加载资源的尝试被阻止，并且可能看起来返回空白结果或404错误。</p>
+  <p>对于需要确定或设置跨域类型的镜像加载或 HTTP 请求，存在以下函数：</p>
+  <ul class="colour">
+    <li><a href="http_get_request_crossorigin.htm">http_get_request_crossorigin</a></li>
+    <li><a href="http_set_request_crossorigin.htm">http_set_request_crossorigin</a></li>
+  </ul>
+  <p>在大多数情况下，应该不需要使用这些函数，但如果游戏存储在安全的服务器上-在该服务器上，某些资源可能需要进行基本身份验证才能访问，并在加载时生成安全错误-可能需要将图像请求的跨域类型设置为 <span class="inline2">"use-credentials"</span>( 与默认的 <span class="inline2">"anonymous"</span> 设置相反)。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Asynchronous_Functions.htm">异步函数</a></div>
+        <div style="float:right">Next: <a href="../Dialog/Dialog.htm">对话框</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+HTTP Functions
+-->
+  <!-- TAGS
+http_functions
+-->
+
+</body></html>

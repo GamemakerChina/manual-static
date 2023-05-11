@@ -1,0 +1,134 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Paths</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Paths">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Paths">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Paths/path_start.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Synchronisation/audio_sync_group_is_playing.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Paths">
+        <span>Paths</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>路径</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>拥有丰富的函数集合和内置变量，可用于在游戏中使用路径。本节介绍在处理以前在<a href="../../../../The_Asset_Editors/Paths.htm">路径编辑器</a>中创建的路径时使用的基本路径，但还有其他函数允许您使用代码创建自己的路径，并以各种方式操作它们。</p>
+  <p>存在以下处理路径的基本函数：</p>
+  <ul class="colour">
+    <li><a href="path_start.htm">path_start</a></li>
+    <li><a href="path_end.htm">path_end</a></li>
+    <li><a href="path_get_closed.htm">path_get_closed</a></li>
+    <li><a href="path_get_kind.htm">path_get_kind</a></li>
+    <li><a href="path_get_length.htm">path_get_length</a></li>
+    <li><a href="path_get_name.htm">path_get_name</a></li>
+    <li><a href="path_get_number.htm">path_get_number</a></li>
+    <li><a href="path_get_point_speed.htm">path_get_point_speed</a></li>
+    <li><a href="path_get_point_x.htm">path_get_point_x</a></li>
+    <li><a href="path_get_point_y.htm">path_get_point_y</a></li>
+    <li><a href="path_get_precision.htm">path_get_precision</a></li>
+    <li><a href="path_get_speed.htm">path_get_speed</a></li>
+    <li><a href="path_get_x.htm">path_get_x</a></li>
+    <li><a href="path_get_y.htm">path_get_y</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>为了帮助调试路径，您也可以使用一个函数将其绘制到屏幕上：</p>
+  <ul class="colour">
+    <li><a href="../../Drawing/Basic_Forms/draw_path.htm">draw_path</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>对象的每个实例还具有一系列内置变量，旨在简化路径的使用，这些变量在以下部分中列出：</p>
+  <ul class="colour">
+    <li><a href="Path_Variables/Path_Variables.htm">路径变量</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>最后，当游戏运行时，可以操纵路径的内容以及创建新路径。以下部分提供了启用这些函数以及更多函数的函数：</p>
+  <ul class="colour">
+    <li><a href="Path_Manipulation/Path_Manipulation.htm">路径操作</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Asset_Management.htm">资源管理</a></div>
+        <div style="float:right">Next: <a href="../Scripts/Scripts.htm">脚本</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Paths
+-->
+  <!-- TAGS
+path_functions
+-->
+
+</body></html>

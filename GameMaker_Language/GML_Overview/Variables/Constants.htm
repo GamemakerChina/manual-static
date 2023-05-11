@@ -1,0 +1,235 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.1.1.1_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Constants</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the different GML constants">
+  <meta name="rh-index-keywords" content="Constants,macro,enum,pointer_invalid,pointer_null,undefined,NaN,infinity,true,false,pi">
+  <meta name="search-keywords" content="constants,macros,enums,macro,enum">
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Data_Types.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/event_data.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Constants">
+        <span>Constants</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">常量</span></h1>
+  <p>常量(constant)是一种变量，在游戏开始时被设置一次，然后永远不会改变。事实上，常量值<em>在被声明后不能被改变</em>。这使它们成为保存整个游戏中用于识别特殊数据的数值的理想选择。</p>
+  <p>在GameMaker语言中，有两种类型的用户定义常量：<strong>宏</strong>和<strong>枚举</strong>，，下面将对这两种类型进行解释。还要注意，始终相同的任何值都被归类为常量，而与<a href="../Data_Types.htm">数据类型</a>无关，例如字符串或数字3。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> GameMaker 语言也有许多用于标识特定事物的内置常量值。在 <a href="../../GML_Reference/GML_Reference.htm">GML 参考 </a> 部分中需要它们的运行时函数的相应页面上概述了这些内容。</p>
+  <h2>Macros 宏</h2>
+  <p>虽然不完全是变量，但宏在使用方式上与它们相似，即：它们是命名的值，你可以在整个代码中使用它们来替换<a class="tooltip" title="在计算机编程中，术语“硬编码”用于描述被认为是固定的并且不太可能更改的代码。硬编码功能以无法稍后修改的方式内置于硬件或软件中。例如，如果您要制作游戏并将玩家的健康状况“硬编码”为10，那么您将在整个游戏代码中使用值10，而不是使用变量。">硬编码的</a>值。基本上，宏是一个持有表达式的命名变量。你可以用<a href="../Script_Functions.htm">脚本编辑器</a>来定义你自己的宏，然后在你的代码和动作中使用它们，就像它们是普通变量一样，唯一不同的是，它们<i>不能在游戏中被改变</i>。</p>
+  <p>宏的语法结构如下所示：</p>
+  <p class="code">#macro&nbsp;<i>&lt;variable&gt;</i>&nbsp;<i>&lt;expression&gt;</i></p>
+  <p>例如，假设你定义了以下宏 "<span class="inline">total_weapons</span>"：</p>
+  <p class="code">#macro total_weapons 10</p>
+  <p class="note_heading">宏语法...</p>
+  <p class="note">必须正确使用上面显示的语法来定义宏。您不能使用等号(如在变量中)或在末尾加上分号(如在常规语句中)。这样做会导致您的宏定义失效。<br><br>例如，这不是定义宏的正确方法：<br><br><span class="inline2"># macro total_weapons= 10;</span><br><br>删除等号和冒号将使其成为有效的宏定义。</p>
+  <p>然后您可以在代码中这样使用它：</p>
+  <p class="code">pos++;<br>
+    <br>
+    if (pos&nbsp;&gt;= total_weapons)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;pos = 0;<br>
+    }
+  </p>
+  <p>请注意，你将无法更改常量的值，所以像这样的代码会导致游戏崩溃：</p>
+  <p class="code">total_weapons = 11;</p>
+  <p>你可以在代码或脚本中的任何地方定义宏，它将被<i>预编译</i>并像从一开始就存在一样包含在游戏中，但我们建议你创建专用的脚本资源并在其中定义所有宏。以后组织和调试会更容易！</p>
+  <p>如果需要在运行时更改宏的值，则可能应该将其设置为<a href="Global_Variables.htm">全局变量</a>，因为这些变量可以在游戏期间从代码中更改，除非您将宏设置为<span><a href="../Runtime_Functions.htm">运行时</a></span><a href="../Runtime_Functions.htm">函数</a>。通过将宏设置为函数，这意味着每次使用宏时都会调用该函数。例如：</p>
+  <p class="code">#macro col make_colour_hsv(irandom(255), 255, 255)</p>
+  <p>然后，您可以将此宏调用为类似以下内容：</p>
+  <p class="code">image_blend = col;</p>
+  <p>使用此代码将使图像在每次使用宏时混合不同的颜色。值得注意的是，您还可以使用<span class="inline"><span class="inline">\</span></span>字符将宏拆分到多行，以显示换行符在哪里。例如：</p>
+  <p class="code">#macro hello show_debug_message("Hello" + \<br>
+    string(player_name) + \<br>
+    ", how are you today?");</p>
+  <p>这纯粹是装饰性的，因为像这样拆分宏在使用时对最终宏的结果没有任何影响，只是为了在代码行较长的宏上提供对多行文本的支持。</p>
+  <p>宏的一个非常重要的特性是，它们可以定义为与明确的 <a href="../../../Settings/Configurations.htm"> 配置 </a>(configs)，一起使用，这意味着您可以具有相同的宏名称，但根据当前选择的配置为其赋予不同的值。例如，假设您有一个用于 Android 广告的配置和另一个用于 iOS 广告的配置，那么您可以定义一个宏来保存所需的应用程序 ID 值：</p>
+  <p class="code">#macro ad_id ""<br>
+    #macro Android:ad_id "com.yoyogames.googlegame"<br>
+    #macro iOS:ad_id "com.yoyogames.appstoregame"</p>
+  <p>如你所见，你先给配置名称，然后是冒号<span class="inline">:</span>，然后是宏名称和值。请注意，冒号<span class="inline">:</span>与配置名称或宏名称之间不能有空格，否则会出现错误。</p>
+  <h2 id="enumhead">Enums 枚举</h2>
+  <p>枚举是一个"枚举器"它本质上允许您使用常量值列表创建自己的有限数据类型。它们的结构如下：</p>
+  <p class="code">enum <i>&lt;variable&gt;</i><br>
+    {<br>
+    <i>&nbsp; &nbsp; &lt;constant&gt;</i> [= <i>&lt;value&gt;</i>],<br>
+    <i>&nbsp; &nbsp; &lt;constant&gt;</i> [= <i>&lt;value&gt;</i>],<br>
+    &nbsp; &nbsp; // etc...<br>
+    }
+  </p>
+  <p>在以下示例中，我们为彩虹的颜色创建一个枚举，并为其指定各种常量和默认值：</p>
+  <p class="code">enum rainbowcolours<br>
+    {<br>
+    &nbsp; &nbsp; red,<br>
+    &nbsp; &nbsp; orange,<br>
+    &nbsp; &nbsp; yellow,<br>
+    &nbsp; &nbsp; green,<br>
+    &nbsp; &nbsp; blue,<br>
+    &nbsp; &nbsp; indigo,<br>
+    &nbsp; &nbsp; violet<br>
+    }</p>
+  <p>枚举条目只能是<b>整数</b>或<b><a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a><span class="glossextra"> </span>，前面的枚举计算为整数</b>，默认情况下从0往上编号，所以我们上面给出的示例将默认为<span class="inline">red = 0</span>， <span class="inline">orange = 1</span>， <span class="inline">yellow = 2</span>，等等……</p>
+  <p>还可以在创建时为枚举变量指定值：</p>
+  <p class="code">enum&nbsp;enum_test<br>
+    {<br>
+    &nbsp; &nbsp; val = 10;<br>
+    }<br>
+    <br>
+    enum rainbowcolours<br>
+    {<br>
+    &nbsp; &nbsp; red = 5,<br>
+    &nbsp; &nbsp; orange = 5 * 2,<br>
+    &nbsp; &nbsp; yellow = 15,<br>
+    &nbsp; &nbsp; green = 20,<br>
+    &nbsp; &nbsp; blue = 25,<br>
+    &nbsp; &nbsp; indigo = 30,<br>
+    &nbsp; &nbsp; violet = 35 * enum_test.val<br>
+    }
+  </p>
+  <p>请注意，在上面的示例中，我们使用了另一个枚举来创建 "violet" 的表达式。这仅在引用的枚举是在表达式中使用枚举的<i>之前创建的</i>时有效，但它不适用于变量或函数，因为当项目<a class="tooltip" title="编译是指GameMaker接受您的代码并将其收集在一起的方式，以创建可执行的程序包，该程序包将作为游戏在设备上运行。">编译</a>时，枚举值必须能够被计算为常量。另请注意，所有枚举值的计算结果均为<b>整数(integer)</b>值，当您创建自己的枚举值时，应注意<i>只允许整数值</i>使枚举起作用。该值可以是浮点双精度数可以表示的任何整数，包括负值。</p>
+  <p>要稍后访问给定枚举类型中的值，可以使用点<span class="inline">"."</span>方法，如下所示：</p>
+  <p class="code">variable = &lt;enum_name&gt;.&lt;<em>enum_variable</em>&gt;;</p>
+  <p>例如，让我们使用在上述代码中创建的"<span class="inline">rainbowcolours</span>"枚举：</p>
+  <p class="code">colour_value = rainbowcolours.green * rainbowcolours.red;</p>
+  <p><span class="inline">colour_value</span>变量现在将保留值100(20 * 5 )。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;您不能<em>在创建任何枚举常量后修改它的值，这与创建宏后不能修改它们非常相似。</em></p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 枚举值存储为 int64s，因此在它们上运行 <span class="inline2"><a href="../../GML_Reference/Variable_Functions/is_real.htm">is_real</a></span> 将返回 <span class="inline2">false</span>。</p>
+  <h2>内置常量</h2>
+  <p>下表列出了项目中某些函数和操作可以返回的内置常量：</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>常量</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">pointer_null</span></td>
+        <td>This constant indicates that the pointer is not pointing to anything meaningful (the same as<span>&nbsp;</span><span class="inline">NULL</span><span>&nbsp;</span>in C++ or <span class="inline">null</span> in C#).<br>
+          This value is <a class="tooltip" title="当用作布尔值时被认为是“false”的值，例如在if()条件中。">falsy</a>.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">pointer_invalid</span></td>
+        <td>This constant simply means that the value is not a valid pointer</td>
+      </tr>
+      <tr>
+        <td><span class="inline">undefined</span></td>
+        <td>This constant is returned when a function has to return&nbsp;<em>something</em>&nbsp;but has no appropriate or "correct" value to return.<br>
+          This value is <a class="tooltip" title="当用作布尔值时被认为是“false”的值，例如在if()条件中。">falsy</a>.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">NaN</span></td>
+        <td><span>This constant that can be returned when the compiler cannot evaluate the results of an operation as a number - for example, 0 / 0 cannot be defined as a real number, and is therefore represented by&nbsp;</span><span class="inline">NaN</span></td>
+      </tr>
+      <tr>
+        <td><span class="inline">infinity</span></td>
+        <td><span class="inline"><span data-highlight-container="true"><span data-highlight="true">
+                <font face="open_sansregular"><span style="font-size: 18px; font-weight: 400;">This constant&nbsp;</span></font>
+              </span></span></span><span>refers to a number that is considered infinite, such as the result you would get when dividing any floating point value by zero, e.g.&nbsp;1.0/0.</span></td>
+      </tr>
+      <tr>
+        <td><span class="inline">true</span></td>
+        <td>This constant represents the value 1, which is what <span data-keyref="GameMaker Name">GameMaker</span> will evaluate as a boolean "true" (note that any value equal to or greater than 1 will evaluate as <span class="inline">true</span>).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">false</span></td>
+        <td>This constant represents the value 0, which is what <span data-keyref="GameMaker Name">GameMaker</span> will evaluate as a boolean "false" (note that any value less than or equal to 0 will evaluate as <span class="inline">false</span>).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">pi</span></td>
+        <td>This constant represents the value of pi: 3.141592653589793280 etc... although the exact value will depend on various factors like the OS or the platform being targeted.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>有关上面列出的几个常数的等式比较信息，请参见<a href="../../../Additional_Information/Type_Tables.htm#h">等式表</a>。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../Variables_And_Variable_Scope.htm">变量和变量范围</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Local_Variables.htm">局部变量</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+constants
+macros
+enums
+macro
+enum
+-->
+  <!-- TAGS
+constants
+macro
+enum
+-->
+
+</body></html>

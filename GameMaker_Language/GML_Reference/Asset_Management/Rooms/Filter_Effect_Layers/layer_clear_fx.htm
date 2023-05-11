@@ -1,0 +1,144 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.6.0_12";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>layer_clear_fx</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Page outlining the function layer_clear_fx">
+  <meta name="rh-index-keywords" content="layer_clear_fx">
+  <meta name="search-keywords" content="layer_clear_fx">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_enable_fx.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_get_fx.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="layer_clear_fx">
+        <span>layer_clear_fx</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_clear_fx</h1>
+  <p>此函数用于清除应用于指定层的 FX 结构。可以指定要修改的图层的 ID 或名称，此函数将删除应用于该图层的 FX 结构，从而完全禁用其效果。</p>
+  <p>如果您使用此函数临时禁用某个效果，并且需要恢复它的层，您应该首先通过调用<span class="inline"><a href="layer_get_fx.htm">layer_get_fx()</a></span>为层保存FX结构，然后调用该函数以在层上清除它。稍后可以通过调用<span class="inline"><a href="layer_set_fx.htm">layer_set_fx()</a></span>将其应用回层，这将重新启用效果。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">layer_clear_fx(layer_name_or_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>layer_name_or_id</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Layer"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">Layer ID</a></span></td>
+        <td>清除FX的层的名称或ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">// Disable effect<br>
+    if (keyboard_check_pressed(ord("E")))<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;if (layer_get_fx("EffectLayer") != -1)<br>
+    &nbsp;&nbsp; &nbsp;{<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp_fx = layer_get_fx("EffectLayer");<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;layer_clear_fx("EffectLayer");<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    }<br>
+    // Re-enable effect<br>
+    else if (keyboard_check_pressed(ord("F")))<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;if (temp_fx != -1)<br>
+    &nbsp;&nbsp; &nbsp;{<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;layer_set_fx("EffectLayer", temp_fx);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp_fx = -1;<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    }</p>
+  <p>上面的代码检查是否按下"E"键，然后检查"EffectLayer"层是否应用了过滤器/效果; 在这种情况下，它将其FX结构存储在临时实例变量中，并清除所有过滤器/效果层。当按下"F"键时，它检查临时变量是否持有- 1以外的内容，在这种情况下，它将FX应用回层，并将临时变量重置为-1。所有这些实质上允许您在需要时启用和禁用效果，而不会丢失其参数。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Filter_Effect_Functions.htm">过滤器和效果函数</a></div>
+        <div style="float:right">Next:&nbsp;<a href="layer_enable_fx.htm">layer_enable_fx</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_clear_fx
+-->
+  <!-- TAGS
+layer_clear_fx
+-->
+
+</body></html>

@@ -1,0 +1,120 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "4.3.2.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Conflicts</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Section that covers Source Control standard workflow
+">
+  <meta name="rh-index-keywords" content="Source Control - Conflicts">
+  <meta name="search-keywords" content="source control conflicts,conflicts tools">
+<meta name="brsnext" value="IDE_Tools/Source_Control/External_Merge_Diff_Tools.htm"><meta name="brsprev" value="IDE_Tools/Source_Control/Cloning_A_Repository.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Conflicts">
+        <span>Conflicts</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>冲突</h1>
+  <p>在本节中，我们将研究如何解决<a href="Cloning_A_Repository.htm">克隆本地仓库</a>与主仓库之间的冲突。假设您现在使用的是本地仓库，我们将需要编辑一个文件，然后导致某种冲突，因此打开我们一直使用的测试脚本，并将"Hello World"消息更改为如下所示：</p>
+  <p class="code">show_debug_message("Hello World, How Are You?");</p>
+  <p>现在，您应该保存项目并将其提交到本地仓库。现在，由于我们链接到远程主仓库(即使它是我们克隆到同一磁盘的主仓库)，我们需要执行推送操作才能将更改发送到主仓库。为此，请转到<strong>源代码管理</strong>&gt;<strong>推送更改</strong>，这将在源代码管理<a href="../../Introduction/The_Output_Window.htm">输出选项卡中为我们提供状态更新</a>：</p>
+  <p><img alt="Source Control Output Panel" class="center" src="../../assets/Images/IDE Tools/SCM_OutputPanel.png">我们现在需要打开原始项目(而不是克隆的项目)，因此浏览到磁盘上保存它的位置-或者只需选中<strong>文件菜单</strong>中的<a href="../../IDE_Navigation/Menus/The_File_Menu.htm">最近的项目</a>，因为它应该直接位于当前项目下-并将其加载到 <span data-keyref="GameMaker Name">GameMaker</span> 中。检查您是否拥有正确项目的一种简单方法是，只需检查您拥有的脚本，如果消息是"Hello World"，则您拥有正确的脚本，或者您可以打开<strong>查看历史记录</strong>窗口并以此方式进行检查。</p>
+  <p>现在您需要再次编辑该脚本，因此使其读起来如下所示：</p>
+  <p class="code">show_debug_message("This will cause a conflict.");</p>
+  <p>可以将其保存到磁盘，并提交更改，但如果您尝试推送这些更改，您将收到以下消息：</p>
+  <p><span class="buttons"><img alt="Source Control Push Conflict Message" class="center" src="../../assets/Images/IDE Tools/SCM_PushConflict.png"></span>有人已经推送了您尚未推送的更改！这意味着您需要拉入仓库并查看问题的确切原因，因此请转到<strong>源代码控制</strong>&gt;<strong>拉出更改</strong>。这将显示两个窗口，第一个是有关更改的文件的警告(与前面的操作一样，您希望在此处选择<strong>重新加载</strong>，而<em>不是</em><strong>保存</strong>)，另一个是<strong>冲突</strong>窗口：</p>
+  <p><img alt="Source Control Conflict Window" class="center" src="../../assets/Images/IDE Tools/SCM_ConflictsWindow.png">此窗口将在左侧列表中显示冲突的文件，您可以使用鼠标左键<img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" width="20">&nbsp;从该列表中选择文件(或使用<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;或&nbsp;<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55">和<img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" width="20">选择多个文件)。您有四个处理冲突文件的选项，可从右侧的按钮访问：</p>
+  <ul class="colour">
+    <li><strong>使用他人的</strong> - 这将覆盖您使用远程仓库中的更改所做的更改。</li>
+    <li><strong>使用自己的</strong> - 这将使用您刚才所做的更改否决来自远程仓库的更改。</li>
+    <li><strong>合并</strong> - 这将尝试打开外部合并工具来处理冲突。</li>
+    <li><strong>选择合并工具</strong> - 这将允许您配置合并工具(有关更多详细信息，请参阅有关<a href="External_Merge_Diff_Tools.htm">外部合并/比较工具的章节</a>)。</li>
+  </ul>
+  <p>现在，您可以使用按钮来解决冲突，但在此之前，让我们先打开冲突的文件，看看问题到底是什么。如果打开冲突的脚本，它现在将如下所示：</p>
+  <p><img alt="Source Control Conflicted Code" class="center" src="../../assets/Images/IDE Tools/SCM_ConflictedCode.png">这表明"This Will Cause A Conflict"是正确的(这是我们推送到本地仓库的内容)和"Hello World，How Are You？"是从远程仓库 master 中提取的。您现在可以返回到冲突窗口，然后单击<strong>使用他们的文件</strong>来拉出更改的文件并覆盖当前的头文件。脚本现在将被标记为已更改，您应该在继续之前执行新的提交和推送。</p>
+  <p>请注意，我们实际上可以在 <span data-keyref="GameMaker Name">GameMaker</span> IDE 中修复此问题。如果我们删除第1、2、3和5行，这样我们只剩下 <span class="inline">show_debug_message("Hello World, How Are You?")</span> 并保存它，它将清除冲突，因为 Git 将假设您知道您正在对自己的文件做什么。但是，这很容易出错，因此建议安装合并工具，然后配置并使用该工具，而不是手动尝试合并。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Source_Control.htm">源码控制</a></div>
+        <div style="float:right">Next: <a href="External_Merge_Diff_Tools.htm">外部合并/差异工具</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Conflicts
+conflicts
+-->
+  <!-- TAGS
+source_control_conflicts
+-->
+
+</body></html>

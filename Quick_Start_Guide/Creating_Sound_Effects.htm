@@ -1,0 +1,114 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "2.0_4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Creating Sound Effects</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Overview what sounds and music can be added to a game and how.">
+  <meta name="rh-index-keywords" content="Quick Start - Sounds">
+  <meta name="search-keywords" content="sound,sounds,sound effects,effects,game music,music">
+  <meta name="robots" content="NOODP">
+<meta name="brsnext" value="Quick_Start_Guide/Objects_And_Instances.htm"><meta name="brsprev" value="Quick_Start_Guide/Creating_Tile_Sets.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Creating Sound Effects">
+        <span>Creating Sound Effects</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>创建声音效果</h1>
+  <p>所有游戏都必须有音效，而且大多数游戏都有音乐，这意味着你需要能够将它们添加到 <span data-keyref="GameMaker Name">GameMaker</span> 中的游戏中。这是通过 <a href="../The_Asset_Editors/Sounds.htm"><strong> 声音编辑器 </strong></a> 完成的，每当您在资源浏览器中创建新的声音资源时都会打开该编辑器：</p>
+  <p><img alt="The Sound Editor" class="center" src="../assets/Images/QS_Guide/QS_SoundEditor.png"></p>
+  <p>在 <span data-keyref="GameMaker Name">GameMaker</span> 中的声音可以是 <strong> 未压缩的 </strong> 或 <strong> 压缩的 </strong>，压缩的声音在运行时有额外的处理选项。未压缩声音是指已保存为 <span class="inline">wav</span> 格式文件的声音，而压缩声音可以是 <span class="inline">mp3</span> 或 <span class="inline">ogg</span> 格式。一般来说，你会希望小的音效是 <span class="inline">wav</span> -- 像射击的声音，或者按钮的声音，等等。- 更大的效果或音乐将是 <span class="inline">MP3</span> 或 <span class="inline">Ogg</span>。与其他不同的资源一样，建议您使用适当的前缀来命名您的声音，如 "<span class="inline">nd_</span>"，这样您以后就可以轻松地识别它。</p>
+  <p class="note"><strong>注意</strong>：未压缩的声音只是表示它没有应用任何类型的压缩 <strong><a class="tooltip" title="算法基本上是一组旨在解决确定问题的指令或规则。问题可能很简单，例如将两个数字相加或将其复杂化，例如将视频文件从一种格式转换为另一种格式，或者将音频压缩为较小的文件大小。"> 算法 </a></strong>。对声音应用 <a class="tooltip" title="压缩是使用数学算法来减小文件的大小。这特别适用于音频和图像文件，其中JPG（图像）和MP3（音频）等格式是压缩格式。压缩通常会使得文件大小更小，但会导致一些数据丢失，这可能会或可能不会很明显，这取决于所使用压缩的类型和强度。未压缩的格式为BMP（图像）或WAV（音频），它们具有较大的文件大小，但不会丢失数据。"> 压缩 </a> 意味着它将需要较少的存储空间，但也意味着在播放之前需要解压缩，而且由于小音效通常使用得很多且非常快-并且不会占用太多存储空间-你不希望在播放时解压缩它需要额外的 CPU 成本。然而，由于音乐文件通常是非常大的文件，您确实希望压缩它们，因为这样会占用更少的存储空间，而解压缩的额外 CPU 成本可以忽略不计，因为它们通常一次只播放一个。</p>
+  <p>添加声音非常简单，只需单击添加声音按钮 <img alt="Add Sound Icon" class="icon" src="../assets/Images/Icons/Icon_AddSound.png">，然后在打开的文件资源管理器中浏览您要使用的文件 (您也可以将声音文件拖放到 <span data-keyref="GameMaker Name">GameMaker</span> IDE 中，它们将作为新的声音资源添加)。一旦选择了一个文件并将其加载到中，就可以使用显示的播放控件预览它，并更改文件应如何导出的某些属性。如果你不确定这一点，那么简单地让一切保持原样，尽管如果你正在添加音乐或 <span class="inline">MP3</span>/<span class="inline">Ogg</span> 格式的声音，你可能应该改为 <em> 压缩的-而不是流的 </em> 格式。</p>
+  <p>您可以在下面链接的页面上找到有关声音编辑器的更多信息：</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Sounds.htm">编辑器：声音编辑器</a></li>
+  </ul>
+  <p>请注意，声音会占用大量磁盘空间，因此在为游戏项目创建声音时应小心。你真的需要 48 khz 的音效，只播放一小部分时间吗？可能不会！因此，考虑将这里的<a class="tooltip" title="采样率是每秒携带的音频样本的数量，以赫兹或kHz测量(1khz等于1000hz)。采样率越高，声音将越接近原始模拟波形，但文件大小将越大。一般来说，声音效果在采样率较低的情况下比音乐效果好。">采样率</a>降低到 11025 或 22050 以获得效果，对于较长的内容，如音乐或循环效果，也可以考虑使用压缩格式。还请注意，如果您计划使用 3D 位置音频效果，则初始声音文件必须是 <em> 单声道 </em>。</p>
+  <p>您现在可以关闭声音编辑器，我们可以继续查看<strong>对象和实例</strong>...</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Content.htm">索引</a></div>
+        <div style="float:right">Next: <a href="Objects_And_Instances.htm">对象和实例</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sound Effects
+Creating Sound Effects
+Quick Start: Sound Effects
+-->
+  <!-- TAGS
+qs_sound_effects
+-->
+
+</body></html>

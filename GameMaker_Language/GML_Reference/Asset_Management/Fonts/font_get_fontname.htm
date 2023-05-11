@@ -1,0 +1,126 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.10.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>font_get_fontname</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function font_get_fontname">
+  <meta name="rh-index-keywords" content="font_get_fontname">
+  <meta name="search-keywords" content="font_get_fontname">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_get_first.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_get_name.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="font_get_fontname">
+        <span>font_get_fontname</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_get_fontname</h1>
+  <p>使用该函数，可以获取给定字体资源的实际系统名称。此函数返回<i>字符串</i>而不是<i>索引</i>，返回的名称将取决于所使用的字体。例如，您可能在资源浏览器中有一个名为"<strong>fnt_Main</strong>"的字体资源，字体本身可能是Windows系统字体<b>Arial</b>。 在这种情况下，函数将返回<span class="inline2">" Arial"</span>，因为这是字体的系统名称。如果需要资源浏览器中显示的名称，请使用<a href="font_get_name.htm"><span class="inline">font_get_name()</span></a>。</p>
+  <p>上述行为仅适用于通过IDE添加的字体资源。当在运行时加载的字体上使用时(使用<span class="inline"><a href="font_add.htm">font_add()</a></span>)，该函数将返回该字体文件的完整路径而不是其字体名称。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">font_get_fontname(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>ind</td><td><span data-keyref="Type_Asset_Font"><a target="_blank" href="../../../../../The_Asset_Editors/Fonts.htm">Font Asset</a></span></td>
+        <td>要检查的字体的索引。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">fnt_Name = font_get_fontname(font0);</p>
+  <p>上述代码将获取字体资源的系统名称，并将其存储为变量"fnt_Name"中的字符串。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Fonts.htm">字体</a></div>
+        <div style="float:right">Next: <a href="font_get_first.htm">font_get_first</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_fontname
+-->
+  <!-- TAGS
+font_get_fontname
+-->
+
+</body></html>

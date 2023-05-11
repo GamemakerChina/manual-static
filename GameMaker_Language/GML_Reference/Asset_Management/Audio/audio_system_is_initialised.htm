@@ -1,0 +1,143 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.5.0_32";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>audio_system_is_initialised</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="audio_system_is_initialised">
+        <span>audio_system_is_initialised</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">audio_system_is_initialised</span></h1>
+  <p>此函数返回音频系统 (主总线) 是否在 HTML5 上初始化。对于 HTML5 以外的目标，此函数将始终返回 <span class="inline2">true</span>。</p>
+  <p>在 HTML5 平台上，音频引擎可能在游戏开始时没有完成加载。在此之前，您不应执行以下任何操作：</p>
+  <ul>
+    <li>直接引用&nbsp;<span class="inline2"><a href="Audio_Effects/audio_bus_main.htm">audio_bus_main</a></span> (这将是<span class="inline2">undefined</span>)</li>
+    <li>调用&nbsp;<span class="inline3_func"><a href="Audio_Effects/audio_bus_create.htm">audio_bus_create</a></span> (这将返回 <span class="inline2">undefined</span>)</li>
+    <li>调用 <span class="inline3_func"><a href="Audio_Emitters/audio_emitter_create.htm">audio_emitter_create</a></span> (这将返回 <span class="inline2">undefined</span>)</li>
+  </ul>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;此函数不同于 <span class="inline3_func"><a href="audio_system_is_available.htm">audio_system_is_available</a></span>，后者反映播放音频的能力，并且取决于 Web Audio 上下文的状态。&nbsp;必须先初始化音频系统，然后才能使用它。</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">audio_system_is_initialised</span>();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p>&nbsp;</p>
+  <p class="code_heading">创建事件</p>
+  <p class="code">// Initially, the audio system is not initialised<br>
+    audio_initialised = false;<br>
+    <br>
+    em_emitter = -1;<br>
+    bus_special_effects = -1;
+  </p>
+  <p class="code_heading">步事件</p>
+  <p class="code">// Check until the system is initialised<br>
+    if !audio_initialised &amp;&amp;&nbsp;<span data-field="title" data-format="default">audio_system_is_initialised</span>()<br>
+    {<br>
+    &nbsp; &nbsp; audio_initialised = true;<br>
+    &nbsp; &nbsp;&nbsp;<br>
+    &nbsp; &nbsp; // First-time initialization<br>
+    &nbsp; &nbsp; bus_special_effects = audio_bus_create();<br>
+    &nbsp; &nbsp; bus_special_effects[0] = audio_effect_create(AudioEffectType.Reverb1);<br>
+    &nbsp; &nbsp;&nbsp;em_emitter = audio_emitter_create();<br>
+    &nbsp; &nbsp; audio_emitter_bus(em_emitter, bus_special_effects);<br>
+    }<br>
+    <br>
+    if audio_initialised<br>
+    {<br>
+    &nbsp; &nbsp; // The audio system can be used here<br>
+    &nbsp; &nbsp; // ...<br>
+    }
+  </p>
+  <p>在游戏开始时，在对象的创建事件中，变量 <span class="inline2">audio_initialised</span> 被设置为 <span class="inline2">false</span>。在其步事件中，函数 <span class="inline3_func"><span data-field="title" data-format="default">audio_system_is_initialised</span></span> 会被调用，只要 <span class="inline2">audio_initialised</span> 保持 <span class="inline2">false</span>。一旦函数返回 <span class="inline2">true</span>，就会执行第一个 if 语句：<span class="inline2">audio_initialised</span> 之后的内容被设置为 <span class="inline2">true</span>，这将阻止对该函数的进一步调用，并设置一个定制音频总线和发射器。一旦 <span class="inline2">audio_initialised</span> 为 <span class="inline2">true</span>，则执行第二个 if 语句的代码，该代码可以与音频系统交互，例如改变效果参数。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Audio.htm">音频</a></div>
+        <div>Next:&nbsp;<a href="audio_debug.htm">audio_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_system_is_initialised
+-->
+  <!-- TAGS
+audio_system_is_initialised
+-->
+
+</body></html>

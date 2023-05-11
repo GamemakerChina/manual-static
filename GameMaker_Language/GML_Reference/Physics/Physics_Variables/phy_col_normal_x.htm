@@ -1,0 +1,118 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.13.6.0_27";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>phy_col_normal_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for phy_col_normal_x">
+  <meta name="rh-index-keywords" content="phy_col_normal_x">
+  <meta name="search-keywords" content="phy_col_normal_x">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Physics/Physics_Variables/phy_col_normal_y.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/Physics_Variables/phy_collision_y.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="phy_col_normal_x">
+        <span>phy_col_normal_x</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">phy_col_normal_x</span></h1>
+  <p>此 <b> 只读 </b> 变量返回对应于 <span class="inline2"><a href="phy_collision_x.htm">phy_collision_x</a></span> 数组值的碰撞法线的 X 分量。对于每个接触点，都有一个关联的接触法线 (对于碰撞中的所有接触点，法线通常是相同的)。此接触法线是一个单位向量，它从碰撞中的一个实例指向另一个实例，并可用于计算解决碰撞的正确"推"方向</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;该变量仅在物理启用的实例的碰撞事件中可用。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">phy_col_normal_x</span></p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (single precision floating point value, or <span class="inline">undefined</span> if the instance is not physics enabled)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">repeat(5 + irandom(5))<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;with (instance_create_layer(x, y, "Effects", obj_Debris))<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;physics_apply_local_impulse(0, 0, other.<span data-field="title" data-format="default">phy_col_normal_x</span>[0], other.phy_col_normal_y[0]);<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上述代码使用触点法线为在两个启用了物理的实例之间的碰撞事件中创建的实例设置移动方向。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Physics_Variables.htm">物理变量</a></div>
+        <div style="float:right">Next:&nbsp;<a href="phy_col_normal_y.htm">phy_col_normal_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_col_normal_x
+-->
+  <!-- TAGS
+phy_col_normal_x
+-->
+
+</body></html>

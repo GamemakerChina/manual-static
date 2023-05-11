@@ -1,0 +1,147 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.13.6_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>physics_mass_properties</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for physics_mass_properties">
+  <meta name="rh-index-keywords" content="physics_mass_properties">
+  <meta name="search-keywords" content="physics_mass_properties">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/In_App_Purchases/In_App_Purchases.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Physics/physics_test_overlap.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="physics_mass_properties">
+        <span>physics_mass_properties</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_mass_properties</h1>
+  <p>此函数可用于为启用物理的实例设置自定义质量和旋转惯量值。通常，使用绑定固定装置的表面积及其密度的组合来计算实例的质量、质心和旋转惯性。但是，在非常特殊的情况下，您可能需要偏移质心或改变惯性，这就是您使用此函数的时候。</p>
+  <h3>质量</h3>
+  <p>质量是以真实世界的权重 (即：kg) 计算的，因此您应该始终尝试保持要建模的值的真实性。所以，如果你的物理物体代表一个人，他们的质量可能是 70 公斤，而不是 2 公斤。</p>
+  <p>质量不能为负值。</p>
+  <h3>质心</h3>
+  <p>质心是根据您定义的装置 (或多个装置) 的形状自动计算的。为了得到一个大致的概念，如果您有一个与您希望创建的装置形状相同的精灵，然后选择 "中心原点 "选项，您将看到质心的大致位置。</p>
+  <p>但是，这可能不正确，或者您正在查找来自物理对象的特定效果，在这种情况下，此函数还可用于更改质心的 X 和 Y 坐标。这些是 <b> 本地 / 相对 </b> 值，因此 <span class="inline2">0,0</span> 是固定装置绑定到实例的点 (实例的原点)。因此，质心 <span class="inline2">-4, 0</span> 将使质心向原点左移 4 像素。</p>
+  <h3>旋转惯性</h3>
+  <p><span>惯性值定义此实例对其旋转速度变化的抵抗力。惯性越高，阻力越大，惯性越低，阻力越小。</span></p>
+  <p>旋转惯性不能为负值。</p>
+  <p class="note"><span class="note">注意</span> 此函数不会为单个装置设置质量和惯性，而是为整个启用了物理的实例设置质量和惯性，无论有多少个装置绑定到它。</p>
+  <p class="note"><span class="note">注意</span> 只有在必要时才应使用此函数，因为物理模拟旨在根据固定装置的密度和尺寸优化质量和惯性。更改这些值可能会产生意外结果。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">physics_mass_properties(mass, local_center_x, local_center_y, inertia)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>mass</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>希望装置具有的新质量。</td>
+     </tr>
+      <tr>
+        <td>local_center_x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>新的质心的局部 X 坐标。</td>
+     </tr>
+      <tr>
+        <td>local_center_y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>新的质心的局部 Y 坐标。</td>
+     </tr>
+      <tr>
+        <td>inertia</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>装置的旋转惯量。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">physics_mass_properties(phy_mass, -10, -10, phy_inertia);</p>
+  <p>上述代码将物理实体的质心向左移动。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Physics.htm">物理</a></div>
+        <div style="float:right">Next: <a href="physics_test_overlap.htm">physics_test_overlap</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_mass_properties
+-->
+  <!-- TAGS
+physics_mass_properties
+-->
+
+</body></html>

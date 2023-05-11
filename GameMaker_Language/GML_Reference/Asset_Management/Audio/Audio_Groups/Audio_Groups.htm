@@ -1,0 +1,127 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.5.4";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Audio Groups</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Audio Groups">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Audio Groups">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Listeners/audio_set_listener_mask.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Audio Groups">
+        <span>Audio Groups</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">音频组</span></h1>
+  <p>您可以从 IDE 中将音频资源分组在一起，以便根据游戏要求将它们加载和卸载到内存中。</p>
+  <p>您可以从 IDE 顶部的<strong></strong>工具<a href="../../../../../Settings/Audio_Groups.htm"></a>菜单打开的<a href="../../../../../IDE_Navigation/Menus/The_Tools_Menu.htm">音频组</a>窗口创建这些<a href="../../../../../The_Asset_Editors/Sounds.htm">音频组</a>，还可以从{}声音属性窗口{}将音频资源分配给特定组。</p>
+  <p>每个音频组都有自己的增益。音频组中所有声音的增益乘以该音频组的增益。默认值为 1，但可以分别使用 <span class="inline2"><a href="audio_group_set_gain.htm">audio_group_set_gain</a></span> 和使用 <span class="inline2"><a href="audio_group_get_gain.htm">audio_group_get_gain</a></span> 进行更改。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 所有音频组都可以通过代码访问，该常量由 <span data-keyref="GameMaker Name">GameMaker</span> 为每个组定义。默认音频组为 <span class="inline2"><a href="audiogroup_default.htm">audiogroup_default</a></span>。要获取字符串形式的组名称，可以使用 <span class="inline2"><a href="audio_group_name.htm">audio_group_name</a></span>。</p>
+  <h2>函数参考</h2>
+  <h3>组信息</h3>
+  <ul class="Disc">
+    <li><a href="audiogroup_default.htm">audiogroup_default</a></li>
+    <li><a href="audio_group_name.htm">audio_group_name</a></li>
+    <li><a href="audio_group_get_assets.htm">audio_group_get_assets</a>&nbsp;/&nbsp;<a href="audio_sound_get_audio_group.htm">audio_sound_get_audio_group</a></li>
+  </ul>
+  <h3>加载</h3>
+  <ul class="colour">
+    <li><a href="audio_group_load.htm">audio_group_load</a></li>
+    <li><a href="audio_group_unload.htm">audio_group_unload</a></li>
+    <li><a href="audio_group_is_loaded.htm">audio_group_is_loaded</a></li>
+    <li><a href="audio_group_load_progress.htm">audio_group_load_progress</a></li>
+  </ul>
+  <h3>播放音频</h3>
+  <ul class="colour">
+    <li><a href="audio_group_stop_all.htm">audio_group_stop_all</a></li>
+  </ul>
+  <h3>音频属性</h3>
+  <ul class="colour">
+    <li><a href="audio_group_set_gain.htm">audio_group_set_gain</a></li>
+    <li><a href="audio_group_get_gain.htm">audio_group_get_gain</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../Audio.htm">音频</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../Audio_Buffers/Audio_Buffers.htm">音频缓冲区</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio Groups
+-->
+  <!-- TAGS
+audio_group_functions
+-->
+
+</body></html>

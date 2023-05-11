@@ -1,0 +1,150 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "4.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>IDE Input And Navigation</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page on how to move around and use the IDE">
+  <meta name="rh-index-keywords" content="IDE Input,IDE Navigation">
+  <meta name="search-keywords" content="input,IDE input,Go To,GoTo,Workspace Overview,laptop mode,touch screen support">
+<meta name="brsnext" value="IDE_Navigation/Bookmarks.htm"><meta name="brsprev" value="Setting_Up_And_Version_Information/Error_Reporting.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="IDE Input And Navigation">
+        <span>IDE Input And Navigation</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>IDE 输入和导航</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> <a class="tooltip" title="IDE，或集成开发环境，是一个软件应用程序，为计算机程序员提供软件开发的全面设施。在这种情况下，GameMaker Studio 2的整个前端都被认为是 IDE，包括创建图形、添加声音和添加代码以制作游戏的部分。">IDE</a>接受鼠标和键盘输入，许多操作都可以使用其中一个或两个来执行。</p>
+  <p>通常，您可以单击鼠标左键<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">选择任何内容，使用<img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">选择多个项目，按住<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">将项目拖到不同的停靠或工作区中，也可以按住<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">打开特定于上下文的菜单。请注意，如果您在 macOS 系统上运行 <span data-keyref="GameMaker Name">GameMaker</span> 并使用单键鼠标，请使用<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">进行鼠标右键单击<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">。</p>
+  <p>当使用笔记本电脑触摸板时，您可以使用平移手势，即用两个手指拖动来在工作空间中平移，并使用收拢/缩小手势来缩小和放大。</p>
+  <p>还有大量键盘快捷键可用于在不同的工作区元素和资源编辑器之间导航，我们将快速浏览其中一些最重要的快捷键(您可以在此处<a href="Keyboard_Shortcuts.htm">找到完整的列表</a>)：</p>
+  <ul class="colour">
+    <li><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/ <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + "Z" : 这将撤消之前的操作，并在大多数编辑器中起作用。您也有多个级别的撤消，因此您可以多次按此来“回滚”更改。</li>
+    <li><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/ <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + "Y" : 这将重做以前撤消的操作，并在大多数编辑器中起作用。与撤消一样，您也有多个级别的重做。</li>
+    <li><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/ <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + "S" : 这将强制 <span data-keyref="GameMaker Name">GameMaker</span> 保存您的项目。</li>
+    <li><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/ <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + "T" : 这将打开<strong>转到窗口</strong>，使您可以快速搜索和转到游戏中的任何资源，以及搜索<a href="../Setting_Up_And_Version_Information/IDE_Preferences.htm">首选项</a>和<a href="../Settings/Game_Options.htm">游戏选项</a>。你会看到一个所有东西的列表，当你输入搜索词时，这个列表将被剔除以适合你的需求，例如，如果你所有的房间都以"rm_"为前缀，输入这将剔除列表，只显示那些以该名称开头的资源。</li>
+  </ul>
+  <p><img alt="Resource Search" class="center" src="../assets/Images/Introduction/QS_Goto.png"></p>
+  <ul class="colour">
+    <li><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> + <img alt="TAB Icon" class="icon" src="../assets/Images/Icons/Icon_Tab.png">: 这将打开<strong>工作区概述</strong>窗口，该窗口可用于在不同工作区中打开的项目之间快速导航。只要&nbsp;<img class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;被按住，窗口就会保持打开状态，按一次&nbsp;<img class="icon" height="20" src="../assets/Images/Icons/Icon_Tab.png" width="55">&nbsp;就会转到窗口中的下一项。然后，释放快捷键将导航到选定的项目。
+<br><br> <span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;如果您重新映射此窗口的绑定以使用多个修饰符(如&nbsp;<img class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">+&nbsp;<img class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55">+<span class="inline">B</span>)或单个键(如仅<span class="inline">B</span>)，则窗口在按下快捷键后将保持打开状态，无论您是否仍然按住它，直到您手动关闭它或从窗口中选择一个项目。</li>
+  </ul>
+  <p><img alt="Workspace Overview Window" class="center" src="../assets/Images/IDE_Input/Getting_Started_Overview.png"></p>
+  <ul class="colour">
+    <li><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;+<img class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55">：这将重置工作区和各种编辑器中的缩放级别。</li>
+    <li><img alt="F1 &nbsp;Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_f1.png" width="55">: 这将打开手册。请注意，当使用 GML 可视化或 GML 代码时，您还可以选择一个操作或功能 (或关键字或其他任何内容)，然后按下 <img alt="F1 &nbsp;Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_f1.png" width="55"> 或单击鼠标中键 <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> 在相关页面上打开手册。</li>
+    <li><img alt="F12 Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_f12.png" width="55">: 这可用于折叠或展开 IDE 中所有不同的停靠窗口。</li>
+  </ul>
+  <p>浏览工作区的其他方法包括使用键盘快捷键&nbsp;<img alt="CTRL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;+&nbsp;<img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55">+<strong><span class="inline">&lt;箭头键&gt;</span></strong>以按下的方向在任何打开的窗口之间移动，以及通过按住鼠标中键<img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21">&nbsp;然后拖动鼠标，您也可以在工作区中平移。</p>
+  <p>在各种不同的工作区和窗口中导航时，您可以在任何文本字段上使用鼠标右键<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">打开上下文菜单，该菜单将默认包含以下字段：</p>
+  <p><img alt="Default RMB Menu" class="center" src="../assets/Images/Introduction/QS_RMBContextMenu.png"></p>
+  <p>在某些情况下，这些选项可能会展开，具体取决于焦点所在的编辑器或窗口。</p>
+  <p>除了这些输入方法之外，对笔设备的支持也是有限的，而且还为使用笔记本电脑进行项目工作的人提供了一种特殊的模式。以下是对这两个问题的解释：</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">笔记本电脑模式</span><span data-close-text="true">笔记本电脑模式</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">如果您在笔记本电脑上使用 <span data-keyref="GameMaker Name">GameMaker</span>，则在笔记本电脑模式的 IDE 顶部将有一个进一步的选项：</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/IDE_Input/Getting_Started_LaptopMode.png">这将在默认情况下处于打开状态，但如果您愿意，可以通过切换此按钮将其关闭。笔记本电脑模式与IDE中的一些工具相结合，使其在使用触摸板时获得了更好的体验，简化了3种主要的鼠标交互：<strong>平移</strong>、<strong>缩放</strong>和<strong>滚动</strong>。它使用两个修改键来完成此操作：左<img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">和左<img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55">。当笔记本电脑模式开启时，<em>左</em><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/ 和左<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"><em></em>为鼠标交互保留，如平移房间编辑器，其中<img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55">左<em></em><img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">表示缩放，<em>左</em><img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55">表示滚动和平移。在笔记本电脑模式下滚动就像平移一样，所以它应该足够直观和精确，这样你就不需要使用滚动条了。请注意，当按住这些按钮时，您只需移动鼠标--不是点击或拖动，而是移动--如果有一个常规快捷键通常需要使用<img alt="CONTROL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">或<img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55">键，您可以使用键盘上的<em>向右键</em>替代。<br></p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">触摸屏支持</span><span data-close-text="true">触摸屏支持</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">这里我们要提到的最后一件事是，<span data-keyref="GameMaker Name">GameMaker</span> 的 IDE 对触摸屏的支持也是最低限度的。在所有操作系统上，您都可以使用触摸屏在主工作区中点击和拖动项目，我们支持 2 个同时指针，第二次点击将执行右击。请注意，在 Windows 8 及更高版本上，<span data-keyref="GameMaker Name">GameMaker</span> IDE 也支持笔设备。<br></p>
+  </div>
+  <p><br><br> 以下页面包含有关导航 IDE 的更详细、更具体的信息，以及有关您可以使用的一些导航工具的信息：</p>
+  <ul class="colour">
+    <li><a href="Bookmarks.htm">书签</a></li>
+    <li><a href="Recent_Windows.htm">最近窗口</a></li>
+    <li><a href="../IDE_Tools/The_Inspector.htm">检查器</a></li>
+    <li><a href="Menus.htm">菜单</a></li>
+    <li><a href="Keyboard_Shortcuts.htm">键盘快捷键</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>您还可以在此处找到一些与 IDE 输入相关的额外首选项：</p>
+  <ul class="colour">
+    <li><a href="../Setting_Up_And_Version_Information/IDE_Preferences/General/Input.htm">输入首选项</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="../The_IDE/The_IDE.htm">GameMaker IDE</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../IDE_Tools/Additional_IDE_Tools.htm">附加 IDE 工具</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+IDE Navigation
+-->
+  <!-- TAGS
+ide_navigation
+-->
+
+</body></html>

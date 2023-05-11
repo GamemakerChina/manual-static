@@ -1,0 +1,147 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.5.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>layer_sequence_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_destroy">
+  <meta name="rh-index-keywords" content="layer_sequence_destroy">
+  <meta name="search-keywords" content="layer_sequence_destroy">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_x.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="layer_sequence_destroy">
+        <span>layer_sequence_destroy</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">layer_sequence_destroy</span></h1>
+  <p>使用此函数，您可以销毁(从房间中删除)序列元素及其对应的序列实例。</p>
+  <p><a href="layer_sequence_create.htm"><span class="inline">layer_sequence_create()</span></a>或<a href="../General_Layer_Functions/General_Layer_Functions.htm">层元素函数之一</a>返回的序列元素Id将被销毁。</p>
+  <p>函数释放<a href="../../Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">序列实例结构</a>及其下的所有结构。序列实例结构下已分配给变量的任何结构在该点不<i>被释放</i>，例如，如果您将<span class="inline2">activeTracks</span>下的轨迹结构之一分配给变量，则仅在变量不再引用该结构时释放该结构。<br>该函数还会销毁为序列的对象轨迹创建的所有实例。这也适用于从使用<a href="../../Sequences/sequence_instance_override_object.htm">sequence_instance_override_object</a>定义的覆盖对象创建的实例。<br>使用<a href="../../Sequences/sequence_instance_override_object.htm">sequence_instance_override_object</a>替换对象索引的现有实例<i>不会</i>自动销毁。</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">layer_sequence_destroy</span>(sequence_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td><span data-keyref="Type_ID_Element_Sequence"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_create.htm">Sequence Element ID</a></span></td>
+        <td>序列元素到目标的唯一ID值</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例1：</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br>
+    for (var i = 0; i &lt; array_length(a); i++;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if layer_get_element_type(a[i]) == layerelementtype_sequence<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-field="title" data-format="default">layer_sequence_destroy</span>(a[i]);<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上面的代码获取分配给运行代码的实例层的所有元素的ID。然后，代码检查返回的元素是否是序列资源，如果是，则它们被销毁。</p>
+  <h4>示例2：</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br>
+    var track_struct;<br>
+    for (var i = 0; i &lt; array_length(a); i++;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if layer_get_element_type(a[i]) == layerelementtype_sequence<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; var ins = layer_sequence_get_instance(a[i]);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; track_struct = ins.activeTracks[0];<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-field="title" data-format="default">layer_sequence_destroy</span>(a[i]);<br>
+    &nbsp; &nbsp; }<br>
+    }<br>
+    show_debug_message(track_struct);</p>
+  <p>上面的代码获取分配给运行代码的实例层的所有元素的ID。然后，代码检查返回的元素是否是序列资源。如果是，则使用<span class="inline2">layer_sequence_get_instance</span>获取实例结构。 接下来，它将<span class="inline2">activeTracks</span>数组的第一个元素指定给临时变量<span class="inline2">track_struct</span>，然后破坏序列。</p>
+  <p>遍历所有序列元素并销毁它们后，它显示带有变量<span class="inline2">track_struct</span>内容的调试消息。 序列被销毁时，<span class="inline2">track_struct</span>仍包含最后一个遇到序列实例的第一个轨迹的结构。</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sequence_Layers.htm">序列图层</a></div>
+        <div style="float:right">Next:&nbsp;<a href="layer_sequence_x.htm">layer_sequence_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_destroy
+-->
+  <!-- TAGS
+layer_sequence_destroy
+-->
+
+</body></html>

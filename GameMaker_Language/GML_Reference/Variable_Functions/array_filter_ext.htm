@@ -1,0 +1,196 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.2.0_36";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>array_filter_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="array_filter_ext">
+  <meta name="search-keywords" content="array_filter_ext">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="array_filter_ext">
+        <span>array_filter_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">array_filter_ext</span></h1>
+  <p>此函数类似于 <a href="array_filter.htm">array_filter</a>，但它不返回新数组，而是修改作为参数传递的原始数组。</p>
+  <p><span>您提供了一个对数组中的所有元素运行的<a href="Array_Functions.htm#h">判断方法</a>。它应根据条件返回 <span class="inline2">true</span> 或 <span class="inline2">false</span>。</span></p>
+  <p>判断函数返回 <span class="inline2">true</span> 的第一个元素写入&nbsp;<span class="inline2">offset</span> 给出的索引处，其他元素写入后续索引 (按照&nbsp;<span class="inline2">length</span> 参数的符号给出的方向)。</p>
+  <p>此函数返回新的有效元素数，从给定的偏移量位置开始，并沿长度参数设置的方向。对于此函数，它是判断返回 <span class="inline2">true</span> 并被写回数组的元素的数量。</p>
+  <div data-conref="../../../assets/snippets/Syntax_predicate_general.hts">
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">判断函数</span><span data-close-text="true">判断函数</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p>此函数接受在给定数组上操作的<a href="Array_Functions.htm#h">判断方法</a>。向判断函数传递以下参数：</p>
+    <h4>语法:</h4>
+    <p class="code">function(element, index);</p>
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>参数</th>
+          <th>类型</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>element</td>
+          <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span></td>
+          <td>当前数组元素的值</td>
+        </tr>
+        <tr>
+          <td>index</td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+          <td>当前数组索引</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>判断函数应返回<span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">布尔值</a></span><span style="text-align: justify;">，这会影响原始函数修改或读取数组的方式</span><span style="text-align: justify;">。</span></p>
+    <p>请参阅有关<a href="Array_Functions.htm#h">判断方法</a>的信息和示例。</p>
+  </div>
+
+</div>
+  <div data-conref="../../../assets/snippets/function_mutable.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;此函数对输入数组进行<i>突变</i>，即直接更改。偏移量和长度参数指定的范围内的现有数组元素可能会被覆盖。出于性能原因，数组<strong>未</strong>调整大小，而是返回<i>新的</i>有效元素数。</p>
+
+</div>
+  <div data-conref="../../../assets/snippets/Syntax_signature_element_index_returns_bool.hts">
+  <div data-conref="../../../assets/snippets/Syntax_signature_element_index.hts">
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">array_filter_ext</span>(array, function, [offset], [length]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>array</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>要使用的数组</td>
+      </tr>
+      <tr>
+        <td>function</td>
+        <td><span data-keyref="Type_Function"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></span></td>
+        <td>The&nbsp;<a href="Array_Functions.htm#h">Predicate Method</a>&nbsp;to run on each element</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 数组中的偏移量或起始索引。设置负值将从数组的末尾开始计数。然后，起始索引将是 <span class="inline2">array_length(array) + offset</span>。请参阅：<a href="Array_Functions.htm#h1">偏移量和长度</a></td>
+      </tr>
+      <tr>
+        <td>length</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 要遍历的元素数。负值将向后遍历数组(即以索引的降序，例如 2、1、0 而不是 2、3、4)。请参阅：<a href="Array_Functions.htm#h1">偏移量和长度</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>&nbsp;(the number of valid elements in the array)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _is_even = function(_element, _index) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return (_element mod 2) == 0;<br>
+    }<br>
+    <br>
+    var _values = [1, 2, 3, 4, 5, 6, 7, 8, 9];<br>
+    var _valid_elements = array_filter_ext(_values, _is_even, -2, -infinity);
+  </p>
+  <p>上面的代码首先定义了一个函数 <span class="inline2">_is_even</span>，该函数接受 <span class="inline2">element</span> 和 <span class="inline2">index</span> 参数，并在元素为偶数时返回 <span class="inline2">true</span>。</p>
+  <p>然后使用从 1 到 9 的数字对数组 <span class="inline2">values</span> 进行初始化。</p>
+  <p>最后，使用判断函数在此数组上调用 <span class="inline2"><span data-field="title" data-format="default">array_filter_ext</span></span>。它的起始索引为 <span class="inline2">-2</span>( 倒数第二个索引)，长度为 <a href="../../GML_Overview/Data_Types.htm"><span class="inline2">-infinity</span></a>。这将从 8 开始检查，并向后返回到数组的开头。</p>
+  <p>该函数从中找到 4 个偶数 (<span class="inline2">8，6，4，2</span>)，因此它返回 4 作为新的有效元素数。</p>
+  <p>由于此函数会改变原始数组，因此 <span class="inline2">_values</span> 变为 <span class="inline2">[1，2，3，4，<strong>2，4，6，8，</strong>9]</span>，将偶数从它开始搜索的索引写入数组。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Array_Functions.htm">数组函数</a></div>
+        <div>Next:&nbsp;<a href="array_map_ext.htm">array_map_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_filter_ext
+-->
+  <!-- TAGS
+array_filter_ext
+-->
+
+</body></html>

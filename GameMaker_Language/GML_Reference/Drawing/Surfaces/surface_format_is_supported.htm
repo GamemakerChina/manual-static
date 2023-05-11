@@ -1,0 +1,134 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.8.0_20";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>surface_format_is_supported</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo">
+  <meta name="topic-comment" content="Reference for surface_format_is_supported">
+  <meta name="rh-index-keywords" content="surface_format_is_supported">
+  <meta name="search-keywords" content="surface_format_is_supported">
+  <meta name="is_pure" content="true">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="surface_format_is_supported">
+        <span>surface_format_is_supported</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">surface_format_is_supported</span></h1>
+  <p>此函数用于返回当前平台是否支持给定的表面格式。<a href="surface_create.htm">此处</a>列出了所有格式。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">surface_get_format(format);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>format</td>
+        <td><span data-keyref="Type_Constant_Surface_Format"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">Surface Format Type Constant</a></span></td>
+        <td>要检查的表面格式</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if (surface_format_is_supported(surface_rgba32float))<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;my_surf = surface_create(320, 180, surface_rgba32float);<br>
+    &nbsp;&nbsp; &nbsp;// ...<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message("Effect disabled, 32-bit surface not supported");<br>
+    }</p>
+  <p>这将检查当前平台是否支持 <a href="surface_create.htm"><span class="inline2">surface_rgba32float</span></a> 格式，在这种情况下，它会创建具有该格式的表面 。但是，如果该格式不受支持，则会在输出日志中打印一条消息。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Surfaces.htm">表面</a></div>
+        <div style="float:right">Next:&nbsp;<a href="surface_free.htm">surface_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_format_is_supported
+-->
+  <!-- TAGS
+surface_format_is_supported
+-->
+
+</body></html>

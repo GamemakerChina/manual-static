@@ -1,0 +1,257 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.20.0_10";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>os_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for os_get_info">
+  <meta name="rh-index-keywords" content="os_get_info">
+  <meta name="search-keywords" content="os_get_info">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_powersave_enable.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_get_region.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="os_get_info">
+        <span>os_get_info</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">os_get_info</span></h1>
+  <p>此函数返回一个<a href="../Data_Structures/DS_Maps/DS_Maps.htm"><span class="inline">DS Map</span></a>，其中包含有关运行游戏的操作系统的详细信息。<br>返回的确切信息将取决于操作系统和设备，<br>因此建议您在希望使用<span class="inline"><a href="../Debugging/show_debug_message.htm">show_debug_message()</a></span>等函数定位和输出返回值的所有平台上测试此函数. <br>请注意，DS映射不会自动从内存中清除，您应该在不再需要时使用<a href="../Data_Structures/DS_Maps/ds_map_destroy.htm"><span class="inline">ds_map_destroy()</span></a>函数。</p>
+  <p>您可以在下面找到有关将提供给特定于以下平台的DS映射的额外数据的一些详细信息，<br>并且应该注意的是，在所有平台上，<em>除了</em>HTML5之外，映射都将具有键"<span><span class="inline">is64bit</span>"，<br>该键将是<span class="inline">true</span>或<span class="inline">false</span>，具体取决于运行器是否在64位模式下运行。</span></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">Windows</span><span data-close-text="true">Windows</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">在Windows上，您将使用DS映射中可用的以下键从DX11获取一些额外数据(对扩展有用)：</p>
+    <ul class="dropspotlist">
+      <li><span class="inline">udid</span>：机器唯一的标识符</li>
+      <li><strong><span class="inline">video_d3d11_device</span></strong>：指向DX11设备的指针</li>
+      <li><strong><span class="inline">video_d3d11_context</span></strong>：指向DX11上下文的指针</li>
+      <li><span class="inline">video_d3d11_swapchain</span>：指向DX11交换链的指针</li>
+      <li><strong><span class="inline">video_adapter_vendorid</span></strong>：带有适配器供应商ID的字符串</li>
+      <li><strong><span class="inline">video_adapter_deviceid</span></strong>：带有适配器设备ID的字符串</li>
+      <li><strong><span class="inline">video_adapter_subsysid</span></strong>：带有适配器子系统ID的字符串</li>
+      <li><strong><span class="inline">video_adapter_revision</span></strong>：带有适配器修订号的字符串</li>
+      <li><span class="inline">video_adapter_description</span>：带有视频适配器描述的字符串</li>
+      <li><strong><span class="inline">video_adapter_dedicatedvideomemory</span></strong>：带有视频内存大小的字符串</li>
+      <li><strong><span class="inline">video_adapter_dedicatedsystemmemory</span></strong>：带有系统内存大小的字符串(由DX11适配器使用)</li>
+      <li><span class="inline">video_adapter_sharedsystemmemory</span>：共享系统内存大小的字符串</li>
+    </ul>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">macOS</span><span data-close-text="true">macOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">该函数在macOS上返回一些有限的OpenGL信息：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span class="inline">udid</span>：机器唯一的标识符</li>
+      <li class="dropspot"><span class="inline">gl_vendor_string</span>：来自OpenGL的<span class="inline">GL_VENDOR</span>，例如：<em>"Intel Inc."</em></li>
+      <li class="dropspot"><span class="inline">gl_version_string</span>：来自OpenGL的<span class="inline">GL_VERSION</span>，例如：<em>"2.1 INTEL- 16.2.16"</em></li>
+      <li class="dropspot"><span class="inline">gl_renderer_string</span>：来自OpenGL的<span class="inline">GL_renderer</span>，例如-<em>"Intel(R) Iris(TM) Graphics 6100"</em></li>
+    </ul>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">Ubuntu</span><span data-close-text="true">Ubuntu</span></a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">这包含与macOS相同的信息。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">Android</span><span data-close-text="true">Android</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">在<b>Android</b>平台上，您将从DS地图中提供以下密钥的各种不同API中获取一些额外数据：</p>
+    <ul class="dropspotlist">
+      <li><span class="inline">android_tv</span>: 如果设备被检测到是Android电视设备，则此操作将返回<span class="inline">TRUE</span>，否则返回<span class="inline">FALSE</span></li>
+      <li><span class="inline">GL_VERSION</span>: 由驱动程序报告的OpenGL版本</li>
+      <li><span class="inline">GL_VENDOR</span>: 驱动程序报告的OpenGL供应商</li>
+      <li><span class="inline">GL_RENDERER</span>: 驱动报告的OpenGL渲染器</li>
+      <li><span class="inline">GL_EXTENSIONS</span>: 驱动程序报告的可用OpenGL扩展</li>
+      <li><span class="inline">GL_SHADING_LANGUAGE_VERSION</span>: 此OpenGL驱动程序支持的GLSL版本</li>
+      <li><span class="inline">GL_MAX_TEXTURE_SIZE</span>: 此OpenGL驱动程序支持的最大纹理大小</li>
+      <li><span class="inline">SDK_INT</span>: <strong>android.os.Build.VERSION.SDK_INT</strong><em>的值 (见下面的注释)</em></li>
+      <li><span class="inline">RELEASE</span>: <strong>android.os.Build.VERSION.RELEASE</strong> 的值</li>
+      <li><span class="inline">MODEL</span>: <strong>android.os.Build.MODEL</strong> 的值</li>
+      <li><span class="inline">DEVICE</span>: <strong>android.os.Build.DEVICE</strong> 的值</li>
+      <li><span class="inline">MANUFACTURER</span>: <strong>android.os.Build.MANUFACTURER</strong> 的值</li>
+      <li><span class="inline">CPU_ABI</span>: <strong>android.os.Build.CPU_ABI</strong> 的值</li>
+      <li><span class="inline">CPU_ABI2</span>: <strong>android.os.Build.CPU_ABI2</strong> 的值</li>
+      <li><span class="inline">BOOTLOADER</span>: <strong>android.os.Build.BOOTLOADER</strong> 的值</li>
+      <li><span class="inline">BOARD</span>: <strong>android.os.Build.BOARD</strong> 的值</li>
+      <li><span class="inline">VERSION</span>：来着 Android <strong>System.getProperty</strong> 方法的 <span class="inline">os.version</span> 值。</li>
+      <li><span class="inline">REGION</span>：来自 Android <strong>System.getProperty</strong> 方法的 <span class="inline">user.region</span> 值</li>
+      <li><span class="inline">VERSION_NAME</span>：此包版本名称的值-有关详细信息，请参见<a href="https://developer.android.com/reference/android/content/pm/PackageInfo.html#versionName" target="_blank">此处</a>。</li>
+      <li><span class="inline">PHYSICAL_KEYBOARD</span>：如果我们认为物理键盘可用，则字符串<span class="inline">"TRUE"</span>否则<span class="inline">"FALSE"</span></li>
+    </ul>
+    <p class="note"><span class="dropspotnote"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意:</span></span> 有关任何 <strong>android.OS.build</strong> 变量的信息，请参阅 <a href="https://developer.android.com/reference/android/os/Build" title="Android Developer documentation">Android开发人员文档</a> 。</span></p>
+    <p>&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">iOS &amp; tvOS</span><span data-close-text="true">iOS &amp; tvOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">以下是iOS和tvOS上返回的密钥(详细信息请参考Apple Developer留档)：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span class="inline">name</span>：<span class="inline">[[UIDevice currentDevice] name]</span> 报告的字符串</li>
+      <li class="dropspot"><span class="inline">systemName</span>：<span class="inline">[[UIDevice currentDevice] systemName]</span> 报告的字符串</li>
+      <li class="dropspot"><span class="inline">systemVersion</span>：<span class="inline">[[UIDevice currentDevice] systemVersion]</span> 报告的字符串</li>
+      <li class="dropspot"><span class="inline">model</span>：<span class="inline">[[UIDevice currentDevice] model]</span> 报告的字符串</li>
+      <li class="dropspot"><span class="inline">localisedModel</span>：<span class="inline">[[UIDevice currentDevice] localizedModel]</span> 报告的字符串</li>
+      <li class="dropspot"><span class="inline">uiIdiom</span>：<span class="inline">[[UIDevice currentDevice] userInterfaceIdiom]</span> 报告的字符串</li>
+      <li class="dropspot"><span class="inline">platform</span>: <span class="inline">hw.machine</span> 字符串来自 <span class="inline">sysctlbyname</span></li>
+      <li class="dropspot"><span class="inline">hwModel</span>:&nbsp;<span class="inline">hw.model</span> 字符串来自 <span class="inline">sysctlbyname</span></li>
+      <li class="dropspot"><span><span class="inline">freeDiskSpace</span>：可用磁盘空间</span></li>
+      <li class="dropspot"><span><span class="inline">totalDiskSpace</span>：总磁盘空间</span></li>
+      <li class="dropspot"><span><span class="inline">cpuFrequency</span>：CPU频率</span></li>
+      <li class="dropspot"><span><span class="inline">busFrequency</span>: 总线频率</span></li>
+      <li class="dropspot"><span><span class="inline">cpuCount</span>：CPU计数</span></li>
+      <li class="dropspot"><span><span class="inline">totalMemory</span>：设备的总内存</span></li>
+      <li class="dropspot"><span><span class="inline">userMemory</span>：用户内存</span></li>
+      <li class="dropspot"><span><span class="inline">maxSocketBufferSize</span>：最大套接字缓冲区大小</span></li>
+      <li class="dropspot">包含OpenGL图形信息的其他密钥<br></li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#"><span data-open-text="true" data-skip-index="true">GX.games</span><span data-close-text="true">GX.games</span></a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">以下额外的密钥将包含在GX.Games的DS地图中：</p>
+    <ul class="colour">
+      <li class="dropspot"><span class="inline">mobile</span>：如果游戏在移动浏览器上运行，则为<strong>1.0</strong>，如果不是，则为<strong>0.0</strong>。</li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#"><span data-open-text="true" data-skip-index="true">HTML5</span><span data-close-text="true">HTML5</span></a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">返回 <span class="inline">-1</span>。</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">Nintendo Switch</span><span data-close-text="true">Nintendo Switch</span></a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">返回 <span class="inline">-1</span>。</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">PlayStation 4</span><span data-close-text="true">PlayStation 4</span></a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot"><em>有关此处引用的函数的信息，请参阅PS4文档。</em></p>
+    <p class="dropspot">该函数在PlayStation 4控制台上返回以下键：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span class="inline">display_safe_area_ratio</span>：由 <span class="inline">sceSystemServiceGetDisplaySafeAreaInfo()</span> 返回的浮点值。</li>
+      <li class="dropspot"><span class="inline">is_neo_mode</span>：如果游戏在Neo(PS4专业版)上运行，这将是<span class="inline">1</span>，如果游戏在普通PS4上运行，这将是<span class="inline">0</span>。</li>
+      <li class="dropspot"><span class="inline">enter_button_assign</span>:<br><span class="inline">sceSystemServiceParamGetInt(SCE_SYSTEM_SERVICE_PARAM_ID_ENTER_BUTTON_ASSIGN, &amp;enterassign)</span>; 返回的整数值;<br>值<span class="inline">0</span>表示圆形按钮用作"赋值"，<span class="inline">1</span>表示改用X按钮。</li>
+    </ul>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span data-open-text="true" data-skip-index="true">PlayStation 5</span><span data-close-text="true">PlayStation 5</span></a>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">该函数在PlayStation 5控制台上返回以下键：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span class="inline">display_safe_area_ratio</span>：与PS4相同(见上文)。</li>
+      <li class="dropspot"><span class="inline">display_resolution</span>: "HD", "4K"&nbsp; 或 "unknown"</li>
+      <li class="dropspot"><span class="inline">display_dynamic_range</span>: "HDR", "SDR" 或 "unknown"</li>
+      <li class="dropspot"><span class="inline">display_refresh_rate</span>: "120Hz", "60Hz" 或 "Unknown"</li>
+    </ul>
+    <p class="dropspot"><br></p>
+    <ul class="dropspotlist">
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href=""><span data-open-text="true" data-skip-index="true">Xbox One &amp; Series X/S</span><span data-close-text="true">Xbox One &amp; Series X/S</span></a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">Xbox One 和 Xbox Series X/ S 上返回的信息与 Windows 基本相同，但是<span class="inline">video_adapter_*</span>和<span class="inline">udid</span>密钥是<span class="inline">0</span>(<span class="inline">video_adapter_description</span>除外，它是一个空字符串<span class="inline2">""</span>)。它也没有<span class="inline">video_d3d11_swapchain</span>密钥，<span class="inline">video_d3d11_*</span>密钥已被替换为<span class="inline">video_d3d12_*</span>。</p>
+    <p class="dropspot">以下是除了Windows下列出的键之外，此平台还返回的一些键：</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span class="inline">video_d3d12_cmdqueue</span>：指向DX12命令队列</li>
+      <li class="dropspot"><span class="inline">video_d3d12_cmdlist</span>：指向DX12命令列表</li>
+      <li class="dropspot"><span class="inline">video_d3d12_currentrt</span>：指向当前DX12渲染目标</li>
+      <li class="dropspot"><span class="inline">device_type</span>：包含表示设备类型的常量值。这些常量直接映射到<span class="inline2">XSystemGetDeviceType()</span>函数返回的值。<br>这将是以下常量之一：<span class="inline2">device_gdk_unknown</span>，<span class="inline2">device_gdk_xboxone</span>，<span class="inline2">device_gdk_xboxones</span>，<span class="inline2">device_gdk_xboxonex</span>，<span class="inline2">device_gdk_xboxonexdevkit</span>，<span class="inline2">device_gdk_xboxseriess</span>，<span class="inline2">device_gdk_xboxseriesx</span>，<span class="inline2">device_gdk_xboxseriesdevkit</span>。</li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">os_get_info</span>()</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">DS Map ID</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if (os_type == os_android)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;var _info = <span data-field="title" data-format="default">os_get_info</span>();<br>
+    &nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;if (_info[? "android_tv"])<br>
+    &nbsp;&nbsp; &nbsp;{<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;global.android_tv = true;<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    }</p>
+  <p>上面的代码检查当前操作系统是否是Android，获取操作系统信息并读取返回的地图以检查游戏是否在Android电视上运行;在这种情况下，它将自定义变量<span class="inline">global.android_tv</span>设置为<span class="inline">true</span>。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">Next: <a href="os_powersave_enable.htm">os_powersave_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_get_info
+-->
+  <!-- TAGS
+os_get_info
+-->
+
+</body></html>

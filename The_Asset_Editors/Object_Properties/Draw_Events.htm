@@ -1,0 +1,158 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../..";
+    gCommonRootRelPath = "../..";
+    gTopicId = "6.3.1.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Draw Events</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page detailing the draw event.">
+  <meta name="rh-index-keywords" content="Objects - Draw Events">
+  <meta name="search-keywords" content="draw event,draw begin,draw end,pre-draw,post draw,draw GUI,draw order">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+  <script src="../../assets/scripts/main_script.js" type="module"></script>
+<meta name="brsnext" value="The_Asset_Editors/Object_Properties/Async_Events.htm"><meta name="brsprev" value="The_Asset_Editors/Object_Properties/Other_Events.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Draw Events">
+        <span>Draw Events</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>绘制事件</h1>
+  <p><img alt="The Draw Event" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Draw.png">绘制事件类别是一个包含所有事件的类别，这些事件控制着您在运行游戏时在屏幕上看到的内容。它被分成不同的独立事件，以更好地处理游戏的不同绘制要求，下图说明了每个事件的执行顺序：</p>
+  <p><img alt="Object Editor Draw Diagram" class="center" src="../../assets/Images/Asset_Editors/Editor_Events_DrawOrder.png"> 正常的绘制事件分为三个子类型：<strong> 绘制开始 </strong>、标准 <strong> 绘制 </strong> 和 <strong> 绘制结束 </strong> 事件。一般来说，您只需要使用标准的绘制事件，并且您应该知道房间中的所有实例在游戏的每一步都会触发此事件，因此只要实例将 <strong> visible </strong> 标志设置为 true，就会始终调用此事件。重要的是要理解，即使您在对象属性中没有为此子事件定义任何内容 (即：没有代码或操作)，<em> 如果对象分配了精灵，它仍然会有一个将被触发的绘制事件 </em>。这是因为 <span data-keyref="GameMaker Name">GameMaker</span> 有两种方法可以在绘制事件中绘制东西：</p>
+  <ul class="colour">
+    <li><strong> 默认绘制 </strong>，即您在对象属性中定义精灵并在正常的绘制事件中不放置任何操作或代码时，在这种情况下 <span data-keyref="GameMaker Name">GameMaker</span> 将自动绘制分配的精灵。请注意，只要绘制事件为空，您在其他事件中执行的任何转换以更改图像比例、索引、混合等都会得到反映。</li>
+    <li><strong> 自定义绘制 </strong>，即在绘制事件中放置代码或操作时。这告诉 <span data-keyref="GameMaker Name">GameMaker</span>"<em> 我想控制你为这个对象 </em> 的实例绘制什么"，它完全覆盖了默认绘制。这意味着，例如，您可以为一个对象分配一个精灵，然后将绘制事件设置为绘制文本，文本将在屏幕上绘制，但精灵不会 <em></em> 被绘制，因为您没有告诉 <span data-keyref="GameMaker Name">GameMaker</span> 将其与文本一起绘制。</li>
+  </ul>
+  <p>其余绘制事件在以下章节中进行了解释：</p>
+  <p>&nbsp;</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true"> 绘制开始和绘制结束 </span><span data-close-text="true"> 绘制开始和绘制结束 </span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">除了主绘制事件之外，您还有一个<strong>绘制开始</strong>和一个<strong>绘制结束</strong>事件。这些行为完全一样的标准绘制事件(即：他们将绘制任何你把他们在游戏的每一步和所有视口)，但他们不默认绘制任何东西，如果他们没有被明确添加到一个对象，他们将始终运行之前/之后的标准绘制事件。因此，当游戏运行时，您将<em>始终</em>对所有实例有绘制开始事件，然后对所有实例有绘制事件，最后对所有实例有绘制结束事件。</p>
+    <p class="dropspot">通过这种方式，您可以在一个实例中的绘制开始步骤中绘制东西或设置绘制属性，并确保具有标准绘制事件或绘制结束事件的所有实例都将使用这些属性或绘制第一个实例绘制的内容。基本上，这是一种确保某些东西在特定时间被绘制的可靠方法，就像<strong>开始步骤</strong>和<strong>结束步骤</strong>事件所做的那样。</p>
+    <p class="dropspot">在 <span data-keyref="GameMaker Name">GameMaker</span> 中绘制东西时需要注意一些事情，无论是您正在绘制的精灵、着色器还是 3D 缓冲区：</p>
+    <ul class="colour">
+      <li class="dropspot">绘制事件是一个非常密集的活动，因为这是一个占用大多数时间和资源的事件...为此，在绘制事件中做除了绘制任何事情都不是一个好主意。因此，请在"步骤"事件或"报警"或其他任何适合的事件保存大型代码或复杂动作，但请保留绘制事件的清除状态，因为这是绘制的最佳选择。</li>
+      <li class="dropspot">如果您的对象已将可见参数设置为 <em>off</em> ( 以便不绘制对象的实例)，则 <strong> 所有绘制事件都将跳过 </strong>(<strong> 调整大小 </strong> 事件除外)。这意味着使实例不可见将阻止放置在任何这些事件中的所有代码运行，因此如果它们不可见，请不要将基本代码放在绘制事件中。</li>
+      <li class="dropspot">您绘制的内容与您选择的碰撞引擎(传统或物理)无关，因为碰撞引擎由对象属性和对象给定的精灵(或掩码)定义。</li>
+    </ul>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p id="p"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">绘制GUI</span><span data-close-text="true">绘制GUI</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">绘制 GUI 事件类型属于绘制事件类别，专为绘制不受视图相机比例或旋转影响的 <a class="tooltip" title="“图形用户界面”（Graphical User Interface）的缩写，它是一个包含图形元素（例如窗口，图标和按钮）的用户界面。在GameMaker中，您有一组特定的对象事件（绘制GUI事件），可以将其吸引到专门为得分，生命，存货等事物设计的这一层。">GUI</a> 元素而设计。这意味着您可以让一个实例为您的 <a class="tooltip" title="在游戏中，HUD代表抬头显示器。这是一种将信息作为游戏用户界面的一部分可视地传递给玩家的方法，因此，诸如健康栏，状态图标，得分等之类的内容都构成了HUD的一部分，而通常HUD元素并不需要用户交互。">HUD</a> 或用户交互界面绘制所有元素，而不必将元素的所有位置基于房间内的实例位置或当前相机视图的位置。</p>
+    <p class="dropspot">在这些事件中绘制时，重要的是您要理解绘制坐标不会改变，即使相机视图处于活动状态，并且 (0,0)<em> 始终 </em> 位于应用程序表面或显示器的左上角 (请参阅本节底部的注释)，默认宽度和高度与应用程序表面为 1:1。深度排序仍然保持在不同层上的不同实例之间 (因此较高层上的实例将在较低层的实例下绘制)，也在事件本身内部，因为 <strong>Draw GUI 开始 </strong> 事件将首先为所有实例绘制，然后标准 <strong>Draw GUI</strong> 将为所有实例绘制，最后 <strong>Draw GUI 结束 </strong> 事件被触发。</p>
+    <p class="dropspot">通过这种方式，您可以在一个实例中的绘制 GUI 开始中绘制东西或设置绘制属性，并确保具有标准绘制 GUI 或绘制 GUI 结束事件的所有实例都将使用这些属性或绘制第一个实例绘制的内容。基本上，这是一种确保某些东西在特定时间被绘制的可靠方法，就像 <strong> 开始步骤 </strong> 和 <strong> 结束步骤 </strong> 事件所做的那样。</p>
+    <p class="dropspot">这些事件也可以和普通的Draw事件一起使用（Draw事件会受到摄像机视图位置、比例和旋转的正常影响）。如果你没有绘制事件，但你有一个绘制GUI事件，那么<span data-keyref="GameMaker Name">GameMaker</span>仍然会默认为实例绘制精灵（如果它有的话），就像平常一样。</p>
+    <p class="dropspot">关于其他的绘制事件，Draw GUI事件将总是在普通绘制事件中绘制的任何东西上绘制。因此，如果你有一个实例在较低的层上有一个Draw GUI事件，它将在较高的层上有一个普通绘制事件的实例上绘制。如果两个实例都有一个Draw GUI事件，那么层的顺序将被尊重。</p>
+    <p class="note"><strong>注意</strong>: 默认情况下，该事件将与应用表面尺寸（通常是房间或视口的尺寸）成1:1。这意味着，当你在游戏选项中打开<strong>纵横比校正</strong>时，GUI将不会被绘制在游戏的黑色边框上。这种行为可以通过<a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_set_gui_maximise.htm"><span style="font-size:14px;"><span class="inline" style="font-size: 14px">display_set_gui_maximise()</span></span></a>&nbsp;函数关闭，你也可以通过<a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_set_gui_size.htm"><span class="inline" style="font-size: 14px">display_set_gui_size()</span></a>函数将GUI事件锁定为特定尺寸，然后自动缩放以适应显示器或应用表面尺寸。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">开始绘制和结束绘制</span><span data-close-text="true">开始绘制和结束绘制</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Pre Draw和Post Draw事件是Draw事件的一部分。然而，与其他绘制事件不同的是，这些事件<em>直接绘制</em>到<a class="tooltip" title="显示缓冲区是最终绘制所有内容的“画布”。一些事件直接针对此事件（例如Pre Draw事件），而另一些事件将首先绘制到应用程序表面，然后将其绘制到显示缓冲区。">显示缓冲区</a>，这将是所有视口&nbsp;当前可见的屏幕空间的总和，<em>或者</em>窗口大小，如果只使用一个视口或者根本不使用。下面的图片说明了这一点。</p>
+    <p class="dropspot"><img alt="Object Editor Post Draw" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_PostDraw.png">因此，如果你使用Pre或Post draw事件，你将绘制到全屏的渲染目标（显示缓冲区），它的大小与所有视口&nbsp;所适应的窗口相同。如果你没有活动的视口，这将被设置为窗口本身的大小。</p>
+    <p class="dropspot"> Pre Draw事件在任何其他绘制事件之前被触发，在其中你可以设置值，设置绘制属性，甚至绘制东西，而不必担心视口&nbsp;或GUI层的大小（GUI层的大小可能与屏幕缓冲区相同，但也可能不相同，因为你可以在代码中设置GUI分辨率）。</p>
+    <p class="dropspot">值得注意的是，这个事件发生在<em></em>显示缓冲区被清空之前，这意味着如果你没有在房间编辑器中关闭视图清空，那么在预绘制事件中绘制的东西将不会被看到，因为第一次视口绘制将清空它。如果你想看透视口本身，或者你根本不使用视口，那么你也应该在<strong><a href="../Rooms.htm">房间编辑器</a></strong>中把背景颜色设置为alpha值为0。</p>
+    <p class="note"><strong>注意</strong>: 如果你关闭了这些选项，你可能会注意到在游戏测试时，屏幕上会出现不需要的东西（比如实例的 "痕迹"）。这是因为你直接在显示缓冲区的前一帧上作画，而没有将其清除。然而，你可以使用<span class="inline" style="font-size: 14px"><a href="../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/draw_clear_alpha.htm">draw_clear_alpha()</a>&nbsp;</span>来自己清除。</p>
+    <p class="dropspot">Post Draw事件是在所有标准绘制事件<em>之后</em>，但<em>在</em>绘制GUI事件之前触发的。与Pre Draw事件一样，它基于显示缓冲区的大小，并被置于绘制GUI事件之前，以使你能够在全屏基础上简单轻松地执行后期处理效果和其他事情，而不干扰你在游戏中可能有的任何<a class="tooltip" title="在游戏中，HUD代表抬头显示器。这是一种将信息作为游戏用户界面的一部分可视地传递给玩家的方法，因此，诸如健康栏，状态图标，得分等之类的内容都构成了HUD的一部分，而通常HUD元素并不需要用户交互。">HUD</a>/<a class="tooltip" title="“图形用户界面”（Graphical User Interface）的缩写，它是一个包含图形元素（例如窗口，图标和按钮）的用户界面。在GameMaker中，您有一组特定的对象事件（绘制GUI事件），可以将其吸引到专门为得分，生命，存货等事物设计的这一层。">GUI</a>&nbsp;元素。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">窗口大小调整</span><span data-close-text="true">窗口大小调整</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">这个事件类型属于 "绘制事件 "类别，虽然它实际上并不绘制任何东西，但它确实对显示缓冲区的变化做出反应--具体而言，它被设计用来对游戏窗口被 "捕捉 "时的UWP显示缓冲区大小变化做出反应。</p>
+    <p class="dropspot">在UWP目标平台上，重要的是你要捕捉到游戏窗口的 "捕捉 "带来的任何显示缓冲区的大小调整（例如，当用户将窗口拖到显示器的一侧时）。这个事件就可以做到这一点，并且在每次改变窗口时都会被触发，允许你在这里添加自定义代码，在必要时调整视图大小或重新定位<a class="tooltip" title="在游戏中，HUD代表抬头显示器。这是一种将信息作为游戏用户界面的一部分可视地传递给玩家的方法，因此，诸如健康栏，状态图标，得分等之类的内容都构成了HUD的一部分，而通常HUD元素并不需要用户交互。">HUD</a>元素。这个函数是作为一种方便的方式提供的，以避免一直检查这些东西的步骤事件代码。</p>
+    <p class="note"><strong>注意</strong>：你不能在这个事件中绘制！它是由调整窗口大小触发，并且只用于捕捉这一变化......任何应该进行的绘制仍然必须在其他的绘制事件中进行。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Object_Events.htm">对象事件</a></div>
+        <div style="float:right">Next: <a href="Async_Events.htm">异步事件</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Draw Events
+Pre Draw Event
+Post Draw Event
+Draw Begin Event
+Draw End Events
+Draw GUI Events
+Draw GUI Begin Event
+Draw GUI End Event
+Pre Draw Event
+Post Draw Event
+Window Resize Event
+-->
+  <!-- TAGS
+draw_events
+-->
+
+</body></html>

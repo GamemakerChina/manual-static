@@ -1,0 +1,142 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.14.2.0_25";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>tilemap_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function tilemap_get">
+  <meta name="rh-index-keywords" content="tilemap_get">
+  <meta name="search-keywords" content="tilemap_get">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_at_pixel.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_y.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="tilemap_get">
+        <span>tilemap_get</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_get</h1>
+  <p>使用此函数，可以从图块地图元素的单元格中检索图块数据。提供图块贴图元素Id(使用<a href="layer_tilemap_create.htm"><span class="inline">layer_tilemap_create()</span></a>或使用函数<a href="layer_tilemap_get_id.htm"><span class="inline">layer_tilemap_get_id()</span></a>创建图块贴图元素时获得的Id)，以及<i>单元格</i>的x和y位置，该函数将返回图块数据"blob"。此数据基本上是一个位掩码，其中包含互动程序索引、翻转/旋转/镜像布尔值和已应用的任何掩码数据(有关详细信息，请参见<a href="tilemap_set_mask.htm"><span class="inline">tilemap_set_mask()</span></a>)，然后可以在<span class="inline">互动程序</span>函数中使用生成的数据值来更改互动程序属性。请注意，我们使用基于互动程序贴图网格大小的x/ y单元格位置，而<i>不是</i>作为房间中的位置，因此"cell_x"是0到<a href="tilemap_get_width.htm">tile_map_width</a>的值，而"cell_y"是0到<a href="tilemap_get_height.htm">tile_map_height</a>的值。如果需要在特定房间位置获取互动程序的数据，则需要使用函数<a href="tilemap_get_at_pixel.htm"><span class="inline">tilemap_get_at_pixel()</span></a>。</p>
+  <p class="note"><b>重要!</b>如果互动程序映射中的互动程序未更改(即：它们未旋转或翻转等等)，则互动程序集数据的返回值将与互动程序集上互动程序的索引完全相等。因此，您可以使用互动程序集中索引1处的一个互动程序(例如，使用此函数检查1或0(空互动程序))来创建互动程序的"碰撞贴图"，以计算碰撞。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">tilemap_get(tilemap_element_id, cell_x, cell_y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td><span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span></td>
+        <td>图块图元素的唯一ID值，用于获取</td>
+      </tr>
+      <tr>
+        <td>x_cell</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>沿x轴的单元格，用于从中获取图块数据</td>
+      </tr>
+      <tr>
+        <td>y_cell</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>沿y轴的单元格，用于从中获取图块数据</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real_Tile_Data"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get.htm">Tile Data</a></span> (-1 if there is an error)</p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var lay_id = layer_get_id("Tiles_sky");<br>
+    var map_id = layer_tilemap_get_id(lay_id);<br>
+    var data = tilemap_get(map_id, 0, 0);<br>
+    data = tile_set_flip(data, true);<br>
+    tilemap_set(map_id, data, 0, 0);</p>
+  <p>上面的代码获取"Tiles_Sky"层上图块贴图的ID，然后使用该ID从单元(0，0)的块中获取数据。然后翻转此图块数据，然后再用于设置图块贴图上的图块。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Tile_Map_Layers.htm">贴图层</a></div>
+        <div style="float:right">Next:&nbsp;<a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get
+-->
+  <!-- TAGS
+tilemap_get
+-->
+
+</body></html>

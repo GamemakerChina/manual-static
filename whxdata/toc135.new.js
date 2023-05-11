@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"effect_create_below","type":"item","tilePath":"","description":"Reference page for effect_create_below","url":"GameMaker_Language/GML_Reference/Drawing/Particles/effect_create_below.htm"},{"name":"effect_create_above","type":"item","tilePath":"","description":"Reference page for effect_create_above","url":"GameMaker_Language/GML_Reference/Drawing/Particles/effect_create_above.htm"},{"name":"effect_clear","type":"item","tilePath":"","description":"Reference page for effect_clear","url":"GameMaker_Language/GML_Reference/Drawing/Particles/effect_clear.htm"},{"name":"粒子系统","type":"book","tilePath":"","description":"Reference section for the Particle System functions and variables","url":"GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/Particle_Systems.htm","key":"toc136"},{"name":"粒子类型","type":"book","tilePath":"","description":"Reference section for the Particle Type functions and variables","url":"GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/Particle_Types.htm","key":"toc137"},{"name":"粒子发射器","type":"book","tilePath":"","description":"Reference section for the Particle Emitter functions and variables","url":"GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/Particle_Emitters.htm","key":"toc138"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

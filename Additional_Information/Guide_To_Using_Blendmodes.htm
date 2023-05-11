@@ -1,0 +1,234 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "..";
+    gCommonRootRelPath = "..";
+    gTopicId = "7.0_10";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Guide To Using Blendmodes</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
+  <script src="../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page that explains how blendmodes work.">
+  <meta name="rh-index-keywords" content="blendmodes,Guide To Using Blendmodes">
+  <meta name="search-keywords" content="blendmodes,blending,blend modes">
+<meta name="brsnext" value="Additional_Information/Compatibility_Functions.htm"><meta name="brsprev" value="Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Guide To Using Blendmodes">
+        <span>Guide To Using Blendmodes</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>混合模式使用指南</h1>
+  <p>如果你一直在使用<span data-keyref="GameMaker Name">GameMaker</span>，你几乎肯定会遇到<a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/GPU_Control.htm">混合模式</a>，甚至可能在你的游戏中使用它们。混合模式是一种很好的方法，可以改变物体的绘制方式，从而产生有趣和特定的图像效果，但你知道它们是如何工作的吗?这是一个容易让人困惑的话题，所以在本节中，我们希望能解开一些围绕混合模式的谜题，让你能在游戏中最大限度地使用它们。</p>
+  <p>&nbsp;</p>
+  <h2>概述</h2>
+  <p>混合模式基本上告诉你的游戏要将某些东西与预先绘制的东西混合在一起。你在屏幕上绘制的所有东西都是由四个分量组成的 -红色、绿色、蓝色和透明度 -默认情况下，它们是使用混合模式<span class="inline">bm_normal</span>绘制到屏幕上的。这种混合模式绘制所有像素的颜色和alpha值基本不变(尽管在本节的后面，你将看到这不是<em>完全</em> 的…)，但<span data-keyref="GameMaker Name">GameMaker</span>有许多内建的混合模式，可以设置来改变这种行为。</p>
+  <p>当<span data-keyref="GameMaker Name">GameMaker</span>去绘制一个像素时，有一个<strong>源颜色</strong>(你要绘制的像素的颜色)和一个<strong>目标颜色</strong>(我们要绘制的像素中已经存在的颜色)。当确定像素的新颜色时，GameMaker将根据<strong>混合模式</strong>将源颜色和目标颜色结合起来，如上所述。颜色的每个组成部分都存储为0到1之间的浮点值，新颜色的计算方法是:将源颜色的每个组成部分乘以某个因子，将目标颜色的每个组成部分乘以其他因子，然后将结果逐项相加。</p>
+  <p>&nbsp;</p>
+  <h2>基本混合模式</h2>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 使用函数 <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm">gpu_set_blendmode()</a> 更改您的游戏用于绘制的混合。 您可以在（例如）绘制精灵之前调用它，然后再将其设置回去，如下所示：</p>
+  <p class="code">gpu_set_blendmode(bm_add);<br>
+    draw_self();<br>
+    gpu_set_blendmode(bm_normal);</p>
+  <p>该代码使用<strong>加法</strong>混合模式绘制实例精灵。 使用可用的 GML 常量之一设置加法混合模式，其中有四种用于基本模式：</p>
+  <p class="code">bm_normal<br>
+    bm_add<br>
+    bm_subtract<br>
+    bm_max</p>
+  <p>我们已经看到了 <span class="inline">bm_normal</span> 的外观 - 因为这是所有内容的默认设置！ - 让我们继续更详细地了解其他三个......</p>
+  <p><img alt="bm_normal example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmNormal.png"></p>
+  <p>&nbsp;</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">bm_add</span><span data-close-text="true">bm_add</span> 加法混合</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">这种混合模式将源像素和目标像素的颜色加在一起（但不影响 alpha 值）。 例如，如果您的背景图像是 RGB 值为 (100,15,70) 的纯色，然后您绘制了一个 RGB 值为 (120,25,30) 的矩形，那么（使用 bm_add）最终 RGB 矩形的每个像素的值为 (220,40,100)。 请注意，颜色值不能超过 255（或低于 0），因此加起来超过该值的任何值都将被限制为 255。</p>
+    <p class="dropspot"><img alt="bm_add example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmAdd.png">使用这种混合模式是获得“霓虹发光”效果的一个很好的方法，并且通常用于灯光效果，或激光，或任何你想要看起来发光或发光的东西。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">bm_subtract</span><span data-close-text="true">bm_subtract</span> 减法混合</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">这种混合模式与之前的有点不同，因为它基于百分比而不是直接值。 这个百分比是将从目标颜色（被绘制到的像素的颜色）中减去的百分比。 为了更好地解释这一点，让我们看一个例子。</p>
+    <p class="dropspot"><img alt="bm_subtract example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmSubtract.png">假设您想将房间某个区域中绘制的所有像素的红色值降低 25%。 您首先需要获得 255 的 25%，然后将其转换为 RGB 颜色值，最后使用它与 bm_subtract 一起绘制该区域。 是这样的：</p>
+    <p class="code">var red = (25 / 100) * 255;<br>
+      var col = make_colour_rgb(red, 0, 0);<br>
+      gpu_set_blendmode(bm_subtract);<br>
+      draw_rectangle_colour(0, 0, 128, 256, col, col, col, col, false);<br>
+      gpu_set_blendmode(bm_normal);</p>
+    <p class="dropspot">遵循相同的规则，如果您只想将背景的亮度降低 50%，那么您将获得 50% 红色、50% 绿色和 50% 蓝色的颜色，即：RGB (128, 128, 128)。 这种混合模式主要用于绘制阴影，或创建有趣的淡出效果。</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">bm_max</span><span data-close-text="true">bm_max</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">这种混合模式解释起来比较复杂，但它基本上是将源颜色乘以源alpha，然后将它们添加到目标颜色值乘以反源颜色值。我们将在本文的第二部分介绍bm_max(和其他混合模式)背后的实际数学原理，但您所需要知道的是，结果将是一个更“饱和”和更明亮的颜色，而不会导致使用<span class="inline">bm_add</span>将导致的纯白色光泽。</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes1_BmMax.png">当你需要绘制重叠的图像时，这种混合模式很有用，因为它们不会变得太亮以至于看不见。明亮的部分会变得更亮，但它们应该仍然保持一定的颜色和色调。注意，当使用这种混合模式时，源图像的alpha值也会影响最终效果。</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>现在您已经了解了在<span data-keyref="GameMaker Name">GameMaker</span>中使用混合模式的基本原理。它获取源图像(正在绘制的图像)的RGB和alpha值，然后将这些值与目标图像(也正在绘制的图像)的RGB和alpha值混合。这种混合是通过将每个像素颜色和alpha的单独成分乘以不同的数量来完成的，这取决于我们想要达到的效果。有了这些知识，你可以开始在你的游戏中使用混合模式来获得发光的激光，逼真的阴影，或饱和过渡效果，但这里仍然有更多的东西需要学习!下面我们来看看<strong>扩展的混合模式</strong>，以及探索它们背后的一些数学知识，这样你就可以创建自己的混合效果，如乘法或叠加。</p>
+  <p>&nbsp;</p>
+  <h2>扩展混合模式</h2>
+  <p>在上面我们已经讨论了函数<a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm"><span class="inline">gpu_set_blendmode()</span></a>，但是现在我们要看看<a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode_ext.htm"><span class="inline">gpu_set_blendmode_ext()</span></a>。这(顾名思义)是一个用于设置<em>自定义</em>混合模式的扩展函数，但这是如何工作的呢?在我们进一步讨论之前，让我们先看看枯燥的技术答案:</p>
+  <ul class="colour">
+    <li>函数 <span class="inline">gpu_set_blendmode_ext</span><span class="inline">(src, dest)</span> 指示用于源颜色和目标颜色的混合模式。 新颜色是某个因子乘以源，另一个因子乘以目标。 这些因子是用这个函数设置的。 要理解这一点，源和目标都有红色、绿色、蓝色和 alpha 分量。 因此，<strong>源</strong>是(<span class="inline">Rs、Gs、Bs、As</span>)，<strong>目标</strong>是 (<span class="inline">Rd、Gd、Bd、Ad</span>)。 所有值都被认为介于 0 和 1 之间。</li>
+  </ul>
+  <p>现在，虽然该文本是正确的并解释了混合模式的作用，但它并不是很直观……所以让我们更详细地解释一下这到底是怎么回事。</p>
+  <p>当我们谈论<strong>源</strong>时，我们谈论的是正在绘制的像素的颜色和 alpha 值，而当我们谈论<strong>目标</strong>时，我们谈论的是像素的颜色和 alpha 值 它正在被绘制。 为了让事情更简单，我们可以写出源颜色作为它的组成，如下所示：</p>
+  <ul class="colour">
+    <li><span class="inline">(Rs, Gs, Bs, As)</span> = 您要绘制的颜色的 RGB 和 Alpha。</li>
+  </ul>
+  <p>目标是这样的:</p>
+  <ul class="colour">
+    <li><span class="inline">(Rd, Gd, Bd, Ad)</span> = 您要绘制的颜色的 RGB 和 Alpha。</li>
+  </ul>
+  <p>所以当我们在屏幕上画东西的时候，我们的图形处理器实际上对每一个像素都做以下操作:</p>
+  <p class="code">final_pixel_colour = &nbsp;(Rs,Gs,Bs,As) * source_blend_factor + (Rd,Gd,Bd,Ad) * destination_blend_factor</p>
+  <p>上面提到的<strong>混合因子</strong>在 <span data-keyref="GameMaker Name">GameMaker</span> 中由多个 GML 常量定义，每个常量代表一个因子，源或目标 R、G、B 和 A 值应乘以该因子。 可用的因子是：</p>
+  <ul class="colour">
+    <li><span class="inline">bm_zero</span>: 混合系数为 (0, 0, 0, 0)</li>
+    <li><span class="inline">bm_one</span>: 混合系数为 (1, 1, 1, 1)</li>
+    <li><span class="inline">bm_src_colour</span>: 混合系数为 (Rs, Gs, Bs, As)</li>
+    <li><span class="inline">bm_inv_src_colour</span>: 混合系数为 (1-Rs, 1-Gs, 1-Bs, 1-As)</li>
+    <li><span class="inline">bm_src_alpha</span>: 混合系数为 (As, As, As, As)</li>
+    <li><span class="inline">bm_inv_src_alpha</span>: 混合系数为 (1-As, 1-As, 1-As, 1-As)</li>
+    <li><span class="inline">bm_dest_alpha</span>: 混合系数为 (Ad, Ad, Ad, Ad)</li>
+    <li><span class="inline">bm_inv_dest_alpha</span>: 混合系数为 (1-Ad, 1-Ad, 1-Ad, 1-Ad)</li>
+    <li><span class="inline">bm_dest_colour</span>: 混合系数为 (Rd, Gd, Bd, Ad)</li>
+    <li><span class="inline">bm_inv_dest_colour</span>: 混合系数为 (1-Rd, 1-Gd, 1-Bd, 1-Ad)</li>
+    <li><span class="inline">bm_src_alpha_sat</span>: 混合系数为 (f, f, f, 1); f = min(As, 1-Ad)</li>
+  </ul>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 的四种“基本”混合模式实际上是其中两种混合系数的组合。</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">bm_normal 工作原理示例</span><span data-close-text="true">bm_normal 工作原理示例</span></a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">现在我们来看一个实际的例子，说明如何在<span data-keyref="GameMaker Name"> GameMaker </span>中绘制。为此，我们将查看 bm _ Normal，它实际上是:</p>
+    <p class="code">gpu_set_blendmode_ext(bm_src_alpha, bm_inv_src_alpha);</p>
+    <p class="dropspot">人们在使用混合模式时遇到的问题之一是将结果可视化，因此为了展示其背后的数学原理，我们将使用这种混合模式作为我们的测试对象，因为它是每个人使用最多的混合模式，而且我们确切地知道会发生什么 从中。 假设我们在颜色为 (64, 128, 255, 255) 的背景上绘制一个颜色为 (128, 255, 64, 255) 的矩形：</p>
+    <p class="dropspot"><img alt="Example of bm_normal" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Example1.png">我们的混合模式是这样的:</p>
+    <p class="code">Source: (128, 255, 64, 255) = (0.5, 1, 0.25, 1)<br>
+      Destination: (64, 128, 255, 255) = (0.25, 0.5, 1, 1)<br>
+      bm_src_alpha (As, As, As, As) = (255, 255, 255, 255) = (1, 1, 1, 1)<br>
+      bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) = &nbsp;(0, 0, 0, 0)<br>
+      (Rs,Gs,Bs,As) * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha<br>
+      (0.5, 1, 0.25, 1) * (1, 1, 1, 1) + (0.25, 0.5, 1, 1) * (0, 0, 0, 0)<br>
+      (0.5, 1, 0.25, 1) + (0, 0, 0, 0) = (0.5, 1, 0.25, 1) = (128, 255, 64, 255)</p>
+    <p class="dropspot">如您所见，我们将目标值乘以 0，这也为它们提供了 0 值，这意味着源颜色未更改，因此我们的最终颜色值为<strong>(128, 255, 64, 255)</strong> . 您还可以看到包含 alpha 是如何影响这个值的：</p>
+    <p class="code">Source (128, 255, 64, 128) = (0.5, 1, 0.25, 0.5)<br>
+      Destination: (64, 128, 255, 255) = (0.25, 0.5, 1, 1)<br>
+      bm_src_alpha (As, As, As, As) = (128, 128, 128, 128) = (0.5, 0.5, 0.5, 0.5)<br>
+      bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) = (0.5, 0.5, 0.5, 0.5)<br>
+      (Rs,Gs,Bs,As) * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha<br>
+      (0.5, 1, 0.25, 0.5) * (0.5, 0.5, 0.5, 0.5) + (0.25, 0.5, 1, 1) * (0.5, 0.5, 0.5, 0.5)<br>
+      (0.25, 0.5, 0.125, 0.25) + (0.125, 0.25, 0.5, 0.5) = (0.375, 0.75, 0.625, 0.75) = (96, 192, 159, 192)</p>
+    <p class="dropspot">这给出了一个最终的像素颜色(96,192,159,192) ，并将给出一个如下图所示的图像:</p>
+    <p class="dropspot"><img alt="Example Of bm_normal With Alpha" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Example2.png"></p>
+    <p class="dropspot">希望您现在可以清楚地看到混合模式因素的作用，以及将它们组合起来如何改变绘制的内容以创建一些有趣的效果。 我们现在将通过一个实际示例来了解如何结合这些因素来创建您自己的自定义混合模式。</p>
+    <p class="dropspot">&nbsp;</p>
+    <p class="dropspot">&nbsp;</p>
+  </div>
+  <p>现在你知道如何设置混合模式的工作原理，并已经看到了一个例子，它被用于日常绘制，让我们看看更复杂的东西..。</p>
+  <p>&nbsp;</p>
+  <h2>创建你自己的混合模式</h2>
+  <p>使用可用的不同因子，您可以创建自己的混合模式以实现通常无法使用的混合选项。 在此示例中，我们将创建一个类似于 Photoshop 中使用的<strong>乘法</strong>效果。 我们可以使用上面提到的两个混合模式因子常量来模拟这种混合模式，如下所示：</p>
+  <p class="code">gpu_set_blendmode_ext(bm_dest_colour, bm_zero);</p>
+  <p>在我们真正使用这种混合模式绘制之前，让我们先看看它在 Photoshop 中应该是什么样子:</p>
+  <p><img alt="The &quot;Multiply&quot; Blend Mode In Photoshop" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Multiply.png">使用扩展混合模式，我们得到以下结果:</p>
+  <p class="code">(Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad) + (Rd, Gd, Bd, Ad) * (0,0,0,0) = (Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad)<br>
+    Source colour * dest colour + dest colour * zero = source colour * dest colour</p>
+  <p>混合因子 <span class="inline">bm_zero</span> 有效地从等式中删除了目标颜色（因为零乘以任何东西都是零），所以我们剩下的是源颜色乘以目标颜色的混合因子，因此名称为“乘以” 模式。 要在 <span data-keyref="GameMaker Name">GameMaker</span> 中使用它，您只需在 <strong>绘制</strong> 中添加类似这样的内容：</p>
+  <p class="code">gpu_set_blendmode_ext(bm_dest_colour, bm_zero);<br>
+    draw_self();<br>
+    gpu_set_blendmode(bm_normal);</p>
+  <p>下一张图片来自 GameMaker 中的一个测试项目，使用的代码如下:</p>
+  <p><img alt="The &quot;Multiply&quot; Blend Mode In GameMaker" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_MultiplyGMS.png">您看得出来差别吗？ 可能不是！ 然而，由于所使用的渲染工具之间的差异，两者之间会有一些偏差，但这几乎完全符合您的预期。 请注意，并非艺术程序使用的所有混合模式都可以在 <span data-keyref="GameMaker Name">GameMaker</span> 中使用，因为其中一些实际上可以强制颜色值超过 255，从而创建特殊效果，但这并不是 意味着您不能使用它们创建这些效果的合格模仿，甚至是全新的效果。</p>
+  <p>值得一提的是，对于<span data-keyref="GameMaker Name">GameMaker</span>，你可以进一步使用函数<span class="inline"><a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha()</a></span>。这允许您分离出不同混合模式因子的alpha部分，并单独使用它们来创建更多可能的组合。我们在这里不讨论这个函数，因为在手册中已经对它进行了深入的解释，但是为了让您知道它可以使用，这里有必要提到它。</p>
+  <p>&nbsp;</p>
+  <h2>表面和透明度</h2>
+  <p>关于混合模式，最后一件事值得注意，那就是它们如何影响颜色的<strong>透明度</strong>部分。当简单地绘制到<a class="tooltip" title="应用程序表面是一种特殊的内置表面，GameMaker Studio 2将在游戏的“绘制事件”中将所有内容绘制到该表面（表面实际上是为图形保留的内存区域）。然后这个表面被绘制到每个游戏帧末尾的显示缓冲区，向玩家显示它的内容。">应用程序表面</a>或<a class="tooltip" title="显示缓冲区是最终绘制所有内容的“画布”。一些事件直接针对此事件（例如Pre Draw事件），而另一些事件将首先绘制到应用程序表面，然后将其绘制到显示缓冲区。">显示缓冲区</a>时，实际上不需要考虑目标透明度值，因为<em>总是</em>为1。然而，你自己制作的表面是不同的，因为你可以清除一个表面，使其具有从0到1的任意透明度值。这导致了一些有趣的结果，与大多数人的预期相反。</p>
+  <p>为了说明这一点，我们将看看如何使用基本默认<span class="inline">bm_normal</span>进行绘制。大多数人认为把一个表面清除到透明度0，然后画一个透明度为0.5的东西，结果透明度值也会是0.5…<strong>但</strong>并非如此，许多人认为这是<span data-keyref="GameMaker Name">GameMaker</span>渲染方式中的一个“bug”。然而，正如您将看到的，这根本不是一个bug !</p>
+  <p>假设你有一个像素为0的表面，然后使用<span class="inline">bm_normal</span>混合模式在其上用0.5的像素画一个圆。整个表面仍然是0，但在圆中实际上是0.25，因为:</p>
+  <p class="code">0.5 * 0.5 + 0 * 0.5 = 0.5 * 0.5 = 0.25</p>
+  <p>如果你继续在现有的圆中画另一个圆，alpha值也是0.5，那么圆外的alpha值是0，圆之间的alpha值是0.25，小圆内的alpha值是0.375:</p>
+  <p class="code">0.5 * 0.5 + 0.25 * 0.5 = 0.25 + 0.125 = 0.375</p>
+  <p>如果你继续在一个alpha值为0的表面上画一些0.5的圆，然后把这个表面画到房间里，你会清楚地看到:</p>
+  <p><img alt="Surface Alpha Illustration" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Surface.png">如果你对透明度还是有点困惑，试着把它想象成另一种颜色。它就像一种颜色，所有关于它的计算都以类似的方式完成。它只是不太可见，尽管它对其他颜色的影响是可见的。这就引出了我们在使用表面和混合模式(甚至是<span class="inline">bm_normal</span>)时需要注意的最后一点……</p>
+  <p>即使表面的透明度为0，<em><strong>颜色成分仍然存在，并将影响所有的混合操作</strong></em>。所以绘制到一个零透明度清除的表面，使用红色(例如)将混合源颜色和目标颜色，给不同的效果，你可能认为。上图是在黑色背景的黑色表面上创建的，但如果我们把表面清除为红色，我们会得到这样的结果:</p>
+  <p><img class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_SurfaceRed.png">希望您现在可以使用我上面列出的公式，并为<span class="inline">bm_normal</span>应用适当的数字，自己找出为什么会发生这种情况。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Additional_Information.htm">额外的信息</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Compatibility_Functions.htm">兼容性函数</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Blendmodes
+Blending
+Blend Modes
+-->
+  <!-- TAGS
+using_blendmodes
+-->
+
+</body></html>

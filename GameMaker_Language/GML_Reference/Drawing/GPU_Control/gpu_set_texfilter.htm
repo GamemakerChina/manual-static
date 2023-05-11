@@ -1,0 +1,134 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.2.0_33";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>gpu_set_texfilter</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference for the function gpu_set_texfilter">
+  <meta name="rh-index-keywords" content="gpu_set_texfilter, gpu_set_tex_filter">
+  <meta name="search-keywords" content="gpu_set_texfilter, gpu_set_tex_filter">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_texfilter_ext.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_alphatestref.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="gpu_set_texfilter">
+        <span>gpu_set_texfilter</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texfilter</h1>
+  <p>该函数可用于设置游戏画面上所有图像的纹理过滤 (线性插值)。如果启用此选项 (<span class="inline">true</span>)，则绘制时将平滑所有纹理 (包括精灵，因为它们也被视为纹理)，这意味着当缩放或移动时，如果没有 1:1 的像素比率，则会在各个像素之间出现 " 污迹"，这可能会使图像显示模糊，具体取决于所使用的艺术风格。如果禁用此选项 (<span class="inline">false</span>)，则缩放或移动时将基于最接近的像素绘制图像，这可能会导致"阻塞"图像。默认值为 <span class="inline">false</span>，也可以在单个目标平台的 <b> 全局游戏选项 </b> 中更改此值。</p>
+  <p class="note"><b>注意</b>：此设置将使用函数 <a href="gpu_set_texfilter_ext.htm"><span class="inline">gpu_set_texfilter_ext()</span></a> 覆盖为着色器设置的任何纹理载物台插值。</p>
+  <p class="note"><b>注意</b>：在 HTML5 目标上，此函数只能在启用 WebGL 的情况下使用。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">gpu_set_texfilter(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>enable</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>启用或禁用纹理过滤(<span class="inline">true</span>/<span class="inline">false</span>)</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">if gpu_get_texfilter()<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;gpu_set_texfilter(false);<br>
+    }<br>
+    else<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;gpu_set_texfilter(true);<br>
+    }</p>
+  <p>以上代码检查纹理过滤是打开还是关闭，并相应地将其切换。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="GPU_Control.htm">GPU 控制</a></div>
+        <div style="float:right">Next:&nbsp;<a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_texfilter
+gpu_set_tex_filter
+-->
+  <!-- TAGS
+gpu_set_texfilter
+-->
+
+</body></html>

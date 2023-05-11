@@ -1,0 +1,138 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.2.0_2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>animcurve_get_channel_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page explaining the function animcurve_get_channel_index">
+  <meta name="rh-index-keywords" content="animcurve_get_channel_index">
+  <meta name="search-keywords" content="animcurve_get_channel_index">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get_channel.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="animcurve_get_channel_index">
+        <span>animcurve_get_channel_index</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_get_channel_index</h1>
+  <p>此函数将返回任何给定动画曲线通道的索引值。您提供动画曲线ID或结构，其中曲线ID是在资源浏览器中定义的动画曲线的名称，或者函数<span class="inline"><a href="animcurve_create.htm">animcurve_create()</a></span>返回的结构指针。然后，您以字符串形式提供通道的名称，该函数将返回与该通道关联的索引值。请注意，如果曲线或通道不存在，则会出现错误。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">animcurve_get_channel_index(curve_struct_or_id, channel_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>curve_struct_or_id</td>
+        <td><span data-keyref="Type_Struct_AnimCurve"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get.htm">Animation Curve Struct</a></span></td>
+        <td>动画曲线到目标的ID或结构指针</td>
+      </tr>
+      <tr>
+        <td>channel_name</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>频道名称 (字符串)。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _channelindex = animcurve_get_channel_index(ac_ButtonTween, "x_pos")<br>
+    var _channeldata = animcurve_get_channel(ac_ButtonTween, _channelindex);<br>
+    var _points = _channeldata.points;<br>
+    for (var i = 0; i &lt; array_length(_points); ++i;)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;_points[i].value += 1;<br>
+    }</p>
+  <p>上述代码检索曲线资源 “ac_ButtonTween” 中名为 “x_pos” 的通道结构，然后循环遍历通道曲线上的点，并将其值相加。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Animation_Curves.htm">Animation&nbsp;Curves</a></div>
+        <div style="float:right">Next:&nbsp;<a href="animcurve_channel_evaluate.htm">animcurve_channel_evaluate</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get_channel_index
+-->
+  <!-- TAGS
+animcurve_get_channel_index
+-->
+
+</body></html>

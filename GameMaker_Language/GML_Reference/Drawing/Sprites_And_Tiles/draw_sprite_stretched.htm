@@ -1,0 +1,141 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.5.0_7";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_sprite_stretched</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for draw_sprite_stretched">
+  <meta name="rh-index-keywords" content="draw_sprite_stretched">
+  <meta name="search-keywords" content="draw_sprite_stretched">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_stretched_ext.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_part_ext.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_sprite_stretched">
+        <span>draw_sprite_stretched</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_stretched</h1>
+  <p>此函数只是采用精灵资源，并将其延伸到给定的宽度和高度，以便占用该区域。对于<a href="draw_sprite.htm"><span class="inline">draw_sprite()</span></a>，可以指定要绘制的精灵和子图像，然后指定要绘制的精灵在房间中的x/y位置，最后指定宽度和高度(必须是像素值)。下图显示了此函数使用不同参数集的结果：</p>
+  <p><img alt="draw_sprite_stretched example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_stretch.png"></p>
+  <p class="note"><span class="note">注意</span>使用此函数绘制时，将忽略精灵<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x偏移</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y偏移</a>(或原点)，并使用房间中指定的x/ y位置的左上角绘制精灵。</p>
+  <p><span data-conref="../../../../assets/snippets/This_function_supports_nineslice.hts">如果与启用九宫格的精灵配合使用，则根据<a href="../../../../The_Asset_Editors/Sprites.htm">精灵编辑器</a>中的"九宫格"设置进行缩放后，它将保留任何详细信息。有关详细信息，请参阅<a href="../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm">九宫格</a>上的页面。</span></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_sprite_stretched(sprite, subimg, x, y, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>        <th>描述</th>
+     </tr>
+      <tr>
+        <td>sprite</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>        <td>要绘制的精灵的索引。</td>
+     </tr>
+      <tr>
+        <td>subimg</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>        <td>要绘制的精灵的subimg(帧)(image_index或-1)与对象中动画的当前帧相关联。</td>
+     </tr>
+      <tr>
+        <td>x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>        <td>绘制精灵的位置的x坐标。</td>
+     </tr>
+      <tr>
+        <td>y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>        <td>绘制精灵的位置的y坐标。</td>
+     </tr>
+      <tr>
+        <td>w</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>        <td>拉伸精灵将占据的区域的宽度。</td>
+     </tr>
+      <tr>
+        <td>h</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>        <td>拉伸精灵将占据的区域的高度。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">draw_sprite_stretched(sprite_index, image_index, x, y, sprite_width, sprite_height / 2);</p>
+  <p>这将绘制实例的指定精灵及其子图像，其中左角位于实例x/y位置。其宽度设置为与精灵相同，高度为精灵高度除以两。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Sprites_And_Tiles.htm">精灵和 Tiles</a></div>
+        <div style="float:right">Next: <a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_stretched
+-->
+  <!-- TAGS
+draw_sprite_stretched
+-->
+
+</body></html>

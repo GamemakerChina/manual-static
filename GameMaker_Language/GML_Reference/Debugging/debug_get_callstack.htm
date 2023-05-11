@@ -1,0 +1,143 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.21.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>debug_get_callstack</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for debug_get_callstack">
+  <meta name="rh-index-keywords" content="debug_get_callstack">
+  <meta name="search-keywords" content="debug_get_callstack">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Debugging/exception_unhandled_handler.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Debugging/debug_event.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="debug_get_callstack">
+        <span>debug_get_callstack</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>debug_get_callstack</h1>
+  <p>此函数生成一个字符串数组作为" callstack "，其中首先列出当前脚本，然后列出为执行当前脚本而运行的所有其他脚本。确切的字符串格式将根据所选的目标平台而有所不同，但大多数情况下，它将具有脚本/事件名称，然后是冒号：和行号，类似于：</p>
+  <p class="code"><span class="inline">"gml_Script_script2:1"<br>
+      "gml_Script_script1:32"<br>
+      "gml_Script_script0:64"<br>
+      "gml_Object_object0_Create_0:1"</span></p>
+  <p>该函数允许传入一个可选参数，该参数是返回的调用堆栈的最大深度。此值是从当前脚本开始返回的数组中包含的脚本数。如果未指定此参数，则将返回完整的调用堆栈。</p>
+  <p>请注意，在列出调用堆栈脚本后，返回的数组在其最后一个位置始终包含0。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">debug_get_callstack([maxdepth])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>[maxdepth]</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span class="optional">可选</span>返回的调用栈的最大深度</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></p>
+  <p>&nbsp;</p>
+  <h4><b>示例:</b></h4>
+  <p class="code">if debug_mode<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if keyboard_check(vk_escape)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var _a = debug_get_callstack(4);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; array_length_id(_a); ++i;)<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_a[i]);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp; }<br>
+    }</p>
+  <p>上述代码检查调试模式是否启用，如果启用，则检查键是否被按下。在这种情况下，它将当前调用栈输出到控制台，最大深度为4。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Debugging.htm">调试</a></div>
+        <div style="float:right">Next:&nbsp;<a href="exception_unhandled_handler.htm">exception_unhandled_handler</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_get_callstack
+-->
+  <!-- TAGS
+debug_get_callstack
+-->
+
+</body></html>

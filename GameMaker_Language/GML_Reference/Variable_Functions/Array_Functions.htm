@@ -1,0 +1,192 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.2";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../../assets/css/default.css"><script src="../../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <title>Array Functions</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="The overview page for all array functions, including the more advanced LINQ-like functions.">
+  <meta name="template" content="../../../assets/masterpages/Manual_Page.htt">
+  <meta name="search-keywords" content="array,function">
+  <meta name="rh-index-keywords" content="array,functions">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Array Functions">
+        <span>Array Functions</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <div>
+  </div>
+  <div>
+  <h1>数组函数</h1>
+  <p>还有一些与使用 <a href="../../GML_Overview/Arrays.htm"> 数组 </a> 相关的函数。这些旨在为您提供代码的灵活性，并允许您在制作游戏时创建更多函数和动态的数组。</p>
+  <h2>基本<span data-field="title" data-format="default">数组函数</span></h2>
+  <ul class="colour">
+    <li><a href="array_create.htm">array_create</a></li>
+    <li><a href="array_copy.htm">array_copy</a></li>
+    <li><a href="array_equals.htm">array_equals</a></li>
+    <li><a href="array_get.htm">array_get</a></li>
+    <li><a href="array_set.htm">array_set</a></li>
+    <li><a href="array_push.htm">array_push</a></li>
+    <li><a href="array_pop.htm">array_pop</a></li>
+    <li><a href="array_insert.htm">array_insert</a></li>
+    <li><a href="array_delete.htm">array_delete</a></li>
+    <li><a href="array_get_index.htm">array_get_index</a></li>
+    <li><a href="array_contains.htm">array_contains</a></li>
+    <li><a href="array_contains_ext.htm">array_contains_ext</a></li>
+    <li><a href="array_sort.htm">array_sort</a></li>
+    <li><a href="array_reverse.htm">array_reverse</a></li>
+    <li><a href="array_shuffle.htm">array_shuffle</a></li>
+    <li><a href="array_length.htm">array_length</a></li>
+    <li><a href="array_resize.htm">array_resize</a></li>
+    <li><a href="array_length_1d.htm">array_length_1d</a>&nbsp;<span data-conref="../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></li>
+    <li><a href="array_length_2d.htm">array_length_2d</a>&nbsp;<span data-conref="../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></li>
+    <li><a href="array_height_2d.htm">array_height_2d</a>&nbsp;<span data-conref="../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></li>
+    <li><a href="array_first.htm">array_first</a></li>
+    <li><a href="array_last.htm">array_last</a></li>
+  </ul>
+  <h2>高级<span data-field="title" data-format="default">数组函数</span></h2>
+  <ul class="Disc">
+    <li><a href="array_find_index.htm">array_find_index</a></li>
+    <li><a href="array_any.htm">array_any</a></li>
+    <li><a href="array_all.htm">array_all</a></li>
+    <li><a href="array_foreach.htm">array_foreach</a></li>
+    <li><a href="array_reduce.htm">array_reduce</a></li>
+    <li><a href="array_concat.htm">array_concat</a></li>
+    <li><a href="array_union.htm">array_union</a></li>
+    <li><a href="array_intersection.htm">array_intersection</a></li>
+    <li><a href="array_filter.htm">array_filter</a></li>
+    <li><a href="array_map.htm">array_map</a></li>
+    <li><a href="array_unique.htm">array_unique</a></li>
+    <li><a href="array_copy_while.htm">array_copy_while</a></li>
+  </ul>
+  <h2>扩展<span data-field="title" data-format="default">数组函数</span></h2>
+  <ul class="Disc">
+    <li><a href="array_create_ext.htm">array_create_ext</a></li>
+    <li><a href="array_filter_ext.htm">array_filter_ext</a></li>
+    <li><a href="array_map_ext.htm">array_map_ext</a></li>
+    <li><a href="array_unique_ext.htm">array_unique_ext</a></li>
+    <li><a href="array_reverse_ext.htm">array_reverse_ext</a></li>
+    <li><a href="array_shuffle_ext.htm">array_shuffle_ext</a></li>
+  </ul>
+  <h2 id="h2">回调方法</h2>
+  <p>回调<a href="../../GML_Overview/Method_Variables.htm">方法</a>与数组一起传递给数组函数，如&nbsp;<a href="array_foreach.htm">array_foreach</a>。</p>
+  <p>GameMaker 在给定数组的每个元素上运行回调方法。对于数组中的每个元素，它将两个参数传递给您的回调方法：</p>
+  <ul class="colour">
+    <li>数组元素的<strong>值</strong></li>
+    <li>数组元素的<strong>索引</strong></li>
+  </ul>
+  <p>在回调方法中，如果数组函数需要返回值 (如 <a href="array_map.htm">array_map</a>)，则可以使用这些参数来计算返回值。</p>
+  <p>根据回调方法为每个元素返回的内容，将返回结果值或数组的修改副本。但是，如果您使用的是 <span class="inline2">_ext</span> 函数之一，则会修改原始数组，而不是复制。</p>
+  <h3 id="h">判断方法</h3>
+  <p>当回调方法只需要返回 <span class="inline2">true</span> 或 <span class="inline2">false</span> 时，它被称为<strong>谓词方法</strong>。谓词用于告知数组中的元素是否符合条件。</p>
+  <h3>示例：判断</h3>
+  <p>让我们创建一个谓词方法来检查数组中是否包含字符串 <span class="inline2">"apple"</span>。</p>
+  <p>为此，我们将使用 <a href="array_any.htm">array_any</a> 函数：</p>
+  <p class="code">var _array =<br>
+    [<br>
+    &nbsp;&nbsp; &nbsp;"apple",<br>
+    &nbsp;&nbsp; &nbsp;"banana",<br>
+    &nbsp;&nbsp; &nbsp;"coconut",<br>
+    &nbsp;&nbsp; &nbsp;"dragonfruit"<br>
+    ]<br>
+    <br>
+    var _contains_apple = array_any(_array, function(_val, _ind)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;return _val == "apple"<br>
+    });<br>
+    <br>
+    show_debug_message(_contains_apple); // prints 1 (true)
+  </p>
+  <p>我们的判断方法检查 <span class="inline2">_val=="apple"</span> 并返回结果。当数组的任何一个元素为 <span class="inline2">true</span> 时，<a href="array_any.htm">array_any</a> 将返回 <span class="inline2">true</span>。</p>
+  <p>默认情况下，判断方法在数组内的所有元素上运行，但是大多数高级数组函数还带有两个额外的参数：<span class="inline2">offset</span> 和 <span class="inline2">length</span>。</p>
+  <h3 id="h1">偏移量和长度</h3>
+  <p>使用 <span class="inline2">offset</span> 和 <span class="inline2">length</span> 参数，您可以决定希望函数查看数组的哪个部分，以及希望它朝哪个方向前进 (向前或向后)。</p>
+  <ul class="colour">
+    <li><span class="inline2">offset</span>是函数开始在数组上操作的从0开始的索引。<ul> <li><span class="inline2">offset</span> 可以是负数，在这种情况下，它将从数组的末尾开始。例如，偏移量 <span class="inline2">-1</span> 表示数组的最后一个元素，<span class="inline2">-2</span> 表示倒数第二个元素，依此类推。</li> </ul> </li>
+    <li><span class="inline2">length</span> 是数组中检查的元素数，从 <span class="inline2">offset</span> 开始。 <ul> <li><span class="inline2">length</span> 也可以是负数，在这种情况下，函数将向后操作。例如，如果从偏移量 <span class="inline2">3</span> 开始，长度为 <span class="inline2">3</span>，则元素 <span class="inline2">3, 4, 5</span> 将被覆盖。但是，长度为 <span class="inline2">-3</span> 的元素 <span class="inline2">3, 2, 1</span> 将被覆盖。</li> <li>您可以使用 <span class="inline2">infinity</span> 或 <span class="inline2">-infinity</span> 分别作为遍历数组到其结尾或开头的长度。</li> </ul> </li>
+  </ul>
+  <p>如果该函数返回数组的修改版本，则只返回被操作的元素，并按其操作顺序返回。例如，当偏移量为 <span class="inline2">3</span>，长度为 <span class="inline2">3</span> 时，元素 <span class="inline2">3, 4, 5</span> 将被操作并作为新数组返回，其余元素 (如 <span class="inline2">0, 1, 2, 6, 7, 等等......</span>) 将被销毁。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="../GML_Reference.htm">GML 代码参考</a></div>
+        <div>Next:&nbsp;<a href="../Asset_Management/Asset_Management.htm">资源管理</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
+-->
+
+</body></html>

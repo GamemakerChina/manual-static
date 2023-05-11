@@ -1,0 +1,168 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.15.0_14";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>network_send_raw</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for network_send_raw">
+  <meta name="rh-index-keywords" content="network_send_raw">
+  <meta name="search-keywords" content="network_send_raw, text WebSockets">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Networking/network_send_udp.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Networking/network_send_packet.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="network_send_raw">
+        <span>network_send_raw</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_send_raw</h1>
+  <p>通过此函数，您可以通过网络发送"原生"数据包。该函数使用<i>套接字ID</i>进行连接，然后必须提供包含要发送的数据的<i>缓冲区ID</i>(有关缓冲区的详细信息，请参阅<a href="../Buffers/Buffers.htm">参考-缓冲区</a>)，最后是数据包的大小(以字节为单位)。<span data-keyref="GameMaker Name">GameMaker</span>不会以任何方式对发送的数据进行格式化，接收设备将以流的形式获取数据，这意味着您必须自行处理这些数据。该函数将返回发送的数据的字节数，如果发送失败，则返回小于0的数字。</p>
+  <h2>选项参数</h2>
+  <p>最后一个参数是可选的，仅与WebSockets一起使用。它允许您选择发送二进制数据还是文本数据。可以在此参数中指定以下任一常量：</p>
+  <table>
+    <colgroup>
+      <col style="width: 519px;">
+      <col style="width: 743px;">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="2" style=""><span data-keyref="Type_Constant_Network_Send_Type"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Networking/network_send_raw.htm">网络发送类型常量</a></span></th>
+      </tr>
+      <tr>
+        <th style="">常量</th>
+        <th style="">描述</th>
+      </tr>
+      <tr>
+        <td style=""><span class="inline">network_send_binary</span></td>
+        <td style="">Send a binary message</td>
+      </tr>
+      <tr>
+        <td style=""><span class="inline">network_send_text</span></td>
+        <td style="">Send a text message</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>某些平台的API在使用WebSockets(例如Twitch)时仅接受文本消息，因此<span class="inline2">network_send_text</span>常量可用于此类情况。如果未指定此参数，则默认情况下会发送二进制数据。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">network_send_raw(socket, bufferid, size, [options]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>socket</td>
+        <td><span data-keyref="Type_ID_Network_Socket"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">Network Socket ID</a></span></td>
+        <td>要使用的套接字的ID。</td>
+      </tr>
+      <tr>
+        <td>bufferid</td>
+        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span></td>
+        <td>缓冲区的ID。</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>数据的大小(以字节表示)。</td>
+      </tr>
+      <tr>
+        <td>options</td>
+        <td><span data-keyref="Type_Constant_Network_Send_Type"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Networking/network_send_raw.htm">网络发送类型常量</a></span></td>
+        <td><span class="optional">可选</span>用于WebSockets在文本数据和二进制数据之间进行选择;如果未指定，则发送二进制数据。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">buff = buffer_load("player_save.dat");<br>
+    network_send_raw(sock, buff, buffer_get_size(buff));</p>
+  <p>上述信息将先前保存的缓冲区数据加载到内存中，并返回要存储在变量"buffe"缓冲区中。然后，使用由变量"sock"标识的套接字，将该完整缓冲区作为原生数据包通过网络发送。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Networking.htm">网络</a></div>
+        <div style="float:right">Next: <a href="network_send_udp.htm">network_send_udp</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_send_raw
+-->
+  <!-- TAGS
+network_send_raw
+-->
+
+</body></html>

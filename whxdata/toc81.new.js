@@ -1,0 +1,8 @@
+
+                (function() {
+                    var toc = [{"name":"动画","type":"book","tilePath":"","description":"Page outlining the different Spine Animation functions","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Animation/Animation.htm","key":"toc82"},{"name":"皮肤","type":"book","tilePath":"","description":"Page outlining the different Spine Skin functions","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skins/Skins.htm","key":"toc83"},{"name":"附件","type":"book","tilePath":"","description":"Page outlining the different Spine Attachment functions","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Attachments/Attachments.htm","key":"toc84"},{"name":"骨骼","type":"book","tilePath":"","description":"Page outlining the different Spine Bone functions","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Bones/Bones.htm","key":"toc85"},{"name":"插槽","type":"book","tilePath":"","description":"Page outlining the different Spine Slot functions","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Slots/Slots.htm","key":"toc86"},{"name":"绘制和其他","type":"book","tilePath":"","description":"Page outlining the different Spine Drawing And Miscellaneous functions","url":"GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/Drawing_And_Miscellaneous.htm","key":"toc87"}];
+                    window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
+                        sync: true
+                    });
+                })();
+                

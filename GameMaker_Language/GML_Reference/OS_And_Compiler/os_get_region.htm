@@ -1,0 +1,140 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.20.0_9";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>os_get_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for os_get_region">
+  <meta name="rh-index-keywords" content="os_get_region">
+  <meta name="search-keywords" content="os_get_region">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_get_info.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_get_language.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="os_get_region">
+        <span>os_get_region</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_get_region</h1>
+  <p>此函数返回一个字符串，其中包含运行游戏的操作系统的两个或三个字母区域代码，由<a href="http://en.wikipedia.org/wiki/ISO_3166-1" target="_blank">ISO3166-1</a>标准设置。如果信息不可用，它将只保存一个空字符串""。</p>
+  <p class="note"><b>注意</b>：这不是返回的位置区域代码，而是操作系统的区域语言代码。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">os_get_region()</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">switch (os_get_language())<br>
+    {<br>
+    &nbsp; &nbsp; case "zh":<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; var region = os_get_region();<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; if (region == "HK" || region == "MO" || region == "TW")<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;ini_open("chinese_traditional.ini");<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; else<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;ini_open("chinese_simplified.ini");<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp; &nbsp; break;<br>
+    <br>
+    &nbsp; &nbsp; case "fr":<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;ini_open("french.ini");<br>
+    &nbsp; &nbsp; break;<br>
+    <br>
+    &nbsp; &nbsp; case "it":<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;ini_open("italian.ini");<br>
+    &nbsp; &nbsp; break;<br>
+    <br>
+    &nbsp; &nbsp; default:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;ini_open("english.ini");<br>
+    &nbsp; &nbsp; break;<br>
+    }
+  </p>
+  <p>上面的代码检查操作系统语言，如果是中文，它会检查操作系统区域，打开不同的 <span class="inline">*.ini</span> 文件取决于返回的值。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="OS_And_Compiler.htm">操作系统和编译器</a></div>
+        <div style="float:right">Next: <a href="os_get_info.htm">os_get_info</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_get_region
+-->
+  <!-- TAGS
+os_get_region
+-->
+
+</body></html>

@@ -1,0 +1,220 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.16.0_3";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>url_open_full</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference page for url_open_full">
+  <meta name="rh-index-keywords" content="url_open_full">
+  <meta name="search-keywords" content="url_open_full">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Web_And_HTML5/url_get_domain.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Web_And_HTML5/url_open_ext.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="url_open_full">
+        <span>url_open_full</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span data-field="title" data-format="default">url_open_full</span></h1>
+  <p>这将在所选目标设备的浏览器上打开指定的 URL，或者，如果您使用的是 HTML5 模块，则在当前打开的浏览器中打开。</p>
+  <p>当您使用 <span class="inline3_func">open()</span>&nbsp;方法时，您指定的 "target" 参数与标准的 JavaScript 
+ "name" 值相同 (请注意，除 "<strong>_self</strong>"&nbsp;之外的所有参数都可能导致浏览器被阻止，或询问用户是否希望允许它)，而 "options" 参数与用于控制新窗口 / 选项卡应显示哪些属性的 JavaScript "specs" 参数相同 (并非所有浏览器都支持所有功能)。</p>
+  <p>有效的目标是:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>目标</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>_blank</td>
+        <td>Opens the linked document in a new window or tab (this will not work if pop-ups are being blocked by the user, in which case you can use the <a href="Web_And_HTML5.htm"><span class="inline">clickable_*</span></a> functions instead).</td>
+      </tr>
+      <tr>
+        <td>_self</td>
+        <td>Opens the linked document in the same frame as it was clicked (this is default).</td>
+      </tr>
+      <tr>
+        <td>_parent</td>
+        <td>Opens the linked document in the parent frame.</td>
+      </tr>
+      <tr>
+        <td>_top</td>
+        <td>Opens the linked document in the full body of the window.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>有效的选择包括:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td><b>'height=[</b>px<b>]'</b></td>
+        <td>The height of the window, with the minimum value being 100.</td>
+      </tr>
+      <tr>
+        <td><b>'width=[</b>px<b>]'</b></td>
+        <td>The width of the window, with the minimum value being 100.</td>
+      </tr>
+      <tr>
+        <td><b>'left=[</b>px<b>]'</b></td>
+        <td>The left position of the window.</td>
+      </tr>
+      <tr>
+        <td><b>'top=[</b>px<b>]'</b></td>
+        <td>The top position of the window (IE only).</td>
+      </tr>
+      <tr>
+        <td><b>'location=[</b>boolean<b>]'</b></td>
+        <td>Whether or not to display the address field (default is 1).</td>
+      </tr>
+      <tr>
+        <td><b>'menubar=[</b>boolean<b>]'</b></td>
+        <td>Whether or not to display the menu bar (default is 1).</td>
+      </tr>
+      <tr>
+        <td><b>'resizable=[</b>boolean<b>]'</b></td>
+        <td>Whether or not the window is resizable (default is 1).</td>
+      </tr>
+      <tr>
+        <td><b>'scrollbars=[</b>boolean<b>]'</b></td>
+        <td>Whether or not to display scroll bars (default is 1).</td>
+      </tr>
+      <tr>
+        <td><b>'status=[</b>boolean<b>]'</b></td>
+        <td>Whether or not to add a status bar (default is 1).</td>
+      </tr>
+      <tr>
+        <td><b>'titlebar=[</b>boolean<b>]'</b></td>
+        <td>Whether or not to display the title bar. This is ignored unless the calling application is an HTML Application or a trusted dialog box (default is 1);</td>
+      </tr>
+      <tr>
+        <td><b>'toolbar=[</b>boolean<b>]'</b></td>
+        <td>Whether or not to display the browser toolbar (default is yes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <div data-conref="../../../assets/snippets/Url_open_AV_warning.hts">
+  <p class="note"><span class="note">注意</span>&nbsp;安装在玩家设备上的杀毒软件可能导致URL无法打开，因此在使用此函数时请注意这一点。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">url_open_full</span>(url, target, options);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要链接到的url(网址)。</td>
+      </tr>
+      <tr>
+        <td>target</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>这是打开 URL 的目标区域 (请参阅说明)。这只在 HTML5 中使用。</td>
+      </tr>
+      <tr>
+        <td>options</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>标准浏览器选项 (请参阅说明)。这只在 HTML5 中使用。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code"><span data-field="title" data-format="default">url_open_full</span>("http://gamemaker.io", "_blank", "resizable=0, height=200, scrollbars=0");</p>
+  <p>这将在一个无法调整大小的新窗口中打开 <span data-keyref="GameMaker Name">GameMaker</span> 主页，该窗口的高度为 200 像素，在 HTML5 中运行或在所选目标设备的浏览器的新窗口中运行时没有滚动条。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Web_And_HTML5.htm">Web 和 HTML5</a></div>
+        <div style="float:right">Next:&nbsp;<a href="url_get_domain.htm">url_get_domain</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+url_open_full
+-->
+  <!-- TAGS
+url_open_full
+-->
+
+</body></html>

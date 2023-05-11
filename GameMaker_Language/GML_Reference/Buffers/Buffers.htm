@@ -1,0 +1,170 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.18";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Buffers</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for the Buffer functions">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Buffers">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Buffers/buffer_exists.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/load_csv.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Buffers">
+        <span>Buffers</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>缓冲区</h1>
+  <p>缓冲区是物理内存的一个区域，用于在数据从一个地方移动到另一个地方或以某种方式进行操作时临时保存数据，例如，您可以使用缓冲区来保存等待通过网络传输的数据包数据，或者用于存储通过网络接收到的数据包。<span data-keyref="GameMaker Name">GameMaker</span>有许多与创建、修改和加载/保存缓冲区相关的特定函数，但在使用它们之前，请注意以下几点：</p>
+  <ul class="colour">
+    <li>创建缓冲区时，它会自动清除并填充为0。</li>
+    <li>缓冲区函数的 "大小" 参数总是指缓冲区的大小<i>(以字节为单位)。</i></li>
+    <li>"Alignment" 参数是指数据在缓冲区中的存储方式。如果你的对齐设置为 4，并且你写了一段大小为 1 字节的数据，然后执行<span class="inline">buffer_tell</span>，你的偏移量将为 1。但是，如果您再写一段数据，大小也是 1 字节，然后执行<span class="inline">buffer_tell</span>，则偏移量为 5，因为对齐已将数据 "填充" 到该大小。对齐仅影响写入<i>内容的</i>处，因此，如果您在写入内容后执行<span class="inline">buffer_tell</span>，它将返回紧随您写入的数据的当前写入位置。但是请注意，如果您随后写入另一段数据，则在实际写入该数据之前，缓冲区内部会将写入位置移动到对齐大小的下一个倍数。</li>
+    <li>当处理 "offset" 时，这是字节<i>中的值</i>，用于在给定缓冲区内偏移数据。因此，如果您的缓冲区是2字节对齐的，并且您想跳过前4个对齐位置，则您的偏移量为<span class="inline">2*4字节</span>。</li>
+    <li>一些缓冲区函数还创建了一个新的缓冲区 (例如<span class="inline">buffer_load</span>)。请记住，当不使用<span class="inline">buffer_delete</span>函数时，还需要从内存中删除这些缓冲区。</li>
+    <li>用于创建缓冲区的内存是<i>系统内存</i>所以即使游戏没有焦点，存储在缓冲区中的任何数据都应该是安全的，但是如果应用程序关闭或重新启动，它将丢失。</li>
+  </ul>
+  <p>以下页面解释了缓冲区如何在<span data-keyref="GameMaker Name">GameMaker</span>的上下文中工作，并为那些不确定如何使用它们的用户提供了几个代码示例:</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">使用缓冲区</a></li>
+  </ul>
+  <p class="note"><em><strong>重要!</strong></em>创建缓冲区时，用于标识缓冲区的索引值是从0开始的整数值。这些索引由GameMaker重新使用，因此在之后新创建的缓冲区索引值可能会使用已销毁的缓冲区索引值，我们建议您在已销毁缓冲区后将任何保存缓冲区索引的变量设置为-1。</p>
+  <p>以下函数可供您在游戏中与二进制缓冲区一起使用:</p>
+  <ul class="colour">
+    <li><a href="buffer_exists.htm">buffer_exists</a></li>
+    <li><a href="buffer_create.htm">buffer_create</a></li>
+    <li><a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></li>
+    <li><a href="buffer_create_from_vertex_buffer_ext.htm">buffer_create_from_vertex_buffer_ext</a></li>
+    <li><a href="buffer_delete.htm">buffer_delete</a></li>
+    <li><a href="buffer_read.htm">buffer_read</a></li>
+    <li><a href="buffer_write.htm">buffer_write</a></li>
+    <li><a href="buffer_fill.htm">buffer_fill</a></li>
+    <li><a href="buffer_seek.htm">buffer_seek</a></li>
+    <li><a href="buffer_tell.htm">buffer_tell</a></li>
+    <li><a href="buffer_peek.htm">buffer_peek</a></li>
+    <li><a href="buffer_poke.htm">buffer_poke</a></li>
+    <li><a href="buffer_save.htm">buffer_save</a></li>
+    <li><a href="buffer_save_ext.htm">buffer_save_ext</a></li>
+    <li><a href="buffer_save_async.htm">buffer_save_async</a></li>
+    <li><a href="buffer_load.htm">buffer_load</a></li>
+    <li><a href="buffer_load_ext.htm">buffer_load_ext</a></li>
+    <li><a href="buffer_load_async.htm">buffer_load_async</a></li>
+    <li><a href="buffer_load_partial.htm">buffer_load_partial</a></li>
+    <li><a href="buffer_compress.htm">buffer_compress</a></li>
+    <li><a href="buffer_decompress.htm">buffer_decompress</a></li>
+    <li><a href="buffer_async_group_begin.htm">buffer_async_group_begin</a></li>
+    <li><a href="buffer_async_group_option.htm">buffer_async_group_option</a></li>
+    <li><a href="buffer_async_group_end.htm">buffer_async_group_end</a></li>
+    <li><a href="buffer_copy.htm">buffer_copy</a></li>
+    <li><a href="buffer_copy_from_vertex_buffer.htm">buffer_copy_from_vertex_buffer</a></li>
+    <li><a href="buffer_get_type.htm">buffer_get_type</a></li>
+    <li><a href="buffer_get_alignment.htm">buffer_get_alignment</a></li>
+    <li><a href="buffer_get_address.htm">buffer_get_address</a></li>
+    <li><a href="buffer_get_size.htm">buffer_get_size</a></li>
+    <li><a href="buffer_get_surface.htm">buffer_get_surface</a></li>
+    <li><a href="buffer_set_surface.htm">buffer_set_surface</a></li>
+    <li><a href="buffer_resize.htm">buffer_resize</a></li>
+    <li><a href="buffer_sizeof.htm">buffer_sizeof</a></li>
+    <li><a href="buffer_md5.htm">buffer_md5</a></li>
+    <li><a href="buffer_sha1.htm">buffer_sha1</a></li>
+    <li><a href="buffer_crc32.htm">buffer_crc32</a></li>
+    <li><a href="buffer_base64_encode.htm">buffer_base64_encode</a></li>
+    <li><a href="buffer_base64_decode.htm">buffer_base64_decode</a></li>
+    <li><a href="buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></li>
+    <li><a href="buffer_set_used_size.htm">buffer_set_used_size</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>还有两个与缓冲区相关的额外函数，可用于保存和加载游戏状态 (请注意，它们需要以前创建的缓冲区):</p>
+  <ul class="colour">
+    <li><a href="../General_Game_Control/game_load_buffer.htm">game_load_buffer</a></li>
+    <li><a href="../General_Game_Control/game_save_buffer.htm">game_save_buffer</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>最后，您还可以使用特殊的<b>顶点缓冲区</b>来创建自己的自定义原语或模型等...您可以从手册的以下部分中找到有关这些内容的更多信息:</p>
+  <ul class="colour">
+    <li><a href="../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">基元创建</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../GML_Reference.htm">GML Reference</a></div>
+        <div style="float:right">Next:&nbsp;</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Buffers
+-->
+  <!-- TAGS
+buffer_functions
+-->
+
+</body></html>

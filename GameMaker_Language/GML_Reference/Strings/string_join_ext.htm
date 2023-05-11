@@ -1,0 +1,156 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.10.0_36";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>string_join_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Reference page for string_join_ext">
+  <meta name="rh-index-keywords" content="string_join_ext">
+  <meta name="search-keywords" content="string_join_ext">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="string_join_ext">
+        <span>string_join_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">string_join_ext</span></h1>
+  <p>此函数将给定数组(或数组的一部分)中所有值的字符串表示连接在一起，在每个值之间插入给定的"分隔符"。该函数返回联接的字符串。</p>
+  <p>不是字符串的值将具有隐式运行的 <a href="string.htm"><span class="inline2">string()</span></a> 函数。有关如何转换这些数据类型的信息，请参阅 <a href="string.htm#h1"> 从非字符串类型转换 </a>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">string_join_ext</span>(delimiter, values_array, [offset], [length]);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>delimiter</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要在值之间插入的字符串</td>
+      </tr>
+      <tr>
+        <td>values_array</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>包含要联接在一起的值的数组</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 数组中开始加入元素的偏移量或起始索引。设置负值将从数组的末尾开始计算。然后，起始索引将是 <span class="inline2">array_length(array) + offset</span>。请参阅：<a href="../Variable_Functions/Array_Functions.htm#h1"> 偏移量和长度 </a></td>
+      </tr>
+      <tr>
+        <td>length</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;要连接的数组元素的数量，从偏移量开始。&nbsp;负值将向后遍历数组(即按索引的降序，例如 2，1，0 而不是 2，3，4)。请参阅：&nbsp;<a href="../Variable_Functions/Array_Functions.htm#h1">偏移量和长度</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p>&nbsp;</p>
+  <h4>示例1：</h4>
+  <p class="code">var _words = <span data-field="title" data-format="default">string_join_ext</span>(" ", ["This", "example", "joins", "words"]);</p>
+  <p>上面的代码使用空格作为分隔符，将<a href="../../GML_Overview/Arrays.htm">数组</a>中的单词连接到单个字符串中。</p>
+  <p>&nbsp;</p>
+  <h4>示例2：</h4>
+  <p class="code">var _buffer = buffer_create(1, buffer_grow, 1);<br>
+    var _text_lines =&nbsp;["This", "file", "will", "have", "multiple", "lines"];<br>
+    var _file_contents = string_join_ext("\r\n", _text_lines);<br>
+    buffer_write(_buffer, buffer_text, _file_contents);<br>
+    buffer_save(_buffer, save_dir + "/" + "text.txt");<br>
+    buffer_delete(_buffer);</p>
+  <p>上面的代码首先创建一个增长的 <a href="../Buffers/buffer_create.htm"> 缓冲区 </a> 并将其赋给一个临时变量 <span class="inline2">_buffer</span>。然后，它创建一个包含多个元素的数组，并将其存储在另一个变量 <span class="inline2">_text_lines</span> 中。然后，它使用分隔符 <span class="inline2">"\r\n"</span> 对数组调用 <span class="inline2"><span data-field="title" data-format="default">string_join_ext</span></span>，这会在所有给定字符串之间产生新行。</p>
+  <p>它将生成的字符串作为 <span class="inline2">buffer_text</span> 值写入缓冲区，然后将缓冲区内容保存到名为 <span class="inline2">"text.txt"</span> 的文件中，该文件位于目录 <span class="inline2">save_dir</span> 中。最后，它删除缓冲区以防止内存泄漏。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Strings.htm">字符串</a></div>
+        <div>Next:&nbsp;<a href="string_concat.htm">string_concat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_join_ext
+-->
+  <!-- TAGS
+string_join_ext
+-->
+
+</body></html>

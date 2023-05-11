@@ -1,0 +1,150 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.9.1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>DS Grids</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for DS Grids">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="DS Grids">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="DS Grids">
+        <span>DS Grids</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>DS 网格</h1>
+  <p>DS网格基本上是具有2个维度<span>的<a href="../../../GML_Overview/Arrays.htm"></a>数组</span>的类型。您可以通过设置网格的整数宽度和高度来定义网格，然后设置网格中"单元格"的总数(宽度和高度的乘积)，这些单元格将用于保存不同的数据值(实数或字符串)。</p>
+  <p><img alt="DS Grid Example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_basic.png">这种类型的结构允许您通过给出网格中单元格的x和y索引来设置和检索网格中单元格的值(x和y轴从0开始，直到width-1和height-1)。但是，您也可以在特定的栅格区域中设置值，添加单个值，并检索给定区域上的和、最大值、最小值和平均值，从而使此数据结构成为您可用的所有数据结构中函数最丰富的。</p>
+  <p>访问D的网格数据结构时，应始终尝试对单元格位置使用<b>个整数值</b>，否则<span data-keyref="GameMaker Name">GameMaker</span>将泛洪所有非整数索引。如果这不是您所需要的，那么在传递要检查的索引之前，您需要先进行舍入。</p>
+  <p class="note"><b><span class="note">注意</span></b>与所有动态资源一样，数据结构占用内存，因此当不再需要<b>防止内存泄漏时，应始终销毁</b>，这将降低速度并最终导致游戏崩溃。</p>
+  <p class="note"><b><span class="note">注意</span></b>如果需要检查是否存在数据结构，可以使用<span style="font-size:1px;"><a href="../ds_exists.htm"><span class="inline">ds_exists()</span></a></span>函数。</p>
+  <p>除了下面列出的特定函数外，您还可以使用<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>(称为<i>访问器</i>)来添加或修改DS网格的内容。此存取器类似于2D阵列，具有以下语法：</p>
+  <p class="code">grid_index[# xpos, ypos]</p>
+  <p>您可以从<a href="../../../GML_Overview/Accessors.htm">访问器</a>的GML 概述页面中找到更多信息和示例。</p>
+  <p>存在以下处理DS网格的函数：</p>
+  <ul class="colour">
+    <li><a href="ds_grid_create.htm">ds_grid_create</a></li>
+    <li><a href="ds_grid_destroy.htm">ds_grid_destroy</a></li>
+    <li><a href="ds_grid_width.htm">ds_grid_width</a></li>
+    <li><a href="ds_grid_height.htm">ds_grid_height</a></li>
+    <li><a href="ds_grid_resize.htm">ds_grid_resize</a></li>
+    <li><a href="ds_grid_clear.htm">ds_grid_clear</a></li>
+    <li><a href="ds_grid_set.htm">ds_grid_set</a></li>
+    <li><a href="ds_grid_set_disk.htm">ds_grid_set_disk</a></li>
+    <li><a href="ds_grid_set_grid_region.htm">ds_grid_set_grid_region</a></li>
+    <li><a href="ds_grid_set_region.htm">ds_grid_set_region</a></li>
+    <li><a href="ds_grid_shuffle.htm">ds_grid_shuffle</a></li>
+    <li><a href="ds_grid_sort.htm">ds_grid_sort</a></li>
+    <li><a href="ds_grid_get.htm">ds_grid_get</a></li>
+    <li><a href="ds_grid_get_max.htm">ds_grid_get_max</a></li>
+    <li><a href="ds_grid_get_mean.htm">ds_grid_get_mean</a></li>
+    <li><a href="ds_grid_get_min.htm">ds_grid_get_min</a></li>
+    <li><a href="ds_grid_get_sum.htm">ds_grid_get_sum</a></li>
+    <li><a href="ds_grid_get_disk_max.htm">ds_grid_get_disk_max</a></li>
+    <li><a href="ds_grid_get_disk_mean.htm">ds_grid_get_disk_mean</a></li>
+    <li><a href="ds_grid_get_disk_min.htm">ds_grid_get_disk_min</a></li>
+    <li><a href="ds_grid_get_disk_sum.htm">ds_grid_get_disk_sum</a></li>
+    <li><a href="ds_grid_add.htm">ds_grid_add</a></li>
+    <li><a href="ds_grid_add_region.htm">ds_grid_add_region</a></li>
+    <li><a href="ds_grid_add_disk.htm">ds_grid_add_disk</a></li>
+    <li><a href="ds_grid_add_grid_region.htm">ds_grid_add_grid_region</a></li>
+    <li><a href="ds_grid_multiply.htm">ds_grid_multiply</a></li>
+    <li><a href="ds_grid_multiply_disk.htm">ds_grid_multiply_disk</a></li>
+    <li><a href="ds_grid_multiply_region.htm">ds_grid_multiply_region</a></li>
+    <li><a href="ds_grid_multiply_grid_region.htm">ds_grid_multiply_grid_region</a></li>
+    <li><a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></li>
+    <li><a href="ds_grid_value_disk_exists.htm">ds_grid_value_disk_exists</a></li>
+    <li><a href="ds_grid_value_x.htm">ds_grid_value_x</a></li>
+    <li><a href="ds_grid_value_y.htm">ds_grid_value_y</a></li>
+    <li><a href="ds_grid_value_disk_x.htm">ds_grid_value_disk_x</a></li>
+    <li><a href="ds_grid_value_disk_y.htm">ds_grid_value_disk_y</a></li>
+    <li><a href="ds_grid_copy.htm">ds_grid_copy</a></li>
+    <li><a href="ds_grid_read.htm">ds_grid_read</a></li>
+    <li><a href="ds_grid_write.htm">ds_grid_write</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构</a></div>
+        <div style="float:right">Next: <a href="../DS_Lists/DS_Lists.htm">列表 List</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+DS Grids
+-->
+  <!-- TAGS
+ds_grid_functions
+-->
+
+</body></html>

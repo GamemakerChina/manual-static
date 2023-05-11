@@ -1,0 +1,138 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.3.5.3.0_6";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>AudioBus Struct</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../../assets/css/default.css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Reference page for the AudioBus struct">
+  <meta name="rh-index-keywords" content="AudioBus">
+  <meta name="search-keywords" content="AudioBus">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+  <meta name="condition-tags" content="">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="AudioBus Struct">
+        <span>AudioBus Struct</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">AudioBus 结构</span></h1>
+  <p><span data-field="title" data-format="default">Audiobus </span>结构存储有关<span data-keyref="GameMaker Name">GameMaker</span>中的音频总线的信息，并用于访问它。</p>
+  <p>音频总线是<span data-keyref="GameMaker Name">GameMaker</span>用来处理其播放的音频的总线。</p>
+  <p>主音频总线始终存在，可通过内置结构<span class="inline2"><a href="audio_bus_main.htm">audio_bus_main</a></span>访问。 可以从<span class="inline2"><a href="audio_bus_create.htm">audio_bus_create</a></span>创建新总线。</p>
+  <div data-conref="../../../../../assets/snippets/Note_GM_Managed_Structs.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>这是一个内置的结构，因此<span data-keyref="GameMaker Name">GameMaker</span>对其内容有更多的控制权。这意味着对其成员的访问受到限制，并且如果分配了无效值，某些值可能会自动更改。您可能还必须通过<span data-keyref="GameMaker Name">GameMaker</span>提供的内置函数来创建和销毁此结构，而不是通过<span class="inline2"><a href="../../../../GML_Overview/Language_Features/new.htm">new</a></span>和<span class="inline2"><a href="../../../../GML_Overview/Language_Features/delete.htm">delete</a></span>操作符。</p>
+
+</div>
+  <h2>结构成员</h2>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>成员</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>bypass</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否应绕过总线。<br>这将通过总线将音频输入传递到输出，绕过所有效果和增益缩放。</td>
+      </tr>
+      <tr>
+        <td>gain</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>应用于总线输出的增益值(0-1)。</span></td>
+      </tr>
+      <tr>
+        <td><span>effects</span></td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span>&nbsp;of&nbsp;<a href="AudioEffect.htm">AudioEffect Struct</a>&nbsp;structs</td>
+        <td>这允许访问总线上的音频效果。<br>您可以通过操作此数组来设置、获取和重新排列效果。<br>数组大小固定为8，最多允许8种效果。尝试访问超出范围的索引将引发错误。<br>可以通过将<span data-keyref="Type_Undefined"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">undefined</a></span>分配给它们来清除效果槽。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Audio_Effects.htm">音效</a></div>
+        <div>Next:&nbsp;<a href="AudioEffect.htm">AudioEffect 结构</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+AudioBus
+-->
+  <!-- TAGS
+AudioBus
+-->
+
+</body></html>

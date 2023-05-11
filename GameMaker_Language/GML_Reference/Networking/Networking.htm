@@ -1,0 +1,126 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.15";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Networking</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference section for the Networking  functions">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="Networking">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Networking/network_create_server.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asynchronous_Functions/Facebook/Facebook.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="Networking">
+        <span>Networking</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Networking</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>网络函数基于<i>套接字</i>，这是所有平台上的行业标准。使用套接字，您可以使用简单的 GML 创建客户端和服务器，这允许您使用客户端/服务器模型创建单个玩家游戏(这将允许稍后轻松添加多人游戏)。</p>
+  <p>基本上，套接字是可以发送、接收、连接和监听网络上<i>端口</i>的对象。这些函数只处理TCP/IP连接，这是互联网的基础。本质上，这允许您使用IP地址(比如说192.168.1.10)将一个套接字连接到另一个IP地址(如192.168.1.11)上的另一个套接字。一旦连接，这两个套接字可以使用<span class="inline">network_send_*</span>函数(如<a href="network_send_packet.htm"><span class="inline">network_send_packet()</span></a>)和由它们触发的专用异步事件来回发送数据。此异步事件将生成包含接收数据和其他详细信息的<a href="../Data_Structures/DS_Maps/DS_Maps.htm">DS map</a>，您可以在<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">网络异步事件</a>部分中找到完整详细信息。</p>
+  <p>与程序必须读取和处理进入计算机的每一位网络流量不同，IP地址还处理从0到65535的端口。这允许每个程序只获得它感兴趣的数据包，而不是每个程序发送的所有数据。这还节省了大量Cpu时间，因为它严重减少了数据处理，因此使用<span data-keyref="GameMaker Name">GameMaker</span>，您还可以"侦听"端口。因此，服务器将创建一个套接字，然后将其绑定到要侦听的特定端口。然后，它将收到来自该套接字的连接、断开连接和数据传输的通知。</p>
+  <p>数据"packets"本身由从缓冲器获取的二进制数据组成。可以使用<span data-keyref="GameMaker Name">GameMaker</span><a href="../Buffers/Buffers.htm">Buffer</a>系列函数创建和操作此缓冲区。</p>
+  <p>值得注意的是，如果您正在为HTML5目标创建项目，则由于浏览器限制，您将无法使用服务器创建函数，并且必须使用类似<strong>Electron</strong>或<strong>NodeJS</strong>的内容为此平台编写自己的服务器。另请注意，如果您的游戏是跨平台的，并且您希望从运行在移动设备或桌面设备上的服务器连接到游戏的HTML5实例，则您的服务器只能使用Web套接字协议与HTML5实例通信(这是使用常量<span class="inline">network_socket_ws</span>或<span class="inline">network_socket_wss</span>-有关详细信息，请参阅 <a href="network_create_server.htm"><span class="inline">network_create_server()</span></a>这意味着您的服务器可能必须在不同的端口上创建两个插槽，一个用于连接到非HTML5目标(Android、Windows等)，另一个用于连接到HTML5目标。</p>
+  <p>您可以使用以下函数进行联网：</p>
+  <ul class="colour">
+    <li><a href="network_create_server.htm">network_create_server</a></li>
+    <li><a href="network_create_server_raw.htm">network_create_server_raw </a></li>
+    <li><a href="network_create_socket.htm">network_create_socket</a></li>
+    <li><a href="network_create_socket_ext.htm">network_create_socket_ext</a></li>
+    <li><a href="network_connect.htm">network_connect</a></li>
+    <li><a href="network_connect_async.htm">network_connect_async</a></li>
+    <li><a href="network_connect_raw.htm">network_connect_raw</a></li>
+    <li><a href="network_connect_raw_async.htm">network_connect_async_raw</a></li>
+    <li><a href="network_resolve.htm">network_resolve</a></li>
+    <li><a href="network_set_config.htm">network_set_config</a></li>
+    <li><a href="network_set_timeout.htm">network_set_timeout</a></li>
+    <li><a href="network_send_broadcast.htm">network_send_broadcast</a></li>
+    <li><a href="network_send_packet.htm">network_send_packet</a></li>
+    <li><a href="network_send_raw.htm">network_send_raw</a></li>
+    <li><a href="network_send_udp.htm">network_send_udp</a></li>
+    <li><a href="network_send_udp_raw.htm">network_send_udp_raw</a></li>
+    <li><a href="network_destroy.htm">network_destroy</a></li>
+  </ul>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="../GML_Reference.htm">GML Reference</a></div>
+        <div style="float:right">Next:&nbsp;<a data-condition="Export:StableOnly" href="../Web_And_HTML5/Web_And_HTML5.htm">Web 和 HTML5</a>&nbsp;</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+Networking
+-->
+  <!-- TAGS
+networking_functions
+-->
+
+</body></html>

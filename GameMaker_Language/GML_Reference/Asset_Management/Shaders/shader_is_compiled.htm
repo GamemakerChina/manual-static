@@ -1,0 +1,130 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.3.8.0_13";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>shader_is_compiled</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Page outlining the function shader_is_compiled">
+  <meta name="rh-index-keywords" content="shader_is_compiled">
+  <meta name="search-keywords" content="shader_is_compiled">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Shaders/shaders_are_supported.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_reset.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="shader_is_compiled">
+        <span>shader_is_compiled</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>shader_is_compiled</h1>
+  <p>此函数将在运行时检查着色器，以确保已成功编译该着色器。如果有，则函数返回<span class="inline">true</span>，否则返回<span class="inline">false</span>。 游戏开始时应使用此函数，以确保运行游戏的平台已成功编译使用的任何着色器(特别是在 Windows 上，其中某些计算机可能使用 DX9 和 Shader Level 2.0，而不是使用着色器 level 3.0 的更高版本)。</p>
+  <p>如果您的着色器<i>未</i>被编译，并且您调用<a href="shader_set.htm"><span class="inline">shader_set()</span></a>，则游戏将崩溃，因此每当您使用除了简单的GLSL ES着色器之外的任何内容时，进行某种检查是值得的。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">shader_is_compiled(shader);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>shader</td><td><span data-keyref="Type_Asset_Shader"><a target="_blank" href="../../../../../The_Asset_Editors/Shaders.htm">Shader Asset</a></span></td>
+        <td>要检查的着色器。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">global.GFX = false;<br>
+    if (shader_is_compiled(sh_glass) &amp;&amp; shader_is_compiled(sh_warp))<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;global.GFX = true;<br>
+    }</p>
+  <p>上面的代码将全局变量设置为<span class="inline">false</span>，然后如果两个被检查的着色器都已正确编译，则将其设置为<span class="inline">true</span>。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back: <a href="Shaders.htm">着色器</a></div>
+        <div style="float:right">Next: <a href="shaders_are_supported.htm">shaders_are_supported</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+shader_is_compiled
+-->
+  <!-- TAGS
+shader_is_compiled
+-->
+
+</body></html>

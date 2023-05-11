@@ -1,0 +1,139 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.7.0_5";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>draw_vertex_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="Mark Alexander">
+  <meta name="topic-comment" content="Reference for draw_vertex_colour">
+  <meta name="rh-index-keywords" content="draw_vertex_colour,draw_vertex_color">
+  <meta name="search-keywords" content="draw_vertex_colour,draw_vertex_color">
+  <meta name="is_pure" content="true">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Primitives/draw_vertex_texture.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Primitives/draw_vertex.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="draw_vertex_colour">
+        <span>draw_vertex_colour</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_vertex_colour</h1>
+  <p>此函数定义基元顶点的位置，具有自己的颜色和alpha设置。基元的最终外观将取决于选择绘制的基元类型以及向其添加顶点的顺序(有关详细信息，请参阅<a href="draw_primitive_begin.htm"><span class="inline">draw_primitive_begin()</span></a>)，具有不同颜色和alpha的顶点将从一个到另一个平稳混合。要结束并绘制基元，您必须调用<a href="draw_primitive_end.htm"><span class="inline">draw_primitive_end()</span></a>.</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code">draw_vertex_colour(x, y, col, alpha)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>参数</th><th>类型</th>
+        <th>描述</th>
+     </tr>
+      <tr>
+        <td>x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>顶点的x坐标。</td>
+     </tr>
+      <tr>
+        <td>y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>顶点的y坐标。</td>
+     </tr>
+      <tr>
+        <td>col</td><td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>用于绘制此顶点的颜色。</td>
+     </tr>
+      <tr>
+        <td>alpha</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>使用 (0-1) 绘制此顶点的Alpha。</td>
+     </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">draw_primitive_begin(pr_trianglelist);<br> draw_vertex_colour(100, 100, c_blue, 0.1);<br> draw_vertex_colour(100, 200, c_red, 0.1);<br> draw_vertex_colour(150, 150, c_green, 1);<br> draw_primitive_end();
+  </p>
+  <p>上述代码将绘制一个半透明三角形，每个顶点的颜色不同。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Back:&nbsp;<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div style="float:right">Next:&nbsp;<a href="draw_vertex_texture.htm">draw_vertex_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_vertex_colour
+draw_vertex_color
+-->
+  <!-- TAGS
+draw_vertex_colour
+-->
+
+</body></html>

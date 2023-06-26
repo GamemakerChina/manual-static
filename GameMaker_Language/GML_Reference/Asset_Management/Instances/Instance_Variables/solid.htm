@@ -78,29 +78,28 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>solid</h1>
-  <p>可以通过<i>对象编辑器</i>中的对象属性，或通过更改此内置变量的值，将实例标记为<a href="../../../../../The_Asset_Editors/Objects.htm">实体</a>。如果<span class="inline">solid</span>设置为<span class="inline">true</span>，则当检测到冲突时，碰撞实例将自动返回到冲突前步骤中的位置(然后冲突事件中运行任何代码或操作)。如果设置为<span class="inline">false</span>，所有定位必须通过碰撞事件处理。</p>
+  <h1><span data-field="title" data-format="default">solid</span></h1>
+  <p>An instance can be flagged as <i>solid</i> through the object properties in the <a href="../../../../../The_Asset_Editors/Objects.htm">Object Editor</a>, or by changing the value of this built-in variable. If <span class="inline2">solid</span>&nbsp;is set to <span class="inline2">true</span>&nbsp;then, when a collision is detected, the colliding instance is returned automatically to the position it was at in the step previous to the collision (and then any code or actions are run in the collision event). If it is set to <span class="inline2">false</span>, all positioning must be dealt with through the collision event.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">solid;</p>
+  <p class="code"><span data-field="title" data-format="default">solid</span></p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if other.solid = true<br>
+  <p class="code">if other.solid == true<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;x = xprevious;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;y = yprevious;<br>
     }</p>
-  <p>上面的代码将检查冲突中"另一个"实例的实线标志，如果它被设置为<span class="inline">true</span>，则将该实例移回其先前的位置。</p>
-  <p>&nbsp;</p>
+  <p>The above code will check the <span class="inline2">solid</span> flag of the "other" instance in a collision and if it is set to <span class="inline2">true</span>&nbsp;move that instance back to its previous position.</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Instance_Variables.htm">实例变量</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Instance_Variables.htm">实例变量</a></div>
         <div style="float:right">Next: <a href="persistent.htm">persistent</a></div>
       </div>
     </div>

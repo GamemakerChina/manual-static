@@ -79,8 +79,9 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>mouse_check_button_pressed</h1>
-  <p>如果正在检查的鼠标按钮已按下，此函数将返回<span class="inline">true</span>，如果未按下，则返回<span class="inline">false</span>。首次按下任何鼠标按钮时，此函数仅会触发<i>一次</i>，并且要再次触发该函数，该按钮需要已释放并再次按下。请注意，它将被视为在步骤的持续时间内触发，并且对于具有任何鼠标事件或使用此相同函数的所有实例。</p>
+  <h1><span data-field="title" data-format="default">mouse_check_button_pressed</span></h1>
+  <p>This function will return <span class="inline2">true</span> if the mouse button being checked has been pressed or <span class="inline2">false</span> if it has not.</p>
+  <p>This function will only return <span class="inline2">true</span>&nbsp;<i>once</i> for any mouse button when it is first pressed and in order for it to return <span class="inline2">true</span> again the button will need to have been released and pressed again. Note that it will be considered pressed for the duration of the step, and for all instances that have any mouse events or that use this same function.</p>
   <p>您提供鼠标按钮以从以下常量之一进行检查:</p>
   <div data-conref="../../../../assets/snippets/Mouse_input_constants.hts">
   <table>
@@ -130,7 +131,7 @@
 
 </div>
   <h4>语法:</h4>
-  <p class="code">mouse_check_button_pressed(numb);</p>
+  <p class="code"><span data-field="title" data-format="default">mouse_check_button_pressed</span>(numb);</p>
   <table>
     <tbody>
       <tr>
@@ -150,18 +151,17 @@
   <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if mouse_check_button_pressed(mb_left)<br>
+  <p class="code">if <span data-field="title" data-format="default">mouse_check_button_pressed</span>(mb_left)<br>
     {<br>
     &nbsp; &nbsp; score += 50;<br>
     }</p>
   <p>上面的代码将检查鼠标左键是否被按下，如果有，它将在分数上加50。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Mouse_Input.htm">鼠标输入</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Mouse_Input.htm">鼠标输入</a></div>
         <div style="float:right">Next:&nbsp;<a href="mouse_check_button_released.htm">mouse_check_button_released</a></div>
       </div>
     </div>

@@ -118,7 +118,7 @@
   <h3>音频循环</h3>
   <p>声音可以通过设置为循环来循环。这可以在使用任何 <span class="inline2">audio_play_sound_</span> 函数播放声音时完成：</p>
   <p class="code">ins_sound = audio_play_sound(snd_Engine, 100, true);</p>
-  <p>或者之后，当声音已经播放时，使用函数 <span class="inline2"><a href="Audio_Loop_Points/audio_sound_loop.htm">audio_sound_loop</a></span>：</p>
+  <p>或者之后，当声音已经播放时，使用函数 <span class="inline3_func"><a href="Audio_Loop_Points/audio_sound_loop.htm">audio_sound_loop</a></span>：</p>
   <p class="code">audio_sound_loop(ins_sound, true);</p>
   <p>默认情况下，声音从开始循环到结束。在播放声音时，也可以分别使用 <span class="inline3_func"><a href="Audio_Loop_Points/audio_sound_loop_start.htm">audio_sound_loop_start</a></span> 和 <span class="inline3_func"><a href="Audio_Loop_Points/audio_sound_loop_end.htm">audio_sound_loop_end</a></span> 更改开始和结束位置 (即，<span class="inline2">ins_sound</span> 指的是一个声音实例，其 <span class="inline3_func"><a href="audio_is_playing.htm">audio_is_playing</a></span> 返回 <span class="inline2">true</span>)。</p>
   <p>当音轨位置到达循环结束位置(如果声音设置为循环)时，它将从开始位置继续播放。</p>
@@ -188,7 +188,7 @@
     <li><a href="audio_sound_get_listener_mask.htm">audio_sound_get_listener_mask</a></li>
   </ul>
   <h3><a href="Audio_Loop_Points/Audio_Loop_Points.htm">音频循环点</a></h3>
-  <ul class="Disc">
+  <ul class="colour">
     <li><a href="Audio_Loop_Points/audio_sound_loop.htm">audio_sound_loop</a></li>
     <li><a href="Audio_Loop_Points/audio_sound_get_loop.htm">audio_sound_get_loop</a></li>
     <li><a href="Audio_Loop_Points/audio_sound_loop_start.htm">audio_sound_loop_start</a></li>
@@ -197,7 +197,7 @@
     <li><a href="Audio_Loop_Points/audio_sound_get_loop_end.htm">audio_sound_get_loop_end</a></li>
   </ul>
   <h3>配置</h3>
-  <ul class="Disc">
+  <ul class="colour">
     <li><a href="audio_master_gain.htm">audio_master_gain</a></li>
     <li><a href="audio_set_master_gain.htm">audio_set_master_gain</a></li>
     <li><a href="audio_get_master_gain.htm">audio_get_master_gain</a></li>
@@ -209,6 +209,11 @@
   <h3>调试</h3>
   <ul class="colour">
     <li><a href="audio_debug.htm">audio_debug</a></li>
+  </ul>
+  <h3>Gain Conversion</h3>
+  <ul class="colour">
+    <li><a href="lin_to_db.htm">lin_to_db</a></li>
+    <li><a href="db_to_lin.htm">db_to_lin</a></li>
   </ul>
   <h3>音频串流</h3>
   <ul class="colour">

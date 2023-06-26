@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Windows 游戏选项</h1>
+  <h1><span data-field="title" data-format="default">Windows</span>&nbsp;Game Options</h1>
   <p>本节概述了可用于控制如何编译Windows游戏项目的不同选项。不同的部分包括：</p>
   <h2>常规</h2>
   <p><img alt="Windows General Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_General_Options.png">Windows游戏的<strong>常规</strong>页面应为Windows提供安装和运行游戏时显示的必要信息。此信息位于<strong>产品信息</strong>部分，应完整填写。</p>
@@ -87,7 +87,7 @@
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>除了睡眠边距，您还可以通过在运行时调整<a href="../../GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm">线程调度程序的分辨率</a>来进一步控制Windows上的性能和功耗。</p>
   <p>下一个选项是为你的游戏<strong>启动Steam</strong>。如果启用此选项，请确保已安装Steamworks Sdk（请参阅<a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">此处</a>），并且已将<strong>Steamworks应用程序ID</strong>添加到游戏的<a href="../Game_Options.htm">常规选项</a>中。请注意，如果您正在Windows的Steam版本上运行<span data-keyref="GameMaker Name">GameMaker</span>，并且正在为Steam开发游戏，则可能还需要选中<strong>使用Steam的备用启动器</strong>应用程序选项。此选项的作用是在使用替代启动程序进行测试时启动游戏，以防Steam使用<span data-keyref="GameMaker Name">GameMaker</span>的应用程序ID（而不是游戏自己的应用程序ID）标记游戏。只有在为Steam开发时，发现在启动游戏时遇到问题，才应启用此功能。</p>
   <p>倒数第二个选项是<strong>禁用文件系统沙盒</strong>。选中此项将禁用<span data-keyref="GameMaker Name">GameMaker</span>沙盒以保存和加载文件，允许您的游戏从运行游戏的系统上的任何位置访问文件。默认情况下此选项是被取消的，因为我们建议您为所有系统上的文件保留<span data-keyref="GameMaker Name">GameMaker</span>沙盒。如果选中此选项，则依据系统级别的权限，某些保存/加载区域可能将不可用。有关沙盒的详细信息，请参阅<span data-keyref="GameMaker Name">GameMaker</span><a href="../../Additional_Information/The_File_System.htm">文件系统</a>上的页面。</p>
-  <h2>图形</h2>
+  <h2 id="graphics">图形</h2>
   <p><img alt="Windows Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Graphics_Options.png">图形选项是您应该配置的选项，以确定您的游戏将如何使用目标为Windows PC的显卡。您可以修改以下选项：</p>
   <ul class="colour">
     <li><strong>显示光标</strong>：选中此选项后，将显示常规的 Windows 光标，取消选中将意味着不会显示任何光标，除非您在游戏代码中创建了一个光标。默认情况下，该选项处于启用状态。</li>

@@ -81,6 +81,10 @@
   <h1><span data-field="title" data-format="default">audio_set_master_gain</span></h1>
   <p>使用此函数，您可以为特定收听者设置所有声音和音乐的全局音量的绝对值。</p>
   <p>默认监听器索引为 0，但可以使用函数 <span class="inline2"><a href="Audio_Listeners/audio_get_listener_info.htm">audio_get_listener_info()</a></span> 获取目标平台可用的不同索引。增益值基于从 0 (无声) 到 1 (全音量) 的线性标度，并将影响通过该收听者在游戏中播放的所有声音和音乐的相对音量。</p>
+  <div data-conref="../../../../assets/snippets/Note_Gain_Linear_dB.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Use&nbsp;<span class="inline3_func"><a href="db_to_lin.htm">db_to_lin</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="lin_to_db.htm">lin_to_db</a></span>&nbsp;to convert back and forth between linear gains and gains expressed in decibels (dB).</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">audio_set_master_gain</span>(listenerIndex, gain);</p>

@@ -1,6 +1,6 @@
 
                 (function() {
-                    var toc = [{"name":"笔刷生成器","type":"item","tilePath":"","description":"Page detailing how the tile set editor brush builder works","url":"The_Asset_Editors/Tile_Set_Editors/Brush_Builder.htm"},{"name":"动画图块","type":"item","tilePath":"","description":"Page detailing how the tile set editor animated tiles works","url":"The_Asset_Editors/Tile_Set_Editors/Animated_Tiles.htm"},{"name":"自动图块","type":"item","tilePath":"","description":"Page detailing how the tile set editor auto tiles  works","url":"The_Asset_Editors/Tile_Set_Editors/Auto_Tiles.htm"}];
+                    var toc = [{"name":"九宫格","type":"item","tilePath":"","description":"Page detailing how the Nine Slice technique works","url":"The_Asset_Editors/Sprite_Properties/Nine_Slices.htm"},{"name":"条带图像","type":"item","tilePath":"","description":"Overview of strip images in GameMaker, used for animation","url":"The_Asset_Editors/Sprite_Properties/Sprite_Strips.htm"},{"name":"非位图精灵","type":"item","tilePath":"","description":"Section explaining non-bitmap sprites in GameMaker","url":"Settings/Texture_Information/Non-Bitmap_Sprites.htm"}];
                     window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
                         sync: true
                     });

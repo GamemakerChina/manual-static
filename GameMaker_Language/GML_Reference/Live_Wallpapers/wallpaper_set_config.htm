@@ -1,0 +1,265 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.23.0_1";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>wallpaper_set_config</title>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="wallpaper_set_config">
+  <meta name="search-keywords" content="wallpaper_set_config">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="wallpaper_set_config">
+        <span>wallpaper_set_config</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">wallpaper_set_config</span></h1>
+  <p>此功能将壁纸的配置发送到配套应用程序。它接受一个包含 选项/节 的“settings”数组，其中每个 选项/节 都是一个<a href="../../GML_Overview/Structs.htm">结构</a>。</p>
+  <h3>设置数组</h3>
+  <p>数组应具有以下格式：&nbsp;</p>
+  <p class="code">array =&nbsp;<br>
+    [<br>
+    &nbsp; &nbsp; {section_or_option},<br>
+    &nbsp; &nbsp; {section_or_option},<br>
+    &nbsp; &nbsp; {section_or_option}<br>
+    ];</p>
+  <p>此数组中的每个条目都是<em>节</em>或<em>选项</em>。</p>
+  <h3>节结构</h3>
+  <p>节结构需要以下格式：&nbsp;</p>
+  <p class="code">{<br>
+    &nbsp; &nbsp; type: "section",<br>
+    &nbsp; &nbsp; name: "unique_identifier",<br>
+    &nbsp; &nbsp; label: "Label for this section in the companion app",<br>
+    &nbsp; &nbsp; children: [{section}, {option}, ...]<br>
+    }</p>
+  <p><span>节结构中的<span class="inline2">children</span>属性是<a href="../../GML_Overview/Arrays.htm">数组。</a>&nbsp;此数组中的每个条目都是另一个节&nbsp;结构体&nbsp;或选项结构体。</span></p>
+  <h3>选项结构</h3>
+  <p>选项结构需要以下格式：&nbsp;</p>
+  <p class="code">{<br>
+    &nbsp; &nbsp; type: "type_of_return_value",<br>
+    &nbsp; &nbsp; name: "unique_identifier",<br>
+    &nbsp; &nbsp; label: "Label for this section in the companion app"<br>
+    }</p>
+  <p>type属性允许使用以下类型：<br><span class="inline2">“range”</span>、<span class="inline2">“boolean”</span>、<span class="inline2">“string”</span>、<span class="inline2">“string_multiline”</span>、<span class="inline2">“color”</span>&nbsp;（或<span class="inline2">“colour”</span>）、&nbsp;<span class="inline2">“file”</span>和<span class="inline2">“folder”</span>。</p>
+  <p>根据类型的不同，必须为选项结构提供额外的属性：&nbsp;</p>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">"range"</span><span data-close-text="true">"range"</span></a></h3>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="code">{<br>
+      &nbsp; &nbsp; type: "range",<br>
+      &nbsp; &nbsp; value: &lt;a number, default value&gt;,<br>
+      &nbsp; &nbsp; min: &lt;a number, minimum range value&gt;,<br>
+      &nbsp; &nbsp; max: &lt;a number, maximum range value&gt;,<br>
+      &nbsp; &nbsp; step: &lt;a number, distance between possible values&gt;<br>
+      }</p>
+  </div>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">"boolean"</span><span data-close-text="true">"boolean"</span></a></h3>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="code">{<br>
+      &nbsp; &nbsp; type: "boolean",<br>
+      &nbsp; &nbsp; value: &lt;true or false, default value&gt;<br>
+      }</p>
+  </div>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">"string"</span><span data-close-text="true">"string"</span></a></h3>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="code">{<br>
+      &nbsp; &nbsp; type: "string",<br>
+      &nbsp; &nbsp; value: &lt;a string, default value&gt;<br>
+      }</p>
+  </div>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">"string_multiline"</span><span data-close-text="true">"string_multiline"</span></a></h3>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="code">{<br>
+      &nbsp; &nbsp; type: "string_multiline",<br>
+      &nbsp; &nbsp; value: &lt;a string that can have newlines, e.g. "Line 1\nLine 2\nLine 3\nLine4"&gt;<br>
+      }</p>
+  </div>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">"color" (or "colour")</span><span data-close-text="true">"color" (or "colour")</span></a></h3>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="code">{<br>
+      &nbsp; &nbsp; type: "colour",<br>
+      &nbsp; &nbsp; value: &lt;a colour, default value&gt;<br>
+      }</p>
+  </div>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">"file"</span><span data-close-text="true">"file"</span></a></h3>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="code">{<br>
+      &nbsp; &nbsp; type: "file",<br>
+      &nbsp; &nbsp; value: &lt;a string containing file path, e.g. "C:\\Users\\MyUser\\Pictures\\MyPicture.png"&gt;<br>
+      }</p>
+  </div>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span data-open-text="true" data-skip-index="true">"folder"</span><span data-close-text="true">"folder"</span></a></h3>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="code">{<br>
+      &nbsp; &nbsp; type: "folder",<br>
+      &nbsp; &nbsp; value: &lt;a string containing a folder path, e.g. "C:\\Users\\MyUser\\Pictures\\"&gt;<br>
+      }</p>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">wallpaper_set_config</span>(settings_array);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>settings_array</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>包含节和选项结构的数组，如上文所述</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _config =&nbsp;<br>
+    [<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; type: "section",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; name: "animation",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; label: "Animation",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; children:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; [<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: "range",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: "speed",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "label": "Rotation speed",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value: 50,<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min: 0,<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; max: 200,<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; step: 25<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: "boolean",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: "clockwiseRotation",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; label: "Clockwise rotation",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value: false<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: "boolean",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: "pause",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; label: "Pause animation",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value: true<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; ]<br>
+    &nbsp; &nbsp; },<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; type: "section",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; name: "colours",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; label: "Colours",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; children:<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; [<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: "colour",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: "blendColor",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; label: "Blend colour",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value:&nbsp;#FA1E4E<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: "range",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; name: "blendAlpha",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; label: "Blend alpha",<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; value: 100<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; ]<br>
+    &nbsp; &nbsp; }<br>
+    ];<br>
+    <br>
+    <span data-field="title" data-format="default">wallpaper_set_config</span>(_config);
+  </p>
+  <p>上面的代码显示了&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">wallpaper_set_config</span></span>函数的示例，其中包含两个部分。 第一部分包含三个选项（一个范围和两个布尔值），第二部分包含两个选项（一个颜色和一个范围）。</p>
+  <p>此示例首先在局部变量中初始化数组，然后将其传递到函数调用中。 如果你愿意，你可以跳过变量stuff，直接在函数参数中初始化数组。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Live_Wallpapers.htm">动态壁纸</a></div>
+        <div>Next:&nbsp;<a href="Live_Wallpapers.htm">动态壁纸</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+wallpaper_set_config
+-->
+  <!-- TAGS
+wallpaper_set_config
+-->
+
+</body></html>

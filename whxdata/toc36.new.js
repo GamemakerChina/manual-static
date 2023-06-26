@@ -1,6 +1,6 @@
 
                 (function() {
-                    var toc = [{"name":"GML 可视化概述","type":"book","tilePath":"","description":"Overview of GML Visual","url":"Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm","key":"toc37"},{"name":"GML 可视化参考","type":"book","tilePath":"","description":"Reference section for GML Visual","url":"Drag_And_Drop/Drag_And_Drop_Reference/DnD_Reference.htm","key":"toc38"}];
+                    var toc = [{"name":"GML 可视化","type":"book","tilePath":"","description":"Page that indexes all the other GML Visualges","url":"Drag_And_Drop/Drag_And_Drop_Index.htm","key":"toc37"},{"name":"GML 代码","type":"book","tilePath":"","description":"Page that indexes all the relevant GML pages","url":"GameMaker_Language/GameMaker_Language_Index.htm","key":"toc66"}];
                     window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, {
                         sync: true
                     });

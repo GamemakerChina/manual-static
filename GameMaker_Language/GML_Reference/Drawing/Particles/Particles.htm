@@ -78,18 +78,17 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>粒子</h1>
-  <p>对于<span data-keyref="GameMaker Name">GameMaker</span>中的复杂内容，通常会在房间周围有<a href="../../../../The_Asset_Editors/Objects.htm">个对象</a>并创建该对象的<a href="../../Asset_Management/Instances/Instances.htm">个实例</a>。然而，对于图形效果，这可能是昂贵的，因为由于它包含的变量和它在不同事件中具有的代码，每个实例在处理时都伴随着"成本"。您可以通过转向<a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">图块图层</a>和<a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">资源层</a>来降低此成本，以绘制您的图形需求，但这些图形需求通常是静态的，不能进行大量更改或移动。但是，在游戏中绘制快速而多函数的图形效果还有一个选项，那就是使用<i>粒子</i>。</p>
+  <h1><span data-field="title" data-format="default">Particles</span></h1>
+  <p>For complex things in <span data-keyref="GameMaker Name">GameMaker</span> you would normally have an <a href="../../../../The_Asset_Editors/Objects.htm">object</a> and create <a href="../../Asset_Management/Instances/Instances.htm">instances</a> of that object around the room. However, for graphics effects, this can be expensive as every instance comes with a "cost" in processing due to the variables it contains and the code it has in the different events. You can reduce this cost by turning to <a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">tilemap layers</a> and <a href="../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">asset layers</a> for drawing your graphics needs but those are generally static and cannot be changed or moved around much. However, there is one other option for drawing fast yet versatile graphics effects in your games, and that is to use <i>particles</i>.</p>
   <p><strong>粒子</strong>是具有在<i>粒子系统</i>中定义的某些特性的图形资源。这些特性不能直接针对单个粒子进行操作，而是通过用于定义单个粒子及其所属系统的代码进行更改。它们非常有用于在没有使用实例的Cpu开销的游戏中创建美丽和华丽的效果(或者微妙和谨慎的效果！)，如爆炸、贴花、雨、雪、星空和碎片。</p>
-  <p>可以使用 <a href="../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 直观地设计粒子，也可以在运行时使用粒子函数创建粒子。</p>
-  <h2>粒子设置</h2>
   <p>粒子系统的基本设置包括三个步骤，第三个步骤是可选的，具体取决于您希望如何在房间中创建粒子效果：</p>
   <ul class="colour">
     <li><b>创建粒子系统</b>：粒子系统就像一个容器，我们将使用该容器来容纳不同的粒子类型，以备使用。我们使用代码为我们的粒子定义一系列视觉方面和行为，然后将它们放在"容器"中，这样我们就可以随时随地将它们拿出来使用。</li>
     <li><b>创建粒子类型</b>：粒子类型是图形效果本身。您可以拥有许多不同的类型，每个类型都有自己的颜色范围、Alphase、大小和移动，但请注意，您<i>无法控制单个粒子</i>，这一点很重要。您定义了一系列参数，并且将创建粒子，以便从中选择随机扩散的行为。</li>
-    <li><b>创建发射器 </b>：发射器是一个选项，可用于从非常明确定义的限制内爆发或流化粒子。它们是可选的，因为您可以使用 <a href="Particle_Systems/part_particles_create.htm"><span class="inline">part_particles_create()</span></a> 和 <a href="Particle_Systems/part_particles_create_colour.htm"><span class="inline">part_particles_create_colour()</span></a> 函数从任何实例创建粒子，但它们并不总是适用于每种情况。</li>
+    <li><b>Create emitters</b>: Emitters are an option that can be used to burst or stream particles from within very clearly defined limits. They are optional because you can create particles from any instance using the&nbsp;<span class="inline3_func"><a href="Particle_Systems/part_particles_create.htm">part_particles_create</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="Particle_Systems/part_particles_create_colour.htm">part_particles_create_colour</a></span>
+      <font face="menlo, consolas, monospace"><span style="font-size: 17px;"> </span></font>functions but they are not always adequate for every situation.
+    </li>
   </ul>
-  <h2>注意事项</h2>
   <p>尽管粒子是创建效果的绝佳工具，但它们确实带有某些限制和良好做法，这些限制和做法需要遵循，除非您希望游戏受到低性能甚至潜在崩溃的影响：</p>
   <ul class="colour">
     <li>粒子系统、粒子和发射器占用内存，因此您应该非常小心地使用它们，因为它们很容易导致内存泄漏，从而降低速度并最终导致游戏崩溃。应对这种情况的一种方法是使<i>全局</i>系统具有在游戏开始时定义并在结束时删除的所有内容，但如果需要动态系统，则每个粒子和发射器(以及系统本身)都应在不需要的时候被销毁。</li>
@@ -100,35 +99,39 @@
     <li>在移动设备上，请注意<i>绘制的粒子，如果它们覆盖了大面积的屏幕(在移动设备上透支是放慢速度的主要原因之一)，它们可能会变慢。</i></li>
     <li>HTML5不支持添加混合，除非启用了WebGL，否则也不能进行颜色混合。</li>
   </ul>
-  <h2>效果</h2>
-  <p>在游戏中创建粒子的一种简单方法是 使用内置效果机制。 这些效果是使用内部粒子系统创建的，基本上这是一种非常快速的方法，仅用于绘制图形效果，因此在使用这些函数时，您不必担心所有细节（如内存管理）。 您只需指定效果类型、必须创建的位置、想要的大小以及颜色，然后让 <span data-keyref="GameMaker Name">GameMaker</span> 完成所有工作。</p>
-  <p>以下函数用于创建内置粒子效果：</p>
+  <p>使用<span data-keyref="GameMaker Name">GameMaker</span>在游戏中创建粒子的最简单方法是使用内置的效果机制。这些效果是使用内部粒子系统创建的，该系统基本上是一种非常快速的仅绘制图形效果的方法，因此在使用这些函数时，您不必担心所有细节(如内存管理)。您只需指定效果的类型、必须创建效果的位置、所需的大小以及最终的颜色，然后让<span data-keyref="GameMaker Name">GameMaker</span>完成所有工作。</p>
+  <div data-conref="../../../../assets/snippets/Note_tip_use_particle_system_editor.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip">TIP</span></span>&nbsp;If you prefer a more visual approach to creating particles and don't need the extensive functionality that&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;offers,&nbsp;you can also create a&nbsp;<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../The_Asset_Editors/Particle_Systems.htm">Particle System Asset</a></span>&nbsp;using&nbsp;<a href="../../../../The_Asset_Editors/Particle_Systems.htm">The Particle System Editor</a>.</p>
+
+</div>
+  <p>The following functions exists for creating the built-in particle effects:</p>
   <ul class="colour">
     <li><a href="effect_create_below.htm">effect_create_below</a></li>
     <li><a href="effect_create_above.htm">effect_create_above</a></li>
     <li><a href="effect_clear.htm">effect_clear</a></li>
   </ul>
-  <p>即使这些效果在范围和自定义上都有限制，但它们仍然可以用来创造一些简单、伟大的效果，而且只需要很少的努力。例如，通过在每个步骤中在移动的导弹下方创建一小段灰色烟雾，可以创建一条非常令人信服的烟雾轨迹，因此即使您是粒子专家，也需要记住这些效果的存在，因为它们仍然可以为您节省一些时间。</p>
-  <h2>粒子</h2>
+  <p>Even though these effects are limited in scope and customisation, they can still be used to create some simple, great effects with very little effort. For example by creating a small puff of grey smoke below a moving missile in each step, a pretty convincing smoke trail is created, so even when you are an expert in particles it pays to remember that these effects exist as they can still save you some time.</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>&nbsp;also has a function to retrieve information on&nbsp;<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../The_Asset_Editors/Particle_Systems.htm">Particle System Asset</a></span><a href="Particle_Systems/Particle_Systems.htm">s</a> created with&nbsp;<a href="../../../../The_Asset_Editors/Particle_Systems.htm">The Particle System Editor</a>:</p>
+  <ul class="colour">
+    <li><a href="particle_get_info.htm">particle_get_info</a></li>
+  </ul>
   <p>但是，粒子的真正潜力在于使用 GameMaker 语言提供给您的强大函数来设计和创建自己的效果。您可以从以下每个部分了解更多信息：</p>
   <ul class="colour">
     <li><a href="Particle_Systems/Particle_Systems.htm"><label for="two">粒子系统</label></a></li>
     <li><a href="Particle_Types/Particle_Types.htm"><label for="three">粒子类型</label></a></li>
     <li><a href="Particle_Emitters/Particle_Emitters.htm"><label for="four">粒子发射器</label></a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p><label for="four">还有一个部分为您提供了有关如何在以下页面上为游戏设计和创建粒子的基本指南：</label></p>
+  <p><label for="four">There is also a section that gives you a basic guide on how to design and create particles for your games (using&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;or&nbsp;<span data-keyref="GML_Visual">GML Visual</span>) on the following page:</label></p>
   <ul class="colour">
     <li><a href="../../../../Additional_Information/Guide_To_Using_Particles.htm">粒子使用指南</a></li>
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Drawing.htm">绘制</a></div>
-        <div style="float:right">Next: <a href="../Textures/Textures.htm">纹理</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Drawing.htm">绘制</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../Textures/Textures.htm">纹理</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

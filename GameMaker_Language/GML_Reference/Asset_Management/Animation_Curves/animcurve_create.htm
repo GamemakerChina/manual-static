@@ -80,7 +80,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>animcurve_create</h1>
-  <p>此函数将创建一个空的动画曲线<a href="../../../GML_Overview/Structs.htm">struct</a>，供您填充通道数据。该函数将返回一个指向结构的指针，然后将其用于向动画曲线添加通道和其他数据。您还可以将其提供给<a href="animcurve_get.htm">animcurve_get()<span class="inline"></span>之类的函数，以便以后从曲线中获取数据。</a></p>
+  <p>This function creates an empty animation curve <a href="../../../GML_Overview/Structs.htm">struct</a>, ready for you to populate with channel data.</p>
+  <p>The function will return a pointer to the struct and this is then used to add channels and other data to the animation curve. You can also supply this to functions like <a href="animcurve_get.htm"><span class="inline">animcurve_get()</span></a> to later get the data from the curve.</p>
   <p>当您使用此函数时，创建的结构将没有数据，要使用它，您应该至少添加一个通道，并且该通道应该添加点。要添加通道，请参见函数<a href="animcurve_channel_new.htm"><span class="inline">animcurve_channel_new()</span></a>, 要向通道添加点，请参见函数<a href="animcurve_point_new.htm"><span class="inline">animcurve_point_new()</span></a>。此外，您可以通过设置 “名称” 变量为动画曲线结构命名 (如下面的示例代码所示)。添加到新动画曲线的通道应添加为<a href="../../../GML_Overview/Arrays.htm">数组</a>, 其中数组中的每个项目引用一个通道结构，并且通道中的点也应添加为数组，其中每个数组项目引用一个点结构。</p>
   <p>请注意，以这种方式创建的动画曲线<b>必须在不再需要</b>时删除，否则它们将占用内存空间，这可能会导致内存泄漏，减慢速度并最终使游戏崩溃。您可以在不再需要时使用函数<a href="animcurve_destroy.htm"><span class="inline">animcurve_destroy()</span></a>移除动画曲线。您不需要清理曲线内的任何通道或点数据，因为这将由垃圾收集器自动完成，当曲线本身被破坏时。</p>
   <p>&nbsp;</p>

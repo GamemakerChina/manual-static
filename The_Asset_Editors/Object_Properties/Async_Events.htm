@@ -36,7 +36,7 @@
 
     gRootRelPath = "../..";
     gCommonRootRelPath = "../..";
-    gTopicId = "6.3.1.1";
+    gTopicId = "6.3.1.2";
   
 //]]></script>
 
@@ -55,7 +55,7 @@
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Page detailing the async events.">
   <meta name="rh-index-keywords" content="Objects - Async Events">
-  <meta name="search-keywords" content="Async Events,asynchronous,image loaded,audio playback,audio recording,cloud,dialog,http,in-app-purchase,networking,push notification,save/load,social,steam,system">
+  <meta name="search-keywords" content="Async Events,asynchronous,image loaded,audio playback,audio recording,cloud,dialog,http,in-app-purchase,networking,push notification,save/load,social,steam,system,audio playback ended">
   <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
   <script src="../../assets/scripts/main_script.js" type="module"></script>
 <meta name="brsnext" value="The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm"><meta name="brsprev" value="The_Asset_Editors/Object_Properties/Draw_Events.htm"></head>
@@ -78,15 +78,32 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>异步事件</h1>
-  <p><img alt="The Async Event" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Async.png"></p>
-  <p>异步事件是当 <span data-keyref="GameMaker Name">GameMaker</span> 从某些外部来源 (可以来自 Web 或运行游戏的设备) 接收到 <a class="tooltip" title="回调仅是一个函数，该函数先运行，然后在完成分配的工作后触发另一个函数（或代码块）。例如，功能sprite_add()将在加载精灵后在异步Image Loaded事件中触发回调。"> 回调 </a> 时触发的事件。基本上，你告诉 <span data-keyref="GameMaker Name">GameMaker</span> 做一些事情 —— 比如加载图像 —— 它会开始这样做，但在工作的同时继续做它必须做的任何事情。然后，当请求完成时，将向 GameMaker 发送回调Studio 2 和为该类型回调定义的任何异步事件都将被触发。</p>
-  <p>请注意，异步事件是为 <em> 所有 </em> 具有它们的实例触发的，就像键盘事件一样，因此您可以在一个实例中执行 <span class="inline">http_get()</span> 调用，但在另一个实例中使用 <strong> 异步 HTTP 事件 </strong> 来处理回调。</p>
-  <p class="note"><strong>注意</strong>：您应该知道，由于浏览器中的XSS保护，从跨域加载资源的请求和尝试会被阻止，并且在使用以下任何事件时可能会返回空白结果。</p>
+  <h1>The&nbsp;<span data-field="title" data-format="default">Async Events</span></h1>
+  <p><img alt="The Async Event" class="center" height="322" src="../../assets/Images/Asset_Editors/Editor_Objects_Async.png" width="344"></p>
+  <p>An Asynchronous Event is one that is fired when <span data-keyref="GameMaker Name">GameMaker</span> receives a <a class="tooltip" title="回调仅是一个函数，该函数先运行，然后在完成分配的工作后触发另一个函数（或代码块）。例如，功能sprite_add()将在加载精灵后在异步Image Loaded事件中触发回调。">callback</a>&nbsp;from some external source, which can be from the web or from the device running your game.</p>
+  <p>Basically, you tell <span data-keyref="GameMaker Name">GameMaker</span> to do something -&nbsp;like load an image -&nbsp;and it will start to do this. As an example, let's say you want to add a sprite from an external file. This can be done <em>synchronously</em> or&nbsp;<em>asynchronously</em>. To do this synchronously, you use the function&nbsp;<span class="inline3_func"><a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm">sprite_add</a></span>:&nbsp;</p>
+  <p class="code">var _new_big_sprite = sprite_add("my_new_sprite_image.png", 1, false, true, 0, 0);<br>
+    <br>
+    // A lot more code below this line that all needs to be executed&nbsp;on time to keep a steady FPS
+  </p>
+  <p>This function has a bit&nbsp;of a disadvantage, however, as it&nbsp;<em>fully l<em>oads the sprite immediately</em></em>. The next line&nbsp;of code will&nbsp;only be executed after that's finished!&nbsp;This may barely be noticeable if you're just adding a single small sprite, but might freeze your game when loading&nbsp;one big sprite&nbsp;or many small&nbsp;ones.</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> also has built-in functions that work <em>asynchronously</em> instead. Using these functions <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;only&nbsp;<em>starts</em> doing what you asked, but doesn't stop executing code until this has finished. It continues to process your async request "in the background" and continues to run the rest of your game's code normally. When the request completes, a callback will be sent to <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;and any Asynchronous Events defined for that type of callback will be fired.</p>
+  <p>In the example of&nbsp;<span class="inline3_func"><a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm">sprite_add</a></span>, you can use its asynchronous counterpart&nbsp;<span class="inline3_func"><a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_add_ext.htm">sprite_add_ext</a></span>&nbsp;to just&nbsp;<em>start</em> loading the sprite and trigger an async event afterwards:&nbsp;</p>
+  <p class="code">var _new_big_sprite = sprite_add_ext("my_new_sprite_image.png", 1, 0, 0, true);<br>
+    <br>
+    // A lot more code below this line that will be executed almost instantly after the call to sprite_add_ext
+  </p>
+  <p class="code_heading">Async Image Loaded Event</p>
+  <p class="code">/// "The sprite you requested has finished loading"</p>
+  <p>There are&nbsp;other situations in which you don't want the game to wait until something that might take an amount of time to complete has finished, such as making HTTP requests to a web server.</p>
+  <p>You don't always have to call a function yourself first in&nbsp;order to receive a callback in the form&nbsp;of an async event, for example the async&nbsp;<a href="Async_Events/System.htm">系统</a>&nbsp;event will be triggered when a gamepad is connected&nbsp;or disconnected. For this you don't have to call a function first.</p>
+  <p>Please note that the Asynchronous Events are fired for <em>all </em>instances that have them, much like the keyboard events, so you can - for example - do an&nbsp;<span class="inline3_func"><a href="../../GameMaker_Language/GML_Reference/Asynchronous_Functions/HTTP/http_get.htm">http_get</a></span> call&nbsp;in one instance, yet have the <strong>Asynchronous HTTP Event</strong> in another to deal with the callback.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You should be aware that due to XSS protection in browsers, requests and attempts to load resources from across domains are blocked and may appear to return blank results when using any of the following events.</p>
   <p>有多种类型的事件与异步事件类别相关联，它们都在以下部分中进行了解释：</p>
-  <p class="note"><strong> 注意 </strong>：变量 <a href="../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span style="font-size:14px;"><span class="inline" style="font-size: 14px">async_load</span></span></a>在以下部分中，<strong> 仅在这些事件 </strong> 中有效，因为它指向的 DS 映射是在事件开始时创建的，然后在结束时再次删除，此变量在所有其他时间都被重置为 -1 值。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;The variable&nbsp;<span class="inline2"><a href="../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span> which is mentioned in the following sections is <strong>only valid in these events</strong>, as the <a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS map</a> that it&nbsp;points to is created at the start of the event, then deleted again at the end, with this variable being reset to a value of <span class="inline2">-1</span> at all other times.</p>
   <ul class="colour">
     <li><a href="Async_Events/Audio_Playback.htm">音频回放</a></li>
+    <li><a href="Async_Events/Audio_Playback_Ended.htm">Audio Playback Ended</a></li>
     <li><a href="Async_Events/Audio_Recording.htm">音频录制</a></li>
     <li><a href="Async_Events/Cloud.htm">云</a></li>
     <li><a href="Async_Events/Dialog.htm">对话框</a></li>
@@ -101,9 +118,11 @@
     <li><a href="Async_Events/System.htm">系统</a></li>
   </ul>
   <p>&nbsp;</p>
-  <p>如果您正在为不同的平台进行扩展，您可能希望将这些异步事件中的一个或多个定位为扩展函数的回调。为此，您可以在下面找到一个表格，概述了每个内部事件名称常量及其对应的ID值。请注意，这些事件常量<b>仅</b>用于扩展！</p>
+  <p>It may be that if you are making extensions for different platforms you would like to target one or more of these asynchronous events for callbacks from your extension functions. To that end, you can find a table below that outlines each of the internal event name constants and their corresponding ID value.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;These event constants are <b>only</b> for use with extensions!</p>
   <p>&nbsp;</p>
-  <table>
+  <table id="async_event_constants" style="caption-side: top">
+    <caption>Async Event Constants</caption>
     <tbody>
       <tr>
         <th width="40%">常量</th>
@@ -171,8 +190,6 @@
       </tr>
     </tbody>
   </table>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

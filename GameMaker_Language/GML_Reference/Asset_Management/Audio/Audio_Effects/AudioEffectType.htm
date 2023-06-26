@@ -100,6 +100,10 @@
   <h2 id="h5">AudioEffectType.Gain</h2>
   <p>这是一种增益效应，将输入信号放大给定的增益系数。</p>
   <p>请参阅<a href="AudioEffect.htm#h2">增益 (AudioEffectType.Gain)</a>了解可针对此效果类型调整的完整属性列表。</p>
+  <div data-conref="../../../../../assets/snippets/Note_Gain_Linear_dB.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Use&nbsp;<span class="inline3_func"><a href="../db_to_lin.htm">db_to_lin</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="../lin_to_db.htm">lin_to_db</a></span>&nbsp;to convert back and forth between linear gains and gains expressed in decibels (dB).</p>
+
+</div>
   <h2 id="h4">AudioEffectType.HPF2</h2>
   <p>这是<a href="https://en.wikipedia.org/wiki/High-pass_filter">高通滤波器</a>(简称为<i>HPF</i>)。 滤波器用于滤除某些频率。</p>
   <p>高通滤波器允许较高的频率通过，并使较低的频率静音。发生这种情况的频率称为<i>截止</i>频率。低于此频率的所有频率都会被过滤。</p>

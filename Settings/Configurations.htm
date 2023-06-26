@@ -78,25 +78,25 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>配置</h1>
+  <h1><span data-field="title" data-format="default">Configurations</span></h1>
   <p>由于跨平台开发的需求以及为不同的客户端、设备或平台提供和定制一个产品的需求，<span data-keyref="GameMaker Name">GameMaker</span>的<strong>配置</strong>使事情变得更简单。使用这个系统，您可以在不同的启动画面、图标和包含的文件之间快速切换，并且在任何时候只测试或导出那些与目标平台或客户机相关的文件，所有这些都来自相同的基本代码。</p>
   <p>若要能够处理来自客户端和平台的不同需求，您可以使用<strong>配置编辑器</strong> ，该编辑器可从<strong>资源浏览器</strong>上的<a href="../Introduction/The_Asset_Browser.htm">附加菜单</a>访问:</p>
-  <p><img alt="Open The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Open_Editor.png">GameMaker<span data-keyref="GameMaker Name">中制作的所有游戏都以一个“默认”配置开始，当你第一次打开它时，编辑器中会列出这个配置:</span></p>
-  <p><img alt="The Configuration Editor" class="center" src="../assets/Images/Settings/Configs.png">要设置您的配置，建议您首先通过将项目的所有可配置资源合并到该配置中来准备这个“默认”配置。要做到这一点，只需浏览以下选项列表，并将它们设置为默认情况下所需的选项:</p>
+  <p><img alt="Open The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Open_Editor.png">All games made in <span data-keyref="GameMaker Name">GameMaker</span> start with a "Default" configuration, which is listed in the editor when you first open it:</p>
+  <p><img alt="The Configuration Editor" class="center" src="../assets/Images/Settings/Configs.png">To set up your configurations it is recommended that you first prepare this "Default" config by incorporating all the configurable assets for the project into it. To do this, simply go through the following list of options and set them to what is required by default:</p>
   <ul class="colour">
     <li><a href="../The_Asset_Editors/Extensions.htm">扩展选项</a> : 将各种“复制到...”字段设置为配置所需的平台。这里创建的任何“代理”文件都将其“目标”平台链接到配置。</li>
     <li><a href="../The_Asset_Editors/Sprites.htm">精灵编辑器</a> : 设置要添加精灵的纹理组。</li>
     <li><a href="../The_Asset_Editors/Tile_Sets.htm">选项卡编辑器</a> : 设置要添加选项卡的纹理组。</li>
     <li><a href="../The_Asset_Editors/Fonts.htm">字体编辑器</a> : 设置要添加字体的纹理组。</li>
     <li><a href="Texture_Groups.htm">纹理组管理器</a> : 在这里，您可以在每个配置基础上设置任何属性，包括纹理组所属的父组。</li>
-    <li><a href="Audio_Groups.htm">音频组管理器</a> : 分配给不同音频组的声音在这里是可配置的。</li>
+    <li><a href="Audio_Groups.htm">Audio Group Manager</a>: The sounds that are assigned to the different audio groups is configurable here..</li>
     <li><a href="Included_Files.htm">包含文件</a> : 将“复制到...”字段设置为配置所需的平台。</li>
   </ul>
   <p>一旦设置了默认配置，您就可以通过右键单击<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">配置文件夹并选择<strong> Add Config </strong> ，或者单击窗口底部的“<em> Create </em>”按钮，向配置编辑器添加一个新配置。新配置将显示为默认配置的“子配置”-所有用户定义的配置都是默认配置的子配置-您可以给它一个适当的名称。</p>
   <p>要编辑配置，您必须双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">它，或者使用鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">菜单选项“<em> Set Config </em>”，它将在编辑器中选择配置，完成之后，您可以继续并自定义它。这是通过浏览上面列出的选项并将它们更改为新创建的配置所需的设置来完成的。<span data-keyref="GameMaker Name"> GameMaker </span>将自动为配置存储这些值，您可以随时通过使用RMB<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">菜单选项或双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">在配置之间进行更改。</p>
   <p>进一步的配置可以作为默认配置的子配置添加，也可以作为已创建的用户定义配置的子配置添加，这取决于您在创建配置时在编辑器中突出显示了哪个配置。在下面的示例图像中，您可以看到我们定义了三个自定义配置，其中两个是默认配置的子配置，另一个是用户定义配置的子配置:</p>
   <p><img alt="Child Configurations In The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Children.png">值得注意的是，在编译或测试项目时，您可以将任何给定的配置与任何给定的目标平台一起使用。这是通过从<strong>目标管理器</strong>的<strong>配置</strong>部分中选择所需的配置来完成的:</p>
-  <p><img alt="Configurations In The Target Manager" class="center" src="../assets/Images/Settings/Configs_TargetManager.png">您还可以通过单击右上角的菜单按钮(如上图中突出显示的那样) ，随时从目标管理器打开配置编辑器。</p>
+  <p><img alt="Configurations In The Target Manager" class="center" src="../assets/Images/Settings/Configs_TargetManager.png">You can also open the Configuration Editor at any time from the Target Manager by clicking the menu button at the top right (as highlighted in the image above).</p>
   <p>一旦您设置了以这种方式使用的配置，无论何时您编译到目标，无论是为了测试还是为了创建最终的资源包，所选择的配置都将被使用。有关“目标”窗口的详细信息，请参阅<a href="../Introduction/Compiling.htm">编译</a>一节。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

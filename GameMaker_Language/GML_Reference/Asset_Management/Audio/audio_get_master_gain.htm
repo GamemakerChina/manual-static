@@ -83,6 +83,11 @@
   <p>通过此函数，您可以获取特定听众所有声音和音乐的全局音量的绝对值。</p>
   <p>默认监听器索引为 0，但可以使用函数 <span class="inline2"><a href="Audio_Listeners/audio_get_listener_info.htm">audio_get_listener_info()</a></span> 获取目标平台可用的不同索引。返回的增益值基于从 0 (静音) 到 1 (全音量) 的线性标度。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 在某些平台上，增益可以大于 1，但 1 被视为"全音量"，任何更大的值都可能引入音频削波。</p>
+  <div data-conref="../../../../assets/snippets/Note_Gain_Linear_dB.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Use&nbsp;<span class="inline3_func"><a href="db_to_lin.htm">db_to_lin</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="lin_to_db.htm">lin_to_db</a></span>&nbsp;to convert back and forth between linear gains and gains expressed in decibels (dB).</p>
+
+</div>
+  <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">audio_get_master_gain</span>(listenerIndex);</p>
   <table>

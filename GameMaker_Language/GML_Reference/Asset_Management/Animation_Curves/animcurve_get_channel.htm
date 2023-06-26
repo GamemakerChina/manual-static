@@ -80,7 +80,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>animcurve_get_channel</h1>
-  <p>此函数将返回<a href="../../../GML_Overview/Structs.htm">struct</a>，其中包含动画曲线资源中指定的频道数据。您提供动画曲线ID或struct以及通道名称或索引，该函数将返回具有以下格式的struct:</p>
+  <p>This function returns the <a href="../../../GML_Overview/Structs.htm">struct</a> containing the channel data for the channel specified in an animation curve asset or struct (as returned by&nbsp;<span class="inline3_func"><a href="animcurve_get.htm">animcurve_get</a></span>).</p>
+  <p>You supply the animation curve ID or struct as well as the channel name or index, and the function will return a struct with the following format:</p>
   <table>
     <colgroup>
       <col>
@@ -140,7 +141,7 @@
       </tr>
     </tbody>
   </table>
-  <p><span class="inline2">points</span> 成员仅允许您获取和设置数组变量。您不能对 <span class="inline2">points</span> 数组运行<a href="../../Variable_Functions/Variable_Functions.htm#h">数组函数</a>来修改它。</p>
+  <p>The <span class="inline2">points</span> member only allows you to get and set the array variable. You cannot run&nbsp;<a href="../../Variable_Functions/Variable_Functions.htm#h"> </a>&nbsp;on the <span class="inline2">points</span> array to modify it.</p>
   <p>要修改<span class="inline2">points</span>数组，请将其存储在变量中，该变量将创建一个副本。然后使用数组函数修改该副本，并将该副本应用回结构中的<span class="inline2">points</span>成员。</p>
   <p class="code">var _points_copy = channel_struct.points;<br>
     <br>
@@ -161,7 +162,7 @@
       </tr>
       <tr>
         <td>curve_struct_or_id</td>
-        <td><span data-keyref="Type_Struct_AnimCurve"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get.htm">Animation Curve Struct</a></span></td>
+        <td><span data-keyref="Type_Struct_AnimCurve"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get.htm">Animation Curve Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Asset_Animation_Curve"><a target="_blank" href="../../../../../The_Asset_Editors/Animation_Curves.htm">Animation Curve Asset</a></span></td>
         <td>动画曲线到目标的ID或结构指针</td>
       </tr>
       <tr>

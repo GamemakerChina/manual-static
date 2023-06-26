@@ -176,6 +176,7 @@
   <p class="code">var _value = mystruct[$ "x"];</p>
   <p>和写入：</p>
   <p class="code">mystruct[$ "x"] = 200;</p>
+  <p>If you need to use strings to access a struct variable, it is faster to <a href="../GML_Reference/Variable_Functions/variable_get_hash.htm">get its hash</a> and use that in <a href="../GML_Reference/Variable_Functions/struct_get_from_hash.htm">read</a>/<a href="../GML_Reference/Variable_Functions/struct_set_from_hash.htm">write</a> to the variable.</p>
   <p>当一个结构不再需要时，可以使用<a href="Language_Features/delete.htm"><span class="inline">delete</span></a>操作符从内存中删除它，该操作符将该结构标记为能够被垃圾回收。这不是严格要求的，因为如果代码中不再引用该结构，<a class="tooltip" title="垃圾回收是游戏代码中的一部分，是一种自动化工具，用于在代码中不再引用某些东西（如数组和结构）时从内存中删除它们，而无需您明确删除它们。">垃圾收集器</a>可能会自动执行此操作，但这样做是很好的实践，我们建议这样做(例如，在实例的<span class="inline">清理事件</span>中调用<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">delete</a>，显式地告诉垃圾收集器要删除一个实例作用域结构)。下面是一个例子:</p>
   <p class="code">// Create event<br>
     mystruct =<br>
@@ -243,7 +244,7 @@
     }
   </p>
   <p>如您所见，在定义函数时，我们使用冒号"<span class="inline">:</span>"将新构造函数与要从中继承的父构造函数分开。子构造函数(<span class="inline">Vector 3</span>)将<span class="inline">_x</span>和<span class="inline">_y</span>参数传递到父构造函数(<span class="inline">Vector 2</span>)中，父构造函数用于首先运行父构造函数，然后执行子构造函数。这样，子构造函数就可以获取父项的变量(<span class="inline">x</span>和<span class="inline">y</span>)，并且还可以定义自己的变量(<span class="inline">z</span>)。</p>
-  <p>也可以将常量值传递给父构造函数，以便某个子构造函数始终为其父构造函数提供相同的值：</p>
+  <p>You can also pass values into the parent constructor, so that a certain child constructor always provides the same values to its parent constructor:</p>
   <p class="code">function item(damage) constructor<br>
     {<br>
     &nbsp;&nbsp; &nbsp;my_damage = damage;<br>

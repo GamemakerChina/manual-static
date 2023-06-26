@@ -79,8 +79,8 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>mouse_check_button</h1>
-  <p>如果按住鼠标按钮，此函数将返回<span class="inline">true</span>，如果不按住鼠标按钮，则返回<span class="inline">false</span>。您提供鼠标按钮以从以下常量之一进行检查:</p>
+  <h1><span data-field="title" data-format="default">mouse_check_button</span></h1>
+  <p>This function will return <span class="inline2">true</span> if the mouse button being checked is held down or <span class="inline2">false</span>&nbsp;if it is not. You supply the mouse button to check from one of the following constants:</p>
   <div data-conref="../../../../assets/snippets/Mouse_input_constants.hts">
   <table>
     <colgroup>
@@ -129,7 +129,7 @@
 
 </div>
   <h4>语法:</h4>
-  <p class="code">mouse_check_button(numb);</p>
+  <p class="code"><span data-field="title" data-format="default">mouse_check_button</span>(numb);</p>
   <table>
     <tbody>
       <tr>
@@ -149,18 +149,17 @@
   <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if mouse_check_button(mb_left)<br>
+  <p class="code">if <span data-field="title" data-format="default">mouse_check_button</span>(mb_left)<br>
     {<br>
     &nbsp; &nbsp; instance_create_layer(mouse_x, mouse_y, "Effects", obj_Star);<br>
     }</p>
-  <p>上面的代码将检查鼠标左键，并且按住它的每一步都将创建在 “obj_Star” 中索引的对象的实例。</p>
-  <p>&nbsp;</p>
+  <p>The above code will check for the left mouse button and every step that it is held down will create an instance of the object indexed in <span class="inline2">obj_Star</span>.</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Mouse_Input.htm">鼠标输入</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Mouse_Input.htm">鼠标输入</a></div>
         <div style="float:right">Next:&nbsp;<a href="mouse_check_button_pressed.htm">mouse_check_button_pressed</a></div>
       </div>
     </div>

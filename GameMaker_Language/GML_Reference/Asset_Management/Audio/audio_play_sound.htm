@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">audio_play_sound</span></h1>
   <p>使用此功能，您可以在游戏中播放任何<span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../../The_Asset_Editors/Sounds.htm">音频资源</a></span>。</p>
-  <p>您可以提供声音资源并为其分配一个优先级，然后该优先级用于确定当播放的声音数超过函数<a href="audio_channel_num.htm"><span class="inline">audio_channel_num()</span></a>设置的限制时如何处理声音。 优先级较低的声音将停止，以支持优先级较高的声音，并且优先级值可以是任何实数(实际值是任意的，可以是 0 到 1 或 0 到 100，因为<span data-keyref="GameMaker Name">GameMaker</span>会以相同的优先级排列它们)。<i>数字越高</i>优先级越高<i>，那么优先级为100的声音将优于优先级为1的声音。</i></p>
+  <p>You provide the sound asset and assign it a priority, which is then used to determine how sounds are dealt with when the number of sounds playing is over the limit set by the function <a href="audio_channel_num.htm"><span class="inline">audio_channel_num()</span></a>. Lower priority sounds will be stopped in favour of higher priority sounds, and the priority value can be any real number (the actual value is arbitrary, and can be from 0 to 1 or 0 to 100, as <span data-keyref="GameMaker Name">GameMaker</span> will prioritise them the same). The <i>higher</i> the number the <i>higher</i> the priority, so a sound with priority 100 will be favoured over a sound with priority 1.</p>
   <p>第三个参数是创建声音循环并将其设置为<span class="inline">true</span>将使声音重复，直到手动停止，而将其设置为<span class="inline">false</span>将只播放一次声音。</p>
   <p>此函数还将返回正在播放的声音的唯一索引，该索引可以存储在变量中，以便以后<a href="audio_pause_sound.htm">暂停</a>或<a href="audio_stop_sound.htm">停止</a>。 这意味着，如果在同一时间播放同一声音的多个实例，则可以使用<a href="Audio.htm">音频函数</a>只瞄准该声音的一个实例。</p>
   <div data-conref="../../../../assets/snippets/audio_play_sound_last_arguments.hts">

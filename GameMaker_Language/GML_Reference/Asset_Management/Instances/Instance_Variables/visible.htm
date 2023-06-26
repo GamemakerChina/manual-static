@@ -78,30 +78,29 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>visible</h1>
-  <p>通过将此变量设置为 <span class="inline">true</span>( 可见) 或 <span class="inline">false</span>( 不可见)，可以将实例标记为 <span class="inline">visible</span> 或不标记。这是通过告诉 <span data-keyref="GameMaker Name">GameMaker</span> 跳过此实例的绘制事件来实现的，因此在使用此方法时必须小心，因为这意味着当实例不可见时，将不会运行放置在绘制事件中的代码。另请注意，如果将实例分配到的 <a href="layer.htm"> 层 </a> 标记为不可见，则将此变量设置为 <span class="inline">true</span> 将不起作用，直到层本身也标记为可见。</p>
+  <h1><span data-field="title" data-format="default">visible</span></h1>
+  <p>An instance can be flagged as <em>visible</em>&nbsp;or not by setting this variable to <span class="inline2">true</span>&nbsp;(visible) or <span class="inline2">false</span>&nbsp;(invisible). This works by telling <span data-keyref="GameMaker Name">GameMaker</span> to skip the draw event for this instance, so care must be taken when using this as it means that no code placed in the draw event will be run while the instance is not visible. Also note that if the <a href="layer.htm">layer</a>&nbsp;that the instance is assigned to is flagged as invisible, setting this variable to <span class="inline2">true</span>&nbsp;will have no effect until the layer itself is flagged as visible too.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">visible;</p>
+  <p class="code"><span data-field="title" data-format="default">visible</span></p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if other.visible = true<br>
+  <p class="code">if other.visible == true<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;x = xprevious;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;y = yprevious;<br>
     }</p>
-  <p>上面的代码将检查<i>碰撞事件</i>中"other"实例的可见标志，如果它被设置为<span class="inline">true</span>，则将该实例移回其先前的位置。</p>
-  <p>&nbsp;</p>
+  <p>The above code will check the <span class="inline2">visible</span> flag of the "other" instance in a <i>collision event</i> and if it is set to <span class="inline2">true</span>&nbsp;move that instance back to its previous position.</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Instance_Variables.htm">实例变量</a></div>
-        <div style="float:right">Next: <a href="solid.htm">solid</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Instance_Variables.htm">实例变量</a></div>
+        <div style="float:right">Next:&nbsp;<a href="solid.htm">solid</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

@@ -84,7 +84,8 @@
   <div>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">skeleton_animation_is_finished</span></h1>
-  <p>使用此函数，您可以检查当前非循环骨骼动画是否已在给定轨道上完成播放。</p>
+  <p>With this function you can check if the current skeletal animation has finished playing on the given track.</p>
+  <p class="note"><span data-conref="../../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function will always return <span class="inline2">false</span>&nbsp;if the animation is set to loop (<span class="inline3_func"><a href="skeleton_animation_is_looping.htm">skeleton_animation_is_looping</a></span>), as an animation cannot have finished if it is still looping.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">skeleton_animation_is_finished</span>(track);</p>
@@ -113,7 +114,7 @@
     {<br>
     &nbsp; &nbsp; show_debug_message("The animation has finished playing");<br>
     }</p>
-  <p>上面的代码首先检查轨迹1上的动画是否已经完成播放，并将结果存储在局部变量<span class="inline">_finished</span>中。 然后，在动画完成播放的情况下，显示调试消息。</p>
+  <p>上面的代码首先检查轨迹1上的动画是否已经完成播放，并将结果存储在局部变量<span class="inline2">_finished</span>中。 然后，在动画完成播放的情况下，显示调试消息。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

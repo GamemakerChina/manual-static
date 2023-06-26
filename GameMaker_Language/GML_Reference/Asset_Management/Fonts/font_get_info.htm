@@ -80,7 +80,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">font_get_info</span></h1>
-  <p>此函数用于检索给定字体的信息。提供字体索引(可以是在运行时通过<a href="../../../../Introduction/The_Asset_Browser.htm">资源浏览器</a>添加的资源或已添加的字体<a href="font_add.htm">)</a></p>
+  <p>This function is used to retrieve information&nbsp;for the given font. You supply a font index, which can be an asset added through <a href="../../../../Introduction/The_Asset_Browser.htm">The Asset Browser</a>&nbsp;or a font <a href="font_add.htm">added</a> at runtime.</p>
   <p>该函数返回具有以下变量的<a href="../../../GML_Overview/Structs.htm">结构</a>：</p>
   <table>
     <colgroup>
@@ -96,6 +96,11 @@
         <th>变量名</th>
         <th style="">数据类型</th>
         <th style="">描述</th>
+      </tr>
+      <tr>
+        <td><span class="inline">ascender</span></td>
+        <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td style="">The height of the font's <a href="https://en.wikipedia.org/wiki/Ascender_(typography)">ascender</a> (in pixels)</td>
       </tr>
       <tr>
         <td><span class="inline">ascenderOffset</span></td>
@@ -125,12 +130,12 @@
       <tr>
         <td><span class="inline">bold</span></td>
         <td style=""><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td style=""><span class="inline">true</span>如果字体为粗体，否则<span class="inline">false</span><em>(见下文<strong>注意</strong>)</em></td>
+        <td style=""><span class="inline2">true</span> if the font is bold, otherwise <span class="inline2">false</span>&nbsp;<em>(see <strong>NOTE </strong>below)</em></td>
       </tr>
       <tr>
         <td><span class="inline">italic</span></td>
         <td style=""><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td style=""><span class="inline">true</span>如果字体为斜体，否则<span class="inline">false</span><em>(见下文<strong>注意</strong>)</em></td>
+        <td style=""><span class="inline2">true</span> if the font is italic, otherwise <span class="inline2">false</span>&nbsp;<em>(see <strong>NOTE </strong>below)</em></td>
       </tr>
       <tr>
         <td><span class="inline">glyphs</span></td>
@@ -140,7 +145,7 @@
     </tbody>
   </table>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> <span class="inline"><strong>bold</strong></span> 和 <span class="inline"></span><span class="inline">italic</span> 变量仅反映用户对字体的设置，因此对于默认显示为粗体或斜体的字体，这些变量可能不准确。</p>
-  <p>如果提供的字体不存在，函数将返回<span class="inline">undefined</span>。</p>
+  <p>如果提供的字体不存在，函数将返回<span class="inline2">undefined</span>。</p>
   <p>另请注意，更改这些变量中任何变量的值，或<span class="inline">字形</span>结构中包含的任何变量的值，不会改变字体的呈现方式，因此，此信息应该考虑<strong>只读</strong>。</p>
   <h2 id="glyphs">字形结构</h2>
   <p>返回的结构中的<span class="inline">字形</span>变量本身将是一个结构，包含字体中包括的每个字形的信息。此结构中的每个变量将是一个字形的字符名称，它将保存一个包含该字形信息的结构。您可以想象这些嵌套结构具有以下格式(从主结构开始)：</p>
@@ -217,7 +222,7 @@
       <tr>
         <td><span class="inline">kerning</span></td>
         <td style=""><span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
-        <td style="">包含成对(或2个一组)字距调整信息的整数数组。字符对中的第一个整数是字符的Unicode值，第二个整数是要添加到该字符的移位值(可以是正数或负数)的数量(如果该字符前面有该字形的字符)。</td>
+        <td style="">An array of integers containing kerning information in pairs (or groups of 2). The first integer in a pair is the Unicode value for a character, and the second integer is the amount to add to that character's shift value (can be positive or negative) if it is preceded by this glyph's character.</td>
       </tr>
     </tbody>
   </table>
@@ -252,7 +257,7 @@
     &nbsp;&nbsp; &nbsp;image_yscale *= 2;<br>
     }
   </p>
-  <p>此代码检索存储在<span class="inline">my_font</span>变量中的字体信息。如果返回的值为<strong>not</strong><span class="inline">undefined</span>，给定字体为粗体，则实例的比例加倍。</p>
+  <p>This code retrieves information for the font stored in the <span class="inline2">my_font</span>&nbsp;variable. If the returned value is <strong>not </strong><span class="inline2">undefined</span> and the given font is bold, the instance's scale is doubled.</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

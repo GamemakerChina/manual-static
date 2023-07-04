@@ -78,26 +78,26 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><span data-field="title" data-format="default">Local Asset Packages</span></h1>
-  <p>A Local Asset Package is a group of resources saved using the <span class="inline2">*.yymps</span>&nbsp;file format that can be easily installed into existing projects.</p>
-  <p>What this means is that you can create your own library of packages for commonly used resources, like script libraries, splash screen intros, menu systems, etc., without having to use the&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> <a href="../Introduction/The_Marketplace.htm">Marketplace</a>.</p>
-  <p>Under the <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">Tools Menu</a> you have two options for creating and importing <strong><span data-field="title" data-format="default">Local Asset Packages</span></strong>.</p>
+  <h1><span data-field="title" data-format="default">本地资源包</span></h1>
+  <p>本地资源包是使用可轻松安装到现有项目中的 <span class="inline2">*.yymp</span> 文件格式保存的一组资源。</p>
+  <p>这意味着您可以为常用资源创建自己的包库，如脚本库、初始屏幕介绍、菜单系统等。而不必使用 <span data-keyref="GameMaker Name">GameMaker</span> <a href="../Introduction/The_Marketplace.htm">市场</a>。</p>
+  <p>在<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具菜单</a>下，您可以使用两个选项来创建和导入<strong><span data-field="title" data-format="default">本地资源包</span></strong>。</p>
   <h2>创建一个资源包</h2>
   <p>要创建资源包，您必须首先创建要保存在项目中的资源，然后从<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具</a>菜单中选择选项<strong>创建本地包</strong>。这将打开以下窗口：</p>
-  <p><img alt="Create Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Create.png">In this window you can supply an optional <strong>Publisher Name</strong> and a required <strong>Display Name</strong> and <strong>Package ID</strong>. The Package ID will be used to generate the file name that the package will be saved with, and will be automatically appended with the <span class="inline2">*.yymps</span>&nbsp;file extension on creation. You can also set the <a class="tooltip" title="版本号是分配给软件程序，游戏或资源的特定版本的唯一编号集，通常以MAJOR.MINOR.MAINTENANCE(主要更新.小更新.维护)格式表示，例如：v2.3.56。通常，随着游戏或资源的更新和全新版本的发布，版本号会增加。">Version Number</a>&nbsp;of the package, and choose to sign it or not (this is off by default). Signing a package requires you to have created a <strong>signing certificate</strong> (you can do this from the <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm">Marketplace Preferences</a>), and means that any asset that has been signed will not be able to be imported if it has been tampered with after creation.</p>
+  <p><img alt="Create Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Create.png">在此窗口中，您可以提供可选的<strong>发布者名称</strong>，以及必需的<strong>显示名称</strong>和<strong>包 ID</strong>。包 ID 将用于生成保存包的文件名，并将在创建时自动附加文件扩展名 <span class="inline2">*.yymp</span>。您还可以设置包的<a class="tooltip" title="版本号是分配给软件程序，游戏或资源的特定版本的唯一编号集，通常以MAJOR.MINOR.MAINTENANCE(主要更新.小更新.维护)格式表示，例如：v2.3.56。通常，随着游戏或资源的更新和全新版本的发布，版本号会增加。">版本号</a>&nbsp;，并选择是否签名(默认情况下关闭)。对包进行签名需要您已创建<strong>签名证书</strong>(您可以从<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm">市场首选项</a>中执行此操作)，这意味着任何已签名的资源如果在创建后被篡改，将无法导入。</p>
   <p>一旦您填写了包的详细信息，您就可以继续从右侧的"<strong>项目</strong>"部分选择要包括的资源(使用鼠标左键<img alt="LMB Icon" class="icon" height="22" src="../assets/Images/Icons/Icon_LMB.png" width="20">或使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">和<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55">的组合)。可以使用<strong>添加</strong>或<strong>添加全部</strong>按钮将选定的资源移动到"<strong>资源包</strong>"视图中，并可以使用<strong>删除</strong>和<strong>删除全部</strong>按钮再次删除。</p>
-  <p>Once you are happy with the resource selection and have filled in the required details, clicking the <strong>OK&nbsp;</strong>button will open a file explorer where you can choose the location to save the package to. Once selected the package will be created and a confirmation window will be shown, with an option to open the package location in the OS file explorer.</p>
+  <p>一旦您对资源选择感到满意并填写了所需的详细信息，单击<strong>确定</strong>按钮将打开一个文件资源管理器，您可以在其中选择保存包的位置。选择后，将创建程序包并显示确认窗口，其中包含在操作系统文件资源管理器中打开程序包位置的选项。</p>
   <p>&nbsp;</p>
   <h2>导入一个资源包</h2>
   <p>有两种方法可以导入本地资源包：</p>
   <ul class="colour">
-    <li>the first is simply to drag the <span class="inline2">*.yymps</span>&nbsp;file from an explorer window onto the <span data-keyref="GameMaker Name">GameMaker</span> IDE</li>
+    <li>第一种方法是将 <span class="inline2">*.yymp</span> 文件从资源管理器窗口拖到 <span data-keyref="GameMaker Name">GameMaker</span> IDE 上</li>
     <li>第二种方法是从<strong>工具菜单</strong>中选择"<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">导入本地包</a>"选项。</li>
   </ul>
   <p>使用工具菜单时，将打开一个资源管理器窗口，您可以浏览到包位置，然后选择要导入的包。无论采用哪种方式，都会在 <span data-keyref="GameMaker Name">GameMaker</span> 中打开以下窗口：</p>
   <p><img alt="Import Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Import.png">左侧是包的内容，右侧是您要导入的部分。您可以从包中选择一个或多个资源(使用鼠标左键<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">或<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">与<img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55">的组合)，然后使用<strong>添加</strong>按钮添加要导入的资源，或使用<strong>添加全部</strong>按钮添加要导入的所有内容。</p>
   <p>准备就绪后，您可以单击<strong>导入</strong>按钮将所选资源添加到项目中。请注意，您还可以选择将<strong>所有</strong>资源导入到新项目，这将为您创建一个新项目(并提示您提供保存该项目的位置)，然后将包资源添加到该项目中。</p>
-  <p>Please note that asset packages created using a version older than&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;2.3 will require conversion as the project file format changed with the 2.3 update. This means it may be preferable to import the entire project and convert everything then export it as a new package to a new location if the assets are imported frequently into other projects.</p>
+  <p>请注意，使用 <span data-keyref="GameMaker Name">GameMaker</span> 2.3 之前的版本创建的资源包将需要转换，因为项目文件格式随 2.3 版更新而更改。这意味着，如果经常将资源导入到其他项目中，则可能更可取的做法是导入整个项目并转换所有内容，然后将其作为新的包导出到新位置。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

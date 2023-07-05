@@ -89,11 +89,11 @@
   <p>请注意，您可以在序列中使用序列来创建复杂的动画和效果，也可以通过代码访问和更改序列，以便尽可能多地控制它们在游戏中的显示和使用方式。有关序列编码方面的详细信息，请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequences.htm">序列函数</a>一节。</p>
   <p>在继续解释编辑器的详细信息之前，我们将花一些时间解释如何创建序列以及描述中使用的一些关键字，以便您能够更全面地了解序列编辑器的工作原理。创建序列的常规工作流如下：</p>
   <ul class="colour">
-    <li>First you'd create your sequence from <a href="../Introduction/The_Asset_Browser.htm">The Asset Browser</a>, which will open it the Sequences Editor.</li>
+    <li>首先，您将从<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>创建序列，该浏览器将在序列编辑器中打开序列。</li>
     <li>接下来，将资源(精灵、对象、声音或序列)拖动到编辑器画布中。</li>
     <li>这将在<a class="tooltip" title="序列轨道面板中的轨道包含单个资源，即精灵，声音，实例或序列。">轨道面板</a>中创建<strong>轨道资源</strong>，并将<a class="tooltip" title="在序列帧动画中时间轴上放置资源的位置。资源关键帧可以使用多个帧。">资源键</a>添加到<a class="tooltip" title="关键帧清单“摄影表”是序列时间轴的直观表示，您可以在其中添加，删除和编辑不同的资源键和参数键，这些键会影响序列中不同音轨随时间的行为。">关键点表</a>中。轨道资源只是包含资源的轨道的名称，而关键字资源是一个条形图，用于表示资源将在序列中动画显示的帧数。</li>
     <li>此时，您通常希望在画布中将资源定位在序列起点的初始位置，并添加任何初始变换(如缩放或旋转)。</li>
-    <li>When you are happy with the initial settings, you will want to record the <strong>parameter keys</strong>&nbsp;(or <a class="tooltip" title="一个关键帧(也称为参数键)是在时间轴上的一个点，在这个点上定义了一个参数值的变化。">keyframe</a><span class="glossextra">s</span>) - which is simply the name given to the values for scale, rotation and position that a specific asset key has at any point in the dope sheet timeline.</li>
+    <li>如果您对初始设置感到满意，则需要记录<strong>参数帧</strong>(或<a class="tooltip" title="一个关键帧(也称为参数键)是在时间轴上的一个点，在这个点上定义了一个参数值的变化。">关键点</a><span class="glossextra"></span>)-，该参数名称只是指定给特定资源关键字在涂层时间线中任意点的缩放、旋转和位置值的名称。</li>
     <li>接下来你要改变<a class="tooltip" title="序列文件或精灵编辑器帧视图中时间轴内的当前“播放”位置。在序列(和精灵)中，这将随着动画预览而移动，你可以将其放置在特定的帧上以查看和编辑该位置的键和关键帧。">播放头</a>的位置(关键点表时间线中的当前播放位置)，然后移动或改变资源转换，并记录另一个参数键。</li>
     <li>所有参数键都存储在另外的<a class="tooltip" title="在轨道面板中分配给资源轨道的轨道，并改变其链接到的资源轨道的单个参数，如位置或图像索引。">轨道参数</a>中，这些轨道是"轨道面板"中主资源轨道下的轨道的子集，您可以在轨道编辑器中编辑每个参数的参数键数据。</li>
     <li>现在，您需要对序列的长度重复上述过程，根据需要移动、旋转和缩放资源，然后根据需要添加更多资源。</li>
@@ -120,7 +120,7 @@
     <p>&nbsp;</p>
     <p class="dropspot">也可以使用"工具箱"中的<img class="icon" height="24" src="../assets/Images/Icons/Icon_TextButton.png" width="24"><strong>文本</strong>工具创建文本轨道。有关详细信息，请阅读<a href="Sequence_Properties/Text_in_Sequences.htm">序列中的文本</a>。</p>
     <p class="dropspot">添加到画布中的每个资源都可以基于与其交互的方式以多种方式进行操作(旋转、转换或转换)，因为每个资源将具有<strong>边界框</strong>和<strong>转换<a class="tooltip" title="Gizmo(小工具)是直接可操作的，独立的，可视的屏幕习语——本质上是任何可视的，可以与用户交互或由用户操作以产生效果或特定结果的东西。">小工具</a></strong>以及<strong>边界框控件</strong>。所有这些都将在关于<a href="Sequence_Properties/The_Sequence_Canvas.htm">序列编辑器画布</a>的页面上进行更详细的说明。</p>
-    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Sound assets, when added to a sequence, are essentially <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/Audio_Emitters.htm">sound emitters</a><strong> </strong>that play only the given sound asset.</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 声音素材添加到序列中时，基本上是<a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/Audio_Emitters.htm">声音发射器</a><strong></strong>，它们只播放给定的声音素材。</p>
     <p class="dropspot">要在画布视图中导航，可以使用与常规工作区相同的基本控件，即：使用鼠标中键 <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> 并拖动以平移画布 (或者使用 <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55">+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 组合)，您可以使用鼠标滚轮 <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> 水平滚动或使用 <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> 键和鼠标滚轮 <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> 放大和缩小。您还可以使用 <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+"<span class="inline">X</span>",<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+"<span class="inline">C</span>" 和 <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+"<span class="inline">V</span>" 组合剪切、复制和粘贴资源。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
@@ -153,8 +153,8 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">轨道面板</span><span data-close-text="true">轨道面板</span></a></p>
   <div class="droptext" data-targetname="drop-down6">
-    <p class="dropspot">The <strong>Track Panel</strong> is where each of the assets in your sequence is listed as a track, with each track having sub-tracks for any parameters that are being changed for the asset. You can click <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">&nbsp;and drag on any asset track to change its position above or below the other tracks (any assigned parameter tracks will move along with it), and you can use <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">&nbsp;to select multiple tracks.</p>
-    <p class="dropspot">You can create a track by dragging an asset from the Asset Browser (either a sprite, an object, a sound, a sequence or a particle system) into the sequence canvas, or you can click the&nbsp;<img alt="Add Track Icon" class="icon" src="../assets/Images/Icons/Icon_AddAsset.png"> icon at the bottom to add a new track and select the asset to use from the Asset Explorer window that opens. The new track will be created and the asset added at the current playhead position within the dope sheet timeline:</p>
+    <p class="dropspot"><strong>轨道面板</strong>是将序列中的每个资源作为轨道列出的位置，每个轨道都具有要为资源更改的任何参数的子轨道。您可以单击 <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 并在任何资源轨道上拖动以更改其在其他轨道上方或下方的位置 (任何指定的参数轨道都将随之移动)，还可以使用 <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 选择多个轨道。</p>
+    <p class="dropspot">您可以通过将资源(精灵、对象、声音、序列或粒子系统)从"资源浏览器"拖动到序列画布中来创建轨道，也可以单击底部的<img alt="Add Track Icon" class="icon" src="../assets/Images/Icons/Icon_AddAsset.png">图标来添加新轨道，然后从打开的"资源浏览器"窗口中选择要使用的资源。将创建新曲目，并在涂料表时间轴内的当前播放头位置添加资源：</p>
     <p class="dropspot"><img alt="Add A New Asset Track" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddTrack.gif">轨道编辑器还具有许多其他功能，这些功能将在以下页面中详细讨论：</p>
     <ul class="dropspotlist">
       <li class="dropspot"><a href="Sequence_Properties/The_Track_Panel.htm">轨道面板</a></li>
@@ -190,7 +190,7 @@
       <li class="dropspot"><strong> 序列长度 </strong>：这将以帧 (f) 或时间 (m:h:s) 显示序列的总可能长度。请注意，如果已将剪辑区域设置为较小，则序列可能无法运行到此长度。</li>
     </ul>
     <p class="dropspot">如上所述，您可以将 <strong> 时刻 </strong> 添加到序列中。序列<strong> 时刻 </strong> 是时间线上序列可以调用 <strong> 函数 </strong> 的位置。这是一个 <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm"> 脚本函数 </a>，必须没有参数，当到达时间线上的时刻 (帧) 时，将调用此函数。要设置时间，只需将播放头移动到所需位置，然后单击 <strong> 添加时间 </strong> 按钮，然后在打开的对话框中指定要调用的函数的名称。</p>
-    <p class="dropspot"><img alt="Add A Moment To The Sequence" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddMoment.gif">When adding a moment function, you can click the <img alt="Go To Function Icon" class="icon" src="../assets/Images/Icons/Icon_GoTo_Function.png">&nbsp;button to go to the script with the specified function, or you can click the <img alt="New Moment Function Icon" class="icon" src="../assets/Images/Icons/Icon_NewMomentFunction.png">&nbsp;button to create a new script resource with an empty function ready for editing. You can also remove the moment and the function call it contains by clicking the <img alt="Remove Moment Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveMoment.png">&nbsp;button.</p>
+    <p class="dropspot"><img alt="Add A Moment To The Sequence" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddMoment.gif">添加时刻函数时，可以单击<img alt="Go To Function Icon" class="icon" src="../assets/Images/Icons/Icon_GoTo_Function.png">按钮转到具有指定函数的脚本，也可以单击<img alt="New Moment Function Icon" class="icon" src="../assets/Images/Icons/Icon_NewMomentFunction.png">按钮创建具有可供编辑的空函数的新脚本资源。您也可以通过单击<img alt="Remove Moment Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveMoment.png">按钮删除时刻及其包含的函数调用。</p>
     <p class="dropspot">也可以使用代码添加和编辑序列力矩。有关详细信息，请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">此处</a>。</p>
     <ul class="dropspotlist">
     </ul>
@@ -206,47 +206,47 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#"><span data-open-text="true" data-skip-index="true">更改方向</span><span data-close-text="true">更改方向</span></a></p>
   <div class="droptext" data-targetname="drop-down10">
-    <p class="dropspot">The change orientation button&nbsp;<img alt="Change Orientation Icon" class="icon" src="../assets/Images/Icons/Icon_ChangeOrientation.png">&nbsp;can be used to change the way the Sequence Editor displays the different sections. By default you will have the Canvas View at the top and the Track Editor and Dopesheet at the bottom, but this can be changed by clicking the button to cycle through the different layouts, or by clicking the Options button&nbsp;<img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">&nbsp;to open a menu and select the layout that you want. The following layouts are available:</p>
+    <p class="dropspot">更改方向按钮<img alt="Change Orientation Icon" class="icon" src="../assets/Images/Icons/Icon_ChangeOrientation.png">可用于更改序列编辑器显示不同部分的方式。默认情况下，顶部是画布视图，底部是"轨道编辑器"和"关键点表"，但可以通过单击按钮循环浏览不同的布局或单击"选项"按钮<img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">打开菜单并选择所需的布局来更改。以下布局可用：</p>
     <table class="icons" style="margin-left: 32auto">
       <tbody>
         <tr>
           <td class="icons"><img alt="Split Window Sequence Editor Button" src="../assets/Images/Icons/Icon_Seq_SplitWindow.png"></td>
           <td class="icons"><strong>Split Window</strong></td>
           <td class="text">
-            <p>With this option the Sequence Editor will be split into two separate windows, where the main IDE window will show the Canvas view in the full desktop and the new window will show the Dope Sheet and Track Editor. Clicking the button again will change the layout again and remove the extra window.</p>
+            <p>使用此选项，序列编辑器将分为两个单独的窗口，其中主 "IDE" 窗口将在整个桌面中显示"画布"视图，新窗口将显示"关键点表"和"轨道编辑器"。再次单击按钮将再次更改布局并删除多余的窗口。</p>
           </td>
         </tr>
         <tr>
           <td class="icons"><img alt="Snap Top Sequence Editor Button" src="../assets/Images/Icons/Icon_Seq_Top.png"></td>
           <td class="icons"><b>Snap Top</b></td>
           <td class="text">
-            <p>This option snaps the Track Editor and Dopesheet to the top of the IDE.</p>
+            <p>此选项将"轨道编辑器"和"关键点表"放置到 IDE 的顶部。</p>
           </td>
         </tr>
         <tr>
           <td class="icons"><img alt="Snap Right Sequence Editor Button" src="../assets/Images/Icons/Icon_Seq_Right.png"></td>
           <td class="icons"><strong>Snap Right</strong></td>
           <td class="text">
-            <p>This option snaps the Track Editor and Dopesheet to the right of the IDE.</p>
+            <p>此选项将"轨道编辑器"和"关键点表"放置到 IDE 的右侧。</p>
           </td>
         </tr>
         <tr>
           <td class="icons"><img alt="Snap Bottom Sequence Editor Button" src="../assets/Images/Icons/Icon_Seq_Bottom.png"></td>
           <td class="icons"><strong>Snap Bottom</strong></td>
           <td class="text">
-            <p>This option snaps the Track Editor and Dopesheet to the bottom of the IDE (this is the default view).</p>
+            <p>此选项将"轨道编辑器"和"关键点表"放置到 IDE 的底部 (这是默认视图)。</p>
           </td>
         </tr>
         <tr>
           <td class="icons"><img alt="Snap Left Sequence Editor Button" src="../assets/Images/Icons/Icon_Seq_Left.png"></td>
           <td class="icons"><strong>Snap Left</strong></td>
           <td class="text">
-            <p>This option snaps the Track Editor and Dopesheet to the left of the IDE.</p>
+            <p>此选项将"轨道编辑器"和"关键点表"放置到 IDE 的左侧。</p>
           </td>
         </tr>
       </tbody>
     </table>
-    <p class="dropspot">You can also reset the Sequence Editor layout at any time by clicking the Reset option&nbsp;<img alt="Reset Editor Layout Button" class="icon" src="../assets/Images/Icons/Icon_Seq_Reset.png">. This will restore the editor to its default state and re-open any sections that had been closed.</p>
+    <p class="dropspot">您也可以随时通过单击"重置"选项<img alt="Reset Editor Layout Button" class="icon" src="../assets/Images/Icons/Icon_Seq_Reset.png">来重置序列编辑器布局。这将使编辑器恢复到默认状态，并重新打开已关闭的所有分区。</p>
   </div>
   <p>&nbsp;</p>
   <p>由于序列编辑器的初始复杂性，我们只对此处提供的功能进行了简要概述，但下面列出了更多页面，这些页面更深入地介绍了序列编辑器的功能以及如何使用这些功能：</p>

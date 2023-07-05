@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">The Track Panel</span></h1>
-  <p><img alt="The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel.png">What your sequences do is governed by the assets and parameters that have been added to the <strong>Track Panel</strong>. You can add a track to the editor by either:</p>
+  <p><img alt="The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel.png">您的序列操作由已添加到<strong>轨道面板</strong>的资源和参数控制。您可以通过以下任一方式将轨道添加到编辑器：</p>
   <ul class="colour">
     <li>将资源拖到序列<a href="The_Sequence_Canvas.htm">画布</a></li>
     <li>将资源拖动到轨道面板本身</li>
@@ -93,7 +93,7 @@
     <li><strong>所有资源</strong>：<em>位置</em>和<em>旋转</em>。</li>
     <li><strong>声音</strong>：<em>音高</em>和<em>音量</em>。</li>
     <li><strong>序列</strong>：<em>原点</em>和<em>标度</em>。</li>
-    <li><strong>Particle Systems</strong>:&nbsp;<em>Colour Multiply,</em>&nbsp;<em>Origin</em> and&nbsp;<em>Scale</em></li>
+    <li><strong>粒子系统</strong>：<em>色彩倍增、</em><em>原点</em>和<em>比例</em></li>
     <li><strong>精灵和对象</strong>：<em>原点</em>、<em>比例</em>、<em>图像索引</em>、<em>图像速度</em>和<em>色彩倍增</em>。</li>
     <li><strong>文本</strong>：<em>原点、比例、颜色倍增、字符间距、边框大小、行距和段落间距。</em></li>
   </ul>
@@ -106,7 +106,7 @@
   <p><img alt="Disable Linear Interpolation On Parameter Track" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_RMB_Menu_Params.png">除了可以选择参数轨道的过渡类型外，右键菜单还提供以下选项：</p>
   <ul class="colour">
     <li><strong>剪切</strong>、<strong>复制</strong>和<strong>粘贴</strong>：这些选项允许您剪切/复制/粘贴资源或参数轨道。</li>
-    <li><strong>Duplicate Track(s)</strong>: This will create a duplicate of the currently selected track(s). If this is an asset track it will also duplicate the parameter tracks associated with it.</li>
+    <li><strong>复制轨道</strong>：这将创建当前所选轨道的副本。如果这是资源轨道，它还将复制与其关联的参数轨道。</li>
     <li><strong>删除轨道</strong>：这将删除选定的轨道。如果删除资源轨道，则与其关联的参数轨道也将被移除，但是您可以单独删除参数轨道。</li>
     <li><strong>组</strong> : 在轨道面板中的空白区域上使用此选项将创建一个组文件夹，然后您可以使用该文件夹来帮助将资源保持在更有序的格式中。只需单击一个资源并将其拖放到文件夹中，就可以向组中添加一个资源。如果您已经选择了一个或多个轨道，那么使用此选项不仅会创建一个组文件夹，而且还会将轨道添加到其中。</li>
     <li><strong>重命名</strong> : 可以使用此选项重命名任何资源轨道或组文件夹。</li>
@@ -224,12 +224,12 @@
   <div class="droptext" data-targetname="drop-down9">
     <p class="dropspot">添加参数 <img alt="Add Parameter Track Icon" height="15" src="../../assets/Images/Icons/Icon_Add_Param.png" width="15"> 按钮可用于将单个参数轨道添加到所选资源轨道。如本页前面所述，参数轨道可以是各种不同的类型，具体取决于与之相关的资源。下面列出了所有可用的不同参数轨道以及它们所指的内容，以及它们可以应用的资源：</p>
     <ul class="dropspotlist">
-      <li class="dropspot"><strong>Position</strong>: This parameter track can be added to any of the four sequence asset types (<em>sprites</em>, <em>objects</em>, <em>sounds, sequences&nbsp;</em>or <em>particle systems</em>) and is used to set the spacial position within the sequence for the asset. It takes an X and a Y value.</li>
+      <li class="dropspot"><strong>位置</strong>：此参数轨道可以添加到五种序列资源类型（<em>精灵</em>、<em>对象</em>，<em>声音</em>、序列或<em>粒子系统</em>）中的任何一种，并用于设置资源序列中的空间位置。它采用 X 和 Y 值。</li>
       <li class="dropspot"><strong> 旋转</strong>：与位置参数一样，旋转参数可用于 <em> 所有 </em> 序列资源，并可用于设置资源的旋转度。请记住，<span data-keyref="GameMaker Name">GameMaker</span> 计算 <em> 逆时针旋转 </em>，从右侧 0°开始，因此 90°向上，180°向左，270°向下。</li>
-      <li class="dropspot"><strong>Origin</strong>: The origin parameter is available for <em>sprite</em>, <em>object,</em>&nbsp;<em>sequence </em>and <em>particle system</em> assets and can be used to set the X and Y position of the origin of the asset. Changing the origin will affect how the asset is positioned, rotated and scaled.</li>
-      <li class="dropspot"><strong>Scale</strong>: The scale parameter is available for <em>sprite</em>, <em>object,</em>&nbsp;<em>sequence </em>and <em>particle system</em> assets and is used to set the horizontal and vertical scale of the asset. This will affect how the asset is rendered in the IDE and at runtime, and is calculated as a scalar value, where 100% is the default asset size, 50% would be half size, and 200% would be double the size. Note that you have the possibility of linking the horizontal and vertical scale values by clicking the "link" <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14">&nbsp;button. This means that changing one value will automatically change the other too.</li>
+      <li class="dropspot"><strong>原点</strong> : 原点参数可用于<em>精灵</em>、<em>对象</em>、<em>序列</em>和<em>粒子系统</em>资源，并可用于设置资源原点的 X 和 Y 位置。更改原点将影响资源的定位、旋转和缩放方式。</li>
+      <li class="dropspot"><strong>比例</strong>：比例参数可用于<em>精灵</em>、<em>对象</em>、<em>序列</em>、<em>粒子系统</em>资源，用于设置资源的水平和垂直比例。这将影响资源在 IDE 中和运行时的呈现方式，并以标量值计算，其中 100% 是默认资源大小，50% 是一半大小，200% 是两倍大小。请注意，您可以通过单击"链接" <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14"> 链接水平和垂直比例值按钮这意味着更改一个值也会自动更改另一个值。</li>
       <li class="dropspot"><strong> 图像索引 </strong> 和 <strong> 图像速度</strong>：这些参数仅适用于 <em> 精灵 </em> 和<em>对象 </em> 资源，可用于更改当前动画帧（有关详细信息，请参阅 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a> 上的页面）以及当前动画速度（使用 fps 设置），其工作方式与您为精灵编辑器中使用的精灵设置的值相同。</li>
-      <li class="dropspot"><strong>Colour Multiply</strong>: This parameter is only available for <em>sprite,</em>&nbsp;<em>object </em>and <em>particle system</em> assets and can be used to change the current blend colour for the asset being drawn. This is the equivalent of setting the <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a>&nbsp;value and any colours set here will be "multiplied" (i.e., blended) with the colour of the sprite, and a value of white (#ffffffff) indicates that no blending should take place. Note that when working with this type of track, you can set the colour by manually typing in the hex value, or you can click the colour swatch to open the <span data-keyref="GameMaker Name">GameMaker</span> Colour Picker. Note that colours are given in <a class="tooltip" title="这是Alpha，Red，Green，Blue的缩写，用于指代指定为十六进制值的颜色分量，例如：＃FF53E270，其中每两位数字代表一个分量。分解上面的ARGB示例可以得到以下分量值：Alpha（FF），Red（53），Green（E2）和Blue（70）。">ARGB</a> format, so you can set a value for alpha using this kind of parameter track (the Colour Picker also permits you to set the alpha value). This would be the equivalent of setting the <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a>&nbsp;for the sprite.</li>
+      <li class="dropspot"><strong>颜色倍增</strong>：此参数仅适用于<em>精灵</em>、<em>对象</em>和<em>粒子系统</em>资源，可用于更改正在绘制的精灵的当前混合颜色。这相当于设置 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a> 值和此处设置的任何颜色将与精灵的颜色" 相乘"（即，混合），白色值（#ffffffff）表示不应进行混合。请注意，当使用这种类型的轨道时，您可以通过手动键入十六进制值来设置颜色，或者您可以单击色样打开 <span data-keyref="GameMaker Name">GameMaker</span> 颜色选择器。请注意，颜色是以 <a class="tooltip" title="这是Alpha，Red，Green，Blue的缩写，用于指代指定为十六进制值的颜色分量，例如：＃FF53E270，其中每两位数字代表一个分量。分解上面的ARGB示例可以得到以下分量值：Alpha（FF），Red（53），Green（E2）和Blue（70）。">ARGB</a> 格式给出的，因此您可以使用这种参数轨道设置 alpha 值（颜色选择器也允许您设置 alpha 值）。这相当于对于精灵设置 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a> 。</li>
       <li class="dropspot"><strong> 音量</strong>：音量参数仅适用于 <em> 声音 </em> 资源音轨，可用于设置声音的增益（实际的声音资源增益不会改变，因为它本质上是一个发射器，用于资源音轨的序列）。体积值以百分比计算，其中 0% 为无音量，100% 为满音量。</li>
       <li class="dropspot"><strong> 音高</strong>：音高参数仅适用于 <em> 声音 </em> 资源音轨，可用于设置声音的音高（与音量一样，实际的声音资源增益不会改变，因为它本质上是用于资源音轨的发射器）。音高值以百分比计算，100% 是声音的"自然"音高，小于 100% 将降低音高，大于 100% 将提高音高。</li>
       <li class="dropspot"><strong>衰减</strong>：衰减参数仅适用于<em>声音</em>资源轨道，目前尚未实现。</li>
@@ -244,7 +244,7 @@
       <li class="dropspot"><img alt="Add Track Icon" src="../../assets/Images/Icons/Icon_AddAsset.png">- 此按钮将打开资源浏览器，以便您选择要用作新轨道的资源。选择后，将创建资源轨道，并将帧添加到当前播放头位置的 " 关键帧表 " 中。</li>
       <li class="dropspot"><img alt="Duplicate Asset Icon" src="../../assets/Images/Icons/Icon_DuplicateAsset.png">- 在轨道编辑器中选择一个或多个资源轨道后，单击此按钮将复制它们（以及它们可能包含的任何参数轨道）。</li>
       <li class="dropspot"><img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png">- 单击此按钮将创建一个特殊的 <strong> 剪切蒙版 </strong>，您可以在其中指定用作遮罩的精灵和要遮罩的精灵。有关详细信息，请参阅此处的 <a href="Clipping_Masks.htm">。</a></li>
-      <li class="dropspot"><img alt="Group Folder Icon" height="18" src="../../assets/Images/Icons/Icon_AddGroup.png" width="25">&nbsp;- Clicking this will add a new group folder to the track editor, which can then be used to better organise tracks. You can add a track to a group by dragging the track onto the group folder and you can remove it again by dragging it out of the folder. Note that any asset that is added to a group folder will automatically be assigned the folder colour, although you can then edit the track colour for individual tracks so that it is different if required.</li>
+      <li class="dropspot"><img alt="Group Folder Icon" height="18" src="../../assets/Images/Icons/Icon_AddGroup.png" width="25">- 单击此按钮将在轨道编辑器中添加一个新的组文件夹，然后可用于更好地组织轨道。您可以通过将轨道拖到组文件夹中来将轨道添加到组中，也可以通过将其拖出文件夹来再次将其删除。请注意，添加到组文件夹中的任何资源都将自动分配文件夹颜色，尽管您可以编辑各个轨道的轨道颜色，以便在需要时有所不同。</li>
       <li class="dropspot"><img alt="Track Delete Icon" src="../../assets/Images/Icons/Icon_DeleteTrack.png">- 如您所料，单击此按钮将删除所选轨道。如果这是一个资源轨道，那么它包含的所有参数轨道也将被删除，尽管您可以在选定的参数轨道上使用它来单独删除它们，而不删除与它们关联的资源轨道。如果在空的组文件夹中使用此选项，则该文件夹将被删除，但如果文件夹中有任何轨道，则会显示警告，因为删除文件夹也会删除其中的所有轨道。</li>
     </ul>
     <p class="dropspot">&nbsp;</p>

@@ -82,31 +82,31 @@
   </div>
   <div>
   <h1><span data-field="title" data-format="default">音频播放结束</span></h1>
-  <p><img class="center" src="../../../assets/Images/Asset_Editors/Async_AudioPlaybackEnded.png" style="cursor: nesw-resize;">This event is triggered whenever playback ends for a sound instance played using the <span class="inline2">audio_play_sound_</span> functions.</p>
-  <p>Playback&nbsp;of a&nbsp;sound ends in the following situations:&nbsp;</p>
+  <p><img class="center" src="../../../assets/Images/Asset_Editors/Async_AudioPlaybackEnded.png" style="cursor: nesw-resize;">每当使用 <span class="inline2">audio_play_sound_</span> 函数播放的声音实例播放结束时，都会触发此事件。</p>
+  <p>播放声音在以下情况下结束：</p>
   <ul class="colour">
-    <li>The sound <strong>reaches its end position</strong>. Pausing a sound using <span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_pause_sound.htm">audio_pause_sound</a></span>, changing its track position using&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_sound_set_track_position.htm">audio_sound_set_track_position</a></span>&nbsp;or looping a section of it by changing the&nbsp;<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Loop_Points/Audio_Loop_Points.htm">Audio Loop Points</a>&nbsp;postpones the end of playback as the sound doesn't reach the end position this way.</li>
-    <li>The sound is <strong>stopped</strong>, through a call to&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_stop_sound.htm">audio_stop_sound</a></span>&nbsp;or&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_stop_all.htm">audio_stop_all</a></span>. I.e. stopping a sound also <em>always</em> means it ends playback.</li>
-    <li>The sound is <strong>forced to stop</strong> due to <em>voice stealing</em>: when another sound is played using any&nbsp;of the <span class="inline2">audio_play_sound_</span> functions&nbsp;and all channels are used (see&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_channel_num.htm">audio_channel_num</a></span>), a channel playing a sound with a lower priority than the new&nbsp;one will be used to play the new sound, i.e. the channel is <em>stolen</em>&nbsp;by the new sound. An&nbsp;<span data-field="title" data-format="default">Audio Playback Ended</span>&nbsp;event is triggered for the sound that was forced to stop playing.</li>
+    <li>声音<strong>到达其结束位置</strong>。使用 <span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_pause_sound.htm">audio_pause_sound</a></span> 暂停声音，更改其曲目位置使用 <span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_sound_set_track_position.htm">audio_sound_set_track_position</a></span> 或通过更改<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Loop_Points/Audio_Loop_Points.htm">音频循环点</a>来循环其中的一段声音会推迟播放的结束，因为声音不会以这种方式到达结束位置。</li>
+    <li>通过调用<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_stop_sound.htm">audio_stop_sound</a></span>或<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_stop_all.htm">audio_stop_all</a></span>，声音被<strong>停止</strong>。也就是说，停止声音<em>也意味着</em>它结束播放。</li>
+    <li>声音因<strong>语音抢断</strong>而<em>被迫停止</em>：当使用 <span class="inline2">audio_play_sound_</span> 函数中的任何播放另一个声音并且使用了所有频道(请参阅 <span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_channel_num.htm">audio_channel_num</a></span>) 时，播放优先级低于新声音的频道将被用于播放新声音，即该频道被新声音<em>抢断</em>。对于被强制停止播放的声音，会触发<span data-field="title" data-format="default">音频播放结束</span>事件。</li>
   </ul>
-  <p>The event will trigger in all objects that have it, for any sound played in the game (even when it's not played by the same object).</p>
-  <p>The event returns information in&nbsp;the&nbsp;<span class="inline2"><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span>&nbsp;ds_map. The map contains the following keys in case of an&nbsp;<span data-field="title" data-format="default">Audio Playback Ended</span>&nbsp;event:&nbsp;</p>
+  <p>对于游戏中播放的任何声音(即使它不是由同一对象播放的)，该事件将在所有具有该事件的对象中触发。</p>
+  <p>该事件在 <span class="inline2"><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span> ds_map 中返回信息。如果发生<span data-field="title" data-format="default">音频播放已结束</span>事件：</p>
   <ul class="colour">
-    <li><strong>"sound_id"</strong> - the&nbsp;<span data-keyref="Type_ID_Sound_Instance"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">Sound Instance ID</a></span> that ended playback.</li>
-    <li><strong>"asset_id"</strong> - the index of the&nbsp;<span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../The_Asset_Editors/Sounds.htm">Sound Asset</a></span>.</li>
-    <li><strong>"was_stopped"</strong> - this is set to <span class="inline2">false</span>, unless the sound was stopped manually using the <span class="inline2">audio_stop_</span> functions or when it was forced to stop playing.</li>
+    <li><strong>"sound_id"</strong> - 结束播放的<span data-keyref="Type_ID_Sound_Instance"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">声音实例 ID</a></span>。</li>
+    <li><strong>"asset_id"</strong> - <span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../The_Asset_Editors/Sounds.htm">声音资源</a></span>的索引。</li>
+    <li><strong>"was_stopped"</strong> - 它被设置为 <span class="inline2">false</span>，除非声音是使用 <span class="inline2">audio_stop_</span> 函数手动停止的，或者当它被强制停止播放时。</li>
   </ul>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;<em>Pausing</em> a sound does <em>not</em> end playback, as playback can still be <em>resumed</em>&nbsp;afterwards.</p>
-  <h2>Example</h2>
-  <p>Suppose you play a sound using any of the <span class="inline2">audio_play_sound_</span> functions:&nbsp;</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;<em>暂停</em>声音<em>不会</em>结束播放，因为之后仍可以<em>继续</em>播放。</p>
+  <h2>范例</h2>
+  <p>假设您使用以下任何 <span class="inline2">audio_play_sound_</span> 函数播放声音：</p>
   <p class="code">ins_snd_bgm = audio_play_sound(snd_music, 100, false);</p>
-  <p>If you call no&nbsp;other sound functions&nbsp;on this sound, it will&nbsp;play until the end. At that point, the&nbsp;<span data-field="title" data-format="default">Audio Playback Ended</span>&nbsp;event is triggered for the sound. The&nbsp;<span class="inline2"><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span>&nbsp;ds_map will contain the following values in that case:&nbsp;</p>
+  <p>如果您没有其他声音函数在这个声音上，它会播放到最后。此时<span data-field="title" data-format="default">音频播放已结束</span>为声音触发事件。<span class="inline2"><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span> 在这种情况下，ds_map 将包含以下值：</p>
   <ul class="colour">
-    <li><strong>"sound_id"</strong> - the sound ID returned by&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">audio_play_sound</a></span> and stored in&nbsp;<span class="inline2">ins_snd_bgm</span></li>
+    <li><strong>"sound_id"</strong> - <span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">audio_play_sound</a></span> 返回并存储在&nbsp;<span class="inline2">ins_snd_bgm</span> 中的声音 ID</li>
     <li><strong>"asset_id"</strong> -&nbsp;<span class="inline2">snd_music</span></li>
-    <li><strong>"was_stopped"</strong> -&nbsp;<span class="inline2">false</span>&nbsp;(the sound wasn't stopped <em>or</em> forced to stop)</li>
+    <li><strong>"was_stopped"</strong> -&nbsp;<span class="inline2">false</span>&nbsp;(声音没有停止<em>或</em>没有被强制停止)</li>
   </ul>
-  <p>If you stop the sound before it reaches its end, the <span data-field="title" data-format="default">Audio Playback Ended</span>&nbsp;event is triggered as well. This can be done using any of the following lines of code:&nbsp;</p>
+  <p>如果您在声音结束前将其停止，则也会触发<span data-field="title" data-format="default">音频播放结束</span>事件。这可以使用以下任何代码行来完成：</p>
   <p class="code">// Stop the sound instance<br>
     audio_stop_sound(ins_snd_bgm);<br>
     <br>
@@ -116,8 +116,8 @@
     // Stop all sounds that are playing<br>
     audio_stop_all();
   </p>
-  <p>In this case, the sound was stopped through a call to one of the <span class="inline2">audio_stop_</span> functions, so instead&nbsp;of being <span class="inline2">false</span>,&nbsp;<span class="inline2">"was_stopped"</span> will be <span class="inline2">true</span>&nbsp;here.</p>
-  <p>Finally, if you start playing additional sounds with a higher priority while this sound is playing, these will also take up a channel (or a <em>voice</em>). If no free channels are left then <span class="inline2">ins_snd_bgm</span>&nbsp;may be forced to stop and the&nbsp;<span data-field="title" data-format="default">Audio Playback Ended</span>&nbsp;event is triggered. In this case, <span class="inline2">"was_stopped"</span> is also set to <span class="inline2">true</span>.</p>
+  <p>在本例中，声音是通过调用一个 <span class="inline2">audio_stop_</span> 函数来停止的，因此不是 <span class="inline2">false</span>，而是 <span class="inline2">"was_stopped"</span> 在这里将是 <span class="inline2">true</span>。</p>
+  <p>最后，如果您在播放此声音时开始播放优先级更高的其他声音，这些声音也会占用一个频道(或<em>声音</em>)。如果没有剩余的空闲频道，则可能会强制停止 <span class="inline2">ins_snd_bgm</span>，并触发<span data-field="title" data-format="default">音频播放结束</span>事件。在本例中，<span class="inline2">"was_stopped"</span> 也设置为 <span class="inline2">true</span>。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

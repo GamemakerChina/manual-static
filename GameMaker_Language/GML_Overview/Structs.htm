@@ -244,7 +244,7 @@
     }
   </p>
   <p>如您所见，在定义函数时，我们使用冒号"<span class="inline">:</span>"将新构造函数与要从中继承的父构造函数分开。子构造函数(<span class="inline">Vector 3</span>)将<span class="inline">_x</span>和<span class="inline">_y</span>参数传递到父构造函数(<span class="inline">Vector 2</span>)中，父构造函数用于首先运行父构造函数，然后执行子构造函数。这样，子构造函数就可以获取父项的变量(<span class="inline">x</span>和<span class="inline">y</span>)，并且还可以定义自己的变量(<span class="inline">z</span>)。</p>
-  <p>You can also pass values into the parent constructor, so that a certain child constructor always provides the same values to its parent constructor:</p>
+  <p>您还可以将值传递给父构造函数，以便某个子构造函数始终向其父构造函数提供相同的值：</p>
   <p class="code">function item(damage) constructor<br>
     {<br>
     &nbsp;&nbsp; &nbsp;my_damage = damage;<br>

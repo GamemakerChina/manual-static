@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
 
   <script type="text/javascript" language="JavaScript">
     //<![CDATA[
@@ -47,20 +45,20 @@
   <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
   <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
 <script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
-  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
-  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>extension_get_version</title>
-  <meta name="generator" content="Adobe RoboHelp 2020"/>
-  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"/>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content=""/>
-  <meta name="topic-comment" content=""/>
-  <meta name="rh-index-keywords" content="extension_get_version"/>
-  <meta name="search-keywords" content="extension_get_version,extension,version"/>
-  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt"/>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="extension_get_version">
+  <meta name="search-keywords" content="extension_get_version,extension,version">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
 </head>
 
 <body>
@@ -81,51 +79,51 @@
 
 
   <h1><span data-field="title" data-format="default">extension_get_version</span></h1>
-  <p>This functions gets the version of an <span data-keyref="Type_Asset_Extension"><a target="_blank" href="../../../../../The_Asset_Editors/Extensions.htm">Extension Asset</a></span> with the given name, and returns it as a string formatted as &quot;major.minor.revision&quot;<span><span>.</span></span></p>
-  <p> </p>
-  <h4>Syntax:</h4>
+  <p>此函数用于获取具有给定名称的<span data-keyref="Type_Asset_Extension"><a target="_blank" href="../../../../../The_Asset_Editors/Extensions.htm">扩展资源</a></span>的版本，并以 "major.minor.revision" 格式的字符串形式返回<span><span>.</span></span></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">extension_get_version</span>(ext_name);</p>
   <table>
     <colgroup>
-      <col/>
-      <col/>
-      <col/>
+      <col>
+      <col>
+      <col>
     </colgroup>
     <tbody>
       <tr>
-        <th>Argument</th>
-        <th>Type</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
       </tr>
       <tr>
         <td>ext_name</td>
         <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
-        <td>The name of the extension</td>
+        <td>扩展名的名称</td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <h4>Returns:</h4>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
-  <p> </p>
-  <h4>Example:</h4>
-  <p class="code">var _version_string = extension_get_version(&quot;MyExtension&quot;);<br/>
-    var _values = string_split(_version_string, &quot;.&quot;);<br/>
-    var _major = _values[0], _minor = _values[1], _revision = _values[2];<br/>
-    show_debug_message($&quot;Version: {_ver}\nMajor: {_major}\nMinor: {_minor}\nRevision:{_revision}&quot;);<br/>
-    if (_major &lt; 1)<br/>
-    {<br/>
-        show_debug_message(&quot;At least version 1 of the extension is required.&quot;);<br/>
-        game_end();<br/>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _version_string = extension_get_version("MyExtension");<br>
+    var _values = string_split(_version_string, ".");<br>
+    var _major = _values[0], _minor = _values[1], _revision = _values[2];<br>
+    show_debug_message($"Version: {_ver}\nMajor: {_major}\nMinor: {_minor}\nRevision:{_revision}");<br>
+    if (_major &lt; 1)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message("At least version 1 of the extension is required.");<br>
+    &nbsp; &nbsp; game_end();<br>
     }</p>
-  <p>The above code first calls <span class="inline3_func"><span data-field="title" data-format="default">extension_get_version</span></span> to get a string containing the version number of an extension named <span class="inline2">&quot;MyExtension&quot;</span>. It stores the returned value in a temporary variable <span class="inline2">_version_string</span> and calls <span class="inline3_func"><a href="../../Strings/string_split.htm">string_split</a></span> on that to get the major and minor version number, as well as the revision number. These are assigned to the temporary variables <span class="inline2">_major</span>, <span class="inline2">_minor</span> and <span class="inline2">_revision</span> respectively. A debug message shows this information. Finally the major version number is checked; if it is too low a debug message is output and the game is ended by calling <span class="inline3_func"><a href="../../General_Game_Control/game_end.htm">game_end</a></span>.</p>
-  <p> </p>
-  <p> </p>
+  <p>上面的代码首先调用 <span class="inline3_func"><span data-field="title" data-format="default">extension_get_version</span></span> 获取一个字符串，该字符串包含名为 <span class="inline2">"MyExtension"</span> 的扩展的版本号。它将返回值存储在临时变量 <span class="inline2">_version_string</span> 中，并对其调用 <span class="inline3_func"><a href="../../Strings/string_split.htm">string_split</a></span> 以获取主版本号和次版本号以及修订号。这些变量分别分配给临时变量 <span class="inline2">_major</span>、<span class="inline2">_minor</span> 和 <span class="inline2">_revision</span>。调试消息会显示此信息。最后，检查主版本号如果太低，则输出调试消息，并通过调用 <span class="inline3_func"><a href="../../General_Game_Control/game_end.htm">game_end</a></span> 结束游戏。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Back: <a href="Extensions.htm">Extensions</a></div>
-        <div>Next: <a href="extension_get_options.htm">extension_get_options</a></div>
+        <div>Back:&nbsp;<a href="Extensions.htm">扩展</a></div>
+        <div>Next:&nbsp;<a href="extension_get_options.htm">extension_get_options</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

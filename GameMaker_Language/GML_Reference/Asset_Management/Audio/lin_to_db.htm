@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
 
   <script type="text/javascript" language="JavaScript">
     //<![CDATA[
@@ -47,20 +45,20 @@
   <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
   <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
 <script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
-  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
-  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>lin_to_db</title>
-  <meta name="generator" content="Adobe RoboHelp 2020"/>
-  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"/>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content="Bart Teunis"/>
-  <meta name="topic-comment" content="Reference page for the lin_to_db function"/>
-  <meta name="rh-index-keywords" content="lin_to_db"/>
-  <meta name="search-keywords" content="lin_to_db"/>
-  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt"/>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Reference page for the lin_to_db function">
+  <meta name="rh-index-keywords" content="lin_to_db">
+  <meta name="search-keywords" content="lin_to_db">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
 </head>
 
 <body>
@@ -81,45 +79,45 @@
 
 
   <h1><span data-field="title" data-format="default">lin_to_db</span></h1>
-  <p>This function converts a linear gain to a gain expressed in decibels (dB). You get a linear gain value from functions such as <span class="inline3_func"><a href="audio_sound_get_gain.htm">audio_sound_get_gain</a></span>.</p>
-  <p>Changes in gain can be expressed in dB. This corresponds better to how we perceive changes in amplitude (human perception of sound is not linear).</p>
-  <p>The conversion from a gain expressed in dB to a linear gain is done using the formula: <span class="inline2">gain_db = 20 * log10(gain_linear);</span></p>
-  <p> </p>
-  <h4>Syntax:</h4>
+  <p>此函数将线性增益转换为以分贝(分贝)表示的增益。您可以从&nbsp;<span class="inline3_func"><a href="audio_sound_get_gain.htm">audio_sound_get_gain</a></span> 等函数获得线性增益值。</p>
+  <p>增益的变化可以用分贝表示。这更符合我们对幅度变化的感知方式(人类对声音的感知不是线性的)。</p>
+  <p>从以分贝表示的增益到线性增益的转换使用公式：<span class="inline2">gain_db = 20 * log10(gain_linear);</span></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">lin_to_db</span>(x);</p>
   <table>
     <colgroup>
-      <col/>
-      <col/>
-      <col/>
+      <col>
+      <col>
+      <col>
     </colgroup>
     <tbody>
       <tr>
-        <th>Argument</th>
-        <th>Type</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
       </tr>
       <tr>
         <td>x</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The value to convert</td>
+        <td>要转换的值</td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <h4>Returns:</h4>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
-  <p> </p>
-  <h4>Example:</h4>
-  <p class="code">var _db = <span data-field="title" data-format="default">lin_to_db</span>(1.5);</p>
-  <p>The above code calculates the gain in dB corresponding to a linear gain of 1.5. The result of the conversion is stored in a temporary variable <span class="inline2">_db</span>.</p>
-  <p> </p>
-  <p> </p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code">var _db =&nbsp;<span data-field="title" data-format="default">lin_to_db</span>(1.5);</p>
+  <p>上面的代码以分贝为单位计算与 1.5 的线性增益对应的增益。转换的结果存储在临时变量 <span class="inline2">_db</span> 中。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Back: <a href="Audio.htm">Audio</a></div>
-        <div>Next: <a href="db_to_lin.htm">db_to_lin</a></div>
+        <div>Back:&nbsp;<a href="Audio.htm">音频</a></div>
+        <div>Next:&nbsp;<a href="db_to_lin.htm">db_to_lin</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

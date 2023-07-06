@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><span data-field="title" data-format="default">Vectors</span></h1>
+  <h1><span data-field="title" data-format="default">向量</span></h1>
   <p>在创造一款复杂的游戏时，你可能需要处理<strong>向量</strong>。它们被用在物理学、AI、三角函数和许多其他情况中，但什么是向量呢?简单地说，向量是一个<em>有方向的量</em>。让我们从一个一维向量开始，它和一个数字是一样的，画一条从0开始，到5结束的有箭头的线。这是向量a，它等于5。如果，我们再画一个箭头，从5开始，到8结束，我们得到向量b，等于3</p>
   <p><img alt="1D Vector Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_1D.png">你应该意识到，一个向量从哪里开始并不重要，重要的是它有多长，朝什么方向走。所以向量b从5开始，长3个单位，指向右边，这和从0开始到3的向量是一样的。现在，你也可以把这些向量相加，通过把a和b两个向量首尾相连得到向量c等于8。那么负数呢?好吧，如果在上面的图像中，一个指向“右”的向量对应一个正数，你可以看到一个指向“左”的向量对应一个负数，使得一个一维向量仅仅是一个带符号(+/-)的数。这解释了向量的基本概念:只计算<em>长度</em>和<em>方向</em>(在本例中为“左”或“右”)，而不计算位置。</p>
   <p>那么，二维向量呢?嗯，我们可以认为它们不仅包括“左”和“右”，还包括“上”和“下”:</p>
@@ -101,7 +101,7 @@
     vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579</p>
   <p>太棒了!我们现在已经归一化了向量的分量!但这在<span data-keyref="GameMaker Name">GameMaker</span>上下文中有什么实际用途呢?好吧，让我给你一个实际的例子…</p>
   <p>假设你在一款游戏中，玩家必须向敌人射击，你需要知道子弹物体在每一步中需要沿x轴和y轴移动多少距离才能击中它:</p>
-  <p><img alt="Vector Game Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_2.png">For this you would use the player and enemy coordinates to get the vector components and the length, then you would normalise them to get a value between 0 and 1 which you would finally multiply by the speed you wish the bullet to travel at each step. These final two values you would then store and add onto the starting x and y coordinates each step. Sounds complicated? It's not, look (values have been rounded to one decimal place for simplicity):</p>
+  <p><img alt="Vector Game Example" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Vector_Image_Normalised_2.png">为此，你可以使用玩家和敌人坐标来获得向量组件和长度，然后将其归一化，得到0到1之间的值，最后乘以你希望子弹在每一步中移动的速度。最后这两个值将存储并添加到每一步的起始x和y坐标上。听起来很复杂?它不是，看(为了简单起见，值被四舍五入到小数点后一位):</p>
   <p class="code">px = 100;<br>
     py = 425;<br>
     ex = 356;<br>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
 
   <script type="text/javascript" language="JavaScript">
     //<![CDATA[
@@ -47,20 +45,20 @@
   <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
   <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
 <script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css"/>
-  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css"/>
-  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>array_shift</title>
-  <meta name="generator" content="Adobe RoboHelp 2020"/>
-  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css"/>
+  <meta name="generator" content="Adobe RoboHelp 2020">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content=""/>
-  <meta name="topic-comment" content=""/>
-  <meta name="rh-index-keywords" content="array_shift"/>
-  <meta name="search-keywords" content="array_shift"/>
-  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt"/>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="array_shift">
+  <meta name="search-keywords" content="array_shift">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
 </head>
 
 <body>
@@ -81,77 +79,77 @@
 
 
   <h1><span data-field="title" data-format="default">array_shift</span></h1>
-  <p>This function removes the first element from the given array and returns it.</p>
-  <p>Because of this, all other elements are <em><strong>shifted</strong> to the left one place</em>, i.e. the value at index 0 is removed, the value at index 1 moves to index 0, the value at index 2 moves to index 1, etc. The number of elements is reduced by 1, as there is no value to replace the last element with.</p>
-  <p>The function works identically to <span class="inline3_func"><a href="array_pop.htm">array_pop</a></span>, but removes and returns the <em>first</em> element instead of the <em>last</em> one.</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> Use <span class="inline3_func"><a href="array_first.htm">array_first</a></span> to get the first element without removing it from the array.</p>
-  <p> </p>
-  <h4>Syntax:</h4>
+  <p>此函数从给定数组中删除第一个元素并返回它。</p>
+  <p>因此，所有其他元素都<em><strong>左移</strong>了一位</em>，即索引 0 处的值被移除，索引 1 处的值移至索引 0，索引 2 处的值移至索引 1，依此类推。元素的数量减少 1，因为没有值可用来替换最后一个元素。</p>
+  <p>该函数的工作原理与&nbsp;<span class="inline3_func"><a href="array_pop.htm">array_pop</a></span> 相同，但会删除并返回<em>第一个</em>元素，而不是<em>最后一个</em>元素。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 使用 <span class="inline3_func"><a href="array_first.htm">array_first</a></span> 以获得第一个元素而不将其从数组中移除。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">array_shift</span>(array);</p>
   <table>
     <colgroup>
-      <col/>
-      <col/>
-      <col/>
+      <col>
+      <col>
+      <col>
     </colgroup>
     <tbody>
       <tr>
-        <th>Argument</th>
-        <th>Type</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
       </tr>
       <tr>
         <td>array</td>
         <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
-        <td>The array to <em>shift</em>, i.e. to return and remove the first element from</td>
+        <td>转到的数组<em>移位</em>，即返回并从中移除第一个元素</td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <h4>Returns:</h4>
-  <p class="code"><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span> (the type of the removed first array element)</p>
-  <p> </p>
-  <h4>Example 1: Basic Use</h4>
-  <p class="code">var _array = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;];<br/>
-    repeat(2)<br/>
-    {<br/>
-        <span data-field="title" data-format="default">array_shift</span>(_array);<br/>
-    }<br/>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(the type of the removed first array element)</p>
+  <p>&nbsp;</p>
+  <h4>示例1：基本使用</h4>
+  <p class="code">var _array = ["A", "B", "C"];<br>
+    repeat(2)<br>
+    {<br>
+    &nbsp; &nbsp; <span data-field="title" data-format="default">array_shift</span>(_array);<br>
+    }<br>
     show_debug_message(_array);</p>
-  <p>The above code calls <span class="inline3_func"><span data-field="title" data-format="default">array_shift</span></span> on the array <span class="inline2">_array</span> twice. After that, a debug message shows the contents of the array. As the first call to the function removes the value <span class="inline2">&quot;A&quot;</span> and the second shift removes the value <span class="inline2">&quot;B&quot;</span>, the array will only contain <span class="inline2">&quot;C&quot;</span> at this point.</p>
-  <p> </p>
-  <h4>Example 2: Queue using array_shift and array_push</h4>
-  <p class="code">var _queue = [];<br/>
-    var _incoming = [&quot;S&quot;, &quot;O&quot;, &quot;M&quot;, &quot;E&quot;, &quot; &quot;, &quot;L&quot;, &quot;E&quot;, &quot;T&quot;, &quot;T&quot;, &quot;E&quot;, &quot;R&quot;, &quot;S&quot;];<br/>
-    MAX_QUEUE_LENGTH = 4;<br/>
-    var _len = array_length(_incoming), i = 0;<br/>
-    repeat(_len)<br/>
-    {<br/>
-        array_push(_queue, _incoming[i]);<br/>
-        if (array_length(_queue) &gt; MAX_QUEUE_LENGTH)<br/>
-        {<br/>
-            <span data-field="title" data-format="default">array_shift</span>(_queue);<br/>
-        }<br/>
-        i++;<br/>
+  <p>上面的代码在数组 <span class="inline2">_array</span> 上两次调用&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">array_shift</span></span>&nbsp;。之后，一条调试消息显示数组的内容。由于对该函数的第一次调用删除了值 <span class="inline2">"A"</span>，第二次移位删除了值 <span class="inline2">"B"</span>，此时数组将只包含 <span class="inline2">"C"</span>。</p>
+  <p>&nbsp;</p>
+  <h4>示例2：使用 array_shift 和 array_push 的队列</h4>
+  <p class="code">var _queue = [];<br>
+    var _incoming = ["S", "O", "M", "E", " ", "L", "E", "T", "T", "E", "R", "S"];<br>
+    MAX_QUEUE_LENGTH = 4;<br>
+    var _len = array_length(_incoming), i = 0;<br>
+    repeat(_len)<br>
+    {<br>
+    &nbsp; &nbsp; array_push(_queue, _incoming[i]);<br>
+    &nbsp; &nbsp; if (array_length(_queue) &gt;&nbsp;MAX_QUEUE_LENGTH)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span data-field="title" data-format="default">array_shift</span>(_queue);<br>
+    &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp; i++;<br>
     }</p>
-  <p>The above code creates a temporary array <span class="inline2">_queue</span> that acts like a queue using <span class="inline3_func"><span data-field="title" data-format="default">array_shift</span></span> and <span class="inline3_func"><a href="array_push.htm">array_push</a></span>. The characters in a second array <span class="inline3_func">_incoming</span> are added to the queue array one by one, using a <a href="../../GML_Overview/Language_Features/repeat.htm">repeat</a> loop. Whenever the length of the queue is greater than 4 (stored in the constant <span class="inline2">MAX_QUEUE_LENGTH</span>), the first element is removed using <span class="inline3_func"><span data-field="title" data-format="default">array_shift</span></span>.</p>
-  <p> </p>
-  <h4>Example 3: Rotate an Array</h4>
-  <p class="code">var _array = [&quot;F&quot;, &quot;O&quot;, &quot;R&quot;, &quot;E&quot;, &quot;V&quot;, &quot;E&quot;, &quot;R&quot;];<br/>
-    repeat(10)<br/>
-    {<br/>
-        array_push(_array, <span data-field="title" data-format="default">array_shift</span>(_array));<br/>
-        show_debug_message(_array);<br/>
+  <p>上面的代码创建了一个临时数组<span class="inline2">_queue</span>，它的作用类似于使用 <span class="inline3_func"><span data-field="title" data-format="default">array_shift</span></span> 和 <span class="inline3_func"><a href="array_push.htm">array_push</a></span> 的队列。第二个数组 <span class="inline3_func">_incoming</span> 中的字符使用 <a href="../../GML_Overview/Language_Features/repeat.htm">repeat</a> 循环逐个添加到队列数组中。每当队列长度大于4(存储在常量 <span class="inline2">MAX_QUEUE_LENGTH</span> 中)时，使用 <span class="inline3_func"><span data-field="title" data-format="default">array_shift</span></span> 删除第一个元素。</p>
+  <p>&nbsp;</p>
+  <h4>示例3：旋转数组</h4>
+  <p class="code">var _array = ["F", "O", "R", "E", "V", "E", "R"];<br>
+    repeat(10)<br>
+    {<br>
+    &nbsp; &nbsp; array_push(_array,&nbsp;<span data-field="title" data-format="default">array_shift</span>(_array));<br>
+    &nbsp; &nbsp;&nbsp;show_debug_message(_array);<br>
     }</p>
-  <p>In the above example the array <span class="inline2">_array</span> is &quot;rotated&quot; 10 times. &quot;Rotating&quot; an array means that elements are removed on one end and added back on the other end. The length of the array remains the same. Every iteration, the letters move left; the array is rotated <em>left</em>. A debug message is shown after each iteration to show the contents of the array at that point.</p>
-  <p>Using the functions <span class="inline3_func"><a href="array_pop.htm">array_pop</a></span> and <span class="inline3_func"><a href="array_insert.htm">array_insert</a></span> arrays can be rotated <em>right</em> instead.</p>
-  <p> </p>
-  <p> </p>
+  <p>在上面的例子中，数组 <span class="inline2">_array</span> 被"旋转"了 10 次。"旋转"数组意味着元素的一端被移除，另一端被重新添加。数组的长度保持不变。每一次迭代，字母向左移动数组向左旋转<em>。每次迭代后都会显示一条调试消息，以显示该点的数组内容。</em></p>
+  <p>使用函数&nbsp;<span class="inline3_func"><a href="array_pop.htm">array_pop</a></span>&nbsp;和 <span class="inline3_func"><a href="array_insert.htm">array_insert</a></span> 数组可以改为向<em>右</em>旋转。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Back: <a href="Array_Functions.htm">Array Functions</a></div>
-        <div>Next: <a href="array_insert.htm">array_insert</a></div>
+        <div>Back:&nbsp;<a href="Array_Functions.htm">数组函数</a></div>
+        <div>Next:&nbsp;<a href="array_insert.htm">array_insert</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

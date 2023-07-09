@@ -80,7 +80,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">buffer_create</span></h1>
-  <p>You use this function to allocate a portion of memory as a buffer in your game, with the function returning the unique <i>buffer id</i> that should be stored in a variable and used for all further function calls to the buffer. The buffer can then be used to store different types of data (specified when you write to the buffer using the <span class="inline3_func"><a href="buffer_write.htm">buffer_write</a></span>&nbsp;function, with the following constants being used to define the buffer type:</p>
+  <p>您可以使用此函数在游戏中分配一部分内存作为缓冲区，该函数返回唯一的 <i>buffer id</i>，该 id 应存储在变量中，并用于所有对缓冲区的进一步函数调用。然后，该缓冲区可用于存储不同类型的数据 (在使用 <span class="inline3_func"><a href="buffer_write.htm">buffer_write</a></span> 函数写入缓冲区时指定，以下常量用于定义缓冲区类型：</p>
   <table>
     <colgroup>
       <col>
@@ -115,15 +115,15 @@
   <p>除了缓冲区类型之外，您还必须为缓冲区设置<i>字节对齐</i>。此值将根据您希望存储在缓冲区中的数据而变化，并且在大多数情况下，值为1是完全可以的。但是，请注意，对于某些操作，特定的对齐是<i>必不可少的</i>，并且不正确的对齐可能会导致错误 (有关对齐的更多详细信息，请参见<a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">缓冲区</a>)。以下是显示哪些值最适合每种数据类型的通用指南 (如有疑问，请使用1的对齐方式):</p>
   <ul class="colour">
     <li>字符串应对齐为1字节。</li>
-    <li>Signed or unsigned 8bit integers can be aligned to any value, but note that for a fast buffer (see <span class="inline3_func"><a href="buffer_write.htm">buffer_write</a></span>) it <i>must</i> be aligned to 1.</li>
+    <li>有符号或无符号的 8 位整数可以对齐到任何值，但请注意，对于快速缓冲区 (参见 <span class="inline3_func"><a href="buffer_write.htm">buffer_write</a></span>)，它必须 <i> 对齐到 1。</i></li>
     <li>有符号或无符号的16位整数应对齐2字节。</li>
-    <li>Signed or unsigned 32bit integers should be aligned to 4 bytes.</li>
-    <li>Floats of up to 16bits should be aligned to 2 bytes.</li>
-    <li>最多32位的浮点数应与4字节对齐。</li>
-    <li>最多64位的浮点数应与8个字节对齐。</li>
+    <li>有符号或无符号的 32 位整数应对齐 4 个字节。</li>
+    <li>最多 16 位的浮点数应对齐 2 个字节。</li>
+    <li>最多 32 位的浮点数应与 4 字节对齐。</li>
+    <li>最多 64 位的浮点数应与 8 个字节对齐。</li>
   </ul>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Byte alignment can be very important as the wrong choice may adversely affect performance.</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;It's important that you remove any dynamically created resources like this from memory when you no longer need them to prevent memory leaks, so when you are finished with the buffer that you have created you should free it up again using <span class="inline3_func"><a href="buffer_delete.htm">buffer_delete</a></span>.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 字节对齐非常重要，因为错误的选择可能会对性能产生不利影响。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 当不再需要此类动态创建的资源时，请务必将其从内存中删除，以防止内存泄漏，因此，当您使用完已创建的缓冲区时，应使用 <span class="inline3_func"><a href="buffer_delete.htm">buffer_delete</a></span> 再次释放它。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">buffer_create</span>(size, type, alignment)</p>
@@ -157,7 +157,7 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">player_buffer = <span data-field="title" data-format="default">buffer_create</span>(16384, buffer_fixed, 2);</p>
-  <p>The above code allocates 16384 bytes of memory to a buffer and returns the index of that buffer, which is stored in the variable <span class="inline2">player_buffer</span>, for future use. The buffer is aligned to a two byte boundary.</p>
+  <p>上面的代码为缓冲区分配了 16384 字节的内存，并返回该缓冲区的索引，该索引存储在变量 <span class="inline2">player_buffer</span> 中，以供将来使用。缓冲区与两字节边界对齐。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

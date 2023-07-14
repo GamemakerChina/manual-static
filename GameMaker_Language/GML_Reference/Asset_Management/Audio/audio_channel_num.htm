@@ -84,7 +84,7 @@
   <p>这基本上是指可以<em>同时</em>播放的声音(或<em>声音实例</em>或<em>声音</em>)的数量。或者，换句话说，在声音可能丢失之前，您可以调用任何 <span class="inline2">audio_play_sound_</span> 函数的次数。</p>
   <p>如果该数字超过此值，则会停止<i>优先级</i>较低的声音，以便为<i>优先级</i>较高的声音释放通道。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span> 您可以使用此函数来优化设备游戏，因为音频通道数越少，性能越好，但请记住，如果同时播放许多声音，这也可能导致某些声音明显中断。</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;This function is a configuration function of the audio engine and stops all playing sounds when called (i.e.&nbsp;<span class="inline3_func"><a href="audio_stop_all.htm">audio_stop_all</a></span>). Ideally it should not be called when sounds are already playing, unless you are e.g. using this as an adjustable setting in your game.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span> 此函数是音频引擎的一个配置函数，当调用时停止所有播放声音 (即 <span class="inline3_func"><a href="audio_stop_all.htm">audio_stop_all</a></span>)。理想情况下，当声音已经在播放时，不应该调用它，除非你是。在你的游戏中使用这个作为一个可调节的设置。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">audio_channel_num</span>(num);</p>

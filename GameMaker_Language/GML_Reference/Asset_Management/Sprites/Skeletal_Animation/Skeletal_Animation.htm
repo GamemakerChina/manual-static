@@ -91,8 +91,8 @@
     <li><a href="Drawing_And_Miscellaneous/Drawing_And_Miscellaneous.htm"><label for="e">绘制和其他</label></a></li>
   </ul>
   <p>&nbsp;</p>
-  <h2>浅黑色支持</h2>
-  <p>此函数允许Spine Sprite插槽的深色区域以不同于浅色区域的方式着色(这是Spine IDE的一项函数，有关更多详细信息，请参阅<b>Tint Black</b>部分<a href="http://esotericsoftware.com/spine-attachments" target="_blank">此处</a>)。目前，为了在<span data-keyref="GameMaker Name">GameMaker</span>中使用此函数，您需要在绘制使用它的Spine Sprite时使用自定义<a href="../../../../../The_Asset_Editors/Shaders.htm">着色器</a>。该着色器包含一个名为"<span class="inline">GM_spinetintblackcolour</span>"的全局统一变量，跑步者用当前的淡黑色填充该变量，该颜色是从脊柱数据中自动检索的。所需的着色器如下所示：</p>
+  <h2>Tint Black 支持</h2>
+  <p>此函数允许 Spine 精灵插槽的深色区域以不同于浅色区域的方式着色 (这是 Spine IDE 的一项函数，有关更多详细信息，请参阅 <b>Tint Black</b> 部分 <a href="http://esotericsoftware.com/spine-attachments" target="_blank"> 此处 </a>)。目前，为了在 <span data-keyref="GameMaker Name">GameMaker</span> 中使用此功能，您需要在绘制使用它的 Spine 精灵时使用自定义<a href="../../../../../The_Asset_Editors/Shaders.htm">着色器</a>。该着色器包含一个名为 "<span class="inline">GM_spinetintblackcolour</span>" 的全局统一变量，跑步者用当前的淡黑色填充该变量，该颜色是从脊柱数据中自动检索的。所需的着色器如下所示：</p>
   <p>顶点着色器(与默认的穿过顶点着色器相同)</p>
   <p class="code">attribute vec3 in_Position; // (x,y,z)<br>
     attribute vec4 in_Colour; // (r,g,b,a)<br>

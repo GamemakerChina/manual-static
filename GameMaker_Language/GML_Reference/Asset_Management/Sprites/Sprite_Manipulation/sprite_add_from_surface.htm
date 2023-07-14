@@ -82,7 +82,7 @@
   <p>这个函数的工作方式与<a href="sprite_create_from_surface.htm"><span class="inline">sprite_create_from_surface()</span></a>完全相同，只是它不是从你选择的索引表面的区域创建一个新的精灵，而是将表面的定义区域作为一个新的子图像添加到先前创建的精灵中(这意味着你不能将其直接添加到资源树中的精灵，而只能添加到先前从表面创建的精灵，或者使用<a href="sprite_duplicate.htm"><span class="inline">sprite_duplicate()</span></a>从资源精灵中复制的一个。)</p>
   <p>需要注意的是，以这种方式添加sprite时使用的内存将比您预期的要大。这是因为<span data-keyref="GameMaker Name">GameMaker</span>会将精灵存储为纹理页<i>，并且</i>它还会存储在GPU内存中，因此总内存将大于同一精灵的图像文件的预期内存。</p>
   <div data-conref="../../../../../assets/snippets/Note_surface_only_rgba8unorm.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;此函数仅适用于使用&nbsp;<a href="../../../Drawing/Surfaces/surface_create.htm"><span class="inline2">surface_rgba8unorm</span></a> (默认)表面 格式的表面 。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;此函数仅适用于使用&nbsp;<a href="../../../Drawing/Surfaces/surface_create.htm"><span class="inline2">surface_rgba8unorm</span></a> (默认)表面格式的表面 。</p>
 
 </div>
   <p>&nbsp;</p>

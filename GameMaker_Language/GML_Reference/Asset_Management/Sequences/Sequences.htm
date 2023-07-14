@@ -78,10 +78,10 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><span data-field="title" data-format="default">Sequences</span></h1>
-  <p>Sequences are usually created in the IDE using <a href="../../../../The_Asset_Editors/Sequences.htm">The Sequence Editor</a>, but they can also be created and edited using code. However, before looking at the functions available, it's important to understand the way that sequences are defined in <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;and the different terms that will be used.</p>
-  <p>To start with, at the top level, you have a <b>sequence element</b>. This is what you place on a layer in a room, either through <a href="../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a> or in code using the appropriate <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">layer functions</a>. The layer element has no real properties other than an element ID value, but this ID is required to use the above mentioned layer functions to change the sequence playback or to access the sequence data.</p>
-  <p>Next you have <b>sequence objects</b> and <b>sequence instances</b> much like you have general objects and instances. A sequence <i>object</i> is the base resource as you created it in <a href="../../../../Introduction/The_Asset_Browser.htm">The Asset Browser</a>&nbsp;or using the function <span class="inline3_func"><a href="sequence_create.htm">sequence_create</a></span>, and the sequence <i>instance</i> is the "copy" of that sequence object that has been placed in a room as an element on a layer. Think of sequence objects as blueprints and sequence instances as the creation from those blueprints. Sequence objects and instances are <a href="../../../GML_Overview/Structs.htm">structs</a> and - unlike regular objects - a sequence object struct can be edited at runtime, which will affect all further instances of that sequence when you create them as elements (and any editing done to a sequence object will <b>not</b> be reset by restarting the game or the room using the&nbsp;<span class="inline3_func"><a href="../Rooms/room_restart.htm">room_restart</a></span> or&nbsp;<span class="inline3_func"><a href="../../General_Game_Control/game_restart.htm">game_restart</a></span> functions). The sequence instance struct contains a few parameters to control playback and things (this is explained in more detail below) as well as the <b>sequence data</b> struct.</p>
+  <h1><span data-field="title" data-format="default">序列</span></h1>
+  <p>序列通常使用<a href="../../../../The_Asset_Editors/Sequences.htm">序列编辑器</a>在IDE中创建，但也可以使用代码创建和编辑序列。然而，在查看可用函数之前，了解<span data-keyref="GameMaker Name">GameMaker</span>中定义序列的方式以及将使用的不同术语是很重要的。</p>
+  <p>首先，在顶层，您有一个<b>序列元素</b>。 这是您通过<a href="../../../../The_Asset_Editors/Rooms.htm">房间编辑器</a>或使用适当的<a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">层函数</a>在代码中放置在房间的图层上的内容。 层元素除了元素ID值之外没有实际属性，但是需要该ID来使用上述层函数来改变序列回放或访问序列数据。</p>
+  <p>接下来，您有<b>序列对象</b>和<b>序列实例</b>，就像您有一般对象和实例一样。序列<i>对象</i>是您在<a href="../../../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中或使用函数 <span class="inline3_func"><a href="sequence_create.htm">sequence_create</a></span> 创建时的基本资源，序列<i>实例</i>是该序列对象的"副本"，该序列对象作为层上的元素放置在房间中。将序列对象视为蓝图，将序列实例视为这些蓝图的创建。序列对象和实例是<a href="../../../GML_Overview/Structs.htm">结构</a>，与常规对象不同，序列对象结构可以在运行时被编辑，当您将序列对象创建为元素时，这将影响该序列的所有其他实例(对序列对象所做的任何编辑都<b>不会</b>通过使用 <span class="inline3_func"><a href="../Rooms/room_restart.htm">room_restart</a></span> 或 <span class="inline3_func"><a href="../../General_Game_Control/game_restart.htm">game_restart</a></span> 函数重新启动游戏或房间来重置)。序列实例结构包含一些参数来控制回放和东西(下面将更详细地说明)以及<b>序列数据</b>结构。</p>
   <p>最后，如上所述，有<b>序列数据</b>，这是另一种结构。此结构包含<i>关于序列的所有</i>数据。它包含的音轨、这些音轨的属性、播放速度等等。此结构内容的确切细节概述如下，但基本上由<b>资源轨道</b>结构和<b>参数轨道</b>结构组成，它们使用<b>关键帧数据</b>在序列播放时实际执行动作。</p>
   <p>序列元素使用房间<a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">层函数</a>处理，但对于序列对象、实例和数据，我们具有以下函数：</p>
   <p>&nbsp;</p>
@@ -102,25 +102,25 @@
   <ul class="colour">
     <li><a href="in_sequence.htm">in_sequence</a></li>
   </ul>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;If your sequence has any instances in it, these instances shouldn't change their&nbsp;<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_xscale.htm">image_xscale</a></span> /&nbsp;<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_yscale.htm">image_yscale</a></span> / <span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_angle.htm">image_angle</a></span>&nbsp;/ <span class="inline2">x</span>&nbsp;/ <span class="inline2">y</span>&nbsp;variables as they will be&nbsp;overwritten when the sequence updates each step after starting to be played.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 如果您的序列中包含任何实例，这些实例不应更改其<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_xscale.htm">image_xscale</a></span>/<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_yscale.htm">image_yscale</a></span>/<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_angle.htm">image_angle</a></span>/<span class="inline2">x</span>/<span class="inline2">y</span>变量，因为当序列在开始播放后更新每个步骤时，它们将被覆盖。</p>
   <p>&nbsp;</p>
   <p>在使用这些函数创建或编辑序列之前，我们建议您阅读下面给出的结构属性的详细说明。如何创建新序列的一般概述如下：</p>
   <ul class="colour">
-    <li>Create the new sequence object using the function&nbsp;<span class="inline3_func"><a href="sequence_create.htm">sequence_create</a></span>&nbsp;and store the sequence object index in a variable. This index gives you access to the sequence object struct.</li>
+    <li>使用函数 <span class="inline3_func"><a href="sequence_create.htm">sequence_create</a></span> 创建新的序列对象，并将序列对象索引存储在变量中。此索引允许您访问序列对象结构。</li>
   </ul>
   <p class="code">myseq = sequence_create();</p>
   <ul class="colour">
-    <li>Set the sequence object top level values like length, play mode, play speed, etc. For example:</li>
+    <li>设置序列对象的顶级值，如长度、播放模式、播放速度等。例如：</li>
   </ul>
   <p class="code">myseq.length = 120;<br>
     myseq.loopmode = seqplay_pingpong</p>
   <ul class="colour">
-    <li>Before you can add tracks to the sequence object, you need to create them, so you'd now create an array of <i>asset</i> tracks that have been defined with the function <span class="inline3_func"><a href="sequence_track_new.htm">sequence_track_new</a></span>. Note that in code, there is really no difference between asset tracks and parameter tracks - they are all simply tracks and how they behave will depend on the type of&nbsp;track you create and whether they are assigned as sub-tracks to a top level track or not. So, you would create a track for an asset, and then assign sub-tracks for the different parameters to it and these sub-tracks would act as the <i>parameter</i> tracks for the asset. The example below creates a single graphics asset track that will be added to the sequence later:</li>
+    <li>在将轨迹添加到序列对象之前，您需要创建它们，因此您现在需要创建一个 <i>asset</i> 轨迹的数组，这些轨迹是使用函数 <span class="inline3_func"><a href="sequence_track_new.htm">sequence_track_new</a></span> 定义的。请注意，在代码中，资源轨迹和参数轨迹之间实际上没有区别-它们都是简单的轨迹，它们的行为方式将取决于您创建的轨迹类型，以及它们是否作为子轨迹分配给顶级轨迹。因此，您可以为资源创建一个轨迹，然后为其分配不同参数的子轨迹，这些子轨迹将充当资源的 <i> 参数 </i> 轨迹。下面的示例创建了一个图形资源轨迹，稍后将添加到序列中：</li>
   </ul>
   <p class="code">var mytracks = array_create(1);<br>
     mytracks[0] = sequence_track_new(seqtracktype_graphic);</p>
   <ul class="colour">
-    <li>Each asset track needs to have some data to tell the sequence how it will look, or its position , etc... and this is added in the form of <i>keyframes</i>. At the top level for an asset track, you can set keyframes for various things (listed in the section on the Track Struct, below), but note that as these are asset track keyframes, they won't be interpolated and will simply change the value they refer to when the given frame is reached. Each keyframe is a struct that is added to an array, and then this array is assigned to the asset track. To create the keyframe struct we would call the function&nbsp;<span class="inline3_func"><a href="sequence_keyframe_new.htm">sequence_keyframe_new</a></span> and to populate the keyframe with the required data, we would use the function <span class="inline3_func"><a href="sequence_keyframedata_new.htm">sequence_keyframedata_new</a></span>:</li>
+    <li>每个资源轨道需要一些数据来告诉序列其外观、位置等... 并以<i>关键帧</i>的形式添加。 在资源跟踪的顶层，您可以为各种对象设置关键帧(在下面的"跟踪结构"部分列出)，但请注意，由于这些是资源跟踪关键帧，所以它们不会被插值，而只是在达到给定帧时更改它们所引用的值。每个关键帧是添加到数组的结构，然后将该数组分配给资源轨迹。若要创建关键帧结构，我们将调用函数 <span class="inline3_func"><a href="sequence_keyframe_new.htm">sequence_keyframe_new</a></span>，并使用函数 <span class="inline3_func"><a href="sequence_keyframedata_new.htm">sequence_keyframedata_new</a></span>：</li>
   </ul>
   <p class="code">// Create a new keyframe struct for a graphics asset track and add it to an array (as you can have multiple keys in a frame)<br>
     var graphickeys = array_create(1);<br>

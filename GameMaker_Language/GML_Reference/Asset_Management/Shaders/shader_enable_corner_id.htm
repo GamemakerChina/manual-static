@@ -79,14 +79,14 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">shader_enable_corner_id</span></h1>
-  <p>This function enables the use of corner IDs in shaders.</p>
-  <p>It sets a global state for all&nbsp;shaders being used where, when enabled, the shader "steals" 2 bits from the input colour values; one from the lowest bit of the red colour value, and one from the lowest bit of the blue colour value. These values can then be recovered in the shader to work out which vertex you are&nbsp;dealing with (i.e.&nbsp;which corner).</p>
-  <p>The lowest bit of the <em>blue</em> component stores the <em>most significant bit</em>, the lowest bit of the <em>red</em>&nbsp;component stores the <em>least significant bit</em>. You can calculate the corner ID in a vertex shader by doing this:</p>
+  <p>此函数允许在着色器中使用角ID。</p>
+  <p>它为所有正在使用的着色器设置一个全局状态，当启用时，着色器从输入颜色值中"窃取"2位;一个来自红色值的最低位，一个来自蓝色值的最低位。然后可以在着色器中恢复这些值，以确定您正在处理的顶点(即哪个角落)。</p>
+  <p><em>蓝色</em>分量的最低位存储<em>最高有效位</em>，<em>红色</em>分量的最低位存储<em>最低有效位</em>。您可以通过执行以下操作来计算顶点着色器中的角ID：</p>
   <pre data-stringify-type="pre">vec2 rem = mod(in_Colour.rb * 255., 2.);
 int corner_id = int(dot(vec2(1., 2.), rem));<span></span></pre>
-  <p>The following table lists the possible values and their corresponding corner position:&nbsp;</p>
+  <p>下表列出了可能的值及其对应的角点位置：</p>
   <table id="shader_corner_id" style="caption-side: top">
-    <caption id="">Shader Corner ID</caption>
+    <caption id="">着色器角ID</caption>
     <colgroup>
       <col style="width:25%">
       <col style="width:25%">
@@ -95,10 +95,10 @@ int corner_id = int(dot(vec2(1., 2.), rem));<span></span></pre>
     </colgroup>
     <tbody>
       <tr>
-        <th>Red Lowest Bit</th>
-        <th>Blue Lowest Bit</th>
-        <th>Corner ID</th>
-        <th>Position</th>
+        <th>红色最低位</th>
+        <th>蓝色最低位</th>
+        <th>角ID</th>
+        <th>位置</th>
       </tr>
       <tr>
         <td>0</td>
@@ -126,7 +126,7 @@ int corner_id = int(dot(vec2(1., 2.), rem));<span></span></pre>
       </tr>
     </tbody>
   </table>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;The corner IDs are numbered consecutively going clockwise, starting at 0 for the top-left corner.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 角 ID 按顺时针方向连续编号，左上角从 0 开始编号。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">shader_enable_corner_id</span>(enable);</p>
@@ -150,7 +150,7 @@ int corner_id = int(dot(vec2(1., 2.), rem));<span></span></pre>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code"><span data-field="title" data-format="default">shader_enable_corner_id</span>(true);</p>
-  <p>The above code will enable the use of colour bits for the corner ID for all shaders.</p>
+  <p>上面的代码将启用所有着色器的角点ID的颜色位。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

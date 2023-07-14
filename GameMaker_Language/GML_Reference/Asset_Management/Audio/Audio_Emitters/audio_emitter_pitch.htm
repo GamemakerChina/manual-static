@@ -82,7 +82,7 @@
   <p>此函数可用于更改给定发射器发出的所有声音的音调。它是一个<i>音调乘数</i>，因为输入值将当前音调乘以该量，因此默认值1表示没有音调变化，而小于1的值将降低音调，大于1的值将提高音调。此函数最好使用小增量，因为任何小于0或大于5的值都可能听不到。</p>
   <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span></b>已经在音频发射器上播放的声音不必重新启动，就可以听到音调的变化。音高的变化<strong>立即应用</strong>。</p>
   <div data-conref="../../../../../assets/snippets/audio_pitch_multiplier.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>由于音调参数是<i>音高乘数</i>，如果声音在使用<a href="audio_play_sound_on.htm">audio_play_sound_on</a>的发射器上播放，则声音实例的音调将乘以声音资源的音调，以及声音发射器的音调。 最后听到的音调是声音的原始音调乘以三个音调乘数：<br><br>final_pitch=原始音高*声音资源音调*发射器音高*声音实例音调。<br><br>默认情况下，三个音调乘数等于1，以便听到的最终音调等于原始声音的音调。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 由于音调参数是<i>音高乘数</i>，如果声音在使用<a href="audio_play_sound_on.htm">audio_play_sound_on</a>的发射器上播放，则声音实例的音调将乘以声音资源的音调，以及声音发射器的音调。 最后听到的音调是声音的原始音调乘以三个音调乘数：<br><br>final_pitch=原始音高*声音资源音调*发射器音高*声音实例音调。<br><br>默认情况下，三个音调乘数等于1，以便听到的最终音调等于原始声音的音调。</p>
 
 </div>
   <h4>语法:</h4>

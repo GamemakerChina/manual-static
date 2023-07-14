@@ -125,7 +125,7 @@
   <p>将发射器分配给总线将使发射器输出到该总线。可以将任意数量的发射器指定给总线。</p>
   <p>使用<span class="inline3_func"><a href="audio_bus_create.htm">audio_bus_create</a></span>创建的总线上的任何音频输出仍然在<span data-keyref="GameMaker Name">GameMaker</span>的主音频总线上结束。</p>
   <p>这意味着您可以将延迟效果应用于在发射器上播放的所有声音，并在主音频总线上应用混响效果。在发射器上播放的音频由分配给它的音频总线处理，因此它将与来自发射器总线的延迟效果和来自主总线的混响效果一起被听到。直接在主总线上播放的音频将<i>仅</i>应用混响效果。</p>
-  <p>To get the audio bus that is assigned to an emitter, use <span class="inline3_func"><a href="../Audio_Emitters/audio_emitter_get_bus.htm">audio_emitter_get_bus</a></span>.</p>
+  <p>要获取分配给发射器的音频总线，请使用 <span class="inline3_func"><a href="../Audio_Emitters/audio_emitter_get_bus.htm">audio_emitter_get_bus</a></span>。</p>
   <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>如前所述，音频只能在不同于主总线的总线上通过在发射器上播放来处理(使用<span class="inline3_func"><a href="../Audio_Emitters/audio_play_sound_on.htm">audio_play_sound_on</a></span>)。</p>
   <h3>音效的多重赋值</h3>
   <p>可以将&nbsp;<span class="inline3_func"><a href="audio_effect_create.htm">audio_effect_create</a></span> 返回的单个音频效果结构分配给多个效果槽 (在同一总线上或在不同的总线上)：&nbsp;</p>

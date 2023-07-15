@@ -122,8 +122,8 @@ if (_format == video_format_yuv)
 </pre>
   <h2 id="h">绘制视频</h2>
   <p>在对象的"绘制"事件中，调用<span class="inline"><a href="video_draw.htm">video_draw()</a></span>，如果其第一个数组位置为<strong>0</strong>(表示正在播放视频)，请绘制视频。</p>
-  <p>在下面的代码中，我们在<span class="inline"><a href="video_get_format.htm">video_get_format()</a></span>函数上使用switch语句。如果视频使用的是 RGBA 格式，则它只是在阵列的<span class="inline2">[ 1 ]</span>位置绘制表面。</p>
-  <p>如果视频使用 YUV  格式，则使用着色器将两个表面(位置<span class="inline2">[ 1 ]</span>和<span class="inline2">[ 2 ]</span>)绘制到基本体四边形上。</p>
+  <p>在下面的代码中，我们在 <span class="inline"><a href="video_get_format.htm">video_get_format()</a></span> 函数上使用 switch 语句。如果视频使用的是 RGBA 格式，则它只是在阵列的 <span class="inline2">[1]</span> 位置绘制表面。</p>
+  <p>如果视频使用 YUV 格式，则使用着色器将两个表面 (位置 <span class="inline2">[1]</span> 和 <span class="inline2">[2]</span>) 绘制到基本体四边形上。</p>
   <pre>var _data = video_draw();
 if(_data[0] == 0)
 {

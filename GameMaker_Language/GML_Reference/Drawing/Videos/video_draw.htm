@@ -95,12 +95,12 @@
   </ul>
   <p>当此状态值为<strong>0</strong>时，数组将包含更多数据，这将取决于视频的格式。您可以通过调用<span class="inline"><a href="video_get_format.htm">video_get_format()</a></span>了解视频格式。</p>
   <h2>RGBA 视频</h2>
-  <p><span>对于 RGBA 视频，位置<span class="inline2">[ 1 ]</span>将包含绘制视频帧的表面。您可以获取此表面并<a href="../Surfaces/draw_surface.htm">手动绘制它</a>。</span></p>
+  <p><span>对于 RGBA 视频，位置 <span class="inline2">[1]</span> 将包含绘制视频帧的表面。您可以获取此表面并<a href="../Surfaces/draw_surface.htm">手动绘制它</a>。</span></p>
   <h2>YUV 视频</h2>
-  <p><span>某些平台(尤其是控制台)对视频使用 YUV  颜色格式，该格式使用两个表面。在这种情况下，阵列的位置<span class="inline2">[ 1 ]</span>和<span class="inline2">[ 2 ]</span>具有两个表面：</span></p>
+  <p><span>某些平台(尤其是游戏主机平台)对视频使用 YUV 颜色格式，该格式使用两个表面。在这种情况下，阵列的位置 <span class="inline2">[1]</span> 和 <span class="inline2">[2]</span> 具有两个表面：</span></p>
   <ul class="colour">
-    <li><span><span class="inline2">[ 1 ]</span>是黑白视频的主表面</span></li>
-    <li><span><span class="inline2">[ 2 ]</span>是包含所有颜色数据的色度表面</span></li>
+    <li><span><span class="inline2">[1]</span> 是黑白视频的主表面</span></li>
+    <li><span><span class="inline2">[2]</span> 是包含所有颜色数据的色度表面</span></li>
   </ul>
   <p>然后使用YUV着色器将这两个表面组合在一起，然后再用于对自定义四边形进行纹理处理，从而将视频绘制到屏幕。</p>
   <p>有关使用着色器绘制这两个表面的步骤，请阅读<a href="YUV_Videos.htm">YUV 视频</a>。</p>

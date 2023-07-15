@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>draw_clear_alpha</h1>
   <p>此函数可用于使用给定的颜色清除整个屏幕，并且目标的Alpha分量设置为您已设置的值-此函数在工作时<i>不会</i>执行任何混合，但是任何后续混合操作都可以设置为使用已设置的目标Alpha。这仅用于实例的绘制事件(如果在任何其他事件中使用，则不会显示)，并且对于在新创建<a href="../Surfaces/Surfaces.htm">表面</a>时清除这些表面也非常有用。</p>
-  <p>值得注意的是，当使用HTML5模块时，你可以使用这个函数使画布背景透明，这将允许在主机HTML中使用的任何图像在游戏运行时被看到。为了达到这个效果你必须首先进入房间编辑器，从<b>房间编辑器中删除任何</b>背景层<a href="../../../../The_Asset_Editors/Rooms.htm">。房间编辑器</a>，然后取消勾选<b>的选项清除视图背景</b>，然后取消<a href="../../../../The_Asset_Editors/Room_Properties/Room_Properties.htm">视图属性</a>中的选项。视图属性<b>。最后，你需要制作一个新的对象，把它放在游戏的第一个房间里，并给它分配一个非常高的深度(例如，10000)。然后在</b>的Pre Draw{}事件中，使用这个函数将画布的alpha设置为颜色和透明度。你希望它有。</p>
+  <p>值得注意的是，当使用 HTML5 模块时，您可以使用此函数使画布背景透明，这将允许主机 HTML 中使用的任何图像在游戏运行时被看到。要实现此效果，您必须首先进入房间编辑器并从<b>房间编辑器</b>中删除任何<a href="../../../../The_Asset_Editors/Rooms.htm">背景图层</a>，然后取消勾选<b>视图属性</b>中的<a href="../../../../The_Asset_Editors/Room_Properties/Room_Properties.htm">清除视图背景</a>选项。最后，你需要制作一个新的物体，将其放置在游戏的第一个房间，并为其分配一个非常高的深度(例如，10000)。然后在<b>Pre Draw</b>事件中使用此函数将画布Alpha设置为您希望的颜色和透明度。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_clear_alpha(col, alpha);</p>
@@ -106,7 +106,7 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">draw_clear_alpha(c_red, 0.5);</p>
-  <p>这将以50%(0.5 )的透明度和红色清除屏幕。</p>
+  <p>这将以 50%(0.5) 的透明度和红色清除屏幕。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

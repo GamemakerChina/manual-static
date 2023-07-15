@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>surface_resize</h1>
-  <p>此函数将把表面的大小调整为给定的尺寸(以像素为单位)。"surface_id"是您以前创建的表面的表面，或者是<a href="application_surface.htm"><span class="inline">应用程序suface</span></a>，函数将调整该表面的大小。请注意，这样既不会裁剪也不会拉伸表面的内容，而是会破坏当前表面，并使用与新尺寸标注相同的控制柄(surface_id)重新创建该表面，这意味着需要再次清除和绘制该表面(除非它是<span class="inline">application_surface</span>，在这种情况下<span data-keyref="GameMaker Name">GameMaker</span>将自动执行此操作)。</p>
+  <p>此函数将把表面的大小调整为给定的尺寸(以像素为单位)。"surface_id"是您以前创建的表面的表面，或者是<a href="application_surface.htm"><span class="inline">application_suface</span></a>，函数将调整该表面的大小。请注意，这样既不会裁剪也不会拉伸表面的内容，而是会破坏当前表面，并使用与新尺寸标注相同的控制柄(surface_id)重新创建该表面，这意味着需要再次清除和绘制该表面(除非它是<span class="inline">application_surface</span>，在这种情况下<span data-keyref="GameMaker Name">GameMaker</span>将自动执行此操作)。</p>
   <p class="note"><b>注意</b>：如果要调整应用程序表面的大小，这些更改将在下一个绘制框架开始之前注册，这意味着在同一事件或步骤中调用<span style="font-size:1px;"><a href="surface_get_width.htm"><span class="inline">surface_get_width()</span></a></span>或<span style="font-size:1px;"><a href="surface_get_height.htm"><span class="inline">surface_get_height()</span></a></span>函数将返回以前的值。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -113,7 +113,7 @@
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;surface_resize(application_surface, view_wport[0],view_hport[0]);<br>
     }</p>
-  <p>以上代码将根据表面"aplication_surface"的视口大小检查视口大小，如果不同，则调整表面大小。</p>
+  <p>以上代码将根据表面"application_suface"的视口大小检查视口大小，如果不同，则调整表面大小。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

@@ -82,7 +82,7 @@
   <h1>instance_deactivate_layer</h1>
   <p>使用此函数，可以停用指定给特定层的所有实例。需要提供<b>层 ID</b>，可以是在代码编辑器中写入的层的名称(作为字符串)，也可以是<a href="../../Rooms/General_Layer_Functions/layer_create.htm"><span class="inline">layer_create()</span></a>返回的实际层 ID 值，请注意，您只能使用此函数停用<i>实例</i>层。请注意，如果您已停用一个对象实例标记为<b>持久性</b>的层，则在更改空间之前，您需要使用函数<a href="instance_activate_layer.htm"><span class="inline">instance_activate_layer()</span></a>再次重新激活该层，否则该层上的任何持久实例将<i>不会</i>被继承并将被丢弃。还要注意，停用不是瞬时的，并且以这种方式停用的实例在调用函数的事件结束之前不会被视为不活动。</p>
   <p class="note"><b>注意</b>:如果在房间开始时停用某个实例(即从房间创建代码或从房间内某个实例的实例创建事件)，则从房间编辑器<b>放置在房间内的所有实例在停用之前仍将运行其创建事件</b>。</p>
-  <p class="note"><b></b><b>警告</b>：取消激活已启用物理的实例将<b>不会</b>阻止它们的设备在物理模拟中相互作用。为此，在激活/取消激活实例时，应将其<span style="font-size:1px;"><a href="../../../Physics/Physics_Variables/phy_active.htm"><span class="inline">phy_active</span></a></span>变量设置为<span class="inline">真</span>或<span class="inline">假</span>。</p>
+  <p class="note"><b></b><b>警告</b>：取消激活已启用物理的实例将<b>不会</b>阻止它们的设备在物理模拟中相互作用。为此，在激活/取消激活实例时，应将其<span style="font-size:1px;"><a href="../../../Physics/Physics_Variables/phy_active.htm"><span class="inline">phy_active</span></a></span>变量设置为<span class="inline">true</span>或<span class="inline">false</span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">instance_deactivate_layer(obj);</p>

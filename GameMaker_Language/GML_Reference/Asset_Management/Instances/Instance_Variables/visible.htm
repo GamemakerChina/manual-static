@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">visible</span></h1>
-  <p>An instance can be flagged as <em>visible</em>&nbsp;or not by setting this variable to <span class="inline2">true</span>&nbsp;(visible) or <span class="inline2">false</span>&nbsp;(invisible). This works by telling <span data-keyref="GameMaker Name">GameMaker</span> to skip the draw event for this instance, so care must be taken when using this as it means that no code placed in the draw event will be run while the instance is not visible. Also note that if the <a href="layer.htm">layer</a>&nbsp;that the instance is assigned to is flagged as invisible, setting this variable to <span class="inline2">true</span>&nbsp;will have no effect until the layer itself is flagged as visible too.</p>
+  <p>通过将此变量设置为 <em>true</em>(可见) 或 <span class="inline2">false</span>(不可见)，可以将实例标记为<span class="inline2">可见</span>或不可见。它的工作原理是告诉<span data-keyref="GameMaker Name">GameMaker</span>跳过该实例的绘制事件，因此在使用此选项时必须小心，因为这意味着当该实例不可见时，放置在绘制事件中的任何代码都不会运行。另请注意，如果实例所分配到的<a href="layer.htm">层</a>被标记为不可见，则将此变量设置为 <span class="inline2">true</span> 将不起作用，直到层本身也被标记为可见。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">visible</span></p>
@@ -93,7 +93,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;x = xprevious;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;y = yprevious;<br>
     }</p>
-  <p>The above code will check the <span class="inline2">visible</span> flag of the "other" instance in a <i>collision event</i> and if it is set to <span class="inline2">true</span>&nbsp;move that instance back to its previous position.</p>
+  <p>上述代码将检查<i>碰撞事件</i>中"其他"实例的 <span class="inline2">visible</span> 标志，如果设置为<span class="inline2">true</span>，则将该实例移回其先前位置。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

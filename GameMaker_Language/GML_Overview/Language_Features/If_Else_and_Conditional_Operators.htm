@@ -148,7 +148,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;go = false;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
     }</p>
-  <p>在这里，我们使用 <span class="inline">&amp;&amp;</span>“和”运算符进行检查，因此它检查 <em>if</em> 中的<span class="inline">两个</span>条件是否计算为 <span class="inline">true</span>，以及第一个条件是否为 <span class="inline">false</span> 那么第二个甚至不会被检查。这称为“短路”代码，因此在组合表达式进行检查时，您应确保性能“最便宜”的始终是第一个，以避免在第一个计算结果为 <span class="inline">false</span> 时计算更昂贵的表达式。同样，如果一个条件可以在编译时被评估为<span class="inline">真</span>或<span class="inline">假</span>，那么整个条件将从代码中移除，例如，假设您有一个<a href="../Variables/Constants.htm">宏</a> <span class="inline">DEBUG_ON </span>用于调试，它可以是 <span class="inline">true</span> 或 <span class="inline">false</span> - 当它设置为 <span class="inline">false</span> 时，以下代码块将在编译时从游戏中删除:</p>
+  <p>在这里，我们使用 <span class="inline">&amp;&amp;</span>“和”运算符进行检查，因此它检查 <em>if</em> 中的<span class="inline">两个</span>条件是否计算为 <span class="inline">true</span>，以及第一个条件是否为 <span class="inline">false</span> 那么第二个甚至不会被检查。这称为“短路”代码，因此在组合表达式进行检查时，您应确保性能“最便宜”的始终是第一个，以避免在第一个计算结果为 <span class="inline">false</span> 时计算更昂贵的表达式。同样，如果一个条件可以在编译时被评估为<span class="inline">true</span>或<span class="inline">false</span>，那么整个条件将从代码中移除，例如，假设您有一个<a href="../Variables/Constants.htm">宏</a> <span class="inline">DEBUG_ON </span>用于调试，它可以是 <span class="inline">true</span> 或 <span class="inline">false</span> - 当它设置为 <span class="inline">false</span> 时，以下代码块将在编译时从游戏中删除:</p>
   <p class="code">if DEBUG_ON == true<br>
     {<br>
     &nbsp; &nbsp; show_debug_message("Instances = " + string(instance_count));<br>

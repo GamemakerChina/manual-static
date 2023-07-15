@@ -100,7 +100,7 @@
       <tr>
         <td><span class="inline">ascender</span></td>
         <td style=""><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td style="">The height of the font's <a href="https://en.wikipedia.org/wiki/Ascender_(typography)">ascender</a> (in pixels)</td>
+        <td style="">字体的<a href="https://en.wikipedia.org/wiki/Ascender_(typography)">上升</a>的高度(以像素为单位)</td>
       </tr>
       <tr>
         <td><span class="inline">ascenderOffset</span></td>
@@ -130,12 +130,12 @@
       <tr>
         <td><span class="inline">bold</span></td>
         <td style=""><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td style=""><span class="inline2">true</span> if the font is bold, otherwise <span class="inline2">false</span>&nbsp;<em>(see <strong>NOTE </strong>below)</em></td>
+        <td style=""><span class="inline2">true</span>如果字体为粗体，否则<span class="inline2">false</span><em>(见下文<strong>注意</strong>)</em></td>
       </tr>
       <tr>
         <td><span class="inline">italic</span></td>
         <td style=""><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td style=""><span class="inline2">true</span> if the font is italic, otherwise <span class="inline2">false</span>&nbsp;<em>(see <strong>NOTE </strong>below)</em></td>
+        <td style=""><span class="inline2">true</span>如果字体为斜体，否则<span class="inline2">false</span><em>(见下文<strong>注意</strong>)</em></td>
       </tr>
       <tr>
         <td><span class="inline">glyphs</span></td>
@@ -222,7 +222,7 @@
       <tr>
         <td><span class="inline">kerning</span></td>
         <td style=""><span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
-        <td style="">An array of integers containing kerning information in pairs (or groups of 2). The first integer in a pair is the Unicode value for a character, and the second integer is the amount to add to that character's shift value (can be positive or negative) if it is preceded by this glyph's character.</td>
+        <td style="">包含成对(或2个一组)字距调整信息的整数数组。字符对中的第一个整数是字符的Unicode值，第二个整数是要添加到该字符的移位值(可以是正数或负数)的数量(如果该字符前面有该字形的字符)。</td>
       </tr>
     </tbody>
   </table>
@@ -257,7 +257,7 @@
     &nbsp;&nbsp; &nbsp;image_yscale *= 2;<br>
     }
   </p>
-  <p>This code retrieves information for the font stored in the <span class="inline2">my_font</span>&nbsp;variable. If the returned value is <strong>not </strong><span class="inline2">undefined</span> and the given font is bold, the instance's scale is doubled.</p>
+  <p>此代码检索存储在 <span class="inline2">my_font</span> 变量中的字体信息。如果返回的值为<strong>不是</strong> <span class="inline2">undefined</span>，并且给定的字体为粗体，则实例的比例将加倍。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

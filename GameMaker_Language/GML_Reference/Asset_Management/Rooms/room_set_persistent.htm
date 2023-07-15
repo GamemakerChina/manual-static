@@ -79,8 +79,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>room_set_persistent</h1>
-  <p>使用此函数，您可以更改(或设置)游戏中任何房间<i>的持久性，当前空间</i>除外。 持久性标记为<span class="inline">真</span>的房间，如果玩家离开然后返回，它将保持该房间内所有实例的状态，而如果持久性标记为<span class="inline">假</span>，则每次将重置为初始状态。您应该注意，一个持久的房间比一个普通房间占用的内存要多得多，建议不要在游戏中拥有太多的内存。</p>
-  <p class="note"><b>注意</b>：如果已访问该房间，此函数将<b>无法</b>关闭持久性！访问持久性房间后，将保留在内存中，要关闭持久性，应转到该房间并将<span style="font-size:1px;"><a href="room_persistent.htm"><span class="inline">room_persistent</span></a></span>变量设置为<span class="inline">假</span>，然后再次退出该房间。</p>
+  <p>使用此函数，您可以更改(或设置)游戏中任何房间<i>的持久性，当前空间</i>除外。 持久性标记为<span class="inline">true</span>的房间，如果玩家离开然后返回，它将保持该房间内所有实例的状态，而如果持久性标记为<span class="inline">false</span>，则每次将重置为初始状态。您应该注意，一个持久的房间比一个普通房间占用的内存要多得多，建议不要在游戏中拥有太多的内存。</p>
+  <p class="note"><b>注意</b>：如果已访问该房间，此函数将<b>无法</b>关闭持久性！访问持久性房间后，将保留在内存中，要关闭持久性，应转到该房间并将<span style="font-size:1px;"><a href="room_persistent.htm"><span class="inline">room_persistent</span></a></span>变量设置为<span class="inline">false</span>，然后再次退出该房间。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">room_set_persistent(index, val);</p>

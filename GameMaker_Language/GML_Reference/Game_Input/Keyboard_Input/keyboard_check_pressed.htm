@@ -80,9 +80,9 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">keyboard_check_pressed</span></h1>
-  <p>With this function you can check to see if a key has been pressed or not.</p>
-  <p>Unlike the&nbsp;<span class="inline3_func"><a href="keyboard_check.htm">keyboard_check</a></span> function, this function will only return <span class="inline2">true</span> in the step the key is pressed down, i.e. when it switches from not held down in the previous step to held down in the current step. So for it to return <span class="inline2">true</span> again, the key must be first released and then pressed again. In all other steps, the function returns <span class="inline2">false</span>.</p>
-  <p>The function will take a keycode value as returned by the function&nbsp;<span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> (only <i>capital</i> letters from A-Z or numbers from 0-9), or any of the <span class="inline">vk_*</span> constants listed on the main&nbsp;<a href="Keyboard_Input.htm">Keyboard Input</a> page.</p>
+  <p>使用此函数，您可以检查是否按下了键。</p>
+  <p>与 <span class="inline3_func"><a href="keyboard_check.htm">keyboard_check</a></span> 函数不同，此函数仅在按下按键的步骤中返回 <span class="inline2">true</span>，即当其从前一步骤中的未保持向下切换到当前步骤中的保持向下时。因此，要再次返回 <span class="inline2">true</span>，必须先释放该键，然后再次按下。在所有其他步骤中，函数返回 <span class="inline2">false</span>。</p>
+  <p>该函数将采用函数 <span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> 返回的 keycode 值 (仅 <i>a-Z 的大写字母 </i> 或 0-9 的数字)，或主<a href="Keyboard_Input.htm">键盘输入</a>页面上列出的 <span class="inline">vk_*</span> 常量中的任何一个。</p>
   <p>&nbsp;</p>
   <h4><b>语法:</b></h4>
   <p class="code"><span data-field="title" data-format="default">keyboard_check_pressed</span>(key);</p>

@@ -80,9 +80,9 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">keyboard_check_released</span></h1>
-  <p>With this function you can check to see if a key has been released or not.</p>
-  <p>Unlike the&nbsp;<span class="inline3_func"><a href="keyboard_check.htm">keyboard_check</a></span> function, this function will only return <span class="inline2">true</span> once in the step the key is lifted,&nbsp;i.e. when it switches from held down in the previous step to no longer held down in the current step.&nbsp;So for it to return <span class="inline2">true</span> again, the key must be first pressed and then released again.&nbsp;In all other steps, the function returns <span class="inline2">false</span>.</p>
-  <p>The function will take a keycode value as returned by the function&nbsp;<span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> (only <i>capital</i> letters from A-Z or numbers from 0-9), or any of the <span class="inline">vk_*</span> constants listed on the main&nbsp;<a href="Keyboard_Input.htm">Keyboard Input</a> page.</p>
+  <p>使用此函数，您可以检查是否已释放键。</p>
+  <p>与 <span class="inline3_func"><a href="keyboard_check.htm">keyboard_check</a></span> 函数不同，此函数仅在按键抬起的步骤中返回 <span class="inline2">true</span>，即当其从前一步骤中保持向下切换到当前步骤中不再保持向下时。因此，要再次返回 <span class="inline2">true</span>，必须先按下该键，然后再次释放。在所有其他步骤中，函数返回 <span class="inline2">false</span>。</p>
+  <p>该函数将采用函数 <span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> 返回的 keycode 值 (仅 <i>a-Z 的大写字母 </i> 或 0-9 的数字)，或主<span class="inline">键盘输入</span>页面上列出的 <a href="Keyboard_Input.htm">vk_*</a> 常量中的任何一个。</p>
   <p>&nbsp;</p>
   <h4><b>语法:</b></h4>
   <p class="code"><span data-field="title" data-format="default">keyboard_check_released</span>(key);</p>
@@ -109,7 +109,7 @@
     {<br>
     &nbsp; &nbsp; instance_create_layer(0, 0, "Controllers", obj_Pause);<br>
     }</p>
-  <p>The above code will check to see if the "P" key has been released and if so, create an instance of <span class="inline2">obj_Pause</span>.</p>
+  <p>上面的代码将检查 "P" 键是否已释放，如果是，则创建 <span class="inline2">obj_Pause</span> 的实例。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

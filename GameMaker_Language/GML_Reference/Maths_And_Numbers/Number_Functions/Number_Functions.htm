@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><span data-field="title" data-format="default">Number Functions</span></h1>
+  <h1><span data-field="title" data-format="default">数字函数</span></h1>
   <p><span data-keyref="GameMaker Name">GameMaker</span> 中的实数被视为<i>双精度浮点数</i> - 也就是说它们有一个小数点，小数点前后没有固定的数字位数 - 或 <i> 整数</i> - 也就是说它们是没有小数点值的整数。 例如，2 是一个整数，但 2.01 是一个浮点实数。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 在 <b>HTML5</b> 目标上，所有实数都是双精度。</p>
   <p>在处理跨平台开发时，整数和浮点数之间的区别非常重要，因为在Windows PC上进行计算的精度与在移动设备上进行相同计算的精度是不一样的的。这意味着你在进行比较时应该特别注意，例如:</p>
@@ -86,7 +86,7 @@
     {<br>
     &nbsp; &nbsp; do something...<br>
     }</p>
-  <p>In the example above, if we have been setting the&nbsp;<span class="inline2"><a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">image_speed</a></span> to 0.25 - for example - then after four steps you may assume that the&nbsp;<span class="inline2"><a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></span> value would be 1, but it <i>may</i> be a value like 1.0000002 due to the way floating point maths works and so the evaluation will not be <span class="inline2">true</span>. These types of errors can be quite hard to debug and so it is always good to be aware of them and to plan ahead and use other means of checking values or to use the appropriate flooring or rounding functions (listed below) to convert the number to check into an integer (for more information on floating point maths and why this is an issue, please <a href="https://floating-point-gui.de/" target="_blank">see here</a>). For example the above code could be written as:</p>
+  <p>在上面的例子中，如果我们已经将 <span class="inline2"><a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">image_speed</a></span> 设置为 0.25— 例如 — 那么经过四步之后，您可以假设 <span class="inline2"><a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></span> 值将是 1，但是由于浮点数学的工作方式，它 <i> 可能 </i> 是像 1.0000002 这样的值，因此计算将不是 <span class="inline2">true</span>。这些类型的错误很难进行调试，因此了解它们并提前计划并使用其他方法检查值或使用适当的基数或舍入函数 (下面列出) 将数字转换为整数是很好的 (有关浮点数学的更多信息以及为什么这是一个问题，<a href="https://floating-point-gui.de/" target="_blank">请参阅这里</a>)。例如，上面的代码可以写成:</p>
   <p class="code">if (floor(image_index) == 1)<br>
     {<br>
     &nbsp; &nbsp; do something...<br>

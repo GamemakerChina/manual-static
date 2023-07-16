@@ -81,7 +81,7 @@
   <h1>DS 网格</h1>
   <p>DS网格基本上是具有2个维度<span>的<a href="../../../GML_Overview/Arrays.htm"></a>数组</span>的类型。您可以通过设置网格的整数宽度和高度来定义网格，然后设置网格中"单元格"的总数(宽度和高度的乘积)，这些单元格将用于保存不同的数据值(实数或字符串)。</p>
   <p><img alt="DS Grid Example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_basic.png">这种类型的结构允许您通过给出网格中单元格的x和y索引来设置和检索网格中单元格的值(x和y轴从0开始，直到width-1和height-1)。但是，您也可以在特定的栅格区域中设置值，添加单个值，并检索给定区域上的和、最大值、最小值和平均值，从而使此数据结构成为您可用的所有数据结构中函数最丰富的。</p>
-  <p>访问D的网格数据结构时，应始终尝试对单元格位置使用<b>个整数值</b>，否则<span data-keyref="GameMaker Name">GameMaker</span>将泛洪所有非整数索引。如果这不是您所需要的，那么在传递要检查的索引之前，您需要先进行舍入。</p>
+  <p>访问D的网格数据结构时，应始终尝试对单元格位置使用<b>整数值</b>，否则<span data-keyref="GameMaker Name">GameMaker</span>将泛洪所有非整数索引。如果这不是您所需要的，那么在传递要检查的索引之前，您需要先进行舍入。</p>
   <p class="note"><b><span class="note">注意</span></b>与所有动态资源一样，数据结构占用内存，因此当不再需要<b>防止内存泄漏时，应始终销毁</b>，这将降低速度并最终导致游戏崩溃。</p>
   <p class="note"><b><span class="note">注意</span></b>如果需要检查是否存在数据结构，可以使用<span style="font-size:1px;"><a href="../ds_exists.htm"><span class="inline">ds_exists()</span></a></span>函数。</p>
   <p>除了下面列出的特定函数外，您还可以使用<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>(称为<i>访问器</i>)来添加或修改DS网格的内容。此存取器类似于2D阵列，具有以下语法：</p>
@@ -134,7 +134,7 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构 (未检查)</a></div>
+        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构</a></div>
         <div style="float:right">Next: <a href="../DS_Lists/DS_Lists.htm">列表 List</a></div>
       </div>
     </div>

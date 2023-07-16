@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>layer_set_target_room</h1>
-  <p>调用此函数时，您告诉<span data-keyref="GameMaker Name">GameMaker</span>，<i>所有其他层函数都应用于给定房间</i>。 这样，您可以在非当前房间的房间中以程序方式更改或生成图层和图层内容。完成向房间添加图层或图层元素后，调用函数<a href="layer_reset_target_room.htm"><span class="inline">layer_reset_target_room()</span></a>重置房间目标(或以房间参数 - 1)再次调用此函数。请注意，此函数只能在<i>个房间(当前房间</i>除外)上使用，并且旨在将图层和图层元素添加到当前运行的房间以外的房间。</p>
+  <p>调用此函数时，您告诉<span data-keyref="GameMaker Name">GameMaker</span>，<i>所有其他层函数都应用于给定房间</i>。 这样，您可以在非当前房间的房间中以程序方式更改或生成图层和图层内容。完成向房间添加图层或图层元素后，调用函数<a href="layer_reset_target_room.htm"><span class="inline">layer_reset_target_room()</span></a>重置房间目标(或以房间参数 - 1)再次调用此函数。请注意，此函数只能在<i>房间(当前房间</i>除外)上使用，并且旨在将图层和图层元素添加到当前运行的房间以外的房间。</p>
   <p class="note"><b>警告！</b>瞄准其他房间时，可以使用所有常规层函数<b>，但</b>您无法使用<span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><span class="inline">instance_create_layer()</span></a></span>或<span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><span class="inline">instance_create_depth()</span></a></span>创建实例，层函数<a href="layer_add_instance.htm"><span style="font-size:1px;"><span class="inline">layer_add_instance()</span></span></a>{}也不可用。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>

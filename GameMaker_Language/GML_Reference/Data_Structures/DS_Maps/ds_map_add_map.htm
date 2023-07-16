@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>ds_map_add_map</h1>
-  <p>使用此函数，您可以将(以前创建的)DS映射分配给给定DS映射中的密钥。此函数用于创建Json兼容映射，然后您可以使用<a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline">json_encode()</span></a>对其进行编码，并且只能与该函数一起使用。如果DS映射以这种方式添加了另一个映射，则销毁父映射也将销毁包含的映射并释放其内存，在父映射上调用<a href="ds_map_clear.htm"><span class="inline">ds_map_clear()</span></a>也将销毁并清除任何标记的映射。</p>
+  <p>使用此函数，您可以将(以前创建的)DS映射分配给给定DS映射中的密钥。此函数用于创建JSON兼容映射，然后您可以使用<a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline">json_encode()</span></a>对其进行编码，并且只能与该函数一起使用。如果DS映射以这种方式添加了另一个映射，则销毁父映射也将销毁包含的映射并释放其内存，在父映射上调用<a href="ds_map_clear.htm"><span class="inline">ds_map_clear()</span></a>也将销毁并清除任何标记的映射。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">ds_map_add_map(id, key, value)</p>
@@ -120,7 +120,7 @@
     ds_map_add_map(j_map, "map", sub_map);<br>
     var j = json_encode(j_map);<br>
     ds_map_destroy(j_map);</p>
-  <p>上述代码将创建两个DS映射，然后使用列表和数组填充一个DS映射，然后将其添加到第二个DS映射中，然后将其编码为Json字符串。然后销毁地图，将其及其包含的任何其他地图或列表从内存中删除。</p>
+  <p>上述代码将创建两个DS映射，然后使用列表和数组填充一个DS映射，然后将其添加到第二个DS映射中，然后将其编码为JSON字符串。然后销毁地图，将其及其包含的任何其他地图或列表从内存中删除。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>ds_map_replace_map</h1>
-  <p>使用此函数，您可以将存储在给定"密钥"中的<span class="inline">个DS映射</span>替换为以前创建的另一个映射。此函数用于创建Json兼容映射，然后使用<a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline">json_encode()</span></a>对其进行编码，并且只能与该函数配合使用。</p>
+  <p>使用此函数，您可以将存储在给定"密钥"中的<span class="inline">DS映射</span>替换为以前创建的另一个映射。此函数用于创建JSON兼容映射，然后使用<a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline">json_encode()</span></a>对其进行编码，并且只能与该函数配合使用。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">ds_map_replace_map(id, key, value)</p>
@@ -118,7 +118,7 @@
     ds_map_replace_map(j_map, "maps", temp_map);<br>
     var j = json_encode(j_map);<br>
     ds_map_destroy(temp_map);</p>
-  <p>以上代码将创建<span class="inline">个DS映射</span>，并使用数组和<span class="inline">个DS列表</span>填充它，然后替换<span class="inline">个DS映射</span>"j_map"中先前存储的映射。</p>
+  <p>以上代码将创建<span class="inline">DS映射</span>，并使用数组和<span class="inline">DS列表</span>填充它，然后替换<span class="inline">DS映射</span>"j_map"中先前存储的映射。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

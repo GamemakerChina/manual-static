@@ -80,7 +80,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>draw_surface_part</h1>
-  <p>使用此函数，可以在房间内的给定位置绘制任何表面的一部分。对于<span class="inline"><a href="draw_surface.htm">draw_surface()</a></span>，可以指定一个表面，但随后需要在要绘制的区域的表面内指定<i>个相对坐标</i>。这意味着，左侧位置0和顶部位置0将是表面的左上角，并且应从该位置获取所有进一步的坐标。</p>
+  <p>使用此函数，可以在房间内的给定位置绘制任何表面的一部分。对于<span class="inline"><a href="draw_surface.htm">draw_surface()</a></span>，可以指定一个表面，但随后需要在要绘制的区域的表面内指定<i>相对坐标</i>。这意味着，左侧位置0和顶部位置0将是表面的左上角，并且应从该位置获取所有进一步的坐标。</p>
   <div data-conref="../../../../assets/snippets/Surface_volatile_warning.hts">
   <p class="note"><b></b><span class="note">注意</span>使用表面时，由于表面存储在纹理内存中，因此表面可能随时停止存在。在直接引用表面之前，应该<b>始终</b>使用<span style="font-size:1px;"><a href="surface_exists.htm"><span class="inline">surface_exists()</span></a></span>检查表面是否存在。</p>
   <p class="note"><span class="tip">提示</span>表面的显示方式取决于其内容，尤其是表面内部的Alpha值。Alpha为0的<a href="../Colour_And_Alpha/draw_clear_alpha.htm">清除表面</a>可能与Alpha为1的清除表面不同，因为它们与背景混合的方式不同。只要您注意到自定义表面上的渲染方式与<span class="inline"><a href="application_surface.htm">application_surface</a></span>的渲染方式有所不同，就要注意这一点。</p>

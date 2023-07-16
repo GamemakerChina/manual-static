@@ -82,7 +82,7 @@
   <h1>draw_sprite_part_ext</h1>
   <p>此函数将按照与per<a href="draw_sprite_part.htm"><span class="inline">draw_sprite_part()</span></a>相同的规则在给定位置绘制所选精灵的一部分，只是现在您可以缩放零件、与其混合颜色或在以下情况下更改其Alpha：将其绘制到屏幕(与使用<a href="draw_sprite_ext.htm"><span class="inline">draw_sprite_ext()</span></a>绘制sprite时相同)。应注意，如果纹理页面允许自动裁剪，则此函数可能无法按预期工作，因为sprite周围额外的"空"空间将被删除，以创建纹理页面。若要解决此问题，您需要设置纹理页面设置(在<a href="../../../../Settings/Texture_Groups.htm">纹理组编辑器</a>中)以禁用<b>自动裁剪</b>。</p>
   <p class="note"><b><span class="note">注意</span></b>使用此函数绘制时，将忽略精灵<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x偏移量</a>和<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y偏移量</a>，并且将绘制精灵部分，其中左上角位于房间中指定的x/y位置。</p>
-  <p class="note"><b>注意</b>：此函数仅适用于<b>位图</b>精灵，不适用于Swf或Json(脊椎)精灵。</p>
+  <p class="note"><b>注意</b>：此函数仅适用于<b>位图</b>精灵，不适用于Swf或JSON(脊椎)精灵。</p>
   <p class="note"><b>注意</b>：只有在启用WebGL时，才建议对HTML5目标使用颜色混合，但如果未启用混合颜色，则仍可以设置该混合颜色，并且该混合颜色会将sprite混合为正常颜色。但是，以这种方式进行的所有混合都会创建一个副本精灵，然后将其存储在缓存中并在需要时使用。这远远不是最佳状态，如果您使用多种颜色更改，则除非您激活WebGL，否则会降低游戏性能。如果您不希望使用WebGL，则可以设置这个字体缓存大小来尝试，并且如果必须使用函数<a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><span class="inline">sprite_set_cache_size()</span></a>来限制这个值。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>

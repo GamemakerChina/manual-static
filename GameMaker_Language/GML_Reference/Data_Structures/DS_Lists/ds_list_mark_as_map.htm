@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>ds_list_mark_as_map</h1>
-  <p>此函数将在先前创建的DS列表中"标记"(或标记)给定的位置，以保存<a href="../DS_Maps/DS_Maps.htm">个DS映射</a>。在编码Json字符串(您可以使用<a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline">个json_encode()</span></a>创建)时需要此函数，但在嵌套数据结构时也很有用，因为在销毁父DS列表时，以此方式标记的项目将自动被垃圾收集(销毁)。这意味着，在销毁"父"列表之前，您不必手动浏览列表内容并单独销毁标记的数据结构。但是，如果单独删除列表位置，则其中包含的数据结构<i>将不会</i>被垃圾收集，您应该在删除父列表位置之前调用相应的DS映射销毁函数。另请注意，如果在列表中调用function<a href="ds_list_clear.htm"><span class="inline">ds_list_clear()</span></a>，则在清除列表时，任何标记为映射的项目也将被销毁。</p>
+  <p>此函数将在先前创建的DS列表中"标记"(或标记)给定的位置，以保存<a href="../DS_Maps/DS_Maps.htm">DS映射</a>。在编码JSON字符串(您可以使用<a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline">json_encode()</span></a>创建)时需要此函数，但在嵌套数据结构时也很有用，因为在销毁父DS列表时，以此方式标记的项目将自动被垃圾收集(销毁)。这意味着，在销毁"父"列表之前，您不必手动浏览列表内容并单独销毁标记的数据结构。但是，如果单独删除列表位置，则其中包含的数据结构<i>将不会</i>被垃圾收集，您应该在删除父列表位置之前调用相应的DS映射销毁函数。另请注意，如果在列表中调用函数<a href="ds_list_clear.htm"><span class="inline">ds_list_clear()</span></a>，则在清除列表时，任何标记为映射的项目也将被销毁。</p>
   <p>另外值得注意的是，如果已标记的位置在列表中发生变化，则"mark"将随之移动，因此，如果您在列表中标记了位置3(例如)，然后在其下面再插入2个项目，使其向上移动到位置5，则仍将<i>标记为地图。</i></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>

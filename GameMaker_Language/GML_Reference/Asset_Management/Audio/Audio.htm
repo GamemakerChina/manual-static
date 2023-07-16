@@ -97,7 +97,7 @@
   <p>您至少必须提供<span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../../The_Asset_Editors/Sounds.htm">声音资源</a></span>、新声音实例的优先级以及声音是否应该循环。</p>
   <p>播放声音的另一种方法是使用 <span class="inline2"><a href="audio_play_sound_ext.htm">audio_play_sound_ext</a></span>。此函数与 <span class="inline2"><a href="audio_play_sound.htm">audio_play_sound</a></span> 相同，但允许您在结构中传递各种音频参数。使用此函数，您只需通过的 " 声音 " 键提供 <span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../../The_Asset_Editors/Sounds.htm"> 声音资源 </a></span></p>
   <p class="code">audio_play_sound_ext({ sound: snd_Explode&nbsp;});</p>
-  <p><span>此处，优先级将默认为 0，并且声音不会循环。您可以在结构中提供<a href="audio_play_sound_ext.htm">个附加键</a>以更改声音的属性。</span></p>
+  <p><span>此处，优先级将默认为 0，并且声音不会循环。您可以在结构中提供<a href="audio_play_sound_ext.htm">附加键</a>以更改声音的属性。</span></p>
   <h3>声音实例(语音)</h3>
   <p>这些函数 <span class="inline2"><a href="audio_play_sound.htm">audio_play_sound</a></span> 和 <span class="inline2"><a href="audio_play_sound_ext.htm">audio_play_sound_ext</a></span> 创建声音(也称为"语音")的新<em>实例</em>并返回其 ID：</p>
   <p class="code">ins_sound = audio_play_sound(snd_Explode, 10, false);</p>

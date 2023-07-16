@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>ds_queue_read</h1>
   <p>使用此函数，您可以重新创建一个已保存的DS队列(以前使用<a href="ds_queue_write.htm"><span class="inline">ds_queue_write()</span></a>作为字符串写入的队列)。您必须首先创建一个新的DS队列以读取该字符串，如果DS队列已存在并且其中存储有信息，则在读取之前将清除该队列。为游戏创建保存/加载机制时，此函数至关重要。</p>
-  <p>请注意，如果指定的Ds字符串是GameMaker编写的：Studio 1.2. x运行时(或更早版本)，您应该指定可选参数"legacy"，将其设置为<span class="inline">true</span>，作为之后更改的字符串格式。</p>
+  <p>请注意，如果指定的DS字符串是GameMaker编写的：Studio 1.2. x运行时(或更早版本)，您应该指定可选参数"legacy"，将其设置为<span class="inline">true</span>，作为之后更改的字符串格式。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">ds_queue_read(id, str [, legacy]);</p>
@@ -121,7 +121,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;ds_queue_read(queue, str);<br>
     }<br>
     ini_close();</p>
-  <p>上述代码创建一个队列并将索引存储在变量"队列"中。然后打开<span class="inline">ini</span>文件并从中读取字符串，检查以确保字符串不会首先返回为空。然后将此字符串读入新创建的DS队列。</p>
+  <p>上述代码创建一个队列并将索引存储在变量"queue"中。然后打开<span class="inline">ini</span>文件并从中读取字符串，检查以确保字符串不会首先返回为空。然后将此字符串读入新创建的DS队列。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

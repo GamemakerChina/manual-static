@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>ds_map_add</h1>
-  <p>此函数应用于将键/值对集合添加到指定的<span class="misspell-word">个DS映射</span>中。您可以检查此函数是否成功(成功时将返回<span class="inline">个true</span>，否则将返回<span class="inline">个false</span>)，因为如果DS映射中已存在相同的密钥，或者您将不存在的DS映射指定为要添加到的映射的ID，则可能会失败。您提供的密钥和值可以由数据类型的任意组合组成，因此以下所有内容-more-是可接受的(尽管在实践中，您最常使用字符串作为密钥)：</p>
+  <p>此函数应用于将键/值对集合添加到指定的<span class="misspell-word">DS映射</span>中。您可以检查此函数是否成功(成功时将返回<span class="inline">true</span>，否则将返回<span class="inline">false</span>)，因为如果DS映射中已存在相同的密钥，或者您将不存在的DS映射指定为要添加到的映射的ID，则可能会失败。您提供的密钥和值可以由数据类型的任意组合组成，因此以下所有内容-more-是可接受的(尽管在实践中，您最常使用字符串作为密钥)：</p>
   <p class="code">ds_map_add(map, 5, undefined);<br> ds_map_add(map, "level", 1);<br> ds_map_add(map, 89.6, "hello world");<br> ds_map_add(map, 5, buffer_get_address(buff));</p>
   <p>您还可以使用<a href="../../../GML_Overview/Accessors.htm">访问器</a>"<span class="inline">?</span>"添加到地图，如下所示：</p>
   <p class="code">map[? 5] = undefined;<br> map[? "level"] = 1;<br> map[? 89.6] = "hello world";<br> map[? 5] = buffer_get_address(buff);</p>
@@ -113,7 +113,7 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">inventory = ds_map_create();<br> ds_map_add(inventory, "hp potion", 1);<br> ds_map_add(inventory, "gold", 100);</p>
-  <p>这将创建一个新映射，将其ID分配给变量"清单"。然后，它在地图上添加了两个新键，"hp potion"和"gold"，并将它们的初始值分别设置为1和100。</p>
+  <p>这将创建一个新映射，将其ID分配给变量"inventory"。然后，它在地图上添加了两个新键，"hp potion"和"gold"，并将它们的初始值分别设置为1和100。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

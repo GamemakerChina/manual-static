@@ -81,8 +81,8 @@
   <h1><span data-field="title" data-format="default">调试</span></h1>
   <p>在制作游戏时，了解特定时间点的游戏机制的某些细节，或者能够为某些函数输入某些键值以测试游戏的不同方法和想法，通常是非常重要的。为此，<span data-keyref="GameMaker Name">GameMaker</span>为您提供了许多调试函数，这些函数将在调试模式下(或在Windows目标上)显示消息并要求输入，但在为其他目标模块编译时将被忽略，因为这些函数将游戏置于闭环中，直到输入被解析。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;尽管它们可能在某些平台上工作，但除了调试之外，不能用于任何其他用途。</p>
-  <h2 id="func_ref">Function Reference</h2>
-  <h3 id="functions_variables">Functions &amp; Variables</h3>
+  <h2 id="func_ref">函数参考</h2>
+  <h3 id="functions_variables">函数 / 变量</h3>
   <ul class="colour">
     <li><a href="debug_mode.htm">debug_mode</a></li>
     <li><a href="debug_event.htm">debug_event</a></li>
@@ -100,23 +100,23 @@
     <li><a href="fps.htm">fps</a></li>
     <li><a href="fps_real.htm">fps_real</a></li>
   </ul>
-  <h2 id="debug_macros">Debug Macros</h2>
-  <p><span data-keyref="GameMaker Name">GameMaker</span>&nbsp;also has a couple&nbsp;of built-in macros&nbsp;that you can use to make it easier to debug your game:&nbsp;</p>
+  <h2 id="debug_macros">调试宏</h2>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 还有几个内置宏，您可以使用它们来更轻松地调试游戏：</p>
   <ul class="colour">
-    <li><span class="inline">_GMLINE_</span> - This is the line number as shown in <a href="../../../The_Asset_Editors/Scripts.htm">The Script Editor</a>&nbsp;(you can enable these in the&nbsp;<a href="../../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm#h">Code Editor</a>&nbsp;preferences).</li>
-    <li><span class="inline">_GMFILE_</span> - This is the name of the current code file this macro is used in. This will look like e.g. <span class="inline2">"gml_GlobalScript_Script1"</span> for a&nbsp;<span data-keyref="Type_Asset_Script"><a target="_blank" href="../../../../The_Asset_Editors/Scripts.htm">Script Asset</a></span>, <span class="inline2">"gml_Object_Object1_Create_0"</span> for&nbsp;<a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Object Events</a>&nbsp;and <span class="inline2">"gml_Room_Room1_Create"</span> for the&nbsp;<a href="../../../The_Asset_Editors/Room_Properties/Room_Properties.htm#Room_Creation_Code">Room_Creation_Code</a>.</li>
-    <li><span class="inline">_GMFUNCTION_</span> - This is the name of the innermost function this macro is used in. This holds the same value as <span class="inline2">_GMFILE_</span> if it is used outside of any function definition, i.e. directly inside an object event or script.</li>
+    <li><span class="inline">_GMLINE_</span> - 这是<a href="../../../The_Asset_Editors/Scripts.htm">脚本编辑器</a>中显示的行号(您可以在<a href="../../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm#h">代码编辑器</a>首选项中启用这些行号)。</li>
+    <li><span class="inline">_GMFILE_</span> - 这是使用此宏的当前代码文件的名称。这将看起来像例如。<span class="inline2"></span>脚本资源<span data-keyref="Type_Asset_Script"><a target="_blank" href="../../../../The_Asset_Editors/Scripts.htm">的 </a>"gml_GlobalScript_Script1"</span>、<span class="inline2">对象事件</span>的 <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">"gml_Object_Object1_Create_0"</a> 和 <span class="inline2">Room_Creation_Code</span> 的 <a href="../../../The_Asset_Editors/Room_Properties/Room_Properties.htm#Room_Creation_Code">"gml_Room_Room1_Create"</a>。</li>
+    <li><span class="inline">_GMFUNCTION_</span> - 这是使用此宏的最内层函数的名称。如果在任何函数定义之外使用，则它与 <span class="inline2">_GMFILE_</span> 具有相同的值，即直接在对象事件或脚本中。</li>
   </ul>
   <p><img class="center" height="353" src="../../../assets/Images/Scripting_Reference/Additional_Information/GM_Macros_Example.png" width="554"></p>
-  <p>The debug output will be the following in case of the above screenshot:</p>
+  <p>如果出现上述屏幕截图，调试输出将如下所示：</p>
   <p class="code">gml_GlobalScript_Macros<br>
     3<br>
     show_macros<br>
     gml_GlobalScript_Macros<br>
     10<br>
     gml_GlobalScript_Macros</p>
-  <h2 id="func_ref">Errors</h2>
-  <p>Apart from those specialist functions and macros, to help you out when creating your game, <span data-keyref="GameMaker Name">GameMaker</span> also has a long list of error messages that can be shown either when writing your game code, compiling your game, or when the game itself is running. These messages point to the specific error in question and can be used to pinpoint a problem within a specific object or script function, helping greatly with the process of debugging your game. However, it may not always be obvious exactly what the error message means and so the following sections list&nbsp;all of the possible messages and explain what they mean to make life easier for you:</p>
+  <h2 id="func_ref">错误</h2>
+  <p>除了这些专业函数和宏外，为了帮助您创建游戏，<span data-keyref="GameMaker Name">GameMaker</span> 还提供了一个很长的错误消息列表，可以在编写游戏代码、编译游戏或运行游戏本身时显示。这些消息指向有问题的特定错误，并可用于查明特定对象或脚本函数中的问题，这对调试游戏的过程有很大帮助。但是，错误消息的确切含义可能并不总是很明显，因此以下部分列出了所有可能的消息，并解释了它们的含义，以使您的工作更轻松：</p>
   <ul class="colour">
     <li><a href="../../../Additional_Information/Errors/Syntax_Errors.htm">语法错误</a></li>
     <li><a href="../../../Additional_Information/Errors/Compiler_Errors.htm">编译器错误</a></li>

@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">weak_ref_create</span></h1>
   <p>使用此函数，您可以创建一个指向<a href="../../GML_Overview/Structs.htm">结构</a>的<a class="tooltip" title="A&nbsp;weak reference is a reference that does not protect the referenced object from collection by a garbage collector, and so can be used to check if a struct is still &quot;alive&quot; (referenced) or not somewhere in the game.">弱引用</a>，然后可以用来检查该结构是否仍在 "活着"(引用)在游戏中。您提供对要跟踪的结构的引用，该函数将返回另一个结构，该结构是对该结构的弱引用。</p>
-  <h3>Usage Notes</h3>
+  <h3>使用说明</h3>
   <ul class="Disc">
     <li>您可以使用函数 <span class="inline3_func"><a href="../Variable_Functions/instanceof.htm">instanceof()</a></span> 来检查引用是 "强" 还是 "弱"，因为强引用将返回 "<span class="inline">struct</span>" 或创建该结构的构造函数的名称，如果是弱引用，则返回 "<span class="inline">weakref</span>"</li>
     <li>弱引用结构将有一个变量 "<span class="inline">ref</span>"，可以访问该变量来获得对相关结构的强引用，除非它已被垃圾回收，在这种情况下，它将返回 <span class="inline2">undefined</span>。</li>

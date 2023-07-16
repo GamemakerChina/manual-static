@@ -83,7 +83,7 @@
   <ul class="colour">
     <li>创建缓冲区时，它会自动清除并填充为0。</li>
     <li>缓冲区函数的 "大小" 参数总是指缓冲区的大小<i>(以字节为单位)。</i></li>
-    <li>"对齐 " 参数是指数据如何存储在缓冲区内。如果你的对齐设置为 4，你写了一个 1 字节大小的数据，然后执行 <span class="inline3_func"><a href="buffer_tell.htm">buffer_tell</a></span>，你会得到一个偏移量 1。但是，如果您写入另一段数据，也是 1 字节大小，然后执行 <span class="inline3_func"><a href="buffer_tell.htm">buffer_tell</a></span>，您将获得偏移量 5，因为对齐已将数据 " 填充 " 到该大小。对齐只影响 <i> 写入 </i> 的位置，所以如果你在写入内容后执行 <span class="inline3_func"><a href="buffer_tell.htm">buffer_tell</a></span>，它将返回当前写入位置，紧跟在你写入的数据之后。但是，请注意，如果您随后写入另一段数据，则在实际写入该数据段之前，缓冲区将在内部将写入位置移动到对齐大小的下一个倍数。</li>
+    <li>"对齐"参数是指数据如何存储在缓冲区内。如果你的对齐设置为 4，你写了一个 1 字节大小的数据，然后执行 <span class="inline3_func"><a href="buffer_tell.htm">buffer_tell</a></span>，你会得到一个偏移量 1。但是，如果您写入另一段数据，也是 1 字节大小，然后执行 <span class="inline3_func"><a href="buffer_tell.htm">buffer_tell</a></span>，您将获得偏移量 5，因为对齐已将数据 " 填充 " 到该大小。对齐只影响 <i> 写入 </i> 的位置，所以如果你在写入内容后执行 <span class="inline3_func"><a href="buffer_tell.htm">buffer_tell</a></span>，它将返回当前写入位置，紧跟在你写入的数据之后。但是，请注意，如果您随后写入另一段数据，则在实际写入该数据段之前，缓冲区将在内部将写入位置移动到对齐大小的下一个倍数。</li>
     <li>当处理 "offset" 时，这是字节<i>中的值</i>，用于在给定缓冲区内偏移数据。因此，如果您的缓冲区是2字节对齐的，并且您想跳过前4个对齐位置，则您的偏移量为<span class="inline">2*4字节</span>。</li>
     <li>一些 buffer 函数也会创建一个新的 buffer(例如 <span class="inline3_func"><a href="buffer_load.htm">buffer_load</a></span>)。请记住，这些缓冲区在不使用时也需要使用 <span class="inline3_func"><a href="buffer_delete.htm">buffer_delete</a></span> 函数从内存中删除。</li>
     <li>用于创建缓冲区的内存是<i>系统内存</i>所以即使游戏没有焦点，存储在缓冲区中的任何数据都应该是安全的，但是如果应用程序关闭或重新启动，它将丢失。</li>

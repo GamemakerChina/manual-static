@@ -171,20 +171,20 @@
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 在绘制事件中呈现时，Unicode 字符 9647(▯) 用于替换指定字体中可能缺少的任何 <a class="tooltip" title="字形是字符的一种特殊的视觉外观。它是使用给定字体的字符的外观。"> 字形 </a>。例如，如果你的字体没有 ° 符号，那么写 90° 实际上会产生 90▯。</p>
 
 </div>
-  <h3 id="h4">Template Strings</h3>
-  <p>Template strings give you a convenient syntax to create and format strings. You can create them by prefixing a string literal with the <span class="inline2"><a id="$"></a>$</span> character, and including expressions inside <span class="inline2">{}</span>:&nbsp;</p>
+  <h3 id="h4">模板字符串</h3>
+  <p>模板字符串为您提供了一种方便的语法来创建和格式化字符串。您可以通过在字符串文字前面加上<span class="inline2"><a id="$"></a>$</span>字符，并在<span class="inline2">{ }</span>中包含表达式来创建它们：</p>
   <p class="code">var _world = "Earth";<br>
     var _template = $"Hello {_world}!";</p>
-  <p>Which produces the same string as:&nbsp;</p>
+  <p>它生成的字符串与以下字符串相同：</p>
   <p class="code">var _world = "Earth";<br>
     var _template = string("Hello {0}!", _world);</p>
-  <p>Everything written between curly braces <span class="inline2">{ }</span>&nbsp;inside a template string is executed as regular GML. The result of the GML expression between the braces is inserted into the string:&nbsp;</p>
+  <p>模板字符串中花括号<span class="inline2">{ }</span>之间的所有内容都作为常规GML执行。大括号之间的GML表达式的结果被插入到字符串中：</p>
   <p class="code">var _template = $"The result of a random complicated calculation is {5 * power(pi, 3) + 37.84094}";</p>
-  <p>To make it more clear that this is regular GML,&nbsp;<a href="../../../The_Asset_Editors/Scripts.htm">The Script Editor</a>&nbsp;also highlights this code normally.&nbsp;<a href="../../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a>&nbsp;also checks these GML expressions for any errors, e.g.:&nbsp;</p>
+  <p>为了更清楚地表明这是常规GML，<a href="../../../The_Asset_Editors/Scripts.htm">脚本编辑器</a>通常也会突出显示此代码。<a href="../../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a>还会检查这些GML表达式是否存在任何错误，例如：</p>
   <p class="code">var _arr = [ 1, 2, 3, 4 ];<br>
     var _a = $"The first value is {_arr[| 0]}"; // GM1028 - Accessor is intended for type of 'Id.DsList' but 'Array&lt;Real&gt;' appears instead.</p>
-  <p>You can split a template string across multiple lines, however you can only do this in the expression parts of the templates. Any newline and other&nbsp;white-space characters&nbsp;that need to be added to the actual string have to be added using&nbsp;<a href="Strings.htm#h1">转义字符</a>.</p>
-  <p>The following code shows a valid and an invalid way of splitting a template string across multiple lines:&nbsp;</p>
+  <p>可以将模板字符串拆分为多行，但只能在模板的表达式部分执行此操作。任何需要添加到实际字符串中的换行符和其他空白字符都必须使用<a href="Strings.htm#h1">转义字符</a>添加。</p>
+  <p>下面的代码显示了将模板字符串拆分为多行的有效和无效方法：</p>
   <p class="code">var _a = $"This is the \n{<br>
     valid<br>
     }\nway to split&nbsp;a template across multiple lines";<br>
@@ -296,7 +296,7 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Back:&nbsp;<a href="../GML_Reference.htm">GML 代码参考</a></div>
-        <div style="float:right">Next: <a href="../Maths_And_Numbers/Maths_And_Numbers.htm">数学与数字</a></div>
+        <div style="float:right">Next: <a href="../Maths_And_Numbers/Maths_And_Numbers.htm">数学与数字 (未检查)</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

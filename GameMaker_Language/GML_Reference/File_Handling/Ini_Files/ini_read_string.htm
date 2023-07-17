@@ -80,8 +80,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">ini_read_string</span></h1>
-  <p>You can use this function to read a string (text) from an INI data file.</p>
-  <p>INI files are split into <b>sections</b> and then each section is subsequently split into <b>key</b> - <b>value</b> pairs. So a typical INI file would look something like this:&nbsp;</p>
+  <p>可以使用此函数从 INI 数据文件读取字符串 (文本)。</p>
+  <p>Ini 文件被分割成 <b> 节 (sections)</b> ，然后每个节又被分割成 <b> 键 (key)</b>-<b> 值 (value)</b> 对。所以一个典型的 ini 文件看起来是这样的：</p>
   <p><img alt="Ini file contents example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Files/IniExample.png"></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -118,7 +118,7 @@
   <p class="code">ini_open("savedata.ini");<br>
     global.name = <span data-field="title" data-format="default">ini_read_string</span>("player", "name", "Player1");<br>
     ini_close();</p>
-  <p>This will open <span class="inline2">"savedata.ini"</span> and set <span class="inline2">global.name</span> to the string under <span class="inline2">"save1"</span> &gt; <span class="inline2">"Name"</span> in it, then close the .ini again. If there is no string under <span class="inline2">"save1"</span> &gt; <span class="inline2">"Name"</span>, or no file named "<span class="inline2">savedata.ini"</span>&nbsp;is present, <span class="inline2">global.name</span> will be set to <span class="inline2">"Player1"</span>.</p>
+  <p>这将打开 <span class="inline2">"savedata.ini"</span> 并将 <span class="inline2">global.name</span> 设置为其中 <span class="inline2">"save1"</span>&gt;<span class="inline2">"Name"</span> 下的字符串，然后再次关闭 .ini。如果 <span class="inline2">"save1"</span>&gt;<span class="inline2">"Name"</span> 下没有字符串，或者没有名为 <span class="inline2">"savedata.ini"</span> 的文件，则 <span class="inline2">global.name</span> 将设置为 <span class="inline2">"Player1"</span>。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

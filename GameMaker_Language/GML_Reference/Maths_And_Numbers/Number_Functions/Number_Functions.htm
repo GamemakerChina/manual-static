@@ -94,14 +94,14 @@
   <p>同样值得注意的是，当使用<b> YoYo Compiler </b>目标时，所有的表达式和函数都是从左到右计算的<i> ，而在所有其他目标平台上，它们是从右到左计算的</i> ，这意味着，例如，根据不同的平台，这将给出不同的结果:</p>
   <p class="code">val = max(num, ++num, num++);</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;有关详细信息，请参阅<a href="../../../GML_Overview/Evaluation_Order.htm">评估顺序</a>部分。</p>
-  <p>You can also use a special function available in <span data-keyref="GameMaker Name">GameMaker</span> to set the <b><a id="epsilon"></a>epsilon</b> value for floating point maths. When a real number is rounded to the nearest floating point number, the epsilon (also know as "machine epsilon") forms an upper bound on the relative error, and you can get and set the epsilon value using the following functions:</p>
+  <p>您还可以使用<span data-keyref="GameMaker Name">GameMaker</span>中的一个特殊函数来设置浮点数学的<b><a id="epsilon"></a>epsilon(精度)</b>值。当一个实数四舍五入到最接近的浮点数时，(也称为“机器精度”)形成相对误差的上界，可以使用以下函数获取和设置:</p>
   <ul class="colour">
     <li><a href="math_set_epsilon.htm">math_set_epsilon</a></li>
     <li><a href="math_get_epsilon.htm">math_get_epsilon</a></li>
   </ul>
-  <h2 id="func_ref">Function Reference</h2>
-  <h3 id="random">Random Numbers and Values</h3>
-  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;</b>When using the random functions, <span data-keyref="GameMaker Name">GameMaker</span> maintains the same random seed every time you start the game. This makes debugging much easier as you are guaranteed that the random functions will always initially return the same value, however should you not wish this to happen, you must first set a new random seed at the very start of the game, either using&nbsp;<span class="inline3_func"><a href="randomise.htm">randomise</a></span>&nbsp;or <span class="inline3_func"><a href="random_set_seed.htm">random_set_seed</a></span>.</p>
+  <h2 id="func_ref">函数参考</h2>
+  <h3 id="random">随机数和值</h3>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> </b>在使用随机函数时，<span data-keyref="GameMaker Name">GameMaker</span>在每次游戏开始时都保持相同的随机种子。这使得调试更加容易，因为你可以保证随机函数最初总是返回相同的值，但是如果你不希望发生这种情况，你必须首先在游戏开始时设置一个新的随机种子，可以使用<span class="inline3_func"><a href="randomise.htm">randomise</a></span>或<span class="inline3_func"><a href="random_set_seed.htm">random_set_seed</a></span>。</p>
   <ul class="colour">
     <li><a href="choose.htm">choose</a></li>
     <li><a href="random.htm">random</a></li>
@@ -112,8 +112,8 @@
     <li><a href="random_get_seed.htm">random_get_seed</a></li>
     <li><a href="randomise.htm">randomise</a><b></b></li>
   </ul>
-  <h3>Rounding and Truncating</h3>
-  <p>These are all functions that will round values in some way, or select a single value from various given values.</p>
+  <h3>舍入和截断</h3>
+  <p>这些函数都将以某种方式舍入值，或者从各种给定值中选择一个值。</p>
   <ul class="colour">
     <li><a href="round.htm">round</a></li>
     <li><a href="frac.htm">frac</a></li>
@@ -128,12 +128,12 @@
     <li><a href="lerp.htm">lerp</a></li>
     <li><a href="clamp.htm">clamp</a></li>
   </ul>
-  <h3>Comparisons and Precision</h3>
+  <h3>比较和精度</h3>
   <ul class="colour">
     <li><a href="math_set_epsilon.htm">math_set_epsilon</a></li>
     <li><a href="math_get_epsilon.htm">math_get_epsilon</a></li>
   </ul>
-  <h3>Mathematical Functions</h3>
+  <h3>数学函数</h3>
   <ul class="colour">
     <li><a href="exp.htm">exp</a></li>
     <li><a href="ln.htm">ln</a></li>
@@ -149,7 +149,7 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back:&nbsp;<a href="../Maths_And_Numbers.htm">数学与数字 (未检查)</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Maths_And_Numbers.htm">数学与数字</a></div>
         <div style="float:right">Next:&nbsp;<a href="../../../../Additional_Information/Vectors.htm">向量</a></div>
       </div>
     </div>

@@ -78,10 +78,10 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><span data-field="title" data-format="default">语法错误(羽毛信息)</span></h1>
+  <h1><span data-field="title" data-format="default">语法错误(语法检查信息)</span></h1>
   <p>在<span data-keyref="GameMaker Name">GameMaker</span>中编写游戏时，错误报告的第一级是在代码或 GML 可视化编辑器中，它是<a class="tooltip" title="与人类语言类似，编程语言在如何传达语句方面也有自己的一套规则，这套规则称为语法。尽管许多编程语言共享许多功能，特性和功能，但是它们通常在语法上有所不同。如果没有正确使用语法，则无法编写可执行程序，并且错误的语法将导致编译时出错。">语法</a>检查器。当你编写代码或者添加动作时，<span data-keyref="GameMaker Name">GameMaker</span> 会检查它是否遵循语言的语法，并标记出它发现的任何问题，这样你就可以在运行游戏或者编译可执行文件之前解决这些问题。</p>
-  <p>根据您是否在<a href="../../The_Asset_Editors/Code_Editor_Properties/Feather_Features.htm">羽毛设置</a>中启用了<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽毛</a> ，语法错误检查会发生不同的情况。</p>
-  <h2>语法错误(羽毛禁用)</h2>
+  <p>根据您是否在<a href="../../The_Asset_Editors/Code_Editor_Properties/Feather_Features.htm">语法检查设置</a>中启用了<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">语法检查</a> ，语法错误检查会发生不同的情况。</p>
+  <h2>语法错误(语法检查禁用)</h2>
   <p><img alt="Syntax Errors Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Errors_Syntax_Example.png"></p>
   <p>这些错误分为两大类:</p>
   <ul class="colour">
@@ -297,11 +297,11 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h">羽毛信息(羽毛启用)</h2>
-  <p>当“羽毛”被启用时，“语法错误”窗口将被“羽毛消息”窗口替换:</p>
-  <p><img class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Output_Feather_Searchable_Sortable.png">羽毛信息窗口列出羽毛在代码中遇到的错误和警告，以及在找到特定的代码模式时给出的建议。此处显示的错误类型取决于您在消息严重程度下的<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽毛设置</a>中定义的配置文件。</p>
+  <h2 id="h">语法检查信息(语法检查启用)</h2>
+  <p>当“语法检查”被启用时，“语法错误”窗口将被“语法检查消息”窗口替换:</p>
+  <p><img class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Output_Feather_Searchable_Sortable.png">语法检查信息窗口列出语法检查在代码中遇到的错误和警告，以及在找到特定的代码模式时给出的建议。此处显示的错误类型取决于您在消息严重程度下的<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">语法检查设置</a>中定义的配置文件。</p>
   <p>在这个窗口中，消息列表可以按照消息代码、消息文本(按字母顺序)或资源(按资源名称的字母顺序)进行升序或降序排序。也可以使用窗口右上角的搜索框进行搜索。</p>
-  <p>羽毛信息分为三类:</p>
+  <p>语法检查信息分为三类:</p>
   <ul class="colour">
     <li><img src="../../assets/Images/Scripting_Reference/Additional_Information/i_Feather_Warning.png"> <strong>警告</strong> : 这些是针对可能的错误显示的，在大多数情况下，这不会停止游戏的编译，但可能会引发运行时错误。产生这些警告的最常见原因是: 在表达式中使用了变量，但尚未在其他任何地方定义该变量，或者已经定义了变量但尚未使用。</li>
     <li><img src="../../assets/Images/Scripting_Reference/Additional_Information/i_Feather_Error.png"> <strong>错误</strong> : 这些问题不允许游戏编译，更不用说运行了。在进一步处理代码之前，应该修复这些问题。</li>

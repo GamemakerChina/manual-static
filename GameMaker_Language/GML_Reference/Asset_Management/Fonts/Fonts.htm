@@ -88,7 +88,7 @@
   <h2>字体和文本呈现</h2>
   <p><span data-keyref="GameMaker Name">GameMaker</span> 中的文本是使用 <span class="inline3_func"><a href="../../Drawing/Text/draw_set_font.htm">draw_set_font</a></span> 设置的字体绘制的。使用字体绘制的文本将以不同的方式绘制，具体取决于是否启用了 SDF。</p>
   <h3>常规</h3>
-  <p>这是在 <span data-keyref="GameMaker Name">GameMaker</span> 中绘制文本的正常方式。所选字体大小 (<a class="tooltip" title="字形是字符的一种特殊的视觉外观。它是使用给定字体的字符的外观。"></a>font_get_size<span class="inline3_func"><a href="font_get_size.htm">) 的字体的 </a> 字形 </span> 放置在纹理页面 (<span class="inline3_func"><a href="font_get_texture.htm">font_get_texture</a></span>) 上，每个字符都按纹理页面的原样呈现。</p>
+  <p>这是在<span data-keyref="GameMaker Name">GameMaker</span>中绘制文本的正常方式。所选字体大小（<span class="inline3_func"><a href="font_get_size.htm">font_get_size</a></span>）的字体<a class="tooltip" title="字形是字符的一种特殊的视觉外观。它是使用给定字体的字符的外观。">字形</a>放置在纹理页面（<span class="inline3_func"><a href="font_get_texture.htm">font_get_texture</a></span>）上，每个字符都以纹理页面中的原样呈现。</p>
   <p>这样做的一个缺点是，使用常规字体放大文本会使它们看起来像像素化。为了解决此问题，GameMaker 为在运行时添加的字体提供了 SDF 渲染选项。</p>
   <h3 id="h">SDF 渲染</h3>
   <p>对于新添加的字体，此默认情况下为 <em> 禁用 </em>，并通过调用 <span class="inline3_func"><a href="font_enable_sdf.htm">font_enable_sdf</a></span> 按字体 <em> 启用 </em>：</p>

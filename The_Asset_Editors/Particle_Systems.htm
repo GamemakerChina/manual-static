@@ -50,7 +50,7 @@
   <meta name="topic-status" content="Draft">
 <link rel="stylesheet" type="text/css" href="../assets/css/default.css"><script src="../../assets/scripts/main_script.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <title>The Particle System Editor</title>
   <meta name="topic-status" content="Draft">
   <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
@@ -83,52 +83,60 @@
   <div>
   <h1><span data-field="title" data-format="default">粒子系统编辑器</span></h1>
   <p><span data-field="title" data-format="default">粒子系统编辑器</span>可用于创建视觉粒子效果并实时预览，就像它们在游戏中一样。</p>
-  <p>在资源浏览器中双击粒子系统资源将打开此编辑器：</p>
-  <p><img height="862" src="../assets/Images/Asset_Editors/Editor_ParticleSystems.png" width="1476"></p>
-  <p>粒子系统由不同的发射器组成，每个发射器"发射"一种特定类型的粒子。粒子只是一个根据其设置设置动画并具有固定寿命的图像。</p>
+  <p>Double-clicking on a Particle System asset in&nbsp;<a href="../Introduction/The_Asset_Browser.htm">The Asset Browser</a> will open this editor:</p>
+  <p><img class="center" height="862" src="../assets/Images/Asset_Editors/Editor_ParticleSystems.png" style="cursor: nwse-resize;" width="1476">A Particle System consists of various emitters, each of which "emits" a particular type of particle. A particle is simply an image that is animated according to its settings, and has a fixed lifespan.</p>
   <p>通过在系统内创建发射器并配置其粒子设置，您可以创建从火灾、爆炸等到使用多个发射器的复杂效果，如上所示。</p>
   <div class="minitoc" data-minitoc-targetid="drop-down" style="">
     <p class="minitoc-caption" href="#" style="">目录</p>
     
-  <ol class="minitoc-list" style=""><li><a href="#creating_a_part" class="minitoc-list-item">创建粒子系统</a></li><li><a href="#using_a_particl" class="minitoc-list-item">使用粒子系统</a></li><li><a href="#h" class="minitoc-list-item">画布</a></li><ol><li><a href="#origin_&amp;_draw_o" class="minitoc-list-item">原点绘制顺序</a></li><li><a href="#toolbox" class="minitoc-list-item">工具箱</a></li></ol><li><a href="#emitters" class="minitoc-list-item">发射器</a></li><li><a href="#configuring_an_" class="minitoc-list-item">配置发射器</a></li><li><a href="#h1" class="minitoc-list-item">共享发射器</a></li><ol><li><a href="#creating_a_pres" class="minitoc-list-item">创建预设</a></li><li><a href="#linking_an_emit" class="minitoc-list-item">将发射器链接到预设</a></li><li><a href="#changing_linked" class="minitoc-list-item">更改链接发射器的属性</a></li><li><a href="#unlinking_an_em" class="minitoc-list-item">取消发射器与预设的链接</a></li></ol></ol></div>
+  <ol class="minitoc-list" style=""><li><a href="#creating_a_part" class="minitoc-list-item">创建粒子系统</a></li><li><a href="#using_a_particl" class="minitoc-list-item">使用粒子系统</a></li><li><a href="#h" class="minitoc-list-item">画布</a></li><ol><li><a href="#origin,_draw_or" class="minitoc-list-item">Origin, Draw Order &amp; Copy GML</a></li><li><a href="#toolbox" class="minitoc-list-item">工具箱</a></li></ol><li><a href="#emitters" class="minitoc-list-item">发射器</a></li><li><a href="#configuring_an_" class="minitoc-list-item">配置发射器</a></li><li><a href="#h1" class="minitoc-list-item">共享发射器</a></li><ol><li><a href="#creating_a_pres" class="minitoc-list-item">创建预设</a></li><li><a href="#linking_an_emit" class="minitoc-list-item">将发射器链接到预设</a></li><li><a href="#changing_linked" class="minitoc-list-item">更改链接发射器的属性</a></li><li><a href="#unlinking_an_em" class="minitoc-list-item">取消发射器与预设的链接</a></li></ol></ol></div>
   <h2 id="creating_a_part">创建粒子系统</h2>
   <p>以下是设置<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>的基本步骤：</p>
   <ul class="colour">
     <li>创建<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>并修改默认发射器(请参阅<a href="Particle_System_Properties/Emitter_Properties.htm">发射器属性</a>)</li>
     <li>或者，添加更多发射器以达到您想要的效果</li>
-    <li>通过以下三种方式之一将粒子系统资源添加到游戏中：<ul><li>将其放入中的资源层中<a href="Rooms.htm">房间编辑器</a>中</li> <li>将其放入<a href="Sequences.htm">序列中</a>作为轨迹</li><li>在运行时显示效果 <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">part_system_create</a></span>/<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create_layer.htm">part_system_create_layer</a></span> 或 GML 可视化等价：<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Create_Particle_System.htm">创建粒子系统</a></li></ul></li>
+    <li>Add the particle system asset to your game in any of these three ways:
+      <ul>
+        <li>Drop it inside an Asset Layer in&nbsp;<a href="Rooms.htm">The Room Editor</a></li>
+        <li>Drop it inside a <a href="Sequences.htm">Sequence</a> as a track</li>
+        <li>Add&nbsp;<span data-keyref="GML_Code">GML Code</span> to show the effect at runtime:
+          <ul>
+            <li>Create the particle system using&nbsp;<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">part_system_create</a></span>/<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create_layer.htm">part_system_create_layer</a></span>&nbsp;or the GML Visual equivalent:&nbsp;<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Create_Particle_System.htm">Create Particle System</a></li>
+            <li>Paste the code generated by the <strong>Copy GML to Clipboard</strong>&nbsp;<img class="icon" src="../assets/Images/Icons/Icon_GML_To_Clipboard.png"> button where needed in your code</li>
+            <li>Create the particles in an existing particle system using&nbsp;<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_particles_burst.htm">part_particles_burst</a></span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
   <h2 id="using_a_particl">使用粒子系统</h2>
   <p>如上所述，可以通过三种方式在游戏中使用粒子系统：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">添加到房间编辑器</span><span data-close-text="true">添加到房间编辑器</span></a></p>
   <div class="droptext" data-targetname="drop-down1">
-    <p class="dropspot">将粒子系统资源拖动到<a data-cke-saved-href="Rooms.htm" href="Rooms.htm">房间编辑器</a>画布上，并选择资源层。整个粒子系统(包括其发射器)将作为元素添加到层中。要在房间编辑器中预览粒子系统，请按<strong>播放动画</strong>按钮<img class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_PlayRoom.png" src="../assets/Images/Icons/Icon_PlayRoom.png">。</p>
-    <p class="dropspot">当游戏运行时，粒子系统在层上实例化并立即开始播放。添加的层元素类型为 <span class="inline2">layerelementtype_particlesystem</span> (请参见 <span class="inline3_func"><a data-cke-saved-href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_element_type.htm" href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_element_type.htm">layer_get_element_type</a></span>).</p>
+    <p class="dropspot">将粒子系统资源拖动到<a href="Rooms.htm">房间编辑器</a>画布上，并选择资源层。整个粒子系统(包括其发射器)将作为元素添加到层中。要在房间编辑器中预览粒子系统，请按<strong>播放动画</strong>按钮<img class="icon" src="../assets/Images/Icons/Icon_PlayRoom.png">。</p>
+    <p class="dropspot">当游戏运行时，粒子系统在层上实例化并立即开始播放。添加的层元素类型为 <span class="inline2">layerelementtype_particlesystem</span> (请参见 <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_element_type.htm">layer_get_element_type</a></span>).</p>
     <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;您无法获取以此方式添加的粒子系统的粒子系统 ID。</p>
-    <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span> 作为层元素，粒子系统可以具有旋转和混合颜色，这是粒子系统本身不能拥有的。<br></p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">添加到序列编辑器</span><span data-close-text="true">添加到序列编辑器</span></a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <p class="dropspot">将粒子系统资源拖动到<a data-cke-saved-href="Sequences.htm" href="Sequences.htm">序列编辑器</a>画布上。这会将类型为 <span class="inline2">seqtracktype_particlesystem</span> 的新序列轨迹添加到序列中。</p>
-    <p class="note"><span data-conref="../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;这将为粒子<em>系统添加单个轨迹</em>。粒子系统中的单个<em>发射器</em>当前不能在序列中设置动画。</p>
-    <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span> 作为序列轨迹，粒子系统可以更改其位置、旋转、比例、混合颜色和原点。</p>
+    <p class="dropspot">将粒子系统资源拖动到<a href="Sequences.htm">序列编辑器</a>画布上。这会将类型为 <span class="inline2">seqtracktype_particlesystem</span> 的新序列轨迹添加到序列中。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;This adds a single track for the whole particle system. Individual emitters in the particle system cannot be animated separately in a sequence.</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">在运行时创建</span><span data-close-text="true">在运行时创建</span></a></p>
   <div class="droptext" data-targetname="drop-down3">
-    <p class="dropspot">使用 <span data-keyref="GML_Code">GML 代码</span>中的一个内置函数 <span class="inline3_func"><a data-cke-saved-href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm" href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">part_system_create</a></span>/<span class="inline3_func"><a data-cke-saved-href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create_layer.htm" href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create_layer.htm">part_system_create_layer</a></span> 或使用<a data-cke-saved-href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Create_Particle_System.htm" href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Create_Particle_System.htm">创建粒子系统</a>在 <span data-keyref="GML_Visual">GML 可视化</span>中自己创建粒子系统。</p>
+    <p class="dropspot">Spawn the particle system in&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;using one of the built-in functions&nbsp;<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">part_system_create</a></span>/<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create_layer.htm">part_system_create_layer</a></span>&nbsp;or in <span data-keyref="GML_Visual">GML Visual</span>&nbsp;using <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Create_Particle_System.htm">Create Particle System</a>.</p>
     <p class="dropspot">将<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>作为可选的 <span class="inline2">partsys</span> 参数传递给函数/操作：</p>
     <p class="code">p_sys = part_system_create(ps_MyBeautifulParticleEffect);</p>
     <p class="dropspot">通过传递此可选的 <span class="inline2">partsys</span> 参数的值，<span data-keyref="GameMaker Name">GameMaker</span> 将根据您在粒子系统编辑器中的设置来初始化粒子系统。</p>
-    <p class="dropspot">这与创建粒子的仅运行时方法相同，该方法涉及创建空粒子系统并设置粒子发射器和类型：</p>
-    <p class="code">p_sys =&nbsp;part_system_create();<br><br>p_emitter = part_emitter_create(p_sys);<br>// Configure the emitter<br>// ...<br><br>p_type = part_type_create();<br>// Configure the particle, e.g.<br>// part_type_shape(p_type, pt_shape_disk);<br>// part_type_colour3(p_type, c_white, c_red, c_blue);<br>// etc.<br><br>part_emitter_stream(p_sys, p_emitter, p_type, 2);<br></p>
+    <p class="dropspot">You can use&nbsp;<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/particle_get_info.htm">particle_get_info</a></span>&nbsp;to get the emitters and particle types used in a particle system. You can use this to manually spawn a particle type using&nbsp;<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_particles_create.htm">part_particles_create</a></span>.</p>
   </div>
   <h2 id="h">画布</h2>
   <p>画布显示添加到系统中的所有粒子发射器的预览，并允许您移动发射器并调整其大小。</p>
   <p>将显示每个发射器，包括其发射粒子的区域和形状(矩形、椭圆、菱形或线条)的预览。可以分别为每个发射器禁用该预览。</p>
-  <h3 id="origin_&amp;_draw_o">原点绘制顺序</h3>
-  <p>原点和绘制顺序设置显示在画布的左上角。</p>
-  <p><img class="center" height="72" src="../assets/Images/Asset_Editors/Editor_ParticleSystems_DrawOrderOrigin.png" width="458">原点表示画布上发生变换的位置，类似于精灵的原点。如果将粒子系统资源添加到序列或房间资源层，则其 X、Y 位置将对应于此处设置的原点。</p>
-  <p>绘制顺序确定绘制粒子的顺序(即，哪些粒子绘制在其他粒子之上)。</p>
+  <h3 id="origin,_draw_or">Origin, Draw Order &amp; Copy GML</h3>
+  <p>The <strong>Origin</strong>&nbsp;and&nbsp;<strong>Draw Order</strong> as well as the&nbsp;<strong>Copy GML to Clipboard</strong>&nbsp;button are shown in the top-left corner of the canvas.</p>
+  <p><img class="center" src="../assets/Images/Asset_Editors/Editor_ParticleSystems_DrawOrderOrigin.png"><strong>Origin</strong> indicates the position on the canvas around which transformations take place, similar to a sprite's origin. If you add a particle system asset to a sequence or to a room asset layer, its X, Y position will correspond to the origin set here.</p>
+  <p>The <strong>Draw Order</strong> determines the order in which particles are drawn (i.e. which particles are drawn on top of others).</p>
   <table style="caption-side: top">
     <caption>粒子绘制顺序</caption>
     <colgroup>
@@ -145,18 +153,19 @@
         <td>Newer particles are drawn first and older particles are drawn on top of them. Newer particles are drawn behind older ones.</td>
       </tr>
       <tr>
-        <td><img class="center" src="../assets/Images/Scripting_Reference/GML/Reference/Drawing/particles_oldtonew.gif"></td>
+        <td><img class="center" src="../assets/Images/Scripting_Reference/GML/Reference/Drawing/particles_oldtonew.gif" style="cursor: nesw-resize;"></td>
         <td><img class="center" src="../assets/Images/Scripting_Reference/GML/Reference/Drawing/particles_newtoold.gif"></td>
       </tr>
     </tbody>
   </table>
+  <p>The <strong>Copy GML to Clipboard</strong>&nbsp;button&nbsp;<img class="icon" src="../assets/Images/Icons/Icon_GML_To_Clipboard.png"> copies the&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;needed to create the particle system at runtime, including its emitters and particle types to the clipboard. You can then paste that&nbsp;code&nbsp;to create a particle system that will look exactly the same. For more information, see&nbsp;<a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/Particle_Systems.htm#h">Copy GML to Clipboard</a>.</p>
   <h3 id="toolbox">工具箱</h3>
   <p>工具箱显示在画布的右上角。</p>
   <p><img class="center" src="../assets/Images/Asset_Editors/Editor_ParticleSystems_Toolbox.png"></p>
   <p>它包含以下内容：</p>
-  <ul class="Disc">
-    <li><strong>切换网格</strong> <img class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasGrid.png" width="24">：这将在画布上切换网格。插入符号包含更多选项，如网格大小、启用/禁用对齐网格和网格颜色。</li>
-    <li><strong>缩放控件</strong> <img class="icon" id="" src="../assets/Images/Icons/Icon_CanvasZoom.png">：放大、重置缩放、缩小、中心适配。</li>
+  <ul class="Colour">
+    <li><strong>切换网格</strong> <img class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png">：这将在画布上切换网格。插入符号包含更多选项，如网格大小、启用/禁用对齐网格和网格颜色。</li>
+    <li><strong>缩放控件</strong> <img class="icon" height="24" id="" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120">：放大、重置缩放、缩小、中心适配。</li>
     <li><strong>画布设置</strong> <img class="icon" src="../assets/Images/Icons/Icon_ToggleCanvas.png"><img class="icon" src="../assets/Images/Icons/Icon_CanvasOptions.png">：打开或关闭此处的画布边框，并设置其原点和尺寸 (默认为 1366x768)。您还可以在此处设置背景图像作为参考。</li>
   </ul>
   <h2 id="emitters">发射器</h2>
@@ -167,14 +176,13 @@
   <p>在发射器上单击鼠标右键可以删除、剪切、复制、复制和重命名发射器。</p>
   <p>点击列表中的眼睛图标<img class="icon" src="../assets/Images/Icons/Icon_Eye.png">禁用(暂停)发射器，点击挂锁图标<img class="icon" src="../assets/Images/Icons/Icon_Padlock.png">锁定发射器。锁定可防止更改其任何属性，无论是在画布上还是在<a href="../IDE_Tools/The_Inspector.htm">检查器</a>中。</p>
   <p>使用停靠菜单<img class="icon" src="../assets/Images/Icons/Icon_EmitterDock.png">取消停靠/停靠发射器列表，或更改其在画布周围的位置。</p>
-  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 与 <span data-keyref="GML_Code">GML 代码</span>不同，无法在<span data-field="title" data-format="default">粒子系统编辑器中</span>创建单独的粒子(例如使用 <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_particles_create.htm">part_particles_create</a></span>)。<span data-field="title" data-format="default">粒子系统编辑器</span>中的所有粒子都是由粒子发射器(或粒子本身，作为<a href="Particle_System_Properties/Emitter_Properties.htm#h2">子粒子</a>)创建的。</p>
   <h2 id="configuring_an_">配置发射器</h2>
   <p>粒子发射器及其创建的粒子可以在<a href="../IDE_Tools/The_Inspector.htm">检查器</a>中进行完全配置。</p>
   <p>有关配置发射器的详细信息，请参阅：<a href="Particle_System_Properties/Emitter_Properties.htm">发射器属性</a></p>
   <h2 id="h1">共享发射器</h2>
   <p>您创建的发射器可以在&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;项目中的粒子系统资源之间共享。这要求它们在库中另存为<em>预设</em>。</p>
   <p><img class="center" src="../assets/Images/Asset_Editors/Editor_ParticleSystems_Library.png"></p>
-  <p>GameMaker 也带有一些内置的预设，你可以从中选择。您可以将内置预设加载到发射器中，进行更改并将其另存为新预设。内置的预设本身不能被修改，所以一旦发射器的设置改变，预设就会被取消链接。</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>&nbsp;also comes with some built-in presets you can choose from. You can load a built-in preset into an emitter, make your changes and save it as a new preset. The built-in presets themselves can't be modified, so the preset will be unlinked the moment the emitter's settings are changed.</p>
   <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;共享发射器按项目存储。它们仅在创建它们的项目中可用，不能在不同的项目之间共享。</p>
   <h3 id="creating_a_pres">创建预设</h3>
   <p>在根据您的喜好配置粒子发射器后，单击"库"面板(如上所示)下的<strong>另存为预设</strong><img class="icon" src="../assets/Images/Icons/Icon_ParticleSystem_SavePreset.png">，然后输入新预设的名称：</p>

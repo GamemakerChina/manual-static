@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Fonts</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -91,13 +91,14 @@
   <p>这是在<span data-keyref="GameMaker Name">GameMaker</span>中绘制文本的正常方式。所选字体大小（<span class="inline3_func"><a href="font_get_size.htm">font_get_size</a></span>）的字体<a class="tooltip" title="字形是字符的一种特殊的视觉外观。它是使用给定字体的字符的外观。">字形</a>放置在纹理页面（<span class="inline3_func"><a href="font_get_texture.htm">font_get_texture</a></span>）上，每个字符都以纹理页面中的原样呈现。</p>
   <p>这样做的一个缺点是，使用常规字体放大文本会使它们看起来像像素化。为了解决此问题，GameMaker 为在运行时添加的字体提供了 SDF 渲染选项。</p>
   <h3 id="h">SDF 渲染</h3>
-  <p>对于新添加的字体，此默认情况下为 <em> 禁用 </em>，并通过调用 <span class="inline3_func"><a href="font_enable_sdf.htm">font_enable_sdf</a></span> 按字体 <em> 启用 </em>：</p>
+  <p>默认情况下，对于新添加的字体<em>禁用此选项</em>，并通过<a href="../../../../The_Asset_Editors/Fonts.htm">字体编辑器</a>或调用<span class="inline3_func"><a href="font_enable_sdf.htm">font_enable_sdf</a></span><em>按字体</em>启用此选项：</p>
   <p class="code">new_font = font_add("STENCIL.TTF", 32, false, false, 32, 128);<br>
     font_enable_sdf(new_font, true);</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;SDF渲染当前仅适用于使用&nbsp;<span class="inline3_func"><a href="font_add.htm">font_add</a></span> 添加的字体。未来版本中将提供对通过IDE添加的字体资源的支持。</p>
   <p>启用 SDF 渲染时，给定字体范围内的所有字符在纹理页面上以不同方式存储。存储的不是字体设置大小的不同字符的实际呈现，而是 SDF (<em>带符号距离域)</em>。</p>
   <p>在这种情况下，每个纹理元素都存储到字符上最近点的<em>带符号距离</em>。此纹理上的所有纹理元素组合在一起构成了带符号距离的<em>字段</em>。</p>
-  <p>为字体启用此功能后，可以放大文本，而不会使字符变得像素化。<span></span></p>
+  <p>为字体启用此功能后，可以放大文本，而不会使字符变得像素化。</p>
+  <p>您还可以将<a href="font_enable_effects.htm">效果</a>应用于启用了SDF的字体：<span></span></p>
+  <p><img class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Fonts/font_effects.png"></p>
   <h3>直观比较</h3>
   <p>下表显示了使用常规字体绘制的文本和使用启用了SDF的字体绘制的文本之间的直观比较：</p>
   <table>
@@ -124,11 +125,6 @@
       </tr>
     </tbody>
   </table>
-  <p><span></span></p>
-  <div data-conref="../../../../assets/snippets/Note_SDF_HTML5.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;目前HTML5上不支持SDF字体。</p>
-
-</div>
   <h2>功能参考</h2>
   <h3>资源信息</h3>
   <ul class="colour">
@@ -170,6 +166,7 @@
     <li><a href="font_get_sdf_enabled.htm">font_get_sdf_enabled</a></li>
     <li><a href="font_sdf_spread.htm">font_sdf_spread</a></li>
     <li><a href="font_get_sdf_spread.htm">font_get_sdf_spread</a></li>
+    <li><a href="font_enable_effects.htm">font_enable_effects</a></li>
   </ul>
   <h3>绘制</h3>
   <ul class="Disc">

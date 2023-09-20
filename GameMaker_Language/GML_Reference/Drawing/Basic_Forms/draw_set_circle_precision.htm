@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>draw_set_circle_precision</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,20 +81,25 @@
   <h1>draw_set_circle_precision</h1>
   <p>为了优化绘制圆时的性能，<span data-keyref="GameMaker Name">GameMaker</span>基本上绘制了一个多边形形状，该形状具有足够的边以使其显示为<i>圆形</i>。但是，根据您需要的圆圈的大小，您可能会发现这个值可以帮助提高游戏的性能，或者使圆圈看起来更好。可以输入到此函数中的精度值是圆多边形具有的边数，此数字可以是介于4和64之间的任意值，<i>但必须是可被4</i>整除的数字，默认值为24。</p>
   <p><img alt="Circle precision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_set_circle_precision.png"></p>
-  <p class="note"><b>注意</b>：如果要使用着色器绘制形状，请注意，大多数着色器都需要以下输入：顶点、纹理、颜色。但是，使用此函数时，仅传入顶点和颜色数据，因此着色器可能无法绘制任何内容(或绘制某些内容但不正确)。如果需要以这种方式绘制形状，则应考虑到这一点对着色器进行自定义。</p>
+  <div data-conref="../../../../assets/snippets/Note_Shape_Shader_Attributes_Are_Different.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you want to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_set_circle_precision(precision);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>precision</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>precision</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>调用此函数之后绘制的所有圆的精度。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>

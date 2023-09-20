@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../../..";
     gCommonRootRelPath = "../../../../..";
-    gTopicId = "8.2.2.6.10.2.0_7";
+    gTopicId = "8.2.2.6.10.2.0_8";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>part_type_size</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,13 +78,18 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>part_type_size</h1>
+  <h1><span data-field="title" data-format="default">part_type_size</span></h1>
   <p>该函数用于确定粒子在创建时的大小，也可用于使粒子在其寿命期间增加或减少大小。最小和最大大小值默认为1(意味着设置<a href="part_type_scale.htm"><span class="inline">part_type_scale()</span></a>比例后，大小与基础粒子的比例相同)，如果它们设置为相同的值，则所有粒子的初始大小将相同，但如果设置为不同的值，则每个粒子将从范围内的随机大小开始，例如，如果最小值为0.5且最大值为2，则将创建大小介于基础比例的一半和两倍之间的所有粒子。</p>
   <p>还可以设置一个增量值，该值将使粒子精灵在粒子的生命周期内生长(如果为正数)或收缩(如果为负数)，并且每个步骤都将给定的量添加到粒子大小。此值最小可为(+/-) 0.01。</p>
   <p>最后，您可以设置"摆动"因子。这是一个值，将随机添加或减去到粒子寿命的每个步骤的大小中。显然，较大的值比较小的值更明显，此值甚至可以是负值，最大范围在-20和20之间。</p>
+  <div data-conref="../../../../../assets/snippets/Note_Particle_Property_Can_Be_Changed.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此粒子类型属性的<span class="inline2">*_incr</span>和<span class="inline2">*_wiggle</span>参数会影响给定粒子类型的现有粒子。</p>
+
+</div>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>要分别更改x轴和y轴上的尺寸，可以使用<span class="inline3_func"><a href="part_type_size_x.htm">part_type_size_x</a></span>和<span class="inline3_func"><a href="part_type_size_y.htm">part_type_size_y</a></span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">part_type_size(ind, size_min, size_max, size_incr, size_wiggle);</p>
+  <p class="code"><span data-field="title" data-format="default">part_type_size</span>(ind, size_min, size_max, size_incr, size_wiggle);</p>
   <table>
     <tbody>
       <tr>
@@ -137,12 +142,11 @@
   <p>上述代码将设置各种粒子值，包括创建每个粒子时设置为两倍大小的大小，然后通过每个步骤将大小增加0.01，同时使用0.1的摆动。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Back: <a href="Particle_Types.htm">粒子类型</a></div>
-        <div style="float:right">Next: <a href="part_type_scale.htm">part_type_scale</a></div>
+        <div style="float:right">Next:&nbsp;<a href="part_type_size_x.htm">part_type_size_x</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

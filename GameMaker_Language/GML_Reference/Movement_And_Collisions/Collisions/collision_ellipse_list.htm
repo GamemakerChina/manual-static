@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>collision_ellipse_list</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -80,9 +80,18 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>collision_ellipse_list</h1>
-  <p>此函数与<a href="collision_ellipse.htm"><span class="inline">collision_ellipse()</span></a>函数相同，只是不是一次只检测一个碰撞实例，而是检测多个实例。提供要检查的椭圆区域左上角和右下角的x/ y位置以及要检查的对象，并且可以将检查设置为精确(在这种情况下，所有要检查的实例都需要具有<i>精确</i>碰撞遮罩)，以及检查是否应包括调用实例。</p>
-  <p>您还提供了一个<a href="../../Data_Structures/DS_Lists/DS_Lists.htm">DS 列表</a>，因此任何与调用实例碰撞的实例的<a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><span class="inline">id</span></a>值都将添加到给定列表的末尾。您可以在调用此函数之前<a href="../../Data_Structures/DS_Lists/ds_list_clear.htm">清除</a>列表，以便它只包含此函数调用的结果。还可以选择根据实例从椭圆区域原点到其原点的距离对实例进行排序。函数返回找到的实例数，如果找不到实例，则返回0。</p>
-  <p>请注意，您可以不提供对象索引，而是提供<a href="../../../GML_Overview/Instance_Keywords.htm">实例关键字</a><span class="inline">all</span>，以检查当前房间中的所有实例，其中可能包括运行代码的实例(取决于<span class="inline">notme</span>参数)。</p>
+  <p>This function is the same as the <a href="collision_ellipse.htm"><span class="inline">collision_ellipse()</span></a> function, only instead of just detecting one instance / tile map in collision at a time, it will detect multiple instances or tile maps. You supply the x/y positions of the top left and bottom right of the elliptical area to check along with the object / tile map to check for, and you can set the check to be precise (in which case all instances being checked will need to have <i>precise</i> collision masks) and whether the check should include the calling instance or not.</p>
+  <p>You supply a <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">DS list</a> too, so the&nbsp;<a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><span class="inline">id</span></a> values of any instances (or tile maps) that are colliding with the calling instance will be added to the end of the given list. You can <a href="../../Data_Structures/DS_Lists/ds_list_clear.htm">clear</a> the list before calling this function so that it only contains results from this function call. You also have the option to order the instances based on their distances from the origin of the elliptic&nbsp;area to their origins. The function returns the number of instances / tile maps found, or 0 if none are found.</p>
+  <div data-conref="../../../../assets/snippets/Collisions_function_accepted_arguments.hts">
+  <p>In addition to objects and instances, the function also accepts:</p>
+  <ul class="colour">
+    <li>The special keywords <b>all</b> and <b>other</b></li>
+    <li>A&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span></li>
+    <li>An array containing a combination of objects, instances, Tile Maps and the keywords <strong>all</strong>/<strong>other</strong></li>
+  </ul>
+  <p>Passing an array allows you to check for collisions against multiple objects and/or Tile Maps in one call.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">collision_ellipse_list(x1, y1, x2, y2, obj, prec, notme, list, ordered);</p>
@@ -115,8 +124,8 @@
       </tr>
       <tr>
         <td>obj</td>
-        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></td>
-        <td>检查实例碰撞的对象。</td>
+        <td><span data-keyref="Collision_obj_type"><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></span></td>
+        <td><span data-keyref="Collision_obj_description">An object, instance, tile map ID, keywords all/other, or array containing these items</span></td>
       </tr>
       <tr>
         <td>prec</td>
@@ -130,7 +139,7 @@
       </tr>
       <tr>
         <td>list</td>
-        <td><span data-keyref="Type_ID_DS_List"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">DS List ID</a></span></td>
+        <td><span data-keyref="Type_ID_DS_List"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">DS List</a></span></td>
         <td>用于存储碰撞实例ID的D列表。</td>
       </tr>
       <tr>
@@ -142,7 +151,7 @@
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (The number of instances found to be in collision)</p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (The number of instances / tile maps found to be in collision)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var _list = ds_list_create();<br>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>The_Game_Window</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -86,16 +86,18 @@
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 上图显示了 HTML5 运行程序。即使 GX.games 目标在浏览器中运行也很困难，在该目标上返回的 <a href="window_get_width.htm"><span class="inline2">window_get_width()</span></a> 和 <a href="window_get_height.htm"><span class="inline2">window_get_height()</span></a> 值将分别与 <a href="../../Web_And_HTML5/browser_width.htm"><span class="inline2">browser_width</span></a>}和 <a href="../../Web_And_HTML5/browser_height.htm"><span class="inline2">browser_height</span></a> 相同。</p>
   <p>上图显示了在浏览器中绘制的游戏窗口，但对于其他目标，您可以用显示器替换浏览器，因此类似 <span class="inline3_func"><a href="window_get_y.htm">window_get_y()</a></span> 的函数将返回游戏窗口顶部相对于显示器的位置。</p>
   <h2 id="func_ref">函数参考</h2>
-  <h3>窗口信息</h3>
+  <h3 id="func_ref_window_info">窗口信息</h3>
   <ul class="colour">
     <li><a href="window_device.htm">window_device</a>&nbsp;<span data-conref="../../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></li>
     <li><a href="window_handle.htm">window_handle</a></li>
     <li><a href="window_has_focus.htm">window_has_focus</a></li>
   </ul>
-  <h3>鼠标和光标</h3>
+  <h3 id="func_ref_mouse_cursor">鼠标和光标</h3>
   <ul class="colour">
     <li><a href="window_mouse_get_x.htm">window_mouse_get_x</a></li>
     <li><a href="window_mouse_get_y.htm">window_mouse_get_y</a></li>
+    <li><a href="window_mouse_get_delta_x.htm">window_mouse_get_delta_x</a></li>
+    <li><a href="window_mouse_get_delta_y.htm">window_mouse_get_delta_y</a></li>
     <li><a href="window_mouse_set.htm">window_mouse_set</a></li>
     <li><a href="window_view_mouse_get_x.htm">window_view_mouse_get_x</a></li>
     <li><a href="window_view_mouse_get_y.htm">window_view_mouse_get_y</a></li>
@@ -104,19 +106,24 @@
     <li><a href="window_set_cursor.htm">window_set_cursor</a></li>
     <li><a href="window_get_cursor.htm">window_get_cursor</a></li>
   </ul>
-  <h3>绘制</h3>
+  <h3 id="func_ref_mouse_lock">Mouse Lock</h3>
+  <ul class="colour">
+    <li><a href="window_mouse_set_locked.htm">window_mouse_set_locked</a></li>
+    <li><a href="window_mouse_get_locked.htm">window_mouse_get_locked</a></li>
+  </ul>
+  <h3 id="func_ref_drawing">绘制</h3>
   <ul class="colour">
     <li><a href="window_set_colour.htm">window_set_colour</a></li>
     <li><a href="window_get_colour.htm">window_get_colour</a></li>
   </ul>
-  <h3>边框和标题</h3>
+  <h3 id="func_ref_border_caption">边框和标题</h3>
   <ul class="colour">
     <li><a href="window_set_caption.htm">window_set_caption</a></li>
     <li><a href="window_get_caption.htm">window_get_caption</a></li>
     <li><a href="window_set_showborder.htm">window_set_showborder</a></li>
     <li><a href="window_get_showborder.htm">window_get_showborder</a></li>
   </ul>
-  <h3>尺寸和位置</h3>
+  <h3 id="func_ref_dimensions_position">尺寸和位置</h3>
   <ul class="colour">
     <li><a href="../The_Game_Window/window_center.htm">window_center</a></li>
     <li><a href="../The_Game_Window/window_get_fullscreen.htm">window_get_fullscreen</a></li>

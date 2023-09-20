@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../../..";
     gCommonRootRelPath = "../../../../..";
-    gTopicId = "8.2.2.6.10.2.0_10";
+    gTopicId = "8.2.2.6.10.2.0_13";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>part_type_direction</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -82,6 +82,10 @@
   <p>该函数用于确定粒子创建时的方向，也可用于使粒子在其寿命期间增加或减少其方向。最小和最大方向值默认为0，这意味着粒子将向右移动而没有任何变化，但是可以更改这些值以限制沿标准<span data-keyref="GameMaker Name">GameMaker</span>方向移动的方向，即0向右，90向上，180向左，270向下。如果将它们设定为相同的值，粒子将仅沿一个方向移动。</p>
   <p>您还可以设置一个增量值，该值将在其使用寿命期间向方向添加(如果为正数)或减去(如果为负数)度数。此值最小可为(+/-) 0.01。</p>
   <p>最后，您可以设置"摆动"因子。该值将随机添加或减去到粒子寿命的每个步骤的方向。显然，较大的值比较小的值更明显，此值甚至可以是负值，最大范围在-20和20之间。</p>
+  <div data-conref="../../../../../assets/snippets/Note_Particle_Property_Can_Be_Changed.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此粒子类型属性的<span class="inline2">*_incr</span>和<span class="inline2">*_wiggle</span>参数会影响给定粒子类型的现有粒子。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">part_type_direction(ind, dir_min, dir_max, dir_incr, dir_wiggle);</p>

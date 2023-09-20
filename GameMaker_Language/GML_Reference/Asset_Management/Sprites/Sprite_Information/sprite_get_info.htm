@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>sprite_get_info</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo">
@@ -165,7 +165,7 @@
       <tr>
         <td style=""><strong>use_mask</strong></td>
         <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td style="">如果此精灵使用碰撞遮罩，则为<span class="inline">true</span>，否则为<span class="inline">false</span></td>
+        <td style=""><span class="inline">true</span> if this sprite uses a collision mask (either generated from a shape or the image itself), otherwise <span class="inline">false</span> (meaning it uses a bounding box)</td>
       </tr>
       <tr>
         <td style=""><strong>num_masks</strong></td>
@@ -525,7 +525,7 @@
           <td style="">插槽颜色的 Alpha 分量 (0-1)</td>
         </tr>
         <tr>
-          <td style=""><strong>blendMode</strong></td>
+          <td style=""><strong>blend_mode</strong></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
           <td style="">(Spine 内部) 插槽的混合模式</td>
         </tr>
@@ -548,6 +548,11 @@
           <td style=""><strong>dark_alpha*</strong></td>
           <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
           <td style="">插槽的 <strong> 暗 </strong> 颜色的 Alpha 分量 (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><span class="inline">attachments</span></td>
+          <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span>&nbsp;of&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+          <td style="">An array containing the names&nbsp;of all available attachments for this slot.</td>
         </tr>
       </tbody>
     </table>

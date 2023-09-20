@@ -1,0 +1,142 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.21.1.0_15";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>dbg_text</title>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="dbg_text">
+        <span>dbg_text</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">dbg_text</span></h1>
+  <p>此函数在当前调试部分中创建只读文本标签。您可以使用它来解释周围的控件。</p>
+  <p>对包含字符串的变量的<span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>和<span data-keyref="Type_DbgRef"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Debugging/ref_create.htm">Reference</a></span>都可以传递给函数。文本可以是多行的。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>有关允许修改文本的控件，请参见<span class="inline3_func"><a href="dbg_text_input.htm">dbg_text_input</a></span>。</p>
+  <div data-conref="../../../assets/snippets/Note_Debug_Control_Single_Column.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此控件占用一列，可以使用<span class="inline3_func"><a href="dbg_same_line.htm">dbg_same_line</a></span>与另一个单列控件显示在同一行上。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">dbg_text</span>(ref_or_string);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ref_or_string</td>
+        <td><span data-keyref="Type_DbgRef"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Debugging/ref_create.htm">Reference</a></span>&nbsp;or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>一个字符串或一个可以转换为字符串的变量的引用，由<span class="inline3_func"><a href="../Variable_Functions/ref_create.htm">ref_create</a></span>返回</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code_heading">Create Event</p>
+  <p class="code">text = "text";<br>
+    ref_to_text = ref_create(self, "text");<br>
+    <span data-field="title" data-format="default">dbg_text</span>(ref_to_text);<br>
+    <span data-field="title" data-format="default">dbg_text</span>(text);<br>
+    <span data-field="title" data-format="default">dbg_text</span>("More text");
+  </p>
+  <p>上面的代码将一些文本赋给<a href="../../GML_Overview/Variables/Instance_Variables.htm">实例变量</a><span class="inline2">text</span>。然后使用<span class="inline3_func"><a href="../Variable_Functions/ref_create.htm">ref_create</a></span>创建对该变量的引用，并将其存储在<span class="inline2">ref_to_text</span>中。接下来，它将三个文本控件添加到将在新节<span data-keyref="DebugView_Name_Default">"Default"</span>下创建的新调试视图<span data-keyref="DebugSection_Name_Default">"Default"</span>中。对<span class="inline3_func"><span data-field="title" data-format="default">dbg_text</span></span>的三次调用以三种不同的方式添加文本条目：第一个提供对<span class="inline2">text</span>变量的引用，第二个传递变量<span class="inline2">text</span>本身(它为变量当前具有的<em>值</em>赋值)，最后一个直接传递字符串。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="The_Debug_Overlay.htm">The Debug Overlay (调试覆盖视图)</a></div>
+        <div>Next:&nbsp;<a href="dbg_text_input.htm">dbg_text_input</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+dbg_text
+-->
+  <!-- TAGS
+dbg_text
+-->
+
+</body></html>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Compiling</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -137,7 +137,13 @@
   <h3>如何构建不同的目标</h3>
   <p>每个目标选项保存为平台特定格式，如下所示：</p>
   <ul class="colour">
-    <li><strong>GX.games</strong>-为 "GX.games" 目标编译时，您将看到 "GX.games 打包" 窗口，该窗口将首先要求您使用Opera账户登录 :<img align="" class="center" src="../assets/Images/Introduction/Compiling/gx_packaging_1.png">如果您已经使用<span data-keyref="GameMaker Name">Opera单点登录</span>登录到<a href="../Setting_Up_And_Version_Information/Licencing_Information.htm">GameMaker</a>，则无需在此处登录。<br><br>登录后，它将开始编译您的游戏，并继续将其上传到GX.games。<br> <img class="center" src="../assets/Images/Introduction/QS_GX.Games_Compile_Options.png" style="cursor: nesw-resize;"><br>然后，您可以单击 "在Opera上编辑游戏" 在GX.games DevCloud上进行编辑并发布 :<br><img class="center" src="../assets/Images/Introduction/Compiling/gx_game_compiled.png">请参考<a href="https://help.yoyogames.com/hc/en-us/articles/4407217145105">本页</a>了解更多关于GX.games上传过程的信息，以及<a href="https://help.yoyogames.com/hc/en-us/articles/4625548722193">本页</a>用于设置各种导出，例如<a href="../Settings/YoYo_Compiler.htm">YYC</a>和Mobile。</li>
+    <li><strong>GX.games</strong> - When compiling for the "GX.games" target, you will see the "GX.games Packaging" window&nbsp;which will first ask you to sign in using your Opera account:<img align="" class="center" src="../assets/Images/Introduction/Compiling/gx_packaging_1.png">You won't need to sign in here if you've already signed into <span data-keyref="GameMaker Name">GameMaker</span> using <a href="../Setting_Up_And_Version_Information/Licencing_Information.htm">Opera Single Sign-In</a>.<br>
+      <br>
+      Next you will be asked the packaging option to use:&nbsp;<br>
+      <img class="center" src="../assets/Images/Introduction/QS_GX.Games_Compile_Options.png" style="cursor: nesw-resize;"><br>
+      After you have signed in, it will start compiling your game and proceed to upload it to GX.games. You can then click on "Edit Game on Opera" to edit it on GX.create&nbsp;and publish it:<br>
+      <img class="center" src="../assets/Images/Introduction/Compiling/gx_game_compiled.png">Please refer to <a href="https://help.yoyogames.com/hc/en-us/articles/4407217145105">this page</a> to learn more about the GX.games upload process, and <a href="https://help.yoyogames.com/hc/en-us/articles/4625548722193">this page</a>&nbsp;for setting up the various exports, such as <a href="../Settings/YoYo_Compiler.htm">YYC</a> and Mobile.
+    </li>
     <li><strong>Windows</strong>-为通用 Windows 操作系统进行编译将首先要求您在创建<em>Installer</em>或<em>Zip</em>包之间进行选择，其中安装程序将是安装游戏的单个可执行文件，而 Zip 文件将是单个<span class="inline">*.zip</span>格式的压缩文件，其中存储了所有游戏文件(需要提取文件才能运行游戏)。<img alt="Windows Compile Options" class="center" src="../assets/Images/Introduction/QS_Windows_Compile_Options.png">如果你选中标有<strong>记住包装选项</strong>的复选框，则<span data-keyref="GameMaker Name">GameMaker</span>将记住未来所有编译的选择(可以从<a href="../Setting_Up_And_Version_Information/Platform_Preferences/Windows.htm">窗口首选项</a>中重置或更改)。你可以从<a href="https://help.yoyogames.com/hc/en-us/sections/207157668">YoYo 游戏帮助中心</a>了解更多信息。<br><br>Windows 目标只能编译 64 位的可执行文件。</li>
     <li><strong>Ubuntu(Linux)</strong>-"为Ubuntu编译"将要求您在创建<strong>. AppImage</strong>或<strong>. zip</strong>文件(包含x 64或Arm可执行文件)之间进行选择(但AppImage不支持Arm)。您可以从<a href="http://help.yoyogames.com/hc/en-us/articles/235186168">YoYo游戏帮助中心</a>了解更多信息。<br><img class="center" src="../assets/Images/Introduction/Ubuntu_Exports.png"><strong>. AppImage</strong>作为软件包通过除Steam之外的任何分发服务器进行共享，而<strong>. zip</strong>仅用于<strong></strong>上载到Steam(因为它专门使用Steam运行时)。因此，无法将创建的<tt>.zip</tt>作为常规zip文件打开。</li>
     <li><strong>HTML5</strong>-如果你选择构建 HTML5，则将创建<span class="inline">index.html</span>文件(这是默认名称，但你也可以在 "平台偏好设置" 中给出自己的名字)以及一个包含游戏文件的文件夹，并将其保存到指定位置。为了让你的游戏正常运行，你需要将这两个都上传到<a class="tooltip" title="在计算中，服务器是为其他程序或设备提供功能的计算机程序或设备，称为“客户端”。">服务器</a>。<span class="inline">index.html</span>也可以进行自定义，以不同的背景颜色或在不同的位置等显示你的游戏... 但是要做到这一点，你还需要了解 HTML，你也可以在构建软件包时指定自己的自定义索引文件(参见<a href="../Settings/Game_Options/HTML5.htm">HTML5 Game Options</a>)。您可以从<a href="http://help.yoyogames.com/hc/en-us/sections/115000309008">YoYo 游戏帮助中心</a>了解更多信息。</li>

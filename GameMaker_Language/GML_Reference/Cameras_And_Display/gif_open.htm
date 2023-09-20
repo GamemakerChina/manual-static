@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>gif_open</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,12 +79,13 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>gif_open</h1>
-  <p>使用此函数，您可以创建一个空的 GIF 格式图像，以便将数据添加到该图像中。调用该函数时，您需要指定 GIF 的宽度和高度(以像素为单位，除可用内存外没有大小上限)，并且该函数将返回用于在后续函数中标识礼物的唯一 ID 值，或者如果无法初始化 GIF，则返回 -1 (例如，如果宽度/高度对于可用内存来说太大)。您还可以指定一个可选参数来设置 GIF 的"清晰颜色"。这是一个 RGB 值(无 Alpha 分量)，并且将在添加任何内容之前将 GIF 清除为此颜色。如果不提供清晰的颜色参数，将使用默认的黑色。</p>
-  <p>请注意，使用此函数时，必须先调用 <a href="gif_save.htm"><span class="inline">gif_save()</span></a> 结束 GIF 的创建，然后再打开另一个文件进行录制(因此，对于每个 <span class="inline">gif_open()</span>，必须有一个伴随的 <span class="inline">gif_save()</span>)。</p>
+  <h1><span data-field="title" data-format="default">gif_open</span></h1>
+  <p>This function creates an empty GIF format image, ready to have data added to it.</p>
+  <p>When you call the function, you need to specify the width and height of the GIF (in pixels, and there is no upper limit on size except for available memory), and the function will return the unique ID value used to identify the GIF in subsequent functions, or it will return -1 if the GIF could not be initialized (for example, if the width/height are too big for the memory available). You may also specify an optional argument to set the "clear colour" for the GIF. This is an RGB value (no alpha component), and will clear the GIF to this colour before anything is added to it. If you do not supply a clear colour argument, the default colour of black will be used.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;When using this function you must call&nbsp;<span class="inline3_func"><a href="gif_save.htm">gif_save</a></span>&nbsp;to end the creation of the GIF&nbsp;before open another file for recording (so for every <span class="inline3_func"><a href="gif_open.htm">gif_open</a></span>&nbsp;there must be an accompanying <span class="inline3_func"><a href="gif_save.htm">gif_save</a></span>).</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">gif_open(width, height, [clear_colour]);</p>
+  <p class="code"><span data-field="title" data-format="default">gif_open</span>(width, height, [clear_colour]);</p>
   <table>
     <tbody>
       <tr>
@@ -95,17 +96,17 @@
       <tr>
         <td>width</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>要创建的 GIF 的宽度</td>
+        <td>The width of the GIF to create</td>
       </tr>
       <tr>
         <td>height</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>要创建的 GIF 的高度</td>
+        <td>The height of the GIF to create</td>
       </tr>
       <tr>
         <td>[clear_colour]</td>
         <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
-        <td><span class="optional">可选</span> 要清除GIF的颜色 (RGB)。</td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;The colour (RGB) to clear the GIF to</td>
       </tr>
     </tbody>
   </table>
@@ -133,7 +134,6 @@
     &nbsp; &nbsp; count++;<br>
     }</p>
   <p>以上代码将创建从应用程序表面获取的具有 30 帧的 GIF 图像文件，然后保存该文件。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

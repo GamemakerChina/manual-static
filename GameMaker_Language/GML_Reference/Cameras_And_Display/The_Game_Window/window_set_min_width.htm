@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.7.2.0_30";
+    gTopicId = "8.2.2.7.2.0_34";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>window_set_min_width</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,20 +81,25 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>window_set_min_width</h1>
   <p>此函数可用于设置游戏的最小窗口宽度。如果在目标平台的"游戏选项"中启用窗口大小调整选项，则玩家可以将游戏窗口大小调整为他们希望的任何大小，但是通过使用此函数，您可以将最小宽度限制为您指定的大小。如果要返回到默认行为(即：无最小值)，请使用 -1 值。</p>
-  <p class="note"><b>注意</b>：此函数仅在 <b>Windows</b>、<b>macOS</b> 和 <b>Linux</b> 平台上可用。</p>
+  <div data-conref="../../../../assets/snippets/Note_Windows_MacOS_Linux_Only.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function is only available on the <b>Windows</b>, <b>macOS</b> and <b>Linux</b> platforms.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">window_set_min_width(width);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>width</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>width</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>游戏窗口的最小宽度(单位：像素)。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -102,10 +107,10 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">window_set_min_width(640);<br> window_set_min_height(480);
-    <br> window_set_max_width(1280);
-    <br> window_set_max_height(960);
-  </p>
+  <p class="code">window_set_min_width(640);<br>
+    window_set_min_height(480);<br>
+    window_set_max_width(1280);<br>
+    window_set_max_height(960);</p>
   <p>上述代码将设置游戏窗口的最小和最大宽度和高度。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

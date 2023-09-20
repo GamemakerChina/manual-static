@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>network_create_socket_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,8 +79,9 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>network_create_socket_ext</h1>
-  <p>此函数用于为游戏创建新的客户端套接字，以便通过网络进行通信。您必须定义套接字类型(请参阅下面的常量列表)并提供要使用的端口，然后该函数将返回唯一的<i>id</i>，它应该用于该套接字的所有进一步函数调用;如果连接失败，则返回小于0的值。</p>
+  <h1><span data-field="title" data-format="default">network_create_socket_ext</span></h1>
+  <p>This function creates a new client socket for your game to communicate over the network.</p>
+  <p>You must define the socket type (see the list of constants below) and give a port to use, and the function will return a unique <i>id</i> which should be used in all further function calls for that socket, or a value of less than 0 if the connection fails.</p>
   <div data-conref="../../../assets/snippets/network_socket_types.hts">
   <table>
     <colgroup>
@@ -117,13 +118,13 @@
   <p class="note"><span class="note">注意 2</span>* 使用传统 XDK 平台时，安全网络套接字在 UWP 和 Xbox One 上不起作用，但在使用 GDK 时，它们将在这些目标上起作用。</p>
 
 </div>
-  <p>&nbsp;</p>
   <div data-conref="../../../assets/snippets/iOS_14_IP_Multicast_Permissions.hts">
   <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>iOS 14和更高版本要求您请求多播授权(<a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_multicast">com.apple.developer.networking.multicast</a>)并启用它，以便<strong>发送和接收</strong>多播和广播。<br>此外，在首次发送数据包之前，iOS 14不向用户显示同意模式对话框。因此，如果UDP套接字仅接收，则不会显示警报。<br>解决此问题的一种方法是发送一个空的"虚拟"数据包，以便触发同意模式。</p>
 
 </div>
+  <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">network_create_socket_ext(protocol, port);</p>
+  <p class="code"><span data-field="title" data-format="default">network_create_socket_ext</span>(protocol, port);</p>
   <table>
     <tbody>
       <tr>
@@ -150,7 +151,6 @@
   <h4>例子:</h4>
   <p class="code">client = network_create_socket_ext(network_socket_udp, 6510);</p>
   <p>上述代码将在端口6510上创建新的UDP套接字。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

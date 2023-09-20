@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Audio Buffers</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -85,15 +85,17 @@
     <li><a href="audio_free_buffer_sound.htm">audio_free_buffer_sound</a></li>
   </ul>
   <p>&nbsp;</p>
-  <p>请注意，一旦您从音频缓冲区创建了一个声音，您就不是<i></i>在内存中创建一个新的声音，而是指向缓冲区中存储声音的位置。在声音与此缓冲区关联后，不应更改此缓冲区，否则会出现意外结果，并且在声音与此缓冲区关联时，不能删除此缓冲区。相反，首先释放声音(或声音)，然后删除缓冲区。一旦你从缓冲区创建了新的音频资源，你可以在任何常规音频函数中使用它的索引值来播放它，改变它的增益或音调，暂停它，等等。请注意，用于加载音频的缓冲区<b>只能支持PCM声音</b>，因此像OGG这样的格式将不受支持。</p>
+  <p>Note that once you have created a sound from an audio buffer, you are <i>not</i> creating a new sound in memory, but rather pointing to the position within the buffer where the sound is stored. You should not change this buffer after a sound has been associated with it otherwise you will get unexpected results, and you cannot delete the buffer while a sound is associated with it. Instead, free the sound (or sounds) first then delete the buffer.</p>
+  <p>Once you have created your new audio resource from a buffer, you can use its index value in any of the regular audio functions to play it, change its gain or pitch, pause it, etc. Note that the buffer used to load the audio <b>can only support PCM sounds</b>, so formats like OGG will not be supported.</p>
+  <h2>Audio Buffer Queues</h2>
   <p>缓冲音频的另一个函数是，您可以使用缓冲区创建音频队列，然后将其传输到运行项目的设备。音频队列采用您之前已填充音频数据的常规缓冲区，并使您能够"指向"它的一部分，并告诉<span data-keyref="GameMaker Name">GameMaker</span>以给定的顺序从该缓冲区流式传输音频。音频队列的可用函数包括：</p>
   <ul class="colour">
     <li><a href="audio_create_play_queue.htm">audio_create_play_queue</a></li>
     <li><a href="audio_free_play_queue.htm">audio_free_play_queue</a></li>
     <li><a href="audio_queue_sound.htm">audio_queue_sound</a></li>
   </ul>
-  <p>&nbsp;</p>
   <p>创建队列后，您可以像使用任何正常声音的声音索引一样使用返回的队列索引来播放、暂停、重新启动或更改其增益和音调。唯一做不到的是获取音轨长度或设置音轨位置，但除此之外，音频队列可以像任何其他声音一样使用。您还应该注意，一些音频队列函数也会触发<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">音频回放异步事件</a>。</p>
+  <h2>Recording</h2>
   <p>音频缓冲区还允许您录制来自任何可用源(如麦克风或操作系统)的声音，然后可以使用上述函数(例如)排队和流式传输。录制音频将触发<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">音频录制异步事件</a>，该事件将包含关于正在录制的内容的特定信息。<br><br>录音函数如下：</p>
   <ul class="colour">
     <li><a href="audio_start_recording.htm">audio_start_recording</a></li>

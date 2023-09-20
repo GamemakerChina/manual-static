@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>buffer_base64_decode</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,20 +81,22 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>buffer_base64_decode</h1>
   <p>使用此函数，您可以将base64编码的字符串 (使用<a href="buffer_base64_encode.htm"><span class="inline">buffer_base64_encode()</span></a>函数创建) 解码到缓冲区中。此函数将创建缓冲区 (作为1字节对齐的 "增长" 缓冲区)，并返回缓冲区的唯一索引，该索引应在所有其他函数调用中使用。</p>
-  <p class="note"><b>注意</b>: 重要的是，当您不再需要它们以防止内存泄漏时，从内存中删除任何动态创建的资源，因此，当您完成创建的缓冲区时，您应该使用<span style="font-size:1px;"><a href="buffer_delete.htm"><span class="inline">buffer_delete()</span></a></span>{}再次释放它。</p>
+  <p class="note"><b><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> It's important that you remove any dynamically created resources like this from memory when you no longer need them to prevent memory leaks, so when you are finished with the buffer that you have created you should free it up again using <span style="font-size:1px;"><a href="buffer_delete.htm"><span class="inline">buffer_delete()</span></a></span>.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">buffer_base64_decode(string);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>string</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要解码的base64编码字符串</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>

@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.6.10.0_4";
+    gTopicId = "8.2.2.6.10.0_6";
   
 //]]></script>
 
@@ -51,13 +51,13 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>particle_get_info</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="">
   <meta name="topic-comment" content="">
-  <meta name="rh-index-keywords" content="particle_get_info">
-  <meta name="search-keywords" content="particle_get_info">
+  <meta name="rh-index-keywords" content="particle_get_info,ps_mode_stream,ps_mode_burst">
+  <meta name="search-keywords" content="particle_get_info,ps_mode_stream,ps_mode_burst">
   <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
 </head>
 
@@ -81,6 +81,7 @@
   <h1><span data-field="title" data-format="default">particle_get_info</span></h1>
   <p>此函数返回<a href="../../../GML_Overview/Structs.htm#struct">结构</a>，其中包含有关使用<a href="../../../../The_Asset_Editors/Particle_Systems.htm">粒子系统编辑器</a>创建的<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>的信息。</p>
   <p>返回的结构是一个<span data-keyref="Type_Struct_PartSystem_Info"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/particle_get_info.htm#particle_system_info_struct">粒子系统信息结构</a></span>，其中包含一个由<a href="../../../GML_Overview/Arrays.htm"></a>粒子发射器信息结构<span data-keyref="Type_Struct_PartEmitter_Info"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/particle_get_info.htm#particle_emitter_info_struct">组成的</a>数组</span>。这些发射器结构中的每个结构都存储有关发射器在其<span class="inline2">parttype</span>变量中使用的粒子类型的信息，该变量包含一个<span data-keyref="Type_Struct_PartType_Info"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/particle_get_info.htm#particle_type_info_struct">粒子类型信息结构</a></span>。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span>如果没有向函数传递有效的<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>，<span data-keyref="GameMaker Name">GameMaker</span>将抛出错误。</p>
   <p>简而言之，该函数返回的结构内容如下所示：</p>
   <p class="code">part_sys_info_struct =<br>
     {<br>
@@ -100,7 +101,7 @@
   <p>下表列出了这三个结构中每个结构中可用的所有变量。</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">粒子系统信息</span><span data-close-text="true">粒子系统信息</span></a></p>
   <div class="droptext" data-targetname="drop-down">
-    <table id="particle_system_info_struct" style="caption-side: top">
+    <table id="particle_system_info_struct" style="caption-side: top" class=" cke_show_border">
       <caption>粒子系统信息结构</caption>
       <colgroup>
         <col style="width:33.33%">
@@ -129,6 +130,11 @@
           <td>粒子系统的 Y 原点。</td>
         </tr>
         <tr>
+          <td><span class="inline">global_space</span></td>
+          <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">布尔值</a></span></td>
+          <td>此粒子系统是否启用了全局空间粒子(请参见<span class="inline3_func"><a href="Particle_Systems/part_system_global_space.htm">part_system_global_space</a></span>)。</td>
+        </tr>
+        <tr>
           <td><span class="inline">oldtonew</span></td>
           <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">布尔值</a></span></td>
           <td>旧粒子是否应该画在新粒子后面 (<span class="inline2">true</span>) 还是不应该 (<span class="inline2">false</span>)。</td>
@@ -143,7 +149,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">粒子发射器信息</span><span data-close-text="true">粒子发射器信息</span></a></p>
   <div class="droptext" data-targetname="drop-down1">
-    <table id="particle_emitter_info_struct" style="caption-side: top">
+    <table id="particle_emitter_info_struct" style="caption-side: top" class=" cke_show_border">
       <caption id="">粒子发射器信息<span id="particle_emitter_info_struct"></span>结构</caption>
       <colgroup>
         <col style="width:33.33%">
@@ -167,9 +173,19 @@
           <td>发射粒子的模式。可以是 <span class="inline2">ps_mode_stream</span> 或 <span class="inline2">ps_mode_burst</span>。</td>
         </tr>
         <tr>
+          <td><span class="inline">enabled</span></td>
+          <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">布尔值</a></span></td>
+          <td>是否启用粒子发射器。</td>
+        </tr>
+        <tr>
           <td><span class="inline">number</span></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
-          <td>如果模式为 <span class="inline2">ps_mode_stream</span>，则每帧要创建的粒子数，如果模式为 <span class="inline2">ps_mode_burst</span>，则仅创建一次。</td>
+          <td>如果<span class="inline2">mode</span>为<span class="inline2">ps_mode_stream</span>，则为每帧创建的粒子数;如果mode为<span class="inline2">ps_mode_burst</span>，则为仅创建一次的粒子数。相对模式下的密度(覆盖百分比)。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">relative</span></td>
+          <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">布尔值</a></span></td>
+          <td>发射器是否处于相对模式，其中发射器创建的粒子数与其区域的面积相关(请参见<span class="inline3_func"><a href="Particle_Emitters/part_emitter_relative.htm">part_emitter_relative</a></span>)。</td>
         </tr>
         <tr>
           <td><span class="inline">xmin</span></td>
@@ -206,12 +222,42 @@
           <td><span data-keyref="Type_Struct_PartType_Info"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/particle_get_info.htm#particle_type_info_struct">粒子类型信息结构</a></span></td>
           <td>粒子类型信息结构，包含此发射器的粒子类型信息。</td>
         </tr>
+        <tr>
+          <td><span class="inline">delay_min</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td>流模式下粒子爆发之间的最小延迟，以<span class="inline2">delay_unit</span>表示。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">delay_max</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td>流模式下粒子爆发之间的最大延迟，以<span class="inline2">delay_unit</span>表示。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">delay_unit</span></td>
+          <td><span data-keyref="Type_Constant_TimeSource_Unit"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm">时间源单位常数</a></span></td>
+          <td> 表示<span class="inline2">delay_min</span>和<span class="inline2">delay_max</span>的单位</td>
+        </tr>
+        <tr>
+          <td><span class="inline">interval_min</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td>流模式下粒子爆发之间的最短时间，以<span class="inline2">interval_unit</span>表示。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">interval_max</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td> 流模式下粒子爆发之间的最大时间，以<span class="inline2">interval_unit</span>表示。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">interval_unit</span></td>
+          <td><span data-keyref="Type_Constant_TimeSource_Unit"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm">时间源单位常数</a></span></td>
+          <td>表示<span class="inline2">interval_min</span>和<span class="inline2">interval_max</span>的单位。</td>
+        </tr>
       </tbody>
     </table>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">粒子类型信息</span><span data-close-text="true">粒子类型信息</span></a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <table id="particle_type_info_struct" style="caption-side: top">
+    <table id="particle_type_info_struct" style="caption-side: top" class=" cke_show_border">
       <caption>粒子类型信息结构</caption>
       <colgroup>
         <col style="width:33.33%">
@@ -269,24 +315,44 @@
           <th colspan="3">大小</th>
         </tr>
         <tr>
-          <td><span class="inline">size_min</span></td>
+          <td><span class="inline">size_xmin</span></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
-          <td>创建此类型的粒子时可以具有的最小大小 (每个粒子的大小是随机确定的，大小可以从 <span class="inline2">size_min</span> 到 <span class="inline2">size_max</span>)。</td>
+          <td>此类型的粒子在创建时在X轴上可以具有的最小尺寸(每个粒子的尺寸随机确定，并且可以在<span class="inline2">size_xmin</span>到<span class="inline2">size_xmax</span>之间变化)。</td>
         </tr>
         <tr>
-          <td><span class="inline">size_max</span></td>
+          <td><span class="inline">size_ymin</span></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
-          <td>此类型的粒子在创建时可以具有的最大大小 (大小由每个粒子随机确定，大小可以从 <span class="inline2">size_min</span> 到 <span class="inline2">size_max</span>)。</td>
+          <td>创建此类型的粒子时，该粒子在Y轴上可以具有的最小尺寸(该尺寸是为每个粒子随机确定的，可以在<span class="inline2">size_ymin</span>到<span class="inline2">size_ymax</span>之间变化)。</td>
         </tr>
         <tr>
-          <td><span class="inline">size_incr</span></td>
+          <td><span class="inline">size_xmax</span></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
-          <td>值可按每一帧增加/减小粒子大小。</td>
+          <td>创建此类型的粒子时，该粒子在X轴上可以具有的最大大小(每个粒子的大小是随机确定的，可以在<span class="inline2">size_xmin</span>到<span class="inline2">size_xmax</span>之间变化)。</td>
         </tr>
         <tr>
-          <td><span class="inline">size_wiggle</span></td>
+          <td><span class="inline">size_ymax</span></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
-          <td>每一帧的粒子大小随机增加或减去的值。</td>
+          <td>创建此类型的粒子时，该粒子在Y轴上可以具有的最大大小(每个粒子的大小是随机确定的，可以在<span class="inline2">size_ymin</span>到<span class="inline2">size_ymax</span>之间变化)。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">size_xincr</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td>每帧增加/减少X轴上的粒子大小的值。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">size_yincr</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td>每帧增加/减少Y轴上的粒子大小的值。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">size_xwiggle</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td>每帧从粒子的X大小随机添加或减去的值。</td>
+        </tr>
+        <tr>
+          <td><span class="inline">size_ywiggle</span></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">实数</a></span></td>
+          <td>每个帧从粒子的Y大小中随机添加或减去的值。</td>
         </tr>
         <tr>
           <th colspan="3">比例</th>

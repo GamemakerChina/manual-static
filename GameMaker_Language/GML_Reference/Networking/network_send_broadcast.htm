@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>network_send_broadcast</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,16 +78,17 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>network_send_broadcast</h1>
-  <p>使用此函数，您可以在本地将缓冲区中的数据广播到IP地址范围(有关缓冲区的详细信息，请参阅<a href="../Buffers/Buffers.htm">参考-缓冲区</a>)。该范围仅限于运行服务器的设备的范围，因此，如果设备的IP为192.168.11.130，则数据将在范围192.168.11.*上广播。该函数将返回发送的数据的字节数，如果发送失败，则返回小于0的数字。</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此函数仅在与UDP一起使用时有效-您的服务器需要为TCP，并且您的客户端需要使用<span style="font-size:1px;"><a href="network_create_socket_ext.htm"><span class="inline">network_create_socket_ext()</span></a></span>创建UDP客户端套接字，以便接收从服务器发送的任何广播。</p>
+  <h1><span data-field="title" data-format="default">network_send_broadcast</span></h1>
+  <p>This function broadcasts the data from a buffer locally to a range of IP addresses (for more information on buffers see <a href="../Buffers/Buffers.htm">Reference - Buffers</a>).</p>
+  <p>The range is limited to that of the device running the server, such that if the device has an IP of 92.168.11.130, then the data will be broadcast over the range 92.168.11.*. The function will return the number of bytes of data sent, or a number less than 0 if the send has failed.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function will only work when used with UDP - your server needs to be TCP and your client needs to have a UDP client socket created with&nbsp;<span class="inline3_func"><a href="network_create_socket_ext.htm">network_create_socket_ext</a></span>&nbsp;in order to receive any broadcasts sent from the server.</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在HTML5目标上运行的项目中使用此函数将不起作用。</p>
   <div data-conref="../../../assets/snippets/iOS_14_IP_Multicast_Permissions.hts">
   <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>iOS 14和更高版本要求您请求多播授权(<a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_multicast">com.apple.developer.networking.multicast</a>)并启用它，以便<strong>发送和接收</strong>多播和广播。<br>此外，在首次发送数据包之前，iOS 14不向用户显示同意模式对话框。因此，如果UDP套接字仅接收，则不会显示警报。<br>解决此问题的一种方法是发送一个空的"虚拟"数据包，以便触发同意模式。</p>
 
 </div>
   <h4>语法:</h4>
-  <p class="code">network_send_broadcast(socket, port, bufferid, size);</p>
+  <p class="code"><span data-field="title" data-format="default">network_send_broadcast</span>(socket, port, bufferid, size);</p>
   <table>
     <tbody>
       <tr>
@@ -126,7 +127,6 @@
     buffer_write(broadcast_buffer, buffer_string, global.ServerName);<br>
     network_send_broadcast(server, 6511, broadcast_buffer, buffer_tell(broadcast_buffer));</p>
   <p>上述代码写入当前服务器的名称字符串(存储在global.ServerName中)，然后将其写入id为"broadcast_buffer"的二进制缓冲区。然后将该数据本地广播到IP段范围(设备IP当前隐含为广播基本范围)到端口6511。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

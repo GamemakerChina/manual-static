@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>shader_get_uniform</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,7 +81,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>shader_get_uniform</h1>
   <p>由于不能在着色器本身内更改着色器常量的值，因此在使用可用的<strong>uniform set</strong>函数之一调用着色器之前必须设置它。但是，要做到这一点，您必须首先调用这个函数来获取要更改的着色器常量的"句柄"。</p>
-  <p class="note"><b>注意</b>：虽然着色器由两个离散程序(顶点和片段)组成，但该函数不会区分这两个程序，并将从其中任一程序返回着色器常数的句柄。</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> Although a shader is made up of two discreet programs (vertex and fragment) this function will not differentiate between the two and will return the handle of the shader constant from either of them.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">shader_get_uniform(shader, uniform);</p>

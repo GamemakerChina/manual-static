@@ -51,13 +51,13 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>sprite_collision_mask</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Page explaining the function sprite_collision_mask">
-  <meta name="rh-index-keywords" content="sprite_collision_mask">
-  <meta name="search-keywords" content="sprite_collision_mask">
+  <meta name="rh-index-keywords" content="sprite_collision_mask,bboxkind_precise,bboxkind_diamond,bboxkind_ellipse,bboxkind_rectangular">
+  <meta name="search-keywords" content="sprite_collision_mask,bboxkind_rectangular,bboxkind_ellipse,bboxkind_diamond,bboxkind_precise">
 <meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_nineslice_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_add_from_surface.htm"></head>
 
 <body>
@@ -81,7 +81,7 @@
   <h1>sprite_collision_mask</h1>
   <p>使用此函数，您可以设置sprite应具有的碰撞遮罩的属性。如果选择“自动”(0)或“完整图像”(1)作为边界框模式，则可以将各个边界框值设置为0。但是，对于用户定义的掩码(2)，您必须设置这些值。不同的边界框值始终相对于精灵的左上角(与X和Y原点无关)，即位置(0，0)。</p>
   <p>设置遮罩类型可设置遮罩本身的一般形状，但请注意，在解决冲突时，除矩形遮罩以外的任何遮罩都将需要更多的处理能力，从而导致性能下降。通常，只有在绝对必要的情况下，才应使用矩形以外的遮罩类型。</p>
-  <p class="note"><b>注意</b>：此函数不允许<b>旋转矩形</b>碰撞掩码类型。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function does not permit the <b>rotated rectangle</b> collision mask kind.</p>
   <p>可以设置的掩码类型为以下常量之一：</p>
   <table>
     <colgroup>
@@ -114,9 +114,10 @@
       </tr>
     </tbody>
   </table>
-  <p><br>最后，容差用于定义遮罩的精确程度(当与“全图像”遮罩一起使用时，这将不起作用)，容差为0表示遮罩将跟随透明度大于0的每个像素，而其他值将根据像素的透明度移动碰撞遮罩周长。</p>
-  <p class="note"><b>注意</b>：此函数仅适用于<b>位图</b>精灵，不适用于SWF或JSON(脊柱)精灵。</p>
-  <p class="note"><b>注意</b>：此函数只对添加的精灵或复制的精灵起作用，<b>不能</b>直接对预先制作的资源起作用。您可以使用函数<span style="font-size:1px;"><a href="sprite_duplicate.htm"><span class="inline">sprite_duplicate()</span></a></span>)来复制sprite.</p>
+  <p><br>
+    Finally, tolerance is used to define how precise&nbsp;the mask is (when used with a "full image" mask, this will have no effect), with a tolerance of 0 meaning that the mask will follow every single pixel that has a transparency over 0, while other values will shift the collision mask perimeter depending on the transparency of the pixels.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function is only useful for <b>bitmap</b> sprites and will not work with SWF or JSON (Spine) sprites.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function will only work on added sprites or duplicated sprites and <b>not</b> directly on pre-made resources. You can duplicate sprites using the function <span style="font-size:1px;"><a href="sprite_duplicate.htm"><span class="inline">sprite_duplicate()</span></a></span>.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">sprite_collision_mask(ind, sepmasks, bboxmode, bbleft, bbtop, bbright, bbbottom, kind, tolerance);</p>
@@ -182,7 +183,6 @@
   <p class="code">spr = sprite_add("player_5.png", 16, true, true, 0, 0);<br>
     sprite_collision_mask(spr, true, 1, 0, 0, 0, 0, 0, 0);</p>
   <p>上面的代码从外部源加载精灵，并将新索引存储在变量“ SPR ”中。然后，代码将新精灵设置为对其每个子图像具有精确的碰撞遮罩。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

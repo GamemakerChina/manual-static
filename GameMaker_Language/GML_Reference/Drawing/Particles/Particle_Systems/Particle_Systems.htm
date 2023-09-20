@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Particle Systems</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -82,10 +82,38 @@
   <p>在创建粒子之前，需要创建粒子系统。这是一个"容器"，你可以把你的粒子和发射器(如果你需要的话)放在那里准备好使用，你可以在任何一个系统中放入你认为必要的尽可能多或尽可能少的粒子，你也可以有你认为必要的尽可能多的系统。但是，由于每个系统、发射器和粒子都占用内存，并且它们太多可能会减慢游戏速度或导致问题，因此最好保持这个数字尽可能小。例如，如果需要某些效果显示在实例上方，而其他效果显示在实例下方，则需要创建两个系统并设置其深度以获得所需的效果，并以指定的深度绘制添加到每个系统的所有粒子。</p>
   <p>由于粒子系统是动态创建的资源，因此必须创建粒子系统并将返回的索引存储在变量中，以便在所有进一步的函数调用中引用该系统，并且非常重要的是，当不再需要粒子系统时，还要销毁该系统，否则会出现内存泄漏，从而降低速度并最终导致游戏崩溃。另外值得注意的是，粒子系统在创建后将永远存在，即使索引不再存储。因此，即使您更换空间或重新启动游戏，系统和粒子仍将保留，并且可以在所有其他房间中看到，这样您最好确保在不再需要它们时将其销毁。</p>
   <div data-conref="../../../../../assets/snippets/Note_tip_use_particle_system_editor.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您更喜欢使用更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，也可以使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您喜欢更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，则还可以使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。此外，还可以使用编辑器的 <strong> 复制 GML 到剪贴板 </strong><img class="icon" src="../../../../../assets/Images/Icons/Icon_GML_To_Clipboard.png" title=""> 为其生成 <span data-keyref="GML_Code">GML 代码 </span>。</p>
 
 </div>
-  <p>下面列出了设置粒子系统的基本函数：</p>
+  <h2 id="h">将GML复制到剪贴板</h2>
+  <p>使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 的 <strong>" 将 GML 复制到剪贴板 "</strong> 按钮 <img class="icon" src="../../../../../assets/Images/Icons/Icon_GML_To_Clipboard.png">，可以生成创建与所创建粒子系统相同的粒子系统所需的 <span data-keyref="GML_Code">GML 代码 </span>。例如，代码可以进入对象的 Create 事件：</p>
+  <p class="code_heading">创建事件</p>
+  <p class="code">var _ps = part_system_create();<br>
+    part_system_draw_order( _ps, true);<br>
+    <br>
+    var _ptype1 = part_type_create();<br>
+    part_type_shape( _ptype1, pt_shape_sphere );<br>
+    part_type_size( _ptype1, 1, 1, 0, 0 );<br>
+    part_type_scale( _ptype1, 1, 1);<br>
+    part_type_speed( _ptype1, 2, 2, 0, 0);<br>
+    part_type_direction( _ptype1, 0, 0, 4, 0);<br>
+    part_type_gravity( _ptype1, 0, 270);<br>
+    part_type_orientation( _ptype1, 0, 0, 0, 0, false);<br>
+    part_type_colour3( _ptype1, $7F7FFF, $FFFFFF, $FFEFBC );<br>
+    part_type_alpha3( _ptype1, 1, 1, 0.169);<br>
+    part_type_blend( _ptype1, true);<br>
+    part_type_life( _ptype1, 80, 80);<br>
+    <br>
+    var _pemit1 = part_emitter_create( _ps );<br>
+    part_emitter_region( _ps, _pemit1, -64, 64, -64, 64, ps_shape_rectangle, ps_distr_linear );<br>
+    part_emitter_stream(_ps, _pemit1, _ptype1, 1);<br>
+    <br>
+    part_system_position(_ps, room_width/2, room_height/2);
+  </p>
+  <p>如上面的代码所示，如果将发射器配置为<strong>Stream</strong>模式，则发射器将开始流式粒子。默认情况下，粒子系统的位置设置为房间的中心。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important">重要事项</span></span>粒子系统、发射器和类型必须手动销毁(例如：在清理事件中)，以防止内存泄漏。</p>
+  <h2 id="func_ref">函数参考</h2>
+  <h3 id="func_ref_general">建立</h3>
   <ul class="colour">
     <li><a href="part_system_exists.htm">part_system_exists</a></li>
     <li><a href="part_system_create.htm">part_system_create</a></li>
@@ -94,12 +122,15 @@
     <li><a href="part_system_layer.htm">part_system_layer</a></li>
     <li><a href="part_system_depth.htm">part_system_depth</a></li>
     <li><a href="part_system_position.htm">part_system_position</a></li>
+    <li><a href="part_system_angle.htm">part_system_angle</a></li>
+    <li><a href="part_system_global_space.htm">part_system_global_space</a></li>
+    <li><a href="part_system_colour.htm">part_system_colour</a></li>
     <li><a href="part_system_clear.htm">part_system_clear</a></li>
     <li><a href="part_system_destroy.htm">part_system_destroy</a></li>
     <li><a href="part_particles_clear.htm">part_particles_clear</a></li>
     <li><a href="part_particles_count.htm">part_particles_count</a></li>
   </ul>
-  <p>&nbsp;</p>
+  <h3 id="func_ref_updating_drawing">更新和绘图</h3>
   <p>一旦粒子添加到粒子系统，然后爆发或流入房间，它们通常会在每个步骤中自动更新，并根据用于定义粒子系统的参数进行绘制。但是，有时可能需要控制何时以及如何更新系统，以及如何绘制系统，并且<span data-keyref="GameMaker Name">GameMaker</span>提供以下函数：</p>
   <ul class="colour">
     <li><a href="part_system_automatic_update.htm">part_system_automatic_update</a></li>
@@ -108,11 +139,12 @@
     <li><a href="part_system_drawit.htm">part_system_drawit</a></li>
     <li><a href="part_system_draw_order.htm">part_system_draw_order</a></li>
   </ul>
-  <p>&nbsp;</p>
+  <h3 id="func_ref_creating_particles">创建粒子</h3>
   <p>可以使用 <a href="../Particle_Emitters/Particle_Emitters.htm"> 粒子发射器 </a> 从某个区域爆发或流化粒子，但在许多情况下，这些不是必需的，实际上最好直接使用以下函数创建粒子：</p>
   <ul class="colour">
     <li><a href="part_particles_create.htm">part_particles_create</a></li>
     <li><a href="part_particles_create_colour.htm">part_particles_create_colour</a></li>
+    <li><a href="part_particles_burst.htm">part_particles_burst</a></li>
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

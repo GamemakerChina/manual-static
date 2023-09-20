@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>ds_list_empty</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -106,11 +106,10 @@
   <p class="code">if (count == 15( &amp;&amp; (!ds_list_empty(command_list))<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;ds_list_clear(command_list);<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = game_get_speed(gamespeed_fps);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;count = 0;<br>
     }</p>
   <p>上述代码检查变量是否已达到特定值，以及是否清除变量"command_list"中索引的DS列表，设置报警，并将变量重置为0。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

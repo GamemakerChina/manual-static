@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Structs &amp; Constructors</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
   <script src="../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo">
@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>结构和构造函数</h1>
+  <h1><span data-field="title" data-format="default">Structs &amp; Constructors</span></h1>
   <p><strong><a id="struct"></a>struct (结构) </strong>是保存其他变量集合的变量。结构所持有的变量可以是前面提到的任何<a href="Data_Types.htm">数据类型</a>，这些变量可以在初始结构声明之后读取和写入，也可以在声明结构之后向其添加更多变量。</p>
   <p>结构中使用的变量应遵循通常的变量命名方案，即：它们不能以数字开头，只能由字母数字字符和下划线"_"字符组成，并且还要注意，结构的内容与创建它的实例或函数<em>无关，因此，如果您愿意，可以使用内置变量名，如</em>image_index<span class="inline">或</span>x<span class="inline">和</span>y<span class="inline">。</span></p>
   <p>在初始创建之后，虽然结构<i>会占用内存空间，但它们在存在时没有处理开销。结构语法如下：</i></p>
@@ -99,7 +99,7 @@
   <p class="code">mystruct = {};</p>
   <p>然后可以在游戏代码的稍后一点将变量添加到此结构中。若要在以后添加它们，请使用点运算符(与<a href="Addressing_Variables_In_Other_Instances.htm">其他实例中的寻址变量的方法相同</a>)：</p>
   <p class="code">mystruct.newItem = "Some Text";</p>
-  <p>这与初始化如下结构的结果相同：</p>
+  <p>这与初始化结构体的结果相同：</p>
   <p class="code">mystruct =<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;newItem : "Some Text"<br>
@@ -137,6 +137,30 @@
     }</p>
   <p>出现错误是因为变量<span class="inline">a</span>&nbsp;和<span class="inline">b</span>&nbsp;实际上是在定义结构的范围内计算的(它们在冒号":"的右边)，并且&nbsp;<em>不是</em>&nbsp;是在结构本身中定义的。</p>
   <p class="note" style="padding-left: 20px;"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要!</span></span> 您不能使用任何内置的<strong>全局</strong>范围变量作为结构成员名称，例如：<span class="inline">game_id</span> 或 <span class="inline">fps</span>。您可以在<a href="Struct_Forbidden_Variables.htm">结构禁用变量</a>上找到这些全局变量的完整列表。</p>
+  <h3>同名变量初始化的简写</h3>
+  <p>使用同名的现有变量(局部变量或实例变量)的值初始化的结构变量可以使用简写表示法编写。而不是写：</p>
+  <p class="code">var a = 12;<br>
+    b = 14;<br>
+    <br>
+    mystruct =&nbsp;<br>
+    {<br>
+    &nbsp; &nbsp; a : a,<br>
+    &nbsp; &nbsp; b : b,<br>
+    &nbsp; &nbsp; c : 101<br>
+    }
+  </p>
+  <p>你可以这样写：</p>
+  <p class="code">var a = 12;<br>
+    b = 14;<br>
+    <br>
+    mystruct =&nbsp;<br>
+    {<br>
+    &nbsp; &nbsp; a,<br>
+    &nbsp; &nbsp; b,<br>
+    &nbsp; &nbsp; c: 101<br>
+    }
+  </p>
+  <p>在这两种情况下，<span class="inline2">mystruct.a</span>将被赋值为<span class="inline2">12</span>，而<span class="inline2">mystruct.b</span>将被赋值为<span class="inline2">14</span>，因为它将在初始化结构的作用域中查找同名的变量。</p>
   <h3>访问结构变量</h3>
   <p>定义结构后，可以使用"点"表示法访问其中的数据，如下所示：</p>
   <p class="code">mystruct =<br>

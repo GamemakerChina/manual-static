@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>ds_map_add</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,32 +79,42 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>ds_map_add</h1>
-  <p>此函数应用于将键/值对集合添加到指定的<span class="misspell-word">DS映射</span>中。您可以检查此函数是否成功(成功时将返回<span class="inline">true</span>，否则将返回<span class="inline">false</span>)，因为如果DS映射中已存在相同的密钥，或者您将不存在的DS映射指定为要添加到的映射的ID，则可能会失败。您提供的密钥和值可以由数据类型的任意组合组成，因此以下所有内容-more-是可接受的(尽管在实践中，您最常使用字符串作为密钥)：</p>
-  <p class="code">ds_map_add(map, 5, undefined);<br> ds_map_add(map, "level", 1);<br> ds_map_add(map, 89.6, "hello world");<br> ds_map_add(map, 5, buffer_get_address(buff));</p>
+  <p>This function should be used to add sets of key/value pairs into the specified <span class="misspell-word">DS</span> map. You can check this function to see if it was successful or not (it will return <span class="inline">true</span> on success or <span class="inline">false</span> otherwise), as it may fail if there already exists the same key in the DS map&nbsp;or you specify a non-existent DS map&nbsp;as the ID&nbsp;of the map to add to. The keys and and values you supply can be made up of any combination of data types, so all of the following - and more - are acceptable (although, in practice, you would most commonly use a string for the key):</p>
+  <p class="code">ds_map_add(map, 5, undefined);<br>
+    ds_map_add(map, "level", 1);<br>
+    ds_map_add(map, 89.6, "hello world");<br>
+    ds_map_add(map, 5, buffer_get_address(buff));</p>
   <p>您还可以使用<a href="../../../GML_Overview/Accessors.htm">访问器</a>"<span class="inline">?</span>"添加到地图，如下所示：</p>
-  <p class="code">map[? 5] = undefined;<br> map[? "level"] = 1;<br> map[? 89.6] = "hello world";<br> map[? 5] = buffer_get_address(buff);</p>
-  <p class="note"><b>注意</b>：与<span data-keyref="GameMaker Name">GameMaker</span>中的其他数据结构不同，此密钥不会进入<span class="misspell-word">DS映射</span>的开始(也不会结束)，而只会进入<span class="misspell-word">DS映射</span><b>的某个位置</b>。</p>
+  <p class="code">map[? 5] = undefined;<br>
+    map[? "level"] = 1;<br>
+    map[? 89.6] = "hello world";<br>
+    map[? 5] = buffer_get_address(buff);</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> Unlike other data structures in <span data-keyref="GameMaker Name">GameMaker</span> this key will not go to the start (nor the end) of the <span class="misspell-word">DS</span> map, but rather it will just go into the <span class="misspell-word">DS</span> map&nbsp;<b>somewhere</b>.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">ds_map_add(id, key, val);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>id</td><td><span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">DS Map ID</a></span></td>
+        <td>id</td>
+        <td><span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span></td>
         <td>要添加到的映射的ID。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>key</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>key</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要添加的值的关键字。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>val</td><td><span data-keyref="Type_Any"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span></td>
+        <td>val</td>
+        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span></td>
         <td>要添加到地图的值。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -112,7 +122,9 @@
   <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">inventory = ds_map_create();<br> ds_map_add(inventory, "hp potion", 1);<br> ds_map_add(inventory, "gold", 100);</p>
+  <p class="code">inventory = ds_map_create();<br>
+    ds_map_add(inventory, "hp potion", 1);<br>
+    ds_map_add(inventory, "gold", 100);</p>
   <p>这将创建一个新映射，将其ID分配给变量"inventory"。然后，它在地图上添加了两个新键，"hp potion"和"gold"，并将它们的初始值分别设置为1和100。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

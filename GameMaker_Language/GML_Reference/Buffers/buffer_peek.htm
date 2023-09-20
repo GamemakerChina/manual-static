@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>buffer_peek</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,7 +81,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>buffer_peek</h1>
   <p>使用<a href="buffer_read.htm"><span class="inline">buffer_read()</span></a>函数，您可以在当前"查找"位置从给定缓冲区读取数据，读取的每个数据片段将此位置向前移动读取或写入的字节。但是，您可能需要读取给定的数据，而不希望更改当前的寻道位置，这就是您使用此函数的时候。您只需为函数提供一个缓冲区ID，然后在该缓冲区内提供一个偏移位置(从缓冲区开始)以供读取，并提供要读取的数据类型。</p>
-  <p class="note"><b>注意</b>：对正在读取的数据使用不正确的数据类型将导致错误的值！</p>
+  <p class="note"><b><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> Using the incorrect data type for the data being read will result in erroneous values!</p>
   <p>如果函数成功，将根据数据类型返回一个值(实数、字符串、布尔值等)，而失败将仅返回0。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>

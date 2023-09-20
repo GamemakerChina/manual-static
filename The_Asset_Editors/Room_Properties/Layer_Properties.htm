@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Layer Types And Properties</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
   <script src="../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -83,7 +83,7 @@
   <p><img alt="Room Layers" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Layers.png">上图显示了层编辑器，当前层在顶部列出，用于创建层的不同按钮在底部。您可以通过在名称上缓慢地双击来重命名此编辑器中的任何层(请注意，您不能使用除字母、数字和下划线\"_\"字符以外的任何名称)，您还可以通过单击眼睛图标<img alt="Eye Icon" class="icon" height="21" src="../../assets/Images/Icons/Icon_Eye.png" width="21">来打开或关闭其可见性。如果房间继承了父房间的层，您可以通过底部的按钮切换继承，但请注意，这将影响所有层(有关继承的更多信息，请参阅<a href="Room_Inheritance.htm">房间继承</a>)。您也可以使用<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55">或<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">，然后在多个层上左键单击<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">以选择要复制或删除的层(这些选项也可以从鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">菜单中选择)。</p>
   <p>为了帮助您对层进行排序并使其保持整洁，您可以通过单击文件夹图标<img alt="Folder Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_Folder.png" width="24">在层文件夹中创建层组。您还可以通过单击删除按钮<img alt="Delete Layer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_DeleteLayer.png" width="24">来删除一个或多个选定的层。所有层都将有一个<strong>深度</strong>值，该值定义当该层的内容在房间中<a class="tooltip" title="当一些东西在GameMaker Studio 2中呈现时，通常意味着它只是被“绘制到显示缓冲区”或“绘制到表面”。渲染也可以指将某种矢量源(如字体)转换为位图图像的过程。">呈现</a>时，该层将被放置在绘制顺序中的位置。层从<em>最高</em>深度到<em>最低</em>绘制，因此深度为-100的层将在深度为200的层<em>以上</em>绘制。</p>
   <div data-conref="../../assets/snippets/Note_layer_depth_range.hts">
-  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 有一个最小和最大的层深在-16000到16000之间。放置在该范围之外的层上的任何内容都不会被绘制，尽管该层上的所有事件仍将正常运行。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;There is a minimum and maximum layer depth of&nbsp;<span data-keyref="Const_Depth_Min">-16000</span> to <span data-keyref="Const_Depth_Max">16000</span>. Anything placed on a layer outside that range will not be drawn although all events will still run as normal for anything on the layer.</p>
 
 </div>
   <p>如果在任意层上右击<img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">&nbsp;，则会出现层菜单：</p>

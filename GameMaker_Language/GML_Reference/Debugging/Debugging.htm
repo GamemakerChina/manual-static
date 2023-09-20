@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Debugging</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,10 +79,16 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">调试</span></h1>
-  <p>在制作游戏时，了解特定时间点的游戏机制的某些细节，或者能够为某些函数输入某些键值以测试游戏的不同方法和想法，通常是非常重要的。为此，<span data-keyref="GameMaker Name">GameMaker</span>为您提供了许多调试函数，这些函数将在调试模式下(或在Windows目标上)显示消息并要求输入，但在为其他目标模块编译时将被忽略，因为这些函数将游戏置于闭环中，直到输入被解析。</p>
+  <p>在制作游戏时，了解特定时间点的游戏机制的某些细节，或者能够为某些功能输入某些键值，以测试游戏的不同方法和想法，这通常非常重要。</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>为此提供以下函数：</p>
+  <ul class="Disc">
+    <li>一些基本的调试函数，在调试模式下(或在Windows目标上)显示消息并请求输入。当为其他目标模块编译时，这将被忽略，因为这些函数将游戏置于一个闭环中，直到输入被解析。</li>
+    <li><a href="The_Debug_Overlay.htm">调试覆盖图(The Debug Overlay)</a>，一个游戏内的叠加视图，您可以在其中查看<strong>FPS</strong>、<strong>日志</strong>和<strong>音频</strong>窗口，以及创建您自己的<a href="The_Debug_Overlay.htm#creating_debug_views">自定义调试视图</a>。</li>
+  </ul>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;尽管它们可能在某些平台上工作，但除了调试之外，不能用于任何其他用途。</p>
-  <h2 id="func_ref">函数参考</h2>
-  <h3 id="functions_variables">函数 / 变量</h3>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>您可以在<a href="../../../IDE_Tools/The_Debugger.htm">调试器</a>部分找到有关如何调试游戏的详细信息。</p>
+  <h2 id="func_ref">调试函数(基本)</h2>
+  <p>以下函数提供了调试游戏的基本功能：</p>
   <ul class="colour">
     <li><a href="debug_mode.htm">debug_mode</a> 调试_模式</li>
     <li><a href="debug_event.htm">debug_event</a> 调试_事件</li>
@@ -100,6 +106,8 @@
     <li><a href="fps.htm">fps</a> 帧数 (实际跑出来的帧数)</li>
     <li><a href="fps_real.htm">fps_real</a> 实际帧数 (依据性能计算出可达到的帧数)</li>
   </ul>
+  <h2>调试覆盖图(The Debug Overlay)</h2>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>还具有更高级的调试功能，可从<a href="The_Debug_Overlay.htm">调试覆盖图</a>访问。</p>
   <h2 id="debug_macros">调试宏</h2>
   <p><span data-keyref="GameMaker Name">GameMaker</span> 还有几个内置宏，您可以使用它们来更轻松地调试游戏：</p>
   <ul class="colour">
@@ -122,8 +130,6 @@
     <li><a href="../../../Additional_Information/Errors/Compiler_Errors.htm">编译器错误</a></li>
     <li><a href="../../../Additional_Information/Errors/Runner_Errors.htm">Runner错误</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>您还可以在<a href="../../../IDE_Tools/The_Debugger.htm">调试器</a>一节中找到有关如何调试游戏的更多信息。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

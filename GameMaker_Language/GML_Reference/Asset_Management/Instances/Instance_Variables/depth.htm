@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>depth</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,16 +78,18 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>depth</h1>
+  <h1><span data-field="title" data-format="default">depth</span></h1>
   <p>当你创建一个对象时，你可以为其分配一个初始<i>depth</i>，它定义了在玩游戏时在房间里如何绘制该物体的实例，这个变量可用于在游戏运行时获取和更改该深度值。通常情况下，您无需使用此变量，因为您应该将实例设置为隐蔽的<a href="layer.htm">层</a>，然后将其设置为特定的深度，但您可能想使用此值更改实例的深度，在这种情况下，将在给定深度下专门为实例创建 "临时层"。请注意，当没有一个实例处于相同深度时，这个临时层将从内存中移除(与普通图层不同，即使它们上面没有任何东西也会保留)。</p>
-  <p class="note"><b>IMPORTANT！</b>修改<span class="inline">深度</span>变量并且<span data-keyref="GameMaker Name">GameMaker</span>管理层时，内置的<span style="font-size:1px;"><a href="layer.htm"><span class="inline">层</span></a></span>变量将返回-1，而不是层 ID，因为托管层无法通过代码操作。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;When you modify the&nbsp;<span class="inline2"><span data-field="title" data-format="default">depth</span></span>
+    <font face="menlo, consolas, monospace"><b> </b></font>variable and <span data-keyref="GameMaker Name">GameMaker</span> manages the layers, the built in <span style="font-size:1px;"><a href="layer.htm"><span class="inline">layer</span></a></span> variable will return -1 and not the layer ID, since managed layers cannot be manipulated through code.
+  </p>
   <p>在<span data-keyref="GameMaker Name">GameMaker</span>中，实例的深度值越低，将绘制该实例的"更靠近相机"，而深度值越高，则表示实例将被绘制为"远离相机"，即：- 1000 绘制在 - 100 的顶部，这在 0 的顶部，依此类推。</p>
-  <p><img alt="Depth sorting example image" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/depth_image.png">请注意，具有相同<b>深度</b>的对象的实例可以绘制在<b>上方<i>或</i>下方</b>，即使它们似乎在房间编辑器中一个放在另一个之上。如果你想保证某物被画在其他事物之上或之下，你应该总是明确地设置深度(或层)。还要注意，存在最小(-16000)和最大(+16000)深度值，虽然它们仍然存在并处理事件，但是不会在它们之外绘制实例。</p>
-  <p class="note"><b><span class="note">注意</span></b>您<b>不能</b>在实例的绘制事件中设置实例的深度(所有其他事件都可以)。</p>
+  <p><img alt="Depth sorting example image" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/depth_image.png">Note that instances of an object that have the <b>same</b> depth can be drawn <b>above <i>or</i> below each other</b> even when they appear to be placed one on top of the other in <a href="../../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a>. If you want to guarantee that something is drawn over or under everything else, you should always set the depth (or layer) explicitly. Also note that there is a minimum (<span data-keyref="Const_Depth_Min">-16000</span>) and maximum (<span data-keyref="Const_Depth_Max">16000</span>)&nbsp;depth value outside of which instances will not be drawn, although they will still exist and process events.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You <b>cannot</b> set the depth of an instance in its Draw event (all other events are fine). You can, however, set the depth at which to draw things in the Draw event using&nbsp;<span class="inline3_func"><a href="../../../Drawing/GPU_Control/gpu_set_depth.htm">gpu_set_depth</a></span>.</p>
   <p>请记住，修改实例的深度可能会更改哪些<a href="../../../../../The_Asset_Editors/Room_Properties/Filters_and_Effects.htm">过滤器&amp;效果</a>应用于该实例，因为将深度更改为低于FX层的深度将不再对实例应用其效果。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">depth;</p>
+  <p class="code"><span data-field="title" data-format="default">depth</span>;</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (single precision floating point value)</p>
@@ -98,7 +100,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;depth = -y;<br>
     }</p>
   <p>上面的代码将检查Y位置是否已更改，如果已更改，则深度也将设置为与其对应。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Constants</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -82,7 +82,7 @@
   <p>常量(constant)是一种变量，在游戏开始时被设置一次，然后永远不会改变。事实上，常量值<em>在被声明后不能被改变</em>。这使它们成为保存整个游戏中用于识别特殊数据的数值的理想选择。</p>
   <p>在GameMaker语言中，有两种类型的用户定义常量：<strong>宏</strong>和<strong>枚举</strong>，，下面将对这两种类型进行解释。还要注意，始终相同的任何值都被归类为常量，而与<a href="../Data_Types.htm">数据类型</a>无关，例如字符串或数字3。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> GameMaker 语言也有许多用于标识特定事物的内置常量值。在 <a href="../../GML_Reference/GML_Reference.htm">GML 参考 </a> 部分中需要它们的运行时函数的相应页面上概述了这些内容。</p>
-  <h2>Macros 宏</h2>
+  <h2 id="h">Macros 宏</h2>
   <p>虽然不完全是变量，但宏在使用方式上与它们相似，即：它们是命名的值，你可以在整个代码中使用它们来替换<a class="tooltip" title="在计算机编程中，术语“硬编码”用于描述被认为是固定的并且不太可能更改的代码。硬编码功能以无法稍后修改的方式内置于硬件或软件中。例如，如果您要制作游戏并将玩家的健康状况“硬编码”为10，那么您将在整个游戏代码中使用值10，而不是使用变量。">硬编码的</a>值。基本上，宏是一个持有表达式的命名变量。你可以用<a href="../Script_Functions.htm">脚本编辑器</a>来定义你自己的宏，然后在你的代码和动作中使用它们，就像它们是普通变量一样，唯一不同的是，它们<i>不能在游戏中被改变</i>。</p>
   <p>宏的语法结构如下所示：</p>
   <p class="code">#macro&nbsp;<i>&lt;variable&gt;</i>&nbsp;<i>&lt;expression&gt;</i></p>
@@ -205,7 +205,7 @@
       </tr>
       <tr>
         <td><span class="inline">pi</span></td>
-        <td>This constant represents the value of pi: 3.141592653589793280 etc... although the exact value will depend on various factors like the OS or the platform being targeted.</td>
+        <td>This constant represents the value of pi: 3.141592653589793280..., although the exact value will depend on various factors like the OS or the platform being targeted.</td>
       </tr>
     </tbody>
   </table>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Script Functions And Variables</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
   <script src="../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo">
@@ -199,7 +199,7 @@
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;val = scr_sqr(amount);<br>
     }</p>
-  <p class="note"><strong>注意</strong>：在代码编辑器中使用自己的脚本中的函数时，您可以按<span><img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"></span>或在函数名称上单击鼠标中键<span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png">，直接打开包含该函数的脚本进行编辑。</span></p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;When using your own functions from scripts in the code editor, you can press<span>&nbsp;<img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"></span> or click the middle mouse button <span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png">&nbsp;</span>on the function name to open the script that contains it for editing directly.</p>
   <h2>脚本名称与函数名称</h2>
   <p>了解脚本<i>名称</i><b>独立于它们包含的函数</b>很重要，因此您可以用更“常识”的方式命名您的脚本，即：您的所有 AI 函数都可以放在一个脚本“<span class="inline">Enemy_AI</span>”（仅遵循字母数字字符和下划线“_”的标准资源命名约定）。但是，您仍然可以在游戏中调用脚本 - 您可以将脚本命名为与您在其中定义的函数相同的名称 - 由于 <span data-keyref="GameMaker Name">GameMaker</span> 存储资源引用的方式，这可能会引起问题。举个例子考虑这个代码，从一个实例调用：</p>
   <p class="code">function indirectCall(func, arg)<br>

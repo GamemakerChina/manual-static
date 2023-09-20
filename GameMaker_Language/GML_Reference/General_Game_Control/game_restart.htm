@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>game_restart</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>game_restart</h1>
+  <h1><span data-field="title" data-format="default">game_restart</span></h1>
   <p>使用此函数，您可以重新启动游戏。这与首次运行游戏基本相同，因此将触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">游戏开始事件</a>、<i>以及</i>游戏结束事件<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">。</a></p>
   <div data-conref="../../../assets/snippets/changing_room_stops_instance_creation.hts">
   <p class="note"><span class="note">注意</span>调用此函数后，将无法在同一事件中创建新实例。</p>
@@ -92,25 +92,25 @@
     <li>资源浏览器中在游戏中运行时更改的任何资源(例如，如果更改精灵资源的原点或移动路径资源的位置)将不会<i>重置。</i></li>
     <li>动态资源(如缓冲区、表面、数据结构或导入的精灵)也不会被清理或删除(尽管您可能会丢失对它们的引用，因此在使用此函数时，请注意要么对动态资源使用全局引用，要么在调用此函数之前清理它们)。</li>
     <br>
+    <br>
     &nbsp;
   </ul>
   <h4>语法:</h4>
-  <p class="code">game_restart();</p>
+  <p class="code"><span data-field="title" data-format="default">game_restart</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if keyboard_check_pressed(ord("R")) game_restart();</p>
+  <p class="code">if keyboard_check_pressed(ord("R")) <span data-field="title" data-format="default">game_restart</span>();</p>
   <p>这将在玩家按下"R"键时重新启动游戏。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Back: <a href="General_Game_Control.htm">General&nbsp;Game Control</a></div>
-        <div style="float:right">Next:&nbsp;<a href="game_load.htm">game_load</a></div>
+        <div style="float:right">Next:&nbsp;<a href="game_change.htm">game_change</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

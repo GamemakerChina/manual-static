@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>room_add</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>room_add</h1>
   <p>此函数将创建一个新的空房间，并将其添加到您的游戏中，返回其索引以存储在一个变量中，用于处理此房间的所有其他代码。请注意，每个房间都会永久添加到游戏中，直到可执行文件关闭，即：<i>无法再次删除通过代码添加的会议室</i>。这对内存使用有重要的影响，因此您应该小心使用此函数。</p>
-  <p class="note"><b>注意</b>：新客房不是通常客房订购的一部分，因此它们没有"上一个"或"下一个"客房(这意味着函数<span style="font-size:1px;"><a href="room_next.htm"><span class="inline">房间_next()</span></a></span>和<span style="font-size:1px;"><a href="room_previous.htm"><span class="inline">房间_foreous()</span></a></span>将不起作用)。要从添加的房间跳转到另一个房间，必须使用房间本身的索引。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;New rooms are not part of usual room ordering, so they do not have a "previous" or "next" room (meaning that the functions <span style="font-size:1px;"><a href="room_next.htm"><span class="inline">room_next()</span></a></span>&nbsp;and <span style="font-size:1px;"><a href="room_previous.htm"><span class="inline">room_previous()</span></a></span> will not work). To jump from the added room to another, you must use the index of the room itself.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">room_add();</p>

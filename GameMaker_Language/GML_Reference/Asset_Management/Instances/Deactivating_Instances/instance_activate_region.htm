@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>instance_activate_region</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,12 +79,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>instance_activate_region</h1>
+  <h1><span data-field="title" data-format="default">instance_activate_region</span></h1>
   <p>使用此函数，您可以在房间内定义一个区域，以激活先前已停用的实例。此区域可以标记为"内部"或"外部"，如下图所示：</p>
   <p><img alt="Instance activate region example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/instance_activate_region.png">在上图中可以看到，"apple"实例始终处于活动状态，因为即使sprite本身不与区域重叠，边界框也是如此。因此，当实例的<i>边界框</i>与其重叠时，实例被视为在指定区域内，并且不考虑碰撞掩码(精确与否)的状态。请注意，激活不是瞬时的，在调用函数的事件结束之前，以这种方式激活的实例将被视为处于活动状态。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">instance_activate_region(left, top, width, height, inside);</p>
+  <p class="code"><span data-field="title" data-format="default">instance_activate_region</span>(left, top, width, height, inside);</p>
   <table>
     <tbody>
       <tr>
@@ -129,9 +129,9 @@
     var _vy = camera_get_view_y(view_camera[0]);<br>
     var _vw = camera_get_view_width(view_camera[0]);<br>
     var _vh = camera_get_view_height(view_camera[0]);<br>
-    instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);</p>
+    <span data-field="title" data-format="default">instance_activate_region</span>(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+  </p>
   <p>上面的代码取消激活除运行代码的实例之外的所有实例，然后激活房间内的区域。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

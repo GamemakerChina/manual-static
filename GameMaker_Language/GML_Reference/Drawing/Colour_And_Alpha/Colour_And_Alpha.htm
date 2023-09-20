@@ -51,13 +51,13 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Colour And Alpha</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Reference section for the Colour And Alpha functions and variables">
-  <meta name="rh-index-keywords" content="c_aqua,c_black,c_blue,c_dkgray,c_fuchsia,c_gray,c_green,c_lime,c_ltgray,c_maroon,c_navy,c_orange,c_olive,c_red,c_purple,c_silver,c_white,c_teal,c_yellow">
-  <meta name="search-keywords" content="Colour And Alpha,Colour,Alpha,c_aqua,c_black,c_blue,c_dkgray,c_fuchsia,c_gray,c_green,c_lime,c_ltgray,c_maroon,c_navy,c_orange,c_olive,c_red,c_purple,c_silver,c_white,c_teal,c_yellow">
+  <meta name="rh-index-keywords" content="c_aqua,c_black,c_blue,c_dkgray,c_fuchsia,c_gray,c_green,c_lime,c_ltgray,c_maroon,c_navy,c_orange,c_olive,c_red,c_purple,c_silver,c_white,c_teal,c_yellow,c_dkgrey,c_grey,c_ltgrey">
+  <meta name="search-keywords" content="Colour And Alpha,Colour,Alpha,c_aqua,c_black,c_blue,c_dkgray,c_fuchsia,c_gray,c_green,c_lime,c_ltgray,c_maroon,c_navy,c_orange,c_olive,c_red,c_purple,c_silver,c_white,c_teal,c_yellow,c_dkgrey,c_grey,c_ltgrey">
 <meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/colour_get_blue.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Drawing.htm"></head>
 
 <body>
@@ -78,9 +78,9 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>颜色和 Alpha</h1>
+  <h1><span data-field="title" data-format="default">Colour And Alpha</span></h1>
   <p><span data-keyref="GameMaker Name">GameMaker</span>具有全面的函数选项，可以操纵屏幕上绘制内容的颜色和Alpha。使用这些函数，您可以将颜色分成各自的组成部分，创建新颜色并操纵绘制Alpha以更改游戏中的不同内容的绘制方式。</p>
-  <p class="note">有关使用特殊<b>混合模式</b>和其他GPU特定函数混合图像的信息，请参阅<a href="../GPU_Control/GPU_Control.htm">GPU控件</a>一节。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;For blending images using special <b>blend modes</b> and other GPU specific functions, see the section on <a href="../GPU_Control/GPU_Control.htm">GPU Control</a>.</p>
   <p>还有许多常量可用作这些(和其他)函数的基色：</p>
   <table style="max-width: 400px">
     <colgroup>
@@ -194,7 +194,7 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h">十六进制颜色</h2>
+  <h2 id="hex_colours">十六进制颜色</h2>
   <p>您可以事先使用<span class="inline2">$</span>符号从十六进制值创建颜色，这些值也可以与各种颜色函数一起使用，以分别获取分量值。颜色的十六进制值分为三部分，格式为：<span class="inline2">蓝色</span>/<span class="inline2">绿色</span>/<span class="inline2">红色</span>(或<span class="inline2">$ Bbggrr</span>)，例如，要定义浅蓝色/浅蓝色，您可以使用：</p>
   <p class="code">col = $<strong>FFCC11</strong>;</p>
   <p>此处，<span class="inline2">F</span>是蓝色分量，<span class="inline2">Cc</span>是绿色分量，<span class="inline2">11</span>是红色分量。</p>

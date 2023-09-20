@@ -51,13 +51,13 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>network_send_raw</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Reference page for network_send_raw">
-  <meta name="rh-index-keywords" content="network_send_raw">
-  <meta name="search-keywords" content="network_send_raw, text WebSockets">
+  <meta name="rh-index-keywords" content="network_send_raw,network_send_binary,network_send_text">
+  <meta name="search-keywords" content="network_send_raw,text WebSockets,network_send_binary,network_send_text">
 <meta name="brsnext" value="GameMaker_Language/GML_Reference/Networking/network_send_udp.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Networking/network_send_packet.htm"></head>
 
 <body>
@@ -78,8 +78,15 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>network_send_raw</h1>
-  <p>通过此函数，您可以通过网络发送"原生"数据包。该函数使用<i>套接字ID</i>进行连接，然后必须提供包含要发送的数据的<i>缓冲区ID</i>(有关缓冲区的详细信息，请参阅<a href="../Buffers/Buffers.htm">参考-缓冲区</a>)，最后是数据包的大小(以字节为单位)。<span data-keyref="GameMaker Name">GameMaker</span>不会以任何方式对发送的数据进行格式化，接收设备将以流的形式获取数据，这意味着您必须自行处理这些数据。该函数将返回发送的数据的字节数，如果发送失败，则返回小于0的数字。</p>
+  <h1><span data-field="title" data-format="default">network_send_raw</span></h1>
+  <p>This function sends a "raw" data packet through the network.</p>
+  <p>The function takes the <span data-keyref="Type_ID_Network_Socket"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">Network Socket ID</a></span>&nbsp;to connect through and then you must supply the&nbsp;<span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span>&nbsp;which contains the data to be sent (for more information on buffers see <a href="../Buffers/Buffers.htm">Reference - Buffers</a>) and finally the size (in bytes) of the data packet.</p>
+  <p>The data sent is not formatted by <span data-keyref="GameMaker Name">GameMaker</span> in any way and the receiving devices will get the data as a stream which means you will have to handle it yourself. The function will return the number of bytes of data sent, or a number less than 0 if the send has failed.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;<span data-conref="../../../assets/snippets/Networking_dont_mix_raw_reg.hts">You must not mix the use of regular and raw functions in your game, as doing so will cause issues. This means for a connection made with&nbsp;<span class="inline3_func"><a href="network_connect.htm" title="Cross-reference [network_connect.htm]" data-tcx-title="Cross-reference [network_connect.htm]">network_connect</a></span>, you must use&nbsp;<span class="inline3_func"><a href="network_send_packet.htm" title="Cross-reference [network_send_packet.htm]" data-tcx-title="Cross-reference [network_send_packet.htm]">network_send_packet</a></span>, and for&nbsp;<span class="inline3_func"><a href="network_connect_raw.htm" title="Cross-reference [network_connect_raw.htm]" data-tcx-title="Cross-reference [network_connect_raw.htm]">network_connect_raw</a></span>, use&nbsp;<span class="inline3_func"><a href="network_send_raw.htm" title="Cross-reference [network_send_raw.htm]" data-tcx-title="Cross-reference [network_send_raw.htm]">network_send_raw</a></span>.</span></p>
+  <div data-conref="../../../assets/snippets/Note_Networking_TCP_like.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function uses a TCP-like socket (i.e. <span class="inline2">network_socket_tcp</span>). It may work with other socket types as well, but this isn't guaranteed.</p>
+
+</div>
   <h2>选项参数</h2>
   <p>最后一个参数是可选的，仅与WebSockets一起使用。它允许您选择发送二进制数据还是文本数据。可以在此参数中指定以下任一常量：</p>
   <table>
@@ -108,7 +115,7 @@
   <p>某些平台的API在使用WebSockets(例如Twitch)时仅接受文本消息，因此<span class="inline2">network_send_text</span>常量可用于此类情况。如果未指定此参数，则默认情况下会发送二进制数据。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">network_send_raw(socket, bufferid, size, [options]);</p>
+  <p class="code"><span data-field="title" data-format="default">network_send_raw</span>(socket, bufferid, size, [options]);</p>
   <table>
     <tbody>
       <tr>
@@ -134,7 +141,7 @@
       <tr>
         <td>options</td>
         <td><span data-keyref="Type_Constant_Network_Send_Type"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Networking/network_send_raw.htm">网络发送类型常量</a></span></td>
-        <td><span class="optional">可选</span>用于WebSockets在文本数据和二进制数据之间进行选择;如果未指定，则发送二进制数据。</td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;Used for WebSockets to choose between text and binary data; if not specified, binary data is sent.</td>
       </tr>
     </tbody>
   </table>
@@ -146,7 +153,6 @@
   <p class="code">buff = buffer_load("player_save.dat");<br>
     network_send_raw(sock, buff, buffer_get_size(buff));</p>
   <p>上述信息将先前保存的缓冲区数据加载到内存中，并返回要存储在变量"buffe"缓冲区中。然后，使用由变量"sock"标识的套接字，将该完整缓冲区作为原生数据包通过网络发送。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

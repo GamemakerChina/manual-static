@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>room</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,11 +78,11 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>room</h1>
-  <p>此变量保存游戏正在运行的当前房间的房间索引。这<i>不是</i>只读变量，但更改此变量不会更改当前房间的索引值，而是更改房间以匹配已设置该变量的索引。执行此操作时应小心，因为如果将变量更改为无效的索引，游戏将抛出错误并关闭。一般来说，使用<a href="room_goto.htm"><span class="inline">room_goto()</span></a>更改房间是更好的做法。</p>
-  <p class="note"><strong>注意</strong>：房间ID不基于其在资源浏览器或房间管理器中的顺序，因此应避免直接提供数值。相反，对于要引用的资源(只是其名称)，请使用房间<a class="tooltip" title="常量是一个术语，用于描述在程序执行期间不会更改的命名值。 GameMaker Studio 2具有许多内置常量（例如os_windows），但您也可以创建自己的常量值以用于项目（称为宏）和扩展。">常量</a>或通过函数检索它。</p>
+  <h1><span data-field="title" data-format="default">room</span></h1>
+  <p>This variable holds the room index for the current room that your game is running. This is <i>not</i> a read only variable, however changing this will not change the index value for the current room, but rather change the room to match the index that you have set the variable to. Care should be taken when doing this as if the index you change the variable to is not valid the game will throw an error and close. In general it is much better practice to use&nbsp;<span class="inline3_func"><a href="room_goto.htm">room_goto</a></span> to change rooms.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Room IDs are not based on their order in&nbsp;<a href="../../../../Introduction/The_Asset_Browser.htm">The Asset Browser</a> or <a href="../../../../Settings/The_Room_Manager.htm">The Room Manager</a>, and so you should avoid supplying a number value directly. Instead, use the room&nbsp;<a class="tooltip" title="常量是一个术语，用于描述在程序执行期间不会更改的命名值。 GameMaker Studio 2具有许多内置常量（例如os_windows），但您也可以创建自己的常量值以用于项目（称为宏）和扩展。">constant</a>&nbsp;for the asset you want to reference (which is simply its name) or retrieve it through a function.</p>
   <h4>语法:</h4>
-  <p class="code">room;</p>
+  <p class="code"><span data-field="title" data-format="default">room</span></p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></p>
@@ -93,7 +93,6 @@
     &nbsp; &nbsp; audio_play_sound(snd_level1, 1, 1);<br>
     }</p>
   <p>上面的代码将检查当前房间是否是第一层，并在这种情况下播放该层的音乐。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

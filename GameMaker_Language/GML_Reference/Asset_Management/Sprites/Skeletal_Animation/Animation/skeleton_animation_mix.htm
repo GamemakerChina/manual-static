@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>skeleton_animation_mix</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,12 +78,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>skeleton_animation_mix</h1>
-  <p>您可以使用<a href="skeleton_animation_set.htm"><span class="inline">skeleton_animation_set()</span></a>函数轻松切换动画集，但这可能会在将一个动画切换为另一个动画时导致跳过或不连续。为了防止这种情况，可以在两个动画集之间设置混合值，精灵将在它们之间进行插值。通常情况下，您会希望在实例的创建事件中使用骨骼动画执行此操作，因为它只需要设置一次，并且<span data-keyref="GameMaker Name">GameMaker</span>将使用该实例中的动画设置对精灵的所有进一步更改进行插值。请注意，"持续时间"值是从0到1，其中值0.5将具有从一个集到另一个集的"对半"插值。</p>
+  <h1><span data-field="title" data-format="default">skeleton_animation_mix</span></h1>
+  <p>You can switch animation sets easily using the&nbsp;<span class="inline3_func"><a href="skeleton_animation_set.htm">skeleton_animation_set</a></span>&nbsp;function, but this may cause a skip or stutter as one animation is swapped for another. To prevent this, you can set the mix value between two animation sets and the sprite will interpolate between them. Normally you would want to do this in the Create Event of the instance with the skeletal animation as it only needs to be set once, and <span data-keyref="GameMaker Name">GameMaker</span> will interpolate all further changes to the sprite using the animation sets in that instance.</p>
   <p class="note"><span class="note">注意</span>Spine 4.0更改了旋转动画的工作方式，因为它不再使用可能的最短路径对旋转进行插值，而是使用关键帧中的绝对值进行插值。如果您从旧版本升级脊椎动画，这可能会导致意外行为，并且可能需要在脊椎项目中进行更改才能使旋转按要求进行。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">skeleton_animation_mix(animfrom, animto, duration);</p>
+  <p class="code"><span data-field="title" data-format="default">skeleton_animation_mix</span>(animfrom, animto, duration);</p>
   <table>
     <tbody>
       <tr>
@@ -104,7 +104,7 @@
       <tr>
         <td>duration</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>插值的持续时间(从0到1)</td>
+        <td>The duration of the interpolation (in seconds)</td>
       </tr>
     </tbody>
   </table>
@@ -115,10 +115,10 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">skeleton_animation_set("walk");<br>
-    skeleton_animation_mix("walk", "jump", 0.2);<br>
-    skeleton_animation_mix("jump", "walk", 0.4);</p>
+    <span data-field="title" data-format="default">skeleton_animation_mix</span>("walk", "jump", 0.2);<br>
+    <span data-field="title" data-format="default">skeleton_animation_mix</span>("jump", "walk", 0.4);
+  </p>
   <p>上面的代码将进入具有骨骼动画精灵的实例的创建事件，并设置动画混合持续时间，以便在两个动画设置"行走"和"跳跃"之间进行插值。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

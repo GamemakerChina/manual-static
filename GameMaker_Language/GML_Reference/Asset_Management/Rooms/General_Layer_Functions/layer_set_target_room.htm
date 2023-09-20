@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>layer_set_target_room</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,22 +78,25 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>layer_set_target_room</h1>
-  <p>调用此函数时，您告诉<span data-keyref="GameMaker Name">GameMaker</span>，<i>所有其他层函数都应用于给定房间</i>。 这样，您可以在非当前房间的房间中以程序方式更改或生成图层和图层内容。完成向房间添加图层或图层元素后，调用函数<a href="layer_reset_target_room.htm"><span class="inline">layer_reset_target_room()</span></a>重置房间目标(或以房间参数 - 1)再次调用此函数。请注意，此函数只能在<i>房间(当前房间</i>除外)上使用，并且旨在将图层和图层元素添加到当前运行的房间以外的房间。</p>
-  <p class="note"><b>警告！</b>瞄准其他房间时，可以使用所有常规层函数<b>，但</b>您无法使用<span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><span class="inline">instance_create_layer()</span></a></span>或<span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><span class="inline">instance_create_depth()</span></a></span>创建实例，层函数<a href="layer_add_instance.htm"><span style="font-size:1px;"><span class="inline">layer_add_instance()</span></span></a>{}也不可用。</p>
+  <h1><span data-field="title" data-format="default">layer_set_target_room</span></h1>
+  <p>This function tells&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> that <i>all further layer functions should be applied to the given room</i>. In this way you can procedurally change or generate layers and layer contents in a room that is not the current room.</p>
+  <p>When you are finished adding layers or layer elements to a room, call the function&nbsp;<span class="inline3_func"><a href="layer_reset_target_room.htm">layer_reset_target_room</a></span> to reset the room target or call this function again with a <span class="inline2">room</span> argument of <span class="inline2">-1</span>.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;While targeting another room, you can use all the regular layer functions <b>except</b> you cannot create instances using&nbsp;<span class="inline3_func"><a href="../../Instances/instance_create_layer.htm">instance_create_layer</a></span> or <span class="inline3_func"><a href="../../Instances/instance_create_depth.htm">instance_create_depth</a></span>, nor will the layer function&nbsp;<span class="inline3_func"><a href="layer_add_instance.htm">layer_add_instance</a></span> be available.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">layer_set_target_room(room)</p>
+  <p class="code"><span data-field="title" data-format="default">layer_set_target_room</span>(room);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>room</td><td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
-        <td>所有其他层函数的目标空间</td>
-     </tr>
+        <td>room</td>
+        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
+        <td>The room to target for all further layer functions,&nbsp;or -1 for the current room</td>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -111,7 +114,6 @@
     }<br>
     layer_reset_target_room();</p>
   <p>上述代码将目标房间设置为"rm_Game"房间，然后获取该房间中名为"SpriteAssets"的层的层ID。然后，在将层目标重置为当前房间之前，使用该层ID向该层添加50个随机精灵资源。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

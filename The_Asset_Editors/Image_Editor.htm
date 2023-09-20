@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>The Image Editor</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -277,10 +277,10 @@
       <li class="dropspot"><strong> 导入图像 </strong>- 从磁盘加载要用作帧的图像。请注意，通过在资源管理器窗口中选择要导入的多个单独文件，可以一次加载多个帧。选择一个或多个文件后，将显示以下 " 导入 " 窗口：<br><img alt="Image Editor Import Window" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Import.png"> 您可以在此选择如何将导入的图像添加到当前精灵中，允许您调整整个绘制画布的大小、裁剪或填充它，还可以设置 " 锚点 " 位置以放置新图像。</li>
       <li class="dropspot"><strong> 转换为帧 </strong>- 此选项将单个图像转换为多个单独的帧。您必须首先创建包含动画所有部分的单个帧 (或导入单个条带图像)，如下所示：<br><img alt="Image Editor Animation Strip" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Strip.png"> 由于这是单个图像，并且我们希望将其转换为单个帧，因此可以使用此选项，然后将打开以下窗口：<br><img alt="Image Editor Convert to Animation Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_ConvertStrip.png"> 在这里，您可以设置如何拆分单个图像以创建帧、设置帧数、帧的宽度和高度以及任何包括任何偏移值的值。</li>
       <li class="dropspot"><strong> 导入条带图像 </strong>- 此选项将打开文件资源管理器，并提示您查找用于创建帧的单个条带图像文件。选择映像后，将打开 " 导入条带 " 窗口，该窗口与上面显示的 <strong>" 转换为帧 </strong>" 选项完全相同。</li>
-      <li class="dropspot"><strong> 导出到 PNG</strong> - 选择此选项会将精灵导出为单个 <span class="inline">PNG</span> 图像。如果精灵具有多个图像，则将使用所有图像依次创建"条带"精灵，并且保存文件名将自动附加 "<span class="inline">_stripX</span>"，其中 "<span class="inline">X</span>" 是导出的帧数。例如，五帧精灵将导出为 "<span class="inline">sprite_name_strip5.png</span>"。</li>
+      <li class="dropspot"><strong id="export_to_png"> 导出到 PNG</strong> - 选择此选项会将精灵导出为单个 <span class="inline">PNG</span> 图像。如果精灵具有多个图像，则将使用所有图像依次创建"条带"精灵，并且保存文件名将自动附加 "<span class="inline">_stripX</span>"，其中 "<span class="inline">X</span>" 是导出的帧数。例如，五帧精灵将导出为 "<span class="inline">sprite_name_strip5.png</span>"。</li>
       <li class="dropspot"><strong>调整所有帧的大小</strong> - 选择此选项后，将打开以下窗口，您可以在其中设置要调整构成精灵的所有动画帧大小的方式：<br><img alt="Image Editor Resize Frames" class="center" height="409" src="../assets/Images/Asset_Editors/Editor_Image_ResizeFrames.png" width="590">您可以选择<strong>缩放</strong>图像或<strong>调整画布大小</strong>。如果选择缩放图像，则只需为每个帧选择新的宽度和/或高度，是否使用相同的纵横比进行缩放，以及是否以像素或百分比进行缩放。请注意，当缩放时，您可以启用或禁用<a class="tooltip" title="线性插值是通过用一条直线连接两个相邻的已知值来估计一个新值。然后你可以通过检查直线上的任意一点来得到插值值。在图形学中，线性插值是指平滑像素边缘的一种基本方法。">线性插值</a>，启用该插值会导致图像缩放时像素模糊"或涂抹"(通常，对于高分辨率图片，您希望此插值<em>开启</em>，但对于像素图片，您希望此插值<em>关闭</em>)。<br><br>调整画布大小的选项不会改变图像中的像素，而是会增加或减小绘制图像时所在画布的大小。您可以使用箭头图标设置调整大小的"锚点"所在的位置，然后设置新大小(以像素或百分比表示)，以及设置是否保持原始帧的纵横比。请注意，使帧小于原始精灵图像将裁剪像素。</li>
       <li class="dropspot"><strong> 裁剪所有要选择的帧 </strong>- 只有在主绘制画布中选择了图像的某个区域时，此选项才可用。然后选择此选项时，正在编辑的图像 (以及动画中的所有其他帧) 将裁剪到选择的边界。</li>
-      <li class="dropspot"><strong> 自动修剪所有帧 </strong>- 此选项允许您修剪精灵边缘周围的所有零 Alpha 像素。这将考虑精灵中的所有图像帧，因此每一侧将裁剪到具有最远非零 Alpha 像素的帧的边缘。<br><img alt="Image Editor Trim Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Trim.png"></li>
+      <li class="dropspot" id="auto_trim_all_frames"><strong> 自动修剪所有帧 </strong>- 此选项允许您修剪精灵边缘周围的所有零 Alpha 像素。这将考虑精灵中的所有图像帧，因此每一侧将裁剪到具有最远非零 Alpha 像素的帧的边缘。<br><img alt="Image Editor Trim Frames" class="center" src="../assets/Images/Asset_Editors/Editor_Image_Trim.png"></li>
       <li class="dropspot"><strong> 反转帧 </strong>- 选择此选项将简单地反转精灵的帧顺序。</li>
       <li class="dropspot"><strong> 镜像 </strong>- 此选项允许您沿垂直轴镜像当前帧中组成精灵的所有帧。</li>
       <li class="dropspot"><strong> 翻转 </strong>- 此选项允许您翻转当前帧以及沿水平轴构成精灵的所有帧。</li>

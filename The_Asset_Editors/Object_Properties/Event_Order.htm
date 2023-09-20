@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Event Order</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Page detailing the async events.">
   <meta name="rh-index-keywords" content="Objects - Event Order">
@@ -80,16 +80,20 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">事件顺序</span></h1>
   <p>在考虑 <span data-keyref="GameMaker Name">GameMaker</span> 中的事件时，应注意 <strong> 无法清楚说明每个步骤中所有事件将发生的确切顺序 </strong>，这仅仅是因为它取决于 <span data-keyref="GameMaker Name">GameMaker</span> 的内部工作方式，并且随着软件的开发，这可能会发生变化。但是，某些事件将 <em> 始终 </em> 以相同的顺序运行。</p>
+  <h2>Upon Entering a Room</h2>
   <p>第一组总是以同样的方式发生的事件是第一次进入房间时发生的事件。不同事件触发的顺序是：</p>
   <ul class="colour">
-    <li><strong> 对象变量 / 实例变量被初始化 </strong>( 这些变量可以在 <a href="../Objects.htm"> 对象编辑器 </a> 或 <a href="../Rooms.htm"> 房间编辑器 </a> 的 <a class="tooltip" title="IDE，或集成开发环境，是一个软件应用程序，为计算机程序员提供软件开发的全面设施。在这种情况下，GameMaker Studio 2的整个前端都被认为是 IDE，包括创建图形、添加声音和添加代码以制作游戏的部分。">IDE</a> 中定义)。如果您有一个附加了变量的对象，那么它们将在其他任何东西之前创建，然后任何附加了变量的实例将在之后定义，以便您可以使用房间中的实例特定变量覆盖对象变量编辑器。</li>
+    <li><strong>Object Variables / Instance Variables are initialised</strong> (these are the variables that you can define in the <a class="tooltip" title="IDE，或集成开发环境，是一个软件应用程序，为计算机程序员提供软件开发的全面设施。在这种情况下，GameMaker Studio 2的整个前端都被认为是 IDE，包括创建图形、添加声音和添加代码以制作游戏的部分。">IDE</a> of <a href="../Objects.htm">The Object Editor</a>&nbsp;or <a href="../Rooms.htm">The Room Editor</a>). If you have an object with variables attached then they will be created before anything else and then any instances that have variables attached will be defined after so you can overwrite object variables with instance specific ones in <a href="../Rooms.htm">The Room Editor</a>.</li>
     <li><strong></strong><strong><strong></strong> 创建事件 </strong>，然后是 <strong> 每个 </strong> 实例的 <em> 实例创建代码 </em>，因此在创建每个实例时，它将首先运行其创建事件，然后运行其实例创建代码在转移到要创建的下一个实例之前</li>
-    <li><strong> 游戏开始事件 </strong>- 此事件在游戏的第一个房间中触发一次，用于从房间编辑器放置在房间中的所有实例 (请注意，调用 game_restart() 将再次触发此事件。</li>
-    <li><strong> 房间创建代码 </strong>- 这是首次进入房间时在房间编辑器中编写的一次性代码</li>
-    <li><strong> 所有实例的房间启动事件 </strong>-" 其他 " 类别的事件之一，将对所有实例触发，无论是持久的还是其他的</li>
+    <li><strong>Game Start Event</strong> - this event is triggered once in the very first room of the game for all instances placed in the room from&nbsp;<a href="../Rooms.htm">The Room Editor</a> (note that calling&nbsp;<span class="inline3_func"><a href="../../GameMaker_Language/GML_Reference/General_Game_Control/game_restart.htm">game_restart</a></span> will trigger this event again.</li>
+    <li><strong>Room Creation Code</strong> - this is the one-off code written in&nbsp;<a href="../Rooms.htm">The Room Editor</a> for when a room is first entered</li>
+    <li><strong>Room Start Event of all instances</strong> - one of the "other" category of events and will fire for all instances, <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/persistent.htm">persistent</a> or otherwise</li>
   </ul>
-  <p>还值得注意的是，您还可以通过在 <a href="../Room_Properties/Layer_Properties.htm"> 实例层属性 </a> 窗口的列表中上下移动特定实例来设置在房间编辑器本身中创建特定实例的顺序。</p>
-  <p>除了这些特定事件之外，唯一已知的顺序将始终以相同的方式发生，无论属于三个 <strong> 步骤 </strong> 事件和不同的 <strong> 绘制 </strong> 事件。这些将永远保持一致，所以如果您的代码在游戏的每一步都依赖于特定的时间，您应该使用：</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You can also set the order in which specific instances are created within&nbsp;<a href="../Rooms.htm">The Room Editor</a> itself by moving them up or down the list of the <a href="../Room_Properties/Layer_Properties.htm">Instance Layer Properties</a>&nbsp;window.</p>
+  <h2>Step and Draw Events</h2>
+  <p>Other than those specific events, the only events that will always occur in the same order no matter what are the three <strong>Step </strong>events and the different <strong>Draw </strong>events.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;T<span>he Step events are always executed before the Draw events.</span></p>
+  <p>These will always remain consistent, so if you have code that relies on specific timing during each step of your game, you should use:&nbsp;</p>
   <ul class="colour">
     <li><strong>开始步事件</strong></li>
     <li><strong>时间线</strong></li>
@@ -100,16 +104,16 @@
 <li>由 <span class="inline2"><a href="../../GameMaker_Language/GML_Reference/Time_Sources/call_later.htm">call_later</a></span> 派生的时间源</li>
 <li><span class="inline2">time_source_game</span> 的子项(请参阅&nbsp;<a href="../../GameMaker_Language/GML_Reference/Time_Sources/Built_In_Time_Sources.htm">内置时间源</a>)</li></ul></li></ul></li>
     <li><strong>计时器</strong></li>
-    <li><strong>步事件</strong>(请注意，步骤事件是在实例放入新位置之前执行的)</li>
+    <li><strong>Step Event</strong> (note that the Step event is executed just before instances are put in their new positions)</li>
     <li><strong>结束步事件</strong></li>
   </ul>
   <p>所有绘制事件也总是以相同的顺序处理，如下所示(<strong>窗口调整大小</strong>事件除外，它的触发方式不同)：</p>
   <ul class="colour">
-    <li><strong>预绘制事件</strong></li>
+    <li><strong>Pre-Draw Event</strong></li>
     <li><strong>绘制开始事件</strong></li>
     <li><strong>绘制事件</strong></li>
     <li><strong>绘制结束事件</strong></li>
-    <li><strong>后绘制事件</strong></li>
+    <li><strong>Post-Draw Event</strong></li>
     <li><strong>绘制GUI开始事件</strong></li>
     <li><strong>绘制GUI事件</strong></li>
     <li><strong>绘制GUI结束事件</strong></li>

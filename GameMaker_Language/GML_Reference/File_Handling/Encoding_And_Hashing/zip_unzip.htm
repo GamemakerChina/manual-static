@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.17.6.0_13";
+    gTopicId = "8.2.2.17.6.0_14";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>zip_unzip</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -80,25 +80,30 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>zip_unzip</h1>
-  <p>此函数将打开存储的 zip 文件并将其内容提取到给定目录。 请注意，如果您没有提供 ZIP 目录的完整路径，则将使用当前驱动器 <i> 根 </i> 目录，如果您想将其放在游戏包工作目录的相对路径中，则应使用 <a href="../File_Directories/working_directory.htm"><span class="inline">working_directory</span></a> 变量作为路径的一部分 (使用“.”或“..”的相对路径将无法按预期工作，因此应避免)。 另请注意，zip 必须是游戏包的一部分 (即：<a href="../../../../Settings/Included_Files.htm"> 包含的文件 </a>) 或已使用 <a href="../../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file()</a> 下载到存储区域。</p>
+  <p>This function will open a stored zip file and extract its contents to the given directory.</p>
+  <p>If you do not supply a full path to the ZIP directory, then the current drive <i>root</i> will be used, and if you want to place it in a relative path to the game bundle working directory, then you should use the <a href="../File_Directories/working_directory.htm"><span class="inline">working_directory</span></a> variable as part of the path (relative paths using "." or ".." will not work so should be avoided). Note too that the zip must be either part of the game bundle (i.e.: an <a href="../../../../Settings/Included_Files.htm">Included File</a>) or have been downloaded to the storage area using <a href="../../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file()</a>.</p>
   <p>该函数将返回一个值，该值指示提取的文件数，如果提取失败，则返回 0 或更少。</p>
+  <p>This function is synchronous and may cause your game to freeze while it extracts the ZIP. Use&nbsp;<span class="inline3_func"><a href="zip_unzip_async.htm">zip_unzip_async</a></span>&nbsp;for extracting asynchronously.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">zip_unzip(zip_file, target_directory)</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>zip_file</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>zip_file</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要打开的压缩文件</td>
-     </tr>
+      </tr>
       <tr>
-        <td>target_directory</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>target_directory</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要将文件解压缩到的目标目录</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -118,8 +123,8 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Encoding_And_Hashing.htm">File Encoding</a></div>
-        <div style="float:right">Next: <a href="load_csv.htm">load_csv</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Encoding_And_Hashing.htm">编码和哈希</a></div>
+        <div style="float:right">Next:&nbsp;<a href="zip_unzip_async.htm">zip_unzip_async</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

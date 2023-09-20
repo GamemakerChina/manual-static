@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Data Structures</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,12 +79,11 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>数据结构</h1>
-  <p>在游戏中，您通常需要以精确有序的方式存储信息。例如，您可能需要存储某人携带的项目列表，或者您可能希望存储仍需要访问的网格位置。现在，您<i>可以</i>使用数组来执行此操作，但如果您想执行更复杂的操作，如对数据进行排序或搜索特定项目，则需要编写大量GML 代码，这些代码的执行速度可能很慢，很难进行调试，而且写起来非常麻烦！</p>
-  <p>为了解决此问题，<span data-keyref="GameMaker Name">GameMaker</span>具有许多内置的<b>数据结构</b>，可以通过专家函数访问。有六种不同类型的数据结构可用，每种数据结构都有自己的优点，具体取决于您希望存储的信息类型以及希望以后如何操作它：堆栈、队列、列表、映射、优先级队列和网格。</p>
-  <p class="note"><strong>注意</strong>：建议在DS列表和映射上使用<a href="../../GML_Overview/Arrays.htm">数组</a>和<a href="../../GML_Overview/Structs.htm">结构</a>，因为它们具有相似的函数，更易于使用，并且是垃圾自动收集的。</p>
-  <p>基本上，所有数据结构都以相同的方式工作-创建数据结构并将其<i>索引值</i>存储在变量中。然后，使用此索引在所有可对其执行操作的进一步函数调用中引用数据结构。最后，完成后，再次销毁数据结构以将其从内存中删除。您可以根据需要同时使用任意多个结构，并且所有结构都可以存储任何可用的<a href="../../GML_Overview/Data_Types.htm">数据类型</a>。</p>
-  <p class="note"><b><span class="note">注意</span></b>与所有动态资源一样，数据结构占用内存，因此当不再需要<b>防止内存泄漏时，应始终销毁</b>，这将降低速度并最终导致游戏崩溃。</p>
-  <p>创建数据结构时，用于标识该数据结构的索引值是从0开始的整数值。这意味着不同的数据结构可以具有<b>相同的</b>索引值，因此如果您有疑问，应在访问之前使用<span style="font-size:1px;"><span class="inline"><a href="ds_exists.htm">ds_exists</a></span></span>函数。另请注意，索引将被重复使用，因此新创建的索引之后可能会使用已销毁的数据结构索引值，我们建议您在销毁数据结构之后将保留Ds索引的任何变量设置为-1。</p>
+  <p>In games you often need to store information in a precise and ordered way. For example, you may need to store lists of items that a person carries or you may want to store a grid of places that still need to be visited.</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> has a number of built-in <b>data structures</b> that can be accessed through specialist functions. There are six different types of data structure available, each one having its own benefits depending on the type of information that you are looking to store and how you wish to manipulate it later: stacks, queues, lists, maps, priority queues, and grids.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;It is recommend to use <a href="../../GML_Overview/Arrays.htm">arrays</a> and <a href="../../GML_Overview/Structs.htm">structs</a> over DS lists and maps, as they now have similar functionality, are easier to use and are garbage collected automatically.</p>
+  <p>Essentially, all data structures work in the same way - you create a data structure and store its reference in a variable. You then use this reference to use the data structure in all further function calls that can perform operations on it. Finally, once you are done you destroy the data structure again to remove it from memory. You can use as many of the structures at the same time as you need, and all structures can store any of the available <a href="../../GML_Overview/Data_Types.htm">data types</a>.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;As with all dynamic resources, data structures take up memory and so should <b>always</b> be destroyed when no longer needed to prevent memory leaks which will slow down and eventually crash your game.</p>
   <p>有关不同数据结构的信息，请参阅以下各节：</p>
   <ul class="colour">
     <li><a href="DS_Grids/DS_Grids.htm">网格 Grids</a></li>

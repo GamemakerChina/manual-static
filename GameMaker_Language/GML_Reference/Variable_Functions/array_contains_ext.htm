@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>array_contains_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="">
@@ -81,7 +81,7 @@
   <h1><span data-field="title" data-format="default">array_contains_ext</span></h1>
   <p>此函数用于检查给定数组(或其中的一部分)是否包含任何或所有给定值。</p>
   <p>参数 <span class="inline2">matchall</span> 确定数组中是否应存在<em>所有</em>值 (<span class="inline2">true</span>)，或者确定<em>任何一个</em>值是否都可以 (<span class="inline2">false</span>)。</p>
-  <p>值的数组可能包含重复项。通过这种方式，您可以检查一个数组中是否有多次 (或 <em> 足够 </em>) 出现某个值。要避免这种情况，您可以先在阵列上运行&nbsp;<span class="inline2"><a href="array_unique.htm">array_unique</a></span>&nbsp;，以保证只出现一次。</p>
+  <p>The <span class="inline2">values</span> array may contain duplicates. When <span class="inline2">matchAll</span> is enabled, this allows you to check exactly how many occurrences of a value exist in the original array.</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>&nbsp;要检查数组是否不仅<em>包含</em>值，而且还<em>包含满足特定条件的值</em>，请使用&nbsp;<span class="inline2"><a href="array_any.htm">array_any</a></span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -137,11 +137,11 @@
   <p>上面的代码首先创建一个具有 13 个值的数组<span class="inline2">hand</span>&nbsp;。然后，它定义另一个数组 <span class="inline2">_high_cards</span>，该数组定义哪些牌被视为"high"卡片。接下来，检查使用 <span class="inline2"><span data-field="title" data-format="default">array_contains_ext</span></span>&nbsp;和 <span class="inline2">hand</span> 数组中的任何一个，结果存储在临时变量<span class="inline2">_any_high_cards</span>中。最后，调试消息显示变量 <span class="inline2">_any_high_cards</span> 的值。</p>
   <p>&nbsp;</p>
   <h4>示例2：检查数组中是否存在所有值</h4>
-  <p class="code">inventory = ["potion", "elixir", "potion", "herb", "herb", "special spice"];<br>
-    var _required_items = ["herb", "herb"];<br>
-    var _can_make_potion = <span data-field="title" data-format="default">array_contains_ext</span>(inventory, _required_items, true);<br>
-    show_debug_message("A potion can{0} be made using the inventory's current contents", _can_make_potion ? "" : "not");</p>
-  <p>上面的代码首先创建一个存储商品基本库存的数组。这些项目以字符串的形式存储。然后，它定义一个临时数组 <span class="inline2">_required_items</span>，该数组包含制作 "potion" 所需的物品。下一步 <span class="inline2"><span data-field="title" data-format="default">array_contains_ext</span></span> 被调用以检查 <em>_required_items</em> 中的 <span class="inline2">all</span> 值是否都存在于 <span class="inline2">inventory</span> 中。这是通过将 <span class="inline2">matchAll</span> 参数设置为 <span class="inline2">true</span> 来实现的。结果存储在变量 <span class="inline2">_can_make_potion</span> 中。最后，会显示一条调试消息，说明是否可以根据库存的当前内容制作 "potion"。</p>
+  <p class="code">inputs = ["left", "right", "left", "left", "up", "down", "right"];<br>
+    var _required_inputs = ["left", "left", "left"];<br>
+    var _input_valid = array_contains_ext(inputs, _required_inputs, true);<br>
+    show_debug_message(_input_valid);</p>
+  <p>The above code creates an array containing a sequence of inputs. Then it creates another array which contains the inputs that make the sequence valid (i.e. having&nbsp;<em>only</em> three occurrences of "left"). It then calls&nbsp;<span class="inline2"><span data-field="title" data-format="default">array_contains_ext</span></span>&nbsp;to validate the inputs array, stores the result in a variable and prints it to the output log.</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

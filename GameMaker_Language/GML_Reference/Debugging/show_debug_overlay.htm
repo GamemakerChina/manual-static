@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.21.0_12";
+    gTopicId = "8.2.2.21.1.0_1";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>show_debug_overlay</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,59 +78,67 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>show_debug_overlay</h1>
-  <p>此函数可用于在测试游戏时打开和关闭标准调试覆盖，默认情况下处于禁用状态。调试覆盖在实际游戏窗口本身中显示图形CPU/GPU使用栏，以及当前实际FPS值、纹理交换数量和顶点批次数量(请注意，纹理交换和顶点批次永远不会为零，并且通常会显示2或3的值，因为即使有一个空房间，没有对象<span data-keyref="GameMaker Name">GameMaker</span>仍然必须绘制和批处理内容)。</p>
-  <p><img alt="Debug overlay graphic" class="center" src="../../../assets/Images/QS_Guide/QS_Debug_Bar.png">这个条被分成几个部分，每个部分是1/60秒。如上图所示，条形由各种颜色组成：</p>
-  <ul class="colour">
-    <li><b>绿色</b>-输入/输出处理(即：键盘，鼠标，游戏手柄，网络等..)</li>
-    <li><b>红色</b>-步骤事件的更新速度</li>
-    <li><b>黄色</b>-绘制事件所需的时间</li>
-    <li><b>橙色</b>-调试更新时间，通常只有在使用调试模块时才可见</li>
-    <li><b>白色</b>-GPU剩余时间，即在下一帧开始之前等待GPU完成该帧渲染所花费的时间</li>
-    <li><b>青色</b>-文本渲染时间</li>
-    <li><b>灰色</b>-每个绘制步骤清除屏幕所需的时间</li>
-    <li><strong>蓝色</strong>-运行<a href="../Garbage_Collection/Garbage_Collection.htm">垃圾回收器</a>所需的时间</li>
-    <li><b>暗红色</b>-GPU刷新，即GPU从内存中清除图像所需的时间</li>
-  </ul>
-  <p>使用此函数，无论是否处于调试模式，您都可以添加覆盖，通过这种方式，您可以看到游戏运行的效率，并获得有关如何使用可用资源的视觉提示，而无需同时运行调试器。</p>
-  <p class="note"><b>注意</b>：此函数不适用于HTML5目标，因为它的工作方式与所有其他目标不同。</p>
+  <h1><span data-field="title" data-format="default">show_debug_overlay</span></h1>
+  <p>此函数打开<a href="The_Debug_Overlay.htm">调试覆盖</a>，同时打开<a href="The_Debug_Overlay.htm#fps"><strong>FPS</strong></a>窗口。默认情况下禁用此覆盖图。</p>
+  <p>调试覆盖启用具有三个选项的菜单：<strong>FPS</strong>(默认打开)、<strong>日志</strong>和<strong>音频</strong>。它会在右上角显示<span data-keyref="GameMaker Name">GameMaker</span>版本，所属项目的版本和名称：</p>
+  <p><img class="center" src="../../../assets/Images/Scripting_Reference/GML/Reference/Debug/debug_overlay_1.png" style="cursor: nesw-resize;">如果可选的 <span class="inline2">minimised(最小化)</span> 参数设置为<span class="inline2">false</span>，则覆盖打开时 <strong>FPS</strong>窗口最小化，仅在标题中显示基本信息。</p>
+  <p>要创建出现在<strong>"Views"(视图)</strong>菜单下的自定义调试视图，请参阅<a href="The_Debug_Overlay.htm#creating_debug_views">"创建调试视图"</a>。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此函数在HTML5目标上不起作用，因为与所有其他目标相比，它的工作方式不同。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span> </span>要在<a href="The_Debug_Overlay.htm">Log</a>窗口打开的情况下调出<strong>调试覆盖</strong>，请改用<span class="inline3_func"><a href="show_debug_log.htm">show_debug_log</a></span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">show_debug_overlay(enable);</p>
+  <p class="code"><span data-field="title" data-format="default">show_debug_overlay</span>(enable[, minimised, scale, alpha]);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>enable</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>打开(<span class="inline">true</span>)或关闭(<span class="inline">false<span class="inline">)调试覆盖。</span></span></td>
-     </tr>
+        <td>enable</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>启用(<span class="inline2">true</span>)或禁用(<span class="inline2">false</span>)调试覆盖</td>
+      </tr>
+      <tr>
+        <td>minimised</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>是否最小化打开<strong>FPS</strong>窗口(不适用于任何其他窗口或调试视图)</td>
+      </tr>
+      <tr>
+        <td>scale</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>用于绘制叠加的缩放系数(默认值为<span data-keyref="DebugOverlay_Scale_Default">1</span>)</td>
+      </tr>
+      <tr>
+        <td>alpha</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>用于绘制叠加的alpha值(默认值为<span data-keyref="DebugOverlay_Alpha_Default">0.8</span>)</td>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
-  <h4><b>示例:</b></h4>
-  <p class="code">if global.debug<br>
+  <h4><b>示例1：基本使用</b></h4>
+  <p class="code">if keyboard_check_pressed(ord("O"))<br>
     {<br>
-    &nbsp; &nbsp; show_debug_overlay(true);<br>
-    }<br>
-    else<br>
-    {<br>
-    &nbsp; &nbsp; show_debug_overlay(false);<br>
+    &nbsp; &nbsp; global.debug = !global.debug;<br>
+    &nbsp; &nbsp; <span data-field="title" data-format="default">show_debug_overlay</span>(global.debug);<br>
     }</p>
-  <p>上面的代码将根据全局变量的值打开或关闭调试。</p>
+  <p>上面的代码在按下"O"键时打开或关闭调试。</p>
   <p>&nbsp;</p>
+  <h4>Example 2: Additional Parameters</h4>
+  <p class="code"><span data-field="title" data-format="default">show_debug_overlay</span>(true, true, 2, 0.5);</p>
+  <p>上面的代码打开了最小化的调试覆盖，并使用缩放值2和alpha值0.5绘制它。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Debugging.htm">调试</a></div>
-        <div style="float:right">Next: <a href="code_is_compiled.htm">code_is_compiled</a></div>
+        <div style="float:left">Back:&nbsp;<a href="The_Debug_Overlay.htm">The Debug Overlay (调试覆盖视图)</a></div>
+        <div style="float:right">Next:&nbsp;<a href="show_debug_log.htm">show_debug_log</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

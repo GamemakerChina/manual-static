@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.1.0_22";
+    gTopicId = "8.2.2.1.0_24";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>instanceof</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,18 +79,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>instanceof</h1>
+  <h1><span data-field="title" data-format="default">instanceof</span></h1>
   <p>此函数可用于获取用于创建结构的<a href="../../GML_Overview/Structs.htm">构造函数</a>的名称。结构本身应该是使用<a href="../../GML_Overview/Language_Features/new.htm"><span class="inline"></span></a> <a href="../../GML_Overview/Language_Features/new.htm"><span class="inline">new</span></a> 运算符以及构造函数本身创建的。您为变量提供要检查的struct引用，该函数将返回具有构造函数名称的字符串或 <span class="inline">undefined</span>。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span> 建议使用 <span class="inline3_func"><a href="is_instanceof.htm">is_instanceof</a></span> 检查结构的构造函数，因为它还允许您使用父构造函数 (即结构的构造函数可能继承自的构造函数) 进行检查。<span class="inline3_func"><a href="is_instanceof.htm">is_instanceof</a></span> 还允许您直接使用构造函数引用而不是字符串进行检查。</p>
   <h3>用法说明</h3>
   <ul class="colour">
     <li>如果向函数传递结构文字 (即：不使用构造函数创建的结构)，则它将简单地返回字符串 <span class="inline2">"struct"</span>。</li>
+    <li>If you pass the function the&nbsp;<span class="inline2">self</span>&nbsp;keyword inside an object instance, it will return <span class="inline2">"instance"</span>.</li>
     <li>如果未在脚本中创建构造函数，则返回的构造函数名称将包含其他文本。如果它是在对象内部创建的，则其名称将包括该对象和创建该对象的事件。例如，在<span class="inline2">Object1</span>的创建事件中创建的名为<strong>test_constructor</strong>的构造函数将返回为<span class="inline2">“test_constructor_gml_Object_Object1_Create_0”</span>。为了避免这种情况，请在<a href="../../GML_Overview/Script_Functions.htm">脚本</a>中创建构造函数。</li>
     <li>该函数还可以用来检查struct引用是否是<strong><a class="tooltip" title="A&nbsp;weak reference is a reference that does not protect the referenced object from collection by a garbage collector, and so can be used to check if a struct is still &quot;alive&quot; (referenced) or not somewhere in the game.">弱引用</a></strong>，在这种情况下，函数将返回字符串<span class="inline2">“weakref”</span>，而不是创建结构的函数的名称。有关更多信息，请参见函数<a href="../Garbage_Collection/weak_ref_create.htm"><span class="inline">weak_ref_create()</span></a>。</li>
   </ul>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">instanceof(struct_id);</p>
+  <p class="code"><span data-field="title" data-format="default">instanceof</span>(struct_id);</p>
   <table>
     <tbody>
       <tr>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>vertex_create_buffer_from_buffer_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -121,7 +121,7 @@
   <p class="code">vertex_format_begin();<br>
     vertex_format_add_position_3d();<br>
     vertex_format_add_colour();<br>
-    vertex_format_add_textcoord();<br>
+    vertex_format_add_texcoord();<br>
     var my_format = vertex_format_end();<br>
     v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat, 0, 512);</p>
   <p>上述代码将创建一个新的顶点格式，然后从先前创建的常规缓冲区创建一个新的顶点缓冲区，以0的偏移对其应用自定义顶点格式。该函数告诉新的顶点缓冲区，它应该有512个顶点。</p>

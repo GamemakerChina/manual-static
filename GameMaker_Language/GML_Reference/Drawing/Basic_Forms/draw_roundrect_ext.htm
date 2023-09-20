@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>draw_roundrect_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,7 +81,10 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>draw_roundrect_ext</h1>
   <p>使用此函数，您可以绘制圆角矩形或填充圆角矩形的轮廓，其中 (x1,y1) 位置是左上角，(x2,y2) 位置是右下角。还必须提供 x 轴和 y 轴的半径值 (以像素为单位)，拐角将按这些数量进行倒圆角。您可以使用函数 <a href="draw_set_circle_precision.htm"><span class="inline">draw_set_circle_precision()</span></a> 定义角点的绘制精度。请注意，由于各种支持的平台之间的差异，所绘制的矩形可能需要使用所需尺寸绘制不同的值 (+/-1，x、y、宽度或高度)。</p>
-  <p class="note"><b>注意</b>：如果要使用着色器绘制形状，请注意，大多数着色器都需要以下输入：顶点、纹理、颜色。但是，使用此函数时，仅传入顶点和颜色数据，因此着色器可能无法绘制任何内容(或绘制某些内容但不正确)。如果需要以这种方式绘制形状，则应考虑到这一点对着色器进行自定义。</p>
+  <div data-conref="../../../../assets/snippets/Note_Shape_Shader_Attributes_Are_Different.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you want to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_roundrect_ext(x1, y1, x2, y2, xrad, yrad, outline);</p>

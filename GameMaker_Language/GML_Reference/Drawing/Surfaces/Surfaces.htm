@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Surfaces</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>表面</h1>
+  <h1><span data-field="title" data-format="default">Surfaces</span></h1>
   <p>在正常绘制事件中，<span data-keyref="GameMaker Name">GameMaker</span> 实际上并不直接绘制到屏幕，而是绘制到称为<i>应用程序表面</i>的<b>表面</b>。此表面基本上是一个空白的"画布"，稍后可以在需要时在绘制到屏幕之前对其进行操作，并且在大多数情况下 <span data-keyref="GameMaker Name">GameMaker</span> 会为您处理此事件(尽管您也可以在着色器、缩放和许多其他事情的代码中自行操作它，但下面会提供进一步的详细信息)。</p>
   <p>但是，除了这个应用程序表面，你还可以创建自己的表面，并使用它们在游戏中创建令人惊叹或微妙的特殊效果。例如，可以使用表面来"捕捉"实例，然后可以销毁这些实例，通过这种方式，可以创建贴花效果，其中实例的精灵显示在表面上，就好像它仍然存在一样，允许出现碎片、血液等图形效果，而不会产生任何实际的处理开销。你可以对表面做的另一件事情是把它们当作纹理来操纵，或者创建"飞行中的精灵"，或者创建复杂的叠加，实际上对表面的用途是无穷的！</p>
   <p>法线表面非常容易使用，但使用它们时需要遵循一些基本规则：</p>
@@ -166,8 +166,8 @@
     <li><a href="../../Buffers/buffer_set_surface.htm">buffer_set_surface</a></li>
   </ul>
   <p>&nbsp;</p>
-  <p>如上所述，<span data-keyref="GameMaker Name">GameMaker</span>实际上并不直接将大部分内容渲染到屏幕，而是将它们渲染到<b>应用程序表面</b>。这本质上是一个表面，就像任何可以使用表面函数创建自己的表面一样，因此可以对其进行操作、绘制、发送到着色器等...基本上，通常对创建的表面执行的任何操作也可以应用于应用程序表面。</p>
-  <p class="note"><b>注意</b>：<b>不能对应用程序表面执行的唯一操作是将其释放。它始终存在，尽管用于访问它的索引值可能会更改。</b></p>
+  <p>As mentioned above, <span data-keyref="GameMaker Name">GameMaker</span> doesn't actually render most things to the screen directly, but instead it renders them to the <b>application surface</b>. This is essentially a surface - just like any that you can make yourself using the surface functions -&nbsp;and as such it can be manipulated, drawn to, sent to shaders, etc. Basically,&nbsp;anything that you would normally do with a surface you created can also be applied to the application surface.</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;</b>The only thing you <b>cannot</b> do with the application surface is free it. It always exists, although the index value to access it may change.</p>
   <p>运行游戏时，在您进入的每个新房间中第一次调用<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">绘制事件</a>时会创建此表面，这意味着在此之前不会绘制任何内容。但是，您仍然可以在<b>创建事件</b>或任何其他事件中获取应用程序表面位置并调整其大小，而不会出现任何错误，并且在创建表面时使用的值将与表面相关。创建和绘制应用程序表面的实际事件顺序如下：</p>
   <ul class="colour">
     <li>绘制前事件<br>---&gt;<b>将创建应用程序表面(如果它不存在)并设置渲染目标</b></li>

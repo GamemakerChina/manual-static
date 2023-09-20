@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>instance_deactivate_layer</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,13 +79,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>instance_deactivate_layer</h1>
+  <h1><span data-field="title" data-format="default">instance_deactivate_layer</span></h1>
   <p>使用此函数，可以停用指定给特定层的所有实例。需要提供<b>层 ID</b>，可以是在代码编辑器中写入的层的名称(作为字符串)，也可以是<a href="../../Rooms/General_Layer_Functions/layer_create.htm"><span class="inline">layer_create()</span></a>返回的实际层 ID 值，请注意，您只能使用此函数停用<i>实例</i>层。请注意，如果您已停用一个对象实例标记为<b>持久性</b>的层，则在更改空间之前，您需要使用函数<a href="instance_activate_layer.htm"><span class="inline">instance_activate_layer()</span></a>再次重新激活该层，否则该层上的任何持久实例将<i>不会</i>被继承并将被丢弃。还要注意，停用不是瞬时的，并且以这种方式停用的实例在调用函数的事件结束之前不会被视为不活动。</p>
-  <p class="note"><b>注意</b>:如果在房间开始时停用某个实例(即从房间创建代码或从房间内某个实例的实例创建事件)，则从房间编辑器<b>放置在房间内的所有实例在停用之前仍将运行其创建事件</b>。</p>
-  <p class="note"><b></b><b>警告</b>：取消激活已启用物理的实例将<b>不会</b>阻止它们的设备在物理模拟中相互作用。为此，在激活/取消激活实例时，应将其<span style="font-size:1px;"><a href="../../../Physics/Physics_Variables/phy_active.htm"><span class="inline">phy_active</span></a></span>变量设置为<span class="inline">true</span>或<span class="inline">false</span>。</p>
+  <div data-conref="../../../../../assets/snippets/Note_Deactivate_On_Room_Start_Create_Event.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you deactivate an instance on room start (i.e.&nbsp;from the Room Creation Code, or from an instance <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Create event</a> of an instance within the room) all instances that are placed within the room from&nbsp;<a href="../../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a>&nbsp;<b>will still run their Create event</b> before being deactivated.</p>
+
+</div>
+  <div data-conref="../../../../../assets/snippets/Note_Warning_Deactivating_Physics_Instances.hts">
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;</b>Deactivating instances that have physics enabled will <strong>NOT</strong> stop their fixtures from interacting within the physics simulation. For that you should set their&nbsp;<span class="inline2"><a href="../../../Physics/Physics_Variables/phy_active.htm">phy_active</a></span> variable to <span class="inline2">true</span> or <span class="inline2">false</span> as you activate/deactivate the instances.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">instance_deactivate_layer(obj);</p>
+  <p class="code"><span data-field="title" data-format="default">instance_deactivate_layer</span>(obj);</p>
   <table>
     <tbody>
       <tr>
@@ -105,14 +111,13 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">instance_deactivate_layer("Enemy Layer");<br>
+  <p class="code"><span data-field="title" data-format="default">instance_deactivate_layer</span>("Enemy Layer");<br>
     var _vx = camera_get_view_x(view_camera[0]);<br>
     var _vy = camera_get_view_y(view_camera[0]);<br>
     var _vw = camera_get_view_width(view_camera[0]);<br>
     var _vh = camera_get_view_height(view_camera[0]);<br>
     instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);</p>
   <p>以上代码取消激活指定给图层"Enemy_Layer"的所有实例，然后激活房间内的区域。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

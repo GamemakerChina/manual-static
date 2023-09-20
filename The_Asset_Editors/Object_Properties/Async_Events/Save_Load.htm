@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Save / Load</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Page detailing the Save / Load async event.">
   <meta name="rh-index-keywords" content="Objects - Async Save / Load Event">
@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>保存/加载</h1>
   <p><img alt="Save / Load Event" class="center" src="../../../assets/Images/Asset_Editors/Async_SaveLoad.png"> 此事件将由与加载相关的某些函数的 <a class="tooltip" title="回调仅是一个函数，该函数先运行，然后在完成分配的工作后触发另一个函数（或代码块）。例如，功能sprite_add()将在加载精灵后在异步Image Loaded事件中触发回调。"> 回调 </a> 触发并将缓冲区保存到文件，以及从内存中加载或卸载音频时。事件本身将包含内置的 <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>DS 映射，该映射将由特定功能所需的键填充。以下各节列出了这些问题。</p>
-  <p>&nbsp;</p>
+  <p>This event is also triggered for the&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/zip_unzip_async.htm">zip_unzip_async</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/zip_save.htm">zip_save</a></span>&nbsp;functions.</p>
   <h2>缓冲区</h2>
   <p>当使用函数 <a href="../../../GameMaker_Language/GML_Reference/Buffers/buffer_save_async.htm"><span class="inline">buffer_save_async()</span></a> 或 <a href="../../../GameMaker_Language/GML_Reference/Buffers/buffer_load_async.htm"><span class="inline">buffer_load_async()</span></a> 当数据搬迁完成时，将触发异步事件。此事件将使用以下键 / 值对填充 <span class="inline">async_load</span> 映射</p>
   <ul class="colour">
@@ -88,7 +88,6 @@
     <li>"<span class="inline">status</span>"：如果数据保存/加载正确，则返回true，否则返回false。</li>
   </ul>
   <p>这允许您轮询保存/加载进度并在过程完成时显示消息或更改房间等。</p>
-  <p>&nbsp;</p>
   <h2>音频组</h2>
   <p>使用 <a href="../../../Settings/Audio_Groups.htm"> 音频组 </a> 时，您可以使用函数 从内存中加载和卸载它们 <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm"><span class="inline">audio_group_load()</span></a><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_unload.htm"><span class="inline">audio_group_unload()</span></a>. 使用加载功能时，全套音频时会触发此事件为组设置的文件已加载到内存中，并将使用以下键 / 值对填充映射：</p>
   <ul class="colour">

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>draw_path</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,32 +81,40 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>draw_path</h1>
   <p>使用此函数，您可以让<span data-keyref="GameMaker Name">GameMaker</span>绘制到屏幕的路径。路径将绘制为一条简单的线，并且可以相对于调用实例，也可以位于路径编辑器中或通过代码创建的绝对位置。此函数在调试动态路径(例如，为使用<a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_path.htm"><span class="inline">mp_grid_path()</span></a>函数的实例创建的路径)时非常有用。</p>
-  <p class="note"><b>注意</b>：如果要使用着色器绘制形状，请注意，大多数着色器都需要以下输入：顶点、纹理、颜色。但是，使用此函数时，仅传入顶点和颜色数据，因此着色器可能无法绘制任何内容(或绘制某些内容但不正确)。如果需要以这种方式绘制形状，则应考虑到这一点对着色器进行自定义。</p>
+  <div data-conref="../../../../assets/snippets/Note_Shape_Shader_Attributes_Are_Different.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you want to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_path(path, x, y, absolute);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>path</td><td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
+        <td>path</td>
+        <td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
         <td>绘制的路径</td>
-     </tr>
+      </tr>
       <tr>
-        <td>x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>绘制路径的位置的x坐标</td>
-     </tr>
+      </tr>
       <tr>
-        <td>y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>绘制路径的位置的y坐标</td>
-     </tr>
+      </tr>
       <tr>
-        <td>absolute</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>absolute</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td>无论是在绝对位置(<span class="inline">true</span>)还是在相对位置(<span class="inline">false</span>)绘制路径</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>

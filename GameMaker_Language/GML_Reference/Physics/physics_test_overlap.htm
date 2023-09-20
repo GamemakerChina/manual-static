@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>physics_test_overlap</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,11 +79,11 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>physics_test_overlap</h1>
-  <p>此函数可用于检查和查看物理主体 (即实例的装置) 是否重叠，或者在旋转并放置在房间中给定的位置时是否 <i> 会 </i> 重叠。"angle" 参数是调用实例在要检查的位置具有 (或将具有) 的旋转角度，而 "obj" 参数可以是单个实例 ID、对象索引或 <a href="../../GML_Overview/Instance_Keywords.htm"><i> 关键字 </i></a><b>all</b> 或 <b>other</b>。</p>
+  <h1><span data-field="title" data-format="default">physics_test_overlap</span></h1>
+  <p>This function can be used to check and see if a physical body (i.e.&nbsp;the fixture of an instance) overlaps, or <i>will</i> overlap, when rotated and placed at a given position in the room. the "angle" argument is the angle of rotation that the calling instance has (or will have) at the position to be checked, and the "obj" argument can be either a single instance id, and object index or the <a href="../../GML_Overview/Instance_Keywords.htm"><i>keywords</i></a> <b>all</b> or <b>other</b>.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">physics_test_overlap(xpos, ypos, angle, obj);</p>
+  <p class="code"><span data-field="title" data-format="default">physics_test_overlap</span>(xpos, ypos, angle, obj);</p>
   <table>
     <tbody>
       <tr>
@@ -108,7 +108,7 @@
       </tr>
       <tr>
         <td>obj</td>
-        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span></td>
         <td>要检查的对象</td>
       </tr>
     </tbody>
@@ -118,13 +118,12 @@
   <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if physics_test_overlap(x+20, y-35, 0, obj_Bomb)<br>
+  <p class="code">if <span data-field="title" data-format="default">physics_test_overlap</span>(x+20, y-35, 0, obj_Bomb)<br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = game_get_speed(gamespeed_fps);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;ignited = true;<br>
     }</p>
   <p>上述代码将检查物理装置重叠的位置，如果存在，它将设置变量和报警。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

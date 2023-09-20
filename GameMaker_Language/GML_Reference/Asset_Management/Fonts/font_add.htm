@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>font_add</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -82,7 +82,8 @@
   <p>此函数可用于从<a href="../../../../Settings/Included_Files.htm#h">包含的文件</a>中存在的字体文件向游戏添加字体。可以定义字体的大小 (以点数表示)，以及字体应该是<b>粗体</b>还是<i>斜体</i>, 也可以定义要包含的字符范围。该函数返回一个<i>index</i>值，该值应存储在变量中，因为在引用此字体的所有其他代码中都需要此值，或者如果该函数由于任何原因而失败，它将返回<span class="inline">- 1</span>。</p>
   <p>请注意，字体文件必须是 <span class="inline2">*.ttf</span> 或 <span class="inline2">*.otf</span> 文件，对于添加亚洲或阿拉伯字体等非标准字体也很有用。</p>
   <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span></b> 如果您在包含的文件中包含这样的字体，则它<b>必须获得许可</b>才能与游戏一起分发。</p>
-  <p>对于HTML5目标模块，此函数只能用于添加<b>Web字体</b>, 并且仅在启用WebGL<b>不启用</b>时才起作用-如果启用了WebGL，则必须使用通用字体资源 (即: 使用<a href="../../Drawing/Text/draw_set_font.htm"><span class="inline">draw_set_font()</span></a>连同来自资源浏览器的字体) 或位图字体 (参见<a href="font_add_sprite.htm"><span class="inline">font_add_sprite()</span></a>)。</p>
+  <p>在Windows上，此功能还可以加载系统上安装的字体，例如<span class="inline2">"Arial"</span>。但是，不建议依赖系统字体，因为运行您的游戏的另一台计算机可能没有安装相同的字体。</p>
+  <p>在HTML5上，此函数只能用于添加<b>Web字体</b>，并且仅在<b>未</b>启用WebGL时才能工作-如果启用WebGL，则必须使用常规字体资源(即：使用<a href="../../Drawing/Text/draw_set_font.htm"><span class="inline">draw_set_font()</span></a>沿着资源浏览器中的字体)或位图字体(请参见<a href="font_add_sprite.htm"><span class="inline">font_add_sprite()</span></a>)。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span> 以 HTML5 为目标时，仅当字体资源或 Web 字体本身包含斜体和粗体文本时才支持这些字符。它们不会从基本字体合成。</p>
   <p>从文件加载字体时，字体的<i>大小</i>以<b>像素</b>为单位，并且<i>的前</i>和<i>的最后</i>值将被忽略，这意味着字体中的所有字形将被添加。以这种方式添加的字体被分配到自己的纹理页面，因此在使用此函数时应格外小心，因为它会在绘制时增加纹理交换的数量。同样值得注意的是，字体在绘制时可能会显得稍大一些，因为字形可能具有在为字体定义的边界框之外绘制的部分。您也应该意识到，对于特定字体，可以在单个框架中呈现大约200个字形的限制。</p>
   <p>默认情况下，添加的字体将启用抗锯齿。但是，您可以随时使用函数 <span class="inline3_func"><a href="font_add_get_enable_aa.htm">font_add_get_enable_aa</a></span> 检查抗锯齿的状态，并且可以使用函数 <span class="inline3_func"><a href="font_add_enable_aa.htm">font_add_enable_aa</a></span> 启用 / 禁用抗锯齿。</p>

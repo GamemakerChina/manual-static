@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>The Extension Editor</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -84,10 +84,10 @@
   <p>扩展可以用来创建一个在所有项目中经常使用的函数库，因此不必将相同的脚本导入到每个项目中，您可以简单地添加一个扩展资源，其中包含您最喜欢的函数和常量的集合。这些功能也可以特定于某个平台，您可以轻松地选择扩展可以在哪个平台上使用。</p>
   <p>有关创建扩展的逐步示例，请参见: <a href="Extension_Creation/Creating_An_Extension.htm">创建扩展</a></p>
   <p>若要基于目标平台禁用扩展，请参见: <a href="Extension_Creation/Disabling_Extensions.htm">如何禁用扩展? </a></p>
-  <h2>导入扩展插件</h2>
+  <h2 id="importing_extensions">导入扩展插件</h2>
   <p>一般来说，第三方扩展将来自于<a href="https://marketplace.yoyogames.com/">GameMaker Marketplace</a> ，那些你已经订阅的扩展将会在<a href="../Introduction/The_Marketplace.htm">市场库</a>窗口中列出，这个窗口可以从那里安装。如果您没有从 Marketplace 获得扩展包，您仍然可以通过在<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>中的任何地方右键单击<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">并选择<em>添加现有</em> ，然后浏览到扩展的位置来选择它来将其添加到项目中。</p>
-  <p class="note"><span class="note">注意</span>&nbsp;如果你有一个<span class="inline">.yymps</span>/<span class="inline">.yymp</span>/<span class="inline">.gmez</span>包，你可以把它拖到IDE中导入，或者到 "工具 "菜单下选择 "导入本地包"。</p>
-  <h2>目标平台</h2>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you have a <span class="inline">.yymps</span>/<span class="inline">.yymp</span>/<span class="inline">.gmez</span> package, you can drag it into the IDE to import it, or go under the "Tools" menu and select "Import Local Package".</p>
+  <h2 id="target_platforms">目标平台</h2>
   <p>一旦你在资源浏览器中添加了一个扩展，你应该给它一个名字和一个版本号，同时设置你想把它导出到哪些平台。通过取消选中的平台，你可以告诉<span data-keyref="GameMaker Name">GameMaker</span>不把扩展作为这些平台的可执行文件的一部分导出。你还应该确保扩展的属性与选定的目标平台相匹配，并根据以下内容为扩展文件选择兼容的导出目标。</p>
   <ul class="colour">
     <li class="dropspot"><strong>所有目标</strong>：GML扩展。这些是使用GameMaker语言（GML）制作的扩展，与所有目标平台兼容。(<em></em>注意，这是GX.games目标目前唯一支持的扩展类型。<em>)</em></li>
@@ -99,18 +99,18 @@
     <li class="dropspot"><strong>iOS</strong> / <strong>tvOS</strong>：该平台的扩展是用Objective C编写的，需要一个<span class="inline">*.mm</span>和一个<span class="inline">*.h</span>文件，如果使用任何框架，则需要一个预编译的本地<span class="inline">*.a</span>文件。</li>
     <li class="dropspot"><strong>PlayStation</strong>：对于PlayStation，你的扩展名应该是<span class="inline">PRX</span>文件，每个目标需要不同的<span class="inline">PRX</span>，以符合目标（PS3、PS4或PS5）的规格。如果在PSVita上工作，扩展名应该是<span class="inline">SUPRX</span>。</li>
   </ul>
-  <p class="note"><span class="note">注意</span>一些扩展需要遵循特定的命名规则，以便GameMaker正确识别它们所设计的平台和CPU架构。请参阅<a href="Extension_Creation/Creating_An_Extension.htm#h">命名规则</a>了解更多信息。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Some extensions are required to follow specific naming conventions for&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> to correctly identify the platform and CPU architecture they are designed for. Please see&nbsp;<a href="Extension_Creation/Creating_An_Extension.htm#h">Naming Conventions</a> for more information.</p>
   <p>由于一个扩展可以有各种相关的文件，所以有可能为多个平台创建一个扩展，在这种情况下，你要在主扩展编辑器中指定<em>所有</em>的兼容平台（即：勾选旁边的复选框），然后在扩展的每个部分的个别文件属性中，设置这些文件应该被导出的平台。</p>
-  <p>要改变特定扩展文件或占位符的目标平台，你必须首先打开扩展属性（在资源浏览器中双击<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">&nbsp;扩展），然后在扩展属性中从右边选择你要编辑的资源文件。在打开的窗口中，你可以选择该特定文件所导出的平台。</p>
+  <p>To change the target platform for a specific extension file or placeholder you must first open the extension properties (double click <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">&nbsp;the extension in <a href="../Introduction/The_Asset_Browser.htm">The Asset Browser</a>), and then once in the extension properties select the resource file from the right that you want to edit. In the window that opens, you can select the platforms to which that specific file is exported:</p>
   <p class="dropspot"><img alt="Extension Target Platforms" class="center" src="../assets/Images/Asset_Editors/Editor_Extensions_Targets.png"></p>
-  <h2>扩展选项</h2>
+  <h2 id="extension_options">扩展选项</h2>
   <p>你正在使用的扩展可能有选项，这些选项将显示在扩展编辑器窗口的底部。</p>
   <p><img class="center" src="../assets/Images/Asset_Editors/Editor_Extensions_Options_UserFacing.png">这些将是不同的，取决于扩展，而且不是所有的扩展都有选项。请看你所使用的扩展的文档，了解其选项的信息。</p>
   <p>要为自己的扩展设置选项，请参阅：&nbsp;<a href="Extension_Creation/Creating_An_Extension.htm#h1">创建扩展选项</a>。</p>
-  <h2>建立时解压</h2>
+  <h2 id="uncompress_on_build">建立时解压</h2>
   <p>"构建时解压 "选项可用于为特定目标平台准备的压缩档案文件。如果这个选项被启用，该归档文件的内容将被解压缩到已建软件包的包含文件目录中，但只有在被复制到目标平台之后。</p>
   <p>例如，如果你对扩展中的<span class="inline">.zip</span>文件启用了这个功能，然后从Windows启动<strong>macOS </strong>构建，那么<span class="inline">.zip</span>存档将被原样从Windows复制到macOS，然后在目标平台（在这里是指macOS）上编译时被解压缩。</p>
-  <h2>调用扩展函数</h2>
+  <h2 id="calling_extension_functions">调用扩展函数</h2>
   <p>一旦你设置了你的扩展，你就可以像使用GameMaker语言中的内置函数和常量一样使用它的函数和常量。如果你的游戏是跨平台的（例如，它被设计为在&nbsp;Windows和Android目标上运行），那么你应该使用<a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/OS_And_Compiler.htm">OS常量和函数</a>，在调用扩展的特定函数之前检查当前的平台，以防止问题，例如：</p>
   <p class="code">switch (os_type)<br>
     {<br>

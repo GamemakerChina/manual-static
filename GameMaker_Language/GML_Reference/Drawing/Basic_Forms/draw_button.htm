@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>draw_button</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,7 +81,11 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>draw_button</h1>
   <p>此函数将使用当前选定的绘制颜色和Alpha绘制一个非常简单的"矩形"按钮，其中<i>up</i>参数定义斜边效果的外观，如下图所示：</p>
-  <p><img alt="Draw button exmple" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_button.png"><b>注意</b>：如果要使用着色器绘制形状，请注意，大多数着色器都需要以下输入：顶点、纹理、颜色。但是，使用此函数时，仅传入顶点和颜色数据，因此着色器可能无法绘制任何内容(或绘制某些内容但不正确)。如果需要以这种方式绘制形状，则应考虑到这一点对着色器进行自定义。</p>
+  <p><img alt="Draw button exmple" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_button.png"></p>
+  <div data-conref="../../../../assets/snippets/Note_Shape_Shader_Attributes_Are_Different.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you want to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_button(x1, y1, x2, y2, up);</p>

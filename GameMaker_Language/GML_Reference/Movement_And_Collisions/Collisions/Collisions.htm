@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Collisions</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,8 +79,52 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Collisions</h1>
-  <p>在规划动作或决定某些动作时，往往需要看到游戏世界中某些地方是否存在与其他对象的碰撞，而往往为工作选择正确的碰撞是所有工作中最重要的任务。<span data-keyref="GameMaker Name">GameMaker</span>具有许多内置函数，可帮助您根据项目的需要正确处理碰撞。</p>
-  <p class="note"><span class="note"><b>注意</b></span>碰撞函数在GameMaker的以前版本中用于使用整数值，但现在它们使用浮点值，这意味着碰撞函数将不再舍入非整数参数。有关详细信息，请阅读<a href="Collision_Compatibility_Mode.htm">碰撞兼容模式</a>。</p>
+  <p>When planning motions or deciding on certain actions, it is often important to see whether there are collisions with other objects at certain places within the game world, and often choosing the right collision function for the job is the most important task of all. <span data-keyref="GameMaker Name">GameMaker</span> has a number of built-in functions to help you deal with collisions correctly and in accordance with the needs of your project.</p>
+  <h2>How To Check Collisions</h2>
+  <h3>Collisions With Objects</h3>
+  <p>The simplest way to check for collisions against objects is to use <span class="inline3_func"><a href="place_meeting.htm">place_meeting</a></span>.</p>
+  <p class="code_heading">Step Event</p>
+  <p class="code">if (!place_meeting(x + 4, y, obj_rock))<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;x += 4;<br>
+    }</p>
+  <p>This checks for collisions against instances of <span class="inline2">obj_rock</span> only. If there is no rock at <span class="inline2">x + 4</span>, it changes the X position to move the instance there.</p>
+  <h3>Collisions With Multiple Objects</h3>
+  <p>You can check for collisions against multiple objects, in two ways:</p>
+  <ul class="colour">
+    <li>Assign a <a href="../../../../The_Asset_Editors/Object_Properties/Parent_Objects.htm">parent</a> to those objects, and check against that single parent</li>
+    <li>Or, pass an <a href="../../../GML_Overview/Arrays.htm">array</a> containing the objects you want to check against</li>
+  </ul>
+  <p>Using the second method of passing an array, your code would look like this:</p>
+  <p class="code">if (!place_meeting(x + 4, y, [obj_rock, obj_bush]))<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;x += 4;<br>
+    }</p>
+  <p>This checks for collisions against instances of&nbsp;<span class="inline2">obj_rock</span> and <span class="inline2">obj_bush</span> in the same function call.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip">TIP</span></span>&nbsp;It is recommended to use the parenting method for multiple collision checks, as you can use the same parent in multiple function calls, without having to keep track of an array.</p>
+  <p>The <span class="inline3_func"><a href="place_meeting.htm">place_meeting</a></span> function only returns <span class="inline2">true</span> or <span class="inline2">false</span>. If you need to access the instance that was found in collision, use&nbsp;<span class="inline3_func"><a href="../../Asset_Management/Instances/instance_place.htm">instance_place</a></span>, which returns an instance handle.</p>
+  <h3>Collisions With Tile Maps</h3>
+  <p>In addition to objects, you can also pass a&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span>&nbsp;to a collision function. This will check for collisions with that Tile Map.</p>
+  <p>Use&nbsp;<span class="inline3_func"><a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">layer_tilemap_get_id</a></span>&nbsp;to get the Tile Map ID for a layer, and then pass that ID into a collision function.</p>
+  <p class="code_heading">Create Event</p>
+  <p class="code">tilemap = layer_tilemap_get_id("TileLayer");</p>
+  <p class="code_heading">Step Event</p>
+  <p class="code">if (!place_meeting(x + 4, y, tilemap))<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;x += 4;<br>
+    }</p>
+  <p>You can combine objects and Tile Maps when passing an array to a collision function.</p>
+  <p>Keep in mind:</p>
+  <ul class="colour">
+    <li>Collisions against Tile Maps are checked using the collision mask of the sprite used for the Tile Set, which can be modified in <a href="../../../../The_Asset_Editors/Sprites.htm">The Sprite Editor</a>.</li>
+    <li>A function like <span class="inline3_func"><a href="../../Asset_Management/Instances/instance_place.htm">instance_place</a></span> or <span class="inline3_func"><a href="collision_circle.htm">collision_circle</a></span> (and other equivalents) may return 0 if a collision was found with a Tile Map having the ID 0. This means you should not use the return value as a boolean condition. Instead, check whether the return value is not <span class="inline2">noone</span>, meaning a collision was found.</li>
+    <li>"<strong>Disable Source Sprite Export</strong>" needs to be unchecked in your Tile Set's <a href="../../../../The_Asset_Editors/Tile_Sets.htm">editor</a> for tile collisions to work.</li>
+  </ul>
+  <h2>Bounding Boxes</h2>
+  <p>Some instances will use a rectangular bounding box for checking collisions (unless a different mask shape is selected).</p>
+  <p>These bounding boxes use an inclusive system, i.e. they include the bottom-most and right-most edges. This means that the bounding box for a&nbsp;16x16&nbsp;collision mask is generated from <span class="inline2">(0.0, 0.0)</span>&nbsp;to <span class="inline2">(16.0, 16.0)</span> (relative).</p>
+  <p>For two instances to be in collision, their bounding boxes have to overlap. At a pixel level, an overlap is counted when the centre of that pixel is covered.</p>
+  <p>For example, if you're a rectangle trying to collide with a bounding box covering the area from&nbsp;<span class="inline2">(0.0, 0.0)</span>&nbsp;to <span class="inline2">(16.0, 16.0)</span>, the edge of your mask has to touch the area between&nbsp;&nbsp;<span class="inline2">(0.5, 0.5)</span>&nbsp;and&nbsp;<span class="inline2">(15.5, 15.5)</span>&nbsp;for a collision to be counted.</p>
   <h2><label for="one">简单的碰撞检查</label></h2>
   <p>以下函数处理各种方法，通过这些方法可以使实例检查是否与另一个实例发生碰撞：</p>
   <ul class="colour">
@@ -96,9 +140,8 @@
     <li><a href="../../Asset_Management/Instances/instance_position.htm">instance_position</a></li>
     <li><a href="../../Asset_Management/Instances/instance_position_list.htm">instance_position_list</a></li>
   </ul>
-  <p>&nbsp;</p>
   <h2>高级碰撞检查</h2>
-  <p>以下例程可用于此(以及与<b>移动</b>和<b>实例</b>相关的章节中详细说明的其他函数)。这些碰撞函数的工作方式略有不同，但它们保留了三个常见参数，我们将在此处进行说明：</p>
+  <p>The following functions can be used for this (as well as other functions detailed in the sections relating to <a href="../Movement/Movement.htm"><b>Moving Around</b></a> and <a href="../../Asset_Management/Instances/Instances.htm"><b>Instances</b></a>). These collision functions all work slightly differently but they maintain three common arguments which we will explain here:</p>
   <ul class="colour">
     <li><b>obj</b>:这是指定函数必须检查是否与其碰撞的对象的位置。它可以是实例ID、对象类型或特殊的Gm关键字<b>all</b>。另请注意，如果选择的对象类型是其他对象的指定<b>父对象</b>，则该对象的所有<i>子对象</i>也将包括在此检查中。<b></b></li>
     <li><b>prec</b>:这可以是<span class="inline">true</span>或<span class="inline">false</span>，并且与碰撞检查的精度有关。如果设置为<span class="inline">true</span>，则要计算精确的碰撞(但前提是要检查的对象在其遮罩属性中具有为其碰撞检测标记的"精度")，这对于Cpu来说是一个稍微复杂的任务，因此应谨慎使用。如果<span class="inline">为假</span>，则将根据要检查的对象的边界框计算碰撞。<b></b></li>
@@ -118,7 +161,6 @@
     <li><a href="collision_rectangle.htm">collision_rectangle</a></li>
     <li><a href="collision_rectangle_list.htm">collision_rectangle_list</a></li>
   </ul>
-  <p>&nbsp;</p>
   <h2>不带遮罩的碰撞检查</h2>
   <p>以上所有函数都与碰撞检查<i>实例</i>相关，因此依赖于为该实例定义的碰撞遮罩。但是，有许多时刻需要检查与点或区域的"碰撞"，尤其是当您的实例没有指定精灵时，或者当您正在使用鼠标等时...因此<span data-keyref="GameMaker Name">GameMaker</span>还提供以下函数来帮助您解决这些问题：</p>
   <ul class="colour">
@@ -129,7 +171,6 @@
     <li><a href="rectangle_in_triangle.htm">rectangle_in_triangle</a></li>
     <li><a href="rectangle_in_circle.htm">rectangle_in_circle</a></li>
   </ul>
-  <p>&nbsp;</p>
   <h2>物理碰撞</h2>
   <p>使用内置物理时，不能保证上述碰撞函数适用于启用物理的实例。这主要是由于这些实例不再使用大多数常规内置变量(相反，启用了物理的实例具有自己的<a href="../../Physics/Physics_Variables/Physics_Variables.htm">组变量</a>)，也不使用碰撞遮罩或边界框，因为它们改用了<a href="../../Physics/Fixtures/Fixtures.htm">设备</a>。但是，有一个特殊函数可用于在启用了物理函数的情况下测试碰撞，该函数可检查重叠的设备：</p>
   <ul class="colour">

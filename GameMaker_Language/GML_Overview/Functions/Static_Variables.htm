@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Static Variables</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo">
@@ -154,34 +154,35 @@
   <h3>静态结构</h3>
   <p>属于一个函数的所有静态变量都存储在一个结构中，您可以使用 <span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_get.htm">static_get</a></span> 检索该结构。您可以使用&nbsp;<span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_set.htm">static_set</a></span> 修改函数的静态结构以更改其拥有的静态变量，但此函数仅用于反序列化目的的结构。</p>
   <p>静态结构主要用于从构造函数创建的结构。请参阅：<a href="../Structs/Static_Structs.htm">静态结构</a></p>
-  <h2>初始化顺序</h2>
-  <p>静态变量总是在函数的顶部进行初始化，因此无论您在函数中的哪个位置定义静态变量，都始终可以在整个函数中读取和更改它(即使它是在定义之前使用的)。请参阅以下示例：</p>
+  <h3>初始化顺序</h3>
+  <p>在函数内部，与其他变量一样，在<em></em>访问<em>静态变量之前，您应该始终</em>定义<em>静态变量</em>。</p>
+  <p>虽然可以在定义静态变量的行之前访问它(因为在运行函数之前，<span data-keyref="GameMaker Name">GameMaker</span>首先初始化所有静态变量)，但建议遵循自然顺序(首先定义，之后访问)：</p>
   <p class="code">function add_health()<br>
     {<br>
+    &nbsp; &nbsp;&nbsp;static my_health = 1;<br>
     &nbsp;&nbsp; &nbsp;my_health++;<br>
     &nbsp;&nbsp; &nbsp;show_debug_message(my_health);<br>
-    &nbsp;&nbsp; &nbsp;static my_health = 1;<br>
     }</p>
-  <p>这里，在初始化<em>之前，静态变量 "<span class="inline">my_health</span>" 被更改并打印到编译器输出</em>。虽然这看起来是错误的，但它完全没有问题，因为静态变量是在<em>任何函数代码执行之前</em>初始化的。请注意，如果函数中有多个静态变量，则在顶部初始化它们时，它们的定义顺序将保持不变。</p>
-  <p>当将继承与构造函数一起使用时，子构造函数中的任何静态变量仅在父构造函数执行后才会被初始化，因此子构造函数的静态变量不会覆盖父构造函数的静态变量。请参阅以下示例：</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span><a href="../../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a>将显示GM 2043警告，如果您尝试在静态变量初始化之前访问该变量。</p>
+  <p>当使用构造函数的继承时，子构造函数中的任何静态变量只有在父构造函数执行后才会初始化。请参见以下示例：</p>
   <p class="code">function parent() constructor<br>
     {<br>
+    &nbsp; &nbsp;&nbsp;static value = 10;<br>
     &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
-    &nbsp;&nbsp; &nbsp;static value = 10;<br>
     }<br>
     <br>
     function child() : parent() constructor<br>
     {<br>
+    &nbsp; &nbsp;&nbsp;static value = 20;<br>
     &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
-    &nbsp;&nbsp; &nbsp;static value = 20;<br>
     }<br>
     <br>
     var _child = new child();
   </p>
-  <p>调用 <span class="inline">child()</span> 构造函数会将以下内容打印到输出日志：</p>
+  <p>调用 <span class="inline2">child()</span> 构造函数会将以下内容打印到输出日志：</p>
   <p class="code">10<br>
     20</p>
-  <p>第一个值来自父构造函数，第二个值来自子构造函数。这表明，在父构造函数完成之前，子对象的静态变量<span class="inline">值</span>才被初始化，并且在每个构造函数中，静态变量在调用 <span class="inline">show_debug_message()</span> 之前被初始化。</p>
+  <p>第一个值来自父构造函数，第二个值来自子构造函数。这表明子对象的静态变量<span class="inline2">value</span>直到父构造函数完成后才初始化。</p>
   <h2>静态方法</h2>
   <p>你也可以在一个函数中使用<span class="inline">static</span>关键字来创建一个<strong>static函数</strong>，这和变量一样，只是意味着该函数只被定义一次，也就是第一次调用该函数的时候，例如。</p>
   <p class="code">function(_x, _y) Vector2 constructor<br>
@@ -196,7 +197,7 @@
     &nbsp; &nbsp; }<br>
     }
   </p>
-  <p>在上面的示例中，<a href="../Structs.htm#constr">构造函数 </a><span class="inline">Vector2<span class="inline"></span></span>可以用来创建结构，并且该结构将有一些变量，其中一个是方法变量<span class="inline"><span class="inline">Add</span></span>。由于此变量已被定义为静态变量，因此它包含的函数仅在首次调用<em>Vector2</em>时初始化<span class="inline">一次</span>，使用此构造函数创建的所有其他结构将引用最初创建的函数<span class="inline">Add</span>，而不是为每个结构创建一个新函数(有关结构和<span class="inline">构造函数</span>的更多信息，请参阅<a href="../Structs.htm">此处</a>)。</p>
+  <p>在上面的例子中，<a href="../Structs.htm#constr">构造函数</a>&nbsp;<span class="inline"><span class="inline">Vector2</span></span>可以用来创建一个结构体，该结构体将有一些变量，其中一个是方法变量<span class="inline"><span class="inline">Add</span></span>。由于这个变量被定义为静态的，它所包含的函数只会在<em>第一次调用</em>Vector2<span class="inline">函数时被初始化</span>一次，并且用这个构造函数创建的所有其他结构将引用最初创建的函数<span class="inline">Add</span>，而不是为每个结构创建一个新函数(有关结构和<span class="inline">构造函数</span>关键字的更多信息，请参阅<a href="../Structs.htm">结构 &amp; 构造函数</a>)。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

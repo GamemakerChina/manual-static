@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Texture Groups</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -118,7 +118,7 @@
     <li><strong>自动裁剪</strong>-将图像添加到<span data-keyref="GameMaker Name">GameMaker</span>时，如果图像周围有任何"空格"(即100%透明度)，则会在将图像添加到纹理页面时自动裁剪，并标记"自动裁剪"。但是，例如，如果将图像用作基本体的非重复纹理或任何类似的纹理，这意味着纹理贴图的UV坐标将无法正确表示。在这些情况下，您可以取消标记此选项，并且sprite将按"原样"添加到纹理页面中，从而保持其在边缘周围可能具有的任何透明度。默认情况下，这将标记为<em>启动</em>。</li>
     <li><strong>生成Mipmaps</strong>-标记此选项(默认情况下处于关闭状态)将告知<span data-keyref="GameMaker Name">GameMaker</span>原始纹理页面将被缩放并过滤为纹理文件中的多个分辨率。这通常是<em>关闭</em>，但是如果您正在使用相机放大或缩小游戏室的大面积，或者您正在使用3D游戏，则可能需要启用此功能，然后使用<a href="../GameMaker_Language/GML_Reference/Drawing/Mipmapping/Mipmapping.htm">Mipmap函数</a>来调整游戏如何处理不同的Mipmap级别。标记此复选框时，"边框大小"值将设置为8(如果最初设置为小于8)。这是因为，使用mipmap时，纹理页面上的图像之间需要更大的边界，否则它们会在更高的mip级别一起bleed。默认值8将允许在子图像一起开始bleed之前将图像缩小到原始大小的八分之一左右，但您可以将其更改为适合您需要的任何值。请注意，如果对Sprite使用"<strong>单独纹理页面</strong>"选项，则无需在此处浏览每个纹理并标记它以生成mipmap，而是可以转到<a href="Game_Options.htm">常规游戏选项</a>并标记选项"<strong>为单独纹理页面生成mipmap</strong>"。</li>
     <li><strong>边框大小</strong>-边框大小将改变为纹理组生成的页面上所有资源的边缘周围的重叠(或“像素倍增”)数量，以便在缩放图像时，它们之间没有可见的间隙(或接缝)。默认值是2像素，但在极端情况下，如果您要大幅放大或缩小视图，那么您可能需要增加这个值。注意，<a href="../The_Asset_Editors/Tile_Sets.htm"> Tile Set Editor </a>有一个选项可以设置图块的输出边框(并且还提供了为什么需要这样做的解释) ，这个选项与边框设置是分开的——基本上，图块是用临时纹理上的每个图块的输出边框生成的，然后这个边框被添加到纹理页面中，在外边缘附近给出边框。还要注意，启用 Mipmap 会自动将纹理页面的默认边框大小设置为8，以帮助防止在较高 mip 级别的纹理之间“bleed”，但这可以更改。</li>
-    <li><strong>父纹理组</strong>-在这里，您可以选择任何一个现有组作为当前选定组的“父”组。“子”组将继承对父纹理组所做的任何更改，并且在处理跨平台游戏时主要用于资源管理。具有父元素的纹理组本身仍然是一个纹理组，它将生成与其他任何组相同的纹理页面，但是为它们分配一个父元素允许您为不同的平台排除大块。例如，您可以将整个负载的 Android 播放器精灵添加到一个“播放器”组，并将 Android 敌人精灵添加到一个“敌人”组，然后使它们都使用一个“ Android”父组。如果您随后从 Windows 或其他平台构建中排除“ android”父组，那么子组也将被排除在外。</li>
+    <li><strong>Parent Texture Group</strong> - Here you can choose any of the existing groups to be the "parent" group for the currently selected one. "Child" groups will inherit the platform settings assigned to the parent texture group, which is useful for resource management when working with cross platform games. A texture group with a parent is still a texture group in its own right and will generate texture pages the same as any other group, but assigning them a parent allows you to exclude large chunks for different platforms. For example, you can add a whole load of Android player sprites to a "player" group, and Android enemy sprites to an "enemy" group, then make them both use an "android" parent group. If you then exclude the "android" parent group from the Windows or other platform build, the child groups will be excluded too.</li>
     <li><strong>纹理组格式</strong>-您可以在<strong> BZ2 + QOI </strong>、<strong> QOI </strong>和<strong> PNG </strong>之间选择纹理页的格式。建议坚持使用默认选项<strong> BZ2 + QOI </strong> ，因为它在保持质量的同时提供了最佳的压缩。<br><br>如果 BZ2选项影响目标平台(如 Android)上的速度，可以选择<strong> QOI </strong> ; 如果希望修改导出的 PNG 或使用<strong> PNGCrush 选项</strong> ，可以选择<a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/gml_pragma.htm"> PNG </a>。</li>
     <li><strong>纹理组类型</strong>-在此可以设置这是常规纹理组还是<a href="Texture_Information/Dynamic_Textures.htm">动态纹理组</a>。</li>
     <li><strong>动态组路径</strong>-在此可以设置最终游戏包中将存储纹理组的路径。仅当组为"动态"时，此操作才起作用。如果为空，则导出的纹理将放置在游戏包的根目录中。</li>

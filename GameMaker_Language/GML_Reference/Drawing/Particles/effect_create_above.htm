@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.6.10.0_2";
+    gTopicId = "8.2.2.6.10.0_4";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>effect_create_above</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,10 +78,15 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>effect_create_above</h1>
-  <p>使用此函数，您可以在房间的所有实例上方创建一个简单的效果(它实际上是在-100000的深度处创建的)。如果效果是任何其他<span class="inline">ef_rain</span>或<span class="inline">ef_snow</span>，则可以定义x/ y位置来创建效果，并且大小可以是0、1或2的值，其中0表示小，1表示中等，2表示大。</p>
-  <p>值得注意的是，通过使用函数<a href="Particle_Systems/part_system_automatic_draw.htm"><span class="inline">part_system_automatic_draw()</span></a>和<a href="Particle_Systems/part_system_automatic_update.htm"><span class="inline">part_system_automatic_update()</span></a>以及粒子系统索引的适当值(其中0表示下面的效果，1表示上面的效果)，可以打开和关闭这些效果的图形，以及暂停其图形。</p>
-  <p>不同粒子类型的可用常量包括：</p>
+  <h1><span data-field="title" data-format="default">effect_create_above</span>&nbsp;<span data-conref="../../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></h1>
+  <p>此函数在房间的所有实例上创建一个简单的效果(实际上是在-15000的深度创建的)。</p>
+  <div data-conref="../../../../assets/snippets/Note_Use_Effect_Create_Layer_Depth_Functions.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此函数已弃用。要在任何深度或层创建粒子效果，可以使用<span class="inline3_func"><a href="effect_create_depth.htm">effect_create_depth</a></span>或<span class="inline3_func"><a href="effect_create_layer.htm">effect_create_layer</a></span>。</p>
+
+</div>
+  <p>效果类型<span class="inline2">ef_rain</span>和<span class="inline2">ef_snow</span>不使用x/y位置(尽管您必须提供它们)。大小可以是0、1或2的值，其中0是小的，1是中等的，2是大的。</p>
+  <p>&nbsp;</p>
+  <p>不同粒子种类的可用常数为：</p>
   <table>
     <colgroup>
       <col>
@@ -161,7 +166,7 @@
   </table>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">effect_create_above(kind, x, y, size, colour);</p>
+  <p class="code"><span data-field="title" data-format="default">effect_create_above</span>(kind, x, y, size, colour);</p>
   <table>
     <tbody>
       <tr>
@@ -203,18 +208,17 @@
   <h4>例子:</h4>
   <p class="code">if health &lt;= 0<br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;effect_create_above(ef_explosion, x, y, 1, c_yellow);<br>
+    &nbsp; &nbsp; <span data-field="title" data-format="default">effect_create_above</span>(ef_explosion, x, y, 1, c_yellow);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;instance_destroy();<br>
     }</p>
-  <p>如果"Health"变量小于或等于0，则上述代码将在实例上方创建中等、黄色的爆炸，并销毁它。</p>
-  <p>&nbsp;</p>
+  <p>上面的代码将在实例上方创建一个中等大小的黄色爆炸，如果它的<span class="inline2">health</span>变量小于或等于0，则销毁它。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Particles.htm">粒子</a></div>
-        <div style="float:right">Next: <a href="effect_clear.htm">effect_clear</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Particles.htm">粒子</a></div>
+        <div style="float:right">Next:&nbsp;<a href="effect_clear.htm">effect_clear</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

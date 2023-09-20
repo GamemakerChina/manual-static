@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>physics_world_update_speed</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,12 +78,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>physics_world_update_speed</h1>
-  <p><span data-keyref="GameMaker Name">GameMaker</span> 根据房间速度更新内容，因此如果您将其设置为 30，<span data-keyref="GameMaker Name">GameMaker</span> 将在一秒钟内运行 30 个步骤。但是，对于可能不够的物理函数，您可能希望以稍快的速度更新事物，以提高稳定性或精度。为此，我们使用函数 <span class="inline">physics_world_update_speed()</span>，该函数<i>独立</i>设置物理系统的更新速度和房间速度。这意味着，可以将房间速度设置为 30，但将物理设置为 60，从而有效地将物理系统更新和执行其计算的速度与更新步骤的速度相比提高了一倍。</p>
-  <p class="note"><b>注意</b>：当前无法将此设置为小于房间速度，但以后的更新可能会更改此设置。</p>
+  <h1><span data-field="title" data-format="default">physics_world_update_speed</span></h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> updates things based on the <a href="../../General_Game_Control/game_get_speed.htm">game speed</a>, so that if you <a href="../../General_Game_Control/game_set_speed.htm">set</a> it to ,say, 30, <span data-keyref="GameMaker Name">GameMaker</span> will run 30 steps in the course of a second. However, for the physics functions that may not be enough and you may want things to be updated at a slightly faster speed to increase stability or precision. To that end we use the function&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">physics_world_update_speed</span></span> which sets the update speed for the physics system <i>independently</i> of the game speed. This means that you could have a game speed of 30, but set the physics to 60, effectively doubling the speed at which the physics system updates and performs its calculations compared to the speed at which the step are updated.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;you cannot currently set this to any less than room speed, but future updates may change this.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">physics_world_update_speed(speed)</p>
+  <p class="code"><span data-field="title" data-format="default">physics_world_update_speed</span>(speed)</p>
   <table>
     <tbody>
       <tr>
@@ -103,9 +103,8 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">physics_world_update_speed(room_speed * 2);</p>
-  <p>上面的代码将物理系统更新速度设置为房间速度的两倍。</p>
-  <p>&nbsp;</p>
+  <p class="code"><span data-field="title" data-format="default">physics_world_update_speed</span>(game_get_speed(gamespeed_fps) * 2);</p>
+  <p>The code above sets the physics system update speed to be twice that of the game speed.</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

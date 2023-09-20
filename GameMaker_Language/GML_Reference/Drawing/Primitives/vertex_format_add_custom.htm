@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>vertex_format_add_custom</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -204,7 +204,7 @@
   <ul class="colour">
     <li>混合权重通常存储在数组中，然后使用混合索引进行访问，但您可以在此看到，它不是将<span class="inline">in_BlendIndices</span>定义为<span class="inline">ivec 4</span>属性，而是将其转换为代码中的<span class="inline">ivec 4</span>。然后，这将用于为使用<span class="inline">gm_Matrix</span>创建的数组编制索引(您只能使用<span class="inline">Int</span>值而不能使用浮点数访问数组)。</li>
     <br>
-    &nbsp;
+    <li>&nbsp;</li>
   </ul>
   <h4>语法:</h4>
   <p class="code">vertex_format_add_custom(type, usage);</p>
@@ -233,7 +233,7 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">vertex_format_begin();<br>
-    vertex_format_add_textcoord();<br>
+    vertex_format_add_texcoord();<br>
     vertex_format_add_custom(vertex_type_float3, vertex_usage_position);<br>
     my_format = vertex_format_end();</p>
   <p>上述代码将创建一个新的顶点格式，只有纹理和3个用于定位的自定义浮点值。然后将格式ID存储在变量"my_format"中。</p>

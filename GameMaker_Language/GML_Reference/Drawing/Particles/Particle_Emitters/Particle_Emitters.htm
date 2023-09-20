@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Particle Emitters</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,23 +78,28 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>粒子发射器</h1>
+  <h1 id="h"><span data-field="title" data-format="default">Particle Emitters</span></h1>
   <p><strong>GameMaker</strong>使用粒子<span data-keyref="GameMaker Name">发射器</span>在屏幕上具有不同形式和分布的区域上发射粒子。它们还可以创建连续的粒子流，或者根据函数的使用方式，它们可以一次性爆发出许多粒子。</p>
   <div data-conref="../../../../../assets/snippets/Note_tip_use_particle_system_editor.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您更喜欢使用更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，也可以使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您喜欢更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，则还可以使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。此外，还可以使用编辑器的 <strong> 复制 GML 到剪贴板 </strong><img class="icon" src="../../../../../assets/Images/Icons/Icon_GML_To_Clipboard.png" title=""> 为其生成 <span data-keyref="GML_Code">GML 代码 </span>。</p>
 
 </div>
   <p>由于粒子发射器是动态创建的资源，因此必须创建粒子发射器并将返回的索引存储在变量中，以便在所有进一步的函数调用中引用该发射器，并且在不再需要该发射器时也销毁该发射器非常重要，否则会导致内存泄漏，从而降低速度并最终导致游戏崩溃。另外值得注意的是，粒子发射器在创建后将永远存在，即使索引不再存储。因此，即使您更换空间或重新启动游戏，系统和粒子仍将保留，并且可以在所有其他房间中看到，所以您应该确保在不再需要它们时将其销毁。</p>
-  <p>以下函数可用于设定发射器并允许它们创建粒子。请注意，每个参数都将获取其所属的 <a href="../Particle_Systems/Particle_Systems.htm"> 粒子系统 </a> 的索引作为第一个参数。</p>
+  <h2 id="func_ref">函数参考</h2>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>这些函数中的每一个都将其所属的<a href="../Particle_Systems/Particle_Systems.htm">粒子系统</a>的索引作为第一个参数。</p>
   <ul class="colour">
     <li><a href="part_emitter_exists.htm">part_emitter_exists</a></li>
     <li><a href="part_emitter_create.htm">part_emitter_create</a></li>
     <li><a href="part_emitter_clear.htm">part_emitter_clear</a></li>
     <li><a href="part_emitter_region.htm">part_emitter_region</a></li>
+    <li><a href="part_emitter_relative.htm">part_emitter_relative</a></li>
     <li><a href="part_emitter_burst.htm">part_emitter_burst</a></li>
     <li><a href="part_emitter_stream.htm">part_emitter_stream</a></li>
     <li><a href="part_emitter_destroy.htm">part_emitter_destroy</a></li>
     <li><a href="part_emitter_destroy_all.htm">part_emitter_destroy_all</a></li>
+    <li><a href="part_emitter_enable.htm">part_emitter_enable</a></li>
+    <li><a href="part_emitter_delay.htm">part_emitter_delay</a></li>
+    <li><a href="part_emitter_interval.htm">part_emitter_interval</a></li>
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>sprite_set_alpha_from_sprite</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>sprite_set_alpha_from_sprite</h1>
   <p>此函数使用一个精灵的值/饱和度，并将其与目标精灵的Alpha相乘。理想地，用于生成新的阿尔法图的精灵应该是灰度级的，其中白色区域具有等效的阿尔法值1(不透明)，黑色区域等效于阿尔法0(透明)，而灰色区域是介于0和1之间的阿尔法。您正在设置<i>的alpha的精灵不能是永久资源</i>，您用来设置alpha的精灵也不能是永久资源{}，因为这样会出错。这意味着您必须以某种方式“即时”创建两个全新的精灵，才能使该函数正常工作。这可以通过使用表面或从屏幕创建精灵来实现(下面的代码示例显示了如何使用表面实现该效果)。</p>
-  <p class="note"><b>注意</b>：此函数仅适用于<b>位图</b>精灵，不适用于SWF或JSON(Spine)精灵。</p>
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> This function is only useful for <b>bitmap</b> sprites and will not work with SWF or JSON (Spine) sprites.</p>
   <p>下图说明了此函数的工作原理：</p>
   <p><img alt="Sprite Set Alpha Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_alpha.png"></p>
   <p>&nbsp;</p>
@@ -89,17 +89,20 @@
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>ind</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>ind</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
         <td>要更改透明贴图的精灵的索引。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>spr</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>spr</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
         <td>要从中获取透明贴图数据的精灵的索引。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>draw_arrow</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,7 +81,10 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>draw_arrow</h1>
   <p>此函数将绘制从点(x 1, y 1 )到点(x 2, y 2 )的箭头。箭头的箭头柄沿着这些点绘制，最后绘制实际箭头，其中箭头的大小由参数"size"定义，并且作为阀杆的一部分进行计算，以便终点始终与x 2、y 2定义的位置对齐。箭头的宽度将根据长度的比例自动计算。</p>
-  <p class="note"><b>注意</b>：如果要使用着色器绘制形状，请注意，大多数着色器都需要以下输入：顶点、纹理、颜色。但是，使用此函数时，仅传入顶点和颜色数据，因此着色器可能无法绘制任何内容(或绘制某些内容但不正确)。如果需要以这种方式绘制形状，则应考虑到这一点对着色器进行自定义。</p>
+  <div data-conref="../../../../assets/snippets/Note_Shape_Shader_Attributes_Are_Different.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you want to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_arrow(x1, y1, x2, y2, size);</p>
@@ -89,29 +92,35 @@
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>x1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>x1</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>直线起点的x坐标。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>y1</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>y1</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>直线起点的y坐标。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>x2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>x2</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>直线终点(箭头终点处)的x坐标。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>y2</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>y2</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>直线终点(箭头终点处)的y坐标。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>size</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>size</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>箭头的长度(以像素为单位)。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Basic Forms</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,11 +78,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>基本绘制</h1>
+  <h1><span data-field="title" data-format="default">Basic Forms</span></h1>
   <p><span data-keyref="GameMaker Name">GameMaker</span>具有完整的函数集合，可用于绘制不同的表单和形状。这些函数只能在实例的绘制事件中使用(您<i>可以</i>在其他位置使用它们，但您不会看到任何内容！)并创建纯粹的图形效果，这意味着它们不会生成碰撞事件，因为这些事件只能通过指定给实例的精灵或碰撞掩码来完成。所有这些函数都受当前绘制颜色、Alpha和混合模式的影响(请参阅<a href="../Colour_And_Alpha/Colour_And_Alpha.htm">颜色</a>一节)。</p>
-  <p class="note"><b>重要！</b>线条、点和表单始终以<strong>屏幕分辨率</strong>以1:1的比例绘制，而不管它们是在哪个事件中绘制的。</p>
-  <p class="note"><strong>重要!</strong>这些函数将中断顶点批处理并增加游戏中纹理交换的数量，因此在单个绘制帧中对其中任何一个进行多次调用可能会导致执行问题。</p>
-  <p>下列绘制函数适用于绘制基本形状。请注意，这些函数调用速度较慢，仅作为基本绘制工具提供：</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;Lines, points and forms are always drawn at 1:1 with the <strong>screen resolution</strong>, regardless of the event they are drawn in.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;These functions will break the vertex batching and increase the number of texture swaps in your game, so having multiple calls to any of them in a single draw frame may lead to performance issues.</p>
+  <h2 id="func_ref">Function Reference</h2>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;These functions are slow to call and only supplied as basic drawing tools.</p>
   <ul class="colour">
     <li><a href="draw_arrow.htm">draw_arrow</a></li>
     <li><a href="draw_circle.htm">draw_circle</a></li>

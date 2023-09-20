@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>The File System</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,10 +78,10 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>文件系统</h1>
+  <h1><span data-field="title" data-format="default">The File System</span></h1>
   <p>当<a href="../GameMaker_Language/GML_Reference/File_Handling/File_Handling.htm">文件系统函数</a>或<a href="../Settings/Included_Files.htm">包含文件</a>与<span data-keyref="GameMaker Name">GameMaker</span>一起使用时，非常重要的是要确切地知道文件系统是如何工作的以及幕后发生了什么。为此，本节旨在解释和明确<em>如何存储</em>内容，<em>在哪里存储</em>内容，以及该系统可能存在哪些限制或解决方案。</p>
   <p>关于文件函数，首先要注意的也是最重要的一点是，它们在一般情况下和默认情况下仅限于<strong> 沙盒 </strong>。 这意味着 <span data-keyref="GameMaker Name">GameMaker</span> 在没有用户<strong>显式</strong>输入的情况下，<em>无法从不属于游戏包或设备本地存储的任何地方保存或加载文件</em>，即便如此 此输入仅限于 Windows、macOS 和 Ubuntu (Linux) 目标平台。</p>
-  <p class="note"><strong>重要!</strong>在桌面目标(Windows, macOS，和Ubuntu (Linux))上，沙箱可以关闭的，通过检查目标平台<strong>Game Options</strong>中的<a href="../Settings/Game_Options.htm">禁用文件系统沙箱</a>选项。您这样做的风险由您自己承担，虽然这将打开文件保存和加载，并允许您访问给定系统上的任何位置的文件，但它仍然可能受到操作系统权限的限制。以及您仍然不能写入<a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/program_directory.htm"><span style="font-size:1px;"><span class="inline" style="font-size: 14px">program_directory</span></span></a>&nbsp;文件夹。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;It is possible to turn off the sandboxing, however, on the Desktop targets (Windows, macOS, and Ubuntu (Linux)) by checking the <strong>Disable file system sandbox</strong> option in the <a href="../Settings/Game_Options.htm">Game Options</a> for the target platform. You do this at your own risk, and while this will open up file saving and loading and permit you to access files anywhere on the given system, it may still be limited by the OS permissions, and you will not be able to write to the <a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/program_directory.htm"><span style="font-size:1px;"><span class="inline" style="font-size: 14px">program_directory</span></span></a>&nbsp;folder.</p>
   <p>要理解沙盒，首先需要了解文件有两个不同的区域:</p>
   <ul class="colour">
     <li><strong>捆绑包文件</strong> --这是存储与可执行游戏打包在一起的所有文件的地方，包括你从<span data-keyref="GameMaker Name">GameMaker IDE</span>中添加到<strong>包含文件</strong>资源列表中的文件(这些文件是你想要与游戏打包的外部文件)。</li>
@@ -89,14 +89,14 @@
   </ul>
   <p>下面的图表可以帮助你更好地理解这一点:</p>
   <p><img alt="File System Save Areas" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Files_SaveAreas.png"></p>
-  <p class="note"><strong>注意</strong>:你永远不能写捆绑包(程序)目录。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You can never write to the File Bundle (program) directory.</p>
   <p>当您的游戏被沙盒化时，两个目标区域 --捆绑目录和本地存储区域 --在每个目标平台上都可用，但它们在每个平台上的工作方式略有不同。 然而，<span data-keyref="GameMaker Name">GameMaker</span> 已经抽象出可以做什么和不能做什么的主要本质，从而更容易将游戏重新定位到多种环境。</p>
   <p>首先，您应该了解我们所说的 <a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/working_directory.htm"><span class="inline">working_directory</span></a> 是什么意思。 这是两个可能的保存位置的同义词（如上图所示），当您使用该目录时，它会执行以下两项操作之一，具体取决于您是在读取还是写入，以及您正在读取的文件是否已被保存。 改变与否：</p>
   <ul class="colour">
     <li><strong>读取操作</strong> - working_directory 将首先检查保存区域以查看正在访问的文件是否存在，以及它是否正在使用该区域。 但是，如果保存区域中不存在该文件，它会检查文件包区域并使用它（如果要查找的文件是游戏中包含的文件）。</li>
     <li><strong>写入操作</strong> - 这只能发生在保存区域中。</li>
   </ul>
-  <p class="note"><strong>注意</strong>：一般来说，<span data-keyref="GameMaker Name">GameMaker</span> 会为您处理所有这些，您<strong>很少</strong>需要使用内置变量 <span class="inline" style="font-size: 14px">working_directory</span>。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;in general <span data-keyref="GameMaker Name">GameMaker</span> will handle all this for you and you <strong>rarely </strong>need to use the <span class="inline" style="font-size: 14px">working_directory</span> built in variable.</p>
   <p>使用这两个简单的规则，我们现在可以看到以下函数是如何工作的（这些示例可帮助您可视化不同可用函数的过程）：</p>
   <ul class="colour">
     <li><a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/directory_create.htm"><span class="inline">directory_create() </span></a>(以及其他目录函数) 仅在<strong>保存</strong>区域中起作用。</li>

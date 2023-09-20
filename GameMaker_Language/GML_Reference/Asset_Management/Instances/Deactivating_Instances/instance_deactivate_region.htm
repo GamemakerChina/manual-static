@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>instance_deactivate_region</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,14 +79,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>instance_deactivate_region</h1>
+  <h1><span data-field="title" data-format="default">instance_deactivate_region</span></h1>
   <p>使用此函数，可以在房间中定义区域以停用先前已激活的实例。该区域可标记为"内部"或"外部"，如下图所示：</p>
   <p><img alt="Instance deactivate region example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/instance_deactivate_region.png">您可以在上图中看到，"Apple"实例始终处于非活动状态，因为即使sprite本身不与区域重叠，边界框也会重叠。因此，当实例的<i>边界框</i>与其重叠时，它们被认为在指定的区域内，并且未考虑碰撞掩码的状态(精确与否)<b>。请注意，取消激活不是即时的，在调用函数的事件结束之前，以这种方式取消激活的实例不会被视为非活动状态。</b></p>
-  <p class="note"><b>注意</b>:如果在房间开始时停用某个实例(即从房间创建代码或从房间内某个实例的实例创建事件)，则从房间编辑器<b>放置在房间内的所有实例在停用之前仍将运行其创建事件</b>。</p>
-  <p class="note"><b>警告</b>：取消激活已启用物理的实例将<b>不会</b>停止它们的设备在物理模拟中相互作用。为此，在激活/取消激活实例时，应将其<a href="../../../Physics/Physics_Variables/phy_active.htm"><span class="inline"><span style="font-size:14px;">phy_active</span></span></a>变量设置为<span class="inline">true</span>或<span class="inline">false</span>。</p>
-  <p>&nbsp;</p>
+  <div data-conref="../../../../../assets/snippets/Note_Deactivate_On_Room_Start_Create_Event.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you deactivate an instance on room start (i.e.&nbsp;from the Room Creation Code, or from an instance <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Create event</a> of an instance within the room) all instances that are placed within the room from&nbsp;<a href="../../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a>&nbsp;<b>will still run their Create event</b> before being deactivated.</p>
+
+</div>
+  <div data-conref="../../../../../assets/snippets/Note_Warning_Deactivating_Physics_Instances.hts">
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;</b>Deactivating instances that have physics enabled will <strong>NOT</strong> stop their fixtures from interacting within the physics simulation. For that you should set their&nbsp;<span class="inline2"><a href="../../../Physics/Physics_Variables/phy_active.htm">phy_active</a></span> variable to <span class="inline2">true</span> or <span class="inline2">false</span> as you activate/deactivate the instances.</p>
+
+</div>
   <h4>语法:</h4>
-  <p class="code">instance_deactivate_region(left, top, width, height, inside, notme);</p>
+  <p class="code"><span data-field="title" data-format="default">instance_deactivate_region</span>(left, top, width, height, inside, notme);</p>
   <table>
     <tbody>
       <tr>
@@ -138,7 +143,6 @@
     var _vh = camera_get_view_height(view_camera[0]);<br>
     instance_deactivate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false, false);</p>
   <p>上面的代码激活所有实例，然后取消激活房间内的一个区域。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

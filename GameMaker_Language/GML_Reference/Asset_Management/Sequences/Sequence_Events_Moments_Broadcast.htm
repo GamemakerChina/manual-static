@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Sequence Events, Moments and Broadcast Messages</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -122,7 +122,7 @@
     }
   </p>
   <p>在这个函数中，我们所做的就是听鼠标按一下，然后反转方法绑定到的序列的播放方向。您会注意到，当前您无法向链接到这些属性的函数传递任何参数，并且在所有情况下，函数范围内的<a href="../../../GML_Overview/Instance_Keywords.htm"><span class="inline">self</span></a>变量都被指定为序列实例。</p>
-  <p class="note"><b>注意</b>：值得注意的是，在上面的脚本中，<span class="inline">self</span>标识符可以省略，并且仅用于显式显示用于此示例的方法变量的范围。</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> It's worth noting that in the above script the <span class="inline">self</span> identifier can be omitted and is only used to explicitly show the scope of the method variable being used for this example.</p>
   <p>要将其分配给序列，您需要执行以下操作：</p>
   <p class="code">var _seq = sequence_get(Sequence1);<br>
     _seq.event_step = method(_seq, seq_reverse);</p>

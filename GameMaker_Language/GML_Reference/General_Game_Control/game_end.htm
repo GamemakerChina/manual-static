@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>game_end</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,35 +78,51 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>game_end</h1>
-  <p>使用此函数，您可以结束游戏(将触发<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">游戏结束事件</a>)。这种情况不会立即发生，而是在当前步骤结束时发生，因此在调用此函数之后，您在同一步骤中拥有的任何代码仍将运行。请注意，此函数具有以下限制：</p>
+  <h1><span data-field="title" data-format="default">game_end</span></h1>
+  <p>This function ends the game and triggers the <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Game End Event</a>.</p>
+  <p>This will not happen instantaneously, but rather at the end of the current step, so any code you have in the same step after this function has been called will still run.</p>
+  <h3>Usage Notes</h3>
   <ul class="colour">
-    <li>在Android设备上，调用<span class="inline">game_end()</span>会将应用程序推入后台，但不会<i>关闭应用程序。这必须由用户完成。</i></li>
+    <li>On Android devices, calling&nbsp;<span class="inline3_func"><a href="game_end.htm">game_end</a></span> will push the app into the background, but it will <i>not</i> close the app. This must be done by the user.</li>
     <li>在iOS上它将什么都不做，默默地失败。</li>
     <li>在所有控制台上，它可能会使游戏崩溃，或者最好是静默失败，而且可能还会导致提交失败，因此不能使用此函数<i>。</i></li>
     <li>在HTML5上，它将结束游戏，但让用户盯着网页上的空白画布，因此不建议在该目标平台上使用它。</li>
     <li>在Windows、Linux和macOS上，该函数只需结束游戏并关闭游戏窗口(<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">游戏结束事件</a>也将被触发)。</li>
     <br>
-    <br>
     &nbsp;
   </ul>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">game_end();</p>
+  <p class="code"><span data-field="title" data-format="default">game_end</span>([return_code]);</p>
+  <div>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">参数</th>
+          <th>类型</th>
+          <th style="">描述</th>
+        </tr>
+        <tr>
+          <td style=""><strong>return_code</strong></td>
+          <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+          <td style=""><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;The return code of the application, defaults to 0.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if keyboard_check_pressed(vk_escape) game_end();</p>
+  <p class="code">if keyboard_check_pressed(vk_escape) <span data-field="title" data-format="default">game_end</span>();</p>
   <p>如果玩家按下"逃逸"键，这将结束游戏。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="General_Game_Control.htm">General&nbsp;Game Control</a></div>
+        <div style="float:left">Back:&nbsp;<a href="General_Game_Control.htm">通用游戏控制</a></div>
         <div style="float:right">Next:&nbsp;<a href="game_restart.htm">game_restart</a></div>
       </div>
     </div>

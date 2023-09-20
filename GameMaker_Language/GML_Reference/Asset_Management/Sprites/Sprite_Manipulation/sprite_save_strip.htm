@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>sprite_save_strip</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -80,7 +80,10 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>sprite_save_strip</h1>
   <p>此函数将从精灵中的所有子图像创建<a href="../../../../../The_Asset_Editors/Sprite_Properties/Sprite_Strips.htm">条带图像</a>，并使用&nbsp;指定的文件名将其保存到光盘。精灵必须已在运行时<a href="sprite_add.htm">添加</a>(您不能保存通过IDE添加的精灵)，并且文件必须使用扩展名&nbsp;保存，扩展名为<span class="inline">*.png</span>。</p>
-  <p class="note"><b>注意</b>：根据所选的目标平台，保存和加载文件的位置会受到限制。有关详细信息，请参阅<a href="../../../../../Additional_Information/The_File_System.htm">文件处理</a>。</p>
+  <div data-conref="../../../../../assets/snippets/Note_File_Handling_Limitations.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Depending on the target platform that is chosen you are limited as to where you can save and load files from. See&nbsp;<a href="../../../../../Additional_Information/The_File_System.htm">The File System</a>&nbsp;for more information.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">sprite_save_strip(ind, filename);</p>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Guide To Using Buffers</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,10 +78,10 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>缓冲区使用指南</h1>
-  <p>缓冲区(在编程中)基本上是系统内存中的一个空间，用于存储几乎任何事情的小数据包(例如:数据传输、冲突、颜色数据等)。因为它保存在系统内存中，所以访问速度非常快，而缓冲区通常用于非常短期的存储，如在处理网络信息之前接收网络信息，或用于在游戏中存储存档点(这将在后面的例子中解释)。</p>
+  <h1><span data-field="title" data-format="default">Guide To Using Buffers</span></h1>
+  <p>A buffer (in programming) is basically a space within the system memory that is used to store small packets of data for just about anything (for example: data transfer, collisions, colour data, etc.). Since it is held in system memory it is very fast to access, and a buffer would generally be used for very short-term storage, like receiving network information before processing it, or for storing a checkpoint in your game (this is explained in the example given further down the page).</p>
   <p><img alt="Buffer Memory" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Buffer_Memory.png">缓冲区是通过在系统内存中分配一个空间来创建的，以&nbsp;<a class="tooltip" title="字节是八位二进制数字长的数据单位，组成一个字节的每个数字都称为位，即：字节是8位，位可以是1或0。">字节</a><span class="glossextra"> </span>计算，然后在你的游戏运行期间为你的游戏保留，或者直到你使用适当的函数删除缓冲区(你可以在<a href="../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">这里找到所有GML缓冲区函数</a>)。这意味着即使你的游戏没有焦点(例如，当你在移动设备上接听电话时，游戏将被放到后台)，缓冲区仍然存在，但如果游戏关闭或重新启动，缓冲区将丢失。</p>
-  <p class="note"><strong>注意</strong>:重新启动游戏不会清除或删除缓冲区!但它将阻止任何进一步访问之前创建的缓冲区，因为ID句柄将丢失，导致内存泄漏，最终将导致你的游戏崩溃。所以，当重新开始游戏时，记得先删除所有缓冲区。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Restarting the game will not clear or delete the buffer! But it will prevent any further access to the previously created buffer as the ID handle will have been lost, causing a memory leak which will crash your game eventually. So, when re-starting a game, remember to delete any buffers first.</p>
   <p><span data-keyref="GameMaker Name">GameMaker</span>允许创建四种不同的缓冲区类型。这样做的原因是缓冲区被设计成一种高度优化的临时存储介质，因此你应该创建一个适合于你希望它存储的数据类型的缓冲区，否则你可能会出错或导致你的代码瓶颈。在进一步解释之前，让我们看看四种可用的缓冲区类型(在GML中定义为<strong>常量</strong>):</p>
   <p>&nbsp;</p>
   <table>
@@ -205,7 +205,7 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">Buffer Checkpoint</span><span data-close-text="true">Buffer Checkpoint</span> 存档点缓冲区</a></p>
   <div class="droptext" data-targetname="drop-down">
     <p class="dropspot">关于如何在任何平台的任何<span data-keyref="GameMaker Name">GameMaker</span>游戏中使用缓冲区的一个简单例子是函数<a href="../GameMaker_Language/GML_Reference/General_Game_Control/game_save_buffer.htm"><span class="inline">game_save_buffer()</span></a>。该函数将获取当前游戏状态的“快照”，并将其保存到预定义的缓冲区中，然后可以从中读取并再次加载游戏。</p>
-    <p class="note"><strong>注</strong>:这个函数非常有限，它是为初学者设计的，目的是让检查点系统快速启动和运行，但更高级的用户可能更喜欢使用File函数编写自己的系统，因为游戏不会保存任何你可以在运行时创建的动态资源，如数据结构、表面、添加的精灵等……</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function is very limited and it is designed for the beginner to get a checkpoint system up and running quickly, but more advanced users may prefer to code their own system using the File functions, due to the fact that the game will not save any of the dynamic resources that you can create at run-time like data structures, surfaces, added sprites, etc...</p>
     <p class="dropspot">我们需要做的第一件事是创建一个新对象来控制保存和加载，因此您需要创建一个对象并赋予它一个<strong> 创建事件 </strong>。在这种情况下，您可以放置以下代码:</p>
     <p class="code">SaveBuffer = buffer_create(1024, buffer_grow, 1);<br>
       StateSaved = false;</p>
@@ -222,7 +222,7 @@
       &nbsp; &nbsp; game_load_buffer(SaveBuffer);<br>
       }</p>
     <p class="dropspot">然后，游戏将在您放置上述代码的事件结束时加载。</p>
-    <p class="note"><strong>注意</strong> : 这仅用于在同一个房间中使用，而不用于在游戏关闭或重新启动后生成完整的保存游戏！</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This is only for use in the same room, and not for generating complete saved games for after your game has been closed or restarted!</p>
     <p class="dropspot">添加到控制器对象的最后一件事是一些“清理”代码。 缓冲区存储在内存中，因此，如果您在使用完缓冲区后不进行清理，则可能会出现内存泄漏，最终导致游戏滞后和崩溃。 因此，您可能会添加一个 <strong>房间结束事件</strong>（来自 <strong>其它</strong> 事件类别）：</p>
     <p class="code">buffer_delete(SaveBuffer);</p>
     <p class="dropspot">现在可以将此对象放置到房间中，并在按键时从缓冲区保存和加载房间状态。</p>
@@ -249,7 +249,7 @@
       &nbsp; &nbsp; key_state = buffer_read(buff, buffer_bool);<br>
       }</p>
     <p class="dropspot">异步事件将包含一个特殊的临时DS map <span class="inline"> async_load</span>(它在事件结束时自动从内存中删除)，该映射包含不同的信息，具体取决于来自网络的传入数据的类型。在本例中，我们假设已经检查了映射并发现它是客户机发送的缓冲区数据包。现在，我们检查缓冲区中的第一块数据，看看发送了什么类型的事件 --在这种情况下，值“1”表示一个键事件，然而，当对这些事情进行编码时，您应该定义常量来保存这些值以简化事情 --然后存储被按下的键及其状态(<span class="inline">true</span> = 按下， <span class="inline">false</span> = 释放)。然后，此信息将用于使用发送客户端玩家的新状态更新所有客户端。</p>
-    <p class="note"><strong>注意</strong>：从 DS map 创建的缓冲区会在网络异步事件结束时自动删除，因此无需在此处使用 <span class="inline" style="font-size: 14px">buffer_delete()</span>。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;The buffer that is created from the DS map is automatically removed at the end of the Network Asynchronous Event so there is no need to use <span class="inline" style="font-size: 14px">buffer_delete()</span> here.</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p>&nbsp;</p>

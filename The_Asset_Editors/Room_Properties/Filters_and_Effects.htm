@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Filters and Effects</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css">
   <script src="../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo">
@@ -94,7 +94,15 @@
   <p>例如，"<strong>上色</strong>"是滤镜，其中"<strong>风吹颗粒</strong>"是一种效果。</p>
   <h2>效果类型</h2>
   <p><strong>"效果类型"</strong>下拉列表中的所有滤镜和效果都记录在此页上：&nbsp;<a href="FX/All_Filter_Effect_Types.htm">滤镜效果类型和参数</a>。</p>
-  <div data-conref="../../assets/snippets/FX_Limitations.hts"><h2 class="">局限性</h2><p>目前有一个限制需要牢记：</p><ul class="colour"><li>禁用<a href="../../GameMaker_Language/GML_Reference/Drawing/Surfaces/application_surface_enable.htm">应用程序表面</a>时滤镜/效果将不起作用。它在默认情况下是启用的，您通常不应该要求禁用它，但您可以这样做以在移动设备上获得性能。在这种情况下，您将无法使用滤镜/效果，因为它们需要材质球操纵的表面纹理。</li></ul></div>
+  <div data-conref="../../assets/snippets/FX_Limitations.hts">
+  <h2>局限性</h2>
+  <p>There are some limitations to keep in mind when using filters/effects:</p>
+  <ul class="colour">
+    <li>禁用<a href="../../GameMaker_Language/GML_Reference/Drawing/Surfaces/application_surface_enable.htm">应用程序表面</a>时滤镜/效果将不起作用。它在默认情况下是启用的，您通常不应该要求禁用它，但您可以这样做以在移动设备上获得性能。在这种情况下，您将无法使用滤镜/效果，因为它们需要材质球操纵的表面纹理。</li>
+    <li>Filters/effects that take a texture image, require that image to be on a separate texture page. You can set this through the <a href="../Sprites.htm">sprite editor</a>.</li>
+  </ul>
+
+</div>
   <h2 id="h">单层FX</h2>
   <p>虽然您可以创建一个FX层以将滤镜应用到多个层，但您也可以通过<a href="../../IDE_Tools/The_Inspector.htm">检查器</a>将滤镜仅分配给一个特定的层。</p>
   <p>选择房间层将允许您在检查器中对其应用滤镜/效果，如果该层是非FX层(例如，实例层、资源层等)。则该效果将仅应用于该层，而不会应用于其下的任何其他层。</p>

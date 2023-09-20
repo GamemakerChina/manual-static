@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>instance_create_depth</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,7 +81,10 @@
   <h1>instance_create_depth</h1>
   <p>使用此函数，可以在房间内任意给定点和指定深度创建新的指定对象实例。深度可以是任何值，其中深度越低，"越靠近"摄像机，而深度越高，则越远，那么深度-200处的实例将绘制在深度+300(例如)处的实例上。</p>
   <p>请注意，此函数实际上将为实例创建房间层，因为所有实例<i>必须</i>位于房间的某个层上，但因为这是<i>托管的</i>层(即：不是您通过代码或在房间中创建的层，而是<span data-keyref="GameMaker Name">GameMaker</span>已自动创建的层)。您无法访问该层，<a href="Instance_Variables/layer.htm"><span class="inline">层</span></a>实例变量将返回-1。</p>
-  <p class="note"><span class="important">重要</span>最小和最大层深度为-16000到16000。放置在该范围之外的深度上的任何内容都不会被绘制<b>，尽管所有事件仍将正常运行。</b></p>
+  <div data-conref="../../../../assets/snippets/Note_layer_depth_range.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;There is a minimum and maximum layer depth of&nbsp;<span data-keyref="Const_Depth_Min">-16000</span> to <span data-keyref="Const_Depth_Max">16000</span>. Anything placed on a layer outside that range will not be drawn although all events will still run as normal for anything on the layer.</p>
+
+</div>
   <p>此函数返回新实例的<a href="Instance_Variables/id.htm"><span class="inline">id</span></a>，然后可以将其存储在变量中并用于访问该实例。请注意，该函数还将在<a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">之前调用正在创建的</a>实例的<i>创建事件</i>，继续调用该函数的事件的代码或操作。</p>
   <h2>可选结构</h2>
   <p>最后一个参数<span class="inline2">var_struct</span>是可选的，它采用一个包含新实例的其他变量的结构。</p>
@@ -128,7 +131,7 @@
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span></p>
   <p>&nbsp;</p>
   <h4>示例1：</h4>
   <p class="code">var inst = instance_create_depth(x, y, -100, obj_Bullet);<br>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>DS Maps</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,10 +78,16 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>DS 映射</h1>
-  <p>映射数据结构非常有用，因为它允许您存储<b>密钥</b>和<b>值</b>对。例如，游戏中的一个角色可以有一定数量的不同项目(<i>项目</i>)，每个项目都可以有一定数量的项目(<i>值</i>)，就像Rpg中的一样，在Rpg中可以有10种保健药水、5种法力药水和100种黄金。地图在一个位置将这些对保持在一起，您可以向地图添加对，并使用一些简单的函数搜索与某些关键点对应的值。然而，在使用地图之前，您应该了解一些关于地图的知识！地图<i>没有</i>以任何(可识别)方式排序，这意味着要找到某个密钥，您可能必须遍历整个过程(<b>非常</b>慢)。也无法保持两个相同的关键点，也无法为一个关键点指定两个值。</p>
+  <h1 id="h"><span data-field="title" data-format="default">DS Maps</span></h1>
+  <p>The DS map data structure lets you store <b>key</b> and <b>value</b> pairs, making it an exceptionally useful one.</p>
+  <p>For example, a character in your game can have a quantity of different items (<i>keys</i>) and for each individual item he can have a number of them (<i>values</i>), like in an RPG where you can have 10 health potions, 5 mana potions and 100 gold. Maps maintain such pairs all together in one place. You can add pairs to the map, search for the value corresponding to certain keys and use some simple functions.</p>
+  <p>There are a couple of things you should know about maps before you use them, however! Maps are <i>not</i> sorted in any (recognisable) way, meaning that to find a certain key you may have to iterate through the whole thing (which is <b>very</b> slow). There is also no way to hold two keys that are the same, nor can you assign one key two values.</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;推荐使用<a href="../../../GML_Overview/Structs.htm">结构</a>而不是DS 映射，因为它们具有相似的功能，更易于使用，并且会自动进行垃圾回收。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 与所有动态资源一样，数据结构会占用内存，因此在不再需要时应<b>始终</b>销毁以防止内存泄漏，因为内存泄漏会降低游戏速度并最终导致游戏崩溃。</p>
+  <div data-conref="../../../../assets/snippets/Note_Tip_Map_Key_Can_Be_Any.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip">TIP</span></span>&nbsp;The key isn't limited to strings and can be of any&nbsp;type, including a&nbsp;<a href="../../../GML_Overview/Structs.htm#struct">struct</a>.</p>
+
+</div>
   <p>除了下面列出的特定函数外，您还可以使用<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>(称为<i>访问器</i>)来添加或修改DS映射的内容。此存取器类似于1D阵列，具有以下语法：</p>
   <p class="code">map_index[? key]</p>
   <p>您可以从<a href="../../../GML_Overview/Accessors.htm">访问器</a>的GML 概述页面中找到更多信息和示例。</p>

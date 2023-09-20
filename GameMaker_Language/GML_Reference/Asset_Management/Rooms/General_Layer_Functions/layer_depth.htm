@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>layer_depth</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,14 +78,14 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>layer_depth</h1>
-  <p>此函数可用于更改给定层的<b>深度</b>，更改其内容将呈现到屏幕的顺序。提供层 ID(使用<a href="layer_create.htm"><span class="inline">layer_create()</span></a>创建层时获得的 ID)或层名称(作为字符串，这将产生性能影响)，然后给出新深度以将其设置为(整数值从 16000 到 16000)。层深度被定义为当"远离"相机时较高，而当"更靠近"相机时较低，因此，如果您有三个具有深度的层(100、0、100)，则层将按100、0、-100的顺序绘制，因此"顶部"层(即，最接近相机视图的层，因此在其它所有地方上绘制)将是具有-100深度的层。</p>
+  <h1><span data-field="title" data-format="default">layer_depth</span></h1>
+  <p>This function can be used to change the <b>depth</b> of the given layer, changing the order in which its contents will be rendered to the screen. You supply the layer ID (which you get when you create the layer using <a href="layer_create.htm"><span class="inline">layer_create()</span></a>) or the layer name (as a string - this will have a performance impact) and then give the new depth to set it to (an integer value from&nbsp;<span data-keyref="Const_Depth_Min">-16000</span> to <span data-keyref="Const_Depth_Max">16000</span>). The layer depth is defined as being higher when "further away" from the camera and lower when "closer" to the camera, so if you have three layers with depths -100, 0, 100, the layers will draw in the order 100, 0, -100, so that the "top" layer (i.e., the closest to the camera view and so drawn over everything else) will be the layer with the -100 depth.</p>
   <p>下图显示了层的深度工作原理示意图：</p>
-  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">请注意，您可以随时使用函数<a href="layer_get_depth.htm"><span class="inline">layer_get_depth()</span></a>检查层的深度。 同时请注意，最小和最大层深度为-16000至16000，超出这些深度<b>的任何内容都不会呈现</b>。 如果需要超出该范围的深度，则需要使用函数<a href="layer_force_draw_depth.htm"><span class="inline">layer_force_draw_depth()</span></a>。</p>
+  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">Note that you can check the depth of a layer at any time using the function <a href="layer_get_depth.htm"><span class="inline">layer_get_depth()</span></a>. Also note that the minimum and maximum layer depths are&nbsp;<span data-keyref="Const_Depth_Min">-16000</span> to <span data-keyref="Const_Depth_Max">16000</span>, and anything outside of those depths <b>will not be rendered</b>. If you require a depth outside of that range then you will need to use the function <a href="layer_force_draw_depth.htm"><span class="inline">layer_force_draw_depth()</span></a>.</p>
   <p>请记住，修改层的深度可能会改变哪些<a href="../../../../../The_Asset_Editors/Room_Properties/Filters_and_Effects.htm">过滤器&amp;效果</a>应用于它，因为将深度更改为低于FX层的深度将不再将其效果应用于该层。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">layer_depth(layer_id, depth)</p>
+  <p class="code"><span data-field="title" data-format="default">layer_depth</span>(layer_id, depth)</p>
   <table>
     <tbody>
       <tr>
@@ -115,7 +115,6 @@
     &nbsp; &nbsp; layer_depth(layer, -100);<br>
     }</p>
   <p>上面的代码获取运行代码的实例所在的层的深度，如果它不是-100，则深度被设置为-100。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

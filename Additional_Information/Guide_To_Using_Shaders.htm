@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Guide To Using Shaders</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>着色器使用指南</h1>
+  <h1><span data-field="title" data-format="default">Guide To Using Shaders</span></h1>
   <p>着色器通常用于在游戏中创造漂亮的图像效果。它们也是<span data-keyref="GameMaker Name">GameMaker</span>提供的最高级功能之一，所以在开始使用它们之前，有必要对编程以及<span data-keyref="GameMaker Name">GameMaker</span>的工作原理有一个基本的了解。</p>
   <p>最初，它们被创造出来是为了给照明提供阴影(因此得名)，但现在它们被用来产生各种各样的效果。Shader代码类似于常规代码，但它(几乎总是)由GPU而不是CPU执行。这种差异有它自己的一组规则和限制，但我们将在后面讨论这些。</p>
   <p>每个着色器都由两个独立的组件组成:<strong>顶点着色器</strong>和<strong>片段着色器</strong>(也称为<strong>像素着色器</strong>)。让我们从顶点着色器开始。每个精灵都由一个矩形组成，但计算机喜欢绘制三角形，所以这些矩形被分成两个三角形(有时称为<em>quad</em>)。这样每个精灵就有6个顶点(角)，但其中有两个是相同的，所以我们只需要关心4个。现在，假设我们有一个for循环，它遍历每个顶点并为每个顶点着色器执行内部的代码。这允许我们在将顶点位置和颜色传递给片段着色器之前更改它，因为顶点着色器会在更早的时候执行。</p>
@@ -86,7 +86,7 @@
   <p><img alt="Shader Vertices" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Vertices.gif">对于片段着色器，你可以想象与之前相同的循环，但这一次它会遍历你的精灵中的每一个像素，为你提供像素的位置和颜色等信息。在片段着色器代码中，您可以执行操作和计算来确定像素的颜色，以获得您想要的效果。例如，如果你想要一个着色器将你的精灵变成黑色和白色，那么你就需要计算每个像素所需要的灰色阴影来创建效果。</p>
   <p>它看起来像这样:</p>
   <p><img alt="Shader Fragments" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Fragments.gif">着色器代码通常由GPU执行的原因是它在这方面效率更高。现代的cpu通常有2到8个核。每个核心一次可以执行一个任务，所以通过利用多个核心，我们可以同时执行这么多任务。相比之下，现代gpu可以同时执行数千甚至数万个任务。这对着色器很有帮助，因为我们可以同时执行数千像素的着色器代码。限制在于我们只能访问精灵的初始状态，所以我们不知道对其他像素所做的任何修改，因为我们不能确定代码是否在它们上运行。</p>
-  <p class="note"><strong>注意</strong>:<span data-keyref="GameMaker Name">GameMaker</span>允许用户使用<strong>GLSL</strong> (OpenGL Shader语言)、<strong>HLSL</strong>(高级Shader语言，在使用DirectX时使用)和<strong>GLSL ES</strong> (GLSL的一个子集，在移动设备中很常见)编写着色器。这里我们使用&nbsp;<strong>GLSL ES</strong>作为着色器语言，因为它是一个跨目标平台提供最佳兼容性的语言。一般来说，除非你有非常特殊的需求，并且了解其他着色器语言的局限性，否则这是你总是想要使用的。这三种语言之间的数学和技术应该是相似的，除了一些语法差异。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> allows users to write shaders in <strong>GLSL</strong> (OpenGL Shader Language), <strong>HLSL</strong> (High-level Shader Language, used when working with DirectX), and <strong>GLSL ES</strong> (a subset of GLSL which is common in mobile devices). Here we are&nbsp;using&nbsp;<strong>GLSL ES</strong> as the shader language since it’s the one that provides the best compatibility across target platforms. Generally this is the one you always want to use unless you have very specific needs and understand the limitation of the other shader languages. The math and techniques should be similar between all three languages however, save for a few syntax differences here and there.</p>
   <p>顶点着色器首先被执行，正如我们上面解释的，它处理<strong>顶点</strong>。它用于计算位置、法线和纹理坐标。这些着色器在2D中并不是特别有用，因为每个精灵通常都是一个正方形，但它可以用来做一些倾斜，缩放等……它在3D中对照明计算和网格变形更加有用。片段着色器更有趣，也是我们将在这里讨论的主要内容，因为片段着色器是我们获取纹理信息的地方，可以调整图像中每个像素的最终颜色。</p>
   <p>&nbsp;</p>
   <h2>着色器变量</h2>
@@ -195,7 +195,7 @@
       }</p>
     <p class="dropspot">这将给我们带来以下结果:</p>
     <p class="dropspot"><img alt="Initial Colour Overlay Block" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay_Block.gif">我们需要记住的是，每个精灵最终都是一个矩形，所以除非我们考虑透明度 -我们还没有考虑 -这是我们将得到的结果。</p>
-    <p class="note"><strong>注意</strong>: 在上图中，矩形的大小发生了变化，因为当基本精灵被GameMaker放在纹理页面上时，它周围的“空”空间被自动裁剪了，所以组成它的每个动画帧的三角形是不同的大小，以适应帧的裁剪大小。如果你禁用了这个选项，那么你只会在屏幕上看到一个静止的红色方块。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;In the image above, the rectangle changes size&nbsp;because the base sprite has had the "empty" space around it cropped automatically when it was placed on the texture page by GameMaker, so each animation frame the triangles that make it up are different sizes to fit the cropped size of the frame. If you disable this option, then you'd simply have a motionless red square on the screen.</p>
     <p class="dropspot">上面我们提到了 <span class="inline">texture2D</span> 函数，我们将使用它来获取我们正在处理的像素的颜色并从中获取透明度。 <span class="inline">texture2D</span> 的返回值是一个 <span class="inline">vec4</span>，其中组件按顺序为红色、绿色、蓝色和 透明度。 我们可以通过在变量名称后放置一个句点后跟 <span class="inline">a</span> 或 <span class="inline">w</span> 来访问 alpha 通道。 这分别对应于 RGBA 和 XYZW。</p>
     <p class="dropspot">这是更新后的代码:</p>
     <p class="code">// Color Overlay Fragment Shader<br>
@@ -347,7 +347,7 @@
       _speed = 1.0;</p>
     <p class="dropspot">我们还需要每帧增加时间，所以在步事件中我们添加:</p>
     <p class="code">// Step Event<br>
-      _time += 1 / room_speed;</p>
+      _time += 1 / game_get_speed(gamespeed_fps);</p>
     <p class="dropspot">我们现在去绘制事件把这些uniform送到着色器:</p>
     <p class="code">// Draw Event<br>
       shader_set(shdrRainbow);<br>

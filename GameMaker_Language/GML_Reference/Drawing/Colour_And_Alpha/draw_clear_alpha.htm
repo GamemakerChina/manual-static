@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>draw_clear_alpha</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>draw_clear_alpha</h1>
+  <h1 id="h">draw_clear_alpha</h1>
   <p>此函数可用于使用给定的颜色清除整个屏幕，并且目标的Alpha分量设置为您已设置的值-此函数在工作时<i>不会</i>执行任何混合，但是任何后续混合操作都可以设置为使用已设置的目标Alpha。这仅用于实例的绘制事件(如果在任何其他事件中使用，则不会显示)，并且对于在新创建<a href="../Surfaces/Surfaces.htm">表面</a>时清除这些表面也非常有用。</p>
   <p>值得注意的是，当使用 HTML5 模块时，您可以使用此函数使画布背景透明，这将允许主机 HTML 中使用的任何图像在游戏运行时被看到。要实现此效果，您必须首先进入房间编辑器并从<b>房间编辑器</b>中删除任何<a href="../../../../The_Asset_Editors/Rooms.htm">背景图层</a>，然后取消勾选<b>视图属性</b>中的<a href="../../../../The_Asset_Editors/Room_Properties/Room_Properties.htm">清除视图背景</a>选项。最后，你需要制作一个新的物体，将其放置在游戏的第一个房间，并为其分配一个非常高的深度(例如，10000)。然后在<b>Pre Draw</b>事件中使用此函数将画布Alpha设置为您希望的颜色和透明度。</p>
   <p>&nbsp;</p>
@@ -87,17 +87,20 @@
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>col</td><td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td>col</td>
+        <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
         <td>将清除屏幕的颜色</td>
-     </tr>
+      </tr>
       <tr>
-        <td>alpha</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>alpha</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要清除屏幕的颜色的透明度</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>

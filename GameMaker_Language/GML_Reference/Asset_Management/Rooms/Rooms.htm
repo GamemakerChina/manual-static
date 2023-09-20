@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Rooms</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,8 +78,8 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>房间</h1>
-  <p>房间是在<a href="../../../../The_Asset_Editors/Rooms.htm">GameMaker</a><span data-keyref="GameMaker Name">中的</span>房间编辑器<span>中创建的，</span>是游戏中发生一切的地方。你必须在任何游戏中至少有一个房间来运行它，但你可能需要更多，这取决于游戏的类型和你如何构建你的项目。本节包含与房间相关的所有通用GML函数和变量，用于获取有关房间的信息以及设置房间中的某些属性。</p>
+  <h1><span data-field="title" data-format="default">Rooms</span></h1>
+  <p>Rooms are created in <a href="../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a>&nbsp;in <span data-keyref="GameMaker Name">GameMaker</span><span>&nbsp;and&nbsp;</span>are where everything happens in your game. You must have at least one room in any game for it to run, but you may need many more depending on the type of game and how you structure your project. This section has all the general GML functions and variables related to rooms and for getting information about them as well as for setting certain properties within them.</p>
   <p>以下<a href="../../../GML_Overview/Variables/Global_Variables.htm">全局变量</a>和函数可用于获取有关任何给定房间的基本信息：</p>
   <ul class="colour">
     <li><a href="room_first.htm">room_first</a></li>
@@ -87,12 +87,15 @@
     <li><a href="room_next.htm">room_next</a></li>
     <li><a href="room_previous.htm">room_previous</a></li>
     <li><a href="room.htm">room</a></li>
-    <li><a href="room_speed.htm">room_speed</a></li>
+    <li><a href="room_speed.htm">room_speed</a>&nbsp;<span data-conref="../../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></li>
     <li><a href="room_height.htm">room_height</a></li>
     <li><a href="room_width.htm">room_width</a></li>
     <li><a href="room_persistent.htm">room_persistent</a></li>
   </ul>
-  <p class="note"><span class="note">注意</span>上面列出的变量在脚本中无效，因为脚本在加载第一个房间之前执行。<br><br>这仅适用于在脚本根处编写的代码，但不适用于在脚本中创建的函数，因为这些函数可以在游戏中的任何时间执行。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;The variables listed above will not be valid in a script, as scripts are executed before the first room is loaded.<br>
+    <br>
+    This only applies to code written at the root of a script, but not to functions created inside scripts, as those functions can be executed at any time during the game.
+  </p>
   <p>您还可以使用以下函数来获取当前房间的名称(如<a href="../../../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中所定义)以及在房间之间移动：</p>
   <ul class="colour">
     <li><a href="room_get_name.htm">room_get_name</a></li>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>AudioEffect Struct</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Bart Teunis">
@@ -87,9 +87,10 @@
   <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;这是一个内置结构，因此<span data-keyref="GameMaker Name">GameMaker</span>对其内容有更多控制。 这意味着对其成员的访问是有限的，如果分配了无效的值，一些值可能会自动改变。 你可能还需要通过&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>提供的内置函数来创建和销毁这个结构，而不是通过<span class="inline2"><a href="../../../../GML_Overview/Language_Features/new.htm">new</a></span>&nbsp;和<span class="inline2"><a href="../../../../GML_Overview/Language_Features/delete.htm">delete</a></span>操作符。</p>
 
 </div>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;All gain parameters are <em>linear</em> gains and range from 0 to infinity; values from 0 to 1 indicate a decrease in gain, values from 1 to infinity&nbsp;an increase. They can be converted to dB and back using&nbsp;<span class="inline3_func"><a href="../lin_to_db.htm">lin_to_db</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="../db_to_lin.htm">db_to_lin</a></span>.</p>
   <p>这种类型的所有结构都有一个<span class="inline2">type</span>和<span class="inline2">bypass</span>属性。 所有其他属性都是特定于某些类型的效果。</p>
   <p>下面是一个结构成员的列表，取决于创建的效果类型。</p>
-  <h2 id="h5">混响(<a href="AudioEffectType.htm#h">AudioEffectType.Reverb1</a>)</h2>
+  <h2 id="reverb">混响(<a href="AudioEffectType.htm#h">AudioEffectType.Reverb1</a>)</h2>
   <table>
     <colgroup>
       <col style="width:33.33%">
@@ -129,7 +130,7 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h1">延迟 (<a href="AudioEffectType.htm#h1">AudioEffectType.Delay</a>)</h2>
+  <h2 id="delay">延迟 (<a href="AudioEffectType.htm#h1">AudioEffectType.Delay</a>)</h2>
   <table>
     <colgroup>
       <col style="width:33.33%">
@@ -169,7 +170,7 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h">失真 (<a href="AudioEffectType.htm#h2">AudioEffectType.Bitcrusher</a>)</h2>
+  <h2 id="distortion">失真 (<a href="AudioEffectType.htm#h2">AudioEffectType.Bitcrusher</a>)</h2>
   <table>
     <colgroup>
       <col style="width:33.33%">
@@ -214,7 +215,7 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h4">低通滤波器(<a href="AudioEffectType.htm#h3">AudioEffectType.LPF2</a>)</h2>
+  <h2 id="lpf">低通滤波器(<a href="AudioEffectType.htm#h3">AudioEffectType.LPF2</a>)</h2>
   <table>
     <colgroup>
       <col style="width:33.33%">
@@ -249,7 +250,7 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h3">高通滤波器 (<a href="AudioEffectType.htm#h4">AudioEffectType.HPF2</a>)</h2>
+  <h2 id="hpf">高通滤波器 (<a href="AudioEffectType.htm#h4">AudioEffectType.HPF2</a>)</h2>
   <table>
     <colgroup>
       <col style="width:33.33%">
@@ -284,7 +285,7 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h2">增益 (<a href="AudioEffectType.htm#h5">AudioEffectType.Gain</a>)</h2>
+  <h2 id="gain">增益 (<a href="AudioEffectType.htm#h5">AudioEffectType.Gain</a>)</h2>
   <table>
     <colgroup>
       <col style="width:33.33%">
@@ -314,7 +315,7 @@
       </tr>
     </tbody>
   </table>
-  <h2 id="h6">颤音 (<a href="AudioEffectType.htm#h6">AudioEffectType.Tremolo</a>)</h2>
+  <h2 id="tremolo">颤音 (<a href="AudioEffectType.htm#h6">AudioEffectType.Tremolo</a>)</h2>
   <table>
     <colgroup>
       <col style="width:33.33%">
@@ -356,6 +357,259 @@
         <td>shape</td>
         <td><a href="AudioLFOType.htm">AudioLFOType Enum</a></td>
         <td>LFO 应输出的波形形状。</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="eq">EQ (<a href="AudioEffectType.htm#h7">AudioEffectType.EQ</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h7">AudioEffectType.EQ</a>&nbsp;for EQ.</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td>locut</td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of type&nbsp;<a href="AudioEffectType.htm#h4">AudioEffectType.HPF2</a>.</span></td>
+      </tr>
+      <tr>
+        <td>loshelf</td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of<span> type</span> <a href="AudioEffectType.htm#h8">AudioEffectType.LoShelf</a>.</span></td>
+      </tr>
+      <tr>
+        <td>eq1</td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of<span> type</span> <a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>.</span></td>
+      </tr>
+      <tr>
+        <td><span>eq2</span></td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of<span> type</span> <a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>.</span></td>
+      </tr>
+      <tr>
+        <td><span>eq3</span></td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of<span> type</span> <a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>.</span></td>
+      </tr>
+      <tr>
+        <td><span>eq4</span></td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of<span> type</span> <a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>.</span></td>
+      </tr>
+      <tr>
+        <td>hishelf</td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of<span> type</span> <a href="AudioEffectType.htm#h10">AudioEffectType.HiShelf</a>.</span></td>
+      </tr>
+      <tr>
+        <td>hicut</td>
+        <td><a href="AudioEffect.htm">AudioEffect Struct</a></td>
+        <td><span>A filter of<span> type</span> <a href="AudioEffectType.htm#h3">AudioEffectType.LPF2</a>.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="peakeq">PeakEQ (<a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>&nbsp;for the Peak EQ Filter.</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td>freq</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>The frequency (in Hz) of the filter [range: 10 - 20,000]*. This represents the centre frequency of the peak.<br>
+          <br>
+          <span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;*The upper limit is either 20,000 or half of the audio device's sample rate, whichever is lower.
+        </td>
+      </tr>
+      <tr>
+        <td>q</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span></span> The quality factor of the filter [range: 1.0 - 100.0]. This is a dimensionless parameter which narrows the peak created, so that a smaller range of frequencies around the centre frequency are affected. The greater the value, the narrower the peak.</td>
+      </tr>
+      <tr>
+        <td>gain</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The linear gain applied to the centre frequency [range: 0.0 - inf]. Frequencies around the centre frequency will also have a gain applied, which reduces depending on the quality factor and distance from the centre frequency. A gain lower than 1 represents a decrease in volume.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="hishelf">HiShelf (<a href="AudioEffectType.htm#h10">AudioEffectType.HiShelf</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h10">AudioEffectType.HiShelf</a>&nbsp;for the&nbsp;HiShelf&nbsp;Filter.</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td>freq</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The frequency (in Hz) of the filter [range: 10 - 20,000]*. This represents the midpoint of the shelf's slope</span>.<br>
+          <br>
+          <span>Frequencies higher than this value will have a constant gain applied.</span><br>
+          <br>
+          <span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;*The upper limit is either 20,000 or half of the audio device's sample rate, whichever is lower.
+        </td>
+      </tr>
+      <tr>
+        <td>q</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span></span> The quality factor of the filter [range: 1.0 - 100.0]. <span>This is a dimensionless parameter which increases the steepness of the filter's slope, at the cost of some resonance at frequencies around the top of the shelf's slope. The greater the value, the steeper the slope, and the greater the resonance.</span></td>
+      </tr>
+      <tr>
+        <td>gain</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span><span>The linear gain applied to frequencies in the shelf [range 0.0 - inf]</span>.<span> A gain lower than 1 represents a decrease in volume.</span></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="loshelf">LoShelf (<a href="AudioEffectType.htm#h8">AudioEffectType.LoShelf</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h8">AudioEffectType.LoShelf</a>&nbsp;for the&nbsp;LoShelf&nbsp;Filter.</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td>freq</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The frequency (in Hz) of the filter [range: 10 - 20,000]*. This represents the midpoint of the shelf's slope</span>.<br>
+          <br>
+          <span>Frequencies lower than this value will have a constant gain applied.</span><br>
+          <br>
+          <span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;*The upper limit is either 20,000 or half of the audio device's sample rate, whichever is lower.
+        </td>
+      </tr>
+      <tr>
+        <td>q</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span></span> The quality factor of the filter [range: 1.0 - 100.0]. <span>This is a dimensionless parameter which increases the steepness of the filter's slope, at the cost of some resonance at frequencies around the top of the shelf's slope. The greater the value, the steeper the slope, and the greater the resonance.</span></td>
+      </tr>
+      <tr>
+        <td>gain</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span><span>The linear gain applied to frequencies in the shelf [range 0.0 - inf]</span>.<span> A gain lower than 1 represents a decrease in volume.</span></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Compressor (<a href="AudioEffectType.htm#h11">AudioEffectType.Compressor</a>)</h2>
+  <table>
+    <colgroup>
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+      <col style="width:33.33%">
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>变量</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
+        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h11">AudioEffectType.Compressor</a>&nbsp;for a Compressor effect.</td>
+      </tr>
+      <tr>
+        <td><span>bypass</span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span>效果是否应该被绕过<span>(忽略)</span></span></td>
+      </tr>
+      <tr>
+        <td>ingain</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The gain scalar applied to the input signal [range: 0 - inf]. This allows audio to be pushed into the compression threshold.</span></td>
+      </tr>
+      <tr>
+        <td><span>threshold</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span></span><span>The amplitude level above which the compressor will begin to apply gain reduction [range: 0.001 - 1].</span></td>
+      </tr>
+      <tr>
+        <td><span>ratio</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The ratio by which audio that exceeds the threshold is reduced [range: 1 - inf]. The compression ratio applied is<span>&nbsp;</span></span><em>ratio : 1</em><span>.</span></td>
+      </tr>
+      <tr>
+        <td><span>attack</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The responsiveness (in seconds) of the compressor in compressing audio above the threshold [range: 0.001 - 0.1].</span></td>
+      </tr>
+      <tr>
+        <td><span>release</span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The responsiveness (in seconds) of the compressor in stopping compressing audio below the threshold [range: 0.01 - 1].</span></td>
+      </tr>
+      <tr>
+        <td>outgain</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span>The gain scalar applied to the output signal [range: 0 - inf]. This allows compensating for the overall level reduction caused by the compression process.</span></td>
       </tr>
     </tbody>
   </table>

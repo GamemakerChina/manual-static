@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Particles</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -89,7 +89,7 @@
   </ul>
   <p>尽管粒子是创建效果的绝佳工具，但它们确实带有某些限制和良好做法，这些限制和做法需要遵循，除非您希望游戏受到低性能甚至潜在崩溃的影响：</p>
   <ul class="colour">
-    <li>粒子系统、粒子和发射器占用内存，因此您应该非常小心地使用它们，因为它们很容易导致内存泄漏，从而降低速度并最终导致游戏崩溃。应对这种情况的一种方法是使<i>全局</i>系统具有在游戏开始时定义并在结束时删除的所有内容，但如果需要动态系统，则每个粒子和发射器(以及系统本身)都应在不需要的时候被销毁。</li>
+    <li>粒子系统，粒子和发射器占用内存，因此您应该非常小心如何使用它们，因为它很容易导致内存泄漏，这将减慢并最终导致游戏崩溃。应对这个问题的一种方法是有一个<i>全局</i>系统，在游戏开始时定义所有内容，并在结束时删除，但如果你想要一个动态系统，那么每个粒子和发射器(以及系统本身)都应该在不再需要的时候被销毁。</li>
     <li>CPU 上的粒子可能快而轻，但它们仍然需要 <i> 一些 </i> 处理，因此不应该有 40,000 个粒子同时在屏幕上爆炸。将它们限制在达到特定效果所必需的范围内，而不是更多。</li>
     <li>如果定义自己的粒子精灵，而不是使用14个包含的精灵中的一个，则应该尽量使它们尽可能小，以达到所需的效果。</li>
     <li>粒子<i>不会</i>与任何东西相互作用。如果需要它们与用户或游戏中的任何其他实例进行任何类型的交互，则应将使用实例视为粒子纯粹是图形。</li>
@@ -99,13 +99,15 @@
   </ul>
   <p>使用<span data-keyref="GameMaker Name">GameMaker</span>在游戏中创建粒子的最简单方法是使用内置的效果机制。这些效果是使用内部粒子系统创建的，该系统基本上是一种非常快速的仅绘制图形效果的方法，因此在使用这些函数时，您不必担心所有细节(如内存管理)。您只需指定效果的类型、必须创建效果的位置、所需的大小以及最终的颜色，然后让<span data-keyref="GameMaker Name">GameMaker</span>完成所有工作。</p>
   <div data-conref="../../../../assets/snippets/Note_tip_use_particle_system_editor.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span> 如果您喜欢使用更直观的方法创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码</span>提供的大量功能，也可以使用<span data-keyref="Type_Asset_ParticleSystem">粒子系统编辑器<a target="_blank" href="../../../../../The_Asset_Editors/Particle_Systems.htm">创建</a></span>粒子系统资源<a href="../../../../The_Asset_Editors/Particle_Systems.htm"></a>。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您喜欢更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，则还可以使用 <a href="../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。此外，还可以使用编辑器的 <strong> 复制 GML 到剪贴板 </strong><img class="icon" src="../../../../assets/Images/Icons/Icon_GML_To_Clipboard.png" title=""> 为其生成 <span data-keyref="GML_Code">GML 代码 </span>。</p>
 
 </div>
-  <p>以下函数用于创建内置粒子效果：</p>
+  <p>以下函数可用于创建内置粒子效果：</p>
   <ul class="colour">
-    <li><a href="effect_create_below.htm">effect_create_below</a></li>
-    <li><a href="effect_create_above.htm">effect_create_above</a></li>
+    <li><a href="effect_create_depth.htm">effect_create_depth</a></li>
+    <li><a href="effect_create_layer.htm">effect_create_layer</a></li>
+    <li><a href="effect_create_below.htm">effect_create_below</a>&nbsp;<span data-conref="../../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></li>
+    <li><a href="effect_create_above.htm">effect_create_above</a>&nbsp;<span data-conref="../../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已删除</span></span></li>
     <li><a href="effect_clear.htm">effect_clear</a></li>
   </ul>
   <p>即使这些效果在范围和自定义上都有限制，但它们仍然可以用来创造一些简单、伟大的效果，而且只需要很少的努力。例如，通过在每个步骤中在移动的导弹下方创建一小段灰色烟雾，可以创建一条非常令人信服的烟雾轨迹，因此即使您是粒子专家，也需要记住这些效果的存在，因为它们仍然可以为您节省一些时间。</p>

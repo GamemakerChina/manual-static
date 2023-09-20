@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.1.0_27";
+    gTopicId = "8.2.2.1.0_29";
   
 //]]></script>
 
@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>variable_clone</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="">
@@ -80,7 +80,7 @@
 
   <h1><span data-field="title" data-format="default">variable_clone</span></h1>
   <p>此函数克隆您传递给它的值，并返回新的克隆。</p>
-  <p>它克隆嵌套的结构和数组，直到给定深度(默认情况下为 128)，您可以通过提供可选的 <span class="inline2">depth</span> 参数来覆盖该深度。</p>
+  <p>It clones nested structs and arrays up to a given depth (<span data-keyref="Const_Data_Clone_Depth">128</span> by default), which you can override by providing the&nbsp;optional <span class="inline2">depth</span> parameter.</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 内置的<a href="../Data_Structures/Data_Structures.htm">数据结构</a>和<a href="../Asset_Management/Instances/Instances.htm">实例</a>是<em>未</em>克隆的，对于此类型的变量写入实际值(分别为数据结构 ID 或实例 ID)。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -105,7 +105,7 @@
       <tr>
         <td>depth</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;克隆变量的最大深度级别，如果这是嵌套结构的话。默认值为 128，这是可能的最大值。</td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;The maximum depth level to clone the variable, in case this is e.g. a nested struct. The default is <span data-keyref="Const_Data_Clone_Depth">128</span>, the maximum possible value.</td>
       </tr>
     </tbody>
   </table>

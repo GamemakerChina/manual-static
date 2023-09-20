@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>buffer_create_from_vertex_buffer</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -119,8 +119,8 @@
     <li>最多32位的浮点数应与4字节对齐。</li>
     <li>最多64位的浮点数应与8个字节对齐。</li>
   </ul>
-  <p class="note"><b>注意</b>: 顶点缓冲区是1字节对齐的，但是您可以根据您想要如何处理数据来创建具有任何对齐方式的缓冲区，因为顶点数据只是进入缓冲区的原始内存副本。</p>
-  <p class="note"><b>注意</b>：当您不再需要防止内存泄漏时，您需要从内存中删除任何像这样的动态创建的资源，这一点很重要，因此当您完成创建的缓冲区时，您应该使用<span style="font-size:1px;"><a href="buffer_delete.htm"><span class="inline">buffer_delete()</span></a></span>来再次释放它。另请注意，用于创建新缓冲区的顶点缓冲区也没有从内存中移除，当不再需要它时，您应该使用函数<span style="font-size:1px;"><a href="../Drawing/Primitives/vertex_delete_buffer.htm"><span class="inline">vertex_delete_buffer()</span></a></span></p>
+  <p class="note"><b><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> Vertex buffers are 1 byte aligned, but you can create the buffer with any alignment depending on how you want to treat the data, as the vertex data is simply a raw memory copy into the buffer.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;It's important that you remove any dynamically created resources like this from memory when you no longer need them to prevent memory leaks, so when you are finished with the buffer that you have created you should free it up again using <span style="font-size:1px;"><a href="buffer_delete.htm"><span class="inline">buffer_delete()</span></a></span>. Also note that the vertex buffer used to create the new buffer is not removed from memory either and you should use the function <span style="font-size:1px;"><a href="../Drawing/Primitives/vertex_delete_buffer.htm"><span class="inline">vertex_delete_buffer()</span></a></span> when it is no longer required.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">buffer_create_from_vertex_buffer(vertex_buffer, type, alignment)</p>

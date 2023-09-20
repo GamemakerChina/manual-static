@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>physics_mass_properties</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -89,33 +89,38 @@
   <h3>旋转惯性</h3>
   <p><span>惯性值定义此实例对其旋转速度变化的抵抗力。惯性越高，阻力越大，惯性越低，阻力越小。</span></p>
   <p>旋转惯性不能为负值。</p>
-  <p class="note"><span class="note">注意</span> 此函数不会为单个装置设置质量和惯性，而是为整个启用了物理的实例设置质量和惯性，无论有多少个装置绑定到它。</p>
-  <p class="note"><span class="note">注意</span> 只有在必要时才应使用此函数，因为物理模拟旨在根据固定装置的密度和尺寸优化质量和惯性。更改这些值可能会产生意外结果。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function does not set mass and inertia for individual fixtures, but rather for the whole physics enabled instance, no matter how many fixtures are bound to it.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function should only be used when necessary, as the physics simulation is designed for the mass and inertia to be optimal based on the density and size of the fixture. Changing these values may produce unexpected results.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">physics_mass_properties(mass, local_center_x, local_center_y, inertia)</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>mass</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>mass</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>希望装置具有的新质量。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>local_center_x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>local_center_x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>新的质心的局部 X 坐标。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>local_center_y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>local_center_y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>新的质心的局部 Y 坐标。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>inertia</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>inertia</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>装置的旋转惯量。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>

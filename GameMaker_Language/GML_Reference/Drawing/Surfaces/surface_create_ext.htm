@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>surface_create_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,15 +79,16 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>surface_create_ext</h1>
-  <p>此函数允许您将表面附加到网页中已存在的画布元素，这意味着您可以有效地拆分游戏的各个部分，以便在页面中的各个不同位置绘制。为此，<i>必须</i>在游戏的<span class="inline">*. html</span>页面中正确定义画布元素，并使用与要创建的表面相对应的正确大小和名称。因此，您将拥有"main"画布，然后是次表面画布元素，这些元素将使用此函数指定给正确的表面。下图是如何设置具有三个画布元素的页面的示例：</p>
+  <h1><span data-field="title" data-format="default">surface_create_ext</span></h1>
+  <p>This function allows you to attach a surface to a canvas element that already exists in your web page, meaning that you can effectively split up portions of your game to be drawn at various different places within the page.</p>
+  <p>To that end, you <i>must</i> have defined the canvas element correctly within the <span class="inline">*.html</span> page of your game using the correct sizes and names that correspond to the surfaces you wish to create. So, you would have your "main" canvas, and then your secondary surface canvas elements, which will be assigned using this function to the correct surfaces. The following image is an example of how a page with three canvas elements would be set up:</p>
   <p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_1.png">页面布局可能很复杂，尤其是如果您希望所有元素都正确排列，但创建布局的硬任务完成后，您可以使用<span class="inline">游戏选项</span>的<a href="../../../../Settings/Game_Options/HTML5.htm">HTML5选项卡</a>将此<a href="../../../../Settings/Game_Options.htm">html</a>文件添加为游戏的默认页面文件。接下来您应该做的是设置房间和视图，因为每个表面都需要与特定视图关联，以便"捕捉"游戏图像(请参阅视图变量<a href="../../Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm"><span class="inline">view_surface_id[ 0...7 ]</span></a>)。下面的图像显示了如何设置上面画布示例的游戏房间：</p>
-  <p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_2.png">最后，您将使用此函数创建表面，其名称与画布元素所使用的名称相同，大小与同一画布的大小相对应。该函数将返回表面的索引，该索引应存储在一个变量中，以便将来调用函数。首次创建表面时，它可能包含"噪波"，因为基本上它只是为此目的而放在一边的内存区域(该内存可能仍包含信息)，因此您可能希望在使用诸如<a href="../Colour_And_Alpha/draw_clear_alpha.htm"><span class="inline">draw_clear_alpha()</span></a>之类的函数之前清除表面。</p>
+  <p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_2.png">Finally you would then use this function to create the surfaces, with the name being the same as that used for the canvas elements and the size corresponding to the size of that same canvas. The function will return the index of the surface which should be stored in a variable for future function calls. When the surface is first created, it may contain "noise" as basically it is just an area of memory that is put aside for the purpose (and that memory may still contain information), so you may want to clear the surface before use with a function like <span class="inline3_func"><a href="../Colour_And_Alpha/draw_clear_alpha.htm#h">draw_clear_alpha</a></span>.</p>
   <p>此函数将始终使用 <a href="surface_create.htm"><span class="inline2">surface_rgba8unorm</span></a> 格式创建表面 。</p>
   <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;</b>此函数仅适用于HTML5模块。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">surface_create_ext(name, w, h);</p>
+  <p class="code"><span data-field="title" data-format="default">surface_create_ext</span>(name, w, h);</p>
   <table>
     <tbody>
       <tr>
@@ -114,7 +115,7 @@
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Surface"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">Surface ID</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Surface"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">Surface ID</a></span>&nbsp;(or -1 if anything went wrong)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">s1 = surface_create_ext("surface1", 192, 550);<br>
@@ -122,7 +123,6 @@
     view_surface_id[1] = s1;<br>
     view_surface_id[2] = s2;</p>
   <p>上述代码创建两个不同大小的表面，将每个表面指定给不同的画布元素，然后将这些表面指定给两个视图，以便捕捉房间的正确部分。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

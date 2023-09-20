@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>analytics_event_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>analytics_event_ext</h1>
+  <h1>analytics_event_ext&nbsp;<span data-conref="../../../assets/snippets/Tag_obsolete.hts"><span class="warning">OBSOLETE</span></span></h1>
   <p>这个函数将把指定的文本发送到你通过<a href="../../../Settings/Game_Options/HTML5.htm">HTML5 游戏设置</a>设置的分析提供程序。这个函数可以用来创建一个自定义分析来跟踪某些东西并且还将接受自定义参数/值对，其中参数是字符串，值是实数。对于谷歌Analytics，你只能添加一个额外的pair，而Flurry将接受最多7.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -86,21 +86,25 @@
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>string</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要发送给提供程序的字符串。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>string_param[0 -9]</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>string_param[0 -9]</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要发送(字符串)的参数。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>value[0 - 9]</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>value[0 - 9]</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>参数的值(实数)。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -108,10 +112,14 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">var num, time;<br> ini_open("Options.ini");
-    <br> num = ini_read_real("Data", "Plays", 0);<br> num += 1;<br> time = current_time;<br> analytics_event_ext(GAME_NAME, "Plays", num, "Time", time);<br> ini_write_real("Data", "Plays",
-    num);<br> ini_close();
-  </p>
+  <p class="code">var num, time;<br>
+    ini_open("Options.ini");<br>
+    num = ini_read_real("Data", "Plays", 0);<br>
+    num += 1;<br>
+    time = current_time;<br>
+    analytics_event_ext(GAME_NAME, "Plays", num, "Time", time);<br>
+    ini_write_real("Data", "Plays", num);<br>
+    ini_close();</p>
   <p>上面的代码将从 ini 文件中获得播放信息以及当前时间，然后将这些详细信息发送给分析提供程序。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

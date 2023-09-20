@@ -1,0 +1,168 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../../..";
+    gCommonRootRelPath = "../../../../..";
+    gTopicId = "8.2.2.6.10.1.0_22";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>part_particles_burst</title>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../../../assets/css/default.css">
+  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="part_particles_burst">
+  <meta name="search-keywords" content="part_particles_burst">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="part_particles_burst">
+        <span>part_particles_burst</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">part_particles_burst</span></h1>
+  <p>此函数创建给定 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span> 中包含的所有粒子的单个爆发。粒子在给定的粒子系统实例 <span class="inline2">ind</span> 中创建。</p>
+  <p>该函数提供了一种将在 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm">" 粒子系统编辑器 "</a> 中创建的粒子效果添加到现有粒子系统的快速方法。</p>
+  <p>这就好像将该粒子系统资源中的发射器添加到给定的粒子系统，然后对所有发射器调用<span class="inline3_func"><a href="../Particle_Emitters/part_emitter_burst.htm">part_emitter_burst</a></span>。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>不会为<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>(未选中<strong>启用</strong>)中的任何禁用发射器创建粒子。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">part_particles_burst</span>(ind, x, y, partsys);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td><span data-keyref="Type_ID_PartSys"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">Particle System Instance</a></span></td>
+        <td>要在其中创建粒子的粒子系统的索引</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>使粒子爆炸的x位置</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>使粒子爆裂的y位置</td>
+      </tr>
+      <tr>
+        <td>partsys</td>
+        <td><span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm">Particle System Asset</a></span></td>
+        <td>要爆裂粒子的粒子系统资源</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例1：</h4>
+  <p class="code_heading">Create Event</p>
+  <p class="code">ps = part_system_create_layer("Effects", false);<br>
+    <br>
+    repeat(10)<br>
+    {<br>
+    &nbsp; &nbsp; var _x =&nbsp;random(room_width);<br>
+    &nbsp; &nbsp; var _Y =&nbsp;random(room_height);<br>
+    &nbsp; &nbsp;&nbsp;<span data-field="title" data-format="default">part_particles_burst</span>(ps, _x, _y, ps_Fireworks);<br>
+    }
+  </p>
+  <p>上面的代码首先在名为 <span class="inline2">"Effects"</span> 的房间图层上创建一个新粒子系统，并将索引存储在实例变量 <span class="inline2">ps</span> 中。然后在 <a href="../../../../GML_Overview/Language_Features/repeat.htm">repeat</a> 循环中调用 <span class="inline3_func"><span data-field="title" data-format="default">part_particles_burst</span></span> 函数 10 次，以将 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span><span class="inline2">ps_Fireworks</span> 添加到粒子系统 <span class="inline2">ps</span>。</p>
+  <p>&nbsp;</p>
+  <h4>示例2：</h4>
+  <p class="code_heading">Create Event</p>
+  <p class="code">ps = part_system_create_layer("Effects", false);<br>
+    <br>
+    layer_script_begin("Effects", method({ps}, function()<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;part_particles_burst(ps, random(room_width), random(room_height), ps_Fireworks);<br>
+    }));
+  </p>
+  <p>上面的代码还在名为 <span class="inline2">"Effects"</span> 的房间层上创建了一个新的粒子系统。然后将 <a href="../../../Variable_Functions/method.htm">method</a> 设置为层开始脚本。该方法通过结构获取粒子<span class="inline2">ps</span> 的系统ID。在它内部，函数 <span class="inline3_func"><span data-field="title" data-format="default">part_particles_burst</span></span> 用于在房间中的随机位置创建 <span class="inline2">ps_Fireworks</span><span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span> 的粒子。通过这种方式，粒子会连续创建，因为层开始脚本会运行每一步。可以删除层开始脚本以结束从资源创建粒子。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Particle_Systems.htm">粒子系统</a></div>
+        <div>Next:&nbsp;<a href="part_system_exists.htm">part_system_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_particles_burst
+-->
+  <!-- TAGS
+part_particles_burst
+-->
+
+</body></html>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Global Variables</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>全局变量</h1>
-  <p>对<strong>全局</strong>变量(global variable)的基本描述是：一旦声明，它就不属于任何特定的实例，但却可以被所有人访问。就像<a href="Local_Variables.htm">局部变量</a>一样，全局变量必须用一个标识符来声明，但与局部变量不同的是，全局变量在游戏结束前<em>一直留在内存</em>中。因此，你可以创建一个全局变量来记录(比如)玩家拥有的子弹数量，然后在游戏的不同时间点，以任何实例或函数的形式，随时更新这个变量即可。从本质上讲，全局变量不属于任何特定的实例，可以被所有的实例访问、改变和使用，对该变量的任何改变都是 "全局的"，因为所有使用该变量的实例都会受到改变的影响。让我们来看看一个例子。</p>
+  <p><strong><a id="global"></a>全局</strong>变量的基本描述是这样的：一旦声明，它就不属于特定实例，但所有实例都可以访问。就像<a href="Local_Variables.htm">局部变量</a>一样，全局变量必须使用标识符来声明，但与局部变量不同的是，全局变量会保留在内存<em>中，直到游戏结束</em>。所以，你可以创建一个全局变量来跟踪(例如)玩家拥有的子弹数量，然后在游戏中的不同点更新这个变量，创建任何实例或调用函数时，随时更新这个变量。本质上，全局变量不属于任何特定实例，并且可以被所有实例访问、更改和使用，并且对变量所做的任何更改都是"全局的"，因为使用该变量的所有实例都将受到更改的影响。让我们看一个例子：</p>
   <p class="code">global.food = 5;</p>
   <p>我们首先写入"<span class="inline">global</span>"，然后写入"<span class="inline">.</span>"来声明"<span class="inline">food</span>"变量，以告诉<span data-keyref="GameMaker Name">GameMaker</span>此变量现在是全局范围。从现在开始，当需要以任何方式访问或更改此变量时，我们都需要使用此表单。因此，我们创建了一个名为"<span class="inline">food</span>"的新变量，并将其声明为全局变量。现在，任何实例或函数都可以以任何方式使用和更改此变量，并且所有其他实例都将"看到"此变量。例如，我们可以有一个不同的食物对象，玩家与之碰撞，并且在碰撞事件中：</p>
   <p class="code">global.food +=1;</p>
@@ -104,7 +104,7 @@
   </ul>
   <p>下面的形式也可以用来声明全局变量，但<i><b>只为向后兼容</b></i>, 不建议您为新项目使用这种形式，因为GameMaker的未来版本可能不支持。</p>
   <p>创建全局变量的第二种形式是使用<span class="inline">globalvar</span>声明声明它们，就像使用<span class="inline">var</span>声明对局部变量进行声明一样。</p>
-  <p class="note"><b>重要！</b><span class="inline">globalvar</span>声明已过时<b>，仅支持传统用途。你应该</b>始终使用<b>global.</b>标识符来标记全局变量。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span> globalvar</span>声明已<span class="inline">弃用</span>，仅支持用于旧版用途。您应该<b>始终</b>使用<b>global.</b>标识符来标记全局变量。</p>
   <p>这个(废弃的)声明的使用方法如下。</p>
   <p class="code">globalvar food;<br>
     food = 5;</p>
@@ -117,7 +117,6 @@
   <ul class="colour">
     <li><a href="../../GML_Reference/Variable_Functions/Variable_Functions.htm">变量函数</a></li>
   </ul>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

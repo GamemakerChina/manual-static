@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Best Practices When Programming</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -126,23 +126,6 @@
         }</span></p>
     <p class="dropspot">还可以通过将所用变量设置为0来释放与数组相关的内存。因此，要从上面的代码示例中清除数组，你可以简单地使用:</p>
     <p class="code">array = 0;</p>
-    <p class="dropspot">还要注意，数组是通过<strong>引用</strong>传递的，但对于旧版项目或开启写时复制时，进行更改时将复制整个内容(这种行为称为<strong>写时复制</strong>)。因此，如果你将一个数组传递给一个函数，你就是将一个<em>引用</em>传递给原始数组，从它中读取的任何值都将来自原始源。这很好也很快速，但是如果您需要修改任何数组值，数组本身会在写入时被复制，并且所做的任何更改<strong>都需要从函数中返回，否则它们将丢失</strong>。这要慢得多，并且消耗更多的内存，所以在函数中使用数组时要小心。</p>
-    <p class="dropspot">但是，您可以通过使用特殊的数组<a href="../GameMaker_Language/GML_Overview/Accessors.htm">访问器</a>&nbsp;<span class="inline">@</span>来避免这种写时复制行为，因为这提供了对底层数组的直接访问。例如:</p>
-    <p class="code">// Call a function, passing our array<br>
-      my_function(my_array);</p>
-    <p class="code">// The function looks like this:<br>
-      <br>
-      function my_function(_a)<br>
-      {<br>
-      &nbsp; &nbsp; // The array will be copied and the copy modified,<br>
-      &nbsp; &nbsp; // requiring you to use "return _a", later<br>
-      &nbsp; &nbsp; _a[0] = 100;<br>
-      <br>
-      &nbsp; &nbsp; // This will modify the ORIGINAL array directly and<br>
-      &nbsp; &nbsp; // does not require it to be returned<br>
-      &nbsp; &nbsp; _a[@ 0] = 100;<br>
-      }
-    </p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">Data Structures</span><span data-close-text="true">Data Structures</span> 数据结构</a></p>

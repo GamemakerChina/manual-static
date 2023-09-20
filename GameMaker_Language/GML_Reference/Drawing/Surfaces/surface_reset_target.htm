@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>surface_reset_target</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,15 +78,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>surface_reset_target</h1>
-  <p>使用此函数，可以将所有进一步绘制从目标表面重置回屏幕。请注意，要开始绘制表面，必须首先调用函数<a href="surface_set_target.htm"><span class="inline">surface_set_target()</span></a>，然后在完成后调用此函数，<i>对于已设置的每个表面目标</i>，否则将不会在屏幕上绘制任何内容，因为所有进一步绘制(即使在其他实例中)都将在表面上完成。您还应该意识到，如果在实例的绘制事件中没有在屏幕上绘制表面本身，则不会看到任何内容。</p>
-  <p class="note"><b>注意</b>:如果以前没有使用函数<span style="font-size:1px;"><a href="surface_set_target.htm"><span class="inline">surface_set_target()</span></a></span>设置呈现目标，则使用此函数将静默(即：没有任何错误消息)结束事件的所有其他代码执行。</p>
+  <h1 id="h"><span data-field="title" data-format="default">surface_reset_target</span></h1>
+  <p>This function resets all further drawing from the target surface back to the screen.</p>
+  <p>Please note that to start drawing to a surface you must first have called the function&nbsp;<span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span> and then this one after you have finished, <i>for each surface target that you have set</i> or else nothing will be drawn on the screen as all further drawing (even in other instances) will be done on the surface. You should also realise that nothing will be seen if the surface itself is not drawn on the screen in the draw event of an instance.</p>
+  <div data-conref="../../../../assets/snippets/Note_Surface_Check_That_It_Exists.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you have not previously set a render target with the function <span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span>,&nbsp;using this function will silently (i.e.&nbsp;without any error messages) end all further code execution for the event.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">surface_reset_target();</p>
+  <p class="code"><span data-field="title" data-format="default">surface_reset_target</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span>&nbsp;Whether the render target was reset successfully</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">if view_current = 0<br>
@@ -103,7 +107,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;draw_surface(surf, 0, 0);<br>
     }</p>
   <p>上述代码将检查当前正在绘制的视图，如果是view[ 0 ]，则会将绘制目标设置为表面，并在再次重置绘制目标之前绘制对象"obj_Effect"的所有实例。如果视图不是视图[ 0 ]，则将表面绘制到屏幕上。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

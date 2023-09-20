@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Compiling Preferences</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -86,13 +86,12 @@
     <li><strong>编译期间显示编译窗口</strong>：默认情况下，当您编译项目时将显示编译窗口，即使编译停靠已关闭(它将为编译打开)。取消选中此选项将关闭此行为，并且编译窗口仅在打开时才可见。</li>
     <li><strong>在编译输出中显示编译器命令</strong>：默认情况下选中此选项，并强制编译器在编译窗口中显示所有相关命令。取消选中此选项将使输出更小，包含的信息也更少。</li>
     <li><strong>显示详细的编译器输出</strong>：选中此选项将强制编译器显示与编译过程相关的额外命令。通常，只有在调试时才需要这样做，如果您有问题，支持人员可能会要求您这样做。默认情况下，它处于关闭状态(这是推荐的设置)。</li>
-    <li><strong>对驱动器路径使用 subst</strong>：选中此选项后，<span data-keyref="GameMaker Name">GameMaker</span> 将创建虚拟驱动器，并在不再需要时再次删除，以替代完整的文件路径。这些虚拟驱动器绕过了文件路径对于操作系统来说太长的任何潜在问题(特别是在为 Android 编译或使用扩展名时)，建议启用此功能。但是，如果您在 <span data-keyref="GameMaker Name">GameMaker</span> 创建这样的虚拟驱动器时遇到问题，您可以禁用该选项。默认情况下，此选项处于启用状态。</li>
     <li><strong>构建完成时在资源管理器中显示包</strong>：选中此选项将使 <span data-keyref="GameMaker Name">GameMaker</span> 在创建最终可执行程序包的位置打开操作系统资源管理器窗口。默认情况下，它处于启用状态。</li>
     <li><strong>编译开始时清除输出窗口</strong>：默认情况下，编译器窗口将在每次编译开始时从编译器输出窗口中清除所有以前的消息，但取消选中此选项将保留以前的编译器日志。这在默认情况下是打开的，并且是推荐的配置，因为大的编译器日志可能会减慢编译时间。</li>
     <li><strong>打包前自动停止运行：</strong>默认情况下，如果您的游戏已在运行，并且您尝试创建可执行文件，则会显示一条错误消息，并且您需要在创建可执行文件之前手动停止游戏。您可以启用此选项，以始终跳过此错误消息，并自动停止游戏时，如果它正在运行时，选择"创建可执行文件"。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>Automatically Stop Running before cleaning</strong>: When this preference is enabled the IDE <em>won't</em> show a warning message when you clean the project with a game already running. The preference is&nbsp;off by default.</li>
     <li><strong>最大并行编译作业数</strong>：该值设置专用于编译项目的最大 CPU 核心数。默认值为 8，通常您不必更改此值，但如果您使用的是笔记本电脑或低端计算机，则可能需要降低此值。默认设置为 8。</li>
   </ul>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

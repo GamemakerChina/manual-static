@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>layer_add_instance</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -82,7 +82,7 @@
   <h1>layer_add_instance</h1>
   <p>此函数可用于将给定实例从当前所在的层移动到另一个层。提供层 ID(使用<a href="layer_create.htm"><span class="inline">layer_create()</span></a>创建层时获得的 ID)或层名称(作为字符串，这将对性能产生影响)以及要在层之间移动的实例的实例 ID。例如，假设您的玩家位于比另一层深度低的层上，而您希望该层位于两层之间的层之后。您可以使用此函数将播放器从前景层切换到背景层，并使其显示在正在绘制的其他层之后。</p>
   <p class="note"><b><span class="note">注意</span></b>此函数不能用于向层添加新实例。<b>必须</b>以前创建了实例并将其 ID 存储到变量中。</p>
-  <p class="note"><strong>注意</strong>：此函数仅在当前房间的范围内有效，当使用函数 <span class="inline"><a href="layer_set_target_room.htm" style="font-size: 14px">layer_set_target_room()</a></span> 更改范围时，不能使用该函数。</p>
+  <p class="note"><strong><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong> This function is only valid within the scope of the current room and cannot be used when the scope has been changes using the function&nbsp;<span class="inline"><a href="layer_set_target_room.htm" style="font-size: 14px">layer_set_target_room()</a></span>.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">layer_add_instance(layer_id, instance_id)</p>
@@ -100,7 +100,7 @@
       </tr>
       <tr>
         <td>instance_id</td>
-        <td><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></td>
+        <td><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span></td>
         <td>要移动到目标层的实例的唯一实例ID值</td>
       </tr>
     </tbody>

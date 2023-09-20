@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Guide To Using Particles</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module">
     //<![CDATA[
@@ -92,7 +92,7 @@
   <h1><span data-field="title" data-format="default">粒子使用指南</span></h1>
   <p>本指南面向那些想要了解如何在 GML 中使用和创建<strong>粒子</strong>的用户。本页将涵盖粒子的 <a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particles.htm"><span data-keyref="GML_Code">GML 代码</span></a>函数<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Particle_Actions.htm">和 <span data-keyref="GML_Visual"></span>GML 可视化</a>操作，所以如果您以前从未使用过粒子，我们希望本指南可以帮助您入门，因为它们非常有用并且非常有趣。</p>
   <div data-conref="../assets/snippets/Note_tip_use_particle_system_editor.hts">
-  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span> 如果您喜欢使用更直观的方法创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码</span>提供的大量功能，也可以使用<span data-keyref="Type_Asset_ParticleSystem">粒子系统编辑器<a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">创建</a></span>粒子系统资源<a href="../The_Asset_Editors/Particle_Systems.htm"></a>。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">TIP</span></span>&nbsp;If you prefer a more visual approach to creating particles and don't need the extensive functionality that&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;offers,&nbsp;you can also create a&nbsp;<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">Particle System Asset</a></span>&nbsp;using&nbsp;<a href="../The_Asset_Editors/Particle_Systems.htm">The Particle System Editor</a>. Additionally, you can generate the&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;for it using the editor's <strong>Copy GML to Clipboard</strong> <img class="icon" src="../assets/Images/Icons/Icon_GML_To_Clipboard.png" title="">.</p>
 
 </div>
   <p>在进一步讨论之前，我们或许应该先解释一下粒子到底是什么……基本上，<a id="particle"></a>粒子是一种图形资源，它具有由<strong>粒子系统</strong>定义的某些属性。 这些属性不能直接针对<em>单个</em>粒子进行操作，而是通过用于定义其所属系统的代码或操作来集体更改。 它们对于在没有使用实例的 CPU 开销的游戏中创建美丽而华丽的效果（或微妙而谨慎的效果）非常有用。</p>

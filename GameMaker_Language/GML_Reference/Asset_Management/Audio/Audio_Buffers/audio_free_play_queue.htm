@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>audio_free_play_queue</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -79,7 +79,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>audio_free_play_queue</h1>
-  <p>此函数用于释放与给定音频队列相关的内存。队列索引是使用函数<a href="audio_create_play_queue.htm"><span class="inline">audio_create_play_queue()</span></a>创建队列时返回的值，当不再需要队列以防止内存泄漏时，应调用此函数。释放队列将停止任何正在播放的声音，并且您不能删除正在流播放的声音的缓冲区，直到分配给它的队列被释放为止。此函数将触发<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">音频回放异步事件</a>，在这种情况下，将在变量<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">async_load</a>中创建具有以下键/值对的特殊<a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">DS map</span></a>：</p>
+  <p>This function is used to free up the memory associated with the given audio queue. The queue index is the value returned when you created the queue using the function <a href="audio_create_play_queue.htm"><span class="inline">audio_create_play_queue()</span></a>, and this function should be called when the queue is no longer required to prevent memory leaks. Freeing the queue will stop any sound that is be playing, and you cannot delete the buffer that a sound is being streamed from until the queue it is assigned to has been freed.</p>
+  <p>This function will trigger an <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">Audio Playback Asynchronous Event</a>, and in this event a special <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS map</a>&nbsp;will be created in the variable <a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a> with the following key/value pairs:</p>
   <ul class="colour">
     <li>"<strong>queue_id</strong>"已完成播放数据的队列</li>
     <li>"<strong>buffer_id</strong>"不再播放的缓冲区</li>

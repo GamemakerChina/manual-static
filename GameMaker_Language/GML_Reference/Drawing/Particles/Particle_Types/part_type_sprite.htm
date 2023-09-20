@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>part_type_sprite</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,11 +78,20 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>part_type_sprite</h1>
-  <p>此函数可用于设置粒子类型以使用游戏资源中的自定义sprite。您可以选择精灵，然后告诉<span data-keyref="GameMaker Name">GameMaker</span>使用精灵并设置其动画或不设置其动画，如果选择动画，则还可以选择以一定的间隔更改子图像，以便动画在创建的每个粒子的生命周期的开始和结束时开始和结束(因此，如果将生命周期设置为最小15步和最大30步，则无论生命周期的值如何，都将使动画适合，并且在较短的生命周期内运行得更快，在较长的生命周期内运行得更慢)。也可以选择选择随机子图像，以便如果精灵未设置动画，则将随机选择不同的图像来创建精灵，或者如果粒子已设置动画，则将从随机点开始动画。</p>
+  <h1><span data-field="title" data-format="default">part_type_sprite</span></h1>
+  <p>此函数将粒子类型设置为使用游戏资源中的自定义精灵。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>使用<span class="inline3_func"><a href="part_type_shape.htm">part_type_shape</a></span>可使用内置粒子形状之一。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此功能可用于更改粒子类型的现有粒子的精灵。</p>
+  <h3>用法注释</h3>
+  <ul class="Disc">
+    <li>您可以选择精灵，然后告诉<span data-keyref="GameMaker Name">GameMaker</span>使用精灵并设置<em>动画</em>。</li>
+    <li>如果您选择动画，您也可以选择<em>拉伸</em>动画;即，以一定的间隔更改子图像，以便动画将在创建的每个粒子的生命周期的开始和结束时开始和结束(因此，如果将生命周期设置为最小15步和最大30步，则无论生命周期具有什么值，动画都将适合，对于较短的生命周期，动画运行得更快，对于较长的生命周期，动画运行得更慢)。</li>
+    <li>您还可以选择<em>随机</em>子图像，以便如果精灵未设置动画，则会随机选择不同的图像来创建精灵，或者如果粒子已设置动画，则会在随机点开始动画。</li>
+    <li>如果random为<span class="inline2">false</span>，可以使用<span class="inline3_func"><a href="part_type_subimage.htm">part_type_subimage</a></span>更改子画面，以创建粒子或启动动画。</li>
+  </ul>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">part_type_sprite(ind, sprite, animate, stretch, random);</p>
+  <p class="code"><span data-field="title" data-format="default">part_type_sprite</span>(ind, sprite, animate, stretch, random);</p>
   <table>
     <tbody>
       <tr>
@@ -93,27 +102,27 @@
       <tr>
         <td>ind</td>
         <td><span data-keyref="Type_ID_PartType"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">Particle Type ID</a></span></td>
-        <td>要更改的粒子类型的索引。</td>
+        <td>要更改的粒子类型的索引</td>
       </tr>
       <tr>
         <td>sprite</td>
         <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
-        <td>要将粒子类型设置为的精灵的索引。</td>
+        <td>要设置粒子类型的精灵的索引</td>
       </tr>
       <tr>
         <td>animate</td>
         <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>是否正常跟随精灵的动画(true)或不跟随精灵的动画(false)。</td>
+        <td>是否遵循精灵的动画正常(<span class="inline2">true</span>)或不(<span class="inline2">false</span>)</td>
       </tr>
       <tr>
         <td>stretch</td>
         <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>是否拉伸精灵的动画以匹配粒子寿命(true)或不匹配(false)。</td>
+        <td>是否拉伸精灵的动画以匹配粒子寿命(<span class="inline2">true</span>)或(<span class="inline2">false</span>)，使用<span class="inline3_func"><a href="part_type_life.htm">part_type_life</a></span>设置</td>
       </tr>
       <tr>
         <td>random</td>
         <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>是否选择随机子图像(true)或不选择(false)。</td>
+        <td>开始时是否选择随机子图(<span class="inline2">true</span>)或不选择(<span class="inline2">false</span>)</td>
       </tr>
     </tbody>
   </table>
@@ -137,12 +146,11 @@
   <p>上述代码将全局变量"p1"中索引的粒子类型设置为spr_Coins中索引的精灵的形状，然后设置各种其他粒子属性。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Back: <a href="Particle_Types.htm">粒子类型</a></div>
-        <div style="float:right">Next: <a href="part_type_size.htm">part_type_size</a></div>
+        <div style="float:right">Next:&nbsp;<a href="part_type_subimage.htm">part_type_subimage</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>The Tile Set Editor</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -85,7 +85,6 @@
   <p>这些是人们创建图块集最常见的方式--要么全部塞在一起，要么用小空间把它们分开，<span data-keyref="GameMaker Name">GameMaker</span>可以处理这两种类型。基本上，所有的图块集都必须由符合明确定义的网格的图片组成，网格的每个单元都是<em>完全相同的尺寸</em>（注意，虽然上面显示的图片都是由方形图块组成的，但图块集也可以由矩形图块组成）。</p>
   <p>在创建你的图块集时，请记住，<strong>左上角的网格单元必须<em>永远</em>是空的</strong>，因为这是<span data-keyref="GameMaker Name">GameMaker</span>将用于房间里的 "空 "图块和擦除现有图块的图块（即使你在图像的那一部分有像素，它们也会被忽略）。</p>
   <p>当你第一次创建一个图块集资源时，图块集编辑器窗口将打开，有以下选项：</p>
-  <p>&nbsp;</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">名称</span><span data-close-text="true">名称</span></a></p>
   <div class="droptext" data-targetname="drop-down">
     <p class="dropspot">在这里你可以给你的图块集起一个名字。名称只能是字母数字，只能使用下划线"_"符号，而且不能以数字开头。</p>
@@ -110,7 +109,8 @@
     <p class="dropspot"><img alt="Smear Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Smear.png" style="margin-top: -10px;margin-bottom: 1px">上面显示的是一个 "固定 "的图块精灵，你可以看到它现在在每个图块周围都有一个重复的部分，这意味着当硬件超限时，它将总是从图块中选取最后一个texel，而不是其中一个空格或后面的图块。因此，在创建图块集时，请记住，如果你要放大或缩小游戏视图，或者要按比例渲染图块，你可能需要有一个比默认值2更高的输出边界宽度或高度。</p>
     <p class="dropspot">接下来，你可以选择你希望图块集资源所属的<strong>纹理组</strong>。基本上，纹理组（先前在<a href="../Settings/Texture_Groups.htm">纹理组管理器</a>中定义）是你可以设置的，这样你需要的所有图像资源就可以储存在一起，用于游戏的特定房间或关卡。因此，举例来说，你可以把所有第1层的图片放在一个纹理组中，把所有第2层的图片放在另一个组中，等等......而<span data-keyref="GameMaker Name">GameMaker</span>会尝试把所有这些分组的资源&nbsp;放在同一个<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页</a>上，以减少你的游戏在所选目标平台上运行时的纹理页交换。</p>
     <div class="dropspotnote"><strong>注意</strong>：这可能并不总是必要的，这种方法的性能提升将取决于目标设备是CPU绑定还是GPU绑定。</div>
-    <p class="dropspot">图块集属性中的最后一个选项是<strong>禁用源精灵导出</strong>。这个选项是默认勾选的，它的作用是在为你的项目生成纹理页面时，将源精灵资源标记为省略。这样做的前提是，作为图块集的精灵不会被用于其他用途，所以只需要导出一次。然而，如果你将基本精灵资源用于除图块以外的其他用途，那么你就应该取消勾选，以便在编译时将基本精灵<em>和</em>图块集都添加到纹理页面中。</p>
+    <p class="dropspot">The final option in the tile set properties is <strong>Disable Source Sprite Export</strong>. This is disabled by default, and if enabled, it flags the source sprite asset to be omitted when the texture page for your project is being generated. This works under the assumption that a sprite used as a tile set will not be getting used for anything else, and so only needs to be exported once.</p>
+    <p class="dropspot">If you are using the base sprite asset for anything other than tiles, or you are checking for collisions on a tile layer using this tile set, then you would want to keep this disabled so that the base sprite <em>and </em>the tile set are both added into the texture page on compile.</p>
     <p class="dropspot"><strong></strong></p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">编辑器</span><span data-close-text="true">编辑器</span></a></p>

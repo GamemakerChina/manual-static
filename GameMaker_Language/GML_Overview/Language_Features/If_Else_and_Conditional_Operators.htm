@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>if / else and Conditional Operators</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -132,7 +132,7 @@
     }
   </p>
   <p>请注意，虽然这稍微比较冗长，但它意味着代码中没有歧义，并且它将始终在所有平台上正确编译。但是，初始示例可能不是，如<a href="../Expressions_And_Operators.htm">表达式和运算符</a>页中的部分所述。</p>
-  <p class="note"><strong>注</strong>：比较两个值以确定它们是否相等时，应使用"<span class="inline">==</span>"运算符，并且仅使用"<span class="inline">=</span>"运算符进行赋值。当前GameMaker会将它们视为可互换的，但这种情况在将来可能会改变，并且在使用正确的运算符进行比较和分配时，您的代码更干净、更清晰。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>比较两个值是否相等时，应使用"<span class="inline">==</span>"运算符，并且仅使用"<span class="inline">=</span>"运算符进行赋值。目前GameMaker将它们视为可互换的，但这可能会在未来改变，当使用正确的运算符进行比较和赋值时，您的代码会更清晰，更明显。</p>
   <p>要给出使用<span class="inline">if</span>的正确示例，请考虑以下代码，当放置在Step Event中时，这些代码将使实例朝向房间中的位置<span class="inline">x= 200</span>移动：</p>
   <p class="code">if (x &lt; 200)<br>
     {<br>
@@ -146,7 +146,7 @@
   <p class="code">if (keyboard_check_pressed(vk_enter)) &amp;&amp; (instance_exists(obj_Player))<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;go = false;<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = room_speed;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;alarm[0] = game_get_speed(gamespeed_fps);<br>
     }</p>
   <p>在这里，我们使用 <span class="inline">&amp;&amp;</span>“和”运算符进行检查，因此它检查 <em>if</em> 中的<span class="inline">两个</span>条件是否计算为 <span class="inline">true</span>，以及第一个条件是否为 <span class="inline">false</span> 那么第二个甚至不会被检查。这称为“短路”代码，因此在组合表达式进行检查时，您应确保性能“最便宜”的始终是第一个，以避免在第一个计算结果为 <span class="inline">false</span> 时计算更昂贵的表达式。同样，如果一个条件可以在编译时被评估为<span class="inline">true</span>或<span class="inline">false</span>，那么整个条件将从代码中移除，例如，假设您有一个<a href="../Variables/Constants.htm">宏</a> <span class="inline">DEBUG_ON </span>用于调试，它可以是 <span class="inline">true</span> 或 <span class="inline">false</span> - 当它设置为 <span class="inline">false</span> 时，以下代码块将在编译时从游戏中删除:</p>
   <p class="code">if DEBUG_ON == true<br>

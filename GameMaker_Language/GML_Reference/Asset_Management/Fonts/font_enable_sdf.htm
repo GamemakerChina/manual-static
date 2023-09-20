@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>font_enable_sdf</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="">
@@ -79,11 +79,9 @@
 
 
   <h1><span data-field="title" data-format="default">font_enable_sdf</span></h1>
-  <p>此函数用于启用或禁用给定字体的&nbsp;<a href="Fonts.htm#h">SDF 渲染</a>。字体必须是使用 <a href="font_add.htm"><span class="inline2">font_add()</span></a> 添加的，并从字体文件加载-不能将 SDF 与精灵字体一起使用。</p>
-  <div data-conref="../../../../assets/snippets/Note_SDF_HTML5.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> HTML5 当前不支持 SDF 字体。</p>
-
-</div>
+  <p>此函数用于启用或禁用给定字体的<a href="Fonts.htm#h">SDF渲染</a>。字体必须是使用<a href="font_add.htm"><span class="inline2">font_add()</span></a>添加的，并且是从字体文件加载的-不能将SDF用于精灵字体或通过IDE添加的字体。</p>
+  <p>为字体启用SDF后，可以对其应用各种<a href="font_enable_effects.htm">效果</a>。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此函数不能在HTML5上使用，因为HTML5不支持添加自由字体。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">font_enable_sdf</span>(ind, enable);</p>
@@ -139,7 +137,7 @@
     <div class="buttons">
       <div class="clear">
         <div>Back:&nbsp;<a href="Fonts.htm">字体</a></div>
-        <div>Next:&nbsp;<a href="font_get_sdf_enabled.htm">font_get_sdf_enabled</a></div>
+        <div>Next:&nbsp;<a href="font_sdf_spread.htm">font_sdf_spread</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

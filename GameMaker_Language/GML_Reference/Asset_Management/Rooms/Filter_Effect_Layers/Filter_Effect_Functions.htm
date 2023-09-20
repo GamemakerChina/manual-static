@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Filter and Effect Functions</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo">
@@ -101,7 +101,15 @@
     var _fxshake = fx_create(_filter_to_use);
   </p>
   <p>为确保后一种方法有效，您只需将过滤器添加到项目中的至少一个房间，或者确保<span class="inline"><a href="fx_create.htm">fx_create()</a></span>在项目中的任何地方被调用，该过滤器名作为字符串常量(而不是变量)。</p>
-  <div data-conref="../../../../../assets/snippets/FX_Limitations.hts"><h2 class="">限制</h2><p>目前有一个限制需要牢记：</p><ul class="colour"><li>禁用<a href="../../../Drawing/Surfaces/application_surface_enable.htm">应用程序表面</a>时滤镜/效果将不起作用。它在默认情况下是启用的，您通常不应该要求禁用它，但您可以这样做以在移动设备上获得性能。在这种情况下，您将无法使用滤镜/效果，因为它们需要材质球操纵的表面纹理。</li></ul></div>
+  <div data-conref="../../../../../assets/snippets/FX_Limitations.hts">
+  <h2>限制</h2>
+  <p>There are some limitations to keep in mind when using filters/effects:</p>
+  <ul class="colour">
+    <li>禁用<a href="../../../Drawing/Surfaces/application_surface_enable.htm">应用程序表面</a>时滤镜/效果将不起作用。它在默认情况下是启用的，您通常不应该要求禁用它，但您可以这样做以在移动设备上获得性能。在这种情况下，您将无法使用滤镜/效果，因为它们需要材质球操纵的表面纹理。</li>
+    <li>Filters/effects that take a texture image, require that image to be on a separate texture page. You can set this through the <a href="../../../../../The_Asset_Editors/Sprites.htm">sprite editor</a>.</li>
+  </ul>
+
+</div>
   <h2>函数列表</h2>
   <p>以下函数用于创建和管理包含效果数据的"FX结构"：</p>
   <ul class="colour">

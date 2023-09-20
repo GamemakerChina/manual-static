@@ -1,0 +1,151 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.21.1.0_14";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>dbg_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="">
+  <meta name="search-keywords" content="">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="dbg_sprite">
+        <span>dbg_sprite</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">dbg_sprite</span></h1>
+  <p>这个函数在当前调试部分中创建一个指定图像索引的引用子画面的子画面视图。</p>
+  <p>使用<span class="inline3_func"><a href="../Variable_Functions/ref_create.htm">ref_create</a></span>创建的引用同时传递给精灵和图像索引。</p>
+  <div data-conref="../../../assets/snippets/Note_Debug_Control_Two_Columns.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span> </span>此调试控制跨越两列。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">dbg_sprite</span>(<span>sprite_ref,&nbsp;<span>image_index_ref[, label]</span></span>);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>sprite_ref</td>
+        <td><span data-keyref="Type_DbgRef"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Debugging/ref_create.htm">Reference</a></span></td>
+        <td>对保存精灵索引的变量的引用，使用<span class="inline3_func"><a href="../Variable_Functions/ref_create.htm">ref_create</a></span>创建</td>
+      </tr>
+      <tr>
+        <td>image_index_ref</td>
+        <td><span data-keyref="Type_DbgRef"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Debugging/ref_create.htm">Reference</a></span></td>
+        <td>对保存要显示的图像索引的变量的引用，使用<span class="inline3_func"><a href="../Variable_Functions/ref_create.htm">ref_create</a></span>创建</td>
+      </tr>
+      <tr>
+        <td>label</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>显示在精灵视图旁边的标签</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例：一个实例的精灵的精灵视图</h4>
+  <p class="code_heading">Create Event</p>
+  <p class="code">ref_to_sprite = ref_create(self, "sprite_index");<br>
+    ref_to_image_index = ref_create(self, "image_index");<br>
+    <span data-field="title" data-format="default">dbg_sprite</span>(ref_to_sprite, ref_to_image_index);
+  </p>
+  <p>上面的代码为实例的精灵设置了一个基本的精灵视图。代码被添加到仅执行一次的事件，例如创建事件。</p>
+  <p>首先，使用<span class="inline3_func"><a href="../Variable_Functions/ref_create.htm">ref_create</a></span>创建两个引用：一个指向当前实例的<span class="inline2"><a href="../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></span>变量(存储在<span class="inline2">ref_to_sprite</span>中)，另一个指向实例的<span class="inline2"><a href="../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></span>变量(存储在<span class="inline2">ref_to_image_index</span>中)。接下来，使用<span class="inline3_func"><span data-field="title" data-format="default">dbg_sprite</span></span>创建sprite视图，参数为之前创建的两个引用。</p>
+  <p>sprite的帧将根据<span class="inline2"><a href="../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></span>的值而改变，因此在sprite视图中以动画方式绘制。当实例的<span class="inline2"><a href="../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></span>改变时，sprite也会改变。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="The_Debug_Overlay.htm">The Debug Overlay (调试覆盖视图)</a></div>
+        <div>Next:&nbsp;<a href="dbg_text.htm">dbg_text</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+dbg_sprite
+-->
+  <!-- TAGS
+dbg_sprite
+-->
+
+</body></html>

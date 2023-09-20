@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>lerp</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,38 +78,38 @@
 
 
 
-
-
-
-
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>lerp</h1>
+  <h1><span data-field="title" data-format="default">lerp</span></h1>
   <p>通过这个函数，您可以找到与给定百分比的其他两个值之间的位置相等的值。所以如果你这样做，例如:</p>
-  <p class="code">lerp(0, 10, 0.5)</p>
+  <p class="code"><span data-field="title" data-format="default">lerp</span>(0, 10, 0.5)</p>
   <p>你会得到返回值5，它是输入值的50%。你也可以使用这个函数进行外推，为插值量提供一个正数或负数，这样做如下:</p>
-  <p class="code">lerp(0, 10, 2)</p>
+  <p class="code"><span data-field="title" data-format="default">lerp</span>(0, 10, 2)</p>
   <p>将返回值20。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">lerp(a, b, amt)</p>
+  <p class="code"><span data-field="title" data-format="default">lerp</span>(a, b, amt)</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>a</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>a</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>第一个值。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>b</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>b</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>第二个值。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>amt</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>amt</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要插值的量。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -117,9 +117,10 @@
   <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">xx = lerp(x, x + hspeed, room_speed);<br> yy = lerp(y, y + vspeed, room_speed);</p>
+  <p class="code">var _gamespeed = game_get_speed(gamespeed_fps);<br>
+    xx = lerp(x, x + hspeed, _gamespeed);<br>
+    yy = lerp(y, y + vspeed, _gamespeed);</p>
   <p>上面的代码使用线性插值函数来预测一个实例在游戏时间一秒后会移动到哪里。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

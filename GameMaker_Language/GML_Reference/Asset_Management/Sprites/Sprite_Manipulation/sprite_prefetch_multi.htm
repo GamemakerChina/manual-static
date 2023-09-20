@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>sprite_prefetch_multi</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -80,7 +80,12 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>sprite_prefetch_multi</h1>
   <p>此函数可用于预取(放置到纹理内存中)包含给定精灵的多个纹理页。您提供了一个由精灵索引填充的数组(如您创建精灵资源时所定义的)，并且它们所在的纹理页面将被加载到内存中。请注意，如果所选资源不支持预取或目标平台为HTML5，则函数将返回<span class="inline">-1</span>，或者如果一切正常，则函数将返回<span class="inline">0</span>。</p>
-  <p class="note"><b>注意</b>：在大多数设备上，当纹理上传到纹理内存时，会对性能造成影响，因此建议您在关卡开始时，对任何所需的图形调用<span style="font-size:1px;"><span class="inline">sprite_prefetch_multi()</span></span>，以避免任何暂停。</p>
+  <div data-conref="../../../../../assets/snippets/Note_Sprite_Prefetch_To_Avoid_Performance_Hit.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;There is a performance hit as the texture is uploaded to texture memory on most devices, so it's recommended that you call&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">sprite_prefetch_multi</span></span>
+    <font face="menlo, consolas, monospace"><span style="font-size: 17px;"><b> </b></span></font>on any required graphics at the start of a level to avoid any stalls.
+  </p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">sprite_prefetch_multi</p>

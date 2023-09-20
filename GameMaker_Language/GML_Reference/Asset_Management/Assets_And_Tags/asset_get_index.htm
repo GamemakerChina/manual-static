@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>asset_get_index</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -80,20 +80,23 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>asset_get_index</h1>
-  <p>您可以使用此函数从其名称中获取游戏资源的唯一标识索引。如果找不到资源，函数将返回值-1，否则将返回被检查资源的唯一索引id。然后，可以像其他索引值一样在其他函数中使用此id，例如<a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><span class="inline">sprite_index</span></a>或<a href="../Paths/Path_Variables/path_index.htm"><span class="inline">path_index</span></a>。请注意，尽管此函数可用于从字符串中引用资源 (请参见下面的示例)，但在使用资源之前，应始终确保该资源存在，否则可能会出现使游戏崩溃的错误。</p>
+  <p>This function gets the unique identifying index for a game asset from its name.</p>
+  <p>If the asset is not found, the function will return a value of -1, otherwise it will return the unique index id for the asset being checked. This id can then be used in other functions as you would any other index value, like the <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><span class="inline">sprite_index</span></a> or the <a href="../Paths/Path_Variables/path_index.htm"><span class="inline">path_index</span></a>, for example. Please note that although this function can be used to reference assets from strings (see example below), you should always make sure that the asset exists before using it otherwise you may get errors that will crash your game.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">asset_get_index(name);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>name</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>name</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td>获取 (一个字符串) 的索引的游戏资源的名称。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -107,7 +110,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;instance_create_layer(random(room_width), random(room_height), obj, "Enemy_Layer");<br>
     }</p>
   <p>上面的代码将从一个字符串中获取一个对象索引，如果该索引存在，则在游戏中创建该对象的实例。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

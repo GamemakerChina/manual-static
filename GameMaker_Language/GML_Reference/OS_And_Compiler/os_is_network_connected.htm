@@ -51,13 +51,13 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>os_is_network_connected</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Reference page for os_is_network_connected">
-  <meta name="rh-index-keywords" content="os_is_network_connected">
-  <meta name="search-keywords" content="os_is_network_connected">
+  <meta name="rh-index-keywords" content="os_is_network_connected,network_connect_none,network_connect_blocking,network_connect_nonblocking,network_connect_active,network_connect_passive">
+  <meta name="search-keywords" content="os_is_network_connected,network_connect_none,network_connect_blocking,network_connect_nonblocking,network_connect_active,network_connect_passive">
   <meta name="is_pure" content="true">
 <meta name="brsnext" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_get_config.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/OS_And_Compiler/os_is_paused.htm"></head>
 
@@ -105,7 +105,7 @@
       </tr>
       <tr>
         <td><span class="inline2">network_connect_active</span>&nbsp;/ <span class="inline2">network_connect_nonblocking</span></td>
-        <td>This will actively prompt the user to fix the connection.</td>
+        <td>This will actively prompt the user to fix the connection, if it failed.</td>
       </tr>
       <tr>
         <td><span class="inline2">network_connect_passive</span></td>
@@ -113,6 +113,7 @@
       </tr>
     </tbody>
   </table>
+  <p>If the function returns <span class="inline2">false</span> when using <span class="inline2">network_connect_active</span> or <span class="inline2">network_connect_passive</span>, the actual result is returned later in the Async&nbsp;<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">Networking</a>&nbsp;event. See:&nbsp;<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm#h">Attempting Connection</a></p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意 </span></span> 此函数检查控制连接的内部设备 API，因此如果存在蓝牙连接、Wi-Fi 连接，甚至只是允许互联网访问的正常网络连接，则可能返回 <span class="inline2">true</span>。这意味着它在所有平台上可能并不总是准确的。</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">os_is_network_connected</span>([attempt_connection]);</p>

@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>network_connect_raw</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css">
   <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,9 +78,16 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>network_connect_raw</h1>
-  <p>使用此函数，您可以发送连接到服务器的请求。该函数使用<i>套接字ID</i>进行连接(请参阅<a href="network_create_socket.htm"><span class="inline">network_create_socket()</span></a>)，并要求您提供要连接的 IP 地址(字符串，可以是 IPv4 或 IPv6) 以及要连接的端口，如果连接失败，将返回小于0的值。此函数与<a href="network_connect.htm"><span class="inline">network_connect()</span></a>的区别在于，此函数可以连接到任何服务器，而不会对原始数据执行任何操作，这意味着您必须在服务器端自行实施协议。请注意，默认情况下该函数是同步的，这意味着您的游戏可能会在建立连接时显示为\"挂起\"。您可以设置连接的超时值，或者使用函数<a href="network_set_config.htm"><span class="inline">network_set_config()</span></a>异步创建，或者改用函数<a href="network_connect_raw_async.htm"><span class="inline">network_connect_async_raw()</span></a>。</p>
+  <h1><span data-field="title" data-format="default">network_connect_raw</span></h1>
+  <p>This function sends a request to connect to a server.</p>
+  <p>It takes the <i>socket id</i> to connect through (see <span class="inline3_func"><a href="network_create_socket.htm">network_create_socket</a></span>) and requires you to give the IP address to connect to (a string, can be IPv4 or IPv6) as well as the port to connect through. If the connection fails a value of less than 0 will be returned.</p>
+  <p>The difference between this function and&nbsp;<span class="inline3_func"><a href="network_connect.htm">network_connect</a></span>&nbsp;is that this function can connect to any server and does nothing to the raw data, so you have to implement the protocols yourself at the server end.</p>
+  <p>Note that by default the function is synchronous, so your game may appear to "hang" as the connection is made. You can set a timeout value for connection, or alternatively make the creation asynchronous, using the function <span class="inline3_func"><a href="network_set_config.htm">network_set_config</a></span>, or alternatively use the function&nbsp;<span class="inline3_func"><a href="network_connect_raw_async.htm">network_connect_raw_async</a></span>&nbsp;instead.</p>
   <p class="note"><span class="note">注意</span>您不能在HTML5上使用此函数。对于网络套接字，请使用<a href="network_connect_raw_async.htm">异步函数</a>。</p>
+  <div data-conref="../../../assets/snippets/Note_Networking_TCP_like.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function uses a TCP-like socket (i.e. <span class="inline2">network_socket_tcp</span>). It may work with other socket types as well, but this isn't guaranteed.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">network_connect_raw(socket, url, port);</p>
@@ -123,7 +130,7 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Back: <a href="Networking.htm">网络</a></div>
-        <div style="float:right">Next: <a href="network_connect_raw_async.htm">network_connect_async_raw</a></div>
+        <div style="float:right">Next:&nbsp;<a href="network_connect_raw_async.htm">network_connect_raw_async</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

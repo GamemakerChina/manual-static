@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>sprite_merge</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,25 +81,28 @@
   <h1>sprite_merge</h1>
   <p>此函数将参数1("ind2")中索引的精灵与参数0("ind1")中索引的精灵合并。图像本身<b>不是</b>合并在一起，而是图像索引合并，将精灵"ind2"的子图像附加到精灵"ind1"的子图像上，即：将它们添加到末尾。请注意，如果精灵大小不同，则附加的精灵将被拉伸以适合图像大小对于"ind1"。</p>
   <p>此更改是永久性的，从您使用此函数的那一刻起，直到游戏关闭或精灵被删除，正在合并的精灵将被更改，但与其合并的精灵将保持不变。</p>
-  <p class="note"><b>注意</b>：正在合并到的图像资源和要合并的图像资源都不能是原始游戏资源之一。您必须首先使用<span style="font-size:1px;"><a href="sprite_duplicate.htm"><span class="inline">sprite_duplicate()</span></a></span>创建两个新资源(如果您正在合并包含的游戏资源)，然后合并它们。</p>
-  <p class="note"><b>注意</b>：此函数仅适用于<b>位图</b>精灵，不适用于SWF或JSON(Spine)精灵。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Neither the image asset that is being merged into, nor the image asset that is for merging, can be one of the original game resources. You must use <span style="font-size:1px;"><a href="sprite_duplicate.htm"><span class="inline">sprite_duplicate()</span></a></span> first to create two new resources (if you are merging included game assets) and then merge those.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function is only useful for <b>bitmap</b> sprites and will not work with SWF or JSON (Spine) sprites.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">sprite_merge(ind1, ind2);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>ind1</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>ind1</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
         <td>要合并的精灵的索引。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>ind2</td><td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td>ind2</td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
         <td>要与ind1合并的精灵的索引。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -107,8 +110,12 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">var tspr;<br> tspr[0] = spr_add(working_directory + "Sprite Assets\explode1.png", 16, true, true, 0, 0);<br> tspr[1] = sprite_duplicate(spr_Explosion);<br> sprite_merge(tspr[0], tspr[1]);<br> sprite_index = t_spr[0];<br> sprite_delete(tspr[1]);
-  </p>
+  <p class="code">var tspr;<br>
+    tspr[0] = spr_add(working_directory + "Sprite Assets\explode1.png", 16, true, true, 0, 0);<br>
+    tspr[1] = sprite_duplicate(spr_Explosion);<br>
+    sprite_merge(tspr[0], tspr[1]);<br>
+    sprite_index = t_spr[0];<br>
+    sprite_delete(tspr[1]);</p>
   <p>上面的代码将一个sprite加载到一个局部变量中，然后将其与另一个已复制的精灵合并。最后，合并的精灵被分配给实例<span class="inline">sprite_索引</span>，而加载的精灵被移除。来释放它使用的内存。请注意，在此操作之后的某个时刻，如在销毁或房间结束事件中，您还需要使用<a href="sprite_delete.htm"><span class="inline">sprite_delete()</span></a>来删除合并的精灵也是凭记忆。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

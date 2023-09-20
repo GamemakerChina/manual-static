@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Building via Command Line</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css">
   <script src="../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo">
@@ -469,7 +469,22 @@
   <p class="code">Igor.exe Tests RunTests [test_directory/test_filename]</p>
   <p>必须指定测试目录或测试文件名。</p>
   <ul class="colour">
-    <li>注意<li>如果是一个目录，Igor 将在目录中查找名为<span class="inline"> tests.json </span>的文件。<ul><li>如果<strong>没有找到</strong>文件 ，Igor 将递归地搜索在目录中的<span class="inline">.yyz</span>和<span class="inline">.yyp</span>文件。<ul><li>每个被找到的项目都将被构建并在 Windows 上运行它，直到运行程序到达主循环<ul><li>如果运行程序在等待时间之后仍在运行，则测试通过</li><li>如果项目在超时期间内没有编译，或者在等待时间超过之前崩溃，则测试失败</li></ul></li></ul></li><li>如果<strong>找到</strong><span class="inline">tests.json</span>文件 ，Igor 将运行文件中描述的测试(参见下面的示例)</li></ul></li></li>
+    <li>If it's a directory, Igor will look for a file called <span class="inline">tests.json</span> in the directory
+      <ul>
+        <li>If the file <strong>is not found</strong>, Igor will recursively search for <span class="inline"><span data-keyref="Const_ExportProject_Extension">.yyz</span></span>&nbsp;and <span class="inline">.yyp</span> files in the directory
+          <ul>
+            <li>Each project found will be built and run on Windows</li>
+            <li>It will wait till the runner reaches the main loop
+              <ul>
+                <li>The test passes if the runner is still running after the wait time</li>
+                <li>The test fails if the project does not compile within the timeout period, or crashes before the wait time is over</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>If a&nbsp;<span class="inline">tests.json</span> file <strong>is found</strong>, Igor will run the tests described in the file (see example below)</li>
+      </ul>
+    </li>
     <li>或者，您可以提供到<span class="inline"> tests.json </span>文件的直接路径，而不是目录</li>
   </ul>
   <p>&nbsp;</p>
@@ -478,7 +493,27 @@
   <p><span class="inline">tests.json</span>文件必须具有以下格式:</p>
   <ul class="colour">
     <li>JSON 文件应该包含一个对象数组</li>
-    <li>每个对象应该描述一个测试<ul><li>测试对象必须包含以下键:<ul><li><span class="inline">name</span> : 用于报告测试是否通过或失败的名称</li><li><span class="inline">path</span> : 一个指向<span class="inline">.yyp</span>,<span class="inline">.yyz</span>,<span class="inline">.gml</span>,<span class="inline">.js</span>的测试文件或文件夹路径。</li><li><span class="inline">command</span>: 测试的 Igor 命令(<span class="inline">Run</span> ，<span class="inline">CreatePackage</span>等，如上所述)</li></ul></li><li>测试对象还可以包含以下键:<ul><li><span class="inline">platform</span> : 直接传递给 Igor 以执行测试</li><li><span class="inline">device</span> : 来自<span class="inline">devices.json</span>的设备名称</li><li><span class="inline">target</span> : 类似"<span class="inline">平台|目标"</span>格式，例如: "<span class="inline">Windows|Local"</span></li><li><span class="inline">timeout</span> : 包括编译和运行在内的总测试的允许时长; 如果超时，将停止测试并标记为失败</li><li><span class="inline">waittime</span> : 在进入主循环之后等待的时间长度，然后再决定测试已通过</li><li><span class="inline">owner</span> : 如果此测试失败，将通过电子邮件发送的用户的电子邮件地址</li></ul></li></ul></li>
+    <li>Each object should describe one test
+      <ul>
+        <li>The test object must contain these keys:
+          <ul>
+            <li><span class="inline">name</span>: A name used to report whether the test has passed or failed</li>
+            <li><span class="inline">path</span>: A path to a <span class="inline">.yyp</span>, <span class="inline"><span data-keyref="Const_ExportProject_Extension">.yyz</span></span>, <span class="inline">.gml</span>, <span class="inline">.js</span> file or folder for the test</li>
+            <li><span class="inline">command</span>: The Igor command for the test (<span class="inline">Run</span>, <span class="inline">CreatePackage</span>, etc.&nbsp;as described above)</li>
+          </ul>
+        </li>
+        <li>The test object may also contain these keys:
+          <ul>
+            <li><span class="inline">platform</span>: Passed directly through to Igor to do the test</li>
+            <li><span class="inline">device</span>: The device name from the <span class="inline">devices.json</span> file</li>
+            <li><span class="inline">target</span>: The target in a "<span class="inline">PLATFORM|TARGET"</span> format, e.g.: "<span class="inline">Windows|Local"</span></li>
+            <li><span class="inline">timeout</span>: A timeout for the total test including compile and run;&nbsp;if exceeded the test will be stopped and&nbsp;marked as failed</li>
+            <li><span class="inline">waittime</span>: The length of time to wait after entering the main loop before deciding whether the&nbsp;test has passed</li>
+            <li><span class="inline">owner</span>: the e-mail address of the user who will be e-mailed if this test fails</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
   <h2>例子</h2>
   <p>下面是<span class="inline">tests.json</span>文件的一个示例:</p>

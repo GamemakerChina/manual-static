@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>instance_place</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,8 +81,19 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>instance_place</h1>
   <p>使用此函数，您可以使用为检查运行代码的实例的碰撞掩码来检查与另一个实例或对象的所有实例碰撞的位置。使用该选项时，实际上是要求<span data-keyref="GameMaker Name">GameMaker</span>将实例移动到新位置，检查冲突，向后移动，并告诉您是否发现冲突。</p>
+  <div data-conref="../../../../assets/snippets/Collisions_function_accepted_arguments.hts">
+  <p>In addition to objects and instances, the function also accepts:</p>
+  <ul class="colour">
+    <li>The special keywords <b>all</b> and <b>other</b></li>
+    <li>A&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span></li>
+    <li>An array containing a combination of objects, instances, Tile Maps and the keywords <strong>all</strong>/<strong>other</strong></li>
+  </ul>
+  <p>Passing an array allows you to check for collisions against multiple objects and/or Tile Maps in one call.</p>
+
+</div>
   <p>这将适用于精确碰撞，但仅当实例和要检查的对象都选择了精确碰撞遮罩时才适用，否则仅应用边界框碰撞。</p>
-  <p>此函数将返回要碰撞的对象的唯一实例<a href="Instance_Variables/id.htm"><span class="inline">id</span></a>，但如果不需要，则使用函数<a href="../../Movement_And_Collisions/Collisions/place_meeting.htm"><span class="inline">place_meeting()</span></a>稍快一些。 此函数还接受特殊关键字<span class="inline"><b>all</b></span>和<span class="inline"><b>other</b></span>，如果没有发生冲突，将返回<a href="../../../GML_Overview/Instance_Keywords.htm">关键字</a><span class="inline"><b>noone</b></span>，如果确实发生冲突，则返回找到的实例的唯一实例 ID 值。</p>
+  <p>This function will return the unique <a href="Instance_Variables/id.htm"><span class="inline">id</span></a> of the instance being collided with, or the <span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span>&nbsp;of the tile map found, but if that is not needed it is slightly faster to use the function <a href="../../Movement_And_Collisions/Collisions/place_meeting.htm"><span class="inline">place_meeting()</span></a>. If no collisions are found, <span class="inline"><a href="../../../GML_Overview/Instance_Keywords.htm">noone</a></span> is returned.</p>
+  <p>See:&nbsp;<a href="../../Movement_And_Collisions/Collisions/Collisions.htm">Collisions</a></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">instance_place(x, y, obj);</p>
@@ -105,14 +116,14 @@
       </tr>
       <tr>
         <td>obj</td>
-        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span></td>
-        <td>要检查其实例的对象。</td>
+        <td><span data-keyref="Collision_obj_type"><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></span></td>
+        <td><span data-keyref="Collision_obj_description">An object, instance, tile map ID, keywords all/other, or array containing these items</span></td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Instance ID</a></span>&nbsp;or <span data-keyref="Type_ID_noone"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Instance_Keywords.htm">noone</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span> or <span data-keyref="Type_ID_noone"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Instance_Keywords.htm">noone</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var _inst = instance_place(x, y, obj_Enemy);<br>

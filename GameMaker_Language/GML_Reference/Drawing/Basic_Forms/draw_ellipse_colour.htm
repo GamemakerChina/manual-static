@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>draw_ellipse_colour</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -81,7 +81,10 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>draw_ellipse_colour</h1>
   <p>使用此函数，您可以通过定义一个矩形区域来绘制椭圆的轮廓或填充椭圆，然后创建椭圆以适合该区域。如果已填充，则可以定义内部填充颜色和外部填充颜色。如果这些颜色不相同，您将获得从一种颜色到另一种颜色的渐变效果(颜色设置将使用函数<a href="../Colour_And_Alpha/draw_set_colour.htm"><span class="inline">draw_set_colour()</span></a>替代基本颜色集)。您可以使用函数<a href="draw_set_circle_precision.htm"><span class="inline">draw_set_circle_precision()</span></a>定义绘制的精度。</p>
-  <p class="note"><b>注意</b>：如果要使用着色器绘制形状，请注意，大多数着色器都需要以下输入：顶点、纹理、颜色。但是，使用此函数时，仅传入顶点和颜色数据，因此着色器可能无法绘制任何内容(或绘制某些内容但不正确)。如果需要以这种方式绘制形状，则应考虑到这一点对着色器进行自定义。</p>
+  <div data-conref="../../../../assets/snippets/Note_Shape_Shader_Attributes_Are_Different.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you want to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_ellipse_colour(x1, y1, x2, y2, col1, col2, outline);</p>

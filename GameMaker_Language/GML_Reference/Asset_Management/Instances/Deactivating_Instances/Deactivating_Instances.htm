@@ -51,7 +51,7 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Deactivating Instances</title>
-  <meta name="generator" content="Adobe RoboHelp 2020">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css">
   <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
@@ -78,14 +78,20 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>停用实例</h1>
+  <h1><span data-field="title" data-format="default">Deactivating Instances</span></h1>
   <p><span data-keyref="GameMaker Name">GameMaker</span>为您提供"关闭"实例的可能性，以便不再以任何方式处理它们。从技术上来说，它们实际上已经不存在了，除了作为去激活过程本身的指针，这意味着在重新激活之前，不能以任何方式操作或更改已停用的实例。因此，使用这些函数时应该非常小心，因为它们在使用不当时会引起问题，特别是对于持久对象，因为已停用的持久对象将不会移动到下一个房间，除非它首先被重新激活(从游戏中有效地将其删除)。另请注意，<strong>激活和去激活不是瞬时</strong>，在函数被调用<em>的事件的</em>结束之前，以这种方式改变其状态的实例不会被视为活动/不活动。</p>
   <p>通常没有必要在游戏的每一步都停用实例，这实际上会导致游戏出现性能问题。相反，建议您仅在警报中每隔几步运行一次这些函数(例如)，或者在相机视图已更改位置时运行这些函数，尤其重要的是，不要在绘制事件中使用这些函数，因为这可能会导致游戏中出现严重错误。</p>
   <p>停用的实例实际上不再存在于游戏中，但单个实例仍然可以访问其变量。但是，您不能将<span class="inline">与(object)</span>或<span class="inline">与(instance)</span>一起使用，而是必须使用以下形式的唯一ID直接访问实例：</p>
   <p class="code">val = inst.variable;</p>
   <p>在上面的示例中，" inst "是一个变量，它保存已停用实例的ID，这是引用已停用实例的唯一方法，而无需事先激活它。</p>
-  <p class="note"><b><span class="note">注意</span></b>如果您在房间启动时停用实例(即：从房间创建代码，或从房间内实例的实例创建事件)，则从房间编辑器放置在房间内的所有实例在被停用之前仍将运行其创建事件。</p>
-  <p class="note"><b>警告：</b>禁用启用了物理的实例不会阻止其固定装置在物理模拟内进行交互。为此，您应在激活/停用实例时将其<span class="inline" style="font-size: 14px">phy_active</span>变量设置为<span class="inline"><span style="font-size:14px">true</span></span>或<span class="inline"><span style="font-size:14px">false</span></span>。<b></b></p>
+  <div data-conref="../../../../../assets/snippets/Note_Deactivate_On_Room_Start_Create_Event.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you deactivate an instance on room start (i.e.&nbsp;from the Room Creation Code, or from an instance <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Create event</a> of an instance within the room) all instances that are placed within the room from&nbsp;<a href="../../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a>&nbsp;<b>will still run their Create event</b> before being deactivated.</p>
+
+</div>
+  <div data-conref="../../../../../assets/snippets/Note_Warning_Deactivating_Physics_Instances.hts">
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;</b>Deactivating instances that have physics enabled will <strong>NOT</strong> stop their fixtures from interacting within the physics simulation. For that you should set their&nbsp;<span class="inline2"><a href="../../../Physics/Physics_Variables/phy_active.htm">phy_active</a></span> variable to <span class="inline2">true</span> or <span class="inline2">false</span> as you activate/deactivate the instances.</p>
+
+</div>
   <p><b></b>存在以下用于停用实例的函数：</p>
   <ul class="colour">
     <li><a href="instance_activate_all.htm">instance_activate_all</a></li>
@@ -97,7 +103,6 @@
     <li><a href="instance_deactivate_region.htm">instance_deactivate_region</a></li>
     <li><a href="instance_deactivate_layer.htm">instance_deactivate_layer</a></li>
   </ul>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

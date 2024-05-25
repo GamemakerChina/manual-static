@@ -85,7 +85,7 @@
   <h3>用法说明</h3>
   <ul class="colour">
     <li>如果向函数传递结构文字 (即：不使用构造函数创建的结构)，则它将简单地返回字符串 <span class="inline2">"struct"</span>。</li>
-    <li>如果在对象实例中向该函数传递 <span class="inline2">self</span> 关键字，它将返回 <span class="inline2">"instance"</span>。</li>
+    <li>如果在对象实例中向函数传递<span class="inline2">self</span>关键字，它将返回<span class="inline2">"instance"</span>。</li>
     <li>如果未在脚本中创建构造函数，则返回的构造函数名称将包含其他文本。如果它是在对象内部创建的，则其名称将包括该对象和创建该对象的事件。例如，在<span class="inline2">Object1</span>的创建事件中创建的名为<strong>test_constructor</strong>的构造函数将返回为<span class="inline2">“test_constructor_gml_Object_Object1_Create_0”</span>。为了避免这种情况，请在<a href="../../GML_Overview/Script_Functions.htm">脚本</a>中创建构造函数。</li>
     <li>该函数还可以用来检查struct引用是否是<strong><a class="tooltip" title="A&nbsp;weak reference is a reference that does not protect the referenced object from collection by a garbage collector, and so can be used to check if a struct is still &quot;alive&quot; (referenced) or not somewhere in the game.">弱引用</a></strong>，在这种情况下，函数将返回字符串<span class="inline2">“weakref”</span>，而不是创建结构的函数的名称。有关更多信息，请参见函数<a href="../Garbage_Collection/weak_ref_create.htm"><span class="inline">weak_ref_create()</span></a>。</li>
   </ul>

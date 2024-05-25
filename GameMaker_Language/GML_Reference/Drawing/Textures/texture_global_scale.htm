@@ -86,7 +86,7 @@
     <li>要使其四分之一，请使用 <span class="inline">texture_global_scale(4)</span> 等 ...</li>
   </ul>
   <p>通过这种方式，可以更好地控制具有低内存问题的平台上的纹理页面内存使用。请注意，纹理页面是根据Wad的需要创建的，因此您可以在游戏开始时调用它来加载所有缩放的纹理，或者可以在特定时间调用它以加载特定纹理，在这种情况下，您可能需要在调用此函数之前调用<a href="draw_texture_flush.htm"><span class="inline">draw_texture_flush()</span></a>，然后使用预取函数获取正确的纹理页面到内存中。</p>
-  <p>This function only works for PNG textures. You can change the texture format using&nbsp;<a href="../../../../Settings/Texture_Groups.htm">Texture Groups</a>.</p>
+  <p>此功能仅适用于 PNG 纹理。您可以使用 <a href="../../../../Settings/Texture_Groups.htm"> 纹理组 </a> 更改纹理格式。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">texture_global_scale(pow2integer);</p>

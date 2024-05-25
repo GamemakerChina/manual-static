@@ -115,7 +115,7 @@
     </tbody>
   </table>
   <h2>连接/断开</h2>
-  <p>When you have an event of the type <span class="inline">network_type_connect</span> or <span class="inline">network_type_disconnect</span>, the <span class="inline">async_load</span>&nbsp;map will have the following additional key:</p>
+  <p>当您有一个类型为 <span class="inline">network_type_connect</span> 或 <span class="inline">network_type_disconnect</span> 的事件时，<span class="inline">Network_load</span> 映射将具有以下附加键：</p>
   <ul class="colour">
     <li>"<strong>socket</strong>"：此键将保留连接/断开套接字ID。</li>
   </ul>
@@ -129,11 +129,11 @@
   <ul class="colour">
     <li>"<strong>buffer</strong>"：这是由事件生成的唯一"缓冲区ID"。创建"growth"类型缓冲区(字节对齐为1)以保存Id，该Id应存储在变量中，并用于此事件中对缓冲区的所有进一步函数调用。与<span class="inline">async_load</span>映射一样，创建的缓冲区在此事件结束时会自动从内存中删除。有关缓冲区的详细信息，请参阅<a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">参考-缓冲区</a>。</li>
     <li>"<strong>size</strong>":这是要接收的缓冲区数据的大小(以字节为单位)。</li>
-    <li><strong>消息类型</strong>"：<em>(仅限WebSockets)</em>-如果收到的消息为二进制形式，则为<span class="inline2">network_send_binary</span>;如果收到的消息为文本形式，则为<span class="inline2">network_send_text</span>。</li>
+    <li>"<strong>message_type</strong>"：<em>(仅限WebSockets)</em>-如果收到的消息为二进制形式，则为<span class="inline2">network_send_binary</span>;如果收到的消息为文本形式，则为<span class="inline2">network_send_text</span>。</li>
   </ul>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 创建的缓冲区仅在这些事件中有效，并将在事件结束时自动释放。</p>
-  <h2 id="h">Attempting Connection</h2>
-  <p>If the&nbsp;<span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/OS_And_Compiler/os_is_network_connected.htm">os_is_network_connected</a></span> function returns <span class="inline2">false</span> when using <span class="inline2">network_connect_active</span> or <span class="inline2">network_connect_passive</span>, the result is asynchronously returned in this event. The <span class="inline2">type</span> key in the <span class="inline2">async_load</span> map will be one of these values:</p>
+  <h2 id="h">正在尝试连接</h2>
+  <p>如果在使用 <span class="inline2">network_connect_active</span> 或 <span class="inline2">network_connect_passive</span> 时 <span class="inline3_func"><a href="../../../GameMaker_Language/GML_Reference/OS_And_Compiler/os_is_network_connected.htm">os_is_network_connected</a></span> 函数返回 <span class="inline2">false</span>，则在此事件中异步返回结果。 <span class="inline2">async_load</span> 映射中的 <span class="inline2">type</span> 键将为以下值之一：</p>
   <table>
     <tbody>
       <tr>
@@ -150,7 +150,7 @@
       </tr>
     </tbody>
   </table>
-  <p>If the network goes down at any time, this event is triggered again with the <span class="inline2">type</span> key set to <span class="inline2">network_type_down</span>.</p>
+  <p>如果网络在任何时候出现故障，将 <span class="inline2">type</span> 键设置为 <span class="inline2">network_type_down</span> 时将再次触发此事件。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

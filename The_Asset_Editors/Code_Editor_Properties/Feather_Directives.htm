@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
 
   <script type="text/javascript" language="JavaScript">
     //<![CDATA[
@@ -47,20 +45,20 @@
   <script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
   <script type="text/javascript" src="../../template/scripts/topicwidgets.min.js"></script>
 <script type="text/javascript" src="../../whxdata/projectsettings.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css"/>
-  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css"/>
-  <meta name="topic-status" content="Draft"/>
-<link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/><script src="../../../assets/scripts/main_script.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <meta name="generator" content="Adobe RoboHelp 2022"/>
+  <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+<link rel="stylesheet" type="text/css" href="../../assets/css/default.css"><script src="../../../assets/scripts/main_script.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Adobe RoboHelp 2022">
   <title>Feather Directives</title>
-  <meta name="topic-status" content="Draft"/>
-  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css"/>
-  <meta name="template" content="../../assets/masterpages/Manual_Page.htt"/>
-  <meta name="rh-authors" content="Bart Teunis"/>
-  <meta name="topic-comment" content="Reference page listing all Feather directives"/>
-  <meta name="search-keywords" content="feather,directive,directives"/>
-  <meta name="rh-index-keywords" content="directive,directives,feather"/>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+  <meta name="template" content="../../assets/masterpages/Manual_Page.htt">
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Reference page listing all Feather directives">
+  <meta name="search-keywords" content="feather,directive,directives">
+  <meta name="rh-index-keywords" content="directive,directives,feather">
 </head>
 
 <body>
@@ -83,70 +81,70 @@
   <div>
   </div>
   <div>
-  <h1><span data-field="title" data-format="default">Feather Directives</span></h1>
-  <p><span><span data-field="title" data-format="default">Feather Directives</span> are comments that affect how <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a> treats your <span data-keyref="GML_Code">GML Code</span>, including which Feather rules it applies, the <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#message_severity_profile">Profile</a> it uses and whether strict type validation is applied<span>.</span></span></p>
-  <p>By default, Feather directives apply to the current script and to the functions declared inside of it, unless you supply a <a href="#path">target path</a>.</p>
+  <h1><span data-field="title" data-format="default">羽毛指令</span></h1>
+  <p><span><span data-field="title" data-format="default">Feather Directives</span>&nbsp;are comments that affect how&nbsp;<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽毛(Feather)</a>&nbsp;treats your&nbsp;<span data-keyref="GML_Code">GML Code</span>, including&nbsp;which Feather rules it applies, the&nbsp;<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#message_severity_profile">Profile</a>&nbsp;it uses and whether strict type validation is applied<span>.</span></span></p>
+  <p>默认情况下，Feather指令应用于当前脚本和在其中声明的函数，除非您提供<a href="#path">目标路径</a>。</p>
   <div class="seealso" style="">
-    <p class="seealso-caption" style="">See Also</p>
+    <p class="seealso-caption" style="">另见</p>
     <ol class="seealso-list" data-keywords="" style="">
       
-    <li><a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm" class="seealso-list-item" style="">Feather</a></li><li><a href="JSDoc_Script_Comments.htm" class="seealso-list-item" style="">JSDoc Script Comments</a></li><li><a href="Feather_Data_Types.htm" class="seealso-list-item" style="">Feather Data Types</a></li><li><a href="Feather_Features.htm" class="seealso-list-item" style="">Feather Features</a></li><li><a href="../../Additional_Information/Errors/Syntax_Errors.htm" class="seealso-list-item" style="">Syntax Errors (Feather Messages)</a></li></ol>
+    <li><a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm" class="seealso-list-item" style="">羽毛(Feather)</a></li><li><a href="JSDoc_Script_Comments.htm" class="seealso-list-item" style="">JSDoc脚本注释</a></li><li><a href="Feather_Data_Types.htm" class="seealso-list-item" style="">Feather数据类型</a></li><li><a href="Feather_Features.htm" class="seealso-list-item" style="">Feather特征</a></li><li><a href="../../Additional_Information/Errors/Syntax_Errors.htm" class="seealso-list-item" style="">故障排除错误(羽毛消息)</a></li></ol>
   </div>
-  <h2>General</h2>
-  <p>A Feather directive has the following syntax: </p>
-  <p class="code">// Feather command parameters [in PATH]</p>
-  <p>It is a regular script comment that starts with <span class="inline2">Feather</span>, followed by the command and its parameters. Optionally, it may take a path to a script, object or group in <a href="../../Introduction/The_Asset_Browser.htm">The Asset Browser</a> to which the directive is applied.</p>
-  <h2>Ignoring Feather Rules</h2>
-  <p>Specific <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#s3">feather rules</a> can be ignored using the directive <span class="inline2">Feather ignore</span> or <span class="inline2">Feather disable</span>: </p>
-  <p class="code">// Feather ignore  GM1010<br/>
+  <h2>概述</h2>
+  <p>Feather指令具有以下语法：</p>
+  <p class="code">// Feather command&nbsp;parameters [in PATH]</p>
+  <p>它是一个正则脚本注释，以<span class="inline2">Feather</span>开头，后跟命令及其参数。(可选)它可以采用指向<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中应用该指令的脚本、对象或组的路径。</p>
+  <h2>无视羽毛规则</h2>
+  <p>可以使用指令<span class="inline2">Feather ignore</span>或<span class="inline2">Feather disable</span>忽略特定的<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#s3">Feather规则</a>：</p>
+  <p class="code">// Feather ignore&nbsp; GM1010<br>
     // Feather disable GM1010</p>
-  <p>For example, consider the following piece of code: </p>
-  <p class="code">// Feather ignore GM1010<br/>
-    result = 5 + &quot;5&quot;;</p>
-  <p>With <strong>Strict Type mode</strong> enabled, Feather normally shows a <span class="inline2">&quot;GM1010 - Cannot perform &#39;+&#39; operation between types &#39;real&#39; and &#39;string&#39;</span> message. With the directive above, Feather will ignore messages of this type, in that particular script.</p>
-  <p>The directive only affects lines after the comment itself, so any statements before the comment will still show warnings.</p>
-  <h3>Ignoring Once</h3>
-  <p>The GM message can be ignored only once by adding <span class="inline2">once</span>:</p>
-  <p class="code">// Feather ignore once GM1010</p>
-  <p>This c<span>ommand makes Feather ignore </span><span>the first <span>occurrence <span>of this type <span>o</span>f mess<span>age but not the ones that come after that<span>: </span></span></span></span></span></p>
-  <p class="code">// Feather ign<span>ore <span>once GM1010<br/>
-        result = 5 + &quot;5&quot;;    // ignored<br/>
-        result = 6 + &quot;6&quot;;    // err<span>or</span></span></span></p>
-  <h3>Restoring</h3>
-  <p>Finally, you can re-enable the GM message using <span class="inline2">restore</span> / <span class="inline2">enable</span>: </p>
-  <p class="code">// Feather restore GM1010<br/>
-    // Feather enable  GM1010</p>
-  <h2>Profiles</h2>
-  <p>This directive sets the profile for the script: </p>
-  <p class="code"><code>// Feather use syntax-errors<br/>
-// Feather use type-errors<br/>
-// Feather use all<br/>
+  <p>例如，考虑以下代码段：</p>
+  <p class="code">// Feather ignore GM1010<br>
+    result = 5 + "5";</p>
+  <p>启用<strong>严格类型模式</strong>后，Feather通常会显示<span class="inline2">"GM1010 - Cannot perform '+' operation between types 'real' and 'string'</span>消息。使用上述指令，Feather将忽略该特定脚本中的此类型消息。</p>
+  <p>该指令只影响注释本身之后的行，因此注释之前的任何语句仍将显示警告。</p>
+  <h3>忽略一次</h3>
+  <p>通过添加<span class="inline2">once</span>，GM消息只能被忽略一次：</p>
+  <p class="code">// Feather ignore&nbsp;once GM1010</p>
+  <p>This c<span>ommand makes Feather ignore&nbsp;</span><span>the first&nbsp;<span>occurrence&nbsp;<span>of this type <span>o</span>f mess<span>age but not the&nbsp;ones that come after that<span>:&nbsp;</span></span></span></span></span></p>
+  <p class="code">// Feather ign<span>ore&nbsp;<span>once GM1010<br>
+        result = 5 + "5";&nbsp; &nbsp; // ignored<br>
+        result = 6 + "6";&nbsp; &nbsp; // err<span>or</span></span></span></p>
+  <h3>恢复</h3>
+  <p>最后，您可以使用<span class="inline2">restore</span>/<span class="inline2">enable</span>重新启用GM消息：</p>
+  <p class="code">// Feather restore GM1010<br>
+    // Feather enable&nbsp; GM1010</p>
+  <h2>配置文件</h2>
+  <p>此指令设置脚本的配置文件：</p>
+  <p class="code"><code>// Feather use syntax-errors<br>
+// Feather use type-errors<br>
+// Feather use all<br>
 // Feather use none</code></p>
-  <p class="note"><code><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> </code>This Feather directive corresponds to the <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#message_severity_profile">Profile</a> preference in the <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather Preferences</a>.</p>
-  <h2>Type Validation Mode</h2>
-  <p>This directive sets the type validation mode to use from either <em>strict</em> or <em>relaxed: </em></p>
-  <p class="code"><code>/// Feather use strict<br/>
+  <p class="note"><code><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span></code>此羽化指令对应于<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#message_severity_profile">羽化首选项</a>中的<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">配置文件</a>首选项。</p>
+  <h2>类型验证模式</h2>
+  <p>此指令从 <em> 严格 </em> 或 <em> 放松 </em> 设置要使用的类型验证模式：</p>
+  <p class="code"><code>/// Feather use strict<br>
 /// Feather use relaxed</code></p>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> This Feather directive corresponds to the <strong>Strict Type mode</strong> preference in the <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather Preferences</a>.</p>
-  <h2>Combined Directives</h2>
-  <p>You can also set the profile and type validation mode in a single line: </p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此羽化指令对应于<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽化首选项</a>中的<strong>严格类型模式</strong>首选项。</p>
+  <h2>组合指令</h2>
+  <p>您还可以在一行中设置配置文件和类型验证模式：</p>
   <p class="code">/// Feather <span>use all, strict</span></p>
-  <p>The above comment will make Feather look for <strong>All</strong> errors <em>and</em> use <strong>Strict Type mode</strong>.</p>
-  <h2 id="path">Path</h2>
-  <p>Optionally you can provide a path using the <span class="inline2">in</span> directive t<span>o apply a</span> Feather directive to a specific script, object or gr<span>oup </span>in <a href="../../Introduction/The_Asset_Browser.htm">The Asset Browser</a><span><span>. This can be placed in<span><span> the main script <span><span>of an external library <span><span>of functi<span><span>ons, th<span><span>ough y<span><span>ou can place it in any <span><span>other script, e.g. a blank &quot;FeatherC<span><span>onfig&quot; script.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> Having numerous rules using paths may cause performance issues, the exception being paths set specifically to <span class="inline2">*</span> alone.</p>
-  <p><span><span><span><span>You can use the following special symbols in your paths: </span></span></span></span></p>
+  <p>上述注释将使Feather查找<strong>所有</strong>错误<em>并</em>使用<strong>严格类型模式</strong>。</p>
+  <h2 id="path">路径</h2>
+  <p>Optionally you can provide a path using the <span class="inline2">in</span> directive t<span>o apply a</span> Feather directive to a specific script,&nbsp;object or gr<span>oup&nbsp;</span>in <a href="../../Introduction/The_Asset_Browser.htm">The Asset Browser</a><span><span>. This can be placed in<span><span>&nbsp;the main script&nbsp;<span><span>of an external library&nbsp;<span><span>of functi<span><span>ons, th<span><span>ough y<span><span>ou can place it in any&nbsp;<span><span>other script, e.g. a blank "FeatherC<span><span>onfig" script.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>使用多个路径的规则可能会导致性能问题，但仅将路径专门设置为<span class="inline2">*</span>的情况除外。</p>
+  <p><span><span><span><span>You can use the following special symbols in your paths:&nbsp;</span></span></span></span></p>
   <ul class="colour">
-    <li><span class="inline2">/</span> - When used in the beginning of a path, points to the root <span>of the Asset Browser</span></li>
-    <li><span class="inline2">.</span> - When used in the beginning of a path, points to the current script&#39;s folder</li>
-    <li><span class="inline2">*</span> is a wildcard that matches everything inside the preceding directory</li>
+    <li><span class="inline2">/</span>&nbsp;- When used in the beginning of a path, points to the root&nbsp;<span>of the Asset Browser</span></li>
+    <li><span class="inline2">.</span>- 在路径的开头使用时，指向当前脚本的文件夹</li>
+    <li><span class="inline2">*</span>是匹配前面目录中所有内容的索引</li>
   </ul>
-  <p>This way <span>y<span>ou can<span> define paths t<span>o assets in the Asset Br<span>owser, for example<span><span>:</span></span></span></span></span></span></span></p>
+  <p>This way&nbsp;<span>y<span>ou can<span>&nbsp;define paths t<span>o assets in the Asset Br<span>owser, for example<span><span>:</span></span></span></span></span></span></span></p>
   <table border="1" cellpadding="1" cellspacing="1">
     <thead>
       <tr>
-        <th>Path</th>
-        <th>Applies To</th>
+        <th>路径</th>
+        <th>适用于</th>
       </tr>
     </thead>
     <tbody>
@@ -168,12 +166,12 @@
       </tr>
     </tbody>
   </table>
-  <p>Examples: </p>
+  <p>示例如下：</p>
   <table border="1" cellpadding="1" cellspacing="1">
     <thead>
       <tr>
-        <th>Directive</th>
-        <th>Effect</th>
+        <th>指令</th>
+        <th>效果</th>
       </tr>
     </thead>
     <tbody>
@@ -195,17 +193,17 @@
       </tr>
     </tbody>
   </table>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span> No consistent result is guaranteed if you have two directives that enable and disable a Feather message on the same path.</p>
-  <p> </p>
-  <p> </p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span>如果您有两个指令在同一路径上启用和禁用 Feather 消息，则无法保证结果一致。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Back: <a href="../Scripts.htm">The Script Editor</a></div>
-        <div>Next: <a href="Code_Snippets.htm">Code Snippets</a></div>
+        <div>Back:&nbsp;<a href="../Scripts.htm">The Script Editor</a></div>
+        <div>Next:&nbsp;<a href="Code_Snippets.htm">代码片段</a></div>
       </div>
     </div>
-    <h5><span data-conref="../../assets/snippets/Copyright_Notice_AutoUpdate.hts">© Copyright <span data-keyref="Company Name">YoYo Games</span> <span data-keyref="Company Structure Suffix">Ltd.</span> <span data-field="date" data-format="YYYY">2023</span> All Rights Reserved</span></h5>
+    <h5><span data-conref="../../assets/snippets/Copyright_Notice_AutoUpdate.hts">© Copyright <span data-keyref="Company Name">YoYo Games</span>&nbsp;<span data-keyref="Company Structure Suffix">Ltd.</span>&nbsp;<span data-field="date" data-format="YYYY">2023</span> All Rights Reserved</span></h5>
   </div>
 
 </div>

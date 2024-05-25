@@ -79,13 +79,13 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">network_connect_raw</span></h1>
-  <p>This function sends a request to connect to a server.</p>
-  <p>It takes the <i>socket id</i> to connect through (see <span class="inline3_func"><a href="network_create_socket.htm">network_create_socket</a></span>) and requires you to give the IP address to connect to (a string, can be IPv4 or IPv6) as well as the port to connect through. If the connection fails a value of less than 0 will be returned.</p>
-  <p>The difference between this function and&nbsp;<span class="inline3_func"><a href="network_connect.htm">network_connect</a></span>&nbsp;is that this function can connect to any server and does nothing to the raw data, so you have to implement the protocols yourself at the server end.</p>
-  <p>Note that by default the function is synchronous, so your game may appear to "hang" as the connection is made. You can set a timeout value for connection, or alternatively make the creation asynchronous, using the function <span class="inline3_func"><a href="network_set_config.htm">network_set_config</a></span>, or alternatively use the function&nbsp;<span class="inline3_func"><a href="network_connect_raw_async.htm">network_connect_raw_async</a></span>&nbsp;instead.</p>
+  <p>该函数发送连接到服务器的请求。</p>
+  <p>它需要 <i> 套接字 ID</i> 进行连接 (请参阅 <span class="inline3_func"><a href="network_create_socket.htm">network_create_socket</a></span>)，并要求您提供要连接的 IP 地址 (字符串，可以是 IPv4 或 IPv6) 以及端口来连接通过。如果连接失败，将返回小于 0 的值。</p>
+  <p>该函数与 <span class="inline3_func"><a href="network_connect.htm">network_connect</a></span> 的区别在于，该函数可以连接到任何服务器，并且对原始数据不执行任何操作，因此您必须在服务器端自行实现协议。</p>
+  <p>请注意，默认情况下该功能是同步的，因此您的游戏在建立连接时可能会 " 挂起"。您可以设置连接超时值，或者使用函数 <span class="inline3_func"><a href="network_set_config.htm">network_set_config</a></span> 使创建异步，或者使用函数 <span class="inline3_func"><a href="network_connect_raw_async.htm">network_connect_raw_async</a></span>。</p>
   <p class="note"><span class="note">注意</span>您不能在HTML5上使用此函数。对于网络套接字，请使用<a href="network_connect_raw_async.htm">异步函数</a>。</p>
   <div data-conref="../../../assets/snippets/Note_Networking_TCP_like.hts">
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function uses a TCP-like socket (i.e. <span class="inline2">network_socket_tcp</span>). It may work with other socket types as well, but this isn't guaranteed.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 此函数使用类似 TCP 的套接字 (即 <span class="inline2">network_socket_tcp</span>)。它也可能适用于其他套接字类型，但这不能保证。</p>
 
 </div>
   <p>&nbsp;</p>

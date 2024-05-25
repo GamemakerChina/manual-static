@@ -85,8 +85,8 @@
     <li><a href="audio_free_buffer_sound.htm">audio_free_buffer_sound</a></li>
   </ul>
   <p>&nbsp;</p>
-  <p>Note that once you have created a sound from an audio buffer, you are <i>not</i> creating a new sound in memory, but rather pointing to the position within the buffer where the sound is stored. You should not change this buffer after a sound has been associated with it otherwise you will get unexpected results, and you cannot delete the buffer while a sound is associated with it. Instead, free the sound (or sounds) first then delete the buffer.</p>
-  <p>Once you have created your new audio resource from a buffer, you can use its index value in any of the regular audio functions to play it, change its gain or pitch, pause it, etc. Note that the buffer used to load the audio <b>can only support PCM sounds</b>, so formats like OGG will not be supported.</p>
+  <p>请注意，从音频缓冲区创建声音后，您<i>不会</i>在内存中创建新声音，而是指向缓冲区内存储声音的位置。在声音与该缓冲区关联后，不应更改该缓冲区，否则会得到意外结果，并且在声音与该缓冲区关联时无法删除该缓冲区。相反，首先释放声音(或多个声音)，然后删除缓冲区。</p>
+  <p>从缓冲区创建新的音频资源后，您可以在任何常规音频函数中使用其索引值来播放它、更改其增益或音调、暂停它等。请注意，用于加载音频的缓冲区{ }只能支持 PCM 声音<b>，因此不支持 OGG 等格式。</b></p>
   <h2>Audio Buffer Queues</h2>
   <p>缓冲音频的另一个函数是，您可以使用缓冲区创建音频队列，然后将其传输到运行项目的设备。音频队列采用您之前已填充音频数据的常规缓冲区，并使您能够"指向"它的一部分，并告诉<span data-keyref="GameMaker Name">GameMaker</span>以给定的顺序从该缓冲区流式传输音频。音频队列的可用函数包括：</p>
   <ul class="colour">

@@ -95,26 +95,26 @@
   <h3>模式</h3>
   <p>在<strong>流</strong>模式发射器下，<em>流</em>在<em>连续</em>设置<strong>粒子计数</strong>下的粒子数。发射器创建<strong>粒子计数</strong>每一步的粒子数（或框架）。</p>
   <p>在<strong>爆炸</strong>模式中，发射器创建粒子数在<strong>粒子计数</strong>下设置只有<em>一次</em>。</p>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;In <strong>Burst</strong> mode&nbsp;<a href="../Particle_Systems.htm">The Particle System Editor</a>&nbsp;will burst the given number of particles only <em>once</em>. You can click the&nbsp;<a href="../Particle_Systems.htm#restart_animation">Restart Animation</a>&nbsp;button to make the editor play it again.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在<strong>爆发</strong>模式下，<a href="../Particle_Systems.htm">粒子系统编辑器</a>只会爆发给定数量的粒子<em>一次</em>。 您可以点击<a href="../Particle_Systems.htm#restart_animation">重新启动动画</a>按钮让编辑器再次播放。</p>
   <h3 id="h">粒子计数</h3>
   <p>如果是正值，此设置将确定要创建的粒子数：</p>
   <ul class="Disc">
-    <li><em>Every step</em>&nbsp;when in&nbsp;<strong>Stream</strong> mode,&nbsp;<em>or</em>&nbsp;at a custom&nbsp;<em>interval</em><i> </i>set under&nbsp;<a href="Emitter_Properties.htm#interval_interval_units">Interval &amp; Interval units</a></li>
-    <li><em>一次</em>：当处于<strong>爆炸</strong>模式时</li>
+    <li>处于<strong>流</strong>模式时，<em>每一步</em><em>或</em>按照在<em>间隔和间隔单位</em>下设置的自定义<i>间隔</i><a href="Emitter_Properties.htm#interval_interval_units"></a></li>
+    <li><em>爆炸</em>模式下,<strong>一次</strong></li>
   </ul>
   <p>您也可以设置一个负值。这意味着创建粒子时，"<strong>粒子计数</strong>"中有 1 的几率，例如，将"粒子计数"设置为 <span class="inline2">-10</span>，有十分之一的几率会产生一个粒子。</p>
   <p>如果将该值设置为 0，则发射器将不会创建任何粒子。</p>
-  <h3>Delay &amp; Delay units</h3>
-  <p>These two settings set the delay for an emitter set to <strong>Stream</strong> mode:&nbsp;</p>
+  <h3>延迟单位</h3>
+  <p>这两个设置将设置 <strong> 流 </strong> 模式的发射器延迟：</p>
   <ul class="Disc">
-    <li>A random value between&nbsp;<strong>Min</strong> and <strong>Max</strong>&nbsp;is chosen as the delay.&nbsp;The emitter waits this amount of time before it bursts its first <strong>Particle Count</strong> particles.</li>
-    <li>The values for <strong>Min</strong> and <strong>Max</strong> are expressed in <strong>Delay units</strong>: <strong>Seconds</strong> (the default)&nbsp;or <strong>Frames</strong>.</li>
+    <li>选择<strong>最小值</strong>和<strong>最大值</strong>之间的随机值作为延迟。发射器在爆发第一个<strong>粒子计数</strong>粒子之前等待此时间。</li>
+    <li><strong>最小值</strong>和<strong>最大值</strong>的值以<strong>延迟单位</strong>表示：<strong>秒</strong>(默认值)或<strong>帧</strong>。</li>
   </ul>
-  <h3 id="interval_interval_units">Interval &amp; Interval units</h3>
-  <p>These two settings set the interval between consecutive bursts&nbsp;of particles for an emitter set to <strong>Stream</strong> mode:&nbsp;</p>
+  <h3 id="interval_interval_units">间隔间隔单位</h3>
+  <p>这两个设置将设置 <strong> 流 </strong> 模式的发射器粒子连续爆发之间的间隔：</p>
   <ul class="Disc">
-    <li>A random value ranging from&nbsp;<strong>Min</strong> to&nbsp;<strong>Max</strong> is chosen for every subsequent burst&nbsp;of <strong>Particle Count</strong> particles. The emitter will use the same interval all the time if you set&nbsp;<strong>Min</strong> and <strong>Max</strong>&nbsp;to the same value.</li>
-    <li>The values for <strong>Min</strong> and <strong>Max</strong> are expressed in <strong>Interval units</strong>: <strong>Seconds</strong> (the default)&nbsp;or <strong>Frames</strong>.</li>
+    <li>为 <strong> 粒子计数 </strong> 粒子的每次后续爆发选择范围从 <strong> 最小值 </strong> 到 <strong> 最大值 </strong> 的随机值。如果将 <strong> 最小值 </strong> 和 <strong> 最大值 </strong> 设置为相同的值，则发射器将始终使用相同的间隔。</li>
+    <li><strong> 最小值 </strong> 和 <strong> 最大值 </strong> 的值以 <strong> 间隔单位 </strong> 表示：<strong> 秒 </strong>( 默认值) 或 <strong> 帧 </strong>。</li>
   </ul>
   <h3>分布</h3>
   <p>此设置确定粒子在形状上的分布，即粒子的创建位置。</p>

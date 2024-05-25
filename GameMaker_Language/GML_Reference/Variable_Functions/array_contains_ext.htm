@@ -81,7 +81,7 @@
   <h1><span data-field="title" data-format="default">array_contains_ext</span></h1>
   <p>此函数用于检查给定数组(或其中的一部分)是否包含任何或所有给定值。</p>
   <p>参数 <span class="inline2">matchall</span> 确定数组中是否应存在<em>所有</em>值 (<span class="inline2">true</span>)，或者确定<em>任何一个</em>值是否都可以 (<span class="inline2">false</span>)。</p>
-  <p>The <span class="inline2">values</span> array may contain duplicates. When <span class="inline2">matchAll</span> is enabled, this allows you to check exactly how many occurrences of a value exist in the original array.</p>
+  <p><span class="inline2">values</span>数组可能包含重复项。启用<span class="inline2">matchAll</span>后，您可以准确检查原始数组中某个值出现的次数。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>&nbsp;要检查数组是否不仅<em>包含</em>值，而且还<em>包含满足特定条件的值</em>，请使用&nbsp;<span class="inline2"><a href="array_any.htm">array_any</a></span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -141,7 +141,7 @@
     var _required_inputs = ["left", "left", "left"];<br>
     var _input_valid = array_contains_ext(inputs, _required_inputs, true);<br>
     show_debug_message(_input_valid);</p>
-  <p>The above code creates an array containing a sequence of inputs. Then it creates another array which contains the inputs that make the sequence valid (i.e. having&nbsp;<em>only</em> three occurrences of "left"). It then calls&nbsp;<span class="inline2"><span data-field="title" data-format="default">array_contains_ext</span></span>&nbsp;to validate the inputs array, stores the result in a variable and prints it to the output log.</p>
+  <p>上面的代码创建一个包含输入序列的数组。然后，它创建另一个数组，其中包含使序列有效的输入(即，<em>仅</em>出现 3 次"left")。然后，它调用<span class="inline2"><span data-field="title" data-format="default">array_contains_ext</span></span>来验证输入数组，将结果存储在变量中并将其打印到输出日志。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>

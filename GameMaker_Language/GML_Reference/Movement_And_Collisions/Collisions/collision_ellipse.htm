@@ -80,17 +80,17 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>collision_ellipse</h1>
-  <p><span class="inline">collision_ellipse</span> uses the first four arguments (x1,y1,x2,y2) to define the width and height of an ellipse within the current room and then checks to see if <b>any</b> object or tile map that is defined by the "obj" argument is in collision with that area. This collision can be checked as precise or not, and you may also choose to check for the instance running the code itself or not. Consider this image:</p>
-  <p><img alt="Collision ellipse example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_ellipse_illustration.png">Here, the instance in the middle is using a collision ellipse to check for ball objects. Now, the blue ones do <i>not</i> have a precise bounding box and as you can see, even if the sprite is not actually touching the ellipse, the collision can still happen (even if you set the precise option in the function to true) as the bounding box of that sprite over-laps the elliptical area defined by collision_circle. On the other hand, the green balls will only be considered in collision if the actual sprite over-laps the defined ellipse. Remember, for precise collisions to be considered <i>both</i> the object sprite and the collision function must have precise marked as on.</p>
-  <p><span data-conref="../../../../assets/snippets/Collision_instance_return_desc.hts">This function will return the unique <a href="../../Asset_Management/Instances/Instance_Variables/id.htm" title="Hyperlink [../../Asset_Management/Instances/Instance_Variables/id.htm]" data-tcx-title="Hyperlink [../../Asset_Management/Instances/Instance_Variables/id.htm]"><span class="inline">id</span></a> of the instance being collided with, or the <span data-keyref="Type_ID_Element_Tilemap" title="Variable [Type_ID_Element_Tilemap]" data-tcx-title="Variable [Type_ID_Element_Tilemap]"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span>&nbsp;of the tile map found.&nbsp;If no collisions are found, <span class="misspell-word"><span class="inline"><a href="../../../GML_Overview/Instance_Keywords.htm" title="Hyperlink [../../../GML_Overview/Instance_Keywords.htm]" data-tcx-title="Hyperlink [../../../GML_Overview/Instance_Keywords.htm]">noone</a></span></span> is returned.</span></p>
+  <p><span class="inline">collision_ellipse</span> 使用前四个参数 (x1,y1,x2,y2) 定义当前房间内椭圆的宽度和高度，然后检查是否定义了 <b> 任何 </b> 对象或图块地图 "obj" 参数与该区域发生碰撞。可以检查此冲突是否精确，您还可以选择检查是否运行代码本身的实例。考虑这个图像：</p>
+  <p><img alt="Collision ellipse example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_ellipse_illustration.png"> 此处，中间的实例使用碰撞椭圆来检查球对象。现在，蓝色的物体 <i> 没有 </i> 具有精确的边界框，正如您所看到的，即使精灵实际上没有接触椭圆，碰撞仍然可能发生 (即使您将函数中的精确选项设置为 true)，因为该精灵的边界框与碰撞圆定义的椭圆区域重叠。另一方面，只有当实际精灵与定义的椭圆重叠时，才会考虑绿球发生碰撞。请记住，要考虑精确碰撞，对象精灵和碰撞函数都必须将精确标记为打开。</p>
+  <p><span data-conref="../../../../assets/snippets/Collision_instance_return_desc.hts"> 此函数将返回发生碰撞的实例的唯一 <a href="../../Asset_Management/Instances/Instance_Variables/id.htm" title="Hyperlink [../../Asset_Management/Instances/Instance_Variables/id.htm]" data-tcx-title="Hyperlink [../../Asset_Management/Instances/Instance_Variables/id.htm]"><span class="inline">id</span></a>，或找到的图块地图的 <span data-keyref="Type_ID_Element_Tilemap" title="Variable [Type_ID_Element_Tilemap]" data-tcx-title="Variable [Type_ID_Element_Tilemap]"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm"> 图块地图元素 ID</a></span>。如果未发现冲突，则返回 <span class="misspell-word"><span class="inline"><a href="../../../GML_Overview/Instance_Keywords.htm" title="Hyperlink [../../../GML_Overview/Instance_Keywords.htm]" data-tcx-title="Hyperlink [../../../GML_Overview/Instance_Keywords.htm]">noone</a></span></span>。</span></p>
   <div data-conref="../../../../assets/snippets/Collisions_function_accepted_arguments.hts">
-  <p>In addition to objects and instances, the function also accepts:</p>
+  <p>除了对象和实例之外，该函数还接受：</p>
   <ul class="colour">
-    <li>The special keywords <b>all</b> and <b>other</b></li>
-    <li>A&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span></li>
-    <li>An array containing a combination of objects, instances, Tile Maps and the keywords <strong>all</strong>/<strong>other</strong></li>
+    <li>特殊关键字 <b>all</b> 和 <b>other</b></li>
+    <li><span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm"> 平铺地图元素 ID</a></span></li>
+    <li>包含对象、实例、图块地图和关键字 <strong>all</strong>/<strong>other</strong> 组合的数组</li>
   </ul>
-  <p>Passing an array allows you to check for collisions against multiple objects and/or Tile Maps in one call.</p>
+  <p>传递数组允许您在一次调用中检查多个对象和 / 或图块地图的碰撞。</p>
 
 </div>
   <p>&nbsp;</p>
@@ -126,7 +126,7 @@
       <tr>
         <td>obj</td>
         <td><span data-keyref="Collision_obj_type"><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Element_Tilemap"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm">Tile Map Element ID</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></span></td>
-        <td><span data-keyref="Collision_obj_description">An object, instance, tile map ID, keywords all/other, or array containing these items</span></td>
+        <td><span data-keyref="Collision_obj_description"> 对象、实例、图块地图 ID、所有 / 其他关键字或包含这些项目的数组 </span></td>
       </tr>
       <tr>
         <td>prec</td>

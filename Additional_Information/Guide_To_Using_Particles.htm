@@ -90,48 +90,48 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">粒子使用指南</span></h1>
-  <p>本指南面向那些想要了解如何在 GML 中使用和创建<strong>粒子</strong>的用户。本页将涵盖粒子的 <a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particles.htm"><span data-keyref="GML_Code">GML 代码</span></a>函数<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Particle_Actions.htm">和 <span data-keyref="GML_Visual"></span>GML 可视化</a>操作，所以如果您以前从未使用过粒子，我们希望本指南可以帮助您入门，因为它们非常有用并且非常有趣。</p>
+  <p>本指南适合那些想要了解如何在 GML 中使用和创建<strong>粒子</strong>的人。 本页将介绍粒子的 <a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particles.htm"><span data-keyref="GML_Code">GML 代码</span>函数</a>和 <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Particle_Actions.htm"><span data-keyref="GML_Visual">GML 视觉</span>操作</a>，因此，如果您以前从未使用过粒子，我们希望本指南能够帮助您 开始是因为它们非常有用并且制作起来很有趣。</p>
   <div data-conref="../assets/snippets/Note_tip_use_particle_system_editor.hts">
-  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">TIP</span></span>&nbsp;If you prefer a more visual approach to creating particles and don't need the extensive functionality that&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;offers,&nbsp;you can also create a&nbsp;<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">Particle System Asset</a></span>&nbsp;using&nbsp;<a href="../The_Asset_Editors/Particle_Systems.htm">The Particle System Editor</a>. Additionally, you can generate the&nbsp;<span data-keyref="GML_Code">GML Code</span>&nbsp;for it using the editor's <strong>Copy GML to Clipboard</strong> <img class="icon" src="../assets/Images/Icons/Icon_GML_To_Clipboard.png" title="">.</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>如果您更喜欢采用更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码</span>提供的广泛功能，您还可以创建<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a> </span> 使用<a href="../The_Asset_Editors/Particle_Systems.htm">粒子系统编辑器</a>。 此外，您还可以使用编辑器的<strong>将 GML 复制到剪贴板</strong><img class="icon" src="../assets/Images/Icons/Icon_GML_To_Clipboard.png" title="">为其生成 <span data-keyref="GML_Code">GML 代码</span>。</p>
 
 </div>
-  <p>在进一步讨论之前，我们或许应该先解释一下粒子到底是什么……基本上，<a id="particle"></a>粒子是一种图形资源，它具有由<strong>粒子系统</strong>定义的某些属性。 这些属性不能直接针对<em>单个</em>粒子进行操作，而是通过用于定义其所属系统的代码或操作来集体更改。 它们对于在没有使用实例的 CPU 开销的游戏中创建美丽而华丽的效果（或微妙而谨慎的效果）非常有用。</p>
-  <p>我们已经提到了粒子系统，所以在继续之前让我们先解释一下它是什么。将<a id="particle_system"></a>粒子系统想象为一个容器，您将使用它来保存粒子以备使用。您可以使用代码或动作来定义粒子的视觉方面，然后将它们放置在"容器"(粒子系统)中，以便您可以在以后需要它的任何时间和任何地方将其取出并使用。</p>
-  <p>在建立一个系统和创建粒子之前，知道一些事情是很重要的……首先，大多数粒子系统代码在游戏中<strong>只被调用一次</strong>，通常是在第一个房间或关卡的某些类型的控制器对象中 -情况并非总是如此，但为了简单起见，我们将在以下简要指南中使用这种场景，因为这是使用粒子最常见的方式。你这样做是因为粒子系统一旦创建，就会停留在内存中，随时可以使用，所以如果你多次创建它，它就会迅速增加内存使用量，造成严重的延迟，甚至有可能导致游戏崩溃。为了简单起见，在本指南中，你将制作一个<a href="../GameMaker_Language/GML_Overview/Variables/Global_Variables.htm">全局</a><strong></strong>粒子系统，可以在任何时间被游戏中的任何实例使用。</p>
+  <p>在进一步讨论之前，我们或许应该解释一下粒子实际上是什么...基本上，<a id="particle"></a>粒子是一种图形资源，具有由<strong>粒子系统</strong>定义的某些属性。 这些属性无法直接针对<em>单个</em>粒子进行操作，但可以通过用于定义其所属系统的代码或操作来集体更改。 它们对于在游戏中创建美丽而华丽的效果（或微妙而谨慎的效果）非常有用，而无需像使用实例那样产生 CPU 开销。</p>
+  <p>我们已经提到了粒子系统，所以在继续之前让我们解释一下它是什么。 将<a id="particle_system"></a>粒子系统想象成一个容器，您将用它来保存可供使用的粒子。 您可以使用代码或动作来定义粒子的视觉方面，然后将它们放置在“容器”（粒子系统）中，以便您以后可以随时随地将其取出并使用。</p>
+  <p>在设置系统和创建粒子之前，了解一些事情很重要...首先，大多数粒子系统代码<strong>仅在游戏中调用一次</strong>，通常在游戏中的某种类型的控制器对象中 第一个房间或关卡 - 情况并非总是如此，但为了简单起见，我们将在以下简要指南中使用此场景，因为这是使用粒子的最常见方法。 这样做是因为粒子系统一旦创建，就会保留在内存中并随时可以使用，因此如果多次创建它，它会迅速增加内存使用量并导致严重的滞后，甚至有可能 使游戏崩溃。 为了在本指南中简单起见，您将创建一个可供游戏中任何实例随时使用的<a href="../GameMaker_Language/GML_Overview/Variables/Global_Variables.htm">全局</a><strong> </strong>粒子系统。</p>
   <p>&nbsp;</p>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">创建粒子系统</span><span data-close-text="true">创建粒子系统</span> </a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">创建粒子系统</span><span data-close-text="true">创建粒子系统</span></a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot">首先，你需要定义一个粒子系统，并给它一个名字，这样你就可以使用它。因为这将是一个全局系统，任何对象都可以使用，你可以在控制器对象或者游戏开始时运行的初始化函数中做到这一点。<span data-keyref="GML_Code">GML 代码</span>应该是这样的:</p>
+    <p class="dropspot">首先，你需要定义粒子系统，并给它给予一个名字，这样你就可以使用它。因为这将是一个任何对象都可以使用的全局系统，所以你可以在游戏开始时运行的控制器对象或初始化函数中完成这一点。<span data-keyref="GML_Code">GML代码</span>看起来像这样：</p>
     <p class="code">global.P_System = part_system_create_layer("Instance_Layer", false);</p>
-    <p class="dropspot">使用 <span data-keyref="GML_Visual">GML 可视化</span>:</p>
+    <p class="dropspot">使用<span data-keyref="GML_Visual">GML Visual</span>：</p>
     <p class="dropspot"><img alt="Create Particle System" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_CreateSystem.png"></p>
-    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 提供的层名称必须是系统将使用的房间中的有效层，否则将看不到任何粒子。另请注意，我们设置了"<span class="inline2"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/persistent.htm">持久</a></span>"标志（在代码和 <span data-keyref="GML_Visual">GML 可视化</span>中) 为 <span class="inline2">false</span>。 持久粒子系统是一种可以"持续"跨越房间而不需要为每个房间销毁和重新创建它的系统。 但是，为了使本指南的内容简单化，我们不会使用持久性。</p>
-    <p class="dropspot">这就是我们创造的系统，那么粒子呢？我们也必须对它们进行定义，否则这个系统将毫无用处，什么也不做。</p>
-    <p class="dropspot">如果您已经拥有<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>，则可以使用上述函数/操作通过将资源传递到 <span class="inline2">partsys</span>/"system" 参数来创建它。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 提供的图层名称必须是使用系统的房间中的有效图层，否则将看不到任何粒子。 另请注意，我们将 <span class="inline2"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/persistent.htm">persistent</a></span> 标志（在代码和 <span data-keyref="GML_Visual">GML Visual</span> 中）设置为 <span class="inline2">false</span>。 持久性粒子系统是一种可以在各个房间“持久”的粒子系统，无需为每个房间销毁并重新创建它。 然而，为了使本指南简单起见，我们不会使用持久性。</p>
+    <p class="dropspot">这就是我们创造的系统，但是粒子呢？我们也必须定义它们，否则这个系统是无用的，什么也不做。</p>
+    <p class="dropspot">如果已经有<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>，则可以使用上述函数/操作通过将资源传递到<span class="inline2">partsys</span>/"System"参数中来创建它。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">定义粒子类型</span><span data-close-text="true">定义粒子类型</span></a></p>
   <div class="droptext" data-targetname="drop-down1">
-    <p class="dropspot">要在系统中使用粒子，你必须首先定义它的一般性质。这些类似于对象属性，但它们只以<em>一般</em>的方式应用于单个粒子。这意味着，如果你给粒子一个1的最小移动速度和2的最大移动速度，系统创建的任何粒子每步将有一个1到2像素之间的随机速度，总体上它们的平均速度将是1.5。你应该在你用来创建系统的相同对象中使用以下GML命名并添加你的第一个粒子到系统:</p>
+    <p class="dropspot">要在系统中使用粒子，您必须首先定义其一般属性。这些属性类似于对象属性，但它们仅以<em>一般</em>方式应用于单个粒子。这意味着，如果您给予粒子最小移动速度1和最大移动速度2，则系统创建的任何粒子将具有每步1到2像素的随机速度，它们的平均速度为1.5。您应该在创建系统时使用的同一对象中使用以下GML命名第一个粒子并将其添加到系统中：</p>
     <p class="code">global.Particle1 = part_type_create();</p>
-    <p class="dropspot">对于那些使用 <span data-keyref="GML_Visual">GML 可视化</span>的用户:</p>
+    <p class="dropspot">对于那些使用<span data-keyref="GML_Visual">GML Visual</span>的用户：</p>
     <p class="dropspot"><img alt="Create Particle Type" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Create_Type.png"></p>
-    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 使用 <span data-keyref="GML_Visual">GML 可视化</span>我们还会勾选<strong>混合</strong>选项。这为粒子启用了<strong>加法混合</strong> ，我们将在后面进一步讨论。</p>
-    <p class="dropspot">你现在有了一个系统和一个放入其中的粒子，但你还没有准备好创建你的杰出效果!你仍然需要定义粒子的属性，例如:它的样子，它的速度，它的旋转，它的alpha等等。有很多细节可以用来定义粒子效果，所以下面是一个最重要的设置的概述，然后是一个代码片段和 <span data-keyref="GML_Visual">GML 可视化</span>使用所有这些:</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>使用<span data-keyref="GML_Visual">GML Visual</span>，我们还勾选<strong>混合</strong>选项。这将为粒子启用<strong>加法混合</strong>，我们将在下面进一步讨论。</p>
+    <p class="dropspot">你现在有一个系统和一个粒子，但你还没有准备好创造你的杰出效果！你仍然需要定义粒子的属性，即：它的外观-它的速度，它的旋转，它的阿尔法，等等。有很多细节可以用来定义粒子效果，因此，下面是最重要的设置的概述，然后是使用所有这些设置的代码片段和<span data-keyref="GML_Visual">GML Visual</span>：</p>
     <ul class="dropspotlist">
-      <li class="dropspot"><strong>shape</strong>: 粒子的形状是它将使用的内建精灵，默认是常量<span class="inline">pt_shape_pixel</span>。如果需要，还有一个函数可以添加自定义粒子 - <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_sprite.htm">part_type_sprite()</a></span>&nbsp;- 或者动作<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Set_Particle_Sprite.htm">设置粒子精灵</a>。</li>
-      <li class="dropspot"><strong>size</strong>: 设置粒子类型的大小参数。您可以指定最小起始大小、最大起始大小和每一步中增大的大小(使用负数表示减小)。这是一个标量值，它将等量地修改基图像的x/y比例。</li>
-      <li class="dropspot"><strong>colour</strong>: 如果使用单一颜色，则设置粒子的颜色。 如果提供了两种或三种颜色，这将是颜色混合，在其生命周期内从一种颜色混合到另一种颜色。</li>
-      <li class="dropspot"><strong>alpha</strong>: 将粒子的透明度值设置在 0 和 1 之间。如果传入单个值，这将是粒子的 透明度，如果传入两个或三个值，那么透明度将在粒子的生命周期中混合在这些值之间。</li>
-      <li class="dropspot"><strong>speed</strong>: 设置粒子类型的速度属性。当粒子被创建时，指定最小和最大速度和给定边界之间的随机值。你可以在每一步中增加一个速度，甚至使用一个负数来减慢粒子的速度(速度永远不会小于0)。</li>
-      <li class="dropspot"><strong>direction</strong>: 设置粒子类型的方向属性。再次指定一个方向范围(以逆时针方向为单位 - 0表示向右移动，90表示向上移动，等等)。例如，为了让粒子向随机方向移动，你可以选择最小值为0，最大值为360。您也可以为每一步指定一个增加的方向(也可以是负数)。</li>
-      <li class="dropspot"><strong>orientation</strong>: 为粒子类型设置方向角度属性。您可以指定每一步的最小角度、最大角度和增量。你也可以指示给定的角度是相对于当前的运动方向还是绝对的，例如:通过设置所有的值为0但相对于true，粒子的方向将精确地遵循粒子的路径。</li>
-      <li class="dropspot"><strong>blending</strong>：设置粒子类型是使用<strong>加性</strong>混合还是使用<strong>普通</strong>混合。这是在使用 <span data-keyref="GML_Code">GML 代码</span>时在函数中设置的，并在使用 <span data-keyref="GML_Visual">GML 可视化</span>时作为粒子初始化的一部分设置。加法混合意味着粒子将使用<span class="inline2">bm_add</span>混合模式，在它们重叠的地方给它们一个"发光"的外观，并将它们与下面绘制的任何东西(精灵、背景、图块等)混合--对于火和魔法效果非常有用(例如)，但最好不要用于烟雾之类的东西。来看看它们的不同之处吧！请注意，启用此选项将在创建粒子时中断纹理批处理，因此每个步骤将需要更多批处理来绘制它们-这一点需要考虑，因为它可能会影响性能，特别是在移动设备上。</li>
-      <li class="dropspot"><strong>life</strong>: 设置粒子类型的生命周期边界，以步骤(游戏帧)为单位。与前面的设置一样，这有一个最小值和最大值，粒子将在这些值内随机持续若干步。所以，30分钟和30秒最大值的生命周期会让粒子存在30步，但20分钟和60秒最大值的生命周期会让每个粒子存在20到60步之间的随机数量。</li>
+      <li class="dropspot"><strong>shape</strong>：粒子的形状是它将使用的内置精灵，默认值为常量 <span class="inline">pt_shape_pixel</span>。 如果需要，还有一个用于添加自定义粒子的函数 - <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Types/part_type_sprite.htm">part_type_sprite</a></span> - 或操作<a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Set_Particle_Sprite.htm">设置粒子精灵</a>。</li>
+      <li class="dropspot"><strong>size</strong>：设置粒子类型的尺寸参数。 您指定最小起始大小、最大起始大小以及每个步骤中的大小增加（使用负数表示大小减少）。 这是一个标量值，它将同等地修改基本图像的 x/y 比例。</li>
+      <li class="dropspot"><strong>colour</strong>：如果使用单一颜色，则设置粒子的颜色。如果提供两种或三种颜色，则这将是颜色混合，在其生命周期内从一种颜色混合到另一种颜色。</li>
+      <li class="dropspot"><strong>alpha</strong>：设置粒子的alpha值介于0和1之间。如果传入单个值，则该值将成为粒子的alpha，如果传入两个或三个值，则alpha将在粒子的生命周期内在这些值之间混合。</li>
+      <li class="dropspot"><strong>speed</strong>：设置粒子类型的速度属性。您可以指定最小和最大速度，并在创建粒子时选择给定边界之间的随机值。您可以在每一步中指示速度增加，甚至可以使用负数来减慢粒子(速度永远不会小于0)。</li>
+      <li class="dropspot"><strong>direction</strong>：设置粒子类型的方向属性。同样你指定一个方向范围(以逆时针角度计，0表示向右运动，90表示向上运动，等等)。例如，为了让粒子在一个随机的方向上移动，你可以选择最小值0和最大值360作为值。你也可以为每一步指定一个方向的增加(也可以是负数)。</li>
+      <li class="dropspot"><strong>orientation</strong>：设置粒子类型的方向角属性。您可以指定最小角度、最大角度和每一步的增量。您还可以指定给定的角度是相对于当前运动方向还是绝对角度，例如：通过将所有值设置为0但相对于true，粒子方向将精确地跟随粒子的路径。</li>
+      <li class="dropspot"><strong>blending</strong>：设置是否对粒子类型使用<strong>加法</strong>混合或<strong>正常</strong>混合。 当使用 <span data-keyref="GML_Code">GML Code</span> 时，这是在函数中设置的；当使用 <span data-keyref="GML_Visual">GML Visual</span> 时，这是粒子初始化的一部分。 加法混合意味着粒子将使用 <span class="inline2">bm_add</span> 混合模式，在重叠处赋予它们“发光”的外观，并将它们与在下面绘制的任何内容（精灵、背景、图块等）混合 - 对于以下情况非常有用 火焰和魔法效果（例如），但最好不要使用烟雾之类的效果。 实验看看差异！ 请注意，启用此功能会在创建粒子时破坏纹理批处理，因此每个步骤都需要更多批次来绘制它们 - 需要考虑这一点，因为它可能会影响性能，尤其是在移动设备上。</li>
+      <li class="dropspot"><strong>life</strong>：以步长设置生存期界限(游戏帧)的粒子类型。像以前的设置，这有一个最小值和最大值，粒子将持续在这些值内的随机步数。所以，30分钟和30最大的生命周期将有粒子存在正好30步，但是20分钟和60最大的寿命将使每个粒子存在20和60之间的随机步数。</li>
     </ul>
-    <p class="dropspot">现在，在我们向您展示定义粒子的代码之前，让我们先讨论一下“<strong>摆动(wiggle)</strong>”……不管你信不信，“wiggle”是一个粒子属性，可以为上面的许多设置单独设置。当你将“摆动”视为粒子函数或动作的参数时，这意味着如果你在1到20之间放置一个数字，粒子将“摆动”或在属性的最小值和最大值之间波动，1表示缓慢摆动，20表示非常快。因此，粒子速度最小值为2，最大值为5，波动为20，将在每个粒子生命周期的最小/最大速度之间快速振荡。</p>
-    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>: 还有其他一些次要的粒子属性我们在这里没有涉及，只是为了让事情尽可能简单地开始。有关粒子属性的详细信息，请参阅适当的页面。</p>
-    <p class="dropspot">现在让我们来看一些定义粒子的代码:</p>
+    <p class="dropspot">现在，在我们向你展示定义粒子的代码之前，让我们先讨论一下"<strong>wiggle</strong>".这意味着如果你在1和20之间放置一个数字，粒子将在属性的最小值和最大值之间"摆动"或波动，其中1表示缓慢摆动，20表示非常快。因此，粒子速度最小值为2，最大值为5，摆动为20，将在所创建的每个粒子的寿命内在最小/最大速度之间非常快地振荡。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>还有其他一些次要的粒子性质，我们在这里不涉及，只是为了让事情尽可能简单地开始。请参阅相应的页面了解粒子性质的完整细节。</p>
+    <p class="dropspot">现在让我们看一些定义粒子的代码：</p>
     <p class="code">// This defines the particle's shape<br>
       part_type_shape(global.Particle1,pt_shape_pixel);<br>
       <br>
@@ -159,36 +159,36 @@
       // This is its lifespan in steps<br>
       part_type_life(global.Particle1,5,30);
     </p>
-    <p class="dropspot">要在 <span data-keyref="GML_Visual">GML 可视化</span>中创建同样的粒子定义，我们需要以下操作:</p>
-    <p class="dropspot"><img alt="Define Particle Type" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Define_Particle.png">就是这样! 我们现在已经定义了粒子，它们可以被使用了。</p>
+    <p class="dropspot">要在<span data-keyref="GML_Visual">GML Visual</span>中创建相同的粒子定义，我们需要执行以下操作：</p>
+    <p class="dropspot"><img alt="Define Particle Type" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Define_Particle.png">所以就是这样！我们现在已经定义了我们的粒子，它们可以使用了。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">游戏中直接创建粒子</span><span data-close-text="true">游戏中直接创建粒子</span></a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">直接在游戏中创建粒子</span><span data-close-text="true">直接在游戏中创建粒子</span></a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <p class="dropspot">有几种方法可以创建粒子，每种方法都有其优缺点。您可以使用<strong>发射器</strong>来<strong>爆发(burst)</strong>或<strong>流(stream)</strong>粒子，或者您可以在一个点上直接<strong>创建粒子</strong>。你用哪一种取决于你想要达到的目的和你想要创造的效果，但我们将从两个中最简单的开始，它是直接创造粒子。在GML中，我们使用以下函数:</p>
+    <p class="dropspot">有几种方法可以创建粒子，每种方法都有其优点和缺点。你可以使用<strong>发射器</strong>来<strong>爆裂</strong>或<strong>流</strong>粒子，或者你可以在一个点<strong>直接</strong>创建粒子。你使用哪一种实际上取决于你想要实现的目标和你想要创建的效果，但我们将从两种方法中最简单的开始，也就是直接创建粒子。在GML中，我们使用以下函数：</p>
     <p class="code">part_particles_create(global.P_System, x, y, global.Particle1, 10);</p>
-    <p class="dropspot">在 <span data-keyref="GML_Visual">GML 可视化</span>中，应该是:</p>
-    <p class="dropspot"><img alt="Create Particles At A Position" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Burst.png">上述单个代码/操作将在给定的x/y坐标类型为“Particle1”的全局系统中创建10个粒子。简单!这一行代码/动作的伟大之处在于，它可以在任何地方毫无争议地使用。例如，如果您将其放在对象中鼠标的<strong> 全局鼠标按下 </strong>事件中，并更改mouse_x/y位置的x/y值，它将在您每次按下按钮时在鼠标位置创建粒子。或者如果你有一个火箭，那么你可以把它放在步进事件中，让每一步都有烟雾颗粒出现(尽管1或2可能比10好!)你甚至可以让它通过随机改变x/y坐标在一个区域上创建粒子，例如:</p>
+    <p class="dropspot">在<span data-keyref="GML_Visual">GML Visual</span>中，它将是：</p>
+    <p class="dropspot"><img alt="Create Particles At A Position" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Burst.png">上面的代码/动作将在全局系统中的给定x/y坐标处创建10个粒子，类型为"Particle 1"。简单！这行代码/动作的伟大之处在于，它可以在任何地方使用，没有任何大惊小怪。例如，如果你把它放在对象中鼠标的<strong>全局左按</strong>事件中，并改变mouse_x/y位置的x/y值，它会在你每次按下按钮时在鼠标位置创建粒子。或者如果你有一个火箭，那么你可以把它放在step事件中，每一步都有烟雾粒子(尽管1或2可能比10更好！)。你甚至可以让它通过随机改变x/y坐标在一个区域上创建粒子，例如：</p>
     <p class="code">repeat(50)<br>
       {<br>
       var xx = x + 20 - random(40);<br>
       var yy = y + 20 - random(40);<br>
       part_particles_create(global.P_System, xx, yy, global.Particle1, 1);<br>
       }</p>
-    <p class="dropspot"><img alt="Create Particles Over A Random Area" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Create_Particles.png">以上代码将在40px 平方区域内的随机位置创建50个粒子。</p>
+    <p class="dropspot"><img alt="Create Particles Over A Random Area" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Create_Particles.png">上面的代码将在一个40px的正方形区域内的随机位置创建50个粒子。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">使用发射器创建粒子</span><span data-close-text="true">使用发射器创建粒子</span></a></p>
   <div class="droptext" data-targetname="drop-down3">
-    <p class="dropspot">既然我们已经解释了创建粒子的简单方法，现在让我们使用稍微复杂一点的方法，即使用<strong>发射器</strong>。发射器是粒子系统的另一部分，在使用之前必须定义它，所以我们将创建一个全局发射器，就像我们为系统和粒子所做的一样。我们还必须决定是否使用静态(不移动的)发射器，以及我们是否使用<strong>突发</strong>或<strong>流</strong>粒子，以及决定我们将使用发射器在什么区域和什么样的分布。</p>
-    <p class="dropspot">这一切意味着什么?<strong> 静态 </strong>发射器是一种你可以定义一次就忘记的东西，因为它在整个游戏过程中不会移动，比如:想想一根木头火 - 它不会移动，它只会发出火焰，静态也是如此，但火球需要<strong> 动态 </strong>发射器，它会在屏幕上移动。至于爆发或流，爆发是粒子的一次性爆炸，而流就是这样 - 每一步都是恒定的粒子流。 对于区域和分布，您可以使用发射器定义发射粒子的区域（可以是矩形、椭圆、菱形或直线）以及分布曲线（高斯、逆高斯或线性）。</p>
-    <p class="dropspot">以下图像说明发射器可获得的不同类型的面积形状:</p>
+    <p class="dropspot">既然我们已经解释了创建粒子的简单方法，现在让我们来看看稍微复杂一点的方法，即使用<strong>发射器</strong>。发射器是粒子系统的另一部分，必须在使用之前定义，所以我们要做一个全局发射器，就像我们为系统和粒子做的一样。我们还必须决定是否要有一个静态的(非移动)发射器与否，以及我们是否要<strong>爆裂</strong>或<strong>流</strong>粒子，以及决定在什么区域和什么样的分布，我们要有发射器使用。</p>
+    <p class="dropspot">这是什么意思好吧，一个<strong>静态</strong>发射器是一个你可以定义一次，忘记，因为它不会移动任何地方的游戏期间，即：想想一个木头火-它不移动，它只是发出火焰，所以是静态的，但火球需要一个<strong>动态</strong>发射器，并会在屏幕上移动。至于爆裂或流，爆裂是粒子的一次性爆炸，对于面积和分布，您可以使用发射器定义发射粒子的面积(可以是矩形，椭圆，菱形或直线)以及分布曲线(高斯，逆高斯或线性)。</p>
+    <p class="dropspot">下图说明了发射器可用的不同类型的区域形状：</p>
     <p class="dropspot">&nbsp;</p>
     <center><img alt="Rectangle Emitter" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_Rectangular.gif"> <img alt="Line Emitter" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_Line.gif"></center>
     <center><img alt="Ellipse Emitter" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_Ellipse.gif">&nbsp;<img alt="Diamond Emitter" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_Diamond.gif"></center>
-    <p class="dropspot"><br>分布曲线(线性、高斯和逆高斯)如下:</p>
+    <p class="dropspot"><br>分布曲线(线性、高斯和逆高斯)如下所示：</p>
     <p><img alt="Particle distribution" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_Distribution.png"></p>
-    <p class="dropspot">下面是定义两个发射器所需的代码/操作的示例，通常在定义粒子系统之后进入控制器对象的<strong> 创建事件 </strong>。一个是静态的，粒子流遍布整个房间，而另一个是动态的，跟随鼠标，每30步从一个小椭圆爆发:</p>
+    <p class="dropspot">下面是定义两个发射器所需的代码/动作的示例，它们通常会在定义粒子系统之后进入控制器对象的<strong>创建事件</strong>。一个是静态的，并在整个房间的区域上流动粒子，而另一个是动态的，并跟随鼠标从一个小椭圆每30步爆发一次：</p>
     <p>&nbsp;</p>
     <p class="code">global.Particle1_Emitter1 = part_emitter_create(global.P_System);<br>
       global.Particle1_Emitter2 = part_emitter_create(global.P_System);<br>
@@ -204,30 +204,30 @@
       // Set the alarm[0] event to burst the emitter2 particles...<br>
       alarm[0] = 30;
     </p>
-    <p class="dropspot"><img alt="Define Particle Emitters" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Create_Emitter.png">因此，我们在这里创建两个粒子发射器，它们分配给我们在开始时创建的粒子系统。 创建这些发射器的函数/动作允许我们在房间中定义一个区域，它们将在该区域上发射粒子，并提供要发射的粒子类型，以及要在定义区域内使用的形状和分布。 函数/动作将返回一个数值，即发射器 ID 值，我们将其存储在一个变量中，以便我们可以使用更多的发射器函数来定位这些发射器。</p>
-    <p class="dropspot">现在我们有代码/<span data-keyref="GML_Visual">GML 可视化</span>来流式传输粒子（这些粒子将在游戏的每个步骤中发射，我们无需执行任何其他操作），但我们还想添加<strong>一个</strong><strong>Alarm[0]</strong><strong>事件</strong> 以特定时间间隔爆发粒子：</p>
+    <p class="dropspot"><img alt="Define Particle Emitters" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Create_Emitter.png">这里我们创建两个粒子发射器，它们被分配给我们在开始时创建的粒子系统。创建这些发射器的函数/动作允许我们在房间中定义一个区域，它们将在该区域上发射粒子，以及给予要发射的粒子类型，以及在定义的区域内使用的形状和分布。函数/动作将返回一个数值，即发射器ID值，我们将其存储在一个变量中，这样我们就可以使用更多的发射器函数来定位这些发射器。</p>
+    <p class="dropspot">现在我们有代码/<span data-keyref="GML_Visual">GML Visual</span>来流式传输粒子(这些粒子将在每个游戏步骤中发射，而无需我们做任何其他事情)，但我们还想添加<strong>A</strong><strong>larm[0]</strong><strong>Event</strong>来以特定的时间间隔爆发粒子：</p>
     <p class="code">part_emitter_region(global.P_System, global.Particle1_Emitter2, mouse_x - 10, mouse_x + 10, mouse_y - 10, mouse_y + 10, ps_shape_ellipse, ps_distr_gaussian);<br>
       part_emitter_burst(global.P_System, global.Particle1_Emitter2, global.Particle1, 30);<br>
       alarm[0] = 30;</p>
-    <p class="dropspot"><img alt="Burst Particles From Emitter" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Set_Emitter.png">粒子爆发只是来自发射器的一次性粒子爆炸，而不是每个游戏步骤的持续粒子流。</p>
-    <p class="dropspot">但是如果你想让几个物体发射粒子呢？ 全局发射器一次只能位于一个位置，因此您需要在每个对象中创建<em>局部</em>发射器。 这些发射器仍将使用全局粒子系统和其中的任何粒子，但它们可以具有不同的形状和大小并随对象移动，使它们成为火箭或子弹或其他东西的理想选择。 您将使用的代码与上述代码完全相同，但发射器名称前没有“全局”前缀。</p>
-    <p class="dropspot">这就是粒子的产生，但还有一件事非常重要。用完后清理。</p>
+    <p class="dropspot"><img alt="Burst Particles From Emitter" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_Set_Emitter.png">粒子爆发只是发射器中粒子的一次性爆炸，而不是每个游戏步骤中粒子的恒定流。</p>
+    <p class="dropspot">但是如果你想让几个物体发射粒子呢？全局发射器一次只能在一个地方，所以你需要在每个对象中创建<em>局部</em>发射器。这些发射器仍然使用全局粒子系统和其中的任何粒子，但它们可以是不同的形状和大小，并随对象移动，使它们成为火箭或子弹或其他东西的理想选择。您将使用的代码与上面完全相同，但在发射器名称之前没有"global"前缀。</p>
+    <p class="dropspot">这就是粒子的创建，但还有一件事非常重要......当你完成它们时，清理它们。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">清理事件</span><span data-close-text="true">清理事件</span></a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">清理</span><span data-close-text="true">清理</span></a></p>
   <div class="droptext" data-targetname="drop-down4">
-    <p class="dropspot">正如开头所提到的，一旦创建，粒子系统(及其粒子、发射器等)就会存储在内存中以供立即使用。很好，但是当你重新开始游戏时会发生什么呢?或者如果你的玩家死亡并重新开始这个房间?如果你没有正确地管理游戏，你就会出现<strong>内存泄漏</strong>。这是当某些东西已经创建并使用了内存，但已经被“丢失引用”，这意味着 <span data-keyref="GameMaker Name">GameMaker</span> 不再能够访问它。这类事情会慢慢消耗内存，导致游戏延迟，甚至阻塞电脑导致游戏崩溃，这是粒子系统的第一次用户经常遇到的问题。</p>
-    <p class="dropspot">如何避免这种情况? <span data-keyref="GameMaker Name">GameMaker</span> 具有 <span data-keyref="GML_Code">GML 代码</span>函数和 <span data-keyref="GML_Visual">GML 可视化</span>操作，可以在不使用时从内存中删除粒子系统及其发射器和粒子，并且在使用以下代码/操作时进行一些规划，就可以很容易地防止这个潜在的问题。</p>
-    <p class="dropspot">您必须做的第一件事是决定在哪里创建系统以及如何使用它。你可以在第一个房间的对象(如菜单或标题屏幕)的<strong>游戏创建事件</strong>中创建一个全局系统，但这意味着如果你使用 <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/General_Game_Control/game_restart.htm">game_restart</a></span> 函数重新启动游戏，它将被重新创建并导致内存泄漏。或者，您可以在任何房间的实例中创建本地系统，但是如果您离开房间，则系统将无法访问并导致内存泄漏。为了避免这种情况，你需要在对象的<a href="../The_Asset_Editors/Object_Properties/Other_Events.htm"><strong>游戏结束事件</strong></a>或<a href="../The_Asset_Editors/Object_Properties/Object_Events.htm"><strong>清理事件</strong></a>中添加如下内容:</p>
+    <p class="dropspot">正如开始时提到的，一旦创建，粒子系统(以及它的粒子，发射器等)都存储在内存中供即时使用。太好了，但是当你重新启动游戏时会发生什么呢？或者如果你的玩家死了，重新启动房间呢？好吧，如果你没有正确地管理游戏，你会得到一个<strong>内存泄漏</strong>。这是当一些东西被创建并耗尽内存时，但是已经被"de-referenced"了，这意味着<span data-keyref="GameMaker Name">GameMaker</span>不再可以访问它。这种事情会慢慢消耗内存，导致游戏延迟，甚至阻塞计算机，导致游戏崩溃，这是第一次使用粒子系统的用户经常遇到的问题。</p>
+    <p class="dropspot">如何避免这种情况？好吧，<span data-keyref="GameMaker Name">GameMaker</span>有<span data-keyref="GML_Code">GML Code</span>函数和<span data-keyref="GML_Visual">GML Visual</span>操作，可以在不使用时从内存中删除粒子系统及其发射器和粒子，并且在使用以下代码/操作时进行一点规划，您可以轻松防止此潜在问题。</p>
+    <p class="dropspot">您要做的第一件事是决定在哪里创建系统以及如何使用它。 您可以在第一个房间中某个对象（如菜单或标题屏幕）的<strong>游戏开始事件</strong>中创建一个全局系统，但这意味着如果您使用 <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/General_Game_Control/game_restart.htm">game_restart</a></span> 函数，它将被重新创建并导致内存泄漏。 或者，您可以在任何房间的实例中创建本地系统，但同样，如果您离开房间，则系统将无法访问并导致内存泄漏。 为了避免这种情况，您需要在对象的<a href="../The_Asset_Editors/Object_Properties/Other_Events.htm"><strong>游戏结束事件</strong></a>或<a href="../The_Asset_Editors/Object_Properties/Object_Events.htm"><strong>清理事件</strong></a>中添加类似的内容：</p>
     <p class="code">part_type_destroy(global.Particle1);<br>
       part_emitter_destroy(global.P_System, global.Particle1_Emitter);<br>
       part_emitter_destroy(global.P_System, global.Particle2_Emitter);<br>
       part_system_destroy(global.P_System);</p>
-    <p class="dropspot"><img alt="Clean Up Particle System" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_CleanUp.png">这将删除已定义的粒子，发射器，然后系统从内存中准备好让你重启游戏或改变房间。记住，在考虑了哪里是最适合创建系统的地方之后，还要考虑哪里是最适合摧毁系统的地方!</p>
+    <p class="dropspot"><img alt="Clean Up Particle System" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_CleanUp.png">这将删除定义的粒子，发射器，然后系统从内存中准备重新启动游戏或改变房间。只要记住，在思考哪里是最合适的地方创建系统后，想想哪里是最合适的地方摧毁系统太！</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p>&nbsp;</p>
-  <p>现在您了解了粒子、粒子系统和发射器的基础知识，现在您可以将它们添加到您的游戏中了！ 但是在匆匆忙忙地为所有内容添加粒子效果之前，请注意虽然粒子比实例更节省 CPU，但它们并不是解决所有问题的方法，因为如果您一次有数千个粒子，它们会导致延迟。最好的做法是尝试并仔细使用它们去“充实”游戏，并在不过度的情况下赋予它更多视觉效果。</p>
+  <p>现在你已经了解了粒子、粒子系统和发射器的基础知识，所以你现在可以将它们添加到你的游戏中了！但在匆忙离开并将粒子效果添加到所有内容之前，请注意，虽然粒子比实例占用的CPU少，它们并不是解决一切问题的方法，因为如果你一次有数千个它们，它们会导致滞后。最好的办法是仔细试验和使用它们来"充实"视觉上的游戏和给予它多一点眼睛糖果没有做过。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">shader_set_uniform_f_array</span></h1>
   <p>使用此函数，可以设置着色器常量以保存值数组。您必须之前使用函数<a href="shader_get_uniform.htm"><span class="inline">shader_get_uniform()</span></a>获得常量的"句柄"，并且您必须事先初始化数组。</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>：<b></b>在调用函数<span style="font-size:1px;"><a href="shader_set.htm"><span class="inline">shader_set()</span></a></span> <b>之后</b>，在调用<span style="font-size:1px;"><a href="shader_reset.htm"><span class="inline">shader_reset()</span></a></span>之前，必须设置所有 uniform 。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span><b></b> 必须在调用函数 <span style="font-size:1px;"><a href="shader_set.htm"><span class="inline">shader_set()</span></a></span><b> 之后 </b>、调用 <span style="font-size:1px;"><a href="shader_reset.htm"><span class="inline">shader_reset()</span></a></span> 之前设置所有 uniforms 。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">shader_set_uniform_f_array(handle, array);</p>

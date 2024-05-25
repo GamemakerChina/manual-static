@@ -80,9 +80,9 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">string_format</span></h1>
-  <p>This function converts a real number into a string, where you can specify how many digits are visible on each side of the decimal.</p>
-  <p>The <span class="inline2">total</span> argument is the number of digits on the left side of the decimal, and if this is higher than your value allows, spaces are inserted to fill the remaining digits. The <span class="inline2">dec</span> argument is the number of digits on the right side of the decimal, and if this is more than the decimal digits in your number, zeroes are inserted to keep your given number of digits.</p>
-  <p>The default format is no extra spaces on the left, and only two decimal places on the right, e.g.&nbsp;<span class="inline2">"265.73"</span>.</p>
+  <p>此函数将真实的数字转换为字符串，您可以在其中指定小数点两侧可见的位数。</p>
+  <p><span class="inline2">total</span>参数是小数点左边的位数，如果这比您的值允许的要高，则插入空格以填充剩余的位数。<span class="inline2">dec</span>参数是小数点右边的位数，如果这比您的数字中的小数点位数要多，则插入零以保持给定的位数。</p>
+  <p>默认格式是左边没有多余的空格，右边只有两位小数，例如<span class="inline2">"265.73"</span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">string_format(val, total, dec);</p>
@@ -96,17 +96,17 @@
       <tr>
         <td>val</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The real number to be converted to a string.</td>
+        <td>要转换为字符串的真实的数字。</td>
       </tr>
       <tr>
         <td>total</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The number of places of the main number to be shown (left side of decimal). Spaces will be inserted to match this.</td>
+        <td>要显示的主数字的位数(小数点左边)。将插入空格以匹配此位数。</td>
       </tr>
       <tr>
         <td>dec</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The number of decimal places to be included (right side of decimal). Zeroes will be inserted to match this.</td>
+        <td>要包含的小数位数(小数点右侧)。将插入零以与此匹配。</td>
       </tr>
     </tbody>
   </table>

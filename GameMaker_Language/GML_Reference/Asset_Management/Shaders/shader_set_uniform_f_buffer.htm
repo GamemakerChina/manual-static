@@ -83,7 +83,7 @@
   <p>使用该函数，可以将着色器统一的值设置为存储在缓冲区中的浮点值的列表。</p>
   <p>由于浮点数是使用 <span class="inline2"><a href="../../Buffers/buffer_write.htm">buffer_f32</a></span> 数据类型在缓冲区中表示的，因此此函数要求将偏移量和计数给定范围内的数据格式化为该类型的连续值。</p>
   <div data-conref="../../../../assets/snippets/Note_Set_Uniforms_After_Shader_Set.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>：在调用函数<span class="inline2"><a href="shader_set.htm">shader_set()</a></span> <em>之后</em>，在调用<span class="inline2"><a href="shader_reset.htm">shader_reset()</a></span> <em>之前</em>，必须设置所有 uniform 。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>：调用函数<span class="inline2"><a href="shader_set.htm">shader_set()</a></span> <em>之后</em>，调用<span class="inline2"><a href="shader_reset.htm">shader_reset()</a></span> <em>之前</em>，必须设置所有 uniform 。</p>
 
 </div>
   <h4>语法:</h4>
@@ -150,7 +150,7 @@
     /// Clean Up event<br>
     buffer_delete(buffer);
   </p>
-  <p>上面的代码首先创建一个固定大小的新缓冲区 <span class="inline2">buffer</span>，该缓冲区具有存储类型为 <span class="inline2">buffer_f32</span> 的四个值 (<span class="inline2">_values</span>) 的空间。这是在对象的创建事件中完成的。然后，将 0 到 1 之间的四个值按顺序<a href="../../Buffers/buffer_write.htm">写入</a>表示混合色的 R、G、B 和 A 分量的缓冲区。之后，句柄被检索到在名为 "shader_Colorize" 的 <a href="Shaders.htm"> 着色器 </a> 中定义的<span class="inline2"> uniform vec4 u_vBlendColour; </span> 句柄。接下来，在设置此着色器的绘制事件中，缓冲区中的四个值将传递给着色器使用<span class="inline2"><span data-field="title" data-format="default">shader_set_uniform_f_buffer</span></span>，并提交名为 <span class="inline2">vb_character</span> 的 <a href="../../Drawing/Primitives/vertex_create_buffer.htm"> 顶点缓冲区 </a> 中的模型 (即 <em>drawn</em>)。之后，着色器将重置。最后，在清除事件中，删除缓冲区以避免内存泄漏。</p>
+  <p>上面的代码首先创建一个固定大小的新缓冲区 <span class="inline2">buffer</span>，该缓冲区具有存储类型为 <span class="inline2">buffer_f32</span> 的四个值 (<span class="inline2">_values</span>) 的空间。这是在对象的创建事件中完成的。然后，将 0 到 1 之间的四个值按顺序 <a href="../../Buffers/buffer_write.htm"> 写入 </a> 表示混合色的 R、G、B 和 A 分量的缓冲区。之后，句柄被检索到在名为 "shader_Colorize" 的 <a href="Shaders.htm"> 着色器 </a> 中定义的 <span class="inline2"> uniform vec4 u_vBlendColour; </span> 句柄。接下来，在设置此着色器的绘制事件中，缓冲区中的四个值将传递给着色器使用 <span class="inline2"><span data-field="title" data-format="default">shader_set_uniform_f_buffer</span></span>，并提交名为 <span class="inline2">vb_character</span> 的 <a href="../../Drawing/Primitives/vertex_create_buffer.htm"> 顶点缓冲区 </a> 中的模型 (即 <em>drawn</em>)。之后，着色器将重置。最后，在清除事件中，删除缓冲区以避免内存泄漏。</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">

@@ -79,8 +79,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">Motion Planning</span></h1>
-  <p>In many games you want opponents, NPC's, enemies, etc. to interact with the player and show certain intelligence when moving around,&nbsp;i.e.&nbsp;you want them to avoid obstacles, plan routes and generally not bump into everything in their path! To aid in this <span data-keyref="GameMaker Name">GameMaker</span> has a series of functions that deal with motion planning. Note that while these are designed for things like game enemies, they can be used for all sorts of things like creating a smooth way to introduce text, or to create transitions, etc. However, whatever you choose to use from the list below in your game, it should be noted that in many situations a single function set will not give you a perfect solution and that you will have to "mix and match" the functions, using one or the other depending on the situation within your game.</p>
-  <p>Motion planning in <span data-keyref="GameMaker Name">GameMaker</span> is dealt with by the <span class="inline2">mp_*</span>&nbsp;functions, which themselves are split into the following three groups:</p>
+  <p>在许多游戏中，您希望对手、NPC、敌人等与玩家互动并在移动时表现出一定的智能，即您希望他们避开障碍物、规划路线并且通常不会撞到路径上的所有物体！为了帮助实现这一目标，<span data-keyref="GameMaker Name">GameMaker</span> 提供了一系列处理运动规划的函数。请注意，虽然这些是为游戏敌人之类的事情而设计的，但它们可以用于各种事情，例如创建平滑的方式来引入文本或创建过渡等。但是，无论您从下面的列表中选择使用什么，游戏中，应该注意的是，在许多情况下，单一功能集不会为您提供完美的解决方案，您必须 " 混合和匹配 " 功能，根据游戏中的情况使用其中一种或另一种。</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> 中的运动规划由 <span class="inline2">mp_*</span> 函数处理，这些函数本身分为以下三组：</p>
   <h2><label for="one">线性函数</label></h2>
   <p>此类函数尝试计算实例的无碰撞路径。计算此路径后，可以将其指定给实例以向目标移动。路径的计算将需要一些时间，但在此之后，路径的执行将会很快。当然，这只有在情况没有改变的情况下才有效。例如，如果障碍物发生变化，则可能需要重新计算路径。请再次注意，这些函数可能会失败，并且可能找不到实例的路径。</p>
   <ul class="colour">
@@ -102,7 +102,7 @@
   <p>&nbsp;</p>
   <h2><label for="two">网格函数</label></h2>
   <p>最后一种类型的函数使用更复杂的基于网格的方法(有时称为A*算法)的机制。它将更成功地找到路径(尽管它仍然可能失败)，并且会找到可能的最短路径，但是它需要你做更多的工作来设置它。</p>
-  <p>The global idea is as follows - First of all we create a grid that covers the room (or the relevant part of it). You can choose to use a fine grid, which will be slower, or a coarse grid, but both of them should be based on the resolution of the room so that the path-finding is as accurate as possible. For example, if you have a room that is 400x200 pixels, you can have a grid resolution of 40, or 20, or 10... it all depends on how accurate you need the path to be and how much processing you want <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;to do to generate it.</p>
+  <p>总体思路如下 - 首先，我们创建一个覆盖房间 (或其相关部分) 的网格。您可以选择使用细网格 (速度会较慢) 或粗网格，但两者都应基于房间的分辨率，以便寻路尽可能准确。例如，如果您有一个 400x200 像素的房间，则网格分辨率可以为 40、20 或 10... 这完全取决于您需要路径的精确度以及您想要的处理量 <span data-keyref="GameMaker Name">GameMaker</span> 来生成它。</p>
   <p>接下来，对于我们想要避免的所有相关对象，我们需要确定它们重叠的栅格单元格(基于它们的边界框或精确的精灵)，并将这些单元格标记为禁止。因此，一个细胞将被标记为完全禁止，即使障碍只是部分重叠。</p>
   <p>最后，我们指定一个起始位置和一个目标位置，这两个位置都<i>必须</i>位于自由单元格中，然后函数计算这两个位置之间可能的最短路径。路径将在所有自由单元格的中心之间运行，因此，如果单元格足够大，以便放置在其中心的实例将完全位于其内部，这将是成功的。然后使用 <a href="../../Asset_Management/Paths/Paths.htm"><span class="inline">path_*</span></a> 函数将此路径分配给要跟随的实例。您应该意识到单元格大小对于此有多重要，因为单元格必须足够大，以便将移动对象放置在单元格中心，使其原点<i>完全</i>位于单元格内部。(请注意对象原点的位置。还要注意，如果对象的原点不在其中心，则可以移动路径！)另一方面，单元越小，可能存在的路径越多。如果将单元格设置得太大，则障碍物之间的洞口可能会关闭，因为所有单元格都与障碍物相交。</p>
   <ul class="colour">

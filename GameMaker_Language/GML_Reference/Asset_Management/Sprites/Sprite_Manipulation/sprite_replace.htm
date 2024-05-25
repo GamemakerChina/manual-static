@@ -87,10 +87,10 @@
   <p>最后，您还可以为精灵指定X和Y<i>原点</i>。这是精灵被“固定”到使用它的实例上的点，并且总是相对于一个精灵子图像的左上角0，0来计算。因此，例如，将这些值设置为(16，16)的32 X 32像素的精灵将使其原点位于中心。</p>
   <p>默认情况下，所有新的精灵都会自动计算其边界框(确切的边界框将取决于精灵的大小和透明度)，但是您可能希望对此进行自定义，在这种情况下，您还应该使用函数 <a href="sprite_collision_mask.htm"><span class="inline">sprite_collision_mask()</span></a>。</p>
   <div data-conref="../../../../../assets/snippets/Note_File_Handling_Limitations.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Depending on the target platform that is chosen you are limited as to where you can save and load files from. See&nbsp;<a href="../../../../../Additional_Information/The_File_System.htm">The File System</a>&nbsp;for more information.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>根据所选的目标平台，您保存和加载文件的位置会受到限制。如需了解更多信息，请参阅<a href="../../../../../Additional_Information/The_File_System.htm">文件系统</a>。</p>
 
 </div>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You should be aware that if you are using this function in your HTML5 target game to load resources from an external server, then, due to XSS protection in browsers, attempts to load resources from across domains can be blocked and may appear to return blank results.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>您应该注意，如果您在 HTML5 目标游戏中使用此函数从外部服务器加载资源，那么，由于浏览器中的 XSS 保护，尝试跨域加载资源可能会失败。被阻止，并且可能会返回空白结果。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">sprite_replace(ind, fname, imgnumb, removeback, smooth, xorig, yorig);</p>

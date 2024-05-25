@@ -81,7 +81,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">is_real</span></h1>
   <p>此函数返回给定变量是否是实数 (单，双或整数)。在某些情况下，您想检查并查看变量是否包含实数，这就是您使用此函数的时间。它<i>不会</i>返回实数，而是<span class="inline">true</span>或<span class="inline">false</span>，因此例如 “fish” 的值将返回<span class="inline">false</span>，但是200的值将返回<span class="inline">true</span>。</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 此函数将为任何<a href="../../GML_Overview/Variables/Constants.htm#enumhead">枚举</a>值返回 <span class="inline">false</span>，因为它们被存储为 int64。检查该数据类型的正确函数是 <span class="inline"><a href="is_int64.htm">is_int64()</a></span>。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>对于任何存储为 int64 的 <a href="../../GML_Overview/Variables/Constants.htm#enumhead">enum</a> 值，此函数都会返回 <span class="inline">false</span>。 检查该数据类型的正确函数是 <span class="inline"><a href="is_int64.htm">is_int64()</a></span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">is_real</span>(n);</p>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
 
   <script type="text/javascript" language="JavaScript">
     //<![CDATA[
@@ -47,20 +45,20 @@
   <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
   <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
 <script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
-  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
-  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>ds_grid_to_mp_grid</title>
-  <meta name="generator" content="Adobe RoboHelp 2022"/>
-  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"/>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content="Bart Teunis"/>
-  <meta name="topic-comment" content="Reference page for the ds_grid_to_mp_grid function"/>
-  <meta name="rh-index-keywords" content="ds_grid_to_mp_grid"/>
-  <meta name="search-keywords" content="ds_grid_to_mp_grid"/>
-  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt"/>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="Reference page for the ds_grid_to_mp_grid function">
+  <meta name="rh-index-keywords" content="ds_grid_to_mp_grid">
+  <meta name="search-keywords" content="ds_grid_to_mp_grid">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
 </head>
 
 <body>
@@ -81,135 +79,135 @@
 
 
   <h1><span data-field="title" data-format="default">ds_grid_to_mp_grid</span></h1>
-  <p>This function converts a DS grid into an MP grid, where all 0 values become &quot;empty&quot; and all others &quot;occupied&quot;.</p>
-  <p>An optional mapping function can be provided to determine which values in the DS grid should be considered &quot;empty&quot; or &quot;occupied&quot;.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> To convert from MP grid to DS grid, see <span class="inline3_func"><a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></span>.</p>
+  <p>此函数将 DS 网格转换为 MP 网格，其中所有 0 值变为 " 空"，所有其他值变为 " 已占用"。</p>
+  <p>可以提供可选的映射函数来确定 DS 网格中的哪些值应被视为 " 空 " 或 " 占用"。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 要从 MP 网格转换为 DS 网格，请参阅 <span class="inline3_func"><a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></span>。</p>
   <div data-conref="../../../../assets/snippets/Note_Warning_DS_MP_Grid_Sizes_Must_Match.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span> The DS grid and MP grid <strong>must</strong> have the same width and height. If the grids&#39; dimensions don&#39;t match, the conversion will fail and an error &quot;Error, grid sizes do not match&quot; is thrown.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span>DS 网格和 MP 网格 <strong> 必须 </strong> 具有相同的宽度和高度。如果网格尺寸不匹配，转换将失败并抛出错误 " 错误，网格尺寸不匹配"。</p>
 
 </div>
-  <h3>Usage Notes</h3>
+  <h3>使用说明</h3>
   <ul class="Disc">
-    <li>Cells set to 0 in the DS grid become empty cells in the MP grid, all other values will be occupied.</li>
-    <li>By default, a DS grid created with <span class="inline3_func"><a href="ds_grid_create.htm">ds_grid_create</a></span> has all elements set to 0 so an MP grid created from it will be empty.</li>
-    <li>The grid can contain any value that can be converted to real using the function <span class="inline3_func"><a href="../../Strings/real.htm">real</a></span>. If there are values that cannot be converted, e.g. a string that contains only letters, the function will fail and an error message is shown.</li>
+    <li>DS 网格中设置为 0 的单元格将成为 MP 网格中的空单元格，所有其他值将被占用。</li>
+    <li>默认情况下，使用 <span class="inline3_func"><a href="ds_grid_create.htm">ds_grid_create</a></span> 创建的 DS 网格的所有元素都设置为 0，因此从中创建的 MP 网格将为空。</li>
+    <li>网格可以包含任何可以使用函数 <span class="inline3_func"><a href="../../Strings/real.htm">real</a></span> 转换为实数的值。如果存在无法转换的值，例如仅包含字母的字符串，该函数将失败并显示错误消息。</li>
   </ul>
-  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">Mapping Function</span><span data-close-text="true">Mapping Function</span></a></h3>
+  <h3><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true"> 映射函数 </span><span data-close-text="true"> 映射函数 </span></a></h3>
   <div class="droptext" data-targetname="drop-down">
-    <p>The optional mapping function that you pass to this function should take the following parameters: </p>
+    <p>传递给此函数的可选映射函数应采用以下参数：</p>
     <table class=" cke_show_border">
       <tbody>
         <tr>
-          <th style="">Argument</th>
-          <th>Type</th>
-          <th style="">Description</th>
+          <th style="">参数</th>
+          <th>类型</th>
+          <th style="">描述</th>
         </tr>
         <tr>
           <td style=""><b>value</b></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-          <td style="">The value in the current cell</td>
+          <td style="">当前单元格中的值</td>
         </tr>
         <tr>
           <td style=""><b>x</b></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-          <td style="">The x index/position of the grid cell</td>
+          <td style="">网格单元的 x 索引 / 位置</td>
         </tr>
         <tr>
           <td style=""><span class="inline">y</span></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-          <td style="">The y index/position of the grid cell</td>
+          <td style="">网格单元的 y 索引 / 位置</td>
         </tr>
       </tbody>
     </table>
   </div>
   <ul class="Disc">
   </ul>
-  <p> </p>
-  <h4>Syntax:</h4>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">ds_grid_to_mp_grid</span>(ds_grid, mp_grid[, func]);</p>
   <table>
     <colgroup>
-      <col/>
-      <col/>
-      <col/>
+      <col>
+      <col>
+      <col>
     </colgroup>
     <tbody>
       <tr>
-        <th>Argument</th>
-        <th>Type</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
       </tr>
       <tr>
         <td>ds_grid</td>
         <td><span data-keyref="Type_ID_DS_Grid"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm">DS Grid</a></span></td>
-        <td>The DS grid to convert</td>
+        <td>要转换的 DS 网格</td>
       </tr>
       <tr>
         <td>mp_grid</td>
         <td><span data-keyref="Type_ID_MP_Grid"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Movement_And_Collisions/Motion_Planning/mp_grid_create.htm">MP Grid ID</a></span></td>
-        <td>The MP grid to write the data to</td>
+        <td>将数据写入的 MP 网格</td>
       </tr>
       <tr>
         <td>func</td>
         <td><span data-keyref="Type_Function"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></span></td>
-        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional">OPTIONAL</span></span> The mapping function to use</td>
+        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional"> 可选</span></span> 要使用的映射函数</td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <h4>Returns:</h4>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_ID_MP_Grid"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Movement_And_Collisions/Motion_Planning/mp_grid_create.htm">MP Grid ID</a></span></p>
-  <p> </p>
-  <h4>Example 1: Basic Usage</h4>
-  <p class="code">var _size = 10;<br/>
-    grd_data = ds_grid_create(_size, _size);<br/>
-    repeat(20)<br/>
-    {<br/>
-        ds_grid_set(grd_data, irandom(_size-1), irandom(_size-1), choose(0, false, true, &quot;7&quot;, 47));<br/>
-    }<br/>
-    <br/>
-    mpg_data = mp_grid_create(0, 0, _size, _size, 16, 16);<br/>
+  <p>&nbsp;</p>
+  <h4>示例 1：基本用法</h4>
+  <p class="code">var _size = 10;<br>
+    grd_data = ds_grid_create(_size, _size);<br>
+    repeat(20)<br>
+    {<br>
+    &nbsp; &nbsp; ds_grid_set(grd_data, irandom(_size-1), irandom(_size-1), choose(0, false, true, "7", 47));<br>
+    }<br>
+    <br>
+    mpg_data = mp_grid_create(0, 0, _size, _size, 16, 16);<br>
     <span data-field="title" data-format="default">ds_grid_to_mp_grid</span>(grd_data, mpg_data);
   </p>
-  <p>The above code first creates a DS grid of 10 cells by 10 cells (initialised in the <span class="inline2">_size</span> variable) using <span class="inline3_func"><a href="ds_grid_create.htm">ds_grid_create</a></span>. It then assigns one of 5 possible values, selected using the <span class="inline3_func"><a href="../../Maths_And_Numbers/Number_Functions/choose.htm">choose</a></span> function, to each of 20 randomly selected cells in the grid. After that, it creates an MP grid using <span class="inline3_func"><a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_create.htm">mp_grid_create</a></span> and fills it using the contents of the DS grid by calling the <span class="inline3_func"><span data-field="title" data-format="default">ds_grid_to_mp_grid</span></span> function. DS grid cells containing <span class="inline2">0</span> or <span class="inline2">false</span> will be marked as &quot;empty&quot; in the MP grid, cells containing <span class="inline2">true</span>, <span class="inline2">&quot;7&quot;</span> or <span class="inline2">47</span> marked as &quot;occupied&quot;.</p>
-  <p> </p>
-  <h4>Example 2: Using a Mapping Function</h4>
-  <p class="code">width = 128;<br/>
-    height = 128;<br/>
-    cellsize = 4;<br/>
-    <br/>
-    function occupied(value, x, y)<br/>
-    {<br/>
-        switch(value)<br/>
-        {<br/>
-            case &quot;Mountains&quot;:<br/>
-            case &quot;Water&quot;:<br/>
-            case &quot;Forest&quot;:<br/>
-                return true;<br/>
-            case &quot;Grass&quot;:<br/>
-                return false;<br/>
-            default:<br/>
-                return false;<br/>
-        }<br/>
-    }<br/>
-    <br/>
-    grd_level = ds_grid_create(width, height);<br/>
-    ds_grid_clear(grd_level, &quot;Grass&quot;);<br/>
-    ds_grid_set_disk(grd_level, 60, 60, 20, &quot;Water&quot;);<br/>
-    ds_grid_set_disk(grd_level, 100, 60, 20, &quot;Mountains&quot;);<br/>
-    ds_grid_set_region(grd_level, 60, 100, 110, 110, &quot;Forest&quot;);<br/>
-    <br/>
-    mpg_level = mp_grid_create(0, 0, width, height, 4, 4);<br/>
+  <p>上述代码首先使用 <span class="inline3_func"><a href="ds_grid_create.htm">ds_grid_create</a></span> 创建一个 10 个单元 x 10 个单元的 DS 网格 (在 <span class="inline2">_size</span> 变量中初始化)。然后，它会将使用 <span class="inline3_func"><a href="../../Maths_And_Numbers/Number_Functions/choose.htm">choose</a></span> 函数选择的 5 个可能值之一分配给网格中随机选择的 20 个单元格中的每一个。之后，它使用 <span class="inline3_func"><a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_create.htm">mp_grid_create</a></span> 创建 MP 网格，并通过调用 <span class="inline3_func"><span data-field="title" data-format="default">ds_grid_to_mp_grid</span></span> 函数使用 DS 网格的内容填充它。包含 <span class="inline2">0</span> 或 <span class="inline2">false</span> 的 DS 网格单元将在 MP 网格中标记为 " 空"，包含 <span class="inline2">true</span>、<span class="inline2">"7"</span> 或 <span class="inline2">47</span> 的单元将标记为 " 占据"。</p>
+  <p>&nbsp;</p>
+  <h4>示例 2：使用映射函数</h4>
+  <p class="code">width = 128;<br>
+    height = 128;<br>
+    cellsize = 4;<br>
+    <br>
+    function occupied(value, x, y)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;switch(value)<br>
+    &nbsp;&nbsp; &nbsp;{<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;case "Mountains":<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; case "Water":<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; case "Forest":<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return true;<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;case "Grass":<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;default:<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    }<br>
+    <br>
+    grd_level = ds_grid_create(width, height);<br>
+    ds_grid_clear(grd_level, "Grass");<br>
+    ds_grid_set_disk(grd_level, 60, 60, 20, "Water");<br>
+    ds_grid_set_disk(grd_level, 100, 60, 20, "Mountains");<br>
+    ds_grid_set_region(grd_level, 60, 100, 110, 110, "Forest");<br>
+    <br>
+    mpg_level = mp_grid_create(0, 0, width, height, 4, 4);<br>
     ds_grid_to_mp_grid(grd_level, mpg_level, occupied);
   </p>
-  <p>The above code first shows an example of how to use a mapping function. First it defines <span class="inline2">width</span>, <span class="inline2">height</span> and <span class="inline2">cellsize</span> as instance variables, as well as a mapping function <span class="inline3_func">occupied</span> that returns <span class="inline2">true</span> if the value is one of <span class="inline2">&quot;Mountains&quot;</span>, <span class="inline2">&quot;Water&quot;</span> or <span class="inline2">&quot;Forest&quot;</span> or <span class="inline2">false</span> if it is either <span class="inline2">&quot;Grass&quot;</span> or any other value. It then creates a <a href="DS_Grids.htm">DS grid</a> <span class="inline2">grd_level</span> of the given width and height and fills it with a couple of terrain types. After that, an MP grid of the same width and height is created using <span class="inline3_func"><a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_create.htm">mp_grid_create</a></span> and its ID stored in a variable <span class="inline2">mpg_level</span>. Finally the MP grid is initialized with the contents of the DS grid, using <span class="inline3_func"><span data-field="title" data-format="default">ds_grid_to_mp_grid</span></span>.</p>
-  <p> </p>
-  <p> </p>
+  <p>上面的代码首先展示了如何使用映射函数的示例。首先，它将 <span class="inline2">width</span> 、 <span class="inline2">height</span> 和 <span class="inline2">cellsize</span> 定义为实例变量，以及一个占用的<span class="inline3_func">occupied</span>函数，如果该值为 <span class="inline2">"Mountains"</span>、<span class="inline2">"Water"</span> 或 <span class="inline2">"Forest"</span> 之一，则返回 <span class="inline2">true</span>; 如果该值为 <span class="inline2">"Grass"</span> 或任何其他值，则返回 <span class="inline2">false</span>。然后，它创建一个给定宽度和高度的 <a href="DS_Grids.htm">DS 网格</a> <span class="inline2">grd_level</span>，并用几种地形类型填充它。之后，使用<span class="inline3_func"><a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_create.htm">mp_grid_create</a></span> 创建相同宽度和高度的 MP 网格，并将其 ID 存储在变量 <span class="inline2">mpg_level</span> 中。最后，使用 <span class="inline3_func"><span data-field="title" data-format="default">ds_grid_to_mp_grid</span></span> 使用 DS 网格的内容初始化 MP 网格。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Back: <a href="DS_Grids.htm">DS Grids</a></div>
-        <div>Next: <a href="ds_grid_create.htm">ds_grid_create</a></div>
+        <div>Back:&nbsp;<a href="DS_Grids.htm">网格 Grid</a></div>
+        <div>Next:&nbsp;<a href="ds_grid_create.htm">ds_grid_create</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

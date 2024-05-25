@@ -81,8 +81,8 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">struct_get_names</span></h1>
   <p>此函数返回一个数组，其中包含结构中的变量名。</p>
-  <p>您传入要检查的结构引用，数组中的每个条目都将是一个<span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">字符串</a></span>结构包含的变量名的。</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 此函数不返回结构的<em>静态</em>变量。这些属于其<a href="../../GML_Overview/Structs/Static_Structs.htm">静态结构</a>，您可以使用 <span class="inline3_func"><a href="static_get.htm">static_get</a></span> 获取该结构。</p>
+  <p>传入要检查的结构体引用，数组中的每个条目都将是该结构体包含的变量名的 <span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a>。</span></p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意 </span></span> 此函数不返回结构的 <em> 静态 </em> 变量。 这些属于其 <a href="../../GML_Overview/Structs/Static_Structs.htm"> 静态结构 </a>，您可以使用 <span class="inline3_func"><a href="static_get.htm">static_get</a></span> 获取。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">struct_get_names</span>(struct);</p>
@@ -117,9 +117,9 @@
     &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(_str);<br>
     }
   </p>
-  <p>上面的代码首先创建一个临时结构变量 <span class="inline2">_my_struct</span>&nbsp;，其中包含两个变量：<span class="inline2">a</span> 和 <span class="inline2">str</span>。&nbsp;下一步，调用&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">struct_get_name</span></span>&nbsp;以获取具有给定结构的变量名称的数组。这些都会显示出来。最后，使用 for 循环遍历数组中的所有变量名，并使用 <span class="inline3_func"><a href="variable_struct_get.htm">struct_get</a></span> <em>按名称</em>在结构中查找相应值。对于这些键-值对中的每个&nbsp;，都会使用 <span class="inline3_func"><a href="../Debugging/show_debug_message.htm">show_debug_message</a></span> 显示调试消息。</p>
+  <p>上面的代码首先创建一个临时结构变量 <span class="inline2">_my_struct</span>，其中包含两个变量：<span class="inline2">a</span> 和 <span class="inline2">str</span>。 接下来，调用 <span class="inline3_func"><span data-field="title" data-format="default">struct_get_names</span></span> 以获取包含给定结构的变量名称的数组。 这些都被显示出来。 最后，使用 for 循环循环遍历数组中的所有变量名称，并使用 <span class="inline3_func"><a href="variable_struct_get.htm">struct_get</a></span> 在结构体中<em>按名称</em>查找相应的值。 对于每个键值对，都会使用 <span class="inline3_func"><a href="../Debugging/show_debug_message.htm">show_debug_message</a></span> 显示调试消息。</p>
   <p>&nbsp;</p>
-  <h4>示例2：包括静态变量</h4>
+  <h4>示例2：包含静态变量</h4>
   <p class="code">function vec3(_x, _y, _z) constructor<br>
     {<br>
     &nbsp;&nbsp; &nbsp;x = _x;<br>
@@ -143,9 +143,9 @@
     var _arr_names_all = array_concat(_arr_names, _arr_names_static);<br>
     show_debug_message($"Variable names for struct (including static): {_arr_names_all}");
   </p>
-  <p>上面的扩展示例显示了如何通过检索结构的静态结构并将这些变量名附加到变量名数组来包括静态变量名。</p>
-  <p>首先定义一个简单的 <span class="inline2">vec3</span> 结构，它存储一个 <span class="inline2">x</span>、<span class="inline2">y</span> 和 <span class="inline2">z</span> 变量，以及两个静态方法 <span class="inline2">add</span> 和 <span class="inline2">dot</span>。由此创建了一个新的结构 <span class="inline2">_v1</span>。接下来，使用 <span class="inline3_func"><span data-field="title" data-format="default">struct_get_names</span></span> 检索 <span class="inline2">_v1</span> 及其静态结构的变量名。然后通过调用 <span class="inline3_func"><a href="array_concat.htm">array_concat</a></span> 连接这两个数组。最后，一条调试消息显示这个新数组的内容，其中包含<em>所有</em>结构变量名的。</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 如果结构从静态结构链或层次结构中获取静态变量，则需要遍历静态结构链以获取<em>所有</em>静态变量的名称。</p>
+  <p>上面的扩展示例显示了如何通过检索结构的静态结构并将这些变量名追加到变量名数组来包含静态变量名。</p>
+  <p>首先定义一个简单的 <span class="inline2">vec3</span> 结构，其中存储 <span class="inline2">x</span>、<span class="inline2">y</span> 和 <span class="inline2">z</span> 变量，以及两个静态方法 <span class="inline2">add</span> 和 <span class="inline2">dot</span>。 由此创建一个新的结构体 <span class="inline2">_v1</span>。 接下来，使用 <span class="inline3_func"><span data-field="title" data-format="default">struct_get_names</span></span> 检索 <span class="inline2">_v1</span> 及其静态结构的变量名称。 然后，通过调用 <span class="inline3_func"><a href="array_concat.htm">array_concat</a></span> 连接两个数组。 最后，调试消息显示这个新数组的内容，其中包含结构体的 <em> 所有 </em> 变量名称。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意 </span></span> 如果结构从静态结构的链或层次结构中获取静态变量，则需要遍历静态结构的链以获取 <em> 所有 </em> 静态变量的名称。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

@@ -79,9 +79,9 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">layer_set_target_room</span></h1>
-  <p>This function tells&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> that <i>all further layer functions should be applied to the given room</i>. In this way you can procedurally change or generate layers and layer contents in a room that is not the current room.</p>
-  <p>When you are finished adding layers or layer elements to a room, call the function&nbsp;<span class="inline3_func"><a href="layer_reset_target_room.htm">layer_reset_target_room</a></span> to reset the room target or call this function again with a <span class="inline2">room</span> argument of <span class="inline2">-1</span>.</p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;While targeting another room, you can use all the regular layer functions <b>except</b> you cannot create instances using&nbsp;<span class="inline3_func"><a href="../../Instances/instance_create_layer.htm">instance_create_layer</a></span> or <span class="inline3_func"><a href="../../Instances/instance_create_depth.htm">instance_create_depth</a></span>, nor will the layer function&nbsp;<span class="inline3_func"><a href="layer_add_instance.htm">layer_add_instance</a></span> be available.</p>
+  <p>此函数告诉 <span data-keyref="GameMaker Name">GameMaker</span>，<i> 所有其他层函数都应应用于给定房间 </i>。通过这种方式，您可以在非当前房间的房间中按程序更改或生成图层和图层内容。</p>
+  <p>当您完成向房间添加图层或图层元素后，调用函数 <span class="inline3_func"><a href="layer_reset_target_room.htm">layer_reset_target_room</a></span> 重置房间目标，或使用 <span class="inline2">-1</span> 的 <span class="inline2">room</span> 参数再次调用此函数。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span> 当定位另一个房间时，您可以使用所有常规图层函数，<b> 但 </b> 您无法使用 <span class="inline3_func"><a href="../../Instances/instance_create_layer.htm">instance_create_layer</a></span> 或 <span class="inline3_func"><a href="../../Instances/instance_create_depth.htm">instance_create_depth</a></span> 创建实例，层函数 <span class="inline3_func"><a href="layer_add_instance.htm">layer_add_instance</a></span> 也不可用。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">layer_set_target_room</span>(room);</p>
@@ -95,7 +95,7 @@
       <tr>
         <td>room</td>
         <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
-        <td>The room to target for all further layer functions,&nbsp;or -1 for the current room</td>
+        <td>所有其他层功能的目标房间，或当前房间的 -1</td>
       </tr>
     </tbody>
   </table>

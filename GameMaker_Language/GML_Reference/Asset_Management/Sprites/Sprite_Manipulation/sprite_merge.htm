@@ -81,8 +81,8 @@
   <h1>sprite_merge</h1>
   <p>此函数将参数1("ind2")中索引的精灵与参数0("ind1")中索引的精灵合并。图像本身<b>不是</b>合并在一起，而是图像索引合并，将精灵"ind2"的子图像附加到精灵"ind1"的子图像上，即：将它们添加到末尾。请注意，如果精灵大小不同，则附加的精灵将被拉伸以适合图像大小对于"ind1"。</p>
   <p>此更改是永久性的，从您使用此函数的那一刻起，直到游戏关闭或精灵被删除，正在合并的精灵将被更改，但与其合并的精灵将保持不变。</p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Neither the image asset that is being merged into, nor the image asset that is for merging, can be one of the original game resources. You must use <span style="font-size:1px;"><a href="sprite_duplicate.htm"><span class="inline">sprite_duplicate()</span></a></span> first to create two new resources (if you are merging included game assets) and then merge those.</p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function is only useful for <b>bitmap</b> sprites and will not work with SWF or JSON (Spine) sprites.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>正在合并的图像资源和待合并的图像资源都不能是原始游戏资源之一。您必须首先使用<span style="font-size:1px;"><a href="sprite_duplicate.htm"><span class="inline">sprite_duplicate()</span></a></span>创建两个新资源(如果您要合并包含的游戏资源)，然后再合并它们。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此函数仅适用于<b>位图</b>精灵，不适用于 SWF 或 JSON(Spine) 精灵。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">sprite_merge(ind1, ind2);</p>

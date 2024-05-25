@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>buffer_delete</h1>
   <p>使用这个函数，您可以从内存中删除以前使用函数<a href="buffer_create.htm"><span class="inline">Buffer_create()</span></a>创建的缓冲区，释放用于创建该缓冲区的资源，并删除当前可能包含的任何数据。</p>
-  <p class="note"><b><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> It's important to always remove any dynamically created resources from memory when you no longer need them to prevent memory leaks.</p>
+  <p class="note"><b><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span></b> 当您不再需要任何动态创建的资源时，务必从内存中删除它们，以防止内存泄漏，这一点很重要。</p>
   <p class="note"><b><i><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;</i></b>When you create a buffer, the index value used to identify it is an integer value starting at 0. These indices are re-used by GameMaker, so a destroyed buffer index value may be used by a newly created one afterwards, and we recommend that you set any variable that holds a buffer&nbsp;index to -1 after having destroyed the buffer.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>

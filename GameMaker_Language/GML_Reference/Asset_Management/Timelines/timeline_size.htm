@@ -80,7 +80,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">timeline_size</span></h1>
-  <p>With this function you can get the total number of active moments for a timeline (an "active" moment is one which has code or GML Visual added to it). This can be handy when creating dynamic timelines using the&nbsp;<span class="inline3_func"><a href="timeline_moment_add_script.htm">timeline_moment_add_script</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="timeline_moment_clear.htm">timeline_moment_clear</a></span> functions, as you can check to see if a given timeline has the correct number of active moments or none at all.</p>
+  <p>通过此函数，您可以获得时间线的活动时刻总数 ("活动" 时刻是添加了代码或 GML Visual 的时刻)。使用 <span class="inline3_func"><a href="timeline_moment_add_script.htm">timeline_moment_add_script</a></span> 和 <span class="inline3_func"><a href="timeline_moment_clear.htm">timeline_moment_clear</a></span> 函数创建动态时间线时，这会非常方便，因为您可以检查给定时间线是否具有正确数量的活动时刻或没有根本不。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">timeline_size</span>(ind);</p>
@@ -108,7 +108,7 @@
     &nbsp; &nbsp; var _gamespeed = game_get_speed(gamespeed_fps);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;timeline_moment_add_script(global.tl, _gamespeed + irandom(_gamespeed), spawn_enemy);<br>
     }</p>
-  <p>The above code check the given timeline size, and if it returns 0 (ie: the timeline has no active moments) it will add a script function to be used at a random moment within the timeline indexed in the global variable <span class="inline2">tl</span>.</p>
+  <p>上面的代码检查给定的时间轴大小，如果返回 0  ( 即：时间轴没有活动时刻)，它将添加一个脚本函数，以便在全局变量 <span class="inline2">tl</span> 中索引的时间轴内的随机时刻使用。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

@@ -80,11 +80,11 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">mp_grid_to_ds_grid</span></h1>
-  <p>This function copies the given MP grid into a <a href="../../Data_Structures/DS_Grids/DS_Grids.htm">DS&nbsp;grid</a>.</p>
-  <p>A cell in the DS grid will contain the value <span class="inline2">-1</span> if it's flagged as occupied in the MP grid, or <span class="inline2">0</span> if it isn't.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;To convert from MP grid to DS grid, see&nbsp;<span class="inline3_func"><a href="../../Data_Structures/DS_Grids/ds_grid_to_mp_grid.htm">ds_grid_to_mp_grid</a></span>.</p>
+  <p>此函数将给定的 MP 网格复制到 <a href="../../Data_Structures/DS_Grids/DS_Grids.htm">DS 网格 </a> 中。</p>
+  <p>如果 DS 网格中的单元格在 MP 网格中被标记为已占用，则该单元格将包含值 <span class="inline2">-1</span>; 如果未标记为已占用，则该单元格将包含值 <span class="inline2">0</span>。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 要从 MP 网格转换为 DS 网格，请参阅 <span class="inline3_func"><a href="../../Data_Structures/DS_Grids/ds_grid_to_mp_grid.htm">ds_grid_to_mp_grid</a></span>。</p>
   <div data-conref="../../../../assets/snippets/Note_Warning_DS_MP_Grid_Sizes_Must_Match.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;The DS grid and MP grid <strong>must</strong> have the same width and height. If the grids' dimensions don't match, the conversion will fail and an error "Error, grid sizes do not match" is thrown.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span>DS网格和 MP网格 <strong> 必须 </strong> 具有相同的宽度和高度。如果网格尺寸不匹配，转换将失败并抛出错误 " 错误，网格尺寸不匹配"。</p>
 
 </div>
   <p>&nbsp;</p>
@@ -117,7 +117,7 @@
   <p class="code">motion_grid = ds_grid_create(room_width / 32, room_height / 32);<br>
     <span data-field="title" data-format="default">mp_grid_to_ds_grid</span>(mp_grid, motion_grid);
   </p>
-  <p>The above code will create a new DS grid <span class="inline2">motion_grid</span> and then copy the MP grid data contained in the variable <span class="inline2">mp_grid</span> into the new DS grid.</p>
+  <p>上述代码将创建一个新的 DS 网格 <span class="inline2">motion_grid</span>，然后将变量 <span class="inline2">mp_grid</span> 中包含的 MP 网格数据复制到新的 DS 网格中。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

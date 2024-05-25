@@ -80,7 +80,7 @@
 
   <h1><span data-field="title" data-format="default">variable_clone</span></h1>
   <p>此函数克隆您传递给它的值，并返回新的克隆。</p>
-  <p>它克隆嵌套的结构和数组，直到给定深度(默认情况下为 <span data-keyref="Const_Data_Clone_Depth">128</span>)，您可以通过提供可选的 <span class="inline2">depth</span> 参数来覆盖该深度。</p>
+  <p>它将嵌套结构和数组克隆到给定深度（默认为 <span data-keyref="Const_Data_Clone_Depth">128</span>），您可以通过提供可选的 <span class="inline2">深度</span> 参数来覆盖该深度。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 内置的<a href="../Data_Structures/Data_Structures.htm">数据结构</a>和<a href="../Asset_Management/Instances/Instances.htm">实例</a>是<em>未</em>克隆的，对于此类型的变量写入实际值(分别为数据结构 ID 或实例 ID)。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -105,7 +105,7 @@
       <tr>
         <td>depth</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 克隆变量的最大深度级别，如果这是嵌套结构的话。默认值为 <span data-keyref="Const_Data_Clone_Depth">128</span>，这是可能的最大值。</td>
+        <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>克隆变量的最大深度级别，例如 嵌套结构。 默认值为 <span data-keyref="Const_Data_Clone_Depth">128</span>，即最大可能值。</td>
       </tr>
     </tbody>
   </table>

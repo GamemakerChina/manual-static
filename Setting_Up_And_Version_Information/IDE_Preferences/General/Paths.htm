@@ -80,9 +80,9 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>路径首选项</h1>
   <p><img alt="Path Prefs" class="center" src="../../../assets/Images/Setup_And_Version/Preferences/General_Paths_Prefs.png" style="cursor: nwse-resize;"></p>
-  <p>The <strong>Path </strong>preferences control the different file paths required by elements in the <span data-keyref="GameMaker Name">GameMaker</span> IDE as well as for any external editors that you require.</p>
+  <p><strong>路径</strong>首选项控制<span data-keyref="GameMaker Name">GameMaker</span>IDE中的元素以及您需要的任何外部编辑器所需的不同文件路径。</p>
   <h2 id="ide">IDE</h2>
-  <p>The following are the options under the IDE section:&nbsp;</p>
+  <p>以下是IDE部分下的选项：</p>
   <ul class="colour">
     <li><strong>Temp directory</strong>: The location for saving all the temporary folders. By default on Windows this is:&nbsp;
       <p class="code">\Users\&lt;Username&gt;\AppData\Local\Temp\GameMaker</p>
@@ -108,7 +108,7 @@
       <p class="code">/Users/&lt;Username&gt;/GameMaker</p>
       <p>&nbsp;</p>
     </li>
-    <li><strong>Automatically delete temp directory on close</strong>: Checking this will force <span data-keyref="GameMaker Name">GameMaker</span> to automatically delete the Temp folder that it creates per project for compiling, etc. This setting is on by default, and un-checking it will switch it off (meaning that you'll have to manually remove any temp files later).</li>
+    <li><strong>关闭时自动删除临时目录</strong>：选中此选项将强制<span data-keyref="GameMaker Name">GameMaker</span>自动删除它为编译等每个项目创建的临时文件夹。默认情况下，此设置处于启用状态，取消选中它将关闭它(意味着您必须稍后手动删除任何临时文件)。</li>
     <li><strong>关闭时自动删除临时目录</strong>：选中此选项将强制 <span data-keyref="GameMaker Name">GameMaker</span> 自动删除它为编译等每个项目创建的临时文件夹。默认情况下，此设置处于关闭状态。</li>
     <li><strong>关闭时自动删除资源缓存</strong>：如果选中此选项，则当您退出 <span data-keyref="GameMaker Name">GameMaker</span> 时，资源编译器缓存文件夹将被删除。这在默认情况下是关闭的，启用它将意味着每次加载和运行任何项目时都需要重新构建缓存(这可能需要时间，具体取决于游戏的大小)。</li>
     <li><strong>关闭时自动删除 IDE 缓存</strong>：如果选中此选项，则当您退出 <span data-keyref="GameMaker Name">GameMaker</span> 时，IDE 编译器缓存文件夹将被删除。这在默认情况下是关闭的，启用它将意味着每次启动 <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;时都需要重建缓存。</li>
@@ -116,21 +116,16 @@
     <li><strong>删除资源缓存</strong>：点击此按钮将删除项目的编译器资源缓存。</li>
     <li><strong>删除 IDE 缓存</strong>：单击此按钮将删除 IDE 缓存</li>
   </ul>
-  <h2 id="external_editors">External Editors</h2>
-  <p>The following are the options under the External Editors section:&nbsp;</p>
+  <h2 id="external_editors">外部编辑器</h2>
+  <p>以下是"外部编辑器"部分下的选项：</p>
   <ul class="colour">
-    <li><strong>Sound files</strong>: The path to the external editor to use for <a href="../../../The_Asset_Editors/Sounds.htm">Sounds</a>. If empty (the default), the OS'es file associations are used.</li>
+    <li><strong> 声音文件 </strong>：用于 <a href="../../../The_Asset_Editors/Sounds.htm"> 声音 </a> 的外部编辑器的路径。如果为空 (默认值)，则使用操作系统的文件关联。</li>
     <li><strong>SWF files</strong>:&nbsp;The path to the external editor to use for <a href="../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm#h">Vector Sprites (SWF)</a>. If empty (the default), the OS'es file associations are used.</li>
     <li><strong>Spine files</strong>: The path to the external editor to use for&nbsp;<a href="../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm#h1">Skeletal Animation Sprites (Spine)</a>. If empty (the default), the&nbsp;OS'es file associations are used.</li>
     <li><strong>Bitmap files</strong>: The path to the external editor to use for bitmap <a href="../../../The_Asset_Editors/Sprites.htm">Sprites</a>. If empty (the default), the&nbsp;OS'es file associations are used.</li>
     <li><strong>Automatic response to external bitmap editor warning</strong>: When y<span>ou use b<span>oth <a href="../../../The_Asset_Editors/Image_Editor.htm">The Image Editor</a></span></span><span>&nbsp;and an external editor for editing the same bitmap <a href="../../../Quick_Start_Guide/Creating_Sprites.htm">sprite</a>, the Image Editor will overwrite the changes.&nbsp;</span>This&nbsp;<span><span>opti<span><span>on lets&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;<span><span><span>sh<span>ow</span></span></span></span>&nbsp;a warning message</span></span></span></span><span>&nbsp;when y<span>ou</span>&nbsp;try to externally edit a bitmap sprite: <strong>Sh</strong><span><strong>ow Message</strong> sh<span>ows a warning (the default), <strong>OK</strong> sh<span>ows n<span>one.</span></span></span></span></span></li>
     <li><strong>Automatic response to external spine re-import warning</strong>: <span>Any changes done to a sprite in the Spine external editor will need to be re-imported as a new&nbsp;sprite.&nbsp;<span><span data-keyref="GameMaker Name">GameMaker</span>&nbsp;will show a warning message f<span>or this</span></span>&nbsp;if&nbsp;<span><strong>Show Message</strong> is selected (the default),&nbsp;</span><span>or n<span><span>o message</span></span>&nbsp;<span>if y<span>ou select <strong>OK</strong>.</span></span></span></span></li>
-    <li><strong>Default option for opening included files</strong>: This&nbsp;option sets the default behaviour when double-clicking&nbsp;<img class="icon" src="../../../assets/Images/Icons/Icon_LMB.png">&nbsp;a file in the&nbsp;<a href="../../../Settings/Included_Files.htm">Included Files</a>.
-      <ul>
-        <li><strong>Properties</strong>: This&nbsp;opens the included file in&nbsp;<a href="../../../IDE_Tools/The_Inspector.htm">The Inspector</a>.</li>
-        <li><strong>External Editor</strong>: This&nbsp;opens the file in an external editor, using the file associations&nbsp;of the OS.</li>
-      </ul>
-    </li>
+    <li><strong> 打开包含文件的默认选项 </strong>：该选项设置双击 <img class="icon" src="../../../assets/Images/Icons/Icon_LMB.png"><a href="../../../Settings/Included_Files.htm"> 包含文件 </a> 中的文件时的默认行为。<ul><li><strong> 属性 </strong>：这将在 <a href="../../../IDE_Tools/The_Inspector.htm"> 检查器 </a> 中打开包含文件。</li><li><strong> 外部编辑器 </strong>：这将使用操作系统的文件关联在外部编辑器中打开文件。</li></ul></li>
     <li><strong>SWF 文件的外部编辑器 / 查看器的路径</strong>：如果您正在使用 SWF 格式的精灵，您可以将此路径设置为您首选的查看器 / 编辑器的路径，当您在精灵编辑器中单击<em>编辑图像</em>按钮时，它将打开给定的程序。这里的缺省值是没有路径。</li>
     <li><strong>Spine 文件的外部编辑器 / 查看器的路径</strong>：如果您正在使用 Spine 格式的精灵，您可以将其设置为您首选的查看器 / 编辑器的路径，当您在精灵编辑器中单击<em>编辑图像</em>按钮时，它将打开给定的程序。这里的缺省值是没有路径。</li>
   </ul>

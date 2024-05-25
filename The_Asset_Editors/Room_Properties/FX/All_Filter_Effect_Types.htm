@@ -91,11 +91,11 @@
     <li><strong>运行时参数</strong>，可以使用<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/Filter_Effect_Functions.htm">滤镜和效果函数</a><ul><li>通过代码修改FX每个参数都有一个类型，所以您知道要向哪个参数提供什么类型的数据。实数用于单值，数组用于向量(<span class="inline2">[x，y，<em>z<strong>*</strong></em>]</span>)和颜色(<span class="inline2">[r，g，b，<em>a<strong>*</strong></em>]</span>)参数。采样器用于传递<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">纹理</a>。<br><br><em><strong>*</strong>并非始终存在</em></li></ul></li>
   </ul>
   <div data-conref="../../../assets/snippets/FX_Limitations.hts">
-  <h2>Limitations</h2>
-  <p>There are some limitations to keep in mind when using filters/effects:</p>
+  <h2>限制</h2>
+  <p>在使用滤镜/效果时需要记住一些限制：</p>
   <ul class="colour">
-    <li>Filters/effects will not work when the <a href="../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/application_surface_enable.htm">application surface is disabled</a>. It's enabled by default, and you shouldn't usually require disabling it, however you may do so to gain performance on mobile devices. In such cases you wouldn't be able to use filters/effects as they require the surface texture for shader manipulations.</li>
-    <li>Filters/effects that take a texture image, require that image to be on a separate texture page. You can set this through the <a href="../../Sprites.htm">sprite editor</a>.</li>
+    <li>当<a href="../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/application_surface_enable.htm">应用程序表面被禁用</a>时，滤镜/效果将不起作用。默认情况下，滤镜/效果处于启用状态，您通常不应要求禁用它，但您可以这样做以获得移动的设备上的性能。在这种情况下，您将无法使用滤镜/效果，因为它们需要表面纹理进行着色器操作。</li>
+    <li>使用纹理图像的滤镜/效果需要该图像在单独的纹理页面上。您可以通过<a href="../../Sprites.htm">精灵编辑器</a>设置。</li>
   </ul>
 
 </div>

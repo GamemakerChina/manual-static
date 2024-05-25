@@ -80,9 +80,9 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>instance_create_layer</h1>
   <p>使用此函数，可以在房间内任意给定点和指定层上创建新的指定对象实例。可使用层 ID 值(由函数<a href="../Rooms/General_Layer_Functions/layer_create.htm"><span class="inline">layer_create()</span></a>返回)或按<a href="../../../../The_Asset_Editors/Rooms.htm">房间编辑器</a>中定义的层名称(作为字符串，例如"instance_layer")来标识层。</p>
-  <p>此函数返回新实例的<a href="Instance_Variables/id.htm"><span class="inline">id</span></a>，然后可以将其存储在变量中并用于访问该实例。请注意，该函数还将在<a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">之前调用正在创建的</a>实例的<i>创建事件</i>，继续调用该函数的事件的代码或操作。</p>
+  <p>此函数返回新实例的 <a href="Instance_Variables/id.htm"><span class="inline">id</span></a>，然后可以将其存储在变量中并用于访问该实例。请注意，该函数还将在 <i> 之前 </i> 调用正在创建的实例的 <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm"> 创建事件 </a>，继续调用该函数的事件的代码或操作。</p>
   <div data-conref="../../../../assets/snippets/Note_layer_depth_range.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;There is a minimum and maximum layer depth of&nbsp;<span data-keyref="Const_Depth_Min">-16000</span> to <span data-keyref="Const_Depth_Max">16000</span>. Anything placed on a layer outside that range will not be drawn although all events will still run as normal for anything on the layer.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要提示</span></span> 最小和最大层深度为 <span data-keyref="Const_Depth_Min">-16000</span> 到 <span data-keyref="Const_Depth_Max">16000</span>。放置在该范围之外的图层上的任何内容都不会被绘制，尽管该图层上任何内容的所有事件仍将正常运行。</p>
 
 </div>
   <h2>可选结构</h2>

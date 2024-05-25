@@ -79,10 +79,10 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1 id="h"><span data-field="title" data-format="default">surface_reset_target</span></h1>
-  <p>This function resets all further drawing from the target surface back to the screen.</p>
-  <p>Please note that to start drawing to a surface you must first have called the function&nbsp;<span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span> and then this one after you have finished, <i>for each surface target that you have set</i> or else nothing will be drawn on the screen as all further drawing (even in other instances) will be done on the surface. You should also realise that nothing will be seen if the surface itself is not drawn on the screen in the draw event of an instance.</p>
+  <p>此函数将所有进一步的绘图从目标表面重置回屏幕。</p>
+  <p>请注意，要开始绘制表面，您必须首先调用函数 <span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span>，然后在完成后调用此函数，<i> 对于您设置的每个表面目标 </i>，否则什么都不会被绘制在屏幕上，因为所有进一步的绘制 (即使在其他情况下) 都将在表面上完成。您还应该意识到，如果在实例的绘制事件中没有在屏幕上绘制表面本身，则什么也看不到。</p>
   <div data-conref="../../../../assets/snippets/Note_Surface_Check_That_It_Exists.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you have not previously set a render target with the function <span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span>,&nbsp;using this function will silently (i.e.&nbsp;without any error messages) end all further code execution for the event.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您之前没有使用函数 <span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span> 设置渲染目标，则使用此函数将静默 (即没有任何错误消息) 结束该函数的所有进一步代码执行事件。</p>
 
 </div>
   <p>&nbsp;</p>

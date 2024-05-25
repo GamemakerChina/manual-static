@@ -82,31 +82,31 @@
   <p>本节概述了可用于控制如何编译您的 iOS 游戏项目的不同选项。不同的章节是:</p>
   <h2>常规</h2>
   <p><img alt="iOS General Options" class="center" src="../../assets/Images/Settings/iOS_General_Options.png">The first part of the General section covers the <strong>Product Information</strong> about your game, including its <strong>Display Name</strong>, its <strong>Bundle Name</strong>&nbsp;and the <strong>Version</strong> info. Note that the Bundle Name must be in the correct reverse URL format for the final build of the game to work correctly, e.g.&nbsp;<span class="inline">com.[Company].[GameName]</span>. Here you can also give the <strong>Team Identifier</strong> that you wish to use for signing the final application that <span data-keyref="GameMaker Name">GameMaker</span> creates for you. Setting it here will override the Team ID that you have supplied in the <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm">iOS Preferences</a>.</p>
-  <p>The second thing to do is fill in the <strong>Build Settings</strong> for your game. To start with you set the allowed&nbsp;<strong>Orientation</strong>s that your game can be run on for the best user experience. The available options are:</p>
+  <p>第二件事是填写游戏的<strong>构建设置</strong>。首先，您可以设置游戏可以运行的允许<strong>方向</strong>，以获得最佳用户体验。可用选项包括：</p>
   <ul class="colour">
-    <li>Allow portrait&nbsp;orientation</li>
-    <li>Allow flipped portrait&nbsp;orientation</li>
-    <li>Allow landscape&nbsp;orientation</li>
-    <li>Allow flipped landscape&nbsp;orientation</li>
+    <li>允许纵向</li>
+    <li>允许翻转纵向方向</li>
+    <li>允许横向</li>
+    <li>允许翻转横向方向</li>
   </ul>
-  <p>You can then go to the <strong>Device Support</strong> section, with the following options available for the types of device to target:</p>
+  <p>然后，您可以转到<strong>设备支持</strong>部分，其中包含针对目标设备类型的以下选项：</p>
   <ul class="colour">
     <li><strong> iPhone or iPod Touch </strong> : iPhone 6及以上或 iPod Touch 设备</li>
     <li><strong>IPad</strong>: iPad 设备</li>
     <li><strong>Both</strong>: iPhone/iPod 和 iPad</li>
   </ul>
-  <p>Next, there is the <strong><a id="CocoaPods"></a>CocoaPods</strong> checkbox. Check it to automatically let&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;use the <a href="https://cocoapods.org/">CocoaPods</a> dependency manager. When enabled,&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> will perform the following steps&nbsp;on building your project:</p>
+  <p>接下来是<strong><a id="CocoaPods"></a>CocoaPods</strong>复选框。选中它可以自动让<span data-keyref="GameMaker Name">GameMaker</span>使用<a href="https://cocoapods.org/">CocoaPods</a>依赖管理器。启用后，<span data-keyref="GameMaker Name">GameMaker</span>将在构建项目时执行以下步骤：</p>
   <ul class="colour">
-    <li>Check if CocoaPods is installed, if it isn't,&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> will install it.</li>
-    <li>Check if the Podfile and Podfile.lock files exist and create them if not.&nbsp;These files are required if you are adding CocoaPods to an <a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm">iOS extension</a> using the <a href="../../The_Asset_Editors/Extensions.htm">Extension Editor</a>. The files contain specific,&nbsp;pre-generated macros required by <span data-keyref="GameMaker Name">GameMaker</span> to setup any listed CocoaPods when building your game.</li>
-    <li>Execute the <span class="inline2">pod install</span> command.</li>
+    <li>检查CocoaPods是否安装，如果没有，<span data-keyref="GameMaker Name">GameMaker</span>将安装它。</li>
+    <li>检查Podfile和Podfile.lock文件是否存在，如果不存在则创建它们。如果使用<a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm">扩展编辑器</a>将CocoaPods添加到<a href="../../The_Asset_Editors/Extensions.htm">iOS扩展</a>，则需要这些文件。这些文件包含<span data-keyref="GameMaker Name">GameMaker</span>在构建游戏时设置任何列出的CocoaPods所需的特定预生成宏。</li>
+    <li>执行<span class="inline2">pod install</span>命令。</li>
   </ul>
-  <p>The following&nbsp;guide contains more information&nbsp;on using CocoaPods, including manual installation and creation of the Podfile and Podfile.lock files:&nbsp;</p>
+  <p>以下指南包含有关使用CocoaPods的更多信息，包括手动安装和创建Podfile和Podfile.lock文件：</p>
   <ul class="colour">
     <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858">iOS and tvOS: Using Cocoa Pods</a></li>
   </ul>
   <div data-conref="../../assets/snippets/Note_important_CocoaPods.hts">
-  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;The CocoaPods checkbox can be found in&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;versions 2022.11 and higher. Older versions and LTS releases show two buttons instead; <strong>Podfile</strong> and <strong>Podfile.lock</strong>, to generate the respective files. Check the&nbsp;<a href="https://help.yoyogames.com/hc/en-us/articles/360008958858">iOS and tvOS: Using Cocoa Pods</a> guide for more information.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>提示CocoaPods复选框可以在<span data-keyref="GameMaker Name">GameMaker</span> 2022.11及更高版本中找到。旧版本和LTS版本显示两个按钮; <strong>Podfile</strong>和<strong>Podfile.lock</strong>，以生成相应的文件。查看<a href="https://help.yoyogames.com/hc/en-us/articles/360008958858">iOS和tvOS：使用Cocoa Pods</a>指南了解更多信息。</p>
 
 </div>
   <p>Finally, you can check or un-check the option to <strong>Defer Home Indicator Output</strong>. When this is checked, the home bar will always be shown at a low alpha, and the first swipe wakes the bar and the second swipe takes you home. If the option is un-checked, then the bar is not shown in-game, but the first edge swipe will take you home. Default is un-checked.</p>
@@ -119,15 +119,15 @@
     <li><strong>缩放</strong> : 在这里你可以选择缩放画布来保持设备屏幕的高宽比——在边缘添加“填充”来适应屏幕——或者你可以选择拉伸画布来适应设备屏幕。</li>
   </ul>
   <p>最后，可以选择设置<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页面</a>的大小。默认（最兼容）大小为2048 x 2048，但您可以从256 x 256和8192 x 8192之间的任意位置进行选择。还有一个标记为<strong>预览</strong>的按钮，它将生成此平台的纹理页面，然后打开一个窗口，以便您可以看到它们的外观。如果希望了解纹理页面的结构以及防止纹理页面大于或小于所需的页面，这将非常有用。有关纹理页面的详细信息，请参阅<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Be aware that the larger the size of the texture page, the less compatible your game will be with different browsers and devices.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>请注意，纹理页面的大小越大，您的游戏与不同浏览器和设备的兼容性就越差。</p>
   <p>&nbsp;</p>
   <h2>图标</h2>
   <p><img alt="iOS Images Icons Options" class="center" src="../../assets/Images/Settings/iOS_Icons_Options.png">本节允许您添加各种不同的图标，需要各种 iPhone 和 iPad 设备和 iOS 应用程序商店的不同部分。这些图标应该为24位的<span class="inline"> *.png </span>图像，其大小为每个图像指定。</p>
   <p>值得注意的是，<span data-keyref="GameMaker Name"> GameMaker </span>有一个<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可用于自动创建所有不同目标平台所需的图像。如果您使用这个工具，您应该修改所创建的图像，以确保它们是您所需要的。该工具将生成图标以及图像(见下一节)。</p>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;On importing an older project you may be presented with the following warning:<img alt="iOS Icon Warning" class="center" height="194" src="../../assets/Images/Settings/iOS_Icon_Warning.png" width="430">This comes up because the current iOS target version has changed the format of the required icons since the project was previously loaded. You will be required to re-create all the icons, as they will have been replaced with the generic <span data-keyref="GameMaker Name">GameMaker</span> icons (you can use the above mentioned Project Image Generator tool to do this quickly).</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在导入旧项目时，您可能会看到以下警告：<img alt="iOS Icon Warning" class="center" height="194" src="../../assets/Images/Settings/iOS_Icon_Warning.png" width="430">出现此警告是因为当前iOS目标版本自上次加载项目以来已更改了所需图标的格式。您将需要重新创建所有图标，因为它们将被通用<span data-keyref="GameMaker Name">GameMaker</span>图标替换(您可以使用上述项目图像生成器工具快速完成此操作)。</p>
   <p>&nbsp;</p>
   <h2>图像</h2>
-  <p><img alt="iOS Images Splash Screens Options" class="center" src="../../assets/Images/Settings/iOS_Images_Options.png">This section permits you to add separate graphics as <strong>Launch Screens</strong> (the image that will be shown briefly while your app loads) for each of the device orientations, as well as the&nbsp;<strong>Border Colour</strong>&nbsp;that will be used as the background for launch screens that are not set to fill the full screen.&nbsp;These images must be authored as individual 24bit <span class="inline">*.png</span> images with no transparencies and at an appropriate size. Note that this is&nbsp;<em>not</em>&nbsp;considered a splash screen and Apple have some fairly strict guidelines on how this should be set up and used. See the developer page on&nbsp;<a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/">Human Interface Guidelines</a> for more information.</p>
+  <p><img alt="iOS Images Splash Screens Options" class="center" src="../../assets/Images/Settings/iOS_Images_Options.png">此部分允许您添加单独的图形作为<strong>启动屏幕</strong>(在应用加载时将短暂显示的图像)，以及将用作启动屏幕背景的<strong>边框颜色</strong>(未设置为填满整个屏幕)。这些图像必须以单独的24位 * 格式创作<span class="inline">.png</span>图像，没有重叠，大小合适。请注意，这<em>不</em>被视为闪屏，Apple对如何设置和使用它有一些相当严格的指导方针。有关更多信息，请参阅开发人员页面上的<a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/">人机界面指导方针</a>。</p>
   <p>您还可以通过以下选项设置启动屏幕的显示方式:</p>
   <ul class="colour">
     <li><strong>保持长宽比</strong> : 这将保持图像与设备屏幕的长宽比，在需要的地方边缘添加“填充”。</li>

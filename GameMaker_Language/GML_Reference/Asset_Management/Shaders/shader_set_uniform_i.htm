@@ -79,9 +79,9 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>shader_set_uniform_i</h1>
-  <p>With this function you can set the value (or values) of a shader constant. You must previously have gotten the "handle" of the constant using the function <a href="shader_get_uniform.htm"><span class="inline">shader_get_uniform()</span></a>, and you will have to know what type of constant it is to pass the correct number of integer values through to it, ie: if you have a <span class="inline">vec2</span> you will need to pass two values to the function.<b></b></p>
+  <p>使用此函数，您可以设置着色器常量的值。您之前必须已经使用函数 <a href="shader_get_uniform.htm"><span class="inline">shader_get_uniform()</span></a> 获取了常量的 " 句柄"，并且您必须知道常量的类型，才能将正确数量的整数值传递给它，即：如果您有一个 <span class="inline">vec2</span>，您将需要向该函数传递两个值。<b></b></p>
   <div data-conref="../../../../assets/snippets/Note_Set_Uniforms_After_Shader_Set.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;All uniforms must be set <em>after</em> calling the function <span class="inline2"><a href="shader_set.htm">shader_set</a></span>&nbsp;and <em>before</em> calling <span class="inline2"><a href="shader_reset.htm">shader_reset</a></span>.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 必须在调用函数 <span class="inline2"><a href="shader_set.htm">shader_set</a></span><em> 之后 </em> 和调用 <span class="inline2"><a href="shader_reset.htm">shader_reset</a></span><em> 之前 </em> 设置所有uniforms 。</p>
 
 </div>
   <p>&nbsp;</p>

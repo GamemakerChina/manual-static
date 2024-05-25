@@ -79,8 +79,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1 id="h"><span data-field="title" data-format="default">surface_set_target</span></h1>
-  <p>With this function you set all further drawing to the target surface rather than the screen and in this way you can tell <span data-keyref="GameMaker Name">GameMaker</span> to only draw specific things to the specified surface.</p>
-  <p>Please note that if you do not call <span class="inline3_func"><a href="surface_reset_target.htm#h">surface_reset_target</a></span>&nbsp;after you have finished, nothing will be drawn on the screen as all further drawing (even in other instances) will be done on the surface. You should also realise that nothing will be seen if the surface itself is not drawn on the screen in the draw event of an instance. You can check the return value of this function too as a debug tool to check whether the surface target was set or not, with a return value of 0 being a failure to set the target and any other positive value being a success.</p>
+  <p>通过此函数，您可以将所有进一步绘制设置到目标表面而不是屏幕，这样您就可以告诉 <span data-keyref="GameMaker Name">GameMaker</span> 仅将特定内容绘制到指定表面。</p>
+  <p>请注意，如果您完成后不调用 <span class="inline3_func"><a href="surface_reset_target.htm#h">surface_reset_target</a></span>，则屏幕上不会绘制任何内容，因为所有进一步的绘制 (即使在其他情况下) 都将在表面上完成。您还应该意识到，如果在实例的绘制事件中没有在屏幕上绘制表面本身，则什么也看不到。您也可以检查此函数的返回值作为调试工具来检查表面目标是否设置，返回值 0 表示设置目标失败，任何其他正值表示成功。</p>
   <p>需要注意的一点是，表面是<i>层叠的</i>，因此不能从一个目标跳到另一个目标，然后在结束时重置为法线绘制目标，而是必须打开并关闭渲染目标。例如，这将导致<b>无法正常工作：</b></p>
   <p class="code">surface_set_target(surf1);<br>
     draw_text(32, 32, "surface1");<br>
@@ -102,7 +102,7 @@
     surface_reset_target();<br>
     surface_reset_target();</p>
   <div data-conref="../../../../assets/snippets/Note_Surface_Check_That_It_Exists.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you have not previously set a render target with the function <span class="inline3_func"><a href="#h">surface_set_target</a></span>,&nbsp;using this function will silently (i.e.&nbsp;without any error messages) end all further code execution for the event.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您之前没有使用函数 <span class="inline3_func"><a href="#h">surface_set_target</a></span> 设置渲染目标，则使用此函数将静默 (即没有任何错误消息) 结束该函数的所有进一步代码执行事件。</p>
 
 </div>
   <p>&nbsp;</p>

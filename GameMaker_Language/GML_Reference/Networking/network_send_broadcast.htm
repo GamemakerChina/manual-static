@@ -79,9 +79,9 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">network_send_broadcast</span></h1>
-  <p>This function broadcasts the data from a buffer locally to a range of IP addresses (for more information on buffers see <a href="../Buffers/Buffers.htm">Reference - Buffers</a>).</p>
-  <p>The range is limited to that of the device running the server, such that if the device has an IP of 92.168.11.130, then the data will be broadcast over the range 92.168.11.*. The function will return the number of bytes of data sent, or a number less than 0 if the send has failed.</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This function will only work when used with UDP - your server needs to be TCP and your client needs to have a UDP client socket created with&nbsp;<span class="inline3_func"><a href="network_create_socket_ext.htm">network_create_socket_ext</a></span>&nbsp;in order to receive any broadcasts sent from the server.</p>
+  <p>此函数将数据从本地缓冲区广播到一系列 IP 地址 (有关缓冲区的更多信息，请参阅 <a href="../Buffers/Buffers.htm"> 参考 - 缓冲区 </a>)。</p>
+  <p>该范围仅限于运行服务器的设备的范围，因此如果设备的 IP 为 92.168.11.130，则数据将在 92.168.11.* 范围内广播。该函数将返回已发送数据的字节数，如果发送失败，则返回小于 0 的数字。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 此函数仅在与 UDP 一起使用时才有效 - 您的服务器需要是 TCP，并且您的客户端需要具有使用 <span class="inline3_func"><a href="network_create_socket_ext.htm">network_create_socket_ext</a></span> 创建的 UDP 客户端套接字才能接收从服务器发送的任何广播。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在HTML5目标上运行的项目中使用此函数将不起作用。</p>
   <div data-conref="../../../assets/snippets/iOS_14_IP_Multicast_Permissions.hts">
   <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>iOS 14和更高版本要求您请求多播授权(<a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_multicast">com.apple.developer.networking.multicast</a>)并启用它，以便<strong>发送和接收</strong>多播和广播。<br>此外，在首次发送数据包之前，iOS 14不向用户显示同意模式对话框。因此，如果UDP套接字仅接收，则不会显示警报。<br>解决此问题的一种方法是发送一个空的"虚拟"数据包，以便触发同意模式。</p>

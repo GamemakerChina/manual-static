@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>sprite_duplicate</h1>
   <p>此函数将返回新创建的精灵的索引，该sprite是作为“ index ”参数输入的一个副本。如果函数失败，则返回-1。此函数<i>必须</i>用于从原始资源中复制任何精灵，然后才能对其进行任何转换。例如，如果您希望更改精灵的边界框，或从另一个精灵设置其alpha，则必须首先复制它，然后对复制的精灵执行操作并使用它。复制的精灵在创建时将放置在其自己独特的纹理页面上，这意味着复制多个精灵将创建多个纹理页面并对性能产生影响，因此仅在必要时使用此函数。</p>
-  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> When you duplicate a sprite in <span data-keyref="GameMaker Name">GameMaker</span> you must remember to remove it again (with <span style="font-size:1px;"><a href="sprite_delete.htm"><span class="inline">sprite_delete()</span></a></span>) when no longer needed, otherwise there is risk of a memory leak which will slow down and eventually crash your game.</p>
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span></b>当您在<span data-keyref="GameMaker Name">GameMaker</span>中复制精灵时，您必须记住再次删除它(使用<span style="font-size:1px;"><a href="sprite_delete.htm"><span class="inline">sprite_delete()</span></a></span>)不再需要，否则存在内存泄漏的风险，这会减慢游戏速度并最终崩溃。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">sprite_duplicate(index);</p>

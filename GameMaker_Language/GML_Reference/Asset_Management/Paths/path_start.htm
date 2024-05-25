@@ -81,7 +81,7 @@
   <h1>path_start</h1>
   <p>路径由一系列链接在一起的定义点创建，然后用于规划实例的移动。可以在路径编辑器中使用代码、<i>或</i>创建它们，并将它们分配给一个实例以在游戏中使用。然后，您可以使用此函数告诉您的实例要遵循的路径、遵循路径的速度(以每步像素为单位)、到达路径末端时的行为以及是遵循<i>绝对</i>还是<i>相对</i>路径位置。这最后一部分意味着，它要么完全按照您在<a href="../../../../The_Asset_Editors/Paths.htm">路径编辑器</a>中设计并放置的路径开始并跟随该路径(绝对)，要么从创建实例的位置开始并跟随该路径(相对)。</p>
   <p><img alt="Relative or Absolute path examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/path_relative_image.png">正如您在上图中所看到的，两个实例遵循以<span class="inline">path_start()</span>开头的相同路径，但是其中一个实例遵循绝对路径，而另一个则遵循相对路径。需要注意的是，当RELATIVE设置为FALSE(ABSOLUTE)时，实例将"跳转"到路径的起点，无论它位于房间中的哪个位置。</p>
-  <p>本页<a href="Path_Variables/path_endaction.htm">给出了用于定义实例到达路径末端时的行为的常量</a>。</p>
+  <p><a href="Path_Variables/path_endaction.htm">本页</a>给出了用于定义实例到达路径末尾时的行为的常量。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">path_start(path, speed, endaction, absolute);</p>

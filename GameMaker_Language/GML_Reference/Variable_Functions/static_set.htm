@@ -129,7 +129,7 @@
 
 </div>
   <p>&nbsp;</p>
-  <h4>示例2：将静态结构分配给纯数据结构</h4>
+  <h4>示例 2：将静态结构分配给纯数据结构</h4>
   <p class="code">function vec2(_x, _y) constructor<br>
     {<br>
     &nbsp;&nbsp; &nbsp;x = _x;<br>
@@ -153,9 +153,9 @@
     <br>
     show_debug_message(_b);
   </p>
-  <p>上面的代码首先定义了一个构造函数来创建 <span class="inline2">vec2</span> 结构。构造函数将参数 <span class="inline2">_x</span> 和 <span class="inline2">_y</span> 分别赋给结构的 <span class="inline2">x</span> 和 <span class="inline2">y</span> 变量。它还定义了一个静态的 <span class="inline2">add</span> 函数 (可能还有许多其他函数，由 <span class="inline2">//...</span> 注释指示)，所有将此构造函数的静态结构作为其静态结构的结构都可以使用该函数。</p>
-  <p>然后定义两个结构变量：<span class="inline2">_a</span> 是使用 <span class="inline2">ve2</span> 构造函数创建的，并获得 (10,10) 的 (x,y)，<span class="inline2">_b</span> 被创建为只有两个变量的基本结构：<span class="inline2">x</span> 设置为 4，<span class="inline2">y</span> 设置为 9。</p>
-  <p>然后，使用 <span class="inline2"></span>static_set<span class="inline3_func"><span data-field="title" data-format="default"> 将结构变量 <span class="inline2">_b</span> 赋给静态结构 </span>vec2</span>，这将把 <span class="inline2">_b</span> 转换为一个 <span class="inline2">vec2</span> 结构，使 <span class="inline2">_b</span> 可以使用 <span class="inline2">vec2</span> 的静态变量和函数。之后，通过调用 <span class="inline2">_b</span> 上的 <span class="inline2">add</span> 函数将 <span class="inline2">_a</span> 添加到 <span class="inline2">_b</span>。然后使用 <span class="inline2"></span>show_debug_message<span class="inline3_func"><a href="../Debugging/show_debug_message.htm"> 显示 </a>_b</span>。此调试输出将显示 <span class="inline2">{x:14，y:19}</span>。</p>
+  <p>上面的代码首先定义了一个构造函数来创建 <span class="inline2">vec2</span> 结构。 构造函数将参数 <span class="inline2">_x</span> 和 <span class="inline2">_y</span> 分别分配给结构体的 <span class="inline2">x</span> 和 <span class="inline2">y</span> 变量。 它还定义了一个静态 <span class="inline2">add</span> 函数（可能还有许多其他函数，由 <span class="inline2">// ...</span> 注释指示），所有将此构造函数的静态结构作为其静态结构的结构都可以使用该函数。</p>
+  <p>然后定义两个结构变量：<span class="inline2">_a</span> 使用 <span class="inline2">vec2</span> 构造函数创建，并获取 (10, 10) 的 (x, y)，<span class="inline2">_b</span> 创建为基本结构 只需两个变量：<span class="inline2">x</span> 设置为 4，<span class="inline2">y</span> 设置为 9。</p>
+  <p>然后使用 <span class="inline2"></span>static_set<span class="inline2"></span> 为结构体变量 <span class="inline3_func">_b<span data-field="title" data-format="default"> 分配 </span>vec2</span> 的静态结构体，这会将 <span class="inline2">_b</span> 转换为 <span class="inline2">vec2</span> 结构体，从而使静态结构体 <span class="inline2">vec2</span> 的变量和函数可供 <span class="inline2">_b</span> 使用。 之后，通过调用 <span class="inline2">_b</span> 上的 <span class="inline2">add</span> 函数将 <span class="inline2">_a</span> 添加到 <span class="inline2">_b</span>。 然后使用 <span class="inline3_func"><a href="../Debugging/show_debug_message.htm">show_debug_message</a></span> 显示 <span class="inline2">_b</span>。 此调试输出将显示 <span class="inline2">{ x : 14, y : 19 }</span>。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">

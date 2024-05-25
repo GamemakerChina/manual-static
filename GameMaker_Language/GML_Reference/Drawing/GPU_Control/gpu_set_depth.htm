@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
 
   <script type="text/javascript" language="JavaScript">
     //<![CDATA[
@@ -47,20 +45,20 @@
   <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
   <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
 <script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"/>
-  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"/>
-  <meta name="topic-status" content="Draft"/>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>gpu_set_depth</title>
-  <meta name="generator" content="Adobe RoboHelp 2022"/>
-  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"/>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
   <script src="../../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content=""/>
-  <meta name="topic-comment" content=""/>
-  <meta name="rh-index-keywords" content="gpu_set_depth"/>
-  <meta name="search-keywords" content="gpu_set_depth"/>
-  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt"/>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="gpu_set_depth">
+  <meta name="search-keywords" content="gpu_set_depth">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
 </head>
 
 <body>
@@ -81,88 +79,88 @@
 
 
   <h1><span data-field="title" data-format="default">gpu_set_depth</span></h1>
-  <p>This function sets the depth (i.e. the z coordinate) for <span data-keyref="GameMaker Name">GameMaker</span>&#39;s 2D drawing functions (sprites, shapes, primitives, text, etc.)</p>
-  <p><span>By default, <span data-keyref="GameMaker Name">GameMaker</span> uses the layer&#39;s depth when drawing flat graphics, but this function allows you to use your own. This can be used to draw at a different depth, or draw individual sprites/primitives at their own depths.</span></p>
-  <p class="note" style="text-align: left; "><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">IMPORTANT</span></span> This function doesn&#39;t change the depth of the layer when called in a layer begin script (see <span class="inline3_func"><a href="../../Asset_Management/Rooms/General_Layer_Functions/layer_script_begin.htm">layer_script_begin</a></span>). If you need to change the depth of a specific layer in the layer begin script you should do so using <span class="inline3_func"><a href="../../Asset_Management/Rooms/General_Layer_Functions/layer_force_draw_depth.htm">layer_force_draw_depth</a></span> instead.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span> <span data-keyref="GameMaker Name">GameMaker</span><span> only changes the depth when it starts drawing a new layer, so you may want to restore the original depth (saved previously from <span class="inline3_func"><a href="gpu_get_depth.htm">gpu_get_depth</a></span></span><span>) after you&#39;re done drawing, so any subsequent calls will not be affected by your depth change.</span></p>
-  <p> </p>
-  <h4>Syntax:</h4>
+  <p>此函数为<span data-keyref="GameMaker Name">GameMaker</span>的2D绘图功能(精灵、形状、图元、文本等)设置深度(即z坐标)。</p>
+  <p><span>默认情况下，<span data-keyref="GameMaker Name">GameMaker</span> 在绘制平面图形时使用层的深度，但此功能允许您使用自己的深度。此功能可用于在不同的深度绘制，或在各自的深度绘制单个精灵/图元。</span></p>
+  <p class="note" style="text-align: left; "><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要信息</span></span> 在层开始脚本中调用此函数时，不会更改层的深度 (请参阅 <span class="inline3_func"><a href="../../Asset_Management/Rooms/General_Layer_Functions/layer_script_begin.htm">layer_script_begin</a></span>)。如果您需要更改图层开始脚本中特定图层的深度，您应该使用 <span class="inline3_func"><a href="../../Asset_Management/Rooms/General_Layer_Functions/layer_force_draw_depth.htm">layer_force_draw_depth</a></span> 来执行此操作。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span><span data-keyref="GameMaker Name">GameMaker</span><span> 仅在开始绘制新图层时更改深度，因此您可能需要恢复原始深度 (之前从 <span class="inline3_func"><a href="gpu_get_depth.htm">gpu_get_depth</a></span> 保存 )</span><span>) 在您完成绘制后，因此任何后续调用都不会受到深度更改的影响。</span></p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">gpu_set_depth</span>(depth);</p>
   <table>
     <colgroup>
-      <col/>
-      <col/>
-      <col/>
+      <col>
+      <col>
+      <col>
     </colgroup>
     <tbody>
       <tr>
-        <th>Argument</th>
-        <th>Type</th>
-        <th>Description</th>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
       </tr>
       <tr>
         <td>depth</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The new depth value to use for drawing</td>
+        <td>用于绘制的新深度值</td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <h4>Returns:</h4>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
-  <p> </p>
-  <h4>Example 1: &quot;depth = -y&quot;</h4>
-  <p class="code_heading">Draw Event</p>
-  <p class="code">var _zwrite = gpu_get_zwriteenable();<br/>
-    var _ztest = gpu_get_ztestenable();<br/>
-    gpu_set_zwriteenable(true);<br/>
-    gpu_set_ztestenable(true);<br/>
-    var _depth = gpu_get_depth();<br/>
-    <br/>
-    gpu_set_depth(-y);<br/>
-    <br/>
-    draw_self();<br/>
-    <br/>
-    gpu_set_depth(_depth);<br/>
-    gpu_set_zwriteenable(_zwrite);<br/>
+  <p>&nbsp;</p>
+  <h4>示例 1："depth  = -y"</h4>
+  <p class="code_heading">绘制事件</p>
+  <p class="code">var _zwrite = gpu_get_zwriteenable();<br>
+    var _ztest = gpu_get_ztestenable();<br>
+    gpu_set_zwriteenable(true);<br>
+    gpu_set_ztestenable(true);<br>
+    var _depth = gpu_get_depth();<br>
+    <br>
+    gpu_set_depth(-y);<br>
+    <br>
+    draw_self();<br>
+    <br>
+    gpu_set_depth(_depth);<br>
+    gpu_set_zwriteenable(_zwrite);<br>
     gpu_set_ztestenable(_ztest);
   </p>
-  <p>The above code sets the depth used for drawing to the current instance&#39;s <span class="inline2">-y</span>. This gives an easy way to draw instances behind other instances once they move &quot;behind&quot; them, if those instances also have their depth set to <span class="inline2">-y</span>.</p>
-  <p>First, z-writing and z-testing are enabled on the GPU using <span class="inline3_func"><a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></span> and <span class="inline3_func"><a href="gpu_set_ztestenable.htm">gpu_set_ztestenable</a></span>. Their current values are stored in temporary variables <span class="inline2">_zwrite</span> and <span class="inline2">_ztest</span> respectively, as well as the current depth, which is stored in a temporary variable <span class="inline2">_depth</span>. The depth is then set to the instance&#39;s <span class="inline2">-y</span> using <span class="inline3_func"><span data-field="title" data-format="default">gpu_set_depth</span></span> and the instance is drawn normally using <span class="inline3_func"><a href="../Sprites_And_Tiles/draw_self.htm">draw_self</a></span>.</p>
-  <p>Finally, depth, z-writing and z-testing are all set to their previous value in order to not affect further drawing.</p>
-  <p> </p>
-  <h4>Example 2: Drawing an Hourglass Shape using Circles</h4>
+  <p>上面的代码将用于绘制的深度设置为当前实例的 <span class="inline2">-y</span>。如果这些实例的深度也设置为 <span class="inline2">-y</span>，则一旦其他实例移动到其他实例的 " 后面"，这提供了一种简单的方法来将这些实例绘制在其他实例的后面。</p>
+  <p>首先，使用 <span class="inline3_func"><a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></span> 和 <span class="inline3_func"><a href="gpu_set_ztestenable.htm">gpu_set_ztestenable</a></span> 在 GPU 上启用 z 写入和 z 测试。它们的当前值分别存储在临时变量 <span class="inline2">_zwrite</span> 和 <span class="inline2">_ztest</span> 中，当前深度也存储在临时变量 <span class="inline2">_depth</span> 中。然后使用 <span class="inline3_func"><span data-field="title" data-format="default">gpu_set_depth</span></span> 将深度设置为实例的 <span class="inline2">-y</span>，并使用 <span class="inline3_func"><a href="../Sprites_And_Tiles/draw_self.htm">draw_self</a></span> 正常绘制实例。</p>
+  <p>最后，深度、z-writing 和 z-testing 都设置为之前的值，以免影响进一步的绘制。</p>
+  <p>&nbsp;</p>
+  <h4>示例 2：使用圆圈绘制沙漏形状</h4>
   <p class="code_heading">Draw Event<span></span></p>
-  <p class="code">gpu_set_zwriteenable(<span>true</span>);<br/>
-    gpu_set_ztestenable(<span>true</span>);<br/>
-    <span>matrix_set</span>(matrix_view, matrix_build_lookat(<span>220</span>, <span>0</span>, <span>90</span>, <span>0</span>, <span>0</span>, <span>90</span>, <span>0</span>, <span>0</span>, <span>1</span>));<br/>
-    <span>matrix_set</span>(matrix_projection, matrix_build_projection_perspective_fov(<span>60</span>, room_width/room_height, <span>1</span>, <span>10000</span>));<br/>
-    <br/>
-    var _depth = gpu_get_depth(); <span><span>//</span> store previous depth<br/>
-      var _col = draw_get_colour();</span><br/>
-    <br/>
-    var n = <span>180</span>;<br/>
-    <span>for</span> (var z = <span>0</span>; z &lt;= n; z += <span>10</span>)<br/>
-    {<br/>
-        gpu_set_depth(z);<br/>
-        <span>draw_set_colour</span>(make_color_hsv(z / n * <span>255</span>, <span>150</span>, <span>250</span>));<br/>
-        <span>draw_circle</span>(<span>0</span>, <span>0</span>, <span>40</span> + lengthdir_x(<span>20</span>, z / n * <span>360</span>), <span>false</span>);<br/>
-    }<br/>
-    <br/>
-    draw_set_colour(_col);<br/>
-    gpu_set_depth(_depth);        <span><span>//</span> restore previous depth</span>
+  <p class="code">gpu_set_zwriteenable(<span>true</span>);<br>
+    gpu_set_ztestenable(<span>true</span>);<br>
+    <span>matrix_set</span>(matrix_view, matrix_build_lookat(<span>220</span>, <span>0</span>, <span>90</span>, <span>0</span>, <span>0</span>, <span>90</span>, <span>0</span>, <span>0</span>, <span>1</span>));<br>
+    <span>matrix_set</span>(matrix_projection, matrix_build_projection_perspective_fov(<span>60</span>, room_width/room_height, <span>1</span>, <span>10000</span>));<br>
+    <br>
+    var _depth = gpu_get_depth(); <span><span>//</span> store previous depth<br>
+      var _col = draw_get_colour();</span><br>
+    <br>
+    var n = <span>180</span>;<br>
+    <span>for</span> (var z = <span>0</span>; z &lt;= n; z += <span>10</span>)<br>
+    {<br>
+    &nbsp; &nbsp;&nbsp;gpu_set_depth(z);<br>
+    &nbsp; &nbsp;&nbsp;<span>draw_set_colour</span>(make_color_hsv(z / n * <span>255</span>, <span>150</span>, <span>250</span>));<br>
+    &nbsp; &nbsp; <span>draw_circle</span>(<span>0</span>, <span>0</span>, <span>40</span> + lengthdir_x(<span>20</span>, z / n * <span>360</span>), <span>false</span>);<br>
+    }<br>
+    <br>
+    draw_set_colour(_col);<br>
+    gpu_set_depth(_depth);&nbsp; &nbsp; &nbsp; &nbsp; <span><span>//</span> restore previous depth</span>
   </p>
-  <p>The code above draws a coloured hourglass-like shape in the Draw event.</p>
-  <p>First, z-writing and z-testing are enabled (<span class="inline3_func"><a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></span> and <span class="inline3_func"><a href="gpu_set_ztestenable.htm">gpu_set_ztestenable</a></span>) and an appropriate projection (<span class="inline3_func"><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_projection_perspective_fov.htm">matrix_build_projection_perspective_fov</a></span>) and view matrix (<span class="inline3_func"><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_lookat.htm">matrix_build_lookat</a></span>) are built and set using <span class="inline3_func"><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_set.htm">matrix_set</a></span>. Next, the current depth value and draw colour are stored so they can be restored later.</p>
-  <p>After this, a couple of circles are drawn in a for loop using <span class="inline3_func"><a href="../Basic_Forms/draw_circle.htm">draw_circle</a></span>. The depth used to draw each circle is set to the value of the loop variable <span class="inline2">z</span>, which is increased by 10 every iteration. The radius of the circle varies in a way that the final shape looks like an hourglass shape. The draw colour is changed to bring variation in the colours of the circles.</p>
-  <p>Finally, the draw colour and depth are set back to the values they had before, in order to not affect further drawing on the instance&#39;s layer.</p>
-  <p> </p>
-  <p> </p>
+  <p>上面的代码在 Draw 事件中绘制了一个彩色的沙漏状形状。</p>
+  <p>首先，启用 z 写入和 z 测试 (<span class="inline3_func"><a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></span> 和 <span class="inline3_func"><a href="gpu_set_ztestenable.htm">gpu_set_ztestenable</a></span>) 以及适当的投影 (<span class="inline3_func"><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_projection_perspective_fov.htm">matrix_build_projection_perspective_fov</a></span>) 和视图矩阵 (<span class="inline3_func"><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_build_lookat.htm">matrix_build_lookat</a></span>) 使用 <span class="inline3_func"><a href="../../Maths_And_Numbers/Matrix_Functions/matrix_set.htm">matrix_set</a></span> 构建和设置。接下来，存储当前的深度值和绘制颜色，以便稍后恢复。</p>
+  <p>在此之后，使用<span class="inline3_func"><a href="../Basic_Forms/draw_circle.htm">draw_circle</a></span>在for循环中绘制几个圆。用于绘制每个圆的深度设置为循环变量<span class="inline2">z</span>的值，每次迭代时增加10。圆的半径以某种方式变化，最终形状看起来像沙漏形状。绘制颜色会改变，以改变圆的颜色。</p>
+  <p>最后，绘制颜色和深度被设置回它们之前的值，以便不影响在实例层上的进一步绘制。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Back: <a href="GPU_Control.htm">GPU Control</a></div>
-        <div>Next: <a href="gpu_set_fog.htm">gpu_set_fog</a></div>
+        <div>Back:&nbsp;<a href="GPU_Control.htm">GPU 控制</a></div>
+        <div>Next:&nbsp;<a href="gpu_set_fog.htm">gpu_set_fog</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>

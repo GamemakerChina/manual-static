@@ -103,10 +103,10 @@
   <p>为确保后一种方法有效，您只需将过滤器添加到项目中的至少一个房间，或者确保<span class="inline"><a href="fx_create.htm">fx_create()</a></span>在项目中的任何地方被调用，该过滤器名作为字符串常量(而不是变量)。</p>
   <div data-conref="../../../../../assets/snippets/FX_Limitations.hts">
   <h2>限制</h2>
-  <p>There are some limitations to keep in mind when using filters/effects:</p>
+  <p>使用滤镜 / 效果时需要记住一些限制：</p>
   <ul class="colour">
     <li>禁用<a href="../../../Drawing/Surfaces/application_surface_enable.htm">应用程序表面</a>时滤镜/效果将不起作用。它在默认情况下是启用的，您通常不应该要求禁用它，但您可以这样做以在移动设备上获得性能。在这种情况下，您将无法使用滤镜/效果，因为它们需要材质球操纵的表面纹理。</li>
-    <li>Filters/effects that take a texture image, require that image to be on a separate texture page. You can set this through the <a href="../../../../../The_Asset_Editors/Sprites.htm">sprite editor</a>.</li>
+    <li>采用纹理图像的滤镜 / 效果要求该图像位于单独的纹理页面上。您可以通过 <a href="../../../../../The_Asset_Editors/Sprites.htm"> 精灵编辑器 </a> 进行设置。</li>
   </ul>
 
 </div>
@@ -137,7 +137,7 @@
     <li><strong>通过调用</strong><span class="inline"><a href="layer_get_fx.htm">layer_get_fx()</a></span>从你要修改的层中获取FX结构。<ul><li><em>或者，通过调用<span class="inline"><a href="fx_create.htm">fx_create()</a></span>创建一个新的FX结构，并使用<span class="inline"><a href="layer_set_fx.htm">layer_set_fx()</a></span>将其应用于一个图层。</em></li></ul></li>
     <li><strong>调用</strong><span class="inline"><a href="fx_get_parameters.htm">fx_get_parameters()</a></span><span class="inline"></span>{}检索其参数结构</li>
     <li><strong>通过为结构变量赋值，根据需要修改参数</strong><ul><li><em>从此处获取参数名称：<a href="../../../../../The_Asset_Editors/Room_Properties/FX/All_Filter_Effect_Types.htm">外汇类型 参数</a></em></li></ul></li>
-    <li><strong>通过调用</strong><span class="inline"><a href="fx_set_parameters.htm">fx_set_parameters()</a></span>将修改的结构<ul>应用回Fx结构<li><em>您不需要在此调用<a href="layer_set_fx.htm"><span class="inline">layer_set_fx()</span></a>，因为修改Fx结构会直接影响已分配给它的层</em></li></ul></li>
+    <li>通过调用 <span class="inline"><a href="fx_set_parameters.htm">fx_set_parameters()</a></span><ul><li><em> 将修改后的结构 <strong> 应用回 FX结构，您无需在此处调用 </strong><a href="layer_set_fx.htm"><span class="inline">layer_set_fx()</span></a> 因为修改 FX 结构会直接影响它已分配给的层 </em></li></ul></li>
   </ul>
   <p>下面是上面提到的工作流的示例代码：</p>
   <p class="code_heading">创建事件</p>
@@ -167,10 +167,10 @@
   <p>下图显示了将一个过滤器应用于多个层(这是所有FX层的默认行为)，然后显示启用了单层模式并应用于非FX层的相同过滤器：</p>
   <div class="image_columns">
     <figure><img alt="Fire Jump man is woozy with the universe" class="center_shadow" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/FX_single_layer_off.png" title="Fire Jump man is woozy with the universe">
-      <figcaption>Single Layer Mode OFF</figcaption>
+      <figcaption>单层模式关闭</figcaption>
     </figure>
     <figure><img alt="Fire Jump man is woozy... alone" class="center_shadow" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/FX_single_layer_on.png" style="cursor: nesw-resize;" title="Fire Jump man is woozy... alone">
-      <figcaption>Single Layer Mode ON</figcaption>
+      <figcaption>单层模式开启</figcaption>
     </figure>
   </div>
   <p>也可以使用<a href="../../../../../IDE_Tools/The_Inspector.htm">检查器</a>在"房间编辑器"中使用 SingleLayer 效果。</p>

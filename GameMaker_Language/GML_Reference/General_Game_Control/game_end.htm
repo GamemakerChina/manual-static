@@ -79,11 +79,11 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">game_end</span></h1>
-  <p>This function ends the game and triggers the <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Game End Event</a>.</p>
-  <p>This will not happen instantaneously, but rather at the end of the current step, so any code you have in the same step after this function has been called will still run.</p>
-  <h3>Usage Notes</h3>
+  <p>此函数结束游戏并触发 <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm"> 游戏结束事件 </a>。</p>
+  <p>这不会立即发生，而是在当前步骤结束时发生，因此调用此函数后同一步骤中的任何代码仍将运行。</p>
+  <h3>使用说明</h3>
   <ul class="colour">
-    <li>On Android devices, calling&nbsp;<span class="inline3_func"><a href="game_end.htm">game_end</a></span> will push the app into the background, but it will <i>not</i> close the app. This must be done by the user.</li>
+    <li>在 Android 设备上，调用 <span class="inline3_func"><a href="game_end.htm">game_end</a></span> 会将应用推入后台，但 <i> 不会 </i> 关闭应用。这必须由用户完成。</li>
     <li>在iOS上它将什么都不做，默默地失败。</li>
     <li>在所有控制台上，它可能会使游戏崩溃，或者最好是静默失败，而且可能还会导致提交失败，因此不能使用此函数<i>。</i></li>
     <li>在HTML5上，它将结束游戏，但让用户盯着网页上的空白画布，因此不建议在该目标平台上使用它。</li>
@@ -105,7 +105,7 @@
         <tr>
           <td style=""><strong>return_code</strong></td>
           <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-          <td style=""><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;The return code of the application, defaults to 0.</td>
+          <td style=""><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional"> 可选</span></span> 应用程序的返回代码，默认为 0。</td>
         </tr>
       </tbody>
     </table>
@@ -122,7 +122,7 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back:&nbsp;<a href="General_Game_Control.htm">通用游戏控制</a></div>
+        <div style="float:left">Back:&nbsp;<a href="General_Game_Control.htm">通常游戏控制</a></div>
         <div style="float:right">Next:&nbsp;<a href="game_restart.htm">game_restart</a></div>
       </div>
     </div>

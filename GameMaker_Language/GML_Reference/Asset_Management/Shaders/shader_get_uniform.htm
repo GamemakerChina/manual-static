@@ -81,7 +81,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>shader_get_uniform</h1>
   <p>由于不能在着色器本身内更改着色器常量的值，因此在使用可用的<strong>uniform set</strong>函数之一调用着色器之前必须设置它。但是，要做到这一点，您必须首先调用这个函数来获取要更改的着色器常量的"句柄"。</p>
-  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> Although a shader is made up of two discreet programs (vertex and fragment) this function will not differentiate between the two and will return the handle of the shader constant from either of them.</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span></b> 虽然着色器由两个离散程序 (顶点和片段) 组成，但该函数不会区分这两个程序，并将返回其中任何一个程序的着色器常量句柄。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">shader_get_uniform(shader, uniform);</p>

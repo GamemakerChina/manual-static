@@ -81,9 +81,7 @@
   <h1>sprite_prefetch_multi</h1>
   <p>此函数可用于预取(放置到纹理内存中)包含给定精灵的多个纹理页。您提供了一个由精灵索引填充的数组(如您创建精灵资源时所定义的)，并且它们所在的纹理页面将被加载到内存中。请注意，如果所选资源不支持预取或目标平台为HTML5，则函数将返回<span class="inline">-1</span>，或者如果一切正常，则函数将返回<span class="inline">0</span>。</p>
   <div data-conref="../../../../../assets/snippets/Note_Sprite_Prefetch_To_Avoid_Performance_Hit.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;There is a performance hit as the texture is uploaded to texture memory on most devices, so it's recommended that you call&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">sprite_prefetch_multi</span></span>
-    <font face="menlo, consolas, monospace"><span style="font-size: 17px;"><b> </b></span></font>on any required graphics at the start of a level to avoid any stalls.
-  </p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在大多数设备上，当纹理上传到纹理内存时，性能会受到影响，因此建议您调用<span class="inline3_func"><span data-field="title" data-format="default">sprite_prefetch_multi</span></span><font face="menlo, consolas, monospace"><span style="font-size: 17px;"><b></b></span></font>在关卡开始时的任何所需图形上，以避免任何停顿。</p>
 
 </div>
   <p>&nbsp;</p>

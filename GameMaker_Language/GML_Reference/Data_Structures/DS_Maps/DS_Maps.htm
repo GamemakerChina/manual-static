@@ -79,13 +79,13 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1 id="h"><span data-field="title" data-format="default">DS Maps</span></h1>
-  <p>The DS map data structure lets you store <b>key</b> and <b>value</b> pairs, making it an exceptionally useful one.</p>
-  <p>For example, a character in your game can have a quantity of different items (<i>keys</i>) and for each individual item he can have a number of them (<i>values</i>), like in an RPG where you can have 10 health potions, 5 mana potions and 100 gold. Maps maintain such pairs all together in one place. You can add pairs to the map, search for the value corresponding to certain keys and use some simple functions.</p>
-  <p>There are a couple of things you should know about maps before you use them, however! Maps are <i>not</i> sorted in any (recognisable) way, meaning that to find a certain key you may have to iterate through the whole thing (which is <b>very</b> slow). There is also no way to hold two keys that are the same, nor can you assign one key two values.</p>
+  <p>DS 地图数据结构可让您存储 <b> 键 </b> 和 <b> 值 </b> 对，这使其成为一种非常有用的数据结构。</p>
+  <p>例如，游戏中的角色可以拥有一定数量的不同物品 (<i> 键 </i>)，并且对于每个单独的物品，他可以拥有一定数量的物品 (<i> 值 </i>)，就像在 RPG 中一样，您可以拥有 10 种生命药水、5 种法力药水和 100 金币。地图将这些对全部保存在一个地方。您可以将对添加到映射中，搜索与某些键对应的值并使用一些简单的函数。</p>
+  <p>然而，在使用地图之前，您应该了解一些有关地图的知识！地图 <i> 不 </i> 以任何 (可识别的) 方式排序，这意味着要找到某个键​​，您可能必须遍历整个过程 (这 <b> 非常 </b> 慢)。也无法保存两个相同的键，也无法为一个键分配两个值。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;推荐使用<a href="../../../GML_Overview/Structs.htm">结构</a>而不是DS 映射，因为它们具有相似的功能，更易于使用，并且会自动进行垃圾回收。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 与所有动态资源一样，数据结构会占用内存，因此在不再需要时应<b>始终</b>销毁以防止内存泄漏，因为内存泄漏会降低游戏速度并最终导致游戏崩溃。</p>
   <div data-conref="../../../../assets/snippets/Note_Tip_Map_Key_Can_Be_Any.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip">TIP</span></span>&nbsp;The key isn't limited to strings and can be of any&nbsp;type, including a&nbsp;<a href="../../../GML_Overview/Structs.htm#struct">struct</a>.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 键不限于字符串，可以是任何类型，包括 <a href="../../../GML_Overview/Structs.htm#struct"> 结构体 </a>。</p>
 
 </div>
   <p>除了下面列出的特定函数外，您还可以使用<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>(称为<i>访问器</i>)来添加或修改DS映射的内容。此存取器类似于1D阵列，具有以下语法：</p>

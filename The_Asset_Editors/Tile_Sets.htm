@@ -109,8 +109,8 @@
     <p class="dropspot"><img alt="Smear Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Smear.png" style="margin-top: -10px;margin-bottom: 1px">上面显示的是一个 "固定 "的图块精灵，你可以看到它现在在每个图块周围都有一个重复的部分，这意味着当硬件超限时，它将总是从图块中选取最后一个texel，而不是其中一个空格或后面的图块。因此，在创建图块集时，请记住，如果你要放大或缩小游戏视图，或者要按比例渲染图块，你可能需要有一个比默认值2更高的输出边界宽度或高度。</p>
     <p class="dropspot">接下来，你可以选择你希望图块集资源所属的<strong>纹理组</strong>。基本上，纹理组（先前在<a href="../Settings/Texture_Groups.htm">纹理组管理器</a>中定义）是你可以设置的，这样你需要的所有图像资源就可以储存在一起，用于游戏的特定房间或关卡。因此，举例来说，你可以把所有第1层的图片放在一个纹理组中，把所有第2层的图片放在另一个组中，等等......而<span data-keyref="GameMaker Name">GameMaker</span>会尝试把所有这些分组的资源&nbsp;放在同一个<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页</a>上，以减少你的游戏在所选目标平台上运行时的纹理页交换。</p>
     <div class="dropspotnote"><strong>注意</strong>：这可能并不总是必要的，这种方法的性能提升将取决于目标设备是CPU绑定还是GPU绑定。</div>
-    <p class="dropspot">The final option in the tile set properties is <strong>Disable Source Sprite Export</strong>. This is disabled by default, and if enabled, it flags the source sprite asset to be omitted when the texture page for your project is being generated. This works under the assumption that a sprite used as a tile set will not be getting used for anything else, and so only needs to be exported once.</p>
-    <p class="dropspot">If you are using the base sprite asset for anything other than tiles, or you are checking for collisions on a tile layer using this tile set, then you would want to keep this disabled so that the base sprite <em>and </em>the tile set are both added into the texture page on compile.</p>
+    <p class="dropspot">平铺集属性中的最后一个选项是<strong>禁用源精灵导出</strong>。默认情况下，此选项处于禁用状态，如果启用，则会在生成项目的纹理页面时将源精灵资源标记为省略。此选项的工作原理是假设用作平铺集的精灵不会用于其他任何内容，因此只需导出一次。</p>
+    <p class="dropspot">如果您正在将基础精灵资源用于除图块之外的任何内容，或者正在使用此图块集检查图块层上的冲突，则需要保持此禁用状态，以便在编译时将基础精灵<em>和图块集</em>都添加到纹理页面中。</p>
     <p class="dropspot"><strong></strong></p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">编辑器</span><span data-close-text="true">编辑器</span></a></p>

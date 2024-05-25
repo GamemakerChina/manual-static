@@ -113,7 +113,7 @@
   <h2 id="s3">消息严重性</h2>
   <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Feather/FeatherPrefs_Severity.png">此部分包含语法检查用于检查代码的所有规则，并允许您调整每个规则的严重性。</p>
   <h3 id="message_severity_profile">属性</h3>
-  <p>In this dropdown box you can choose between a couple of presets for the syntax checker. The following profiles are available:&nbsp;</p>
+  <p>在此配置文件框中，您可以为语法检查器选择几个配置文件。以下配置文件可用：</p>
   <ul class="Disc">
     <li><strong>无</strong>：此配置文件不会显示任何错误消息。</li>
     <li><strong>语法错误</strong>：如果您使用此配置文件，将显示语法错误，以及在<strong>无配置文件中显示的内容。</strong></li>
@@ -129,12 +129,7 @@
   <p>必须启用"消息严重性"下的 GM2017 规则才能使命名规则生效。默认情况下，它处于禁用状态。</p>
   <p>此部分中的设置如下：</p>
   <ul class="colour">
-    <li><strong>Identifier Blocklist</strong>: This is a space-separated list of identifiers that will be ignored for all naming rules.<br>
-      <br>
-      For example, say you have a rule to use <span class="inline2">obj_</span> as a prefix for objects, but you want your objects <span class="inline2">manager</span> and <span class="inline2">network</span> to remain as-is and not use the <span class="inline2">obj_</span> prefix.<br>
-      <br>
-      In that case, you would write <span class="inline2">manager network</span> into the <strong>Identifier Blocklist</strong> field. Feather will ignore those objects <em>and</em> any other identifiers (variables, enums, parameters, etc.) with the same names.
-    </li>
+    <li><strong>标识符阻止列表</strong>：这是一个以空格分隔的标识符列表，所有命名规则都将忽略该列表。<br><br>例如，假设您有一个使用<span class="inline2">obj_</span>作为对象前缀的规则，但您希望对象<span class="inline2">manager</span>和<span class="inline2">network</span>保持原样，而不使用<span class="inline2">obj_</span>前缀。<br><br>在这种情况下，您可以将<span class="inline2">manager network</span>写入<strong>标识符阻止列表</strong>字段。Feather将忽略这些对象<em>和</em>任何其他标识符(变量、枚举、参数等)具有相同的名称。</li>
     <li><strong>&lt;标识符&gt;命名规则</strong>：您可以为列表中的每种类型的标识设置命名规则，如资源、宏、枚举、函数参数、变量等。<br> <br>每个命名规则下拉菜单有以下选项：
 <ul> <li><strong>命名样式</strong>：选择标识的命名样式。您可选的选项是：
 <ul> <li><strong>无约束</strong>：此类型的标识符上不强制设置格式。

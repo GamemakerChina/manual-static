@@ -83,7 +83,7 @@
   <h2 id="general">常规</h2>
   <p><img alt="General Android Game Options 1" class="center" src="../../assets/Images/Settings/Android_General1_Options.png"><strong>常规</strong>部分的第一部分专用于<strong>产品信息</strong>和<strong>生成设置</strong>。您应该填写 产品信息(包括项目<strong>显示名称</strong>)及其包信息(包括<strong>域名</strong>、<strong>公司</strong>和<strong>产品名</strong>)。包信息只能由 A-Z 字母和数字0-9组成，不能有任何符号或其他特殊字符，也不能有大写字母。然后，这些详细信息将用于生成格式为“<span class="inline">com.company.myappname</span>”的 Package ID。</p>
   <p>然后需要设置<strong>生成工具</strong>以及<strong>Target</strong>、<strong>Minimum</strong>和<strong>Compile SDK </strong>版本。</p>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;There is also an option for the "<strong>Support Library</strong>" version to use. From <span data-keyref="GameMaker Name">GameMaker</span> v2.2.4 and above, this is no longer required and any values used here will be ignored. The setting is maintained for use with legacy projects that require an earlier runtime than 2.2.4.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note"> 注意 </span></span>"<strong>Support Library</strong>" 版本还有一个选项可供使用。从 <span data-keyref="GameMaker Name">GameMaker</span>v2.2.4 及更高版本开始，不再需要此选项，此处使用的任何值都将被忽略。保留此设置是为了与需要运行时早于 2.2.4 的旧项目一起使用。</p>
   <p>当<span data-keyref="GameMaker Name"> GameMaker </span>为 Android 目标构建游戏时，使用构建工具(如果需要，还有支持库) ，并且应该根据您使用 Android Studio 安装的工具将其设置为适当的值。</p>
   <ul class="colour">
     <li><strong>Target SDK</strong> 表示您已经在(直到并包括)您在这里指定的版本上测试了您的应用程序。这只是为了让 Android 操作系统知道它应该如何根据操作系统的特性来处理你的应用程序。出于各种实际目的，大多数应用程序都希望将 Target SDK 设置为 API 的最新发布版本(如 Compile SDK 设置所使用的那样)。这将确保您的应用程序在最新的 Android 设备上看起来尽可能好。请注意，从2019年11月开始，谷歌已经将 API 级别28作为必要的目标。</li>
@@ -112,7 +112,7 @@
     <li><strong>运行 Lint 代码分析</strong> : 当这个选项被标记时，构建工具将在项目构建时运行一个 Lint 代码分析，进行更深入的错误检查，并在项目编译时在输出窗口中显示更多信息(也将创建一个 LOG 文件，在<a href="../../Introduction/The_Output_Window.htm"> Output Window </a>中编译结束时显示文件的路径)。请注意，并不是所有被 lint 分析标记为错误的东西对于您的游戏都必然是有问题的，启用这个功能可能意味着您的游戏不再编译，即使当它关闭时，它也会编译并运行良好。本质上，这仅用于调试，默认情况下该选项是关闭的。</li>
     <li><strong>安装位置</strong> : 您可以在这里设置游戏的默认安装位置。这可以设置为<strong>自动</strong> ，在这种情况下，游戏将被安装到用户在他们的设备上选择的位置，或者可以设置为<strong>首选外部</strong> ，它将总是尝试安装游戏到设备的外部存储。</li>
   </ul>
-  <p>You can also set the Android&nbsp;<strong>Sleep Margin</strong> here. This option is related to reducing stuttering when running your game on specific systems. Basically, if your game is running faster than your game speed <span data-keyref="GameMaker Name">GameMaker</span> will "sleep" for the remaining time, but this sleep can be quite inaccurate and you can often end of sleeping for longer than necessary, causing your frame to take longer which causes stuttering. To get around this we can sleep for less time, then sit in a tight loop for the remainder of the time to make it more accurate - although the problem with sitting in a loop is that it causes CPU usage to increase, which in turn can cause your CPU temperatures to rise and your device to use more battery. By default, this value is set to 4, and in 99.99% of the cases you'll be fine with this, but for low end devices or for devices with a lot of background processes running this may not be an ideal solution and a value of 5 up to 10 may be required. Note though that this is very much a device specific configuration and what works on your build device may not be appropriate for another user, and as such if in doubt leave it set to 4.</p>
+  <p>您还可以在此处设置 Android<strong> 睡眠余量 </strong>。此选项与在特定系统上运行游戏时减少卡顿有关。基本上，如果您的游戏运行速度超过游戏速度，<span data-keyref="GameMaker Name">GameMaker</span> 将在剩余时间内 " 睡眠"，但这种睡眠可能非常不准确，您通常会结束睡眠时间超过必要时间，导致你的帧需要更长的时间，这会导致口吃。为了解决这个问题，我们可以睡更少的时间，然后坐在一个紧循环的剩余时间，使它更准确-虽然坐在一个循环的问题是，它导致 CPU 使用增加，这反过来会导致 CPU 温度上升，设备使用更多电池。默认情况下，此值设置为 4，在 99.99% 的情况下，您可以使用此值，但是对于低端设备或者对于具有运行的大量后台进程的设备，这可能不是理想的解决方案，需要。请注意，这在很大程度上是一个特定于设备的配置，在您的构建设备上工作的内容可能不适合其他用户，因此，如果有疑问，请将其设置为 4。</p>
   <p>&nbsp;</p>
   <h2 id="adaptive_icons">自适应图标</h2>
   <p><img alt="Android Adaptive Icons Options" class="center" src="../../assets/Images/Settings/Android_AdaptiveIcons_Options.png"> Android 8.0(API 级别26)为您的游戏引入了<strong>自适应启动器图标</strong>，这些图标可以在不同的设备模型中显示各种形状。为了解决这个问题，您需要提供一些前景和背景图像，您的图标显示在不同的大小。这些图标大小如下:</p>
@@ -136,8 +136,8 @@
     <li><strong>设备支持</strong> : 此选项将设置是仅支持具有专用 GPU 的设备，还是支持所有设备。基本上，如果您的游戏有任何高级绘制功能，如阿尔法混合，添加混合，表面等...你都应该把它限制在那些有 GPU 的设备上，否则你的游戏可能会因为图形错误或者老设备崩溃而收到负面评论和糟糕的评级。</li>
     <li><strong>缩放</strong> : 在这里你可以选择缩放画布来保持设备屏幕的高宽比——在边缘添加“填充”来适应屏幕——或者你可以选择拉伸画布来适应设备屏幕。</li>
   </ul>
-  <p>Finally there is the option to set the size of the <a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">texture page</a>. The default (and most compatible) size is 2048x2048, but you can choose from anywhere between 256x256 up to 8192x8192.&nbsp;There is also a button marked <strong>Preview </strong>which will generate the texture pages for this platform and then open a window so that you can see how they look. This can be very useful if you wish to see how the texture pages are structured and to prevent having texture pages larger (or smaller) than necessary. For more information on texture pages, please see <a href="../Texture_Information/Texture_Pages.htm">Texture Pages</a>.</p>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Be aware that the larger the size of the texture page, the less compatible your game will be with different browsers and devices.</p>
+  <p>最后还有设置 <a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。"> 纹理页面 </a> 大小的选项。默认 (和最兼容的) 尺寸是 2048 x2048，但您可以从 256 x256 到 8192 x8192 之间的任何位置进行选择。还有一个标记为 <strong> 预览 </strong> 的按钮它将为这个平台生成纹理页面，然后打开一个窗口，这样你就可以看到它们的外观。如果你想看到纹理页面的结构，这是非常有用的并防止纹理页面过大 (或过小)。有关纹理页面的详细信息，请参阅 <a href="../Texture_Information/Texture_Pages.htm"> 纹理页面 </a>。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 请注意，纹理页面的大小越大，您的游戏与不同浏览器和设备的兼容性就越差。</p>
   <p>&nbsp;</p>
   <h2 id="icons">图标</h2>
   <p><img alt="Android Icons Options" class="center" src="../../assets/Images/Settings/Android_Icons_Options.png">此部分允许您添加项目需要用于不同存储页和设备的各种<strong>图标</strong>图像。所有图标图像应该创建为24位指定大小的<span class="inline">*.png</span>文件。</p>
@@ -177,7 +177,7 @@
     <li><span class="inline">BLUETOOTH</span> : 将允许游戏连接到配对的蓝牙设备。</li>
     <li><span class="inline">RECORD_AUDIO</span>: 将允许您的游戏记录来自麦克风的音频输入。</li>
   </ul>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you are not sure that you need these, you should probably just leave them un-checked by default and let <span data-keyref="GameMaker Name">GameMaker</span> deal with the permissions for your game.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>如果您不确定是否需要这些权限，您可能应该默认不选中它们，让<span data-keyref="GameMaker Name">GameMaker</span>处理游戏的权限。</p>
   <p>Android Permission 部分还有一个区域，您可以将权限注入到<strong> AndroidManif.xml </strong>中的<span class="inline"> Android Application Tags </span>中。你可以在这里找到 Android 文档中可用标签的完整列表:</p>
   <ul class="colour">
     <li><a href="https://developer.android.com/guide/topics/manifest/application-element">Android Developer: Application Tags</a></li>

@@ -81,7 +81,7 @@
   <h1>shader_set_uniform_matrix_array</h1>
   <p>使用此函数，可以设置着色器常量以保存矩阵值数组。您必须之前使用函数<a href="shader_get_uniform.htm"><span class="inline">shader_get_uniform()</span></a>获得常量的"句柄"，并且您必须事先将数组初始化为浮点值数组，其中每一组连续的16个浮点是4x4矩阵。</p>
   <div data-conref="../../../../assets/snippets/Note_Set_Uniforms_After_Shader_Set.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;All uniforms must be set <em>after</em> calling the function <span class="inline2"><a href="shader_set.htm">shader_set</a></span>&nbsp;and <em>before</em> calling <span class="inline2"><a href="shader_reset.htm">shader_reset</a></span>.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 必须在调用函数 <span class="inline2"><a href="shader_set.htm">shader_set</a></span><em> 之后 </em> 和调用 <span class="inline2"><a href="shader_reset.htm">shader_reset</a></span><em> 之前 </em> 设置所有 uniforms 。</p>
 
 </div>
   <p>&nbsp;</p>

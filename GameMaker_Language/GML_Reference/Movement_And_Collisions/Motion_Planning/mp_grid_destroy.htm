@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>mp_grid_destroy</h1>
   <p>您可以使用此函数销毁指示的mp_grid(由函数<a href="mp_grid_create.htm"><span class="inline">mp_grid_create()</span></a>)定义)，并释放分配给它的内存。<i>必须</i>在Mp网格结束时调用此命令，否则可能会导致内存泄漏，这意味着您的游戏将随着时间的推移而变慢，并最终崩溃。</p>
-  <p class="note"><b>注意</b>:网格被破坏后，在其上使用<span class="inline">mp_grid_*</span>函数将导致错误。</p>
+  <p class="note"><b> 注意</b>：在网格被销毁后，在网格上使用 <span class="inline">mp_grid_*</span> 函数会导致错误。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">mp_grid_destroy(id);</p>

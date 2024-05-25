@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1 id="h"><span data-field="title" data-format="default">精灵编辑器</span></h1>
-  <p><img alt="The Sprite Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sprites.png"><span data-field="title" data-format="default">The Sprite Editor</span>&nbsp;is where you set the general properties for <a class="tooltip" title="精灵是一种位图图形，被设计成更大场景的一部分。它可以是静态图像，也可以是动画图形。">sprites</a>&nbsp;that you make. You can open this window by creating a new sprite (right-click&nbsp;<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">&nbsp;on <a href="../Introduction/The_Asset_Browser.htm">The Asset Browser</a>&nbsp;and select <strong>Create Sprite</strong>), by double-clicking <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;on an existing sprite or by right-clicking <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">&nbsp;an existing sprite and selecting <strong>Properties</strong>.</p>
+  <p><img alt="The Sprite Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sprites.png">在<span data-field="title" data-format="default">精灵编辑器</span>中，您可以设置所制作<a class="tooltip" title="精灵是一种位图图形，被设计成更大场景的一部分。它可以是静态图像，也可以是动画图形。">精灵</a>的常规属性。您可以通过创建新精灵(右键单击<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">打开<a href="../Introduction/The_Asset_Browser.htm">资产浏览器</a>并选择"<strong>创建精灵</strong>")，方法是双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">在现有精灵上或通过右键单击<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">一个现有的精灵并选择属性。</p>
   <p>组成精灵编辑器的部分如下：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span data-open-text="true" data-skip-index="true">精灵名称</span><span data-close-text="true">精灵名称</span></a></p>
   <div class="droptext" data-targetname="drop-down8">
@@ -131,7 +131,7 @@
       <li class="dropspot"><strong>钻石</strong>：创建一个"钻石"碰撞遮罩。与矩形和椭圆形遮罩相比，它的解析速度较慢，产生的CPU开销也更大。</li>
       <li class="dropspot"><strong>精确</strong>：这将根据精灵的轮廓创建一个精确的碰撞屏蔽。如果精灵有多个子图像，那么这将是<em>所有</em>子图像的边缘的<em>合成</em>，并相互重叠。请注意，如果模式设置为手动，并且你改变了默认值，那么精确蒙版将被剪切到<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a>。这是很慢的，而且会产生大量的CPU开销。</li>
       <li class="dropspot"><strong>精确(每帧)</strong>：这将在每一帧的基础上创建一个精确的碰撞遮罩（即：遮罩将改变以符合每个不同帧的轮廓）。请注意，如果模式设置为手动，并且你改变了默认值，那么精确蒙版将被剪切到<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a>上。这是迄今为止解决碰撞遮罩最慢的类型，应该避免，除非在非常、非常特殊和不常见的情况下。</li>
-      <li class="dropspot"><strong>Spine Collision Mesh</strong>: Apart from Rectangle, this is the only selectable option for Spine sprites. It enables more precise collision checking against the mesh in the sprite.</li>
+      <li class="dropspot"><strong>脊柱碰撞网格</strong>：除了矩形之外，这是脊柱精灵的唯一可选选项。 它可以对精灵中的网格进行更精确的碰撞检查。</li>
     </ul>
     <p class="dropspot">下面的图片说明了不同的遮罩选项：</p>
     <p class="dropspot"><img alt="Collisions" class="center" src="../assets/Images/Asset_Editors/bbox_image.png">碰撞检查选项对你的游戏来说是非常重要的，因为它们将直接影响你的物体如何互动，以及你的游戏如何运行，错误的设置甚至会对整体性能产生负面影响。为什么会这样呢？好吧，每当两个实例相遇，并且两个实例都有一个有效的遮罩，一个碰撞事件就会通过检查边界框<em>和&nbsp;</em>遮罩的重叠而产生，这个遮罩可以是精确的，也可以是不精确的，并且适应图像索引。下面是一张图片来说明这个问题：</p>
@@ -141,7 +141,7 @@
     <p class="dropspot">值得注意的是，如果你进入预览窗口，你可以使用每个角落的 "手柄 "来调整碰撞遮罩。点击并拖动这些手柄将调整碰撞遮罩，就像为边界框输入数值一样。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#"><span data-open-text="true" data-skip-index="true">九宫格</span><span data-close-text="true">九宫格</span></a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#"><span data-open-text="true" data-skip-index="true">九宫切片</span><span data-close-text="true">九宫切片</span></a></p>
   <div class="droptext" data-targetname="drop-down21">
     <p class="dropspot"><strong><span data-keyref="Nine Slicing">九宫格（Nine Slicing）</span></strong>&nbsp;(又被称为 9-slicing）是一种用于缩放矩形图像以保留细节的技术，使其在缩放后保留原始形态。更多信息请参见<a href="Sprite_Properties/Nine_Slices.htm">九宫格</a>的页面。</p>
     <p class="dropspot"><img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_0_Preview.png" style="cursor: nesw-resize;">精灵编辑器的<strong>九宫格</strong>部分允许你在精灵上启用&nbsp;<span data-keyref="Nine Slicing">九宫格</span>，并在右边的<strong>九宫格预览</strong>窗口内预览其动作。</p>

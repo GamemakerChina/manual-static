@@ -87,7 +87,7 @@
   <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;这是一个内置结构，因此<span data-keyref="GameMaker Name">GameMaker</span>对其内容有更多控制。 这意味着对其成员的访问是有限的，如果分配了无效的值，一些值可能会自动改变。 你可能还需要通过&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>提供的内置函数来创建和销毁这个结构，而不是通过<span class="inline2"><a href="../../../../GML_Overview/Language_Features/new.htm">new</a></span>&nbsp;和<span class="inline2"><a href="../../../../GML_Overview/Language_Features/delete.htm">delete</a></span>操作符。</p>
 
 </div>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;All gain parameters are <em>linear</em> gains and range from 0 to infinity; values from 0 to 1 indicate a decrease in gain, values from 1 to infinity&nbsp;an increase. They can be converted to dB and back using&nbsp;<span class="inline3_func"><a href="../lin_to_db.htm">lin_to_db</a></span>&nbsp;and&nbsp;<span class="inline3_func"><a href="../db_to_lin.htm">db_to_lin</a></span>.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>所有增益参数都是<em>线性</em>增益，范围从 0 到无穷大;从 0 到 1 的值表示增益减少，从 1 到无穷大的值表示增益增加。可以使用<span class="inline3_func"><a href="../lin_to_db.htm">lin_to_db</a></span>和<span class="inline3_func"><a href="../db_to_lin.htm">db_to_lin</a></span>将它们相互转换为 dB。</p>
   <p>这种类型的所有结构都有一个<span class="inline2">type</span>和<span class="inline2">bypass</span>属性。 所有其他属性都是特定于某些类型的效果。</p>
   <p>下面是一个结构成员的列表，取决于创建的效果类型。</p>
   <h2 id="reverb">混响(<a href="AudioEffectType.htm#h">AudioEffectType.Reverb1</a>)</h2>
@@ -376,7 +376,7 @@
       <tr>
         <td>type</td>
         <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
-        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h7">AudioEffectType.EQ</a>&nbsp;for EQ.</td>
+        <td>一个<i>只读</i>属性，用于存储此结构中存储的音频效果的类型。对于 EQ，它设置为<a href="AudioEffectType.htm#h7">AudioEffectType.EQ</a>。</td>
       </tr>
       <tr>
         <td><span>bypass</span></td>
@@ -441,7 +441,7 @@
       <tr>
         <td>type</td>
         <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
-        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>&nbsp;for the Peak EQ Filter.</td>
+        <td>一个<i>只读</i>属性，用于存储此结构中存储的音频效果的类型。对于 Peak EQ Filter，它设置为<a href="AudioEffectType.htm#h9">AudioEffectType.PeakEQ</a>。</td>
       </tr>
       <tr>
         <td><span>bypass</span></td>
@@ -451,10 +451,7 @@
       <tr>
         <td>freq</td>
         <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The frequency (in Hz) of the filter [range: 10 - 20,000]*. This represents the centre frequency of the peak.<br>
-          <br>
-          <span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;*The upper limit is either 20,000 or half of the audio device's sample rate, whichever is lower.
-        </td>
+        <td>滤波器的频率(以 Hz 为单位)[范围：10 - 20,000]*。这表示峰值的中心频率。<br><br><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>*上限为 20,000 或音频设备采样率的一半，以较低者为准。</td>
       </tr>
       <tr>
         <td>q</td>
@@ -484,7 +481,7 @@
       <tr>
         <td>type</td>
         <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
-        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h10">AudioEffectType.HiShelf</a>&nbsp;for the&nbsp;HiShelf&nbsp;Filter.</td>
+        <td>一个<i>只读</i>属性，用于存储此结构中存储的音频效果的类型。对于 HiShelf 过滤器，它设置为<a href="AudioEffectType.htm#h10">AudioEffectType.HiShelf</a>。</td>
       </tr>
       <tr>
         <td><span>bypass</span></td>
@@ -529,7 +526,7 @@
       <tr>
         <td>type</td>
         <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
-        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h8">AudioEffectType.LoShelf</a>&nbsp;for the&nbsp;LoShelf&nbsp;Filter.</td>
+        <td>一个<i>只读</i>属性，用于存储此结构中存储的音频效果的类型。对于 LoShelf 过滤器，它设置为<a href="AudioEffectType.htm#h8">AudioEffectType.LoShelf</a>。</td>
       </tr>
       <tr>
         <td><span>bypass</span></td>
@@ -574,7 +571,7 @@
       <tr>
         <td>type</td>
         <td><a href="AudioEffectType.htm">AudioEffectType Enum</a></td>
-        <td>A <i>read-only</i> property that stores the type of audio effect stored in this struct. It is set to&nbsp;<a href="AudioEffectType.htm#h11">AudioEffectType.Compressor</a>&nbsp;for a Compressor effect.</td>
+        <td>一个<i>只读</i>属性，用于存储此结构中存储的音频效果的类型。它设置为<a href="AudioEffectType.htm#h11">AudioEffectType.Compressor</a>以实现压缩器效果。</td>
       </tr>
       <tr>
         <td><span>bypass</span></td>

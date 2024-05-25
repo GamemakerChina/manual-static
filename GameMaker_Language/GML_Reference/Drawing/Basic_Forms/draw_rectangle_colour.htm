@@ -82,7 +82,7 @@
   <h1>draw_rectangle_colour</h1>
   <p>使用此函数，您可以通过定义(x 1, y 1 )位置为左上角、(x 2, y 2 )位置为右下角的区域来绘制矩形或填充矩形的轮廓。如果已填充，则可以为每个角点定义单个颜色，如果这些颜色不相同，则会得到从一个到另一个的渐变效果(颜色设置将使用函数<a href="../Colour_And_Alpha/draw_set_colour.htm"><span class="inline">draw_set_colour()</span></a>覆盖基本颜色集)。请注意，由于各种支持的平台之间的差异，绘制的矩形可能需要使用所需尺寸绘制不同的值(x、y、宽度或高度上的+/-1)。</p>
   <div data-conref="../../../../assets/snippets/Note_Shape_Shader_Attributes_Are_Different.hts">
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you want to draw a shape using a shader, you should be aware that most shaders expect the following inputs: vertex, texture, colour. However, when using this function, only vertex and colour data are being passed in, and so the shader may not draw anything (or draw something but not correctly). If you need to draw shapes in this way then the shader should be customised with this in mind.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您想使用着色器绘制形状，您应该知道大多数着色器需要以下输入：顶点、纹理、颜色。但是，当使用此函数时，仅传入顶点和颜色数据，因此着色器可能不会绘制任何内容 (或绘制某些内容但不正确)。如果您需要以这种方式绘制形状，那么应该在定制着色器时考虑到这一点。</p>
 
 </div>
   <p>&nbsp;</p>

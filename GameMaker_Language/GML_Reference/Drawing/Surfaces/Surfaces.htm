@@ -166,7 +166,7 @@
     <li><a href="../../Buffers/buffer_set_surface.htm">buffer_set_surface</a></li>
   </ul>
   <p>&nbsp;</p>
-  <p>As mentioned above, <span data-keyref="GameMaker Name">GameMaker</span> doesn't actually render most things to the screen directly, but instead it renders them to the <b>application surface</b>. This is essentially a surface - just like any that you can make yourself using the surface functions -&nbsp;and as such it can be manipulated, drawn to, sent to shaders, etc. Basically,&nbsp;anything that you would normally do with a surface you created can also be applied to the application surface.</p>
+  <p>如上所述，<span data-keyref="GameMaker Name">GameMaker</span> 实际上并不将大多数内容直接渲染到屏幕上，而是将它们渲染到 <b> 应用程序界面 </b>。这本质上是一个表面 - 就像您可以使用表面函数自己制作的任何表面一样 - 因此它可以被操纵、绘制、发送到着色器等。基本上，您通常对您创建的表面执行的任何操作都可以也可应用于应用表面。</p>
   <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;</b>The only thing you <b>cannot</b> do with the application surface is free it. It always exists, although the index value to access it may change.</p>
   <p>运行游戏时，在您进入的每个新房间中第一次调用<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">绘制事件</a>时会创建此表面，这意味着在此之前不会绘制任何内容。但是，您仍然可以在<b>创建事件</b>或任何其他事件中获取应用程序表面位置并调整其大小，而不会出现任何错误，并且在创建表面时使用的值将与表面相关。创建和绘制应用程序表面的实际事件顺序如下：</p>
   <ul class="colour">

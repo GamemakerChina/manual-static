@@ -83,7 +83,7 @@
   <p>此函数将函数<a href="draw_sprite_ext.htm"><span class="inline">draw_sprite_ext()</span></a>与函数<a href="draw_sprite_part.htm"><span class="inline">draw_sprite_part()</span></a>结合在一起，添加了一些其他混合选项，以便最终的雪碧部分可以与单个颜色混合。</p>
   <p class="note"><b>注意</b>：只有在启用WebGL时，才建议对HTML5目标使用颜色混合，但如果未启用混合颜色，则仍可以设置该混合颜色，并且该混合颜色会将sprite混合为正常颜色。但是，以这种方式进行的所有混合都会创建一个副本精灵，然后将其存储在缓存中并在需要时使用。这远远不是最佳状态，如果您使用多种颜色更改，则除非您激活WebGL，否则会降低游戏性能。如果您不希望使用WebGL，则可以设置这个字体缓存大小来尝试，并且如果必须使用函数<span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><span class="inline">sprite_set_cache_size()</span></a></span>来限制这个值。</p>
   <p class="note"><b>注意</b>：使用骨骼动画精灵时，此函数可能无法按预期工作，您可能会发现此函数仅绘制默认姿势的第一帧。您应该改用<span class="inline">draw_skeleton_*</span>函数。</p>
-  <p class="note"><b>NOTE</b>: When drawing with this function, the sprite <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x offset</a> and <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y offset</a> are ignored and the sprite part will be drawn with the top left corner at the specified x / y position in the room.</p>
+  <p class="note"><b> 注意</b>：使用此函数进行绘制时，精灵的 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x 偏移量 </a> 和 <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y 偏移量 </a> 将被忽略，精灵部分将在左上角位于指定的 x / y 位置处绘制。房间。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">draw_sprite_general(sprite, subimg, left, top, width, height, x, y, xscale, yscale, rot, c1, c2, c3, c4, alpha);</p>

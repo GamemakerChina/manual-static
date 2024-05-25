@@ -87,7 +87,7 @@
   <h2>如何播放视频？</h2>
   <p>按照以下步骤在运行时加载和播放视频：</p>
   <ul class="colour">
-    <li>Add a video file to the <a href="../../../../Settings/Included_Files.htm#h">Included Files</a> (<span class="inline2">/<span data-keyref="Const_IncludedFiles_FolderName">datafiles</span></span> directory) of your project.</li>
+    <li>将视频文件添加到项目的 <a href="../../../../Settings/Included_Files.htm#h"> 包含文件 </a>(<span class="inline2">/<span data-keyref="Const_IncludedFiles_FolderName"> 数据文件 </span></span> 目录)。</li>
     <li>使用<span class="inline"><a href="video_open.htm">video_open()</a></span>加载视频。<ul><li>或者，从URL加载视频。</li></ul></li>
     <li>使用<span class="inline"><a href="video_draw.htm">video_draw()</a></span>在绘制事件中绘制它。<ul><li>此函数将视频绘制到内部表面，并将其作为返回数组的一部分返回。</li><li>要显示视频，必须使用<span class="inline"><a href="../Surfaces/draw_surface.htm">draw_surface()</a></span>手动绘制该表面。<ul><li>绘制<a href="YUV_Videos.htm"> YUV  视频</a>将需要额外的步骤。</li></ul></li></ul></li>
     <li>视频完成后，通过调用<span class="inline"><a href="video_close.htm">video_close()</a></span>将其从内存中删除。<ul><li>使用<a href="#h">异步回调</a>在视频结束时运行代码。</li></ul></li>

@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">变量函数</span></h1>
-  <p>此页面上的函数旨在处理游戏中使用GameMaker语言时的所有不同变量和变量类型。有关变量的更多信息，请参见<a href="../../GML_Overview/Variables_And_Variable_Scope.htm">变量和变量作用域</a>的页面。</p>
+  <p>本页中的函数旨在处理在游戏中使用GameMaker语言时所有不同的变量和变量类型。有关变量的更多信息，请参阅<a href="../../GML_Overview/Variables_And_Variable_Scope.htm">变量和变量范围</a>页面。</p>
   <p>以下可变函数可用:</p>
   <ul class="colour">
     <li><a href="variable_instance_exists.htm">variable_instance_exists</a> 实例的变量是否存在</li>
@@ -94,7 +94,7 @@
   <h2>信息函数</h2>
   <p>以下函数提供有关变量的一般信息：</p>
   <ul class="colour">
-    <li><a href="nameof.htm">nameof</a></li>
+    <li><a href="nameof.htm">nameof</a> 获取任意名称</li>
     <li><a href="typeof.htm">typeof</a> 获取变量类型</li>
   </ul>
   <h2>方法函数</h2>
@@ -108,24 +108,24 @@
   <h2>结构函数</h2>
   <p>以下函数用于结构：</p>
   <ul class="colour">
-    <li><a href="variable_struct_exists.htm">struct_exists</a></li>
-    <li><a href="variable_struct_get.htm">struct_get</a></li>
-    <li><a href="variable_struct_set.htm">struct_set</a></li>
-    <li><a href="variable_struct_remove.htm">struct_remove</a></li>
-    <li><a href="variable_struct_get_names.htm">struct_get_names</a></li>
-    <li><a href="variable_struct_names_count.htm">struct_names_count</a></li>
+    <li><a href="variable_struct_exists.htm">struct_exists</a> 结构是否存在</li>
+    <li><a href="variable_struct_get.htm">struct_get</a> 从结构获取值</li>
+    <li><a href="variable_struct_set.htm">struct_set</a> 给结构设置值</li>
+    <li><a href="variable_struct_remove.htm">struct_remove</a> 从结构删除变量</li>
+    <li><a href="variable_struct_get_names.htm">struct_get_names</a> 从结构获取键名数组</li>
+    <li><a href="variable_struct_names_count.htm">struct_names_count</a> 从结构获取键名数组长度</li>
     <li><a href="is_instanceof.htm">is_instanceof</a> 给定结构是否是某构造函数或子级创造</li>
     <li><a href="static_get.htm">static_get</a> 获取结构或函数的静态结构</li>
     <li><a href="static_set.htm">static_set</a> 设置静态结构</li>
     <li><a href="instanceof.htm">instanceof</a> 获取构造函数名称</li>
-    <li><a href="struct_foreach.htm">struct_foreach</a></li>
-    <li><a href="struct_get_from_hash.htm">struct_get_from_hash</a></li>
-    <li><a href="struct_set_from_hash.htm">struct_set_from_hash</a></li>
-    <li><a href="variable_get_hash.htm">variable_get_hash</a></li>
-    <li><a href="variable_clone.htm">variable_clone</a></li>
+    <li><a href="struct_foreach.htm">struct_foreach</a> 结构遍历</li>
+    <li><a href="struct_get_from_hash.htm">struct_get_from_hash</a> 从结构使用散列获取值</li>
+    <li><a href="struct_set_from_hash.htm">struct_set_from_hash</a> 使用散列给结构设置值</li>
+    <li><a href="variable_get_hash.htm">variable_get_hash</a> 返回给定变量名的哈希</li>
+    <li><a href="variable_clone.htm">variable_clone</a> 克隆给定值</li>
   </ul>
   <h2>数据类型函数</h2>
-  <p>最后，您还具有以下用于确定变量类型的函数 (有关数据类型的更多信息，请参见<a href="../../GML_Overview/Data_Types.htm">数据类型</a>, 请参见此处的<a href="../../../Additional_Information/Type_Tables.htm">类型表</a>):</p>
+  <p>Finally, you also have the following functions for determining variable type (for more information on data types, please see <a href="../../GML_Overview/Data_Types.htm">Data Types</a>, and see here for <a href="../../../Additional_Information/Type_Tables.htm">Type Tables</a>):</p>
   <ul class="colour">
     <li><a href="is_string.htm">is_string</a> 是否为字符串</li>
     <li><a href="is_real.htm">is_real</a> 是否为实数</li>
@@ -134,22 +134,22 @@
     <li><a href="is_array.htm">is_array</a> 是否为数组</li>
     <li><a href="is_struct.htm">is_struct</a> 是否为结构</li>
     <li><a href="is_method.htm">is_method</a> 是否为方法</li>
-    <li><a href="is_callable.htm">is_callable</a></li>
+    <li><a href="is_callable.htm">is_callable</a> 是否可调用</li>
     <li><a href="is_ptr.htm">is_ptr</a> 是否为指针</li>
     <li><a href="is_int32.htm">is_int32</a> 是否为32位整数</li>
     <li><a href="is_int64.htm">is_int64</a> 是否为64位整数</li>
     <li><a href="is_undefined.htm">is_undefined</a> 是否是undefined</li>
     <li><a href="is_nan.htm">is_nan</a> 是否是nan</li>
     <li><a href="is_infinity.htm">is_infinity</a> 是否是infinity</li>
-    <li><a href="is_handle.htm">is_handle</a></li>
+    <li><a href="is_handle.htm">is_handle</a> 是否为句柄</li>
     <li><a href="bool.htm">bool</a> 转换为布尔类型</li>
     <li><a href="ptr.htm">ptr</a> 转换为指针类型</li>
     <li><a href="int64.htm">int64</a> 转换为64位整数类型</li>
   </ul>
-  <h2>参考函数</h2>
-  <p>以下功能与参考函数相关：<span><span><span><span></span></span></span></span></p>
+  <h2>Reference Functions</h2>
+  <p>The f<span>oll<span>owing functi<span>ons relate t<span>o references:&nbsp;</span></span></span></span></p>
   <ul class="colour">
-    <li><a href="ref_create.htm">ref_create</a></li>
+    <li><a href="ref_create.htm">ref_create</a> 创建变量的引用</li>
   </ul>
   <p>&nbsp;</p>
   <p>另请参阅：<a href="Array_Functions.htm">数组函数</a></p>

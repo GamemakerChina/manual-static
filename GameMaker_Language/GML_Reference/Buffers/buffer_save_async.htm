@@ -80,14 +80,14 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>buffer_save_async</h1>
   <p>使用此函数，您可以将缓冲区的一部分内容保存到文件中，该文件可以使用<a href="buffer_load.htm"><span class="inline">buffer_load()</span></a>函数(或任何其他用于加载缓冲区的函数)读回内存。"偏移"定义缓冲区中用于保存的起始位置(以字节为单位)，"大小"是从该偏移量开始要保存的缓冲区的大小(也以字节为单位)。此函数异步运行，因此游戏将在保存的同时继续运行，使用此函数保存的所有文件将置于"默认"文件夹中。此文件夹<i>不需要</i>包含在文件名中，因为它由GameMaker自动添加。例如，文件名路径"<span class="inline">Data\Player_Save.sav</span>"实际上将保存为"<span class="inline">default\Data\Player_Save.sav</span>"。 但是，如果随后使用函数<a href="buffer_load_async.htm"><span class="inline">buffer_load_async()</span></a>加载文件，您也不需要提供路径的"默认"部分(但任何其它文件函数<i>都需要</i>，除了游戏主机 Xbox One、PS4和Nintendo Switch)。</p>
-  <p class="note"><b><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></b> On HTML5 "default/" is not added automatically and you may have to account for this in your code.</p>
+  <p class="note"><b><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span></b> 在 HTML5 上，"default/" 不会自动添加，您可能必须在代码中考虑到这一点。</p>
   <p>该函数将返回唯一的Id值并触发<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">异步保存/加载事件</a>，您可以在其中使用返回的Id检查<span class="inline">async_load</span>Id值，如下面的扩展示例所示。事件中的<a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>映射将具有以下两个密钥/值对：</p>
   <ul>
     <li><b>"ID": </b>save函数返回的异步函数的ID。</li>
     <li><b>"status": </b>如果数据保存/加载正确，将返回<span class="inline">true</span>，否则返回<span class="inline">false</span>。</li>
   </ul>
   <p>请注意，在调用<a href="buffer_async_group_begin.htm"><span class="inline">buffer_async_group_begin()</span></a>和<a href="buffer_async_group_end.htm"><span class="inline">buffer_async_group_end()</span></a>之间多次调用此函数，可以将多个缓冲区保存为一个(有关详细信息，请参见那些函数)。</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;On HTML5 the returned results are saved&nbsp;as base64 encoded strings when saved to a file.</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在 HTML5 上，返回的结果在保存到文件时会保存为 Base64 编码的字符串。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">buffer_save_async(buffer, filename, offset, size);</p>

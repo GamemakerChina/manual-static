@@ -82,7 +82,7 @@
   <h1>audio_create_buffer_sound</h1>
   <p>使用此函数，您可以从缓冲区的内容创建新的声音。</p>
   <p>缓冲区应以前创建过(有关如何执行此操作的详细信息，请参阅<a href="../../../Buffers/Buffers.htm">缓冲区函数</a>)，并已添加或加载数据到缓冲区中。然后使用数据格式(当前仅支持<span class="inline">buffer_u8</span>或<span class="inline">buffer_s16</span>)、采样速率(可以介于 8000hz 和 48000hz 之间)和缓冲区中的偏移量将其传递给此函数，以便从中获取数据。</p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You cannot pass a buffer of the type <a href="../../../Buffers/buffer_create.htm"><span class="inline2">buffer_grow</span></a> into this function.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>您不能将<a href="../../../Buffers/buffer_create.htm"><span class="inline2">buffer_grow</span></a>类型的缓冲区传递到此函数中。</p>
   <p>您还需要提供缓冲区中的采样数和声音所需的通道。这些通道由以下常数之一定义：</p>
   <table>
     <colgroup>

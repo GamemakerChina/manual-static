@@ -80,10 +80,10 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>zip_unzip</h1>
-  <p>This function will open a stored zip file and extract its contents to the given directory.</p>
-  <p>If you do not supply a full path to the ZIP directory, then the current drive <i>root</i> will be used, and if you want to place it in a relative path to the game bundle working directory, then you should use the <a href="../File_Directories/working_directory.htm"><span class="inline">working_directory</span></a> variable as part of the path (relative paths using "." or ".." will not work so should be avoided). Note too that the zip must be either part of the game bundle (i.e.: an <a href="../../../../Settings/Included_Files.htm">Included File</a>) or have been downloaded to the storage area using <a href="../../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file()</a>.</p>
+  <p>此函数将打开存储的 zip 文件并将其内容提取到给定目录。</p>
+  <p>如果您不提供 ZIP 目录的完整路径，则将使用当前驱动器 <i>root</i>，如果您想将其放置在游戏包工作目录的相对路径中，则应使用 <a href="../File_Directories/working_directory.htm"><span class="inline">working_directory</span></a> 变量作为路径的一部分 (使用 "." 或 ".." 的相对路径不起作用，因此应避免)。另请注意，该 zip 必须是游戏捆绑包的一部分 (即：<a href="../../../../Settings/Included_Files.htm"> 包含文件 </a>) 或已使用 <a href="../../Asynchronous_Functions/HTTP/http_get_file.htm">http_get_file()</a> 下载到存储区域。</p>
   <p>该函数将返回一个值，该值指示提取的文件数，如果提取失败，则返回 0 或更少。</p>
-  <p>This function is synchronous and may cause your game to freeze while it extracts the ZIP. Use&nbsp;<span class="inline3_func"><a href="zip_unzip_async.htm">zip_unzip_async</a></span>&nbsp;for extracting asynchronously.</p>
+  <p>此功能是同步的，可能会导致您的游戏在提取 ZIP 时冻结。使用 <span class="inline3_func"><a href="zip_unzip_async.htm">zip_unzip_async</a></span> 进行异步提取。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">zip_unzip(zip_file, target_directory)</p>

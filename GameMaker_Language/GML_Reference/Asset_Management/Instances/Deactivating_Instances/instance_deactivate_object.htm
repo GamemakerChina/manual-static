@@ -80,13 +80,13 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">instance_deactivate_object</span></h1>
-  <p>With this function you can deactivate a single instance or all instances of a specific object from all those that have been activated previously. Note that if you have deactivated an instance or object that has been flagged as <b>Persistent</b>, then you will need to reactivate it again with the function&nbsp;<span class="inline3_func"><a href="instance_activate_object.htm">instance_activate_object</a></span>&nbsp;before changing room, otherwise it will <i>not</i> be carried over and will be discarded instead. Note too that deactivation is not instantaneous, and an instance that has been deactivated in this way will not be considered to be inactive until the end of the event in which the function was called.</p>
+  <p>使用此功能，您可以停用先前激活的所有实例中的单个实例或特定对象的所有实例。请注意，如果您已停用已标记为 <b> 持久 </b> 的实例或对象，则需要在更换房间之前使用函数 <span class="inline3_func"><a href="instance_activate_object.htm">instance_activate_object</a></span> 再次重新激活它，否则会 <i> 不会被保留，而是会被丢弃。</i> 还要注意，停用不是瞬时的，并且在调用该函数的事件结束之前，以这种方式停用的实例不会被视为不活动。</p>
   <div data-conref="../../../../../assets/snippets/Note_Deactivate_On_Room_Start_Create_Event.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you deactivate an instance on room start (i.e.&nbsp;from the Room Creation Code, or from an instance <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Create event</a> of an instance within the room) all instances that are placed within the room from&nbsp;<a href="../../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a>&nbsp;<b>will still run their Create event</b> before being deactivated.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您在房间启动时停用实例 (即通过房间创建代码，或通过房间内实例的实例 <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm"> 创建事件 </a>)，则放置在房间内的所有实例在停用之前，<a href="../../../../../The_Asset_Editors/Rooms.htm"> 房间编辑器 </a> 仍会运行其 Create 事件 <b>。</b></p>
 
 </div>
   <div data-conref="../../../../../assets/snippets/Note_Warning_Deactivating_Physics_Instances.hts">
-  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;</b>Deactivating instances that have physics enabled will <strong>NOT</strong> stop their fixtures from interacting within the physics simulation. For that you should set their&nbsp;<span class="inline2"><a href="../../../Physics/Physics_Variables/phy_active.htm">phy_active</a></span> variable to <span class="inline2">true</span> or <span class="inline2">false</span> as you activate/deactivate the instances.</p>
+  <p class="note"><b><span data-conref="../../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span></b> 停用启用了物理功能的实例将 <strong> 不会 </strong> 阻止其装置在物理模拟中进行交互。为此，您应在激活 / 停用实例时将其 <span class="inline2"><a href="../../../Physics/Physics_Variables/phy_active.htm">phy_active</a></span> 变量设置为 <span class="inline2">true</span> 或 <span class="inline2">false</span>。</p>
 
 </div>
   <p>&nbsp;</p>

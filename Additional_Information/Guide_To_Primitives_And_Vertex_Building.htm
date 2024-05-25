@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><span data-field="title" data-format="default">Guide To Primitives And Vertex Building</span></h1>
+  <h1><span data-field="title" data-format="default">图元和顶点构建指南</span></h1>
   <p>本指南简要介绍了如何使用自定义<a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm">顶点格式</a>和<strong>顶点缓冲区</strong>构建和使用<strong>图元</strong>。</p>
   <p>In general when you start working with 3D, special effects, complex drawing processes or shaders you don't need to worry too much about the vertex format being used, since <span data-keyref="GameMaker Name">GameMaker</span> will automatically set up and pass through the <a class="tooltip" title="顶点是一个多边形的单点的名称，它包含了定义它的位置、颜色和纹理的各种特征。在计算机图形学中，这通常指用于创建原语的三角形的一个角，而这些原语的组合构成了屏幕上的图形。">vertex</a> data for you. However, sometimes it is necessary to create your own vertex data and format it to suit, especially when you need to boost speed, or wish to pass in extra information. For example the standard vertex format includes an x, y, z 3D position, colour (with alpha), and UV texture coordinates, which, if you were creating it yourself, would look something like:</p>
   <p class="code">vertex_format_begin();<br>
@@ -99,8 +99,8 @@
     <li>Texture coordinate 纹理坐标</li>
   </ul>
   <p>通常情况下，您必须<em> 始终 </em>提供位置或3D位置作为格式的一部分，但其他所有都是可选的。</p>
-  <p>You should note that once you have created your vertex format, the order in which you have defined the vertex attributes&nbsp;<i>must be honoured</i> when building your <strong>primitives</strong>. So, if you have defined a vertex format as position, colour, and texture coordinate, then <b>you <i>must</i> add these attributes to the primitive in the same order otherwise you will get an error</b>. Also note that like any other dynamic resource, a vertex format requires memory and therefore should be removed when not needed using the function <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_delete.htm">vertex_format_delete</a></span>.</p>
-  <p>Any primitives that you build are held in a <b>vertex buffer</b>. This must be created beforehand and then referenced by the functions that are used to build your primitive. The vertex buffer can be reused as many times as necessary to create different primitives, or it can be "frozen" to maintain a specific primitive type for the duration of your game or level (which is the fastest approach, so if you know that a primitive you build will not change then you should always use this option).</p>
+  <p>您应该注意，创建顶点格式后，在构建<i>图元</i>时<strong>必须遵守</strong>定义顶点属性的顺序。 因此，如果您已将顶点格式定义为位置、颜色和纹理坐标，则<b>您<i>必须</i>以相同的顺序将这些属性添加到图元，否则您将收到错误</b>。 另请注意，与任何其他动态资源一样，顶点格式需要内存，因此在不需要时应使用函数 <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_delete.htm">vertex_format_delete</a></span> 删除。</p>
+  <p>您构建的任何基元都保存在<b>顶点缓冲区</b>中。 必须事先创建它，然后由用于构建原语的函数引用。 顶点缓冲区可以根据需要多次重复使用以创建不同的图元，或者可以“冻结”它以在游戏或关卡持续时间内维护特定的图元类型（这是最快的方法，因此如果您知道 您构建的原语不会改变，那么您应该始终使用此选项）。</p>
   <p>下面的代码显示了构建单个三角形图元的示例:</p>
   <p class="code">// CREATE EVENT<br>
     v_buff = vertex_create_buffer();<br>
@@ -122,7 +122,7 @@
     vertex_submit(v_buff, pr_trianglelist, tex);<br>
     shader_reset();
   </p>
-  <p>Here we have first created our&nbsp;vertex buffer in the Create Event of the instance, then we begin the definition of the different vertices that make up our triangle primitive, giving the position, the colour, and the texture UV coordinate for each of the three points that we want to use. We then end the vertex definition, and we know that the vertex buffer with this vertex data is stored in the variable "v_buff".&nbsp;&nbsp;</p>
+  <p>在这里，我们首先在实例的创建事件中创建了顶点缓冲区，然后开始定义组成三角形图元的不同顶点，为要使用的三个点中的每一个点提供位置、颜色和纹理UV坐标。然后结束顶点定义，并且我们知道具有该顶点数据的顶点缓冲存储在变量"v_buff"中。</p>
   <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If the contents of the buffer are going to be updated constantly, the buffer would be created, given the vertex data, and then be destroyed again - after it's been drawn -&nbsp;all in the same step.</p>
   <p>We then draw the contents of the vertex buffer in the Draw Event using a shader. This is a very simple example, and is basically how <span data-keyref="GameMaker Name">GameMaker</span> works internally, ie: When you draw a sprite, <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;creates a vertex buffer with four vertices creating two triangles (which make a square, also called a "quad"), and textures these two triangles with the sprite image. When we draw this sprite, we are submitting the vertex buffer and its contents are drawn to the screen.</p>
   <p>你会注意到，当我们提交绘制的顶点缓冲区时，我们提供了一个图元类型。你使用的图元类型可以是一个点，一个行列表或条，或一个三角形列表或条(point,line list or strip,triangle list or strip)，但是<i> 不 </i>允许使用三角扇形(triangle fans)，因为大量移动硬件不接受这种图元类型。不要忘记为将要用来绘制它的图元类型正确地格式化你的顶点缓冲区。例如，将两个三角形图元绘制为一个三角形列表需要6个点，但作为一个三角扇(triangle strip)只需要4个点。你使用哪种类型是由你自己决定的，这取决于你想要画什么和你想要达到的效果。</p>

@@ -80,9 +80,9 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>physics_fixture_bind</h1>
   <p>一旦我们定义了我们的装置，它必须绑定到一个实例。这意味着其<i>属性</i>将传输到选定的实例，而<b>不是实际的装置本身</b>，因此，如果一个装置都具有相同的属性，则可以将其绑定到多个实例。您可以为目标指定一个对象索引，当时房间中存在的所有实例都将收到装置属性(但不是以后创建的对象的任何新实例)，或者您可以使用特殊关键字 <i>other</i> 和 <i>all</i>。您甚至可以指定一个父对象，具有该父对象的所有子实例也将收到装置。将装置绑定到所需的所有实例后，如果不再需要，可以将其删除，并且具有该装置特性的实例将不会受到影响并保持这些特性。</p>
-  <p>The fixture will be bound to the instance with the center of mass being positioned at the origin of the instance, and polygon fixtures are bound based on the position of the points <i>relative</i> to the origin. If you require your fixture to be bound to a point other than the origin then you should be using <span class="inline3_func"><a href="physics_fixture_bind_ext.htm">physics_fixture_bind_ext</a></span>.</p>
-  <p><img alt="Physics fixture binding example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_bind_image.png">The function will also return a unique "id" value for the <i>bound</i> fixture (<b>not the fixture itself</b>) which can then be used to remove ("un-bind") the physics properties from the instance using the function <span class="inline3_func"><a href="physics_remove_fixture.htm">physics_remove_fixture</a></span>. This permits you to add and remove physical properties from an instance without destroying and re-creating objects.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Fixtures should be deleted when no longer needed as failure to do so may cause a memory leak which will slow down and eventually crash your game.</p>
+  <p>固定装置将绑定到实例，质心位于实例的原点，多边形固定装置根据点 <i> 相对于 </i> 原点的位置进行绑定。如果您需要将夹具绑定到原点以外的点，那么您应该使用 <span class="inline3_func"><a href="physics_fixture_bind_ext.htm">physicals_fixture_bind_ext</a></span>。</p>
+  <p><img alt="Physics fixture binding example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_bind_image.png"> 该函数还将返回 <i> 绑定 </i> 固定装置 (<b> 不是固定装置本身 </b>) 的唯一 "id" 值，然后可使用该值从固定装置中移除 (" 取消绑定 ") 物理属性。使用函数 <span class="inline3_func"><a href="physics_remove_fixture.htm">physical_remove_fixture</a></span> 的实例。这允许您在实例中添加和删除物理属性，而无需销毁和重新创建对象。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 不再需要的装置应被删除，否则可能会导致内存泄漏，从而减慢游戏速度并最终崩溃。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">physics_fixture_bind(fixture, target)</p>

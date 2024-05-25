@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>异步函数</h1>
-  <p>在 <span data-keyref="GameMaker Name">GameMaker</span> 上下文中，异步函数是一种发送到网络服务器、请求用户输入甚至流式传输数据的函数，同时让 <span data-keyref="GameMaker Name">GameMaker</span> 继续运行而不阻塞正在运行的游戏 . 当接收到信息 <a class="tooltip" title="回调仅是一个函数，该函数先运行，然后在完成分配的工作后触发另一个函数（或代码块）。例如，功能sprite_add()将在加载精灵后在异步Image Loaded事件中触发回调。"> 回调 </a> 时，会触发一个特殊的 <b> 异步事件 </b>，这反过来又允许任何分配有异步事件的实例执行更多函数(尽管不一定是这种情况) . 因此，基本上，这是一种与某些外部资源(服务器、用户或设备)通信的方式，而无需在等待回复时停止游戏或项目。</p>
+  <p>在 <span data-keyref="GameMaker Name">GameMaker</span> 上下文中，异步函数是一种发送到网络服务器、请求用户输入甚至流式传输数据的函数，同时让 <span data-keyref="GameMaker Name">GameMaker</span> 继续运行而不阻塞正在运行的游戏 . 当接收到信息 <a class="tooltip" title="回调仅是一个函数，该函数先运行，然后在完成分配的工作后触发另一个函数（或代码块）。例如，功能sprite_add()将在加载精灵后在异步Image Loaded事件中触发回调。"> 回调</a> 时，会触发一个特殊的 <b> 异步事件 </b>，这反过来又允许任何分配有异步事件的实例执行更多函数(尽管不一定是这种情况) . 因此，基本上，这是一种与某些外部资源(服务器、用户或设备)通信的方式，而无需在等待回复时停止游戏或项目。</p>
   <p>这有什么重要的？嗯，因为它允许<span data-keyref="GameMaker Name"> GameMaker </span>在发送或接收数据时继续工作，这意味着你可以做很多事情，而不会阻塞游戏循环，比如:</p>
   <ul class="colour">
     <li>将数据从设备流式传输到您的游戏中，而无需玩家等待内容加载</li>

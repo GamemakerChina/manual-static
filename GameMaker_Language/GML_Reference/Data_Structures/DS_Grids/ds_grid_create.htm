@@ -80,8 +80,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">ds_grid_create</span></h1>
-  <p>This function creates a new DS grid data structure of the specified cell width and height. The function returns an ID which must be used in all further functions that deal with this DS grid.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;When you create a data structure, the index value to identify it is an integer value starting at 0. This means that data structures of different types can have the <b>same</b> index value, so if in doubt you should be using the&nbsp;<span class="inline3_func"><a href="../ds_exists.htm">ds_exists</a></span>&nbsp;function before accessing them. Also note that indices are re-used, so a destroyed data structure index value may be used by a newly created one afterwards.</p>
+  <p>此函数创建指定单元格宽度和高度的新 DS 网格数据结构。该函数返回一个 ID，必须在处理此 DS 网格的所有其他函数中使用该 ID。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要信息</span></span> 创建数据结构时，用于标识该数据结构的索引值是从 0 开始的整数值。这意味着不同类型的数据结构可以具有 <b> 相同 </b> 的索引值，因此如果有疑问，您应该在访问它们之前使用 <span class="inline3_func"><a href="../ds_exists.htm">ds_exists</a></span> 函数。另请注意，索引是重复使用的，因此被破坏的数据结构索引值可能会被随后新创建的索引值使用。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">ds_grid_create</span>(w, h);</p>

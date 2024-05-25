@@ -78,11 +78,11 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><span data-field="title" data-format="default">Primitives&nbsp;And Vertex Formats</span></h1>
+  <h1><span data-field="title" data-format="default"> 基元和顶点格式 </span></h1>
   <p>基元(图形基元,图元,图形输出原语)是一种使用点来定义屏幕上显示的内容的绘制类型。它们可以由单点、线或三角形组成，可以着色，有阿尔法混合，甚至可以赋予纹理，这意味着它们可以用来在2D游戏中创造一些非常令人兴奋的效果！例如，您可以使用多个三角形基元创建一个矩形，然后使用标志精灵对其进行纹理化，并且在实例的绘制事件中，通过简单地修改形成基元的点来使标志"波浪"在风中扭曲您使用的精灵。</p>
   <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;</b>These functions do not work with the HTML5 module unless you have enabled OpenGL in the <a href="../../../../Settings/Game_Options/HTML5.htm">Game Options</a>.</p>
-  <h2 id="func_ref">Function Reference</h2>
-  <h3 id="func_ref_primitives">Primitives</h3>
+  <h2 id="func_ref">功能参考</h2>
+  <h3 id="func_ref_primitives">基元</h3>
   <ul class="colour">
     <li><a href="draw_primitive_begin.htm">draw_primitive_begin</a></li>
     <li><a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></li>
@@ -92,7 +92,7 @@
     <li><a href="draw_vertex_texture.htm">draw_vertex_texture</a></li>
     <li><a href="draw_vertex_texture_colour.htm">draw_vertex_texture_colour</a></li>
   </ul>
-  <h3 id="func_ref_vertex_formats">Vertex Formats</h3>
+  <h3 id="func_ref_vertex_formats">顶点格式</h3>
   <p><span data-keyref="GameMaker Name">GameMaker</span>允许您定义自己的<strong>顶点格式</strong>，您可以从中创建自己的自定义基元。这可以大大加快着色器操作，或者可以用来扩展它们的函数并创建令人惊讶的效果。您可以在以下部分中找到相关信息：</p>
   <ul class="colour">
     <li><a href="vertex_format_begin.htm">vertex_format_begin</a></li>
@@ -105,8 +105,8 @@
     <li><a href="vertex_format_end.htm">vertex_format_end</a></li>
     <li><a href="vertex_format_delete.htm">vertex_format_delete</a></li>
   </ul>
-  <h3 id="func_ref_vertex_buffers">Vertex Buffers</h3>
-  <p>Once you have created your vertex format (see the section above) you can then use it to build the primitives that you want to draw using the following vertex buffer functions:</p>
+  <h3 id="func_ref_vertex_buffers">顶点缓冲区</h3>
+  <p>创建顶点格式后 (请参阅上面的部分)，您可以使用它来构建您想要使用以下顶点缓冲区函数绘制的图元：</p>
   <ul class="colour">
     <li><a href="vertex_create_buffer.htm">vertex_create_buffer</a></li>
     <li><a href="vertex_create_buffer_ext.htm">vertex_create_buffer_ext</a></li>
@@ -131,7 +131,7 @@
     <li><a href="vertex_freeze.htm">vertex_freeze</a></li>
     <li><a href="vertex_submit.htm">vertex_submit</a></li>
   </ul>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;The primitives that you build should follow the format that you have set using the Vertex Format functions, so if you have defined a vertex format with only positional data, there is no point building your primitive with colour data. You should note that the order in which you add properties to the primitive you are building is defined by the order in which you added these properties when creating the vertex format, so if you have defined the vector format with the order position, colour and texture coordinate, you <i>must</i> add these properties to the primitive being built in the same order otherwise you will get errors.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要信息</span></span> 您构建的基元应遵循您使用 " 顶点格式 " 函数设置的格式，因此，如果您定义了仅包含位置数据的顶点格式，则没有必要使用颜色构建基元数据。您应该注意，向正在构建的图元添加属性的顺序是由创建顶点格式时添加这些属性的顺序定义的，因此，如果您已使用顺序位置、颜色和纹理定义了矢量格式坐标，您 <i> 必须 </i> 将这些属性添加到以相同顺序构建的基元中，否则您会收到错误。</p>
   <p>有关如何使用顶点函数构建基元的概述，请参阅：</p>
   <ul class="colour">
     <li><a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm">基元和顶点构建指南</a></li>

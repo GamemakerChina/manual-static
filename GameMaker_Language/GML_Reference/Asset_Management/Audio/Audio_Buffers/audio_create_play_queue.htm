@@ -101,7 +101,7 @@
       </tr>
     </tbody>
   </table>
-  <p>Note that you should free up any audio queues created with this function when no longer required to prevent memory leaks using the function <a href="audio_free_play_queue.htm"><span class="inline">audio_free_play_queue()</span></a>.</p>
+  <p>请注意，当不再需要时，您应该使用函数<a href="audio_free_play_queue.htm"><span class="inline">audio_free_play_queue()</span></a>释放使用此函数创建的任何音频队列，以防止内存泄漏。</p>
   <p>当队列到达末尾时，此函数将触发<a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">音频回放异步事件</a>，在该事件中，将在变量<a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">async_load</a>中创建具有以下键/值对的特殊<a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">DS map</span></a>：</p>
   <ul class="colour">
     <li>"<strong>queue_id</strong>"已完成播放数据的队列</li>

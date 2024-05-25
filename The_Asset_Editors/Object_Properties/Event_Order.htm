@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">事件顺序</span></h1>
   <p>在考虑 <span data-keyref="GameMaker Name">GameMaker</span> 中的事件时，应注意 <strong> 无法清楚说明每个步骤中所有事件将发生的确切顺序 </strong>，这仅仅是因为它取决于 <span data-keyref="GameMaker Name">GameMaker</span> 的内部工作方式，并且随着软件的开发，这可能会发生变化。但是，某些事件将 <em> 始终 </em> 以相同的顺序运行。</p>
-  <h2>Upon Entering a Room</h2>
+  <h2>进入房间后</h2>
   <p>第一组总是以同样的方式发生的事件是第一次进入房间时发生的事件。不同事件触发的顺序是：</p>
   <ul class="colour">
     <li><strong>Object Variables / Instance Variables are initialised</strong> (these are the variables that you can define in the <a class="tooltip" title="IDE，或集成开发环境，是一个软件应用程序，为计算机程序员提供软件开发的全面设施。在这种情况下，GameMaker Studio 2的整个前端都被认为是 IDE，包括创建图形、添加声音和添加代码以制作游戏的部分。">IDE</a> of <a href="../Objects.htm">The Object Editor</a>&nbsp;or <a href="../Rooms.htm">The Room Editor</a>). If you have an object with variables attached then they will be created before anything else and then any instances that have variables attached will be defined after so you can overwrite object variables with instance specific ones in <a href="../Rooms.htm">The Room Editor</a>.</li>
@@ -89,7 +89,7 @@
     <li><strong>Room Creation Code</strong> - this is the one-off code written in&nbsp;<a href="../Rooms.htm">The Room Editor</a> for when a room is first entered</li>
     <li><strong>Room Start Event of all instances</strong> - one of the "other" category of events and will fire for all instances, <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/persistent.htm">persistent</a> or otherwise</li>
   </ul>
-  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You can also set the order in which specific instances are created within&nbsp;<a href="../Rooms.htm">The Room Editor</a> itself by moving them up or down the list of the <a href="../Room_Properties/Layer_Properties.htm">Instance Layer Properties</a>&nbsp;window.</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>您还可以通过在<a href="../Room_Properties/Layer_Properties.htm">实例层属性</a>窗口的列表中上下移动特定实例来设置在<a href="../Rooms.htm">房间编辑器</a>中创建特定实例的顺序。</p>
   <h2>Step and Draw Events</h2>
   <p>Other than those specific events, the only events that will always occur in the same order no matter what are the three <strong>Step </strong>events and the different <strong>Draw </strong>events.</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;T<span>he Step events are always executed before the Draw events.</span></p>

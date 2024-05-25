@@ -82,21 +82,21 @@
   <p><img alt="The Font Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts.png"></p>
   <p>When you want to draw text in your game this text is drawn in a standard Arial 12-point&nbsp;<a class="tooltip" title="字体是用于表示语言文本的图形字形的集合。字体可以具有不同的粗细，大小和样式，并用于显示项目中的任何书面内容。">font</a>, but to make more interesting or unique looking texts you will probably want to use different fonts. So, to use different fonts that you have on your computer you must create a <strong>font asset</strong> in <span data-keyref="GameMaker Name">GameMaker</span>. This is done by right clicking <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">&nbsp;on the <a href="../Introduction/The_Asset_Browser.htm">Asset Browser</a> and selecting "<em>Create" -</em>&gt;<em>&nbsp;"Font</em>". For each font asset you create you specify a particular type of font from your computer which can then be used in your game using the action or code to set a font for drawing.</p>
   <p>Fonts in GameMaker can make use of SDF rendering so text stays sharp as it's scaled up. Enable it under Rendering Options (listed below), or run&nbsp;<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_sdf.htm">font_enable_sdf</a></span>&nbsp;on the font at runtime.</p>
-  <p>Once SDF is enabled, you can apply various <a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_effects.htm">effects</a> to your font at runtime.</p>
-  <p>The Font Editor window contains the following options:</p>
+  <p>启用SDF后，可以在运行时将各种<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_effects.htm">效果</a>应用于字体。</p>
+  <p>"字体编辑器"窗口包含以下选项：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">详情</span><span data-close-text="true">详情</span></a></p>
   <div class="droptext" data-targetname="drop-down">
     <p class="dropspot">在这里，你可以给你的字体起一个独特的名字（仅限字母数字字符和"_"下的符号），以及选择要使用的字体。字体必须安装在你的机器上，由于许可问题，默认情况下，<span data-keyref="GameMaker Name">GameMaker</span>不会将实际的字体文件与项目文件一起存储，而是将字体<a class="tooltip" title="当一些东西在GameMaker Studio 2中呈现时，通常意味着它只是被“绘制到显示缓冲区”或“绘制到表面”。渲染也可以指将某种矢量源(如字体)转换为位图图像的过程。">渲染</a>到<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页</a>中，作为一系列 的位图字形。纹理页将被分配到一个<a href="../Settings/Texture_Groups.htm">纹理组</a>，你也可以在这里的&nbsp;<strong>组</strong>&nbsp;选项中选择。</p>
-    <p class="dropspot">If you want to distribute the actual font file (<span class="inline">*.ttf</span> or <span class="inline">*.otf</span> only) along with the project when making a Marketplace asset or for any other reason, you can check the option <strong>Copy To Project</strong>. This will open the file explorer where you can select the font file and it will then be added to the files bundled with the project.</p>
+    <p class="dropspot">如果在制作Marketplace资产时或出于任何其他原因，要沿着项目分发实际字体文件(仅<span class="inline">*.ttf</span>或<span class="inline">*.otf</span>)，可以选中选项<strong>复制到项目</strong>。这将打开文件浏览器，您可以在其中选择字体文件，然后将其添加到与项目捆绑的文件中。</p>
     <p class="note"><span data-conref="../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;您应仅使用经<strong>法律允许和许可在您的项目中重新分发或使用的字体</strong>。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">Rendering Options</span><span data-close-text="true">Rendering Options</span></a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">渲染选项</span><span data-close-text="true">渲染选项</span></a></p>
   <div class="droptext" data-targetname="drop-down7">
-    <p class="dropspot">This section contains two options:</p>
+    <p class="dropspot">此部分包含两个选项：</p>
     <ul class="colour">
-      <li class="dropspot"><strong>Enable SDF</strong>: Whether SDF rendering is enabled for this font. See&nbsp;<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/Fonts.htm#h">SDF Rendering</a>.</li>
-      <li class="dropspot"><strong>SDF spread</strong>: The SDF <a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_sdf_spread.htm">spread value</a>.&nbsp;This limits how much <a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_effects.htm">font effects</a> can spread from a glyph's edge.</li>
+      <li class="dropspot"><strong>启用SDF</strong>：是否为此字体启用SDF呈现。请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/Fonts.htm#h">SDF呈现</a>。</li>
+      <li class="dropspot"><strong>SDF spread</strong>：SDF<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_sdf_spread.htm">扩展值</a>。这限制了从字体边缘可以扩展的<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_effects.htm">字体效果</a>。</li>
     </ul>
     <p class="dropspot">&nbsp;</p>
   </div>

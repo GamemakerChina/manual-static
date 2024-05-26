@@ -78,53 +78,61 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>draw_primitive_begin</h1>
+  <h1><span data-field="title" data-format="default">draw_primitive_begin</span></h1>
   <p>必须先调用此函数，然后才能定义任何基元。有6种类型的基元可以定义为以下常量：</p>
-  <table>
+  <div data-conref="../../../../assets/snippets/Primitive_Type_Constants.hts">
+  <table style="caption-side: top">
+    <caption><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="draw_primitive_begin.htm">基元类型常量</a></span></caption>
     <colgroup>
       <col>
       <col>
     </colgroup>
     <tbody>
       <tr>
-        <th colspan="2"><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/draw_primitive_begin.htm">基元类型常量</a></span></th>
-      </tr>
-      <tr>
         <th>常量</th>
         <th>描述</th>
       </tr>
       <tr>
         <td><span class="inline">pr_pointlist</span></td>
-        <td>A point list</td>
+        <td>A point list - A point is drawn for every vertex.</td>
       </tr>
       <tr>
         <td><span class="inline">pr_linelist</span></td>
-        <td>A line list</td>
+        <td>A line list - A line is drawn between the first and the second vertex, between the third and fourth vertex, etc.</td>
       </tr>
       <tr>
         <td><span class="inline">pr_linestrip</span></td>
-        <td>A line strip</td>
+        <td>A line strip - A line is drawn between the first and the second vertex, between the second and the third vertex, the third and the fourth vertex, etc.</td>
       </tr>
       <tr>
         <td><span class="inline">pr_trianglelist</span></td>
-        <td>A triangle list</td>
+        <td>A triangle list - A triangle is drawn for the first, second and third vertex, then for the fourth, fifth and sixth vertex, etc.</td>
       </tr>
       <tr>
         <td><span class="inline">pr_trianglestrip</span></td>
-        <td>A triangle strip</td>
+        <td>A triangle strip - A triangle is drawn for the first, second and third vertex, then for the second, third and fourth vertex, etc.</td>
       </tr>
       <tr>
         <td><span class="inline">pr_trianglefan</span></td>
-        <td>A triangle fan</td>
+        <td>A triangle fan - Every two vertices connect to the first vertex to make a triangle.<br>
+          <br>
+          <span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning">WARNING</span></span>&nbsp;<span>This primitive type is not natively supported on some platforms and there could be a performance hit if you use it.</span>
+        </td>
       </tr>
     </tbody>
   </table>
-  <p>&nbsp;</p>
-  <p>下图基本上说明了这些顶点的外观以及定义顶点的顺序：</p>
-  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png">请注意，在某些平台(Windows、Xbox)上，<span class="inline">pr_trianglefan</span> 类型不受支持，因此 <span data-keyref="GameMaker Name">GameMaker</span> 在编译游戏以使其正常运行时执行转换。这意味着在这些平台上，<span class="inline">pr_trianglefan</span> 类型的使用速度将比其他类型慢得多。另请注意，要在HTML5上使用此函数，必须在<i>"游戏选项"</i>中启用WebGL。</p>
+
+</div>
+  <p>下图基本上说明了它们的外观以及定义顶点的顺序：</p>
+  <p><img alt="The different primitive types" class="center" height="436" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png" width="573"></p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在某些平台 (Windows、Xbox) 上，<span class="inline2">pr_trianglefan</span> 类型本身不受支持，因此 <span data-keyref="GameMaker Name">GameMaker</span> 在编译游戏时会进行转换以使它们正常运行。这意味着在这些平台上，<span class="inline2">pr_trianglefan</span> 类型的使用速度将比其他类型慢得多。</p>
+  <div data-conref="../../../../assets/snippets/Note_Primitives_Enable_WebGL_On_HTML5.hts">
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span></b> 除非您在 <a href="../../../../Settings/Game_Options/HTML5.htm"> 游戏选项 </a> 中启用了 WebGL，否则这些函数无法与 HTML5 模块配合使用。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">draw_primitive_begin(kind)</p>
+  <p class="code"><span data-field="title" data-format="default">draw_primitive_begin</span>(kind);</p>
   <table>
     <tbody>
       <tr>
@@ -134,7 +142,7 @@
       </tr>
       <tr>
         <td>kind</td>
-        <td><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/draw_primitive_begin.htm">基元类型常量</a></span></td>
+        <td><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="draw_primitive_begin.htm">基元类型常量</a></span></td>
         <td>你要绘制的基元类型。</td>
       </tr>
     </tbody>
@@ -158,7 +166,6 @@
   <p>上述代码将绘制由基元组成的圆的四分之三。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
@@ -166,7 +173,7 @@
         <div style="float:right">Next:&nbsp;<a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 draw_primitive_begin

@@ -223,7 +223,7 @@
     <p class="dropspot"><img alt="GML VisualIn The Enter Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_7_2.png"></p>
     <p class="code">player_lives = player_lives - 1;<br>
       <br>
-      if player_lives &lt; 0<br>
+      if (player_lives &lt; 0) <br>
       {<br>
       player_lives = 3;<br>
       }
@@ -247,17 +247,17 @@
     <p class="code">player_health = 100;</p>
     <p class="dropspot">我们希望使用箭头键根据按下的箭头键来向上或向下更改健康值，我们可以通过添加两个按下键盘的 <strong> 箭头 </strong> 事件来实现这一点，但是使用 <strong> 步事件 </strong> 和一些代码来检查按键可能更容易，所以现在使用以下 GML 可视化或 GML 继续添加一个 <strong> 步事件 </strong>：</p>
     <p class="dropspot"><img alt="Step Event GML VisualActions" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_2.png"></p>
-    <p class="code">if keyboard_check(vk_up)<br>
+    <p class="code">if (keyboard_check(vk_up)) <br>
       {<br>
-      &nbsp; &nbsp; if player_health &lt; 100<br>
+      &nbsp; &nbsp; if (player_health &lt; 100) <br>
       &nbsp; &nbsp; {<br>
       &nbsp; &nbsp; &nbsp; &nbsp; player_health = player_health + 1;<br>
       &nbsp; &nbsp; }<br>
       }<br>
       <br>
-      if keyboard_check(vk_down)<br>
+      if (keyboard_check(vk_down)) <br>
       {<br>
-      &nbsp; &nbsp; if player_health &gt; 0<br>
+      &nbsp; &nbsp; if (player_health &gt; 0) <br>
       &nbsp; &nbsp; {<br>
       &nbsp; &nbsp; &nbsp; &nbsp; player_health = player_health - 1;<br>
       &nbsp; &nbsp; }<br>
@@ -284,7 +284,7 @@
         <div style="float:right">Next: <a href="Movement_And_Controls.htm">移动及控制</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Drawing

@@ -1,0 +1,218 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.6.7.0_42";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>vertex_submit_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="vertex_submit_ext">
+  <meta name="search-keywords" content="vertex_submit_ext">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Surfaces/Surfaces.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_submit.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="vertex_submit_ext">
+        <span>vertex_submit_ext</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">vertex_submit_ext</span></h1>
+  <p>该函数将给定顶点缓冲区中的一系列顶点提交给 GPU 进行绘制。</p>
+  <p>该范围以偏移量和要提交的顶点数的形式提供。偏移量可以是任何大于 0 的值、要提交的实际数量的顶点数或值 <span class="inline2">-1</span>( 表示应提交从该偏移量开始的所有顶点)。</p>
+  <div data-conref="../../../../assets/snippets/Note_Warning_Surface_Must_Exist.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span> 使用表面作为纹理 (由 <span class="inline3_func"><a href="../Surfaces/surface_get_texture.htm">surface_get_texture</a></span> 返回) 时，应确保表面本身存在 (<span class="inline3_func"><a href="../Surfaces/surface_exists.htm">surface_exists</a></span>) 。</p>
+
+</div>
+  <h3>使用说明</h3>
+  <ul class="colour">
+    <li>此函数只能在 <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm"> 绘制事件 </a> 中使用。</li>
+    <li>该函数支持常规和 <a href="vertex_freeze.htm"> 冻结 </a> 顶点缓冲区。</li>
+    <li>顶点的数量必须与您正在绘制的图元类型一致。</li>
+    <li>如果您需要提交整个顶点缓冲区，可以使用 <span class="inline3_func"><a href="vertex_submit.htm">vertex_submit</a></span>。</li>
+    <li>Triangle fans (<span class="inline2">pr_trianglefan</span>) are converted to <span class="inline2">pr_trianglelist</span> internally on platforms that don't support them when you call this function.</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">vertex_submit_ext</span>(<span>buffer, primtype, texture, offset, number</span>);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td><span data-keyref="Type_ID_Buffer_Vertex"><a target="_blank" href="vertex_create_buffer.htm">Vertex Buffer</a></span></td>
+        <td>要使用的顶点缓冲区。</td>
+      </tr>
+      <tr>
+        <td>primtype</td>
+        <td><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="draw_primitive_begin.htm">Primitive Type Constant</a></span></td>
+        <td>要使用的原始类型。</td>
+      </tr>
+      <tr>
+        <td>texture</td>
+        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span></td>
+        <td>要使用的纹理 (或 <span class="inline2">-1</span> 表示无纹理)。</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>顶点缓冲区中的偏移量，或者缓冲区中要提交的第一个顶点的索引。必须是 &amp; gt; 0. 使用 <span class="inline2">-1</span> 提交给定偏移量之后的所有顶点。</td>
+      </tr>
+      <tr>
+        <td>number</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要提交的顶点数。该值被限制为顶点缓冲区的大小。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例1：基本使用</h4>
+  <p class="code_heading">Draw Event</p>
+  <p class="code">&nbsp;<span data-field="title" data-format="default">vertex_submit_ext</span>(vb, pr_trianglelist, -1, 5, 6);</p>
+  <p>上面的代码显示了对函数 <span class="inline3_func"><span data-field="title" data-format="default">vertex_submit_ext</span></span> 的基本调用。顶点数量为 6，是 3 的倍数，符合使用的 <span class="inline2">pr_trianglelist</span> 基元类型的要求。</p>
+  <p>&nbsp;</p>
+  <h4>示例 2：逐步绘制一条线</h4>
+  <p class="code_heading">Create Event</p>
+  <p class="code">vb = vertex_create_buffer();<br>
+    vertex_begin(vb, fmt_default);<br>
+    repeat(100)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vertex_position_3d(vb, random(room_width), random(room_height), 0);<br>
+    &nbsp;&nbsp; &nbsp;vertex_color(vb, c_white, 1);<br>
+    &nbsp;&nbsp; &nbsp;vertex_texcoord(vb, 0, 0);<br>
+    }<br>
+    vertex_end(vb);</p>
+  <p class="code_heading">Draw Event</p>
+  <p class="code">var _num = (current_time / 1000 * 12) mod (vertex_get_number(vb) + 1);<br>
+    <span data-field="title" data-format="default">vertex_submit_ext</span>(vb, pr_linestrip, -1, 0, _num);
+  </p>
+  <p>上面的代码示例用 100 个随机点填充顶点缓冲区，然后使用内置变量 <span class="inline2"><a href="../../Maths_And_Numbers/Date_And_Time/current_time.htm">current_time</a></span> 的值逐步绘制更多点。</p>
+  <p>在 Create 事件中，使用 <span class="inline3_func"><a href="vertex_create_buffer.htm">vertex_create_buffer</a></span> 创建顶点缓冲区。然后，在 <a href="../../../GML_Overview/Language_Features/repeat.htm">repeat</a> 循环中向其中添加 100 个顶点。根据所使用的 <a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm#passthrough_vertex_format">passthrough_vertex_format</a>，每个顶点都会在房间中获得一个随机位置、白色和未使用但必须存在的纹理坐标。</p>
+  <p>在 Draw 事件中，使用 <span class="inline3_func"><span data-field="title" data-format="default">vertex_submit_ext</span></span> 作为 <span class="inline2">pr_linestrip</span> 提交顶点缓冲区。起始顶点始终是第一个顶点 (由偏移值 <span class="inline2">0</span> 表示)，顶点数使用 <span class="inline2"><a href="../../Maths_And_Numbers/Date_And_Time/current_time.htm">current_time</a></span> 和用于创建循环的简单动画的模运算符来计算。</p>
+  <p>&nbsp;</p>
+  <h4>示例 3：顶点组</h4>
+  <p class="code_heading">Create Event</p>
+  <p class="code">vb = vertex_create_buffer();<br>
+    arr_groups = [];<br>
+    <br>
+    var _px, _py, _col;<br>
+    vertex_begin(vb, fmt_default);<br>
+    for(var i = 0;i &lt; 8;i++)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;_px = random(room_width);<br>
+    &nbsp;&nbsp; &nbsp;_py = random(room_height);<br>
+    &nbsp;&nbsp; &nbsp;_col = choose(c_red, c_blue, c_green, c_yellow);<br>
+    &nbsp;&nbsp; &nbsp;repeat(3)<br>
+    &nbsp;&nbsp; &nbsp;{<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vertex_position_3d(vb, _px + random_range(-20, 20), _py + random_range(-20, 20), 0);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vertex_color(vb, _col, 1);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vertex_texcoord(vb, 0, 0);<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    &nbsp;&nbsp; &nbsp;array_push(arr_groups, {visible: true, range: {offset: i * 3, num: 3}});<br>
+    }<br>
+    vertex_end(vb);<br>
+    vertex_freeze(vb);
+  </p>
+  <p class="code_heading">Draw Event</p>
+  <p class="code">var i = 0, _num = array_length(arr_groups);<br>
+    repeat(_num)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;var _group = arr_groups[i++];<br>
+    &nbsp;&nbsp; &nbsp;if (!_group.visible) { continue; }<br>
+    &nbsp;&nbsp; &nbsp;vertex_submit_ext(vb, pr_trianglelist, -1, _group.range.offset, _group.range.num);<br>
+    }</p>
+  <p>上面的代码示例展示了如何将顶点缓冲区视为顶点组，每个顶点由顶点的范围和数量给定。每组顶点的可见性可以单独设置。</p>
+  <p>在 Create 事件中，将创建一个顶点缓冲区和一个空数组，用于存储有关每个顶点范围的信息。使用默认的 <a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm#passthrough_vertex_format">passthrough_vertex_format</a> 总共将 8 个三角形添加到顶点缓冲区中，每个三角形在房间中的某个位置具有随机位置、随机颜色以及随机宽度和高度。还使用存储每个三角形顶点的可见性和范围的 <span class="inline3_func"><a href="../../Variable_Functions/array_push.htm">array_push</a></span> 将 <a href="../../../GML_Overview/Structs.htm">struct</a> 推送到数组中。最后，使用 <span class="inline3_func"><a href="vertex_freeze.htm">vertex_freeze</a></span> 冻结顶点缓冲区，以便可以更快地将其提交给 GPU。</p>
+  <p>在 Draw 事件中，所有顶点组均通过在 <a href="../../../GML_Overview/Language_Features/repeat.htm">repeat</a> 循环内调用 <span class="inline3_func"><span data-field="title" data-format="default">vertex_submit_ext</span></span> 来单独提交。如果任何组不可见，则会跳过该组并检查下一组。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Primitives_And_Vertex_Formats.htm">基元和顶点格式</a></div>
+        <div>Next:&nbsp;<a href="draw_primitive_begin.htm">draw_primitive_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_submit_ext
+-->
+  <!-- TAGS
+vertex_submit_ext
+-->
+
+</body></html>

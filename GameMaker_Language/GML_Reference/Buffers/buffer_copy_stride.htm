@@ -1,0 +1,253 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../..";
+    gCommonRootRelPath = "../../..";
+    gTopicId = "8.2.2.18.0_21";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>buffer_copy_stride</title>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css">
+  <script src="../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Bart Teunis">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="buffer_copy_stride">
+  <meta name="search-keywords" content="buffer_copy_stride">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Buffers/buffer_copy_from_vertex_buffer.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Buffers/buffer_copy.htm"></head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="buffer_copy_stride">
+        <span>buffer_copy_stride</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">buffer_copy_stride</span></h1>
+  <p>此函数将给定数量的项目从源缓冲区复制到目标缓冲区，其中所有项目都具有相同的字节大小，并且在源缓冲区和目标缓冲区中均匀地间隔开不同数量的字节。</p>
+  <p>您可以将此函数与以结构化方式存储项目及其属性的缓冲区一起使用，例如游戏数据、顶点数据或任何其他已知格式的数据。</p>
+  <div data-conref="../../../assets/snippets/Note_Buffer_Copy_NoSame.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 您不能复制到同一缓冲区。</p>
+
+</div>
+  <p><img class="center" height="388" src="../../../assets/Images/Scripting_Reference/GML/Reference/Buffers/buffer_copy_stride_schematic.png" width="1231"></p>
+  <p>属于上图的函数调用如下所示：<span class="inline2"><span data-field="title" data-format="default">buffer_copy_stride</span>(src_buffer, 6, 2, 6, 3, dest_buffer, 8, 2);</span></p>
+  <p>您可以将源偏移量解释为两个偏移量的总和：项目数据开头的偏移量和项目内的偏移量 (即要复制项目的哪个属性)。</p>
+  <h3>Stride</h3>
+  <p>步幅是从一个项目到下一个项目的字节数。正值向前移动，负值向后移动。</p>
+  <p>例如，对于 <span data-keyref="GameMaker Name">GameMaker</span> 的 <a href="../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm#passthrough_vertex_format"> 默认顶点格式 </a>，步幅值为 <span data-keyref="Const_DefaultVertexFormat_Bytesize">24</span>(3*4+4*1+2*​​4)。从缓冲区中的一个 (x, y, z) 位置移动到下一个位置的字节数为 <span data-keyref="Const_DefaultVertexFormat_Bytesize">24</span>，从一个颜色值移动到下一个颜色值的字节数也是 <span data-keyref="Const_DefaultVertexFormat_Bytesize">24</span>，以及从一个 UV 移动到下一个 UV 的字节数。</p>
+  <p>您可以通过更改偏移量 " 选择 " 要复制的属性，同时步幅保持不变：</p>
+  <p><img class="center" height="260" src="../../../assets/Images/Scripting_Reference/GML/Reference/Buffers/buffer_copy_stride_stride.png" width="1280"></p>
+  <h3>怎么运行的</h3>
+  <ul class="Disc">
+    <li>该函数首先从源缓冲区的开头移动 <span class="inline2">src_offset</span> 字节，从目标缓冲区的开头移动 <span class="inline2">dest_offset</span> 字节。</li>
+    <li>然后，它会重复 <span class="inline2">src_count</span> 次以下操作：<ul><li> 将 <span class="inline2">src_size</span> 字节数据从源缓冲区中的当前偏移量复制到目标缓冲区中的当前偏移量。</li><li> 在源缓冲区中向左或向右移动 <span class="inline2">src_stride</span>  个字节 (具体取决于 <span class="inline2">src_stride</span> 的符号)，在目标缓冲区中向左或向右移动 <span class="inline2">dest_stride</span> 个字节。</li></ul></li>
+  </ul>
+  <h3>使用说明</h3>
+  <ul class="Disc">
+    <li>步幅值可以大于项目实际使用的字节数。中间的这些字节可能包含其他数据或根本不包含有用的数据。</li>
+    <li>通过将 <span class="inline2">dest_stride</span> 设置为大于 <span class="inline2">src_size</span> 的值，您可以在写入目标缓冲区的值之间插入 " 间隙"。</li>
+    <li>对于固定大小缓冲区 (<span class="inline2">buffer_fixed</span>) 或非换行缓冲区，复制会在到达缓冲区末尾时停止。对于设置为换行 (<span class="inline2">buffer_wrap</span>) 的缓冲区，复制将从缓冲区的开头继续。</li>
+  </ul>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">buffer_copy_stride</span>(src_buffer, src_offset, src_size, src_stride, src_count, dest_buffer, dest_offset, dest_stride);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>src_buffer</td>
+        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="buffer_create.htm">Buffer</a></span></td>
+        <td>包含源数据的缓冲区</td>
+      </tr>
+      <tr>
+        <td>src_offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>源缓冲区中开始复制字节的偏移量 (以字节为单位)。如果为负数，则从缓冲区大小中减去它。</td>
+      </tr>
+      <tr>
+        <td>src_size</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要复制的单个项目的大小 (以字节为单位)</td>
+      </tr>
+      <tr>
+        <td>src_stride</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>两个项目之间的字节数。该值可以为负数并设置为 0。</td>
+      </tr>
+      <tr>
+        <td>src_count</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>要复制的项目数</td>
+      </tr>
+      <tr>
+        <td>dest_buffer</td>
+        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="buffer_create.htm">Buffer</a></span></td>
+        <td>将数据复制到的缓冲区</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>用于写入数据的目标缓冲区中的偏移量 (以字节为单位)。该偏移量可以是负值。</td>
+      </tr>
+      <tr>
+        <td>dest_stride</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>目标缓冲区中两个项目之间的字节数。该值可以为负值。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>示例 1：基本用法</h4>
+  <p class="code">var _num_items = 200;<br>
+    var _attribute_size = buffer_sizeof(buffer_u16);<br>
+    var _itemsize_source = buffer_sizeof(buffer_f32) + _attribute_size;<br>
+    buff_source = buffer_create(_num_items * _itemsize_source, buffer_fixed, 1);<br>
+    buff_destination = buffer_create(_num_items * _attribute_size, buffer_fixed, 1);<br>
+    <br>
+    var _i = 0;<br>
+    repeat(_num_items)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;buffer_write(buff_source, buffer_f32, random_range(-100, 100));<br>
+    &nbsp;&nbsp; &nbsp;buffer_write(buff_source, buffer_u16, _i++);<br>
+    }<br>
+    <br>
+    <span data-field="title" data-format="default">buffer_copy_stride</span>(buff_source, 4, _attribute_size, _itemsize_source, _num_items, buff_destination, 0, _attribute_size);
+  </p>
+  <p>上面的代码显示了 <span class="inline3_func"><span data-field="title" data-format="default">buffer_copy_stride</span></span> 函数的基本用法。首先，定义几个临时变量，用于存储源缓冲区和目标缓冲区中的项目数、源缓冲区的步幅和项目的大小。然后创建两个固定大小的缓冲区，一个用于存储源数据，一个用于存储目标数据。对它们的引用分别存储在变量 <span class="inline2">buff_source</span> 和 <span class="inline2">buff_destination</span> 中。接下来，使用 <span class="inline3_func"><a href="buffer_write.htm">buffer_write</a></span> 将 200 个项目写入源缓冲区。每一项都包含一个介于 -100 到 100 之间的随机 <span class="inline2">buffer_f32</span> 值，后跟一个存储索引的 <span class="inline2">buffer_f16</span> 值。最后，使用 <span class="inline3_func"><span data-field="title" data-format="default">buffer_copy_stride</span></span> 将每个项目的第二个 <span class="inline2">buffer_f16</span> 元素复制到目标缓冲区。第一个 <span class="inline2">buffer_f16</span> 值写入字节 0( 因为 <span class="inline2">dest_offset</span> 设置为 0)，下一个值写入字节 2(<span class="inline2">dest_stride</span> 设置为 <span class="inline2">_itemsize</span>，即 2)、下一个到字节 4，依此类推。函数调用后，<span class="inline2">buff_destination</span> 将依次包含 <span class="inline2">buff_source</span> 中的 200 个 <span class="inline2">buffer_f16</span> 值，中间没有字节。</p>
+  <p>&nbsp;</p>
+  <h4>示例 2：负偏移量和负偏移量跨步</h4>
+  <p class="code">var _item_size = buffer_sizeof(buffer_f32);<br>
+    var _num_items = 100;<br>
+    <br>
+    var _i = 0;<br>
+    buff_numbers = buffer_create(_num_items * _item_size, buffer_fixed, 4);<br>
+    repeat(_num_items) buffer_write(buff_numbers, buffer_f32, _i++);<br>
+    <br>
+    buff_data = buffer_create(2048, buffer_fixed, 4);<br>
+    <span data-field="title" data-format="default">buffer_copy_stride</span>(buff_numbers, -_item_size, _item_size, -_item_size, _num_items, buff_data, 0, 12);
+  </p>
+  <p>上述代码首先初始化以下代码中使用的两个临时变量：单个项目的大小 <span class="inline2">_item_size</span> 和项目数量 <span class="inline2">_num_items</span>。然后，它创建一个固定大小的新缓冲区，为该数量的项目提供空间。字节对齐可以设置为 4，因为每个项目都以 4 字节的整数倍存储。接下来，<a href="../../GML_Overview/Language_Features/repeat.htm">repeat</a> 循环使用 <span class="inline3_func"><a href="buffer_write.htm">buffer_write</a></span> 将 0 到 100 的值写入缓冲区。之后，创建另一个 2048 字节的固定大小缓冲区并将其存储在变量 <span class="inline2">buff_data</span> 中。最后，调用 <span class="inline3_func"><span data-field="title" data-format="default">buffer_copy_stride</span></span> 将源缓冲区 <span class="inline2">buff_numbers</span> 中的数字写入目标缓冲区 <span class="inline2">buff_data</span>。由于源偏移量为负值，缓冲区中的最后一个数字是第一个要写入的数字。此外，由于源步幅为负值，数字会向后遍历。目标步幅为 12 可确保 <span class="inline2">buff_data</span> 中的数字间隔 12 个字节。因此，<span class="inline2">buff_data</span> 包含相反顺序的数字，每个数字之间有 12 个字节。</p>
+  <p>&nbsp;</p>
+  <h4>示例 3：步幅设置为 0</h4>
+  <p class="code">var _item_size = buffer_sizeof(buffer_f32);<br>
+    buff_source = buffer_create(_item_size, buffer_fixed, 4);<br>
+    buff_destination = buffer_create(16 * _item_size, buffer_fixed, 4);<br>
+    <br>
+    buffer_write(buff_source, buffer_f32, 1);<br>
+    <br>
+    <span data-field="title" data-format="default">buffer_copy_stride</span>(buff_source, 0, _item_size, 0, 4, buff_destination, 0, 5 * _item_size);
+  </p>
+  <p>上面的代码显示了如何使用步长值 0 来多次将相同的值复制到目标缓冲区。</p>
+  <p>首先，项目的大小设置为浮点数 (<span class="inline2">buffer_f32</span>) 的大小并存储在 <span class="inline2">_item_size</span> 中。接下来，使用固定大小和 4 对齐方式创建源缓冲区和目标缓冲区 (因为浮点数始终与 4 字节的倍数对齐)。源缓冲区只能存储单个浮点数，目标缓冲区可以存储 16 个浮点数。然后，值 <span class="inline2">1</span> 被写入源缓冲区。最后，使用 <span class="inline3_func"><span data-field="title" data-format="default">buffer_copy_stride</span></span> 将该值总共复制 4 次，目标步幅值为项目大小的 5 倍。函数完成后，<span class="inline2">buff_destination</span> 将包含 <a href="../Maths_And_Numbers/Matrix_Functions/matrix_build_identity.htm"> 单位矩阵 </a> 的值。</p>
+  <p>&nbsp;</p>
+  <h4>示例 4：交错来自多个缓冲区的数据</h4>
+  <p class="code_heading">Create Event</p>
+  <p class="code">vertex_format_begin();<br>
+    array_foreach([vertex_format_add_position_3d, vertex_format_add_colour, vertex_format_add_texcoord], script_execute);<br>
+    vertex_format = vertex_format_end();<br>
+    <br>
+    buff_positions_xyz = buffer_base64_decode("JqwCQwuLi0J5DIBBcQc3Q27Ar0NNpBZD+WSqQ8B9OEPB0YtD");<br>
+    buff_colours_rgba = buffer_base64_decode("Ud93/wghI//D2cr/");<br>
+    buff_uvs = buffer_base64_decode("9KQyP69/UT9Uxak+ybENPzKNZzwxS1A9");<br>
+    <br>
+    buff_vertex_data = buffer_create(3 * 24, buffer_fixed, 1);<br>
+    buffer_copy_stride(buff_positions_xyz, 0, 3 * 4, 3 * 4, 3, buff_vertex_data, 0, 24);<br>
+    buffer_copy_stride(buff_colours_rgba, 0, 4 * 1, 4 * 1, 3, buff_vertex_data, 12, 24);<br>
+    buffer_copy_stride(buff_uvs, 0, 2 * 4, 2 * 4, 3, buff_vertex_data, 16, 24);<br>
+    vb = vertex_create_buffer_from_buffer(buff_vertex_data, vertex_format);
+  </p>
+  <p class="code_heading">Draw Event</p>
+  <p class="code">vertex_submit(vb, pr_trianglelist, -1);</p>
+  <p>上面的示例展示了如何将作为属性存储在单独缓冲区中的数据连接在一起。数据被组合到单个缓冲区中，其中数据是 <a href="https://en.wikipedia.org/wiki/Interleaving_(data)"> 交错 </a> 的。</p>
+  <p>首先，在 Create 事件中，创建默认顶点格式并将其分配给实例变量 <span class="inline2">vertex_format</span>。然后，根据 Base64 编码数据创建包含属性数据的三个缓冲区：<span class="inline2">buff_positions_xyz</span> 存储 3 个顶点的 (x, y, z) 位置数据，<span class="inline2">buff_colours_rgba</span> 存储其 RGBA 颜色数据，<span class="inline2">buff_uvs</span> 他们的 UV 数据。每个属性的值依次存储，例如 <span class="inline2">buff_positions_xyz</span> 存储第一个顶点的 (x, y, z) 位置，然后是第二个顶点的 (x, y, z) 位置，然后是第三个顶点的位置，依此类推。</p>
+  <p>之后，创建另一个缓冲区 <span class="inline2">buff_vertex_data</span> 来存储交错的顶点数据。然后，对 <span class="inline3_func"><span data-field="title" data-format="default">buffer_copy_stride</span></span> 的三个调用中的每一个都会读取每个属性的值 (位置、颜色和 uv)，并将它们放置在目标缓冲区中的正确位置，为要写入的其他属性留出空间通过下一次调用该函数。最后根据缓冲区中的数据创建顶点缓冲区。</p>
+  <p>在 Draw 事件中，顶点缓冲区被提交。这将绘制一个三角形。</p>
+  <p><br>
+    
+  </p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="Buffers.htm">缓冲区</a></div>
+        <div>Next:&nbsp;<a href="buffer_copy_from_vertex_buffer.htm">buffer_copy_from_vertex_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_copy_stride
+-->
+  <!-- TAGS
+buffer_copy_stride
+-->
+
+</body></html>

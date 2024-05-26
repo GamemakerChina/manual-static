@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="part_system_global_space">
   <meta name="search-keywords" content="part_system_global_space">
   <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_colour.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_angle.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -80,8 +80,8 @@
 
   <h1><span data-field="title" data-format="default">part_system_global_space</span></h1>
   <p>该函数为给定的粒子系统启用全局空间粒子。</p>
-  <p>禁用全局空间粒子时（默认设置），粒子的位置相对于粒子系统的位置。 移动这样的粒子系统时，其粒子将随之移动。</p>
-  <p>启用全局空间允许您移动粒子系统，而不移动其中的粒子。这可以用于例如要创建粒子轨迹，执行以下操作：</p>
+  <p>当全局空间粒子被禁用 (默认) 时，粒子的位置 <em> 相对于 </em> 粒子系统的位置。当你移动这样的粒子系统时，它的粒子也会随之移动。</p>
+  <p>启用全局空间允许您移动粒子系统而不移动其中的粒子。这可以用于例如创建粒子轨迹：</p>
   <table>
     <colgroup>
       <col style="width:50%">
@@ -102,8 +102,8 @@
   </table>
   <p>在上面的例子中，单个粒子在粒子系统中的相同位置创建，粒子系统本身在每帧移动到船的位置。</p>
   <p>第一个视频显示禁用了全局空间，因此所有粒子都粘在其系统上，但在第二个视频中，粒子停留在创建它们的房间位置。</p>
-  <p>启用后，可以分别使用 <span><span>part_system_position<span><span> 和 <span><span>part_system_angle</span></span> 移动和旋转 </span> 粒子系统 </span>，而无需移动粒子系统中的单个粒子。</span></span></p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>如果在内部已有粒子的粒子系统上启用<span>全局空间，您可能会看到这些现有粒子从相对于粒子系统切换到相对于房间原点时跳到屏幕上的新位置。<span><span></span></span></span></p>
+  <p>启用后，您可以分别使用 <span class="inline3_func"><a href="part_system_position.htm">part_system_position</a></span> 和 <span class="inline3_func"><a href="part_system_angle.htm">part_system_angle</a></span> 移动和旋转粒子系统，而无需移动其中的各个粒子。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您在内部已有粒子的粒子系统上启用全局空间，则您可能会看到这些现有粒子在从相对于粒子系统切换到相对于粒子系统时跳转到屏幕上的新位置。相对于房间原点。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">part_system_global_space</span>(ind, enable);</p>
@@ -121,12 +121,12 @@
       </tr>
       <tr>
         <td>ind</td>
-        <td><span data-keyref="Type_ID_PartSys"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">Particle System Instance</a></span></td>
+        <td><span data-keyref="Type_ID_PartSys"><a target="_blank" href="part_system_create.htm">Particle System Instance</a></span></td>
         <td>粒子系统的指数</td>
       </tr>
       <tr>
         <td>enable</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td>是否启用或禁用全局空间粒子</td>
       </tr>
     </tbody>
@@ -156,10 +156,10 @@
   <p class="code">part_emitter_destroy(pe);<br>
     part_system_destroy(ps);<br>
     part_type_destroy(pt);</p>
-  <p>上面的<span>代码<span>显示了如何将粒子系统添加到实例中，</span></span></p>
-  <p>在“创建”事件中，将设置一个基本粒子系统，并向其中添加一个发射器。使用 <span class="inline3_func"><span data-field="title" data-format="default">part_system_global_space</span></span>，它被配置为在全局空间中拥有其粒子。 还添加了一个基本粒子类型，该粒子类型配置为具有光斑形状（<span class="inline2">pt_shape_flare</span>）、可以是 0 到 360 之间的任意随机值的起始方向、每步 0.1 到 0.2 像素之间的任意起始速度以及 0.3 的比例因子。</p>
-  <p>在Step事件中，粒子系统的位置和角度分别设置为实例的（<a href="../../../Asset_Management/Instances/Instance_Variables/x.htm">x</a>，<a href="../../../Asset_Management/Instances/Instance_Variables/y.htm">y</a>）位置及其<a href="../../../Asset_Management/Instances/Instance_Variables/direction.htm">方向</a>。</p>
-  <p>最后，在清理事件中，粒子发射器、系统和类型将被销毁，以防止内存泄漏。</p>
+  <p>上面的代码显示了如何向实例添加粒子系统，以便在实例移动时留下粒子轨迹。</p>
+  <p>在 " 创建 " 事件中，将设置一个基本粒子系统，并添加一个发射器。使用 <span class="inline3_func"><span data-field="title" data-format="default">part_system_global_space</span></span>，将其配置为将其粒子置于全局空间中。还添加了基本粒子类型，其配置为具有耀斑形状 (<span class="inline2">pt_shape_flare</span>)、起始方向 (可以是 0 到 360 之间的任意随机值)、起始速度 (每步 0.1 到 0.2 像素之间的任意值) 以及比例因子为 0.3。</p>
+  <p>在 Step 事件中，粒子系统的位置和角度分别设置为实例的 (<span class="inline2"><a href="../../../Asset_Management/Instances/Instance_Variables/x.htm">x</a></span>,<span class="inline2"><a href="../../../Asset_Management/Instances/Instance_Variables/y.htm">y</a></span>) 位置及其 <span class="inline2"><a href="../../../Asset_Management/Instances/Instance_Variables/direction.htm"> direction </a></span>。</p>
+  <p>最后，在 清理事件中，粒子发射器、系统和类型都会被销毁，以防止内存泄漏。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -169,7 +169,7 @@
         <div>Next:&nbsp;<a href="part_system_colour.htm">part_system_colour</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 part_system_global_space

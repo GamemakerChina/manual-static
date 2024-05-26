@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="part_emitter_interval">
   <meta name="search-keywords" content="part_emitter_interval">
   <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Textures/Textures.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_delay.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -80,7 +80,7 @@
 
   <h1><span data-field="title" data-format="default">part_emitter_interval</span></h1>
   <p>此函数设置给定发射器在流模式下工作时两个连续突发之间的间隔。</p>
-  <p>每次间隔定时器超时时，即在每个突发之后，选择间隔的新值作为<span class="inline2">interval_min</span>和<span class="inline2">interval_max</span>之间的随机值。</p>
+  <p><span> 每次间隔计时器超时 (即每次突发后)，都会选择一个新的间隔值作为 </span>interval_min<span class="inline2"> 和 </span>interval_max<span class="inline2"> 之间的随机值。</span></p>
   <div data-conref="../../../../../assets/snippets/Note_Particle_Timer_Paused_For_Disabled_Emitter.hts">
   <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>使用<span class="inline3_func"><a href="part_emitter_enable.htm">part_emitter_enable</a></span>禁用发射器时，倒计时定时器暂停。</p>
 
@@ -102,27 +102,27 @@
       </tr>
       <tr>
         <td>ps</td>
-        <td><span data-keyref="Type_ID_PartSys"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">Particle System Instance</a></span></td>
-        <td>The index&nbsp;<span>of the particle system the emitter is in</span></td>
+        <td><span data-keyref="Type_ID_PartSys"><a target="_blank" href="../Particle_Systems/part_system_create.htm">Particle System Instance</a></span></td>
+        <td>发射器所在粒子系统的索引</td>
       </tr>
       <tr>
         <td>ind</td>
-        <td><span data-keyref="Type_ID_PartEmitter"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_create.htm">Particle Emitter ID</a></span></td>
-        <td>The index&nbsp;<span>of the particle emitter</span></td>
+        <td><span data-keyref="Type_ID_PartEmitter"><a target="_blank" href="part_emitter_create.htm">Particle Emitter ID</a></span></td>
+        <td>粒子发射器的索引</td>
       </tr>
       <tr>
         <td>interval_min</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The minimum p<span>ossible value f<span>or the interval, expressed in <span class="inline2">interval_unit</span></span></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>间隔的最小可能值，以 <span class="inline2">interval_unit</span> 表示</td>
       </tr>
       <tr>
         <td>interval_max</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>The maximum p<span>ossible value f<span>or the interval, expressed in <span class="inline2">interval_unit</span></span></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>间隔的最大可能值，以 <span class="inline2">interval_unit</span> 表示</td>
       </tr>
       <tr>
         <td>interval_unit</td>
-        <td><span data-keyref="Type_Constant_TimeSource_Unit"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm">Time Source Unit Constant</a></span></td>
+        <td><span data-keyref="Type_Constant_TimeSource_Unit"><a target="_blank" href="../../../Time_Sources/Time_Source_Units.htm">Time Source Unit Constant</a></span></td>
         <td>表示间隔值的单位</td>
       </tr>
     </tbody>
@@ -165,7 +165,7 @@
         <div>Next:&nbsp;<a href="part_emitter_exists.htm">part_emitter_exists</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 part_emitter_interval

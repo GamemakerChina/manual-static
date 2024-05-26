@@ -79,19 +79,29 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>重定义快捷键首选项</h1>
-  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Keys_Preferences.png"><strong>重定义快捷键首选项</strong>部分允许您更改在 <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;IDE中提供的各种<a href="../../IDE_Navigation/Keyboard_Shortcuts.htm">键盘快捷键的映射</a>。</p>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Keys_Preferences.png">The <strong>Redefine Keys</strong> section of the Preferences allows you to change the mappings for the various&nbsp;<a href="../../IDE_Navigation/Keyboard_Shortcuts.htm">Keyboard Shortcuts</a> provided in the&nbsp;<a href="../../The_IDE/The_IDE.htm">GameMaker IDE</a>.</p>
   <h2>搜索</h2>
-  <p>顶部有搜索栏，可用于通过输入名称(如&nbsp;"<strong>复制</strong>")、组合键(如"<strong>CTRL+C</strong>")或位置(如"<strong>文本编辑器</strong>")来查找特定命令。</p>
-  <p>启用搜索字段旁边的<img class="icon" src="../../assets/Images/Icons/Redefine_Keys_Search_Side_Button.png">按钮允许您通过输入快捷方式进行搜索。在启用此功能时按下的任何键都将作为快捷键而不是普通文本输入。</p>
-  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Search_Modes.gif"></p>
+  <p>At the top you have the search bar, which you can use to look for specific commands by entering a name (e.g.&nbsp;"<strong>Copy</strong>"), a key combination (e.g. "<strong>CTRL+C</strong>") or a location (e.g. "<span data-keyref="Code_Editor2_Name">Code Editor</span>").</p>
+  <p>Enabling the&nbsp;<img alt="Redefine Keys Search Side Button" class="icon" src="../../assets/Images/Icons/Redefine_Keys_Search_Side_Button.png"> button next to the search field allows you to search by entering a shortcut. Any keys you press while this is enabled will be entered as a shortcut instead of regular text.</p>
+  <p><img alt="Redefine Keys Search Modes" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Search_Modes.gif"></p>
   <p>在搜索栏旁边有<strong>筛选</strong>菜单，该菜单将在本页后面的单独部分中介绍。</p>
   <h2>命令列表</h2>
-  <p>命令列表显示可以重新映射的所有可用快捷键，并根据这些快捷键的位置划分为不同的类别。&nbsp;单击此列表中的任何位置将显示可在其中使用的命令：</p>
-  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Keys_Preferences_Expanded.png">每个命令的信息分为两列：</p>
+  <p>"命令列表"显示所有可以重新映射的可用快捷键，并根据这些快捷键的位置分为不同的类别。</p>
+  <p>某些快捷方式出现在多个位置。在一个位置更改组合键也会更改其他位置的组合键，因为它们都链接到同一个快捷方式。例如，"添加帧"列在"图像编辑器"和"精灵编辑器"下。重新映射其中一个将重新映射它们。</p>
+  <p>单击列表中的任何位置将显示可在其中使用的命令：</p>
+  <p><img alt="Redefine Keys Preferences Expanded" class="center" height="633" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Keys_Preferences_Expanded.png" style="cursor: nesw-resize;" width="1119">每个命令的信息分为两列：</p>
   <ul class="colour">
     <li><strong>命令</strong>：这是命令/快捷方式的名称，描述它执行的操作。</li>
-    <li><strong>快捷键</strong>：这将显示命令的当前键盘映射。只需按下键盘上适当的组合键(它们必须同时按住，类似于实际使用快捷键的方式)，您就可以&nbsp;<img class="icon" src="../../assets/Images/Icons/Icon_LMB.png">双击该列中的任何项来重新分配该命令。一旦您松开新的组合键，它就会被注册并应用于命令。<figure><img alt="GIF demonstrating changing a shortcut" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Example.gif" style="cursor: nwse-resize;"><figcaption>双击快捷键以输入新的快捷键！</figcaption></figure>在编辑命令时按&nbsp;<img alt="Escape" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" title="" width="55">将使您退出编辑模式，并且不会修改所选命令。</li>
+    <li><strong>Keys</strong>: This displays the current keyboard mapping for the command. You can&nbsp;<img class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> double click on any item in this column to reassign that command by simply pressing the appropriate combination of keys on the keyboard (they must be held simultaneously, similar to how the shortcut would actually be used) or by entering a <a href="../../IDE_Navigation/IDE_Input.htm#hotkey_chords" id="">hotkey chord</a>. As soon as you release your new key combination, it will be registered and applied to the command.
+      <figure><img alt="GIF demonstrating changing a shortcut" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Example.gif" style="cursor: nwse-resize;">
+        <figcaption>Double-click on a shortcut to enter a new one!</figcaption>
+      </figure>
+      <figure><img alt="GIF demonstrating entering a hotkey chord" class="center" height="243" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Example_Hotkey_Chord.gif" style="cursor: nwse-resize;" width="633">
+        <figcaption>Enter a sequence of alphanumeric keys while holding down one or more modifier keys to create a hotkey chord!</figcaption>
+      </figure>
+    </li>
   </ul>
+  <p>Pressing&nbsp;<img alt="Escape" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" title="" width="55"> while editing a command will bring you out of edit mode and will not modify the selected command.</p>
   <p>您可以更改命令列表的排序，方法是：<img class="icon" src="../../assets/Images/Icons/Icon_LMB.png">单击列标题("命令"或"快捷键")以使用该列中的值对列表进行排序，每次单击时交替升序和降序。</p>
   <h2>冲突窗口</h2>
   <p>如果您尝试设置已用于其他命令的组合键，您将看到一个特殊的"冲突"窗口：<br><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Keys_Clash_Window.png">此窗口将显示已在使用您正在尝试使用的组合键的命令的位置和名称。如果该组合键被&nbsp;多个命令使用，它将在&nbsp;列表中显示所有这些组合键。<br><br>这里有两个选项，<strong>"取消"</strong>和<strong>"覆盖(全部)"和"重新分配"</strong>：</p>
@@ -99,7 +109,10 @@
     <li>按下<strong>"取消"</strong>将关闭碰撞窗口，并且不会对任何命令进行任何更改。</li>
     <li>按下<strong>"覆盖(全部)并重新分配"</strong>将为您选择的命令分配新的按键组合，并<strong>清除</strong>以前使用相同组合的所有其他命令的绑定。</li>
   </ul>
-  <p>使用<strong>"覆盖并重新分配"</strong>后，GameMaker将 在命令列表中突出显示&nbsp;被覆盖的命令&nbsp;，以便您可以为其分配&nbsp;新的组合键。如果多个命令被覆盖，它将更改筛选器以仅显示这些命令，以便您可以对它们应用新的快捷方式。点击"清除"即可清除此过滤器。<br><br>如果您希望对所选命令使用不同的绑定，您可以展开<strong>"建议的自由键"</strong>部分，以查看 IDE 中任何地方都不使用的组合键的列表。单击这些组合中任何一个组合旁边的<strong>"使用"</strong>会将其指定给选定的命令并解决碰撞。</p>
+  <p>After using <strong>"Override and Reassign"</strong>, <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;will highlight&nbsp;the overridden command&nbsp;in the Command List so you can assign a new key combination&nbsp;to it. In case multiple commands were overridden, it will change the filter to display only those commands so you can apply new shortcuts to them. This filter can be cleared by clicking on "Clear".<br>
+    <br>
+    If you wish to use a different binding for the selected command, you can expand the <strong>"Suggested Free Keys"</strong> section to see a list of key combinations that are not used anywhere in the IDE. Clicking on<strong> "Use"</strong> next to any one of these combinations will assign it to the selected command and solve the clash.
+  </p>
   <h2 id="h">筛选菜单</h2>
   <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Keys_Filter_Menu.png">过滤器菜单允许您指定应在命令列表中显示的命令类型。在顶部，您有两个选项：</p>
   <ul class="colour">
@@ -109,7 +122,7 @@
   <p>下面有许多选项，允许您指定命令列表中显示的位置。默认情况下，选中<strong>"所有位置"</strong>，这意味着您将看到来自 IDE 中所有位置的命令。取消选中<strong>"所有位置"</strong>将取消选中其下方的所有其他项目，允许您手动选择要查看的项目例如，取消选中所有项目，然后选中&nbsp;<strong>"图像编辑器"</strong>将仅显示可在图像编辑器中使用的命令。</p>
   <h2>清除命令</h2>
   <p>双击现有的组合键将允许您更改它，但在执行此操作时，您可以单击命令列表下方的<strong>"清除"</strong>按钮以清除该命令的绑定。</p>
-  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Clear_Button.png">如果您意外覆盖了某些键盘快捷键并希望将其重置为其默认设置，您可以单击首选项窗口顶部的"恢复默认设置"按钮将所有命令重置为其默认映射，或检查<a href="../../IDE_Navigation/Keyboard_Shortcuts.htm">键盘快捷键</a>页面以检查默认绑定并手动恢复您的命令。</p>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Redefine_Clear_Button.png">如果您不小心覆盖了某些键盘快捷键，并希望将其重置为默认设置，您可以单击首选项窗口顶部的"恢复默认值"按钮，将所有命令重置为默认映射，或检查<a href="../../IDE_Navigation/Keyboard_Shortcuts.htm">键盘快捷键</a>页面，检查默认绑定并手动恢复命令。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -120,7 +133,7 @@
         <div style="float:right">Next: <a href="Anim_Curve_Editor_Preferences.htm">动画曲线编辑器首选项</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Redefine Keys,

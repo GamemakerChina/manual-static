@@ -78,11 +78,18 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>texture_prefetch</h1>
-  <p>此函数可用于"预取"一个纹理页面或一组纹理页面，即：在需要时将其加载到VRAM中。您可以提供唯一的<b>纹理页Id</b>(由<span class="inline">texturegroup_*</span>函数返回)来预取单个页面，也可以提供<b>纹理组名称</b>(如<a href="../../../../Settings/Texture_Groups.htm">纹理组编辑器</a>中所定义)来预取组中的所有纹理页面。</p>
+  <h1><span data-field="title" data-format="default">texture_prefetch</span></h1>
+  <p>该函数可用于 " 预取 " 一个纹理页面或一组纹理页面，即：在需要时将它们加载到 VRAM 中。</p>
+  <p>您可以提供唯一的 <b> 纹理页面 ID</b>( 由 <span class="inline3_func">texturegroup_*</span> 函数返回) 来预取单个页面，也可以提供 <b> 纹理组名称 </b>( 如 <a href="../../../../Settings/Texture_Groups.htm">Texture Group Editor</a>) 来预取组中的所有纹理页面。</p>
+  <div data-conref="../../../../assets/snippets/Note_Sprite_Prefetch_To_Avoid_Performance_Hit.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;There is a performance hit as the texture is uploaded to texture memory on most devices, so it's recommended that you call&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">texture_prefetch</span></span>
+    <font face="menlo, consolas, monospace"><span style="font-size: 17px;"><b> </b></span></font>on any required graphics at the start of a level to avoid any stalls.
+  </p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">texture_prefetch(tex_id);</p>
+  <p class="code"><span data-field="title" data-format="default">texture_prefetch</span>(tex_id);</p>
   <table>
     <tbody>
       <tr>
@@ -92,7 +99,7 @@
       </tr>
       <tr>
         <td>tex_id</td>
-        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span>&nbsp;or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span>&nbsp;or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>纹理页面指针<i>或</i>纹理组名称(字符串)</td>
       </tr>
     </tbody>
@@ -110,7 +117,6 @@
   <p>以上代码将预取纹理组"MainMenu"下的所有纹理页面。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
@@ -118,7 +124,7 @@
         <div style="float:right">Next:&nbsp;<a href="texture_flush.htm">texture_flush</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 texture_prefetch

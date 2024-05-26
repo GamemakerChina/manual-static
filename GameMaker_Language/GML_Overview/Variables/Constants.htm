@@ -85,81 +85,86 @@
   <h2 id="h">Macros 宏</h2>
   <p>虽然不完全是变量，但宏在使用方式上与它们相似，即：它们是命名的值，你可以在整个代码中使用它们来替换<a class="tooltip" title="在计算机编程中，术语“硬编码”用于描述被认为是固定的并且不太可能更改的代码。硬编码功能以无法稍后修改的方式内置于硬件或软件中。例如，如果您要制作游戏并将玩家的健康状况“硬编码”为10，那么您将在整个游戏代码中使用值10，而不是使用变量。">硬编码的</a>值。基本上，宏是一个持有表达式的命名变量。你可以用<a href="../Script_Functions.htm">脚本编辑器</a>来定义你自己的宏，然后在你的代码和动作中使用它们，就像它们是普通变量一样，唯一不同的是，它们<i>不能在游戏中被改变</i>。</p>
   <p>宏的语法结构如下所示：</p>
-  <p class="code">#macro&nbsp;<i>&lt;variable&gt;</i>&nbsp;<i>&lt;expression&gt;</i></p>
-  <p>例如，假设你定义了以下宏 "<span class="inline">total_weapons</span>"：</p>
-  <p class="code">#macro total_weapons 10</p>
+  <p class="code">#macro&nbsp;<i>&lt;NAME&gt;</i>&nbsp;<i>&lt;VALUE&gt;</i></p>
+  <p>例如，假设您定义以下宏"<span class="inline">TOTAL_WEAPONS</span>"：</p>
+  <p class="code">#macro TOTAL_WEAPONS 10</p>
   <p class="note_heading">宏语法...</p>
-  <p class="note">必须正确使用上面显示的语法来定义宏。您不能使用等号(如在变量中)或在末尾加上分号(如在常规语句中)。这样做会导致您的宏定义失效。<br><br>例如，这不是定义宏的正确方法：<br><br><span class="inline2"># macro total_weapons= 10;</span><br><br>删除等号和冒号将使其成为有效的宏定义。</p>
+  <p class="note">必须正确使用上面显示的语法来定义宏。您不能使用等号(如在变量中)或在末尾放置分号(如在常规语句中)。这样做会导致您的宏定义无效。<br><br>例如，这不是定义宏的正确方法：<br><br><span class="inline2">#macro TOTAL_WEAPONS = 10;</span><br><br>删除等号符号和冒号将使其成为有效的宏定义。<br><br><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>建议的 GML 命名约定建议使用<span class="inline2">UPPERCASE_NAMING</span>作为常量，但您也可以使用小写字母或您认为合适的任何其他命名约定喜欢。</p>
   <p>然后您可以在代码中这样使用它：</p>
   <p class="code">pos++;<br>
     <br>
-    if (pos&nbsp;&gt;= total_weapons)<br>
+    if (pos&nbsp;&gt;= TOTAL_WEAPONS)<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;pos = 0;<br>
     }
   </p>
   <p>请注意，你将无法更改常量的值，所以像这样的代码会导致游戏崩溃：</p>
-  <p class="code">total_weapons = 11;</p>
+  <p class="code">TOTAL_WEAPONS = 11;</p>
   <p>你可以在代码或脚本中的任何地方定义宏，它将被<i>预编译</i>并像从一开始就存在一样包含在游戏中，但我们建议你创建专用的脚本资源并在其中定义所有宏。以后组织和调试会更容易！</p>
-  <p>如果需要在运行时更改宏的值，则可能应该将其设置为<a href="Global_Variables.htm">全局变量</a>，因为这些变量可以在游戏期间从代码中更改，除非您将宏设置为<span><a href="../Runtime_Functions.htm">运行时</a></span><a href="../Runtime_Functions.htm">函数</a>。通过将宏设置为函数，这意味着每次使用宏时都会调用该函数。例如：</p>
-  <p class="code">#macro col make_colour_hsv(irandom(255), 255, 255)</p>
+  <h3>表达式为宏</h3>
+  <p>如果您需要在运行时更改宏的值，那么您可能应该将其设为<a href="Global_Variables.htm">全局变量</a>，因为这些可以在游戏期间从代码中更改，除非您将宏设置为<a href="../Runtime_Functions.htm">运行时函数</a>或任何<a href="../Expressions_And_Operators.htm">表达式</a>。通过将宏设置为函数/表达式，意味着每次使用宏时都会调用该函数/表达式。例如：</p>
+  <p class="code">#macro COL&nbsp;make_colour_hsv(irandom(255), 255, 255)</p>
   <p>然后，您可以将此宏调用为类似以下内容：</p>
-  <p class="code">image_blend = col;</p>
+  <p class="code">image_blend = COL;</p>
   <p>使用此代码将使图像在每次使用宏时混合不同的颜色。值得注意的是，您还可以使用<span class="inline"><span class="inline">\</span></span>字符将宏拆分到多行，以显示换行符在哪里。例如：</p>
-  <p class="code">#macro hello show_debug_message("Hello" + \<br>
+  <p class="code">#macro HELLO show_debug_message("Hello" + \<br>
     string(player_name) + \<br>
     ", how are you today?");</p>
   <p>这纯粹是装饰性的，因为像这样拆分宏在使用时对最终宏的结果没有任何影响，只是为了在代码行较长的宏上提供对多行文本的支持。</p>
-  <p>宏的一个非常重要的特性是，它们可以定义为与明确的 <a href="../../../Settings/Configurations.htm"> 配置 </a>(configs)，一起使用，这意味着您可以具有相同的宏名称，但根据当前选择的配置为其赋予不同的值。例如，假设您有一个用于 Android 广告的配置和另一个用于 iOS 广告的配置，那么您可以定义一个宏来保存所需的应用程序 ID 值：</p>
-  <p class="code">#macro ad_id ""<br>
-    #macro Android:ad_id "com.yoyogames.googlegame"<br>
-    #macro iOS:ad_id "com.yoyogames.appstoregame"</p>
+  <h3 id="h1">配置覆盖</h3>
+  <p>宏的一项非常重要的功能是，可以将它们定义为与特定的<a href="../../../Settings/Configurations.htm">配置</a>一起使用，这意味着您可以在给定配置中运行时覆盖宏的值。</p>
+  <p>例如，假设您有一个用于 Android 广告的配置和另一个用于 iOS 广告的配置，那么您可以定义一个宏来保存所需的应用 ID 值，并为每个配置覆盖它：</p>
+  <p class="code">#macro AD_ID ""<br>
+    #macro Android:AD_ID "com.yoyogames.googlegame"<br>
+    #macro iOS:AD_ID "com.yoyogames.appstoregame"</p>
   <p>配置不一定必须以平台命名。你可能会例如还有游戏演示版本的特定配置：</p>
-  <p class="code">#macro&nbsp;<span>DemoVersion:ad_id ""</span></p>
-  <p>如你所见，你先给配置名称，然后是冒号<span class="inline">:</span>，然后是宏名称和值。请注意，冒号<span class="inline">:</span>与配置名称或宏名称之间不能有空格，否则会出现错误。</p>
+  <p class="code">#macro&nbsp;DemoVersion:AD_ID ""</p>
+  <p>如您所见，您首先给出配置名称，然后给出冒号<span class="inline">:</span>，然后给出宏名称和覆盖值。请注意，冒号<span class="inline">:</span>与配置名称或宏名称之间不能有任何空格，否则您将收到错误。</p>
+  <p>宏覆盖由子配置继承。假设您有以下配置设置：</p>
+  <p><img class="center" src="../../../assets/Images/Settings/Configs_Children.png">此处，为<span class="inline2">MobileAds</span>设置的任何宏覆盖都将由<span class="inline2">MobileNoAds</span>继承，您可以通过为该子配置设置宏来覆盖继承的值。</p>
   <h2 id="enumhead">Enums 枚举</h2>
   <p>枚举是一个"枚举器"它本质上允许您使用常量值列表创建自己的有限数据类型。它们的结构如下：</p>
-  <p class="code">enum <i>&lt;variable&gt;</i><br>
+  <p class="code">enum <i>&lt;NAME&gt;</i><br>
     {<br>
-    <i>&nbsp; &nbsp; &lt;constant&gt;</i> [= <i>&lt;value&gt;</i>],<br>
-    <i>&nbsp; &nbsp; &lt;constant&gt;</i> [= <i>&lt;value&gt;</i>],<br>
+    <i>&nbsp; &nbsp; &lt;MEMBER&gt;</i> [= <i>&lt;VALUE&gt;</i>],<br>
+    <i>&nbsp; &nbsp; &lt;<i>MEMBER</i>&gt;</i> [= <i>&lt;<i>VALUE</i>&gt;</i>],<br>
     &nbsp; &nbsp; // etc...<br>
     }
   </p>
   <p>在以下示例中，我们为彩虹的颜色创建一个枚举，并为其指定各种常量和默认值：</p>
-  <p class="code">enum rainbowcolours<br>
+  <p class="code">enum RAINBOW<br>
     {<br>
-    &nbsp; &nbsp; red,<br>
-    &nbsp; &nbsp; orange,<br>
-    &nbsp; &nbsp; yellow,<br>
-    &nbsp; &nbsp; green,<br>
-    &nbsp; &nbsp; blue,<br>
-    &nbsp; &nbsp; indigo,<br>
-    &nbsp; &nbsp; violet<br>
+    &nbsp; &nbsp; RED,<br>
+    &nbsp; &nbsp; ORANGE,<br>
+    &nbsp; &nbsp; YELLOW,<br>
+    &nbsp; &nbsp; GREEN,<br>
+    &nbsp; &nbsp; BLUE,<br>
+    &nbsp; &nbsp; INDIGO,<br>
+    &nbsp; &nbsp; VIOLET<br>
     }</p>
-  <p>枚举条目只能是<b>整数</b>或<b><a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a><span class="glossextra"> </span>，前面的枚举计算为整数</b>，默认情况下从0往上编号，所以我们上面给出的示例将默认为<span class="inline">red = 0</span>， <span class="inline">orange = 1</span>， <span class="inline">yellow = 2</span>，等等……</p>
+  <p>枚举条目只能是<b>整数</b>或<b><a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a><span class="glossextra"></span>，之前的枚举计算结果为整数</b>，并且默认情况下从 0 开始编号，因此我们给出的示例以上默认为<span class="inline">RED = 0</span>、<span class="inline">ORANGE = 1</span>、<span class="inline">YELLOW = 2</span>等...</p>
   <p>还可以在创建时为枚举变量指定值：</p>
-  <p class="code">enum&nbsp;enum_test<br>
+  <p class="code">enum&nbsp;ENUM_TEST<br>
     {<br>
-    &nbsp; &nbsp; val = 10;<br>
+    &nbsp; &nbsp; VAL = 10<br>
     }<br>
     <br>
-    enum rainbowcolours<br>
+    enum RAINBOW<br>
     {<br>
-    &nbsp; &nbsp; red = 5,<br>
-    &nbsp; &nbsp; orange = 5 * 2,<br>
-    &nbsp; &nbsp; yellow = 15,<br>
-    &nbsp; &nbsp; green = 20,<br>
-    &nbsp; &nbsp; blue = 25,<br>
-    &nbsp; &nbsp; indigo = 30,<br>
-    &nbsp; &nbsp; violet = 35 * enum_test.val<br>
+    &nbsp; &nbsp; RED = 5,<br>
+    &nbsp; &nbsp; ORANGE = 5 * 2,<br>
+    &nbsp; &nbsp; YELLOW = 15,<br>
+    &nbsp; &nbsp; GREEN = 20,<br>
+    &nbsp; &nbsp; BLUE = 25,<br>
+    &nbsp; &nbsp; INDIGO = 30,<br>
+    &nbsp; &nbsp; VIOLET = 35 * ENUM_TEST.VAL<br>
     }
   </p>
-  <p>请注意，在上面的示例中，我们使用了另一个枚举来创建 "violet" 的表达式。这仅在引用的枚举是在表达式中使用枚举的<i>之前创建的</i>时有效，但它不适用于变量或函数，因为当项目<a class="tooltip" title="编译是指GameMaker接受您的代码并将其收集在一起的方式，以创建可执行的程序包，该程序包将作为游戏在设备上运行。">编译</a>时，枚举值必须能够被计算为常量。另请注意，所有枚举值的计算结果均为<b>整数(integer)</b>值，当您创建自己的枚举值时，应注意<i>只允许整数值</i>使枚举起作用。该值可以是浮点双精度数可以表示的任何整数，包括负值。</p>
+  <p>请注意，在上面的示例中，我们使用另一个枚举来创建"VIOLET"的表达式。仅当所引用的枚举是在表达式中使用它的枚举之前创建时，此方法才有效，但它不适用于变量或函数，因为当项目正在<a class="tooltip" title="编译是指GameMaker接受您的代码并将其收集在一起的方式，以创建可执行的程序包，该程序包将作为游戏在设备上运行。">编译</a>。另请注意，所有枚举值的计算结果均为<i>整数</i>值，当您创建自己的枚举值时，您应该注意<b>仅允许整数值</b>才能使枚举发挥作用。该值可以是浮点双精度数可以表示的任何整数，包括负值。</p>
   <p>要稍后访问给定枚举类型中的值，可以使用点<span class="inline">"."</span>方法，如下所示：</p>
-  <p class="code">variable = &lt;enum_name&gt;.&lt;<em>enum_variable</em>&gt;;</p>
-  <p>例如，让我们使用在上述代码中创建的"<span class="inline">rainbowcolours</span>"枚举：</p>
-  <p class="code">colour_value = rainbowcolours.green * rainbowcolours.red;</p>
+  <p class="code">variable = &lt;ENUM_NAME&gt;.&lt;<em>ENUM_MEMBER</em>&gt;;</p>
+  <p>作为示例，我们使用在上面的代码中创建的"<span class="inline">RAINBOW</span>"枚举：</p>
+  <p class="code">colour_value = RAINBOW.GREEN * RAINBOW.RED;</p>
   <p><span class="inline">colour_value</span>变量现在将保留值100(20 * 5 )。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;您不能<em>在创建任何枚举常量后修改它的值，这与创建宏后不能修改它们非常相似。</em></p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 枚举值存储为 int64s，因此在它们上运行 <span class="inline2"><a href="../../GML_Reference/Variable_Functions/is_real.htm">is_real</a></span> 将返回 <span class="inline2">false</span>。</p>
@@ -219,7 +224,7 @@
         <div style="float:right">Next:&nbsp;<a href="Local_Variables.htm">局部变量</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 constants

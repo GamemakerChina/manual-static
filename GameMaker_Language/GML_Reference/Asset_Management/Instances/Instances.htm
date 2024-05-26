@@ -78,8 +78,20 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>实例</h1>
-  <p><b>实例</b>是从<a href="../../../../The_Asset_Editors/Objects.htm">对象</a>创建的，一旦创建，它们可以通过GML代码和GML可视化操作来更改和操作。与可用且最常用的实例相关的主要实例函数有：</p>
+  <h1><span data-field="title" data-format="default">Instances</span></h1>
+  <p><b> 实例 </b> 是根据 <a href="../../../../The_Asset_Editors/Objects.htm"> 对象 </a> 创建的，创建后，可以通过 <span data-keyref="GML_Code">GML 代码 </span> 和 <span data-keyref="GML_Visual">GML Visual</span> 操作更改、操作和销毁它们。本页面列出了与 <span data-keyref="GameMaker Name">GameMaker</span> 中可用的实例相关的主要功能。</p>
+  <h3>创建实例</h3>
+  <p>您可以通过几种方式创建对象的实例：</p>
+  <ul class="colour">
+    <li>将其拖动到 <a href="../../../../The_Asset_Editors/Rooms.htm"> 房间编辑器 </a> 中的实例层上。</li>
+    <li>使用函数 <span class="inline3_func"><a href="instance_create_depth.htm">instance_create_depth</a></span> 和 <span class="inline3_func"><a href="instance_create_layer.htm">instance_create_layer</a></span> 在运行时创建它。</li>
+    <li>将其添加到 <a href="../../../../The_Asset_Editors/Sequences.htm"> 序列编辑器 </a> 中的序列，并在 <a href="../../../../The_Asset_Editors/Rooms.htm"> 房间编辑器 </a> 中或通过代码添加序列。</li>
+    <li>使用 <span class="inline3_func"><a href="../Rooms/room_instance_add.htm">room_instance_add</a></span> 将其添加到非当前 <a href="../Rooms/room.htm"> 房间 </a> 的房间。</li>
+  </ul>
+  <h3>停用实例</h3>
+  <p>您还可以 <strong> 停用 </strong> 实例，这意味着它们不会处理任何事件，尽管它们仍存在于游戏中。您可以在 <a href="Deactivating_Instances/Deactivating_Instances.htm"> 停用实例 </a> 页面上了解其工作原理以及可以使用的功能。</p>
+  <h2 id="func_ref">功能参考</h2>
+  <h3 id="func_ref_general">常规</h3>
   <ul class="colour">
     <li><a href="instance_create_layer.htm">instance_create_layer</a></li>
     <li><a href="instance_create_depth.htm">instance_create_depth</a></li>
@@ -95,31 +107,25 @@
     <li><a href="instance_place_list.htm">instance_place_list</a></li>
     <li><a href="instance_position.htm">instance_position</a></li>
     <li><a href="instance_position_list.htm">instance_position_list</a></li>
-  </ul>
-  <p>&nbsp;</p>
-  <p>请注意，有两个额外的内置变量(这些是<b>全局范围</b>变量)和一个与使用实例相关的函数，可用于检索某些详细信息：</p>
-  <ul class="colour">
     <li><a href="instance_id_get.htm">instance_id_get</a></li>
-    <li><a href="instance_id.htm">instance_id</a></li>
-    <li><a href="instance_count.htm">instance_count</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>对象的每个实例内都有多个内置变量，这些变量可用于控制实例的显示方式、如何使用其他资源以及它如何对冲突做出反应等等。 以下均列出：</p>
-  <ul class="colour">
-    <li><a href="Instance_Variables/Instance_Variables.htm"><span>实例变量</span></a></li>
-  </ul>
-  <p>&nbsp;</p>
+  <h3 id="func_ref_alarms">警报</h3>
   <p>实例有一个内置的数组变量 <span class="inline2"><a href="Instance_Variables/alarm.htm">alarm</a></span> 可以用来获取或设置告警事件值，但也有两个函数可以用来做同样的事情：</p>
   <ul class="colour">
     <li><a href="alarm_get.htm">alarm_get</a></li>
     <li><a href="alarm_set.htm">alarm_set</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>最后，您还可以<strong>取消</strong>实例的激活，这意味着它们不会处理任何事件，尽管它们仍然存在于游戏中。相关函数可从以下页面获得：</p>
+  <h2 id="var_ref">变量引用</h2>
+  <h3>全局</h3>
   <ul class="colour">
-    <li><a href="Deactivating_Instances/Deactivating_Instances.htm"><span>停用实例</span></a></li>
+    <li><a href="instance_id.htm">instance_id</a></li>
+    <li><a href="instance_count.htm">instance_count</a></li>
   </ul>
-  <p>&nbsp;</p>
+  <h3>实例</h3>
+  <p>对象的每个实例中都有许多可用的内置变量，可用于控制实例的显示方式、使用其他资源的方式以及对碰撞的反应方式等不同方面，这些都是此处列出：</p>
+  <ul class="colour">
+    <li><a href="Instance_Variables/Instance_Variables.htm">实例变量</a></li>
+  </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -129,7 +135,7 @@
         <div style="float:right">Next: <a href="../Rooms/Rooms.htm">房间</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Instances

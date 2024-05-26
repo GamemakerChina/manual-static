@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.3.14.0_18";
+    gTopicId = "8.2.2.3.14.0_19";
   
 //]]></script>
 
@@ -79,11 +79,13 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>room_assign</h1>
-  <p>此函数将将一个房间复制到另一个房间，删除所有实例、图块等... 从正在复制到的房间，并完全用新房间内容替换。提供要复制到的房间的索引(在资源浏览器中定义或由函数<a href="room_add.htm"><span class="inline">room_add()</span></a>返回)以及源房间的索引。请注意，在资源浏览器<strong>中创建的房间资源上调用此函数将永久更改房间</strong>的内容，甚至调用<span class="inline">game_restart()</span>也不会使房间返回到其原始状态(只有结束游戏并再次打开它，房间才会再次处于原始状态)。</p>
+  <h1><span data-field="title" data-format="default">room_assign</span></h1>
+  <p>此函数将一个房间复制到另一个房间，从要复制到的房间中删除所有实例、图块等，并将它们完全替换为新房间的内容。</p>
+  <p>您提供要复制到的房间 (如 <a href="../../../../Introduction/The_Asset_Browser.htm"> 资源浏览器 </a> 中定义的或由函数 <span class="inline3_func"><a href="room_add.htm">room_add</a></span> 返回的) 以及源房间的索引。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 对在 <a href="../../../../Introduction/The_Asset_Browser.htm"> 资产浏览器 </a> 中创建的房间资产调用此函数 <strong> 将永久更改房间的内容 </strong>，甚至调用 <span class="inline3_func"><a href="../../General_Game_Control/game_restart.htm">game_restart</a></span> 不会将房间恢复到原来的状态。只有结束游戏并再次打开时，房间才会再次回到原来的状态。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">room_assign(ind, source);</p>
+  <p class="code"><span data-field="title" data-format="default">room_assign</span>(ind, source);</p>
   <table>
     <tbody>
       <tr>
@@ -93,13 +95,13 @@
       </tr>
       <tr>
         <td>ind</td>
-        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
-        <td>要将<i>复制到</i>的房间的索引。</td>
+        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
+        <td>要 <i> 复制到 </i> 的房间。</td>
       </tr>
       <tr>
         <td>source</td>
-        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
-        <td>要从<i>复制</i>的房间的索引。</td>
+        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
+        <td>要 <i> 复制自 </i> 的房间。</td>
       </tr>
     </tbody>
   </table>
@@ -109,19 +111,18 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">global.rm = room_add();<br>
-    room_assign(global.rm, rm_Base);</p>
-  <p>上面的代码将给游戏添加一个新房间，然后复制被索引为"rm_Base"的房间的内容。</p>
-  <p>&nbsp;</p>
+    room_assign(global.rm, rm_base);</p>
+  <p>上述代码将向游戏添加一个新房间，然后将索引为 <span class="inline2">rm_base</span> 的房间内容复制到其中。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Rooms.htm">房间</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Rooms.htm">房间</a></div>
         <div style="float:right">Next:&nbsp;<a href="room_instance_add.htm">room_instance_add</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 room_assign

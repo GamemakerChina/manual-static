@@ -79,13 +79,16 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>path_add</h1>
-  <p>使用此函数，您可以在<span data-keyref="GameMaker Name">GameMaker</span>中创建路径，而无需使用路径编辑器。此函数将返回路径的索引，该索引应存储在变量中，并从那时起用作该路径的引用。请注意，创建的路径是<i>空的</i>IE：它没有定义点，因此您必须使用<a href="path_add_point.htm">其他可用函数</a>来向路径添加点，或者使用<a href="../../../Movement_And_Collisions/Motion_Planning/Motion_Planning.htm">MP网格</a>来生成路径。一旦你完成了对路径的使用，或者希望创建一个新的路径并将其索引存储在相同的变量中，你应该首先用<a href="path_delete.htm"><span class="inline">path_delete</span></a>删除旧的路径，以防止内存泄漏，这最终会使你的游戏崩溃。</p>
+  <p>通过此功能，您可以在 <span data-keyref="GameMaker Name">GameMaker</span> 中创建路径，而无需使用路径编辑器。</p>
+  <p>该函数将返回对路径的引用，该引用应存储在变量中并在其他路径函数中使用。</p>
+  <p>请注意，创建的路径是 <i> 空 </i>，即：它没有定义点，因此您必须使用 <a href="path_add_point.htm"> 其他可用函数 </a> 向路径添加点或使用 <a href="../../../Movement_And_Collisions/Motion_Planning/Motion_Planning.htm">MP 网格 </a> 生成路径。它将被创建为 " 封闭 " 路径，您可以 <a href="path_set_closed.htm"> 更改 </a>。</p>
+  <p>一旦您使用完路径，或者希望创建一个新路径并将其引用存储在同一变量中，您应该首先使用 <a href="path_delete.htm"><span class="inline">path_delete</span></a> 删除旧路径，以防止内存泄漏，从而最终导致您的系统崩溃。游戏。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">path_add();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></p>
+  <p class="code"><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">global.newpath = path_add();</p>
@@ -100,7 +103,7 @@
         <div style="float:right">Next: <a href="path_add_point.htm">path_add_point</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 path_add

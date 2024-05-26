@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.21.0_4";
+    gTopicId = "8.2.2.22.0_4";
   
 //]]></script>
 
@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>exception_unhandled_handler</h1>
-  <p>当运行时异常发生时，此运行时函数可用于 "接管" 默认的<span data-keyref="GameMaker Name">GameMaker</span>错误消息。您提供了一个在异常发生时调用的方法或函数，其第一个参数将是包含异常信息的结构(称为<strong><span data-keyref="Type_Struct_Exception"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Debugging/exception_unhandled_handler.htm">异常结构</a></span></strong>)。此结构具有以下格式:</p>
+  <p>当运行时异常发生时，此运行时函数可用于 "接管" 默认的<span data-keyref="GameMaker Name">GameMaker</span>错误消息。您提供了一个在异常发生时调用的方法或函数，其第一个参数将是包含异常信息的结构(称为<strong><span data-keyref="Type_Struct_Exception"><a target="_blank" href="exception_unhandled_handler.htm">异常结构</a></span></strong>)。此结构具有以下格式:</p>
   <table>
     <colgroup>
       <col>
@@ -88,7 +88,7 @@
     </colgroup>
     <tbody>
       <tr>
-        <th colspan="3"><span data-keyref="Type_Struct_Exception"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Debugging/exception_unhandled_handler.htm">异常结构</a></span></th>
+        <th colspan="3"><span data-keyref="Type_Struct_Exception"><a target="_blank" href="exception_unhandled_handler.htm">异常结构</a></span></th>
       </tr>
       <tr>
         <th>变量</th>
@@ -97,27 +97,27 @@
       </tr>
       <tr>
         <td><span class="inline">message</span></td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>异常的短消息</td>
       </tr>
       <tr>
         <td><span class="inline">longMessage</span></td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>异常的较长消息</td>
       </tr>
       <tr>
         <td><span class="inline">script</span></td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>描述异常来源的字符串</td>
       </tr>
       <tr>
         <td><span class="inline">line</span></td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>异常来源的行号</td>
       </tr>
       <tr>
         <td><span class="inline">stacktrace</span></td>
-        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span>&nbsp;of&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>s</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../GML_Overview/Arrays.htm">Array</a></span>&nbsp;of&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span>s</td>
         <td>生成异常时作为帧的<a href="debug_get_callstack.htm">调用栈</a>的字符串数组</td>
       </tr>
     </tbody>
@@ -139,14 +139,14 @@
       </tr>
       <tr>
         <td>user_handler</td>
-        <td><span data-keyref="Type_Method"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">Method</a></span></td>
+        <td><span data-keyref="Type_Method"><a target="_blank" href="../../GML_Overview/Method_Variables.htm">Method</a></span></td>
         <td>要用作异常处理程序的方法(用户定义的函数)，或<span class="inline">undefined</span>将其重置为默认值。</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Method"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">Method</a></span>&nbsp;(or <span data-keyref="Type_Undefined"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">undefined</a></span>)</p>
+  <p class="code"><span data-keyref="Type_Method"><a target="_blank" href="../../GML_Overview/Method_Variables.htm">Method</a></span>&nbsp;(or <span data-keyref="Type_Undefined"><a target="_blank" href="../../GML_Overview/Data_Types.htm">undefined</a></span>)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">exception_unhandled_handler(function(ex)<br>
@@ -178,7 +178,7 @@
         <div style="float:right">Next:&nbsp;<a href="get_integer.htm">get_integer</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 exception_unhandled_handler

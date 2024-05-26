@@ -78,18 +78,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>texture_global_scale</h1>
-  <p>此函数允许您控制从WAD文件(作为最终游戏可执行文件的一部分)加载时纹理页面的缩放。输入值必须是两个值的幂，并且可以：</p>
+  <h1><span data-field="title" data-format="default">texture_global_scale</span></h1>
+  <p>此功能允许您控制从 WAD 文件加载时纹理页面的缩放，该文件是最终游戏可执行文件的一部分。</p>
+  <p>输入值必须是两个值的幂，并且将满足以下条件：</p>
   <ul class="colour">
-    <li>若要将纹理页面设置为 1:1，请使用 <span class="inline">texture_global_scale(1)</span></li>
-    <li>始终使用 <span class="inline">texture_global_scale(2)</span> 将纹理减半</li>
-    <li>要使其四分之一，请使用 <span class="inline">texture_global_scale(4)</span> 等 ...</li>
+    <li>要将纹理页面设置为 1:1，请使用 <span class="inline2"><span data-field="title" data-format="default">texture_global_scale</span>(1)</span></li>
+    <li>要始终将纹理减半，请使用 <span class="inline2"><span data-field="title" data-format="default">texture_global_scale</span>(2)</span></li>
+    <li>要四分之一它们，请使用 <span class="inline2"><span data-field="title" data-format="default">texture_global_scale</span>(4)</span> 等。</li>
   </ul>
-  <p>通过这种方式，可以更好地控制具有低内存问题的平台上的纹理页面内存使用。请注意，纹理页面是根据Wad的需要创建的，因此您可以在游戏开始时调用它来加载所有缩放的纹理，或者可以在特定时间调用它以加载特定纹理，在这种情况下，您可能需要在调用此函数之前调用<a href="draw_texture_flush.htm"><span class="inline">draw_texture_flush()</span></a>，然后使用预取函数获取正确的纹理页面到内存中。</p>
+  <p>通过这种方式，您可以更好地控制内存不足问题的平台上的纹理页内存使用情况。请注意，纹理页面是根据 WAD 的需求创建的，因此您可以在游戏开始时调用它来加载所有缩放的纹理，也可以在特定时间调用它来加载特定纹理，在这种情况下，您可以可能想在调用此函数之前调用 <span class="inline3_func"><a href="draw_texture_flush.htm">draw_texture_flush</a></span>，然后使用预取函数将正确的纹理页面获取到内存中。</p>
   <p>此功能仅适用于 PNG 纹理。您可以使用 <a href="../../../../Settings/Texture_Groups.htm"> 纹理组 </a> 更改纹理格式。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">texture_global_scale(pow2integer);</p>
+  <p class="code"><span data-field="title" data-format="default">texture_global_scale</span>(pow2integer);</p>
   <table>
     <tbody>
       <tr>
@@ -99,8 +100,8 @@
       </tr>
       <tr>
         <td>pow2integer</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>要使用的比例因子(1、无比例、2、半比例、4、四分之一比例等)</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>使用的比例因子 (1，无比例，2，半比例，4，四分之一比例等)</td>
       </tr>
     </tbody>
   </table>
@@ -110,10 +111,10 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">draw_texture_flush();<br>
-    texture_global_scale(2);<br>
-    sprite_prefetch(spr_Trees);</p>
-  <p>上述代码将刷新内存中的所有纹理，然后将纹理缩放设置为2(使纹理页面大小为一半)，最后预取精灵"spr_Trees"所在的纹理页面。</p>
-  <p>&nbsp;</p>
+    <span data-field="title" data-format="default">texture_global_scale</span>(2);<br>
+    sprite_prefetch(spr_Trees);
+  </p>
+  <p>上述代码将从内存中刷新所有纹理，然后将纹理缩放设置为 2( 因此纹理页面大小减半)，最后预取精灵 <span class="inline2">spr_Trees</span> 所在的纹理页面。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -123,7 +124,7 @@
         <div style="float:right">Next:&nbsp;<a href="draw_texture_flush.htm">draw_texture_flush</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 texture_global_scale

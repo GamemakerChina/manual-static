@@ -99,27 +99,19 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">使用命令行进行A/B测试</span><span data-close-text="true">使用命令行进行A/B测试</span></a></p>
   <div class="droptext" data-targetname="drop-down">
     <p class="dropspot">YoYo运行器还得益于一个特殊的命令行参数:</p>
-    <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: 加载给定的游戏文件 <br> </p>
+    <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: loads the given game file</p>
     <p class="dropspot">你为什么要用这个?通常情况下你是不会这么做的，但如果你希望同时运行多个版本的游戏，你便可以使用这一方法，让 A/B 比较测试变得更加简单。使用这种方法，你可以和其他人一起进行重点测试，或者作为设计师，通过并行测试来获得更好的感觉。</p>
-    <p class="dropspot">要设置这个，你需要事先知道几件事。首先，你需要找到通往运行器的路径。这可以在你的Windows操作系统的<strong>Program Data</strong>文件夹中找到(这可能在默认情况下是隐藏的，所以你需要改变查看属性来查看它)，典型的格式如下: <br> <br> </p>
-    <p class="code">C:\ProgramData\GameMaker\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe
-      <br>
-    </p>
+    <p class="dropspot">要进行设置，您需要事先了解一些事情。首先，您需要Runner本身的路径。这可以在Windows操作系统的<strong>Program Data</strong>文件夹中找到(默认情况下，这可能是隐藏的，因此您需要更改查看属性才能看到它)，典型格式如下：<br></p>
+    <p class="code">C:\ProgramData\<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span>\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe</p>
     <p class="dropspot">注意，runtime_version文件夹将取决于您当前安装的运行时。你还需要<span class="inline">&lt;<em>yourgame</em>&gt;.Win</span> 的路径文件，因为这是我们要将运行程序指向的对象。找到它的最简单的方法是进入<strong>Temp</strong>文件夹(通常位于<span class="inline">%localappdata%\Temp\GameMakerStudio\<game_name>\</game_name></span>)，然后搜索 <span class="inline">*.Win </span>，因为它会显示所有可用的选项，你可以简单地选择你需要获得完整路径的选项。</p>
     <p class="dropspot">现在，我们可以创建到运行器的快捷方式，就像为可执行文件所做的那样，然后根据需要更改参数，但这意味着必须在测试之间打开并编辑它，这违背了我们将此功能用于并行测试的目的。相反，我们将创建几个小的“批处理”文件来处理这个问题。</p>
-    <p class="dropspot">为此，首先在桌面上创建一个新的文本文档，并在记事本(或任何其他文本编辑器)中打开它。添加以下内容: <br> <br> </p>
-    <p class="code">START C:\ProgramData\GameMaker\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe -game &lt;LOCAL TEMP PATH&gt;\&lt;GAMENAME&gt;.win
-      <br>
-    </p>
-    <p class="dropspot">你需要设置临时路径指向你的游戏<span class="inline"> *.win</span>文件，然后将其保存为“<span class="inline">GM_Test_1.bat</span>”到您的桌面(注意记事本将自动保存为<span class="inline">*.txt</span>文件，除非您从保存对话框选项中选择“所有文件”)。最后的命令应该是这样的: <br> </p>
-    <p class="code">START C:\ProgramData\GameMaker\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\Users\Mark\AppData\Local\Temp\GameMaker\AlphaDog_Reboot\AlphaDog_Reboot.win
-      <br>
-    </p>
-    <p class="dropspot">现在，创建另一个文本文件并添加同样的行，只是这次你要将其指向你想要进行并行测试的游戏的第二个版本的路径，你可以将其保存为“<span class="inline">GM_Test_2.bat</span>”。你可以双击<img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" width="21">它们中的任何一个来显示你的游戏的不同版本，将它们作为批处理文件意味着你可以很容易地再次打开它们来编辑它们并修改测试的游戏。</p>
-    <p class="dropspot">
-      <br>
-    </p>
-    <p class="dropspot"></p>
+    <p class="dropspot">为此，首先在桌面上创建一个新的文本文档，然后在记事本(或任何其他文本编辑器)中打开它。添加以下内容：<br></p>
+    <p class="code">START C:\ProgramData\<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span>\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe -game &lt;LOCAL TEMP PATH&gt;\&lt;GAMENAME&gt;.win</p>
+    <p class="dropspot">您需要设置临时路径指向您的游戏<span class="inline">*.win</span>文件，然后将其保存为"<span class="inline">GM_Test_1.bat</span>"到您的桌面(请注意，记事本将自动保存为<span class="inline">*.txt</span>文件，除非您从保存对话框选项中选择"所有文件")。您的最终命令应该看起来的示例如下：</p>
+    <p class="code">START C:\ProgramData\<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span>\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\Users\Mark\AppData\Local\Temp\GameMaker\AlphaDog_Reboot\AlphaDog_Reboot.win</p>
+    <p class="dropspot">现在，创建另一个文本文件并添加同样的行，只是这次你要将其指向你想要进行并行测试的游戏的第二个版本的路径，你可以将其保存为“<span class="inline">GM_Test_2.bat</span>”。你可以双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">它们中的任何一个来显示你的游戏的不同版本，将它们作为批处理文件意味着你可以很容易地再次打开它们来编辑它们并修改测试的游戏。</p>
+    <p class="dropspot">&nbsp;</p>
+    <p class="dropspot">&nbsp;</p>
   </div>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -130,7 +122,7 @@
         <div style="float:right">Next:&nbsp;<a href="YoYo_Compiler.htm">YoYo 编译器</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Command Line Pararmeters

@@ -172,7 +172,8 @@
   <div class="droptext" data-targetname="drop-down16">
     <p class="dropspot"><span>结构访问器使用<span class="inline2"><a id="$"></a>$</span>符号作为标识符号。这使得<a href="Structs.htm">结构</a>的访问器语法为：</span></p>
     <p class="code">struct[$ "name"]</p>
-    <p class="dropspot">此访问器实质上是函数<span><a href="../GML_Reference/Variable_Functions/variable_struct_get.htm"><span class="inline">variable_struct_get()</span></a>和<a href="../GML_Reference/Variable_Functions/variable_struct_set.htm"><span class="inline">variable_struct_set()</span></a>的包装程序，您可以使用它，就像DS map的访问器一样。例如，如果您创建了一个结构，并希望从名为"my_health"的变量中检索一个值，则可以执行以下操作：</span></p>
+    <p class="dropspot">如果您使用<span class="inline2">global</span>关键字访问<a href="Variables/Global_Variables.htm#the_global_struct">全局结构</a>，则该访问器本质上是函数<span><a href="../GML_Reference/Variable_Functions/variable_struct_get.htm"><span class="inline2">variable_struct_get()</span></a>和<a href="../GML_Reference/Variable_Functions/variable_struct_set.htm"><span class="inline2">variable_struct_set()</span></a>以及<span class="inline3_func"><a href="../GML_Reference/Variable_Functions/variable_global_get.htm">variable_global_get</a></span>和<span class="inline3_func"><a href="../GML_Reference/Variable_Functions/variable_global_set.htm">variable_global_set</a></span>的包装器。</span></p>
+    <p class="dropspot"><span>您可以像 DS 地图的访问器一样使用它。例如，如果您创建了一个结构体并希望从名为"my_health"的变量中检索值，那么您可以执行以下操作：</span></p>
     <p class="code">var _hp = struct[$ "my_health"];</p>
     <p class="dropspot">如您所见，您并没有提供变量本身，而是提供了一个带有变量名称的<em>字符串</em>。</p>
     <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;如果结构没有具有给定名称的变量，则访问器将返回 <span class="inline2">undefined</span> 作为值。</p>
@@ -247,7 +248,7 @@
         <div style="float:right">Next:&nbsp;<a href="Language_Features.htm">语言特点</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 div

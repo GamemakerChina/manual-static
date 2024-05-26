@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Page outlining the different functions and variables associated with Audio Emitters">
   <meta name="rh-index-keywords" content="">
   <meta name="search-keywords" content="Audio Emitters">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/audio_emitter_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_system_is_available.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Emitters/audio_emitter_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_destroy_stream.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -113,14 +113,14 @@
   <p class="code">audio_emitter_position(emitter, x, y, 0);</p>
   <p>使用<a href="audio_emitter_velocity.htm">audio_emitter_velocity</a>更新发射器的速度。 设置速度的最简单方法是将其设置为实例的<a href="../../Instances/Instance_Variables/hspeed.htm">hspeed</a>和<a href="../../Instances/Instance_Variables/vspeed.htm">vspeed</a>，如下所示：</p>
   <p class="code">audio_emitter_velocity(emitter, hspeed, vspeed, 0);</p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>音频发射器的<i>速度</i>以每步<i>像素表示</i>。<span><span></span></span></p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;The <i>velocity</i> of an audio emitter is expressed in <i>pixels per step</i>.</p>
   <h3><span data-keyref="GameMaker Name">GameMaker</span>创建的音频发射器</h3>
-  <p>当使用<a href="../../Sequences/Sequences.htm">序列</a>时，<span data-keyref="GameMaker Name">GameMaker</span>为序列中的每个音轨(<span><span class="inline2">SeqTrackType_Audio</span>)添加和创建音频发射器。</span>这些发射器的ID可以在<a href="../../Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">序列实例的</a><span class="inline2">ActiveTracks[I]中找到。emitterIndex</span>属性。</p>
+  <p>使用<a href="../../Sequences/Sequences.htm">序列</a>时，<span data-keyref="GameMaker Name">GameMaker</span>添加为序列中的每个音轨(<span class="inline2">seqtracktype_audio</span>) 创建音频发射器。这些发射器的 ID 可以在<a href="../../Sequences/Sequence_Structs/The_Sequence_Instance_Struct.htm">序列实例的</a><span class="inline2">activeTracks[i].emitterIndex</span>属性中找到。</p>
   <p><span data-keyref="GameMaker Name">GameMaker</span>自动更新此发射器的位置。它不更新音轨发射器的速度，但您可以通过在<a href="audio_emitter_velocity.htm">序列步骤事件</a>之一中调用<a href="../../Sequences/Sequence_Events_Moments_Broadcast.htm">audio_emitter_velocity</a>自行执行此操作。</p>
   <h3>在发射器上播放声音</h3>
   <p>可使用<strong>audio_play_sound_on</strong>在<a href="audio_play_sound_on.htm">发射器上播放</a>声音：</p>
   <p class="code">sound_instance = audio_play_sound_on(emitter,&nbsp;snd_Explosion, false, 10);<br>
-    <span></span>
+    
   </p>
   <h3>跟踪播放声音实例</h3>
   <p>每次调用<a href="../audio_play_sound.htm">audio_play_sound</a>、<a href="../audio_play_sound_at.htm">audio_play_sound_at</a>或<a href="audio_play_sound_on.htm">audio_play_sound_on</a>之一时，都会创建一个新的声音<strong>实例</strong>。</p>
@@ -174,7 +174,7 @@
         <div style="float:right">Next:&nbsp;<a href="../Audio_Listeners/Audio_Listeners.htm">音频监听器</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Audio Emitters

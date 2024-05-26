@@ -85,10 +85,11 @@
   <p>然后需要设置<strong>生成工具</strong>以及<strong>Target</strong>、<strong>Minimum</strong>和<strong>Compile SDK </strong>版本。</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note"> 注意 </span></span>"<strong>Support Library</strong>" 版本还有一个选项可供使用。从 <span data-keyref="GameMaker Name">GameMaker</span>v2.2.4 及更高版本开始，不再需要此选项，此处使用的任何值都将被忽略。保留此设置是为了与需要运行时早于 2.2.4 的旧项目一起使用。</p>
   <p>当<span data-keyref="GameMaker Name"> GameMaker </span>为 Android 目标构建游戏时，使用构建工具(如果需要，还有支持库) ，并且应该根据您使用 Android Studio 安装的工具将其设置为适当的值。</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Refer to <a href="https://help.gamemaker.io/hc/en-us/articles/227860547-GameMaker-Required-SDKs#android">Required SDKs</a> for the required SDK levels.&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;does not support SDK versions below&nbsp;<span data-keyref="Minimum_Supported_Android_API_Level">21</span>.</p>
   <ul class="colour">
-    <li><strong>Target SDK</strong> 表示您已经在(直到并包括)您在这里指定的版本上测试了您的应用程序。这只是为了让 Android 操作系统知道它应该如何根据操作系统的特性来处理你的应用程序。出于各种实际目的，大多数应用程序都希望将 Target SDK 设置为 API 的最新发布版本(如 Compile SDK 设置所使用的那样)。这将确保您的应用程序在最新的 Android 设备上看起来尽可能好。请注意，从2019年11月开始，谷歌已经将 API 级别28作为必要的目标。</li>
-    <li><strong>Minimum SDK </strong>版本是将运行项目的最小 API 级别。从2019年11月开始，谷歌已经将 API 级别定为16级，但是如果你添加了扩展，那么他们可能需要更高的最低 API 级别。</li>
-    <li><strong>CompileSDK </strong>版本是项目所编译的 API 的版本。这意味着您可以使用该版本 API 中包含的 Android API 特性。如果您尝试使用 API 16特性-例如-但是设置 Compile SDK15，那么您将得到一个编译错误。但是，如果您将 Compile SDK 设置为28，那么您仍然可以在 API 26设备上运行该应用程序(以及所有其他以前的版本)。</li>
+    <li>The <strong>Target SDK</strong> indicates that you have tested your app on (up to and including) the version you specify here. This is simply to give the Android OS an idea of how it should handle your app in terms of OS features. For all practical purposes, most apps are going to want to set Target SDK to the latest released version of the API (as used by the Compile SDK setting). This will ensure your app looks as good as possible on the most recent Android devices.</li>
+    <li>The <strong>Minimum SDK</strong> version is the minimum API level that will run your project. Default is <span data-keyref="Minimum_Supported_Android_API_Level">21</span>.</li>
+    <li>The <strong>Compile SDK</strong> version is the version of the API that the project is compiled against. This means you can use Android API features included in that version of the API. If you try and use API 24 features - for example - but set Compile SDK 21, then you will get a compilation error. However, if you set the Compile SDK to 28 then you can still run the app on an API 26 device (as well as all other previous versions too).</li>
   </ul>
   <p>您可以从一个预定义的目标设置中进行选择，方法是单击<strong>预填充 SDK </strong>值到选定的 API 级别按钮，该按钮将打开一个可供选择的不同 API 列表。选择其中任何一个都将使用适当的值填充所有 SDK 文件，然后您可以根据需要使用或编辑这些值。</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>要正确编译项目，您必须已经在 Android SDK 管理器中或通过 Android Studio 安装了适当的 API。</p>
@@ -154,18 +155,19 @@
   <p>&nbsp;</p>
   <h2 id="packaging">打包</h2>
   <p><img alt="Android Packaging Options" class="center" src="../../assets/Images/Settings/Android_Packaging_Options.png"></p>
-  <h2 id="proguard">Proguard</h2>
+  <h3 id="proguard">Proguard</h3>
   <p>在这里，您可以为 ProGuard 启用“<strong> minifyEnable </strong>”和“<strong> shinkResources </strong>”来减小 APK 文件大小。</p>
   <p>“<strong>minifyEnable</strong>”从最终可执行文件中删除不必要的代码，“<strong>shinkResources</strong>”删除缩小后未被引用的任何资源，因此它取决于启用的前一个选项。</p>
   <p>请参阅<a href="https://developer.android.com/studio/build/shrink-code"> Android 开发人员</a>上的“<strong>缩小代码</strong>”和“<strong>缩小资源</strong>”部分。</p>
-  <h2 id="google">谷歌 (Google)</h2>
+  <h3 id="google">谷歌 (Google)</h3>
   <p>在您的 Android 游戏中使用 Google Play 的一个特性是能够<strong>授权</strong>您的游戏。这意味着你的游戏将由谷歌控制，只有通过他们的市场下载的人才能玩游戏，从而避免非法拷贝你的产品被分发。</p>
   <p>要在游戏中激活此功能，您需要将您的<strong>公钥</strong>复制到标签为<strong>谷歌许可公钥</strong>的框中。可以通过进入您的<a href="https://play.google.com/apps/publish"> Google Play Developers 页</a> ，然后选择您希望编辑的游戏来找到此许可证。在游戏配置文件页面上，向下滚动到标题为“<em>服务和 API </em>”的部分，您应该会找到启用此功能所需的公钥。</p>
   <p>一旦激活，如果任何人谁没有授权拥有你的游戏试图玩它，他们将显示一个弹出消息框，将告诉他们，许可证无法在他们的设备上找到，然后给他们选择重试和测试，或退出游戏。</p>
   <p>授权的另一个特性是您的游戏可以使用<strong> APK 扩展</strong>。这是一种绕过 GooglePlay (只有 GooglePlay)规定的50MB 最大应用程序大小的方法。它将创建您的游戏分为两部分: 一个小<span class="inline"> *.apk </span>文件和较大的<span class="inline"> *.zip </span>文件，该文件将保存所有的游戏资源，这两个资源都将上载到商店。当用户第一次运行你的游戏，压缩包将被下载和解压缩。您可以在这里找到此选项<a href="https://help.yoyogames.com/hc/en-us/articles/115002418632-Android-Using-APK-Expansions-With-Google-Play">的详细信息</a>。</p>
   <p>当使用<span class="inline">*.aab</span>导出选项时，你还可以使用 Google Dynamic Asset Deliver 来构建 1GB 大小的应用程序包。这将所有的游戏资源打包为“安装时”资源，并与应用程序本身一起安装。您可以在这里找到关于此特性的进一步<a href="https://developer.android.com/guide/playcore/asset-delivery" title="Asset Delivery">详细信息</a>。</p>
-  <h2 id="android_tv">Android TV</h2>
+  <h3 id="android_tv">Android TV</h3>
   <p>最后，您可以选择将最终的应用程序包准备为一个<strong> Android TV 游戏</strong>(只有在您的游戏符合<a href="https://developer.android.com/training/tv/games/"> Android TV 指南</a>的情况下才应该勾选此选项)。</p>
+  <p>You can also select whether your game <a href="https://developer.android.com/jetpack/androidx/releases/leanback">supports Leanback</a>. Enable this if you are using Leanback libraries.</p>
   <h2 id="permissions">权限</h2>
   <p><img alt="Android Permission Options" class="center" src="../../assets/Images/Settings/Android_Permissions_Options.png">在此选项卡中，您可以更改游戏在Android Manifest中可能请求的一些权限。<span data-keyref="GameMaker Name"> GameMaker </span>会根据游戏使用的功能自动分配权限，但是你可能会发现你的游戏需要一个未正确分配的权限(例如，当你使用自定义扩展时) ，在这种情况下，勾选必要的权限框。</p>
   <p>下面的列表概述了可用的权限:</p>
@@ -184,7 +186,7 @@
   </ul>
   <p>值得注意的是，对于目标 API 28及以上，您将不再被允许使用任何使用“<span class="inline">http</span>”-“<span class="inline">https</span>”的外部 Web 调用-除非您添加以下标记:</p>
   <p class="code">android:usesCleartextTraffic="true"</p>
-  <p>&nbsp;</p>
+  <p>最后，您可以启用<a href="https://developer.android.com/guide/topics/manifest/application-element#allowbackup">android：allowBackup</a>属性。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -194,7 +196,7 @@
         <div style="float:right">Next: <a href="iOS.htm">iOS</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Android Game Options

@@ -90,7 +90,7 @@
     </colgroup>
     <tbody>
       <tr>
-        <th colspan="2"><span data-keyref="Type_Constant_File_Attribute"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/File_Handling/File_System/file_find_first.htm">文件属性常量</a></span></th>
+        <th colspan="2"><span data-keyref="Type_Constant_File_Attribute"><a target="_blank" href="file_find_first.htm">文件属性常量</a></span></th>
       </tr>
       <tr>
         <th>常量</th>
@@ -126,8 +126,11 @@
       </tr>
     </tbody>
   </table>
-  <p>属性只能在 Windows 上使用。对于所有其他平台，请使用 0 或 <span class="inline">fa_none</span>。</p>
-  <p class="note"><b></b><span class="warning"> 警告</span> 由于 <span data-keyref="GameMaker Name">GameMaker</span> 沙箱限制，此函数可能无法正常工作！有关更多信息，请参见 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统 </a> 部分。</p>
+  <p>属性只能在 Windows 上使用。对于所有其他平台，请使用 0 或 <span class="inline">fa_none</span>。<b></b></p>
+  <div data-conref="../../../../assets/snippets/Note_Warning_GM_FileSystem_Sandboxed.hts">
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span></b> 由于 <span data-keyref="GameMaker Name">GameMaker</span> 处于沙盒状态，这可能无法按您的预期工作！请参阅有关 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统 </a> 的部分了解更多信息。</p>
+
+</div>
   <p class="note"><span class="note"> 注意</span> 此函数在 HTML5 目标上无法工作。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -141,22 +144,22 @@
       </tr>
       <tr>
         <td>mask</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>用于搜索的过滤器。</td>
       </tr>
       <tr>
         <td>attr</td>
-        <td><span data-keyref="Type_Constant_File_Attribute"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/File_Handling/File_System/file_find_first.htm">文件属性常量</a></span>(s)</td>
+        <td><span data-keyref="Type_Constant_File_Attribute"><a target="_blank" href="file_find_first.htm">文件属性常量</a></span>(s)</td>
         <td>要查找的特定文件属性。</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if directory_exists("\User Content")<br>
+  <p class="code">if (directory_exists("\User Content")) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;fileA = file_find_first("/User Content/*.doc", fa_readonly);<br>
     &nbsp; &nbsp; fileB = file_find_next();<br>
@@ -189,7 +192,7 @@
         <div style="float:right">Next: <a href="file_find_next.htm">file_find_next</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 file_find_first

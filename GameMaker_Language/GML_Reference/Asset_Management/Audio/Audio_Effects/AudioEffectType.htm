@@ -61,7 +61,7 @@
   <meta name="rh-index-keywords" content="AudioEffectType">
   <meta name="condition-tags" content="">
   <meta name="template" content="../../../../../assets/masterpages/Manual_Page.htt">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Effects/AudioLFOType.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Effects/AudioEffect.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -88,7 +88,7 @@
   <p>以下是当前可供选择的音频效果列表。有关可为每个效果设置的参数，请参阅<a href="AudioEffect.htm">AudioEffect Struct</a>。</p>
   <h2 id="h2">AudioEffectType.Bitcrusher</h2>
   <p>这是一种<a href="https://en.wikipedia.org/wiki/Bitcrusher">位粉碎器</a>效果，以创建<strong>扭曲</strong>。它分四个步骤(或<i>阶段</i>)，按以下顺序进行：</p>
-  <p class="dropspot"><em>Gain&nbsp;<span><span><b>→</b></span></span> Clipper&nbsp;<span><span><b>→</b></span></span> Sample rate reduction&nbsp;<span><span><b>→</b></span></span> Resolution reduction</em></p>
+  <p class="dropspot"><em>增益<b>→</b>限幅器<b>→</b>采样率降低<b>→</b>分辨率降低</em></p>
   <p>首先，将增益因子应用于输入信号。</p>
   <p>然后，将得到的信号在 -1 和 1 之间进行<a href="https://en.wikipedia.org/wiki/Clipping_(audio)">剪裁</a>(实质上是对每个样本进行<span class="inline3_func"><a href="../../../Maths_And_Numbers/Number_Functions/clamp.htm">clamp</a></span>)。这是引入扭曲的第一步。</p>
   <p>接下来，降低采样率会通过对音频进行<a class="tooltip" title="降采样是在音频和信号中减少样本的过程。对于音频来说，这意味着样本被丢弃，剩下的样本更少，导致信息丢失。音频的采样频率和音频的质量都降低了。这个改变会使音频失真。">下采样</a>来降低音频质量。这会导致扭曲。</p>
@@ -140,7 +140,7 @@
         <div>Next:&nbsp;<a href="AudioLFOType.htm#h">AudioLFOType 枚举</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
 
 </div>

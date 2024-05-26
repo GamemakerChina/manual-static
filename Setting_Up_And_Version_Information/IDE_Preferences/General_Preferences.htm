@@ -87,19 +87,21 @@
     <li><strong>IDE 外观</strong>：您可以在此处从 IDE 可以使用的不同外观中进行选择。默认情况下，<span data-keyref="GameMaker Name">GameMaker</span> 有两种皮肤，一种浅色和一种深色，初始设置使用<strong>深色</strong>皮肤。</li>
     <li><strong>默认构建目标</strong>：这是用于项目的默认构建<a href="../../Introduction/Compiling.htm">目标</a>。默认为 <strong>GX.games</strong>。</li>
     <li><strong>默认音频设备</strong>：您可以在此处选择供 <span data-keyref="GameMaker Name">GameMaker</span> IDE 使用的默认音频设备。您可以通过单击刷新按钮<img alt="Refresh Button Icon" class="icon" src="../../assets/Images/Icons/Icon_Refresh.png">来刷新列表。</li>
-    <li><strong>自动响应退出确认</strong>：此选项允许您设置在退出 <span data-keyref="GameMaker Name">GameMaker</span> 时是否显示确认消息。默认情况下，该选项被设置为<strong>显示消息</strong>，但也可以设置为跳过消息，就像您单击了"确定"一样。</li>
     <li><strong>自动响应对系统字体更改的对话框</strong>：此选项允许您设置在添加、删除或编辑系统字体时是否显示确认消息。默认情况下，该选项被设置为<strong>显示消息</strong>，但也可以设置为跳过消息，就像您单击了"确定"一样。</li>
+    <li><strong>自动响应退出确认</strong>：此选项允许您设置在退出 <span data-keyref="GameMaker Name">GameMaker</span> 时是否显示确认消息。默认情况下，该选项被设置为<strong>显示消息</strong>，但也可以设置为跳过消息，就像您单击了"确定"一样。</li>
     <li><strong>启用通知</strong>：选中此选项将使 IDE 能够显示有关新运行时的通知，等等...。默认情况下，该选项处于启用状态。</li>
     <li><strong>通知超时(毫秒)</strong>：设置显示通知的时间长度(以毫秒为单位)。默认为 6000。</li>
     <li><strong>退出时注销</strong>：如果选中此选项，则在关闭 <span data-keyref="GameMaker Name">GameMaker</span> 时，IDE 将自动注销用户会话。这主要是针对教育用户，因为-选中-意味着每当程序关闭时，用户将被注销，从而释放会话席位供其他用户使用。默认情况下，此选项处于禁用状态。</li>
+    <li><strong>禁用IDE转换动画</strong>：<span data-keyref="GameMaker Name">GameMaker</span>IDE有许多用于打开窗口等操作的动画转换。但是，它们并不适合每个人的口味，如果在较旧或动力不足的计算机上禁用它们，您可能会体验到性能提升。您可以在此处禁用它们，它们默认处于启用状态。</li>
     <li><strong>允许通过键盘快捷键关闭空选项卡</strong>：如果启用此功能，则可以通过其键盘快捷键 (<img alt="Icon CTRL" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="Icon CMD" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <strong>W</strong>) 关闭空工作区选项卡。禁用时，不能关闭空选项卡。</li>
     <li><strong>在将文件拖入 IDE 时打开新资源以进行编辑</strong>：某些资源(如精灵或声音)可以拖到 <span data-keyref="GameMaker Name">GameMaker</span> IDE 中的主工作区，并将被检测并作为新资源添加到<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中。默认情况下，发生这种情况时，也会打开相应的资源编辑器进行编辑，但取消选中此选项将阻止打开编辑器，并要求您手动打开它们。</li>
-    <li><strong>使用美国日期格式</strong>：此设置更改用于在 IDE 中显示日期的格式。启用时，日期显示为例如。"Thursday, April 27, 2023"，禁用时，日期显示为例如 "27 April 2023"。默认情况下，此首选项处于未选中状态。</li>
     <li><strong>创建时打开新资源以进行编辑</strong>：如果选中此选项，则每次在<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中创建新资源时，都会自动打开相应的资源编辑器。默认情况下，该选项处于选中状态，取消选中意味着您必须手动打开所有新创建的资源。</li>
     <li><strong>自动重新加载更改的文件</strong>：如果选中此选项，IDE 将自动扫描和检查文件，以查看其中是否有任何文件在 <span data-keyref="GameMaker Name">GameMaker</span> 之外进行了更改，如果有，则重新加载。</li>
     <li><strong>项目文件不区分大小写模式(可能会影响性能)</strong>：旨在避免非 Windows 设备 (MacOS 和 Linux) 上的文件名区分大小写问题。在将项目从 Windows 传输到非 Windows 系统、使用启用了 <a href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreignoreCase"> 忽略大小写 </a> 的 Git (您应该先尝试禁用它) 和 / 或仅重命名文件以更改大小写时，可能会发生此类问题。这在默认情况下是禁用的，因为这是一种性能开销，在上述情况之外不应该要求这样做。</li>
-    <li><strong>禁用IDE过渡动画</strong>：<span data-keyref="GameMaker Name">GameMaker</span> IDE 有许多动画过渡，例如打开窗口等。然而，并不是每个人都喜欢它们，如果在较老的或性能不足的计算机上禁用它们，您可能会得到性能提升。您可以在此处禁用它们，默认情况下它们处于打开状态。</li>
+    <li><strong>启用详细记录</strong>-此选项启用网络呼叫的详细记录。</li>
+    <li><strong>Show Project Tool Output</strong> - When this option is checked, the&nbsp;<a href="../../IDE_Tools/Project_Tool.htm#h">Project Tool&nbsp;Output</a>&nbsp;window will be shown when you convert projects with&nbsp;<a href="../../IDE_Tools/Project_Tool.htm">Project Tool</a>.</li>
     <li><strong>启用 DPI 覆盖</strong>：此选项允许您使用您自己的设置覆盖默认 DPI 设置。您必须首先启用该选项，然后设置<strong>原始 DPI 覆盖</strong>值 (缺省值为 96) 或设置本机 DPI 的 <strong> 百分比 </strong>( 缺省值为 100%)，一旦更改，系统将提示您重新启动 IDE，这可能需要您保存在当前打开的项目上所做的任何工作。请注意，DPI 的最小百分比为 50%，最大百分比为 500%，如果您将鼠标悬停在信息图标上，您可以看到正在使用的显示器的建议最大设置：<br> <br> <img alt="General DPi Override Recommendation" class="center" src="../../assets/Images/Setup_And_Version/Preferences/General_DPi_Override_Recomendation.png"> 请注意，如果您超出显示器的建议 DPI 设置，则会显示允许您重置 DPI 的通知。</li>
+    <li><strong>使用美国日期格式</strong>：此设置更改用于在 IDE 中显示日期的格式。启用时，日期显示为例如。"Thursday, April 27, 2023"，禁用时，日期显示为例如 "27 April 2023"。默认情况下，此首选项处于未选中状态。</li>
   </ul>
   <p>上面的选项是<strong>常规</strong>首选项中的主要选项，但在下面列出的子类别中，您还可以使用一些额外的选项：</p>
   <ul class="colour">
@@ -128,7 +130,7 @@
         <div style="float:right">Next:&nbsp;<a href="Start_Screen_Preferences.htm">开始屏幕首选项</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences - General

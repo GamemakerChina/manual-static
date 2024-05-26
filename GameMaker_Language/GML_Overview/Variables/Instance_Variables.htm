@@ -78,10 +78,14 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>实例变量</h1>
-  <p><strong>实例</strong>变量(Instance Variables)是在对象的一个​​实例中创建的，并且被认为是该实例唯一的 - 即：同一对象的许多实例可以具有相同的变量，但每个变量可以保留不同的值每个实例都<em>唯一</em>。但是<i>如何</i>创建实例变量？好吧，您可以通过简单地为变量赋值来创建新变量，如这个小示例所示（这称为<em>声明</em>变量）：</p>
-  <p class="code">potions = 12;<br> life = 100;<br> name = "Jock MacSweeney";<br> strength = 5.5;<br> armour = -2;</p>
-  <p>正如你所看到的，你只需要给出名字和一个值(这个值可以是任何<a href="../Data_Types.htm">数据类型</a>)，就可以设置该变量，并且可以在你编码的对象的实例中使用它(注意，这个值可以是来自一个函数的返回值或其他变量之间的操作结果，等等...)。然后，这些变量可以在实例中以多种方式被使用和修改，例如，这段代码可以在一个碰撞事件中出现并用于从变量"<span class="inline">life</span>"中减去一个数值。</p>
+  <h1><span data-field="title" data-format="default">实例变量</span></h1>
+  <p><strong>实例</strong>变量是在对象的实例中创建的，并被视为该实例唯一的 - 即：同一对象的许多实例可以具有相同的变量，但每个变量可以保存不同的值，因为它们是<em>每个实例都是唯一的。</em>但实例变量<i>如何</i>创建？那么，您只需为其分配一个值即可创建新变量，如这个小示例所示(这称为<em>声明</em>变量)：</p>
+  <p class="code">potions = 12;<br>
+    life = 100;<br>
+    name = "Jock MacSweeney";<br>
+    strength = 5.5;<br>
+    armour = -2;</p>
+  <p>正如您所看到的，您只需提供名称和值(该值可以是任何<a href="../Data_Types.htm">数据类型</a>)即可设置该变量，并准备好在您正在编码的对象的实例中使用它(注意该值可以来自函数的返回值或其他变量之间的运算结果等)。然后可以在实例内以多种方式使用和修改这些变量，例如，此代码可以在碰撞事件中并用于从变量"<span class="inline">life</span>"中获取一定量：</p>
   <p class="code">life -= 5 + armour;</p>
   <p>如果"<span class="inline">life</span>"是100，它现在的值是97(100-(5+-2)=97)。现在，这只是一个简单的例子，你<i>可以</i>把"<span class="inline">armour</span>"换成实际值-2。但如果这个值在多个地方都是<a class="tooltip" title="在计算机编程中，术语“硬编码”用于描述被认为是固定的并且不太可能更改的代码。硬编码功能以无法稍后修改的方式内置于硬件或软件中。例如，如果您要制作游戏并将玩家的健康状况“硬编码”为10，那么您将在整个游戏代码中使用值10，而不是使用变量。">硬编码</a>，然后你决定改变它，会发生什么？你将不得不翻阅所有的代码，把每2个值都改成新的值。是，这很费时间，而且很容易出错！但如果你使用一个变量，你所要做的就是给它重新分配一个新的值，然后代码会自动使用这个新的值。但是，如果你使用一个变量，你所要做的就是给它重新分配一个新的值，从那时起，代码将自动使用这个新的值，使事情更加灵活，更容易解决。如果有问题的话。还应该注意的是，即使一个值不会改变，要记住一个叫做"<span class="inline">life</span>"的变量是什么意思，也比只看一个数字容易得多。</p>
   <p><span data-keyref="GameMaker Name">GameMaker</span>也有一组 "内置" 的实例变量，所以你应该注意它们，因为你可能用相同的名字命名自己的一个实例变量，或者希望自己的全局变量同名，想知道为什么你遇到了错误。但是，它们很容易被发现，因为它们在代码编辑器中以不同的颜色显示，也可以自动完成，并显示在<a href="../../../The_Asset_Editors/Scripts.htm">代码编辑器</a>底部的栏中。</p>
@@ -99,7 +103,7 @@
         <div style="float:right">Next: <a href="Global_Variables.htm">全局变量</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 instance variables

@@ -80,9 +80,10 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>instance_change</h1>
-  <p>您可以使用此函数将对象的一个实例更改为不同对象的另一个实例，同时决定是否执行初始实例"销毁和清理事件"以及新实例"创建事件"。通过这种方式，您可以(例如)将炸弹更改为爆炸，在这种情况下，"perf"参数可能为真，因为您希望炸弹执行其销毁事件和清理事件，以及爆炸以执行其创建事件。或者，您可以让您的玩家角色更改为其他角色，在这种情况下，"perf"参数可能是假的，因为您不希望实例执行其创建和销毁/清理事件。</p>
-  <p>值得注意的是，更改实例意味着在下一步之前您不应对该实例执行进一步操作，特别是尝试访问变量等... 因为那样会导致错误。基本上，您更改实例，但在当前步骤结束之前它实际上不可用，因此直接访问它包含的任何变量(例如，调用<span class="inline">obj_Changed.x</span>)将不起作用。</p>
-  <p class="note"><b>警告！</b>更改启用物理的实例时，物理属性<b>不会转移到正在更改的新实例</b>。因此，您应该有代码来"转移"当前实例的物理状态到新实例，或者已经在其创建事件或对象编辑器中定义了新实例的物理属性。因此，建议您不要将此函数用于启用物理的实例，而应使用<span style="font-size:1px;"><span class="inline">instance_destroy()</span></span>和<span><span style="font-size:1px;"><span class="inline">instance_create_layer()</span></span>的组合。</span></p>
+  <p>您可以使用此函数将一个对象的一个​​实例更改为另一个对象的另一个实例，并在执行此操作时决定是否执行初始实例的销毁和清理事件以及新实例的创建事件。</p>
+  <p>通过这种方式，您可以 (例如) 将炸弹更改为爆炸 - 在这种情况下，"perf" 参数可能为真，因为您希望炸弹执行其销毁事件和清理事件，以及爆炸来执行其创建事件 - 或者您可以将您的玩家角色更改为不同的角色 - 在这种情况下，"perf" 参数可能为假，因为您不希望实例执行其创建和销毁 / 清理事件，因此它保持相同的属性。</p>
+  <p>值得注意的是，更改实例意味着在下一步之前您不应对该实例执行进一步的操作，特别是尝试访问变量等，因为这将导致错误。基本上，您更改了实例，但直到当前步骤结束时它实际上才可用，因此直接访问它包含的任何变量 (例如，调用 <span class="inline2">obj_Changed.x</span>) 将不起作用。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span> 更改启用物理的实例时，其物理属性 <b> 将不会 </b> 转移到要更改的新实例。因此，您应该有适当的代码来将当前实例的物理状态 " 转移 " 到新实例，或者在其创建事件或对象编辑器中定义新实例的物理属性。因此，不建议将此函数与启用物理功能的实例一起使用，而是结合使用函数 <span style="font-size:1px;"><span class="inline2">instance_destroy()</span></span> 和 <span><span style="font-size:1px;"><span class="inline2">instance_create_layer()</span></span>。</span></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">instance_change(obj, perf);</p>
@@ -95,13 +96,13 @@
       </tr>
       <tr>
         <td>obj</td>
-        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
         <td>调用对象将更改为的新对象。</td>
       </tr>
       <tr>
         <td>perf</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>是否执行新对象的创建和销毁事件(true)或不执行(false)。</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否执行创建和销毁事件 (<span class="inline2">true</span>) 或不执行 (<span class="inline2">false</span>)。</td>
       </tr>
     </tbody>
   </table>
@@ -110,13 +111,12 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if keyboard_check(vk_enter)<br>
+  <p class="code">if (keyboard_check(vk_enter)) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;instance_change(obj_Player_Swimming, false);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;exit;<br>
     }</p>
   <p>上面的代码会将调用实例更改为 "obj_Player_Swimming" 实例，而不会在用户按 "Enter" 键时执行原始实例销毁事件或新实例创建事件，完成后退出代码块。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -126,7 +126,7 @@
         <div style="float:right">Next: <a href="instance_copy.htm">instance_copy</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 instance_change

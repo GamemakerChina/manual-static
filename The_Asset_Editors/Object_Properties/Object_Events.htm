@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">Object Events</span></h1>
-  <p>So, what are <span data-field="title" data-format="default">Object Events</span>? Basically, these are discreet moments in the game loop where things are made to happen based on what you have programmed for them. <span data-keyref="GameMaker Name">GameMaker</span> works with cycles of these events - from the moment a room is started to the moment it is finished there is a game loop running where every <strong>step </strong>a series of events are run or checked, and you can choose to place&nbsp;<span data-keyref="GML_Code">GML Code</span> or <span data-keyref="GML_Visual">GML Visual</span>&nbsp;actions in your objects that respond to these events (a step is a moment in game time, governed by the&nbsp;<a href="../../Settings/Game_Options.htm">Game Frames Per Second</a> setting, and can also be called a <strong>frame</strong>) .</p>
+  <p>那么，什么是<span data-field="title" data-format="default">对象事件</span>？基本上，这些都是游戏循环中的谨慎时刻，事情会根据你为它们编程的内容发生。<span data-keyref="GameMaker Name">GameMaker</span>与这些事件的循环一起工作-从房间开始的那一刻到它结束的那一刻，有一个游戏循环在运行，每一<strong>步</strong>都会运行或检查一系列事件，您可以选择将<span data-keyref="GML_Code">GML代码</span>或<span data-keyref="GML_Visual">GML视觉</span>动作放置在响应这些事件的对象中(<a href="../../Settings/Game_Options.htm">每秒游戏帧数</a>是游戏时间中的一个时刻，由每秒游戏帧数设置控制，也可以称为<strong>帧</strong>)。</p>
   <p>让我们看看一个有事件和代码的典型对象设置。</p>
   <p><img alt="Object Editor Events View" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Events.png">As你可以看到在我们的例子对象中列出了许多它应该响应的事件，但是最初当你创建一个对象时，这个列表是空的，你必须决定你需要哪些事件以及当这些事件被触发时该对象的实例应该做什么。要向对象中添加事件，按下事件列表底部的<strong>添加事件</strong>按钮，将弹出以下窗口：</p>
   <p><img alt="Object Editor Events List" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_EventList.png">这是一个对象可以响应的所有基本事件和事件类别的列表，每个类别中都有子事件来进一步细化行为。例如，如果你点击<strong>K</strong><strong>ey Press</strong> <img alt="Key Press Icon" height="16" src="../../assets/Images/Icons/Icon_KeyboardPress.png" width="16">&nbsp;事件类别，你就会弹出一个进一步的窗口，让你选择<em>对象应该对哪个</em>键做出响应。</p>
@@ -89,7 +89,7 @@
 
 </div>
   <p>现在，您可以编辑<span data-keyref="GML_Code">GML代码</span>(或块)，以给予对象对该事件的特定行为或反应。</p>
-  <p>你可以在任何已添加到对象的事件上点击鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png" style="">&nbsp;，以获得以下菜单选项。</p>
+  <p>你可以在任何已添加到对象的事件上点击鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">&nbsp;，以获得以下菜单选项。</p>
   <p><img alt="Object Editor Events Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_RMBMenu.png">这些选项是：</p>
   <ul class="colour">
     <li><strong>添加事件</strong> - 从事件列表中添加一个新事件。</li>
@@ -101,7 +101,7 @@
     <li><strong>转换为GML Visual / Code</strong>-将使用创建项目时选择的方法创建对象事件，可以使用<span data-keyref="GML_Code">GML Code</span>或<span data-keyref="GML_Visual">GML Visual</span>操作。使用此选项，您可以从一种方法转换为另一种方法，而不考虑项目类型。</li>
     <li><strong>删除事件</strong> - 删除事件（或多个事件）。</li>
   </ul>
-  <p>When removing events, you can use <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55">&nbsp;+ <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;to select multiple events and then delete them all together.Each object you create has its own discreet list of events which are added into it from <a href="../Objects.htm">The Object Editor</a>. These events fall into two categories:</p>
+  <p>删除事件时，您可以使用<img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55">+<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">选择多个事件，然后将它们一起删除。您创建的每个对象都有自己的独立事件列表，这些事件是从<a href="../Objects.htm">对象编辑器</a>添加到其中的。这些事件分为两类：</p>
   <ul class="colour">
     <li>那些运行每帧都运行的</li>
     <li>那些由游戏事件 "触发 "的事件，如实例到达房间边缘或按下键盘或鼠标。</li>
@@ -124,14 +124,14 @@
   </div>
   <p><img alt="Clean Up Event Icon" src="../../assets/Images/Icons/Icon_Destroy.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#"><span data-open-text="true" data-skip-index="true">清理</span><span data-close-text="true">清理</span></a></p>
   <div class="droptext" data-targetname="drop-down10">
-    <p class="dropspot"><span>这个事件将在任何从房间中移除对象的实例的事件之后被调用。因此，它将被触发，如果：</span></p>
+    <p class="dropspot">此事件将在任何从房间中删除对象实例的事件之后调用。因此，如果出现以下情况，则会触发此事件：</p>
     <ul class="dropspotlist">
-      <li class="dropspot"><span>该实例被销毁</span></li>
-      <li class="dropspot"><span>进入别的房间</span></li>
-      <li class="dropspot"><span>游戏结束</span></li>
+      <li class="dropspot">实例被销毁</li>
+      <li class="dropspot">房间结束了</li>
+      <li class="dropspot">游戏结束</li>
     </ul>
-    <p class="dropspot"><span>它是为你设计的，用来 "清理 "你游戏中的任何动态资源（比如表面、数据结构等），或者执行任何你需要执行的任务，<em>一旦</em>实例以任何方式从游戏中删除。</span></p>
-    <p class="dropspot"><span>注意，这个事件将在触发它的事件之后<em>立即</em>被调用，但实例实际上不会被从游戏中移除<strong>，直到当前事件结束</strong>。例如，如果你在步骤事件中调用<span class="inline">instance_destroy()</span>，那么Destroy事件将被调用，然后是Clean Up事件，然后<em>步骤事件的其余部分将完成运行</em>。这意味着你在调用<span class="inline">instance_destroy()</span>之后的任何代码仍然会被运行，如果你已经清理了数据结构或其他一些代码需要的资源，则会成为潜在的错误原因，所以在使用这个事件时必须小心谨慎。</span></p>
+    <p class="dropspot">它被设计用于"清理"游戏中可能存在的任何动态资源(如表面、数据结构等)，或者在实例以任何方式从游戏中移除时执行需要执行<em>一次</em>的任何任务。</p>
+    <p class="dropspot">请注意，此事件将在触发它的事件之后<em>立即</em>被调用，但直到当前<strong>事件结束时，实例才会实际从游戏中</strong>移除。例如，如果您在Step Event中调用<span class="inline">instance_destroy()</span>，则会调用Destroy Event，然后是Clean Up Event，然后<em>步骤事件的其余部分将完成运行</em>。这意味着在调用<span class="inline">instance_destroy()</span>之后，您拥有的任何代码仍将运行，并且如果您已经清理了代码所需的数据结构或其他资源，则可能会导致错误，因此在使用此事件时必须小心。</p>
     <p>&nbsp;</p>
   </div>
   <p><img alt="Alarm Event Icon" src="../../assets/Images/Icons/Icon_Alarm.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#"><span data-open-text="true" data-skip-index="true">计时器</span><span data-close-text="true">计时器</span></a></p>
@@ -145,11 +145,12 @@
   </div>
   <p><img alt="Step Event Icon" src="../../assets/Images/Icons/Icon_Step.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#"><span data-open-text="true" data-skip-index="true">步</span><span data-close-text="true">步</span></a></p>
   <div class="droptext" data-targetname="drop-down12">
-    <p class="dropspot"><span data-keyref="GameMaker Name">GameMaker</span>将时间分成<strong>步</strong>，房间的速度定义了每秒应该有多少步（一个步骤也可以称为<strong>帧</strong>）。一个步骤，基本上是在游戏运行时不断检查和触发所有事件的循环，所以你可以想象，<strong>步骤事件</strong>是一个在实例存在时每一步游戏都要检查的事件。</p>
+    <p class="dropspot"><span data-keyref="GameMaker Name">GameMaker</span>将时间划分为<strong>步</strong>，游戏速度定义了每秒应该有多少步(一个步骤也可以被称为<strong>帧</strong>)。一个步骤，基本上是一个循环，不断运行的所有事件被检查和触发的必要，而游戏运行，所以你可以想象，<strong>步骤事件</strong>是当实例存在时在游戏的每一步都检查的事件。</p>
     <p class="dropspot">步骤事件实际上由三个子事件组成，概述如下。</p>
-    <p class="dropspot"><img alt="Object Editor Step Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Step.png">对于大多数事情来说，使用标准的步骤事件就可以了，但有时你想更多地控制什么代码在什么时间运行，所以我们为你提供了<strong>Begin </strong>和<strong>End </strong>step事件。这三个事件每一步都会被检查，但它们的顺序永远不会改变，即使将来<span data-keyref="GameMaker Name">GameMaker</span>引擎的更新改变了其他事件，这意味着这是唯一可靠的方法，可以确保某些事情总是发生在其他事情之前。</p>
+    <p class="dropspot"><img alt="Object Editor Step Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Step.png"></p>
+    <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>首先，所有实例运行其<strong>开始步骤</strong>事件。然后，所有实例运行其<strong>步骤</strong>事件。之后，所有实例运行其<strong>结束步骤</strong>事件。</p>
+    <p class="dropspot">对于大多数情况，使用标准步骤事件都很好，但有时您需要对运行的代码和运行时间进行更多控制，因此为您提供了<strong>开始</strong>和<strong>结束</strong>步骤事件。每一步都会检查这三个事件，但它们的顺序永远不会改变，即使将来对<span data-keyref="GameMaker Name">GameMaker</span>引擎的更新更改了其他事件，这意味着这是唯一可靠的方法来确保某件事总是在另一件事之前发生。</p>
     <p class="dropspot">步骤事件可以用来做什么？嗯，它可以用于需要连续执行的动作或代码。例如，如果一个物体应该跟随另一个物体，在这里你可以对我们所跟随的物体的运动方向进行调整，以保持它在后面平稳地移动。不过要小心处理这个事件，不要在物体的步骤事件中放入很多复杂的动作，尤其是当你打算在游戏室里有很多物体的实例时，因为这可能会使游戏变慢。许多事情都可以放入计时器，或者使用一些<strong>其他</strong>事件设置为触发，而不是一直发生。</p>
-    <p class="dropspot">&nbsp;</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><img alt="Collision Event Icon" src="../../assets/Images/Icons/Icon_Collision.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#"><span data-open-text="true" data-skip-index="true">碰撞</span><span data-close-text="true">碰撞</span></a></p>
@@ -159,26 +160,31 @@
     <p class="dropspot">如果<strong>物理</strong>是启用的，那么碰撞将基于你在物体的物理属性中为其定义的<strong>碰撞形状</strong>（<em>Fixture</em>）的类型，以及它对碰撞的反应。这意味着你可能不需要任何代码来处理碰撞，但这个事件仍然<em>需要至少有一个注释在里面</em>，以便检测碰撞。</p>
     <p class="dropspot">最后，应该注意的是，在碰撞事件被触发之前，所有的碰撞将在每个游戏步骤中被计算一次，这样，当碰撞事件运行时，所有的碰撞都已经被计算并预先分配了。这意味着，如果你在这个事件中创建了一个实例，然后试图用它来检查碰撞，那么在游戏循环的下一次<a class="tooltip" title="迭代是对项目代码中的一组操作的一次遍历。计算机编程中一种迭代形式是通过循环。循环将重复一段代码，直到满足条件为止，然后循环可以继续进行。每次计算机运行一个循环，就称为迭代。简单来说，迭代是一遍又一遍地重复执行特定代码段以执行特定操作的过程。">迭代</a>之前，碰撞将不会被检测到或解决。</p>
     <p class="dropspot">&nbsp;</p>
-    <p class="dropspot">&nbsp;</p>
   </div>
-  <p><img alt="Keyboard Icon" src="../../assets/Images/Icons/Icon_Keyboard.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#"><span data-open-text="true" data-skip-index="true">键盘,</span><span data-close-text="true">键盘,</span></a>&nbsp;&nbsp;<img alt="Keyboard Press Icon" src="../../assets/Images/Icons/Icon_KeyboardPress.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#"><span data-open-text="true" data-skip-index="true">键盘按下,</span><span data-close-text="true">键盘按下,</span></a> &nbsp;<img alt="Keyboard Release Icon" height="16" src="../../assets/Images/Icons/Icon_KeyboardRelease.png" style="cursor: nwse-resize;" width="15"> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#"><span data-open-text="true" data-skip-index="true">键盘松开</span><span data-close-text="true">键盘松开</span></a></p>
+  <p><img alt="Keyboard Icon" src="../../assets/Images/Icons/Icon_Keyboard.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#"><span data-open-text="true" data-skip-index="true">键盘,</span><span data-close-text="true">键盘,</span></a> &nbsp;&nbsp;<img alt="Keyboard Press Icon" src="../../assets/Images/Icons/Icon_KeyboardPress.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#"><span data-open-text="true" data-skip-index="true">键盘按下,</span><span data-close-text="true">键盘按下,</span></a> &nbsp;<img alt="Keyboard Release Icon" height="16" src="../../assets/Images/Icons/Icon_KeyboardRelease.png" style="cursor: nwse-resize;" width="15"> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#"><span data-open-text="true" data-skip-index="true">键盘松开</span><span data-close-text="true">键盘松开</span></a></p>
   <div class="droptext" data-targetname="drop-down14">
     <p class="dropspot">让玩家控制你游戏的不同方面是非常重要的，为此<span data-keyref="GameMaker Name">GameMaker</span>为你提供了一个非常全面的键盘事件列表，可以在三个主要的键盘类别中的任何一个使用。对于一般的键盘类别，只要选定的键被按下，它就会被连续触发&nbsp;每一步&nbsp;，而按压和释放类别的事件只会在最初按压或释放键时被触发一次。</p>
     <p class="dropspot">应该注意的是，每当使用一个键时，键盘事件实际上会在房间里的所有活动实例中被触发，但只有那些为该特定键定义了事件的实例才会做出反应，你可以在任何对象中创建多个键盘事件，在游戏运行时，该对象的实例会对所有事件做出反应。</p>
     <p class="dropspot">当你向一个对象添加任何键盘事件时，你会看到键盘子事件菜单，你可以指定你要检查的键:</p>
     <p class="dropspot"><img alt="Object Editor Keyboard Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Keyboard.png">它们中的大多数是相当明显的，但让我们简单地浏览一下这些部分--在顶部我们有方向键，其次是最常用的修改键，然后是键盘的其他部分（分成更多的子部分，这样你就可以得到所需的确切键，如<img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55">&nbsp;或&nbsp;<img alt="Insert Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Insert.png" width="55">），最后是两个非常特殊的子事件，<strong>No Key</strong>和<strong>Any Key</strong>。正如它们的名字所暗示的，这些是检查<em>无</em>键被按下时或<em>任何</em>键被按下时的子事件。请注意，数字键盘上的按键只有在<strong>数字锁</strong>被启用时才会产生相应的事件。</p>
     <p class="dropspot">键盘的<strong>Press </strong>和<strong>Release </strong>事件与常规键盘事件几乎完全相同，只是它们不是连续触发，而是只触发一次。当键盘第一次记录到一个键被按下时，它将产生一个<strong>键盘按下</strong>事件（以及一个常规的键盘事件），之后第一次不再检测到一个键被按下时，它将触发一个<strong>键盘释放</strong>事件。</p>
-    <p class="dropspot">&nbsp;</p>
+    <div data-conref="../../assets/snippets/Note_Important_Debug_Overlay_Keyboard_Mouse_Events.hts">
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 当<a href="../../GameMaker_Language/GML_Reference/Debugging/The_Debug_Overlay.htm">调试覆盖层</a>打开并接管键盘和/或鼠标输入时，<span data-keyref="GameMaker Name">GameMaker</span>不会执行键盘和鼠标事件。<a href="../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm#simulating_keypresses">模拟按键</a>也不会执行事件。但是，您仍然可以在Step事件中使用<a href="../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">键盘输入</a>和<a href="../../GameMaker_Language/GML_Reference/Game_Input/Mouse_Input/Mouse_Input.htm">鼠标输入</a>功能，例如，检查输入。您还可以使用<span class="inline3_func"><a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_perform.htm">event_perform</a></span>功能及其类似的。</p>
+
+</div>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><img alt=" Mouse Icon" height="16" src="../../assets/Images/Icons/Icon_MouseEvent.png" width="16"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#"><span data-open-text="true" data-skip-index="true">鼠标</span><span data-close-text="true">鼠标</span></a></p>
   <div class="droptext" data-targetname="drop-down16">
     <p class="dropspot">鼠标类别被分成一系列的事件，可以选择这些事件来给你一个更精确的控制你的游戏中发生的事情。在这里你可以看到这些事件到底是什么。</p>
-    <p class="dropspot"><img alt="Object Editor Mouse Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Mouse.png">左<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">、右<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">&nbsp;和中<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png">&nbsp;按钮事件（无论是<strong>normal</strong>、<strong>pressed </strong>还是<strong>released</strong>）都对拥有该事件的实例的掩码起作用。这意味着，<span data-keyref="GameMaker Name">GameMaker</span>在使用这些按钮时，会对照有鼠标事件的实例的碰撞掩码，检查鼠标在房间里的位置。如果与实例<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">碰撞箱</a>&nbsp;发生了 "碰撞"，那么事件就会被触发，所以要确保任何有这些事件的实例都有一个具有有效碰撞遮罩的精灵，或者该对象在对象属性中选择了一个遮罩精灵。正如它们的名字所暗示的，这些事件将在所选的鼠标按钮首次按下或释放时被触发一次，或者在按钮保持的每一步都被连续触发。</p>
+    <p class="dropspot"><img alt="Object Editor Mouse Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Mouse.png">左边<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">，右边<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">   和中间<img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png">   按钮事件(无论是<strong>正常</strong>的，<strong>按下</strong>或<strong>释放</strong>)都对具有事件的实例的遮罩起作用。这意味着当这些按钮被用于具有鼠标事件的实例的碰撞遮罩时，<span data-keyref="GameMaker Name">GameMaker</span>将检查鼠标在房间中的位置。如果与实例<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a>有"碰撞"，则事件将被触发，因此，请确保具有这些事件的任何实例都有一个带有有效碰撞遮罩的精灵，或者对象有一个在对象属性中选择的遮罩精灵。正如它们的名称所暗示的那样，这些事件将在第一次按下或释放所选鼠标按钮时触发一次，或者在按钮保持不变的每一步中连续触发。</p>
     <p class="dropspot">鼠标进入和离开事件也与按钮事件类似，它们也依赖于实例的掩码来工作，但这次它们是在鼠标第一次 "进入"（触摸）实例或鼠标 "离开"（停止触摸）实例时触发的。然而，这些事件不是连续的，每当鼠标进入或离开对象时只被触发一次--所以它们是一种理想的方法，例如，创建需要在鼠标悬停时改变的按钮，当鼠标移开时又恢复正常。</p>
     <p class="dropspot">最后，我们还有一个鼠标事件的部分，叫做<strong>全局鼠标</strong>。在这个子菜单中，你会发现有一些事件是用来记录实例中的鼠标事件的，即使鼠标不在它们上面，甚至不在它们附近。这些事件是为<em>所有</em>实例生成的，如果有为指定事件定义的动作或代码，那么它将被运行，无论鼠标在游戏中的位置如何。</p>
-    <p class="dropspot">请注意，在移动或触摸屏设备上，鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">&nbsp;也可以用来检查触摸屏上的手指，而鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">&nbsp;是由双击屏幕触发的（这个行为可以用代码改变）。</p>
-    <p class="dropspot">&nbsp;</p>
+    <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在移动的或触摸屏设备上，鼠标左键<img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">也可用于检查触摸屏上的手指标签，鼠标右键<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">由双击屏幕触发(可使用代码更改此行为)。</p>
+    <div data-conref="../../assets/snippets/Note_Important_Debug_Overlay_Keyboard_Mouse_Events.hts">
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 当<a href="../../GameMaker_Language/GML_Reference/Debugging/The_Debug_Overlay.htm">调试覆盖层</a>打开并接管键盘和/或鼠标输入时，<span data-keyref="GameMaker Name">GameMaker</span>不会执行键盘和鼠标事件。<a href="../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm#simulating_keypresses">模拟按键</a>也不会执行事件。但是，您仍然可以在Step事件中使用<a href="../../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm">键盘输入</a>和<a href="../../GameMaker_Language/GML_Reference/Game_Input/Mouse_Input/Mouse_Input.htm">鼠标输入</a>功能，例如，检查输入。您还可以使用<span class="inline3_func"><a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_perform.htm">event_perform</a></span>功能及其类似的。</p>
+
+</div>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><img alt="Gestures Icon" src="../../assets/Images/Icons/Icon_Gesture.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#"><span data-open-text="true" data-skip-index="true">手势</span><span data-close-text="true">手势</span></a></p>
@@ -196,8 +202,7 @@
     <ul class="dropspotlist">
       <li class="dropspot"><a href="Gesture_Events.htm">手势事件</a></li>
     </ul>
-    <p class="dropspot">&nbsp;</p>
-    <p class="dropspot">&nbsp;</p>
+    <p class="dropspot">&nbsp;&nbsp;</p>
   </div>
   <p><img alt="Other Icon" height="16" src="../../assets/Images/Icons/Icon_Other.png" width="16"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down19" href="#"><span data-open-text="true" data-skip-index="true">其他</span><span data-close-text="true">其他</span></a></p>
   <div class="droptext" data-targetname="drop-down19">
@@ -218,9 +223,7 @@
     <ul class="dropspotlist">
       <li class="dropspot"><a href="Draw_Events.htm">绘制事件</a></li>
     </ul>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p class="dropspot">&nbsp;</p>
+    <p>&nbsp;&nbsp;</p>
   </div>
   <p><img alt="Async Event" src="../../assets/Images/Icons/Icon_Async.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#"><span data-open-text="true" data-skip-index="true">异步</span><span data-close-text="true">异步</span></a></p>
   <div class="droptext" data-targetname="drop-down21">
@@ -258,7 +261,7 @@
         <div style="float:right">Next:&nbsp;<a href="Parent_Objects.htm">父对象</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Object Events

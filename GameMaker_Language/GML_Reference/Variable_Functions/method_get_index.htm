@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="method_get_index">
   <meta name="search-keywords" content="method_get_index">
   <meta name="is_pure" content="true">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/is_string.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/method_get_self.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/method_call.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/method_get_self.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -80,7 +80,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>method_get_index</h1>
-  <p>使用此函数，您可以检索定义方法的脚本的<a href="../../GML_Overview/Script_Functions.htm">脚本</a>索引。如果该方法未在脚本中定义，则该函数将返回-1，否则它将返回脚本的索引值。</p>
+  <p>此函数为您提供给定方法的 <span data-keyref="Type_Function_Script"><a target="_blank" href="../../GML_Overview/Script_Functions.htm"> 脚本函数 </a></span> 引用。此函数可用于检索绑定到实例或结构的方法后面的原始函数。</p>
+  <p>当传递了一个无效的值(例如，不是一个方法)时，它返回<span class="inline2">undefined</span>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">method_get_index(method);</p>
@@ -93,22 +94,22 @@
       </tr>
       <tr>
         <td>method</td>
-        <td><span data-keyref="Type_Method"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm">Method</a></span></td>
+        <td><span data-keyref="Type_Method"><a target="_blank" href="../../GML_Overview/Method_Variables.htm">Method</a></span></td>
         <td>要检查的方法变量</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Asset_Script"><a target="_blank" href="../../../../The_Asset_Editors/Scripts.htm">Script Asset</a></span> or&nbsp;<span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Function_Script"><a target="_blank" href="../../GML_Overview/Script_Functions.htm">Script Function</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var _index = method_get_index(light_setup);<br>
-    if _index != -1<br>
+    if (_index != undefined) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(script_get_name(_index));<br>
     }</p>
-  <p>上面的代码将检查方法 “light_setup” 的脚本索引，然后如果不是-1，则将脚本名称输出到控制台。</p>
+  <p>上面的代码将获取方法<span class="inline2">light_setup</span>的函数索引，然后如果它不是<span class="inline2">undefined</span>，它将输出函数的名称到控制台。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -119,7 +120,7 @@
         <div style="float:right">Next:&nbsp;<a href="method_call.htm">method_call</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 method_get_index

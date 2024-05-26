@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="effect_create_depth">
   <meta name="search-keywords" content="effect_create_depth">
   <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/effect_create_layer.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particles.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -82,6 +82,10 @@
   <p>该函数在给定深度处创建简单的粒子效果。</p>
   <p>您可以提供深度值和粒子种类，沿着其位置、大小和颜色。大小采用三个可能的值：0(小)、1(中)或2(大)。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 效果类型<span class="inline2">ef_rain</span>和<span class="inline2">ef_snow</span>不使用x/y位置(尽管您仍然必须提供它们)。</p>
+  <div data-conref="../../../../assets/snippets/Note_Depth_Values_Are_Approximate.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 深度值是近似值。如果您尝试以接近最大深度和最小深度的深度值绘制事物，则可能会由于计算引入的不准确性而无法绘制它们。</p>
+
+</div>
   <p>不同粒子种类的可用常数为：</p>
   <div data-conref="../../../../assets/snippets/Table_Effect_Type_Constant.hts">
   <table>
@@ -172,32 +176,32 @@
       </tr>
       <tr>
         <td>depth</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>创建效果的深度</td>
       </tr>
       <tr>
         <td>kind</td>
-        <td><span data-keyref="Type_Constant_Effect"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Particles/effect_create_above.htm">Effect Type Constant</a></span></td>
+        <td><span data-keyref="Type_Constant_Effect"><a target="_blank" href="effect_create_above.htm">Effect Type Constant</a></span></td>
         <td>要创造的那种效果</td>
       </tr>
       <tr>
         <td>x</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>创建效果的x位置(<span class="inline2">ef_rain</span>和<span class="inline2">ef_snow</span>未使用)</td>
       </tr>
       <tr>
         <td>y</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>创建效果的y位置(<span class="inline2">ef_rain</span>和<span class="inline2">ef_snow</span>未使用)</td>
       </tr>
       <tr>
         <td>size</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>效果的大小(0 =小，1 =中，2 =大)</td>
       </tr>
       <tr>
         <td>colour</td>
-        <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
+        <td><span data-keyref="Type_Constant_Colour"><a target="_blank" href="../Colour_And_Alpha/Colour_And_Alpha.htm">Colour</a></span></td>
         <td>效果的颜色</td>
       </tr>
     </tbody>
@@ -218,7 +222,7 @@
         <div>Next:&nbsp;<a href="effect_create_layer.htm">effect_create_layer</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 effect_create_depth

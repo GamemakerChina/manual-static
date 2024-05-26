@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1 id="h"><span data-field="title" data-format="default">DS Grids</span></h1>
-  <p>DS网格基本上是具有2个维度<span>的<a href="../../../GML_Overview/Arrays.htm"></a>数组</span>的类型。您可以通过设置网格的整数宽度和高度来定义网格，然后设置网格中"单元格"的总数(宽度和高度的乘积)，这些单元格将用于保存不同的数据值(实数或字符串)。</p>
+  <p>A DS grid is a type of<span>&nbsp;<a href="../../../GML_Overview/Arrays.htm">array</a> with 2 dimensions</span>. You define the grid by setting its integer width and height, which sets the total number of "cells" within the grid (the width and height multiplied). These cells are then used to hold different data values (real numbers or strings).</p>
   <p><img alt="DS Grid Example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_basic.png">这种类型的结构允许您通过给出网格中单元格的x和y索引来设置和检索网格中单元格的值(x和y轴从0开始，直到width-1和height-1)。但是，您也可以在特定的栅格区域中设置值，添加单个值，并检索给定区域上的和、最大值、最小值和平均值，从而使此数据结构成为您可用的所有数据结构中函数最丰富的。</p>
   <p>访问 DS 网格数据结构时，您应始终尝试对单元格位置使用 <b> 整数值 </b>，否则，所有非整数索引都将被 <span data-keyref="GameMaker Name">GameMaker</span> 下限。如果这不是您所需要的，那么您需要在传递您想要检查的索引之前自行进行舍入。<b></b></p>
   <div data-conref="../../../../assets/snippets/Note_DS_Destroy_When_No_Longer_Needed.hts">
@@ -94,7 +94,7 @@
   <p class="code">grid_index[# xpos, ypos]</p>
   <p>您可以从有关 <a href="../../../GML_Overview/Accessors.htm"> 访问器 </a> 的 GML 概述页面找到更多信息以及示例。</p>
   <h2 id="func_ref">功能参考</h2>
-  <h3>基本</h3>
+  <h3 id="func_ref_general">基本</h3>
   <ul class="colour">
     <li><a href="ds_grid_create.htm">ds_grid_create</a></li>
     <li><a href="ds_grid_destroy.htm">ds_grid_destroy</a></li>
@@ -133,12 +133,12 @@
     <li><a href="ds_grid_value_disk_y.htm">ds_grid_value_disk_y</a></li>
     <li><a href="ds_grid_copy.htm">ds_grid_copy</a></li>
   </ul>
-  <h3>序列化</h3>
+  <h3 id="func_ref_serialisation">Serialisation</h3>
   <ul class="colour">
     <li><a href="ds_grid_read.htm">ds_grid_read</a></li>
     <li><a href="ds_grid_write.htm">ds_grid_write</a></li>
   </ul>
-  <h3>MP网格</h3>
+  <h3 id="func_ref_mp_grid">MP网格</h3>
   <ul class="colour">
     <li><a href="ds_grid_to_mp_grid.htm">ds_grid_to_mp_grid</a> / <a href="../../Movement_And_Collisions/Motion_Planning/mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></li>
   </ul>
@@ -147,11 +147,11 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构</a></div>
-        <div style="float:right">Next: <a href="../DS_Lists/DS_Lists.htm">列表 List</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Data_Structures.htm">数据结构</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../DS_Lists/DS_Lists.htm">列表 List</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 DS Grids

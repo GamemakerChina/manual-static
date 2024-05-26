@@ -107,7 +107,7 @@
   <p><img alt="HTML5 Analytics Options" class="center" src="../../assets/Images/Settings/HTML5_Analytics_Options.png">此部分允许您添加游戏分析，允许您使用某些第三方产品来跟踪您的游戏及其销售或播放。您可以指定是否使用<a href="https://www.flurry.com/">Flurry分析</a>或<a href="https://marketingplatform.google.com/about/analytics/">Google分析</a>来跟踪您的游戏。由于这些功能的性质，你一次只能有一个活动，一旦你标记了启用 Flurry Analytics <strong>或</strong>启用 Google Analytics <strong> ，你也应该添加唯一的 ID，你已经分配到适当的区域。</strong></p>
   <p>有关可用于发送分析数据的函数的信息，请参见<a href="../../GameMaker_Language/GML_Reference/Web_And_HTML5/Web_And_HTML5.htm">此处</a>。</p>
   <p>&nbsp;</p>
-  <h2>图形</h2>
+  <h2 id="graphics">图形</h2>
   <p><img alt="HTML5 Graphics Options" class="center" src="../../assets/Images/Settings/HTML5_Graphics_Options.png">在这里，你可以更改下面有关游戏显示方式的细节(注意，不是所有浏览器都以相同的方式显示你的游戏，所以在尽可能多的浏览器上测试这些选项，以确保它们达到预期的效果) :</p>
   <ul class="colour">
     <li><strong>允许切换到全屏</strong>: 如果选中此选项，用户可以使用 Mac 上的<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" style="cursor: nwse-resize;" width="55"> + “<span class="inline">F</span>”和 Windows 上的<span class="inline">F10</span>将游戏从窗口切换到全屏模式。这是默认开启的。</li>
@@ -115,7 +115,7 @@
     <li><strong>在浏览器中将游戏居中</strong> : 选中此选项将自动在运行游戏的浏览器中将游戏屏幕居中。默认关闭。</li>
     <li><strong>使用内置粒子</strong> : 此选项将导出内置粒子系统所需的精灵以及您的游戏。这些粒子被存储在单独的纹理页面中，这意味着它们不是为这个平台生成粒子的最有效的方法，因此建议(除非使用 WebGL)你取消选中这个选项，使用你自己的粒子，它们将被存储在主纹理页面上，以供你的游戏使用。这是默认开启的。</li>
     <li><strong>使用内置字体</strong> : 此选项将导出<span data-keyref="GameMaker Name">内置字体的 GameMaker </span>以及其他游戏文件。这会稍微增加纹理页面的大小，并且需要少量额外的内存和存储空间，所以如果你的游戏没有使用 Arial 字体，这个功能应该被禁用。默认开启。</li>
-    <li><strong>WebGL</strong> : 选择是否关闭 WebGL 支持，使其可选(自动检测) ，还是将其作为游戏的一个需求。应该注意的是，为了在所有情况下测试性能，您应该禁用此选项，然后通常将其设置为自动检测以便发布。将其作为一个需求可能会大大降低游戏与不同浏览器类型的兼容性。默认情况下设置为自动检测。</li>
+    <li id="webgl"><strong>WebGL</strong> : 选择是否关闭 WebGL 支持，使其可选(自动检测) ，还是将其作为游戏的一个需求。应该注意的是，为了在所有情况下测试性能，您应该禁用此选项，然后通常将其设置为自动检测以便发布。将其作为一个需求可能会大大降低游戏与不同浏览器类型的兼容性。默认情况下设置为自动检测。</li>
     <li><strong>缩放</strong> : 您的游戏可以配置为自动缩放画布以保持浏览器内的<strong>高宽比</strong> ，或者您可以选择让它运行<strong>全尺寸</strong>。全尺寸选项将不会在浏览器中全屏显示游戏，而是拉伸所绘制的内容以适应画布大小，如游戏的第一个房间所定义的那样。这被设置为默认情况下保持纵横比。</li>
   </ul>
   <p>最后，可以选择设置<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页面</a>的大小。默认（最兼容）大小为2048 x 2048，但您可以从256 x 256和8192 x 8192之间的任意位置进行选择。还有一个标记为<strong><strong>预览</strong></strong>的按钮，它将生成此平台的纹理页面，然后打开一个窗口，以便您可以看到它们的外观。如果希望了解纹理页面的结构以及防止纹理页面大于或小于所需的页面，这将非常有用。有关纹理页面的详细信息，请参阅<a href="../Texture_Information/Texture_Pages.htm">此处</a>。</p>
@@ -136,7 +136,7 @@
         <div style="float:right">Next: <a href="Amazon_Fire.htm">Amazon Fire</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 HTML5 Game Options

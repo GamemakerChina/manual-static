@@ -78,12 +78,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>ds_set_precision</h1>
-  <p>比较值时(例如，在地图中搜索或对列表排序时)，<span data-keyref="GameMaker Name">GameMaker</span>必须决定两个值何时相等。对于字符串和整数值，这一点是清楚的，但对于实数，由于浮点舍入误差，看似相等的数字很容易变得不相等。例如，<b>(5/3 )* 3</b>可能不会<i>等于5！为了避免这种情况，在所有实数函数上使用精度值，当两个数之间的</i>差小于此精度<i>时，它们被视为相等。默认精度0.000001用于所有数据结构函数，除非此函数更改。</i></p>
+  <h1><span data-field="title" data-format="default">ds_set_precision</span></h1>
+  <p>When comparing values, for example when searching in a map or sorting a list, <span data-keyref="GameMaker Name">GameMaker</span> must decide when two values are equal. For strings and integer values this is clear but for real numbers, due to floating point round-off errors, seemingly equal numbers can easily become unequal. For example, it's possible that <span class="inline2">(5 / 3) * 3</span> will <i>not</i> be equal to 5! To help avoid this, a precision value is used on all real number functions, and when the <i>difference between two numbers is smaller</i> than this precision they are considered equal. The default precision of 0.0000001 is used for all data structure functions unless changed by this function.</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 此精度用于所有数据结构，但不用于 GML 中的其他比较！</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">ds_set_precision(prec);</p>
+  <p class="code"><span data-field="title" data-format="default">ds_set_precision</span>(prec);</p>
   <table>
     <colgroup>
       <col>
@@ -98,7 +98,7 @@
       </tr>
       <tr>
         <td>prec</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>精度值(默认值0.0000001)</td>
       </tr>
     </tbody>
@@ -108,9 +108,8 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">ds_set_precision(0.0001);</p>
+  <p class="code"><span data-field="title" data-format="default">ds_set_precision</span>(0.0001);</p>
   <p>上述代码将更改所有数据结构函数的默认精度设置。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -120,7 +119,7 @@
         <div style="float:right">Next:&nbsp;<a href="ds_exists.htm">ds_exists</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 ds_set_precision

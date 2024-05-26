@@ -78,23 +78,27 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>application_surface_draw_enable</h1>
-  <p>可以使用此函数启用或禁用应用程序表面的自动绘制。默认情况下，此选项处于启用状态，但在许多情况下，您希望在绘制表面的时间和方式(例如，使用着色器时)占据主导地位，在这种情况下您可以使用此函数将其设置为false，以便可以在需要的时间和方式自己绘制它。请务必注意，当您关闭自动绘制并自己绘制应用程序表面时，可能会看到某些问题精灵的阿尔法分量和表面本身。这是因为<span data-keyref="GameMaker Name">GameMaker</span>将在启用自动绘制时绘制不带Alpha混合的应用程序表面<i>。如果关闭自动绘制，则需要使用以下代码(例如)自行处理此问题：</i></p>
-  <p class="code">gpu_set_blendenable(false);<br> draw_surface_ext(application_surface, 0, 0, 1, 1, 0, c_white, 1);<br> gpu_set_blendenable(true);
-  </p>
+  <h1><span data-field="title" data-format="default">application_surface_draw_enable</span></h1>
+  <p>此功能启用或禁用应用程序表面的自动绘制。</p>
+  <p>默认情况下此功能处于启用状态，但在许多情况下，您需要接管绘制表面的时间和方式 (例如使用着色器时)，在这种情况下，您可以使用此函数将其设置为 <span class="inline2">false</span>，以便您可以在需要的时间和方式自己绘制。需要注意的是，当您关闭自动绘制并自己绘制应用程序表面时，您可能会发现精灵的 alpha 分量和表面本身存在某些问题。这是因为，当自动绘制打开时，<span data-keyref="GameMaker Name">GameMaker</span> 将绘制应用程序表面，<i> 无需 Alpha 混合 </i>。如果您关闭自动绘图，那么您需要自己处理这个问题，使用以下代码 (例如)：</p>
+  <p class="code">gpu_set_blendenable(false);<br>
+    draw_surface_ext(application_surface, 0, 0, 1, 1, 0, c_white, 1);<br>
+    gpu_set_blendenable(true);</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">application_surface_draw_enable(flag);</p>
+  <p class="code"><span data-field="title" data-format="default">application_surface_draw_enable</span>(flag);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>flag</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>该标志将为 <span class="inline">true</span> (启用，默认值) 或 <span class="inline">false</span> (禁用)。</td>
-     </tr>
+        <td>flag</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>该标志将为 <span class="inline2">true</span> (启用，默认值) 或 <span class="inline2">false</span> (禁用)。</td>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -102,9 +106,8 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">application_surface_draw_enable(false);</p>
+  <p class="code"><span data-field="title" data-format="default">application_surface_draw_enable</span>(false);</p>
   <p>上述代码将关闭应用程序表面的自动绘制。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -114,7 +117,7 @@
         <div style="float:right">Next:&nbsp;<a href="surface_exists.htm">surface_exists</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 application_surface_draw_enable

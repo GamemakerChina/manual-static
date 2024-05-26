@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="This page outlines the function game_set_speed">
   <meta name="rh-index-keywords" content="game_set_speed,gamespeed_fps,gamespeed_microseconds">
   <meta name="search-keywords" content="game_set_speed,gamespeed_fps,gamespeed_microseconds">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/General_Game_Control/highscore_add.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/General_Game_Control/game_get_speed.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/General_Game_Control/game_get_speed.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/General_Game_Control/game_save_buffer.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>game_set_speed</h1>
+  <h1><span data-field="title" data-format="default">game_set_speed</span></h1>
   <p>该函数可用于设置游戏速度。您可以使用以下两个常量之一，通过以下两种方法之一进行设置：每秒游戏帧数(Fps)或每个游戏帧数(Mpf)：</p>
   <table>
     <tbody>
@@ -96,13 +96,14 @@
       </tr>
     </tbody>
   </table>
-  <p>因此，例如，每秒30帧的游戏速度将是每个游戏游戏帧3333微秒，然后该函数将表示为：</p>
-  <p class="code">game_set_speed(30, gamespeed_fps);</p>
+  <p>因此，例如，每秒 30 帧的游戏速度将是每游戏帧 33333 微秒，则该函数可将其表示为：</p>
+  <p class="code"><span data-field="title" data-format="default">game_set_speed</span>(30, gamespeed_fps);</p>
   <p>or:</p>
-  <p class="code">game_set_speed(33333, gamespeed_microseconds);</p>
+  <p class="code"><span data-field="title" data-format="default">game_set_speed</span>(33333, gamespeed_microseconds);</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在 Android 上，如果设备的刷新率无法设置为请求的游戏速度，<span data-keyref="GameMaker Name">GameMaker</span> 会将其设置为请求的游戏速度的整数倍。如果没有多个可用，则使用可用的最高刷新率并跳过帧。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">game_set_speed(speed, type);</p>
+  <p class="code"><span data-field="title" data-format="default">game_set_speed</span>(speed, type);</p>
   <table>
     <tbody>
       <tr>
@@ -112,12 +113,12 @@
       </tr>
       <tr>
         <td>speed</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>新游戏速度(以Fps或Mpf表示)</td>
       </tr>
       <tr>
         <td>type</td>
-        <td><span data-keyref="Type_Constant_GameSpeed"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/General_Game_Control/game_get_speed.htm">Game Speed Constant</a></span></td>
+        <td><span data-keyref="Type_Constant_GameSpeed"><a target="_blank" href="game_get_speed.htm">Game Speed Constant</a></span></td>
         <td>用于设置游戏速度的方法类型(参见上面的常量)。</td>
       </tr>
     </tbody>
@@ -127,26 +128,25 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if os_browser == browser_not_a_browser<br>
+  <p class="code">if (os_browser == browser_not_a_browser) <br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;game_set_speed(60, gamespeed_fps);<br>
+    &nbsp; &nbsp; <span data-field="title" data-format="default">game_set_speed</span>(60, gamespeed_fps);<br>
     }<br>
     else<br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;game_set_speed(30, gamespeed_fps);<br>
+    &nbsp; &nbsp; <span data-field="title" data-format="default">game_set_speed</span>(30, gamespeed_fps);<br>
     }</p>
   <p>上述代码检查游戏是否在浏览器中运行，并相应地将游戏速度设置为Fps值。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="General_Game_Control.htm">General&nbsp;Game Control</a></div>
-        <div style="float:right">Next: <a href="highscore_add.htm">highscore_add</a></div>
+        <div style="float:left">Back:&nbsp;<a href="General_Game_Control.htm">通常游戏控制</a></div>
+        <div style="float:right">Next:&nbsp;<a href="highscore_add.htm">highscore_add</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 game_set_speed

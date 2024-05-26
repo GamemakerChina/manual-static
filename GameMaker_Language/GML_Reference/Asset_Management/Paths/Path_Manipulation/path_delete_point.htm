@@ -92,12 +92,12 @@
       </tr>
       <tr>
         <td>index</td>
-        <td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
+        <td><span data-keyref="Type_Asset_Path"><a target="_blank" href="../../../../../The_Asset_Editors/Paths.htm">Path Asset</a></span></td>
         <td>要从中删除点的路径的索引。</td>
       </tr>
       <tr>
         <td>n</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要删除的定义点。</td>
       </tr>
     </tbody>
@@ -117,7 +117,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; var _y1&nbsp;= path_get_point_y(my_path, _num);<br>
     &nbsp; &nbsp; &nbsp; &nbsp; var _x2 = path_get_point_x(my_path, _num -1);<br>
     &nbsp; &nbsp; &nbsp; &nbsp; var _y2 = path_get_point_y(my_path, _num -1);<br>
-    &nbsp; &nbsp; &nbsp; &nbsp; if collision_line(_x1, _y1, _x2, _y2, obj_Wall, true, false)<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; if (collision_line(_x1, _y1, _x2, _y2, obj_Wall, true, false)) <br>
     &nbsp; &nbsp; &nbsp; &nbsp; {<br>
     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; path_delete_point(mypath, _num);<br>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _num -= 1;<br>
@@ -137,7 +137,7 @@
         <div style="float:right">Next: <a href="path_clear_points.htm">path_clear_points</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 path_delete_point

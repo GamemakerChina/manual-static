@@ -79,15 +79,10 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>display_get_timing_method</h1>
-  <p>此函数可用于检索用于渲染游戏的计时方法。该方法可以是下面列出的常量之一。</p>
-  <p>有关不同计时方法的详细信息，请参阅 <a href="display_set_timing_method.htm"><span class="inline">display_set_timing_method()</span></a>。</p>
-  <p>&nbsp;</p>
-  <h4>语法:</h4>
-  <p class="code">display_get_timing_method();</p>
-  <p>&nbsp;</p>
-  <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Constant_Display_Timing_Method"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_get_timing_method.htm">显示计时方法常量</a></span></p>
+  <h1><span data-field="title" data-format="default">display_get_timing_method</span></h1>
+  <p>此函数返回用于渲染游戏的计时方法。</p>
+  <p>该方法可以是下面列出的常量之一：</p>
+  <div data-conref="../../../assets/snippets/Table_Display_Timing_Method_Constant.hts">
   <table>
     <colgroup>
       <col>
@@ -95,7 +90,7 @@
     </colgroup>
     <tbody>
       <tr>
-        <th colspan="2"><span data-keyref="Type_Constant_Display_Timing_Method"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Cameras_And_Display/display_get_timing_method.htm">显示计时方法常量</a></span></th>
+        <th colspan="2"><span data-keyref="Type_Constant_Display_Timing_Method"><a target="_blank" href="display_get_timing_method.htm">显示计时方法常量</a></span></th>
       </tr>
       <tr>
         <th>常量</th>
@@ -109,30 +104,42 @@
         <td><span class="inline">tm_countvsyncs</span></td>
         <td>Vsync timing is the main timing method (default for all supported platforms)</td>
       </tr>
+      <tr>
+        <td><span class="inline">tm_systemtiming</span></td>
+        <td>System timing is the main timing method</td>
+      </tr>
     </tbody>
   </table>
+
+</div>
+  <p>有关不同计时方法的详细信息，请参阅 <span class="inline3_func"><a href="display_set_timing_method.htm">display_set_timing_method</a></span>。</p>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">display_get_timing_method</span>();</p>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Constant_Display_Timing_Method"><a target="_blank" href="display_get_timing_method.htm">显示计时方法常量</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if display_get_timing_method() != tm_sleep<br>
+  <p class="code">if (display_get_timing_method() != tm_sleep) <br>
     {<br>
     &nbsp; &nbsp; display_set_timing_method(tm_sleep);<br>
-    &nbsp; &nbsp; if display_get_sleep_margin() != 20<br>
+    &nbsp; &nbsp; if (display_get_sleep_margin() != 20) <br>
     &nbsp;&nbsp;&nbsp;&nbsp;{<br>
     &nbsp; &nbsp; &nbsp; &nbsp; display_set_sleep_margin(20);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
     }</p>
-  <p>上述代码将检查定时方法，如果未将其设置为 <span class="inline">tm_sleep</span>，则会将其设置为该值，并将 sleep margin 设置为 20。</p>
-  <p>&nbsp;</p>
+  <p>上述代码将检查计时方法，如果未设置为 <span class="inline2">tm_sleep</span>，则会将其设置为该值，并将睡眠裕度设置为 20。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Back:&nbsp;<a href="Cameras_And_Display.htm">相机及显示</a></div>
-        <div style="float:right">Next: <a href="display_get_sleep_margin.htm">display_get_sleep_margin</a></div>
+        <div style="float:right">Next:&nbsp;<a href="display_get_sleep_margin.htm">display_get_sleep_margin</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 display_get_timing_method

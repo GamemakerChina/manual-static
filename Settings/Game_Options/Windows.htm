@@ -86,7 +86,7 @@
   <p>接下来，您可以设置<strong>Windows睡眠边距</strong>。此选项与在特定系统上运行游戏时减少卡顿有关。基本上，如果您的游戏运行速度快于您的房间速度，<span data-keyref="GameMaker Name">GameMaker</span> 将在剩余时间内“睡眠”，但此睡眠可能非常不准确，并且通常睡眠会超过必要的时间，从而导致花费更长时间，导致卡顿。为了避免这种情况，我们可以减少睡眠时间，然后在剩余时间内保持紧张的循环状态，使其更加准确——尽管循环状态的问题在于它会导致CPU使用量增加，进而会导致CPU温度上升，风扇运行速度加快。默认情况下，此值设置为10，在99.99%的情况下，您可以接受此值，但对于低端计算机或运行大量后台进程的计算机，此值可能不是理想的解决方案（对于非常高端的计算机也是如此），可能需要1或15或其他值。但请注意，这在很大程度上是系统特定的配置，在您的构建计算机上工作的内容可能不适合其他用户，如果有疑问，请将其设置为10。</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>除了睡眠边距，您还可以通过在运行时调整<a href="../../GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm">线程调度程序的分辨率</a>来进一步控制Windows上的性能和功耗。</p>
   <p>下一个选项是为你的游戏 <strong> 启动 Steam</strong>。如果启用此选项，请确保已安装 Steamworks Sdk（请参阅 <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm"> 此处 </a>），并且已将 <strong>Steamworks 应用程序 ID</strong> 添加到游戏的 <a href="../Game_Options.htm"> 常规选项 </a> 中。请注意，如果您正在 Windows 的 Steam 版本上运行 <span data-keyref="GameMaker Name">GameMaker</span>，并且正在为 Steam 开发游戏，则可能还需要选中 <strong> 使用 Steam 的备用启动器 </strong> 应用程序选项。此选项的作用是在使用替代启动程序进行测试时启动游戏，以防 Steam 使用 <span data-keyref="GameMaker Name">GameMaker</span> 的应用程序 ID（而不是游戏自己的应用程序 ID）标记游戏。只有在为 Steam 开发时，发现在启动游戏时遇到问题，才应启用此功能。</p>
-  <p>倒数第二个选项是<strong>禁用文件系统沙盒</strong>。选中此项将禁用<span data-keyref="GameMaker Name">GameMaker</span>沙盒以保存和加载文件，允许您的游戏从运行游戏的系统上的任何位置访问文件。默认情况下此选项是被取消的，因为我们建议您为所有系统上的文件保留<span data-keyref="GameMaker Name">GameMaker</span>沙盒。如果选中此选项，则依据系统级别的权限，某些保存/加载区域可能将不可用。有关沙盒的详细信息，请参阅<span data-keyref="GameMaker Name">GameMaker</span><a href="../../Additional_Information/The_File_System.htm">文件系统</a>上的页面。</p>
+  <p>最后一个选项是 <strong> 禁用文件系统沙盒 </strong>。选中此选项将禁用保存和加载文件的 <span data-keyref="GameMaker Name">GameMaker</span> 沙盒，允许游戏从运行游戏的系统上的任何位置访问文件。默认情况下，此选项未选中，因为我们建议您在所有系统上维护文件的 <span data-keyref="GameMaker Name">GameMaker</span> 沙盒，选中后，某些保存 / 加载区域可能仍然不可用，具体取决于操作系统级别的权限。有关沙箱的详细信息，请参阅 <span data-keyref="GameMaker Name">GameMaker</span><a href="../../Additional_Information/The_File_System.htm"> 文件系统 </a> 上的页面。</p>
   <h2 id="graphics">图形</h2>
   <p><img alt="Windows Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Graphics_Options.png">图形选项是您应该配置的选项，以确定您的游戏将如何使用目标为Windows PC的显卡。您可以修改以下选项：</p>
   <ul class="colour">
@@ -102,7 +102,7 @@
   <p>最后，您可以选择设置<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页面</a>的大小。默认 (也是最兼容的) 大小是 2048x2048，但您可以从 256x256 到 8192x8192 之间的任意大小进行选择。还有一个标记为 <strong><strong> 预览 </strong></strong> 的按钮，它将为该平台生成纹理页面，然后打开一个窗口，以便您可以查看它们的外观。如果您希望了解纹理页面的结构，并防止纹理页面过大 (或过小)，这将非常有用。有关纹理页的更多信息，请参阅 <a href="../Texture_Information/Texture_Pages.htm"> 纹理页 </a>。</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 请注意，纹理页面越大，您的游戏在规格较低的 PC 上的兼容性就越差。</p>
   <h2>图像</h2>
-  <p><img alt="Windows Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Images_Options.png">图像部分是您提供游戏所需图像的位置。对于Windows，您需要提供<strong>图标</strong>文件（必须为<span class="inline">.ico</span>格式）和启动屏（可以为<span class="inline">.png</span>、<span class="inline">.bmp</span>、<span class="inline">.jpg</span>或<span class="inline">.gif</span>格式）。加载游戏时将显示启动屏，并且可以通过选中<strong>使用启动屏</strong>选项（默认情况下处于关闭状态）来启用或禁用启动屏。</p>
+  <p><img alt="Windows Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Images_Options.png">The images section is where you supply the images that your game requires. For Windows, you need to supply an <strong>Icon</strong> file (that must be in <span class="inline">.ico</span> format) and also a splash screen (which can be <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> or <span class="inline">.gif</span> format - note an animated GIF will be converted into a static image). The splash screen will be shown while the game loads, and can be enabled or disabled by checking the <strong>Use Splash Screen</strong> option (which is off by default).</p>
   <p>值得注意的是，<span data-keyref="GameMaker Name">GameMaker</span>具有<a href="../../IDE_Tools/Project_Image_Generator.htm">项目图像生成器</a>工具，可用于自动创建正在编译游戏的所有不同目标平台所需的所有图像。如果使用此工具，则应修改创建的图像，以确保这些图像符合您的要求。</p>
   <h2>安装程序</h2>
   <p><img alt="Windows Installer Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Installer_Options.png">可以使用<strong>安装程序</strong>创建Windows游戏，您可以在此处定义<span data-keyref="GameMaker Name">GameMaker</span>在创建时将使用的各种设置和图形。首先，我们有定义安装程序本身外观的图形选项：</p>
@@ -110,6 +110,7 @@
     <li><strong>已完成</strong>：出现在安装程序的“已完成”页面上的图形。必须为<span class="inline">*.bmp</span>格式并且大小为164 x 314 px。</li>
     <li><strong>标题</strong>：安装程序运行时出现的图形。必须为<span class="inline">*.bmp</span>格式并且大小为150 x 57 px。</li>
   </ul>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>这些图像必须是24位的，不能有Alpha通道。</p>
   <p>如果需要，您还可以指向特定的<strong>许可协议</strong>文件(随 <span data-keyref="GameMaker Name">GameMaker</span> 提供的示例)和自定义的 <strong>NSIS脚本文件</strong> (详细信息请参阅&nbsp;<a href="https://nsis.sourceforge.io/Docs/">NSIS用户手册</a>)，或者单击相应的按钮返回到随 <span data-keyref="GameMaker Name">GameMaker</span> 提供的默认文件。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -120,7 +121,7 @@
         <div style="float:right">Next:&nbsp;<a href="macOS.htm">macOS</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Windows Game Options

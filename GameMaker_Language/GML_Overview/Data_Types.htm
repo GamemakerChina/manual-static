@@ -80,19 +80,19 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">Data Types</span></h1>
   <p>在前面的章节中，我们介绍了<a href="Variables_And_Variable_Scope.htm">变量及其范围规则</a>，但对于变量可以存储的不同<b>数据类型</b>却鲜有说明。因此，本节将说明不同的类型以及它们可用于哪些目的。</p>
-  <p>在继续之前，我们先简单解释一下"数据类型"是什么意思。创建变量时，它可用于保存信息，调用函数时，它还可以存储返回的信息。但是，此信息可以有多种"风格"-例如，它可以是<em>实数</em>或者可以是<em>字符串</em>。使用的这些不同类型的值称为<b>数据类型</b>，当使用GameMaker语言时，它们可以是以下任意值：</p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>您可以使用函数<span class="inline3_func"><a href="../GML_Reference/Variable_Functions/typeof.htm">typeof</a></span>来获取变量所保存的数据类型。</p>
+  <p>在继续之前，我们先简要解释一下"数据类型"的含义。当你创建一个变量时，它可以用来保存信息，当你调用一个函数时，它也可以存储返回的信息。不过，此信息可以有多种"风格" - 例如，它可以是<em>实数</em>，也可以是<em>字符串</em>。使用的这些不同类型的值称为<b>数据类型</b>，使用 GameMaker 语言时，它们可以是以下任意类型：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">Real Numbers</span><span data-close-text="true">Real Numbers</span> 实数</a></p>
   <div class="droptext" data-targetname="drop-down1">
-    <p class="dropspot">实数是任何不是字符串，也不是任何其他可能的数据类型的值。因此，124, 45639.566546456,0,-45.5等...都是实数的例子。所有实数都存储为64位双精度浮点值(或整数值)，编译器将在可能的情况下进行优化(例如，0.0将被优化为0的整数值)。</p>
+    <p class="dropspot">实数是除字符串以外的任何值，也不是任何其他可能的数据类型。所以，124、45639.566546456、0、-45.5等都是实数的例子。所有实数都存储为 64 位双精度浮点值(或整数值)，编译器将尽可能进行优化(例如 0.0 将优化为整数值 0)。</p>
     <p class="dropspot">处理任何非整数值时，由于浮点数学的性质，您可能会遇到轻微的舍入错误。有关此函数和其它与数字相关的函数的详细信息，请参阅：<a href="../GML_Reference/Maths_And_Numbers/Number_Functions/Number_Functions.htm">GML 参考-数字函数</a>。</p>
-    <p class="note"><span class="note">注意</span>在<b>HTML5</b>目标上，所有实数都是双精度的。</p>
-    <p class="dropspot">请注意，虽然<span data-keyref="GameMaker Name">GameMaker</span>中创建的变量全部存储为双精度浮点数或整数，但在处理扩展时仍可使用其他格式。这些信息可以从扩展名传递到<span data-keyref="GameMaker Name">GameMaker</span>，然后使用相应的<span class="inline">is_*()</span>函数进行检查，<a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">此处可以找到列表</a>。</p>
-    <p class="dropspot">&nbsp;</p>
-    <p>&nbsp;</p>
+    <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在<b>HTML5</b>目标上，所有实数均为双精度数。</p>
+    <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>虽然在<span data-keyref="GameMaker Name">GameMaker</span>中创建的变量全部存储为双精度浮点数或整数，但在处理扩展时您仍然可以使用其他格式。这些可以从扩展程序传递到<span data-keyref="GameMaker Name">GameMaker</span>，然后使用适当的<span class="inline3_func">is_*()</span>函数进行检查，可以在<a href="../GML_Reference/Variable_Functions/Variable_Functions.htm#data_type_functions">数据类型函数</a>下找到该函数的列表。</p>
+    <p class="dropspot">&nbsp;&nbsp;</p>
   </div>
   <p id="p"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">Boolean</span><span data-close-text="true">Boolean</span> 布尔</a></p>
   <div class="droptext" data-targetname="drop-down6">
-    <p class="dropspot">布尔值可以是&nbsp;<span class="inline">true</span>&nbsp;或&nbsp;<span class="inline">false</span>。注意，当前&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;将等于或低于0.5的实数解释为&nbsp;<span class="inline">false</span>&nbsp;值，而任何大于0.5的实数将解释为&nbsp;<span class="inline">true</span>。但是&nbsp;<i>不是</i>&nbsp;意味着你应该检查1和0(或任何其他实数)是否为真和假，因为你还提供了&nbsp;<b> 常量</b>&nbsp;<span class="inline">true</span>&nbsp;和&nbsp;<span class="inline">false</span>&nbsp;这应该总是在你的代码中使用在将来的更新中添加真实的布尔数据类型，以防止出现任何问题。</p>
+    <p class="dropspot">布尔值只是一个可以为 true 也可以为 false 的值。请注意，目前<span data-keyref="GameMaker Name">GameMaker</span>会将等于或低于 0.5 的实数解释为<span class="inline2">false</span>值，将任何大于 0.5 的实数解释为<span class="inline2">true</span>。但这<i>并不</i>意味着您应该检查 1 和 0(或任何其他实数)中的<span class="inline2">true</span>和<span class="inline2">false</span>，因为我们还提供了<b>常量</b><span class="inline2">true</span>和<span class="inline2">false</span>，应始终在代码中使用它们，以防止在将来的更新中添加实际布尔数据类型时出现任何问题。</p>
     <p class="dropspot">您可以使用以下函数将任何实数转换为隐式布尔值：</p>
     <ul class="dropspotlist">
       <li class="dropspot"><a href="../GML_Reference/Variable_Functions/bool.htm">bool 布尔</a></li>
@@ -101,7 +101,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">Strings</span><span data-close-text="true">Strings</span> 字符串</a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot"><label for="one">字符串只是放在引号"..."中的任何文本。您可以对字符串执行某些操作，如将两个字符串添加到一起以创建更长的字符串(连接)，还可以更改字符串属性，甚至从中提取实数。有关字符串和字符串函数的详细信息，请参阅：<a href="../GML_Reference/Strings/Strings.htm">GML 参考-字符串</a>。</label></p>
+    <p class="dropspot"><label for="one">字符串就是放在引号<span class="inline2">"..."</span>中的任何文本。您可以对字符串执行某些操作，例如将两个字符串添加在一起以创建更长的字符串(串联)，您还可以更改字符串属性，甚至从中提取实数。如需了解有关字符串和字符串函数的更多信息，请参阅：<a href="../GML_Reference/Strings/Strings.htm">GML 参考 - 字符串</a>。</label></p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">Arrays</span><span data-close-text="true">Arrays</span> 数组</a></p>
@@ -121,27 +121,34 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#"><span data-open-text="true" data-skip-index="true">int64</span><span data-close-text="true">int64</span></a></p>
   <div class="droptext" data-targetname="drop-down13">
-    <p class="dropspot">"int64"是一个64位整数，可以使用<span class="inline"><a href="../GML_Reference/Variable_Functions/int64.htm">int64()</a></span>(通过输入非64位实数)或从<span class="inline">缓冲区</span>读取<a href="../GML_Reference/Buffers/buffer_read.htm">buffer_u64</a>值来创建。</p>
+    <p class="dropspot">"int64"是一个 64 位整数，可以使用<span class="inline3_func"><a href="../GML_Reference/Variable_Functions/int64.htm">int64</a></span>(通过传入非 64 位实数)或从<a href="../GML_Reference/Buffers/buffer_read.htm">buffer</a>读取<span class="inline2">buffer_u64</span>的值。</p>
     <p class="dropspot">这可用于严格要求64位整数的位置，也可用于要使用<a href="../../Additional_Information/Bitwise_Operators.htm">位移</a>并需要这些64位位置的位置。</p>
-    <p class="dropspot">任何按位操作，即使在非64位值上运行，也将始终返回64位整数。</p>
+    <p class="dropspot">任何按位运算，即使在非 64 位值上运行，也始终返回 64 位整数。</p>
     <p class="dropspot">int 64值的除法也将返回整数(例如：<span class="inline2">int 64(5 )/ int 64(2 )= 2</span>。</p>
-    <p class="dropspot">数据结构和资产(例如对象、精灵等)的引用被存储为int64，其中前32位包含有关资源类型的信息，接下来的32位包含资源的ID。更多信息请参见下一节"ref"。</p>
+    <p class="dropspot">数据结构和资产(例如对象、精灵等)的引用存储为 int64，其中前 32 位包含有关资源类型的信息，接下来的 32 位包含资源的 ID。有关详细信息，请参阅下一节"句柄"。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#"><span data-open-text="true" data-skip-index="true">Handles</span><span data-close-text="true">Handles</span> 句柄</a></p>
   <div class="droptext" data-targetname="drop-down16">
     <p class="dropspot">句柄包含对以下资源类型之一的引用：</p>
     <ul class="colour">
-      <li class="dropspot">数据结构</li>
-      <li class="dropspot">资源，如对象、精灵、房间等。</li>
-      <li class="dropspot">对象实例</li>
-      <li class="dropspot">粒子系统</li>
+      <li class="dropspot"><a href="../GML_Reference/Data_Structures/Data_Structures.htm">数据结构</a></li>
+      <li class="dropspot"><a href="../../The_Asset_Editors/The_Asset_Editors.htm">资产</a>，例如对象、精灵、房间等。</li>
+      <li class="dropspot"><a href="../GML_Reference/Asset_Management/Instances/Instances.htm">对象实例</a></li>
+      <li class="dropspot"><a href="Script_Functions.htm">脚本函数</a></li>
+      <li class="dropspot"><a href="../GML_Reference/Drawing/Particles/Particle_Systems/part_system_create.htm">粒子系统实例</a>、<a href="../GML_Reference/Drawing/Particles/Particle_Emitters/part_emitter_create.htm">粒子发射器</a>、<a href="../GML_Reference/Drawing/Particles/Particle_Types/part_type_create.htm">粒子类型</a></li>
+      <li class="dropspot"><a href="../GML_Reference/Buffers/buffer_create.htm">缓冲区</a>、<a href="../GML_Reference/Drawing/Primitives/vertex_create_buffer.htm">顶点缓冲区</a>和<a href="../GML_Reference/Drawing/Primitives/vertex_format_end.htm">顶点格式</a></li>
+      <li class="dropspot"><a href="../GML_Reference/Drawing/Surfaces/Surfaces.htm">表面</a></li>
       <li class="dropspot">使用<span class="inline3_func"><a href="../GML_Reference/Variable_Functions/ref_create.htm">ref_create</a>创建的引用</span></li>
+      <li class="dropspot"><a href="../GML_Reference/Time_Sources/Time_Sources.htm">时间源</a></li>
+      <li class="dropspot"><a href="../GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_id.htm">Room Layers</a></li>
     </ul>
     <p class="dropspot">当你创建一个新的资源(使用<span class="inline2">_create()</span>函数)或在代码中引用一个现有的资源(比如引用一个对象，通过一个函数获取一个实例，等等)时，你会得到一个句柄。</p>
     <p class="dropspot">句柄是一个64位整数，其中前32位包含有关资源类型的信息，后32位包含资源的索引号。</p>
+    <p class="dropspot">如果将句柄转换为数字(使用<span class="inline3_func"><a href="../GML_Reference/Strings/real.htm">real</a></span>或<span class="inline3_func"><a href="../GML_Reference/Variable_Functions/int64.htm">int64</a></span>)，您将获得索引号。</p>
     <p class="dropspot">句柄中的类型信息用于确保将正确类型的资源传递到函数中(例如，确保您将DS列表传递到<span class="inline3_func"><a href="../GML_Reference/Data_Structures/DS_Lists/ds_list_add.htm">ds_list_add</a></span>，而不是DS映射、网格或其他内容)。</p>
-    <p class="dropspot">如果您将句柄转换为字符串或将其作为输出打印，您将看到格式为<span class="inline2">"ref type id"</span>的字符串，例如<span class="inline2">"ref ds_list 1"</span>。</p>
+    <p class="dropspot" style="text-align: left; ">如果将句柄转换为字符串或将其打印为输出，您将看到格式为<span data-conref="../../assets/snippets/Handle_Format.hts"><span class="inline2">"ref &lt;type&gt; &lt;id&gt;"</span></span>的字符串，例如<span class="inline2">"ref ds_list 1"</span>。</p>
+    <p class="dropspot">您可以使用<span class="inline3_func"><a href="../GML_Reference/Variable_Functions/handle.htm">handle_parse</a></span>函数将正确格式为<span data-conref="../../assets/snippets/Handle_Format.hts"><span class="inline2">"ref &lt;type&gt; &lt;id&gt;"</span></span>的字符串转换回句柄。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#"><span data-open-text="true" data-skip-index="true">Hexadecimal Literals 十六进制文字</span><span data-close-text="true">Hexadecimal Literals 十六进制文字</span></a></p>
@@ -155,7 +162,7 @@
       <strong>16777215</strong>&nbsp;-&gt; $ffffff, 0xffffff
     </p>
     <hr>
-    <p class="dropspot">十六进制值也可以以散列/磅符号(<span class="inline2">#</span>)开始，但是以这种方式编写时，其值将不等于使用先前显示的格式(<span class="inline2">$</span>或<span class="inline2">0x</span>)编写的类似十六进制值。这是由于颜色在GML中的解释方式，这需要更改哈希/磅十六进制值的格式，以便CSS颜色可以以<span class="inline2">#RRGGBB</span>格式编写。有关详细信息，请阅读<a href="../GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm#h"></a>。</p>
+    <p class="dropspot">十六进制值也可以以井号/井号(<span class="inline2">#</span>) 开头，但是以这种方式编写时，其值将不等于使用先前显示的格式(<span class="inline2">$</span>或<span class="inline2">0x</span>)。这是由于 GML 中解释颜色的方式造成的，GML 需要更改哈希/磅十六进制值的格式，以便可以以<span class="inline2">#RRGGBB</span>格式写入 CSS 颜色。如需了解更多信息，请参阅<a href="../GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm#hex_colours">十六进制颜色</a>。</p>
     <p class="dropspot">例如，以下两项不相等：</p>
     <p class="code">$2c8edd <strong>!=</strong> #2c8edd</p>
     <p class="dropspot">要使它们引用相同的十进制值，必须交换前两个和最后两个字符：</p>
@@ -171,12 +178,12 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">Pointer</span><span data-close-text="true">Pointer</span> 指针</a></p>
   <div class="droptext" data-targetname="drop-down7">
-    <p class="dropspot">指针是一种“指向”内存位置的数据类型。你不能对指针进行操作，它只用于一些非常特定的函数，比如为另一个函数从内存中获取纹理或缓冲区地址。对于返回指针的函数示例，您可以看到&nbsp;<a href="../GML_Reference/Buffers/buffer_get_address.htm"><span class="inline">buffer_get_address()</span></a>&nbsp;或&nbsp;<a href="../GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm"><span class="inline">sprite_get_texture()</span></a>。</p>
+    <p class="dropspot">指针是一种"指向"内存位置的数据类型。您无法在<span data-keyref="GameMaker Name">GameMaker</span>中对指针进行操作，它仅用于某些非常特定的函数，例如从内存中获取另一个函数的纹理或缓冲区地址。有关返回指针的函数示例，您可以查看<span class="inline3_func"><a href="../GML_Reference/Buffers/buffer_get_address.htm">buffer_get_address</a></span>或<span class="inline3_func"><a href="../GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">sprite_get_texture</a></span>。</p>
     <p class="dropspot">还有一个函数用于检查值是否为指针(请参阅下面的"<b>检查数据类型</b>")，以及一个函数用于将值转换为指针：</p>
     <ul class="dropspotlist">
       <li class="dropspot"><a href="../GML_Reference/Variable_Functions/ptr.htm" style="background-color: transparent;">ptr</a></li>
     </ul>
-    <p class="dropspot">使用指针时，还可以使用(并返回)以下内置常量：</p>
+    <p class="dropspot">使用指针时，您还可以使用(并返回)以下内置常量：</p>
     <table class=" cke_show_border">
       <tbody>
         <tr>
@@ -202,7 +209,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#"><span data-open-text="true" data-skip-index="true">Undefined</span><span data-close-text="true">Undefined</span> 未定义</a></p>
   <div class="droptext" data-targetname="drop-down9">
-    <p class="dropspot"><label for="seven">未定义的值(也称为"null"值)是一个表达式没有正确的值，尽管它在语法上是正确的，因此必须返回<i>一些东西</i>。例如，假设您有一个<a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS map</a>，并使用函数<a href="../GML_Reference/Data_Structures/DS_Maps/ds_map_find_value.htm"><span class="inline">ds_map_find_value()</span></a>。现在，当map没有要查找的值时会发生什么？好吧，既然函数的格式是正确的，问题是不存在这样的值，那么它将返回常量<span class="inline">undefined</span>，你可以像检查<span class="inline">true</span>或任何其他值一样检查这个常量。</label></p>
+    <p class="dropspot"><label for="seven">未定义值(也称为"空"值)是指表达式没有正确值的值，尽管它在语法上是正确的，因此必须返回<i>某些内容</i>。例如，假设您有一个<a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS 地图</a>并使用函数</label><span class="inline3_func"><a href="../GML_Reference/Data_Structures/DS_Maps/ds_map_find_value.htm">ds_map_find_value</a></span><label for="seven">。现在，当地图没有要查找的值时会发生什么？好吧，由于该函数的格式正确，而且问题是不存在这样的值，因此它将返回常量<span class="inline2">undefined</span>，您可以像检查<span class="inline2">true</span>或任何其他值一样检查此常量。其他值。</label></p>
     <p class="code"><label for="seven">var _value = ds_map_find_value(my_map, "key");<br>
         <br>
         if (<a href="../GML_Reference/Variable_Functions/is_undefined.htm">is_undefined</a>(value)) {<br>
@@ -212,8 +219,8 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#"><span data-open-text="true" data-skip-index="true">NaN</span><span data-close-text="true">NaN</span> 非数字</a></p>
   <div class="droptext" data-targetname="drop-down10">
-    <p class="dropspot"><label for="nine"><span class="inline">NaN</span>代表"非数字"，是一个常量，当编译器无法将操作结果作为数字计算时，可以返回该常量。例如，0/0不能定义为实数，因此用<span class="inline">NaN</span>表示，或者负数的平方根(被认为是"想象的"数)不能用实数表示，因此用<span class="inline">NaN</span>表示。</label></p>
-    <p class="dropspot">请注意，由于<span class="inline">NaN</span>不是数字，因此无法将其与自身进行比较，因此比较(例如<span class="inline">NaN==NaN</span>)将返回<span class="inline">false</span>。对于数组比较(例如：</p>
+    <p class="dropspot"><label for="nine"><span class="inline">NaN</span>代表"不是数字"，是一个常量，当编译器无法将运算结果计算为数字时，可以返回该常量。例如，0/0 不能定义为实数，因此用<span class="inline2">NaN</span>表示，或者负数的平方根(被视为"虚数")不能表示为实数，因此用<span class="inline2">NaN</span>表示。</label></p>
+    <p class="dropspot">请注意，由于<span class="inline2">NaN</span>不是数字，因此无法将其与自身进行比较，因此比较(例如<span class="inline2">NaN==NaN</span>)将返回<span class="inline2">false</span>。对于数组比较(例如：</p>
     <p class="code">show_debug_message(array_equals([NaN], [NaN]));<br>
       <br>
       // Output: 0 (false)
@@ -222,15 +229,15 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#"><span data-open-text="true" data-skip-index="true">Infinity</span><span data-close-text="true">Infinity</span> 无穷大</a></p>
   <div class="droptext" data-targetname="drop-down11">
-    <p class="dropspot">常数 <span class="inline">无穷大</span> 指的是一个被认为是无穷大的数字，例如，将任何浮点值除以零时得到的结果，例如：1.0/0。</p>
-    <p class="dropspot">请注意，<span class="inline">无穷</span>常量等于其自身，因此<span class="inline">infinity==infinity</span>将返回<span class="inline">true</span>。</p>
+    <p class="dropspot">常量<span class="inline2">infinity</span>是指被视为无穷大的数字，例如将任何浮点值除以零时得到的结果，例如：1.0/0。</p>
+    <p class="dropspot">请注意，<span class="inline2">infinity</span>常量等于其自身，因此<span class="inline2">infinity == infinity</span>将返回<span class="inline2">true</span>。</p>
   </div>
   <p id="variable"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#"><span data-open-text="true" data-skip-index="true">Any</span><span data-close-text="true">Any</span> 任何</a></p>
   <div class="droptext" data-targetname="drop-down12">
     <p class="dropspot">“<strong>Any</strong>”数据类型可以在手册的许多页面上找到，例如<a href="../GML_Reference/Variable_Functions/is_string.htm">在参数中</a>，或作为<a href="../GML_Reference/Variable_Functions/array_get.htm">返回值</a>。它表示接受或返回<em>任何类型的值</em>。</p>
   </div>
   <h2>按原义加下划线</h2>
-  <p>您可以在数字文字中使用下划线 (<span class="inline2">_</span>)，例如实数、十六进制值和二进制值。它们在编译过程中被忽略，仅用作视觉分隔符。以下是几个例子：</p>
+  <p>您可以在数字文字中使用下划线(<span class="inline2">_</span>)，例如实数、十六进制和二进制值。这些在编译期间被忽略，仅用作视觉分隔符。这里有一些例子：</p>
   <p class="code">var _integer = 100_000_000; // same as 100000000<br>
     var _float &nbsp; = 3_141.59; // same as 3141.59<br>
     var _hexadec = 0xDEAD_BEEF; // same as 0xDEADBEEF<br>
@@ -254,7 +261,7 @@
         <div style="float:right">Next:&nbsp;<a href="Language_Features/If_Else_and_Conditional_Operators.htm">If/else 和条件运算符</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Data Type - Real

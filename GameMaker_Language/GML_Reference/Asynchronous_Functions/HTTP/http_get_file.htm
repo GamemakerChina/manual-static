@@ -106,32 +106,32 @@
       </tr>
       <tr>
         <td>url</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>您希望从中获取文件的服务器的 Web 地址</td>
       </tr>
       <tr>
         <td>local_target</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要将文件保存到的本地存储路径</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">Async Request ID</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../Asynchronous_Functions.htm">Async Request ID</a></span></p>
   <p>&nbsp;</p>
   <h4>扩展示例：</h4>
   <p><span class="inline">http_get_file()</span> 函数可以从任何事件调用，并且由于它是异步的，回调几乎可以是即时的，也可能需要几秒钟。 调用函数很简单，看起来像这样：</p>
   <p class="code">file = http_get_file("http://www.macsweeneygames.com/downloads/upgrade.zip", "\Downloads\Upgrade.zip");</p>
   <p>上面的代码将从给定的 URL 请求一个文件，并将其设置为下载到本地存储区域(如 HTML5 游戏选项中指定的那样)，在具有给定文件名的目录“下载”中(这不一定是 与源文件名相同，但应使用相同的文件扩展名)。 <span class="inline">async_load</span> 地图索引将存储在变量“文件”中，因此您可以在异步事件中检查正确的回调，如果保存目录不存在，则会创建它。 触发的异步事件将是 <b>HTTP</b> 子事件，在那种情况下，您会遇到类似以下内容的事件：</p>
-  <p class="code">if ds_map_find_value(async_load, "id") == file<br>
+  <p class="code">if (ds_map_find_value(async_load, "id") == file) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;var status = ds_map_find_value(async_load, "status");<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;if status == 0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (status == 0) <br>
     &nbsp; &nbsp; {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var path = ds_map_find_value(async_load, "result");<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var files = zip_unzip(path, "/NewContent/");<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if files &gt; 0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (files &gt; 0) <br>
     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;{<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global.ExtraContent = true;<br>
     &nbsp; &nbsp; &nbsp; &nbsp; }<br>
@@ -148,7 +148,7 @@
         <div style="float:right">Next:&nbsp;<a href="http_post_string.htm">http_post_string</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 http_get_file

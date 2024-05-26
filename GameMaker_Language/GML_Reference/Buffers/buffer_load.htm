@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.18.0_16";
+    gTopicId = "8.2.2.18.0_26";
   
 //]]></script>
 
@@ -78,48 +78,52 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>buffer_load</h1>
-  <p>此函数用于加载以前使用<a href="buffer_save.htm"><span class="inline">buffer_save()</span></a>函数保存的缓冲区，以及任何<a href="../../../Settings/Included_Files.htm" title="Included Files">包含的文件</a>或外部加载的文件。它将返回由函数创建的新缓冲区ID，作为字节对齐为1的"grow"缓冲区(请参见<a href="buffer_create.htm">此处</a>)。此 ID 应存储在变量中，并用于对此缓冲区的所有进一步函数调用中。如果由于任何原因加载失败，函数将返回-1，编译器输出窗口中将显示一条消息，说明加载已失败。</p>
-  <p class="note"><span class="note">注意</span>当您不再需要任何动态创建的资源以防止内存泄漏时，从内存中删除这些资源是很重要的，因此当您完成创建的缓冲区后，应使用<a href="buffer_delete.htm"><span class="inline">buffer_delete()</span></a>再次释放这些资源。</p>
-  <h2>平台专用注释</h2>
+  <h1><span data-field="title" data-format="default">buffer_load</span></h1>
+  <p>此函数加载之前使用 <span class="inline3_func"><a href="buffer_save.htm">buffer_save</a></span> 函数保存的缓冲区，以及任何 <a href="../../../Settings/Included_Files.htm"> 包含文件 </a> 或外部存储的其他文件。</p>
+  <p>它返回一个由函数创建的新缓冲区，作为字节对齐为 1 的 " 增长 " 缓冲区 (请参阅 <a href="buffer_create.htm"> 此处 </a>)。该缓冲区应存储在变量中，并在对此缓冲区的所有进一步函数调用中使用。如果由于某种原因加载失败，该函数将返回 <span class="inline2">-1</span>，并且编译器输出窗口中将显示一条消息，指出加载失败。</p>
+  <div data-conref="../../../assets/snippets/Note_Buffer_Delete_Dynamic.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 当您不再需要此类动态创建的资源时，请务必将其从内存中删除，以防止内存泄漏，因此当您使用完创建的缓冲区后，应将其释放再次使用 <span class="inline3_func"><a href="buffer_delete.htm">buffer_delete</a></span>。</p>
+
+</div>
+  <h3>平台专用注释</h3>
   <ul class="colour">
     <li>在 HTML5 上，从<strong>本地存储</strong>加载的任何缓冲区都将使用 base64 进行解码(因为它们被保存为 base64 字符串)，但是，在包含的文件或任何外部文件上使用此函数将不会使用 base64 解码，因为它们预期不会采用 base64 格式。</li>
     <li>在HTML5上，所有包含的文件都存储为UTF-8编码文本，这可能导致与原始文件相比加载的缓冲区的大小增加，因为UTF-8编码版本的文件可能具有与原始文件不同的大小(由于格式改变)。</li>
   </ul>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">buffer_load(filename);</p>
+  <p class="code"><span data-field="title" data-format="default">buffer_load</span>(filename);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>filename</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>filename</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要从中加载的文件名。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Buffer"><a target="_blank" href="buffer_create.htm">Buffer</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">player_buffer = buffer_load("Player_Save.sav");</p>
-  <p>上面的代码将把以前保存的缓冲区加载到内存中， 创建一个新的缓冲区。此新缓冲区的索引存储在变量"player_buffer"中。</p>
-  <p>&nbsp;</p>
+  <p>上面的代码将先前保存的缓冲区加载到内存中，创建一个新的缓冲区。它存储在变量 <span class="inline2">player_buffer</span> 中。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Back: <a href="Buffers.htm">缓冲区</a></div>
-        <div style="float:right">Next:&nbsp;<a href="buffer_load_ext.htm"><span>buffer_load_ext</span></a></div>
+        <div style="float:right">Next:&nbsp;<a href="buffer_load_ext.htm">buffer_load_ext</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_load

@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Page explaining the function audio_sound_gain">
   <meta name="rh-index-keywords" content="audio_sound_gain">
   <meta name="search-keywords" content="audio_sound_gain">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_sound_get_gain.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_falloff_set_model.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_sound_get_gain.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_is_paused.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -85,9 +85,12 @@
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>使用<span class="inline3_func"><a href="db_to_lin.htm">db_to_lin</a></span>和<span class="inline3_func"><a href="lin_to_db.htm">lin_to_db</a></span>在线性增益和以分贝(dB) 表示的增益之间来回转换。</p>
 
 </div>
-  <p>如果索引是声音资源，则此函数将影响当前在房间中播放的声音的 <i> 所有 </i> 个实例，并且最终音量将是播放该声音的所有其他实例的音量。但是，如果您使用了从函数 (如 <span class="inline2"><a href="audio_play_sound.htm">audio_play_sound()</a></span> 返回的索引，则只会影响声音的一个实例。</p>
-  <p>声音<strong>资源</strong>增益的默认值取自声音编辑器中的"音量"滑块：&nbsp;</p>
-  <p><img class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Asset_Gain_IDE.png"></p>
+  <p>如果索引是声音资源，则此函数将影响当前在房间中播放的<i>所有</i>声音实例，并且最终音量将是播放该声音的所有其他实例时的音量。但是，如果您使用了从<span class="inline2"><a href="audio_play_sound.htm">audio_play_sound</a></span>等函数返回的索引，它只会影响该声音的一个实例。</p>
+  <div data-conref="../../../../assets/snippets/Note_Sound_Editor_Volume_Is_Asset_Gain.hts">
+  <p>默认资源级增益是<a href="../../../../The_Asset_Editors/Sounds.htm">声音编辑器</a>中"音量"滑块的值：</p>
+  <p><img class="center" height="268" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Asset_Gain_IDE.png" width="432"></p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">audio_sound_gain</span>(index, volume, time);</p>
@@ -100,17 +103,17 @@
       </tr>
       <tr>
         <td>index</td>
-        <td><span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../../The_Asset_Editors/Sounds.htm">Sound Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Sound_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_play_sound.htm">Sound Instance ID</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Audio_Queue"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_create_play_queue.htm">Audio Queue ID</a></span></td>
+        <td><span data-keyref="Type_Asset_Sound"><a target="_blank" href="../../../../The_Asset_Editors/Sounds.htm">Sound Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Sound_Instance"><a target="_blank" href="audio_play_sound.htm">Sound Instance ID</a></span>&nbsp;or&nbsp;<span data-keyref="Type_ID_Audio_Queue"><a target="_blank" href="Audio_Buffers/audio_create_play_queue.htm">Audio Queue ID</a></span></td>
         <td>设置增益的声音索引。</td>
       </tr>
       <tr>
         <td>volume</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>音乐音量的值。</td>
       </tr>
       <tr>
         <td>time</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>增益变化的长度，单位为毫秒。</td>
       </tr>
     </tbody>
@@ -120,18 +123,26 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>示例1：</h4>
-  <p class="code">if val<br>
-    {<br>
-    &nbsp; &nbsp; var snd = audio_play_sound(snd_fountain, 10, true);<br>
-    &nbsp; &nbsp; <span data-field="title" data-format="default">audio_sound_gain</span>(snd, 0, 0);<br>
-    &nbsp; &nbsp; <span data-field="title" data-format="default">audio_sound_gain</span>(snd, 1, 5000);<br>
-    }</p>
-  <p>上面的代码检查变量 <span class="inline2">val</span>。如果它返回 <span class="inline">true</span>，则会将要播放的声音的索引分配给本地变量 <span class="inline2">snd</span>。然后使用该变量将该特定声音的音量降低到 0，并在 5 秒内减弱到最大音量。</p>
+  <p class="code">
+    var snd = audio_play_sound(snd_fountain, 10, true);                                     <br>
+    <span data-field="title" data-format="default">audio_sound_gain</span>(snd, 0, 0);      <br>
+    <span data-field="title" data-format="default">audio_sound_gain</span>(snd, 1, 5000);   <br>
+  </p>
+  <p>
+    The above code assigns the index of a sound to be played to the local variable <span class="inline2">snd</span>.
+    This variable is then used to reduce the volume of that specific sound to 0 and fade up to full volume over 5 seconds.
+  </p>
   <p>&nbsp;</p>
   <h4>示例2：</h4>
-  <p class="code"><span data-field="title" data-format="default">audio_sound_gain</span>(snd_fountain, 0.5, 0);<br>
-    var snd = audio_play_sound(snd_fountain, 0, true, 2);</p>
-  <p>上面的代码首先将声音资源 "snd_fintain" 的增益设置为 0.5。然后，它使用 <span class="inline2"><a href="audio_play_sound.htm">audio_play_sound</a></span> 播放此声音，并将此新声音实例的增益设置为 2 (使用函数的可选 "gain" 参数)</p>
+  <p class="code">
+    <span data-field="title" data-format="default">audio_sound_gain</span>(snd_fountain, 0.5, 0);   <br>
+    var snd = audio_play_sound(snd_fountain, 0, true, 2);
+  </p>
+  <p>
+    The above code first sets the gain of the sound asset <span class="inline2">snd_fountain</span> to 0.5. 
+    It then plays this sound using&nbsp;<span class="inline2"><a href="audio_play_sound.htm">audio_play_sound</a></span>&nbsp;
+    and sets the gain of this new sound instance to 2 (using the optional "gain" parameter of the function).
+  </p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -141,7 +152,7 @@
         <div style="float:right">Next:&nbsp;<a href="audio_sound_get_gain.htm">audio_sound_get_gain</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 audio_sound_gain

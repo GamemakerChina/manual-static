@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Page explaining the function audio_debug">
   <meta name="rh-index-keywords" content="audio_debug">
   <meta name="search-keywords" content="audio_debug">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_system_is_available.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_channel_num.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/lin_to_db.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_system_is_initialised.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -79,17 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">audio_debug</span></h1>
-  <p>此函数可用于显示有关音频系统的调试信息，<span class="inline">true</span>打开它，<span class="inline">false</span>关闭它。以这种方式调试音频时，叠加将显示以下信息：</p>
-  <p><img alt="Audio Debug Overview" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Debug.png"></p>
-  <ul class="colour">
-    <li><strong>Handle</strong> - OpenAL 源句柄(每个播放的声音都独一无二)</li>
-    <li><strong>Data Handle</strong> - OpenAL缓冲区句柄(为具有相同源句柄的多个声音显示相同的值)</li>
-    <li><strong>Processed Buffers</strong> - 播放了多少缓冲区</li>
-    <li><strong>Queued Buffers</strong> - 有多少缓冲区已排队(且仍在等待播放)</li>
-    <li><strong>Gain</strong> - 音频的增益值(0- 65536)</li>
-    <li><strong>Play Offset</strong> - 样本位置(当前播放位置)到当前缓冲区</li>
-    <li><strong>Queued Buffers Bars</strong> - 已处理/排队缓冲区的小方框图，其中播放偏移(当前位置)绘制为蓝线</li>
-  </ul>
+  <p>This function can be used to display debug information about the audio system, with <span class="inline">true</span> switching it on and <span class="inline">false</span>&nbsp;switching it off. Enabling this will display the&nbsp;<a href="../../Debugging/The_Debug_Overlay.htm#audio">Audio</a>&nbsp;window of&nbsp;<a href="../../Debugging/The_Debug_Overlay.htm">The Debug Overlay</a>.</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 对于同步的音频组，您还可以使用函数&nbsp;<span class="inline2"><a href="Audio_Synchronisation/audio_sync_group_debug.htm">audio_sync_group_debug</a></span>。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;此函数在HTML5目标平台上不起作用。</p>
   <p>&nbsp;</p>
@@ -104,7 +94,7 @@
       </tr>
       <tr>
         <td>enable</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td>启用(设置为<span class="inline">true</span>)或禁用(<span class="inline">false</span>)音频调试。</td>
       </tr>
     </tbody>
@@ -132,7 +122,7 @@
         <div style="float:right">Next:&nbsp;<a href="lin_to_db.htm">lin_to_db</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 audio_debug

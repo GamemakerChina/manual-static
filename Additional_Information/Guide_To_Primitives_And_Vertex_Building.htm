@@ -79,14 +79,16 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">图元和顶点构建指南</span></h1>
-  <p>本指南简要介绍了如何使用自定义<a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm">顶点格式</a>和<strong>顶点缓冲区</strong>构建和使用<strong>图元</strong>。</p>
-  <p>In general when you start working with 3D, special effects, complex drawing processes or shaders you don't need to worry too much about the vertex format being used, since <span data-keyref="GameMaker Name">GameMaker</span> will automatically set up and pass through the <a class="tooltip" title="顶点是一个多边形的单点的名称，它包含了定义它的位置、颜色和纹理的各种特征。在计算机图形学中，这通常指用于创建原语的三角形的一个角，而这些原语的组合构成了屏幕上的图形。">vertex</a> data for you. However, sometimes it is necessary to create your own vertex data and format it to suit, especially when you need to boost speed, or wish to pass in extra information. For example the standard vertex format includes an x, y, z 3D position, colour (with alpha), and UV texture coordinates, which, if you were creating it yourself, would look something like:</p>
+  <p>本指南简要介绍如何使用自定义<strong>顶点格式</strong>和<strong>顶点缓冲区</strong>构建和使用<a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm">图元</a>(primitives,原语,基元)。</p>
+  <p>一般来说，当你开始使用3D，特效，复杂的绘图过程或着色器时，你不需要太担心使用的顶点格式，因为<span data-keyref="GameMaker Name">GameMaker</span>会自动设置并传递<a class="tooltip" title="顶点是一个多边形的单点的名称，它包含了定义它的位置、颜色和纹理的各种特征。在计算机图形学中，这通常指用于创建原语的三角形的一个角，而这些原语的组合构成了屏幕上的图形。">顶点</a>数据。但是，有时需要创建自己的顶点数据并将其格式化，特别是当你需要提高速度时，或者希望传递额外的信息。例如，标准顶点格式包括x，y，z 3D位置，颜色(带alpha)和UV纹理坐标，如果您自己创建它，看起来像这样：</p>
+  <h4 id="passthrough_vertex_format">直通顶点格式：</h4>
   <p class="code">vertex_format_begin();<br>
     vertex_format_add_position_3d();<br>
     vertex_format_add_colour();<br>
     vertex_format_add_texcoord();<br>
     my_format = vertex_format_end();</p>
-  <p>然而，如果你只是使用(例如)着色器来操作顶点的位置，那么就不需要传递颜色或纹理数据了。在这种情况下，你将创建自己的格式如下:</p>
+  <p>然而，如果你只是使用(例如)着色器来操纵顶点的位置，那么就不需要传递颜色或纹理数据。在这种情况下，你可以创建自己的格式，如下所示：</p>
+  <h4>自定义顶点格式：</h4>
   <p class="code">vertex_format_begin();<br>
     vertex_format_add_position_3d();<br>
     my_format = vertex_format_end();</p>
@@ -102,8 +104,8 @@
   <p>您应该注意，创建顶点格式后，在构建<i>图元</i>时<strong>必须遵守</strong>定义顶点属性的顺序。 因此，如果您已将顶点格式定义为位置、颜色和纹理坐标，则<b>您<i>必须</i>以相同的顺序将这些属性添加到图元，否则您将收到错误</b>。 另请注意，与任何其他动态资源一样，顶点格式需要内存，因此在不需要时应使用函数 <span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_delete.htm">vertex_format_delete</a></span> 删除。</p>
   <p>您构建的任何基元都保存在<b>顶点缓冲区</b>中。 必须事先创建它，然后由用于构建原语的函数引用。 顶点缓冲区可以根据需要多次重复使用以创建不同的图元，或者可以“冻结”它以在游戏或关卡持续时间内维护特定的图元类型（这是最快的方法，因此如果您知道 您构建的原语不会改变，那么您应该始终使用此选项）。</p>
   <p>下面的代码显示了构建单个三角形图元的示例:</p>
-  <p class="code">// CREATE EVENT<br>
-    v_buff = vertex_create_buffer();<br>
+  <p class="code_heading">Create Event</p>
+  <p class="code">v_buff = vertex_create_buffer();<br>
     vertex_begin(v_buff, global.my_format);<br>
     vertex_position(v_buff, 10, 10);<br>
     vertex_colour(v_buff, c_white, 1);<br>
@@ -114,20 +116,19 @@
     vertex_position(v_buff, 110, 110);<br>
     vertex_colour(v_buff, c_white, 1);<br>
     vertex_texcoord(v_buff, 1, 1);<br>
-    vertex_end(v_buff);<br>
-    <br>
-    // DRAW EVENT<br>
+    vertex_end(v_buff);</p>
+  <p class="code_heading">Draw Event</p>
+  <p class="code"><br>
     var tex = sprite_get_texture(spr_Background, 0);<br>
     shader_set(shd_shimmer);<br>
     vertex_submit(v_buff, pr_trianglelist, tex);<br>
-    shader_reset();
-  </p>
+    shader_reset();</p>
   <p>在这里，我们首先在实例的创建事件中创建了顶点缓冲区，然后开始定义组成三角形图元的不同顶点，为要使用的三个点中的每一个点提供位置、颜色和纹理UV坐标。然后结束顶点定义，并且我们知道具有该顶点数据的顶点缓冲存储在变量"v_buff"中。</p>
-  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If the contents of the buffer are going to be updated constantly, the buffer would be created, given the vertex data, and then be destroyed again - after it's been drawn -&nbsp;all in the same step.</p>
-  <p>We then draw the contents of the vertex buffer in the Draw Event using a shader. This is a very simple example, and is basically how <span data-keyref="GameMaker Name">GameMaker</span> works internally, ie: When you draw a sprite, <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;creates a vertex buffer with four vertices creating two triangles (which make a square, also called a "quad"), and textures these two triangles with the sprite image. When we draw this sprite, we are submitting the vertex buffer and its contents are drawn to the screen.</p>
-  <p>你会注意到，当我们提交绘制的顶点缓冲区时，我们提供了一个图元类型。你使用的图元类型可以是一个点，一个行列表或条，或一个三角形列表或条(point,line list or strip,triangle list or strip)，但是<i> 不 </i>允许使用三角扇形(triangle fans)，因为大量移动硬件不接受这种图元类型。不要忘记为将要用来绘制它的图元类型正确地格式化你的顶点缓冲区。例如，将两个三角形图元绘制为一个三角形列表需要6个点，但作为一个三角扇(triangle strip)只需要4个点。你使用哪种类型是由你自己决定的，这取决于你想要画什么和你想要达到的效果。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>如果顶点缓冲区的内容将不断更新，它将被创建，给定顶点数据，然后再次被销毁-在它被绘制之后-所有这些都在同一步骤中。</p>
+  <p>然后我们使用着色器在绘制事件中绘制顶点缓冲区的内容。这是一个非常简单的示例，基本上是<span data-keyref="GameMaker Name">GameMaker</span>内部的工作方式，即：绘制精灵时，<span data-keyref="GameMaker Name">GameMaker</span>会创建一个顶点缓冲区，其中四个顶点可创建两个三角形(这使得一个正方形，也被称为"四边形")，并纹理这两个三角形与精灵图像。当我们绘制这个精灵，我们提交的顶点缓冲区，其中绘制其内容到屏幕上。</p>
+  <p>你会注意到，当我们提交顶点缓冲区进行绘图时，我们提供了一个图元类型。你使用的图元类型可以是点、线条列表或条带，或者三角形列表或条带，但你不是因为大多数移动的硬件不接受这种基本类型，所以允许三角形风扇。不要忘记为将要用于绘制它的基本类型正确格式化顶点缓冲区。例如，将两个三角形的图元绘制为三角形列表需要6个点，而将其绘制为三角形条带只需要4个点。使用哪种类型取决于您，取决于您想要绘制的内容和想要达到的效果。</p>
   <p>以这种方式使用您自己的顶点缓冲区时要注意的最后一点是它如何影响发送到 GPU 的顶点批次。 创建顶点缓冲区时，您创建的是最低级别的图形数据，因此当您绘制时，<span data-keyref="GameMaker Name">GameMaker</span> 会将您的缓冲区直接发送到显卡。 因此，如果你想要更好的批处理，你必须自己解决并将你想要批处理的东西存储在同一个缓冲区中。</p>
-  <p>正如我们在上面已经提到的，顶点格式是通过同时使用以下 5 种属性类型构建的（通过适当的 <span class="inline">vertex_format_add_*</span> 函数添加）：</p>
+  <p>正如我们上面已经提到的，顶点格式是通过一起使用以下5种属性类型(通过适当的<span class="inline3_func">vertex_format_add_*</span>函数添加)构建的：</p>
   <ul class="colour">
     <li>Colour 颜色</li>
     <li>Normal 法线</li>
@@ -174,7 +175,7 @@
     attribute vec4 in_Colour1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// (r,g,b,a)<br>
     attribute vec2 in_TextureCoord;&nbsp;&nbsp;// (u,v)</p>
   <p>在这种情况下，<span class="inline">in_Colour0</span> 映射到第一个 <span class="inline">vertex_format_add_colour()</span>，<span class="inline">in_Colour1</span> 映射到第二个。</p>
-  <p>纹理坐标的处理方式与颜色略有不同。 基本上，任何未称为 <span class="inline">in_Position</span>、<span class="inline">in_Normal</span> 或 <span class="inline">in_Colour[0 ... ]</span> 属性之一的都被视为纹理坐标。 它们在着色器的属性列表中定义的顺序表示它们映射到顶点格式中的哪个属性。 请参阅以下 GML 示例：</p>
+  <p>纹理坐标的处理与颜色略有不同。基本上，任何不被称为<span class="inline">in_Position</span>，<span class="inline">in_Normal</span>或<span class="inline">in_Colour[0...]</span>属性之一的东西都被视为纹理坐标。它们在着色器中的属性列表中定义的顺序，表示它们映射到顶点格式中的哪个属性。请参见以下<span data-keyref="GML_Code">GML代码</span>示例：</p>
   <p class="code">vertex_format_begin();<br>
     vertex_format_add_position_3d();<br>
     vertex_format_add_colour();<br>
@@ -202,7 +203,7 @@
         <div style="float:right">Next: <a href="Guide_To_Using_Blendmodes.htm">混合模式使用指南</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Primitive Building

@@ -78,9 +78,10 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Dialog</h1>
+  <h1><span data-field="title" data-format="default">Dialog</span></h1>
   <p>大多数现代计算机和移动设备都不喜欢在显示对话窗口时停止游戏。 他们倾向于将此解释为游戏运行程序已停止，并可能认为这是一个错误并过早关闭应用程序。 为防止这种情况发生，<span data-keyref="GameMaker Name">GameMaker</span> 具有<strong>异步</strong>对话函数，允许您请求特定形式的用户反馈或输入，但不会在任何时候阻塞游戏运行程序，这意味着 - 在被调用时 - 游戏将运行 当用户响应显示的对话框窗口时，在后台正常运行。 用户做出响应后，系统将调用<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">对话框异步事件</a>，以便您处理结果。</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;With the exception of <a href="shop_leave_rating.htm"><span class="inline">shop_leave_rating()</span></a>, these functions are&nbsp;<span data-keyref="Dialog for debug only">for <strong>debugging and testing&nbsp;use only</strong> and should not be used in released games. For that purpose you should create a custom user interface&nbsp;to receive input from players so that you have complete control over how the dialogs look and behave.</span></p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意 </span></span> 除了 <span class="inline3_func"><a href="shop_leave_rating.htm">shop_leave_rating</a></span> 之外，这些函数 <span data-keyref="Dialog for debug only"> 仅供 <strong> 调试和测试使用 </strong>，不应在已发布的游戏中使用。为此，您应该创建一个自定义用户界面来接收玩家的输入，以便您可以完全控制对话框的外观和行为。</span></p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 这些功能在 Windows 上的常规全屏模式下不起作用，因为您的游戏 " 拥有 " 整个屏幕。您可以将它们用于无边框全屏，请参阅 <span class="inline3_func"><a href="../../Cameras_And_Display/The_Game_Window/window_enable_borderless_fullscreen.htm">window_enable_borderless_fullscreen</a></span>。</p>
   <p>下面是所有可用的异步对话框函数的列表:</p>
   <ul class="colour">
     <li><a href="get_login_async.htm">get_login_async</a></li>
@@ -92,7 +93,6 @@
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
@@ -100,7 +100,7 @@
         <div style="float:right">Next: <a href="../Cloud_Saving/Cloud_Saving.htm"><del>云存储</del> (过时)</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Dialog Functions

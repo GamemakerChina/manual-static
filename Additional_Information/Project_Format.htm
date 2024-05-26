@@ -36,7 +36,7 @@
 
     gRootRelPath = "..";
     gCommonRootRelPath = "..";
-    gTopicId = "7.0_11";
+    gTopicId = "7.0_12";
   
 //]]></script>
 
@@ -59,7 +59,7 @@
   <meta name="topic-comment" content="Page explaining the details of GameMaker's project format">
   <meta name="search-keywords" content="project,format,structure,resource order,resource,order,yyp,YYP,YYZ,yyz,YYMPS,YYMP,GMEZ,GMX,package,custom order,project format,.resource_order">
   <meta name="rh-index-keywords" content="project format">
-</head>
+<meta name="brsnext" value="Additional_Information/Compatibility_Functions.htm"><meta name="brsprev" value="Additional_Information/Guide_To_Using_Blendmodes.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -83,17 +83,30 @@
   <div>
   <h1><span data-field="title" data-format="default">项目格式</span></h1>
   <p>本页面包含 <span data-keyref="GameMaker Name">GameMaker</span> 使用的项目格式的详细信息。</p>
-  <h2>基本格式</h2>
-  <h3>YYP 项目文件</h3>
-  <p>在根目录的是主项目文件，扩展名为 <span class="inline2">*.yyp</span>&nbsp;。它描述了项目中的资源以及特定于该项目的其他元数据。</p>
-  <h3>.resource_order 文件</h3>
-  <p>接下来这是另一个同名的文件，但扩展名为 <span class="inline2">*.resource_order</span>。此文件将组和资源的顺序存储在<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>中，当过滤器设置为<strong>自定义顺序</strong>时使用。</p>
-  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span> 使用版本控制时，您可以将此文件添加到 .gitignore 文件中，以便项目的每个用户都可以在<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>中拥有自己的定制顺序。</p>
-  <h3><span>YY 文件</span></h3>
+  <h2 id="format_basics">基本格式</h2>
+  <h3 id="the_yyp_project_file">YYP 项目文件</h3>
+  <p>At the root is the main project file, with a <span class="inline2">*.yyp</span>&nbsp;extension. It&nbsp;describes the resources in the project and other metadata specific to it.</p>
+  <h3 id="the_resource_order_file">.resource_order 文件</h3>
+  <p>Next to it is another file with a <span class="inline2">*.resource_order</span> extension. This file stores the order of groups and assets in&nbsp;<a href="../Introduction/The_Asset_Browser.htm">The Asset Browser</a>&nbsp;used when the filter is set to&nbsp;<strong>Custom Order</strong>.</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;will add this file to <span class="inline2">.gitignore</span> by default if&nbsp;<strong>Add skeleton .git defaults to new/imported projects</strong> is enabled under <strong>Source Control (Git)</strong> in the&nbsp;<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Plugin Preferences</a>.</p>
+  <h3 id="yy_files">YY Files</h3>
   <p>这些是资源文件，它们存储有关 <span data-keyref="GameMaker Name">GameMaker</span> 项目中各个资源的信息。它们描述资源的数据以及属于该资源的任何其他文件 (例如，脚本、着色器、图像和音频文件)。这些数据以类似 JSON 的格式存储。</p>
-  <h2>YYZ 文件</h2>
+  <h3 id="gitignore_and_gitattributes_files">.gitignore and .gitattributes Files</h3>
+  <p>These two files affect how a&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> project is treated by Git. They are automatically added to new and/or imported projects when&nbsp;<strong>Add skeleton .git defaults to new/imported projects</strong>&nbsp;under <strong>Source Control (Git)</strong>&nbsp;in the&nbsp;<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Plugin Preferences</a>&nbsp;is enabled. They're also added to new projects that you create from local asset packages. Alternatively, you can disable the settings and add and modify these files yourself instead.</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;These files are only used with source control, which you can enable in the&nbsp;<a href="../Settings/Game_Options.htm">Game Options</a>.</p>
+  <p><span>The <span class="inline2">.gitignore</span> file is used to make Git ignore certain patterns of files. The default <span class="inline2">.gitignore</span>&nbsp;file added by&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;ignores a few files and file extensions:</span></p>
+  <ul class="colour">
+    <li><span>Files added <span>to directories </span>by&nbsp;<span>Windows and&nbsp;</span>macOS&nbsp;that can be ignored (e.g. thumbnails).</span></li>
+    <li><span>The&nbsp;<span class="inline2">.resource_order</span>&nbsp;file used by&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;itself, used as more of a user-specific way of ordering the asset tree. This file doesn't have to be included in source control unless explicitly wanted.</span></li>
+  </ul>
+  <p><span>The <span class="inline2">.gitattributes</span> file controls how Git handles certain files. The default <span class="inline2">.gitattributes</span> file added by <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;introduces the following changes:&nbsp;</span></p>
+  <ul class="colour">
+    <li><span><span data-keyref="GameMaker Name">GameMaker</span>'s&nbsp;<span class="inline2">.yy</span>&nbsp;files as marked as&nbsp;<em>linguist-generated</em>, which prevents GitHub from identifying these as the wrong&nbsp;<span><span>language.</span></span></span></li>
+    <li><span>Line endings are forced to be LF (<em>line feed</em>) for metadata files&nbsp;<span>to make merging easier across different platforms, as&nbsp;</span>Windows, macOS and Linux all use different conventions to represent a line ending.</span></li>
+  </ul>
+  <h2 id="yyz_files">YYZ 文件</h2>
   <p>此类型的文件存储压缩项目导出，该项目导出是通过<strong>文件菜单</strong>中的<strong>导出项目</strong> &gt; <a href="../IDE_Navigation/Menus/The_File_Menu.htm">YYZ</a> 选项创建的。根据&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> 的版本不同，使用的压缩方法可能会有所不同。</p>
-  <h2>本地资源包</h2>
+  <h2 id="local_asset_packages">本地资源包</h2>
   <p>这些文件是使用<a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">工具菜单</a>中的<strong>创建本地包</strong>和<strong>导入本地包</strong>从项目内容(部分)创建和导入的。</p>
   <p>以下是不同版本的 <span data-keyref="GameMaker Name">GameMaker</span> 使用的文件格式的概述：</p>
   <ul class="Disc">
@@ -111,7 +124,7 @@
         <div>Next:&nbsp;<a href="Compatibility_Functions.htm">兼容性函数</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
 
 </div>

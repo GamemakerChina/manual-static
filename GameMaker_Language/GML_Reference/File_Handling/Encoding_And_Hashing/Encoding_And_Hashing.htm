@@ -78,26 +78,37 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>编码和哈希</h1>
-  <p>在处理外部文件时，最终用户始终有可能打开并更改它们包含的信息，从而更改您的游戏。这可能会导致游戏元素损坏或在线分数出现欺诈 (例如)，因此 <span data-keyref="GameMaker Name">GameMaker</span> 为您提供了一些基本的 <a class="tooltip" title="编码使用公开可用的方案将数据转换为另一种格式，以便可以轻松地将其反转。这与加密不同，因为它不需要密钥对其进行解码。编码通常用于将数据更改为易于由其他系统使用的格式（例如，将数据发送到服务器），或用于使人眼无法读取的数据。"> 编码 </a> 函数以及执行 <a class="tooltip" title="哈希(散列)是一种创建与单个源（通常是文件）相关且仅与该源相关的字符串或值的方法。例如，在GameMaker中，您可以为保存文件生成一个哈希，然后在稍后对其进行访问之前，为其生成另一个哈希，并检查原始哈希和新哈希以确定文件是否已被篡改。"> 哈希 </a> 检查的函数对字符串和文件进行检查，以确保它们在使用之前保持完整性。还提供了一些用于编码和解码 <a class="tooltip" title="JSON代表JavaScript Object Notatio，并且是用于存储数据的轻量级格式。 JSON通常在将数据从服务器发送到网页时使用，并且被认为是“自我描述”的，易于查看和遵循。">JSON</a> 格式字符串以及创建 ZIP 文件的函数。</p>
-  <p class="note"><b><span class="note"> 注意</span></b> 编码不是加密！Base64 编码使文件无法用肉眼读取，并且需要用户代表进行解码，但它不能保证不被黑客攻击。建议您将这些函数与您自己的加密混合使用 (GameMaker 的加密和脚本函数在互联网上有很多种形式)。</p>
+  <h1><span data-field="title" data-format="default">Encoding And Hashing</span></h1>
+  <p>When dealing with external files, there is always the possibility that the end user could open and change the information that they contain, and so change your game. This can result in broken gameplay elements or fraudulent scores on-line (for example), and so <span data-keyref="GameMaker Name">GameMaker</span> provides you with some basic <a class="tooltip" title="编码使用公开可用的方案将数据转换为另一种格式，以便可以轻松地将其反转。这与加密不同，因为它不需要密钥对其进行解码。编码通常用于将数据更改为易于由其他系统使用的格式（例如，将数据发送到服务器），或用于使人眼无法读取的数据。">encoding</a> functions as well as functions to perform <a class="tooltip" title="哈希(散列)是一种创建与单个源（通常是文件）相关且仅与该源相关的字符串或值的方法。例如，在GameMaker中，您可以为保存文件生成一个哈希，然后在稍后对其进行访问之前，为其生成另一个哈希，并检查原始哈希和新哈希以确定文件是否已被篡改。">hashing</a> checks on strings and files to make sure that they have maintained their integrity before being used. There are also some functions supplied for encoding and decoding <a class="tooltip" title="JSON代表JavaScript Object Notatio，并且是用于存储数据的轻量级格式。 JSON通常在将数据从服务器发送到网页时使用，并且被认为是“自我描述”的，易于查看和遵循。">JSON</a>&nbsp;format strings, as well as for creating ZIP files.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Encoding is NOT encryption! A base64 encoding renders the file unreadable to the naked eye and will require an effort on behalf of the user to decode, but it is not secure from hacking. It is recommended that you mix those functions with your own encryption (there are many forms of encryption and script functions&nbsp;for <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;available on the internet).</p>
+  <h2 id="func_ref">Function Reference</h2>
+  <h3 id="json">JSON</h3>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;See&nbsp;<a href="../../../../Additional_Information/Guide_To_Using_JSON.htm">Guide To Using JSON</a>&nbsp;for detailed information on how to use JSON in&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>.</p>
   <ul class="colour">
-    <li><a href="json_encode.htm">json_encode</a></li>
-    <li><a href="json_decode.htm">json_decode</a></li>
     <li><a href="json_stringify.htm">json_stringify</a></li>
     <li><a href="json_parse.htm">json_parse</a></li>
+    <li><a href="json_encode.htm">json_encode</a></li>
+    <li><a href="json_decode.htm">json_decode</a></li>
+  </ul>
+  <h3 id="base64">Base64</h3>
+  <ul class="colour">
     <li><a href="base64_encode.htm">base64_encode</a></li>
     <li><a href="base64_decode.htm">base64_decode</a></li>
+  </ul>
+  <h3 id="hashing">Hashing</h3>
+  <ul class="colour">
     <li><a href="md5_string_utf8.htm">md5_string_utf8</a></li>
     <li><a href="md5_string_unicode.htm">md5_string_unicode</a></li>
     <li><a href="md5_file.htm">md5_file</a></li>
     <li><a href="sha1_string_utf8.htm">sha1_string_utf8</a></li>
     <li><a href="sha1_string_unicode.htm">sha1_string_unicode</a></li>
     <li><a href="sha1_file.htm">sha1_file</a></li>
+  </ul>
+  <h3 id="csv">CSV</h3>
+  <ul class="colour">
     <li><a href="load_csv.htm">load_csv</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>提供以下函数用于处理 ZIP 文件：</p>
+  <h3 id="zip_files">ZIP Files</h3>
   <ul class="colour">
     <li><a href="zip_unzip.htm">zip_unzip</a></li>
     <li><a href="zip_unzip_async.htm">zip_unzip_async</a></li>
@@ -105,8 +116,7 @@
     <li><a href="zip_add_file.htm">zip_add_file</a></li>
     <li><a href="zip_save.htm">zip_save</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>值得注意的是，还有许多与编码和哈希 <a href="../../Buffers/Buffers.htm"> 缓冲区 </a> 相关的函数，您可以在以下链接中找到它们:</p>
+  <h3 id="encoding_hashing_buffers">Encoding and Hashing&nbsp;<a href="../../Buffers/Buffers.htm">Buffers</a></h3>
   <ul class="colour">
     <li><a href="../../Buffers/buffer_md5.htm">buffer_md5</a></li>
     <li><a href="../../Buffers/buffer_sha1.htm">buffer_sha1</a></li>
@@ -117,15 +127,14 @@
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../File_Handling.htm">文件处理</a></div>
-        <div style="float:right">Next: <a href="../File_System/File_System.htm">文件系统</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../File_Handling.htm">文件处理</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../File_System/File_System.htm">文件系统</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 File Encoding

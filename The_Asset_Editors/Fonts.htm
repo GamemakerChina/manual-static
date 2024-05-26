@@ -80,8 +80,8 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">字体编辑器</span></h1>
   <p><img alt="The Font Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts.png"></p>
-  <p>When you want to draw text in your game this text is drawn in a standard Arial 12-point&nbsp;<a class="tooltip" title="字体是用于表示语言文本的图形字形的集合。字体可以具有不同的粗细，大小和样式，并用于显示项目中的任何书面内容。">font</a>, but to make more interesting or unique looking texts you will probably want to use different fonts. So, to use different fonts that you have on your computer you must create a <strong>font asset</strong> in <span data-keyref="GameMaker Name">GameMaker</span>. This is done by right clicking <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">&nbsp;on the <a href="../Introduction/The_Asset_Browser.htm">Asset Browser</a> and selecting "<em>Create" -</em>&gt;<em>&nbsp;"Font</em>". For each font asset you create you specify a particular type of font from your computer which can then be used in your game using the action or code to set a font for drawing.</p>
-  <p>Fonts in GameMaker can make use of SDF rendering so text stays sharp as it's scaled up. Enable it under Rendering Options (listed below), or run&nbsp;<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_sdf.htm">font_enable_sdf</a></span>&nbsp;on the font at runtime.</p>
+  <p>当你想在游戏中绘制文本时，这些文本将以标准 Arial 12 点 <a class="tooltip" title="字体是用于表示语言文本的图形字形的集合。字体可以具有不同的粗细，大小和样式，并用于显示项目中的任何书面内容。"> 字体 </a> 绘制，但要制作更有趣或更独特的文本，你可能需要使用不同的字体。因此，要使用计算机上的不同字体，你必须在 <span data-keyref="GameMaker Name">GameMaker</span> 中创建 <strong> 字体资源 </strong>。这可以通过右键单击 <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> 在 <a href="../Introduction/The_Asset_Browser.htm"> 资源浏览器 </a> 上选择 "<em> 创建 "-</em>&gt;<em>" 字体 </em>"。对于您创建的每个字体资源，您可以从计算机中指定特定类型的字体，然后可以在游戏中使用操作或代码来设置绘图字体。</p>
+  <p><span data-field="title" data-format="default">字体编辑器</span>中的字体可以使用SDF渲染，以便文本在放大时保持清晰。请在渲染选项(下面列出)下启用它，或在运行时对字体运行<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_sdf.htm">font_enable_sdf</a></span>。</p>
   <p>启用SDF后，可以在运行时将各种<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_effects.htm">效果</a>应用于字体。</p>
   <p>"字体编辑器"窗口包含以下选项：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">详情</span><span data-close-text="true">详情</span></a></p>
@@ -95,7 +95,7 @@
   <div class="droptext" data-targetname="drop-down7">
     <p class="dropspot">此部分包含两个选项：</p>
     <ul class="colour">
-      <li class="dropspot"><strong>启用SDF</strong>：是否为此字体启用SDF呈现。请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/Fonts.htm#h">SDF呈现</a>。</li>
+      <li class="dropspot"><strong id="enable_sdf">启用SDF</strong>：是否为此字体启用SDF呈现。请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/Fonts.htm#h">SDF呈现</a>。</li>
       <li class="dropspot"><strong>SDF spread</strong>：SDF<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_sdf_spread.htm">扩展值</a>。这限制了从字体边缘可以扩展的<a href="../GameMaker_Language/GML_Reference/Asset_Management/Fonts/font_enable_effects.htm">字体效果</a>。</li>
     </ul>
     <p class="dropspot">&nbsp;</p>
@@ -115,9 +115,9 @@
       <li class="dropspot"><strong>来自代码</strong>：如果你点击这个按钮，然后点击 OK，<span data-keyref="GameMaker Name">GameMaker</span> 会自动解析你的游戏代码中的字符串，然后创建不同的字符范围来覆盖你游戏中的所有文本。请注意，它寻找的是所有的字符串（在 \"\" 或 \u0027\u0027 内），因此也可能在字符范围内包括文件名。</li>
       <li class="dropspot"><strong>来自文件</strong>：这与上面解释的 "来自代码" 选项的作用类似。如果你点击它，你将被要求提供一个文件，然后一旦完成，你应该点击确定。然后，<span data-keyref="GameMaker Name">GameMaker</span>将解析该文件并为文本创建字符范围并为文件中的文本创建字符范围。</li>
     </ul>
-    <p class="dropspot">注意，你可以通过直接在预览窗口中添加或删除文本字形来手动编辑文本范围。</p>
-    <p class="dropspot">The <a href="../IDE_Tools/The_Inspector.htm">Inspector</a> contains a "<strong>Select Glyphs</strong>" option that you can use to select glyphs visually:</p>
-    <p class="dropspot"><img src="../assets/Images/Asset_Editors/Editor_Fonts_Inspector_GlyphSelector.png" class="center">&nbsp;</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>您可以通过直接在预览窗口中添加或删除文本字形来手动编辑文本范围。</p>
+    <p class="dropspot"><a href="../IDE_Tools/The_Inspector.htm">检查器</a> 包含一个 "<strong>Select Glyphs</strong>" 选项，您可以使用该选项来直观地选择字形：</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Inspector_GlyphSelector.png">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">纹理控制</span><span data-close-text="true">纹理控制</span></a></p>
   <div class="droptext" data-targetname="drop-down3">
@@ -125,13 +125,13 @@
     <p class="dropspot">点击<strong>选项</strong>按钮将打开高级字体纹理选项：</p>
     <p class="dropspot"><img alt="Font Options Editor" class="center" height="343" src="../assets/Images/Asset_Editors/Editor_Fonts_Options.png" width="485">这些选项有时可以从根本上改变字体在游戏中的显示方式，而且并非所有字体都需要相同的设置。以下选项旨在为你的字体提供最大程度的定制服务。</p>
     <ul class="colour">
-      <li class="dropspot"><strong>指示</strong>：字体提示（也被称为指示）是指使用数学指令来调整轮廓字体的显示，使其与光栅化的网格相一致。在低屏幕分辨率下，提示对于产生清晰可读的文本至关重要，在这里你可以选择不同的提示算法来获得最佳效果。默认是 "正常"。</li>
-      <li class="dropspot"><strong>字形选项</strong>。这些选项可用于通过启用/禁用不同的操作来改变字形的加载方式。对于常见的计算机操作系统，字体的显示算法需要一些字体的信息来优化屏幕显示效果，英文称为Hinting。这些选项是： <ol> <li><em>Disable Hinting</em>: 这将禁用字体的本机Hinting和自动Hinting。</li> <li><em>Disable Auto-Hinter</em>。这将禁用自动Hinting，而使用字体的本地Hinting（如果它有的话）。请注意，这将覆盖 "首选自动Hinting "选项。</li> <li><em>Prefer Auto-Hinter</em>。这将告诉<span data-keyref="GameMaker Name">GameMaker</span>更倾向于使用自动Hinting，而不是字体可能有的任何本地Hinting。请注意，这个选项会被 "Disable Auto-hinter "和 "Disable Hinting "所覆盖。</li> <li><em>Warping</em>。启用该选项将对字形进行轻微扭曲，以改善网格对齐。请注意，这需要自动Hinting和 "正常 "提示模式。</li> <li><em>No Scale</em>。当该选项被选中时，它将保持字形的字体单位，而忽略要求的尺寸。这意味着提示功能被禁用。</li> </ol> 上述所有选项的默认状态都是<strong>禁用</strong>。 </li>
+      <li class="dropspot"><strong>提示</strong>：字体提示(也称为指示)是使用数学指令来调整轮廓字体的显示，使其与栅格化网格对齐。在低屏幕分辨率下，提示对于生成清晰易读的文本至关重要，在这里您可以选择不同的提示算法以获得最佳结果。默认值为"正常"。</li>
+      <li class="dropspot"><strong>字形选项</strong>：这些选项可用于通过启用/禁用不同的操作来更改字形的加载方式。这些选项是：<ol><li><em>禁用提示</em>：这将禁用字体的本地提示和自动提示。 </li><li><em>禁用自动提示</em>：这将禁用自动提示，而使用字体的本机提示(如果有的话)。注意，这将覆盖"首选自动提示"选项。 </li><li><em>首选自动提示</em>：这将告诉<span data-keyref="GameMaker Name">GameMaker</span>更喜欢使用自动提示而不是字体本身的提示。请注意，这被"禁用自动提示"和"禁用提示"选项覆盖。 </li><li><em>无比例</em>：当这个选项被选中时，它将保留字形在字体单位，并忽略所要求的大小。这意味着提示是禁用的。</li></ol>&nbsp; &nbsp; 上述所有选项的默认状态均为<strong>禁用</strong>。</li>
       <li class="dropspot"><strong>解释器</strong>：在这里你可以选择<em>GameMaker</em>应该使用的<span data-keyref="GameMaker Name">TrueType</span>版本来进行字体渲染。默认是<em>TrueType v40</em>。</li>
       <li class="dropspot"><strong>凑整</strong>：该选项用于设置从定点小数转换为整数时的舍入方法。默认为 "floor"。</li>
       <li class="dropspot"><strong>应用字距调整</strong>：该选项控制是否使用字体文件中的字符间距数据在游戏中进行渲染。如果源字体的字符间距数据不正确，并导致字体无法正确显示，则应该禁用该功能。</li>
     </ul>
-    <p class="dropspot"><strong>更新</strong>按钮可以用来重新生成字体纹理。如果你想更新你对现有字体所做的任何改动，或者你已经创建了一个新的字体，并且你想看看它在预览窗口中的样子，那么就需要这样做。注意，你也可以从资源浏览器中的字体（或字体）的右键<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">&nbsp;菜单中重新生成字体。</p>
+    <p class="dropspot"><strong>"重新生成"</strong>按钮可用于重新生成字体纹理。如果要更新对现有字体所做的任何更改，或者如果已创建新字体并希望查看其在"预览"窗口中的外观，则需要使用此按钮。请注意，您还可以从<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">"资源浏览器"<a href="../Introduction/The_Asset_Browser.htm">中字体的右键</a>菜单重新生成字体。</p>
     <p class="dropspot"><img alt="Regenerate Fonts RMB Menu Option" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_MenuRegenerate.png">需要注意的是，当你第一次创建一个新的字体时，如果你不在编辑器中重新生成纹理，那么在你第一次运行或测试你的游戏时，该纹理将被创建，但这是唯一一次自动生成。这意味着，一旦一个字体有了生成的纹理，对字体资源所做的任何改变都需要重新生成字体，以便在游戏中看到这些改变，否则，"旧的 "字体纹理将仍然被使用。</p>
     <p class="dropspot"><span data-keyref="GameMaker Name">GameMaker</span>将把生成的字体纹理作为<span class="inline">PNG</span>文件与项目的其他文件一起渲染，如果你加载项目时没有找到基本字体，那么游戏仍然会使用存储的纹理正确显示文本。然而，一个缺失的字体将意味着你无法再改变它的任何属性，除了它的名字、字体家族和纹理组（<a href="../Settings/Texture_Groups.htm">纹理组编辑器</a>）之外。</p>
     <p class="dropspot">&nbsp;</p>
@@ -144,7 +144,7 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#"><span data-open-text="true" data-skip-index="true">预览</span><span data-close-text="true">预览</span></a></p>
   <div class="droptext" data-targetname="drop-down5">
     <p class="dropspot"><strong>预览窗口</strong>是你可以看到字体的预览，可以是文本样本，也可以是纹理。当<strong>预览模式</strong>被设置为<em>示例</em>，你可以直接在预览窗口中输入任何你想测试的文本，看看它看起来如何，同时选择<em>游戏预览</em>将显示为该字体生成的渲染纹理图像。如果没有图像，那么你应该点击<strong>重新生成</strong>按钮来生成纹理。</p>
-    <p class="dropspot">请注意，纹理图像可以与样本不同，因为纹理将 <em>不</em>被重新生成，除非明确告知。这意味着在你最初生成一个字体纹理后，对字体资源所做的改变将不会被带到游戏中，除非纹理被重新生成。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>纹理图像可能与示例不同，因为除非明确指示，否则纹理将<em>不会</em>重新生成。这意味着在您最初生成字体纹理后，除非纹理重新生成，否则对字体资源所做的更改将不会转移到游戏中。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">范围预览</span><span data-close-text="true">范围预览</span></a></p>
@@ -161,7 +161,7 @@
         <div style="float:right">Next:&nbsp;<a href="Notes.htm">The Note Editor</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Font Editor

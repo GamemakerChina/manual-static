@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.3.14.0_24";
+    gTopicId = "8.2.2.3.14.0_25";
   
 //]]></script>
 
@@ -78,11 +78,11 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>room_set_view_enabled</h1>
-  <p>使用此函数，您可以启用(<span class="inline">true</span>)或禁用(<span class="inline">false</span>)游戏内任何房间的视图<i>，当前房间</i>除外。</p>
+  <h1><span data-field="title" data-format="default">room_set_view_enabled</span></h1>
+  <p>此函数启用 (<span class="inline2">true</span>) 或禁用 (<span class="inline2">false</span>) 游戏中 <i> 除当前房间之外的任何房间中的视图。</i></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">room_set_view_enabled(index, val);</p>
+  <p class="code"><span data-field="title" data-format="default">room_set_view_enabled</span>(index, val);</p>
   <table>
     <tbody>
       <tr>
@@ -92,13 +92,13 @@
       </tr>
       <tr>
         <td>index</td>
-        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
-        <td>要设置的房间的索引。</td>
+        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
+        <td>房间要设置。</td>
       </tr>
       <tr>
         <td>val</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>是在给定房间中启用(<span class="inline">true</span>)还是禁用(<span class="inline">false</span>)视图。</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是在给定房间中启用(<span class="inline2">true</span>)还是禁用(<span class="inline2">false</span>)视图。</td>
       </tr>
     </tbody>
   </table>
@@ -109,18 +109,17 @@
   <h4>例子:</h4>
   <p class="code">global.myroom = room_add();<br>
     room_set_view_enabled(global.myroom, true);</p>
-  <p>这将在"global.myroom"中索引的房间中启用视图。</p>
-  <p>&nbsp;</p>
+  <p>这将启用在 <span class="inline2">global.myroom</span> 中索引的房间中的视图。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Rooms.htm">房间</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Rooms.htm">房间</a></div>
         <div style="float:right">Next:&nbsp;<a href="room_set_viewport.htm">room_set_viewport</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 room_set_view_enabled

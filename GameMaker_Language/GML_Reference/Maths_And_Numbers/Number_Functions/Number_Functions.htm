@@ -81,20 +81,20 @@
   <h1><span data-field="title" data-format="default">数字函数</span></h1>
   <p><span data-keyref="GameMaker Name">GameMaker</span> 中的实数被视为<i>双精度浮点数</i> - 也就是说它们有一个小数点，小数点前后没有固定的数字位数 - 或 <i> 整数</i> - 也就是说它们是没有小数点值的整数。 例如，2 是一个整数，但 2.01 是一个浮点实数。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 在 <b>HTML5</b> 目标上，所有实数都是双精度。</p>
-  <p>在处理跨平台开发时，整数和浮点数之间的区别非常重要，因为在Windows PC上进行计算的精度与在移动设备上进行相同计算的精度是不一样的的。这意味着你在进行比较时应该特别注意，例如:</p>
+  <p>This distinction between integers and floats is very important when dealing with cross-platform development as the precision of calculations made on a Windows PC is <i>not</i> the same as the precision of those same calculations when made on a mobile device. This means that you should pay particular attention when making comparisons, for example:</p>
   <p class="code">if (image_index == 1)<br>
     {<br>
-    &nbsp; &nbsp; do something...<br>
+    &nbsp; &nbsp; // Do something...<br>
     }</p>
   <p>在上面的例子中，如果我们已经将 <span class="inline2"><a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">image_speed</a></span> 设置为 0.25— 例如 — 那么经过四步之后，您可以假设 <span class="inline2"><a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></span> 值将是 1，但是由于浮点数学的工作方式，它 <i> 可能 </i> 是像 1.0000002 这样的值，因此计算将不是 <span class="inline2">true</span>。这些类型的错误很难进行调试，因此了解它们并提前计划并使用其他方法检查值或使用适当的基数或舍入函数 (下面列出) 将数字转换为整数是很好的 (有关浮点数学的更多信息以及为什么这是一个问题，<a href="https://floating-point-gui.de/" target="_blank">请参阅这里</a>)。例如，上面的代码可以写成:</p>
   <p class="code">if (floor(image_index) == 1)<br>
     {<br>
-    &nbsp; &nbsp; do something...<br>
+    &nbsp; &nbsp; // Do something...<br>
     }</p>
   <p>同样值得注意的是，当使用<b> YoYo Compiler </b>目标时，所有的表达式和函数都是从左到右计算的<i> ，而在所有其他目标平台上，它们是从右到左计算的</i> ，这意味着，例如，根据不同的平台，这将给出不同的结果:</p>
   <p class="code">val = max(num, ++num, num++);</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;有关详细信息，请参阅<a href="../../../GML_Overview/Evaluation_Order.htm">评估顺序</a>部分。</p>
-  <p>您还可以使用<span data-keyref="GameMaker Name">GameMaker</span>中的一个特殊函数来设置浮点数学的<b><a id="epsilon"></a>epsilon(精度)</b>值。当一个实数四舍五入到最接近的浮点数时，(也称为“机器精度”)形成相对误差的上界，可以使用以下函数获取和设置:</p>
+  <p>You can also use a special function available in <span data-keyref="GameMaker Name">GameMaker</span> to set the <b><a id="epsilon"></a>epsilon</b> value for floating point maths. When a real number is rounded to the nearest floating point number, the epsilon (also know as "machine epsilon") forms an upper bound on the relative error, and you can set and get the epsilon value using the following functions:</p>
   <ul class="colour">
     <li><a href="math_set_epsilon.htm">math_set_epsilon</a></li>
     <li><a href="math_get_epsilon.htm">math_get_epsilon</a></li>
@@ -153,7 +153,7 @@
         <div style="float:right">Next:&nbsp;<a href="../../../../Additional_Information/Vectors.htm">向量</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Number Functions

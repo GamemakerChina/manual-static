@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Reference section for the Particle System functions and variables">
   <meta name="rh-index-keywords" content="">
   <meta name="search-keywords" content="Particle Systems">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_exists.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/effect_clear.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Particles/Particle_Systems/part_system_exists.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Particles/particle_get_info.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -82,7 +82,7 @@
   <p>在创建粒子之前，需要创建粒子系统。这是一个"容器"，你可以把你的粒子和发射器(如果你需要的话)放在那里准备好使用，你可以在任何一个系统中放入你认为必要的尽可能多或尽可能少的粒子，你也可以有你认为必要的尽可能多的系统。但是，由于每个系统、发射器和粒子都占用内存，并且它们太多可能会减慢游戏速度或导致问题，因此最好保持这个数字尽可能小。例如，如果需要某些效果显示在实例上方，而其他效果显示在实例下方，则需要创建两个系统并设置其深度以获得所需的效果，并以指定的深度绘制添加到每个系统的所有粒子。</p>
   <p>由于粒子系统是动态创建的资源，因此必须创建粒子系统并将返回的索引存储在变量中，以便在所有进一步的函数调用中引用该系统，并且非常重要的是，当不再需要粒子系统时，还要销毁该系统，否则会出现内存泄漏，从而降低速度并最终导致游戏崩溃。另外值得注意的是，粒子系统在创建后将永远存在，即使索引不再存储。因此，即使您更换空间或重新启动游戏，系统和粒子仍将保留，并且可以在所有其他房间中看到，这样您最好确保在不再需要它们时将其销毁。</p>
   <div data-conref="../../../../../assets/snippets/Note_tip_use_particle_system_editor.hts">
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您喜欢更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，则还可以使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。此外，还可以使用编辑器的 <strong> 复制 GML 到剪贴板 </strong><img class="icon" src="../../../../../assets/Images/Icons/Icon_GML_To_Clipboard.png" title=""> 为其生成 <span data-keyref="GML_Code">GML 代码 </span>。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_tip.hts"><span class="tip"> 提示</span></span> 如果您喜欢更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码 </span> 提供的大量功能，则还可以使用 <a href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统编辑器 </a> 创建 <span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../../../../The_Asset_Editors/Particle_Systems.htm"> 粒子系统资源 </a></span>。此外，还可以使用编辑器的 <strong> 复制 GML 到剪贴板 </strong><img class="icon" src="../../../../../assets/Images/Icons/Icon_GML_To_Clipboard.png" title=""> 为其生成 <span data-keyref="GML_Code">GML 代码 </span>。</p>
 
 </div>
   <h2 id="h">将GML复制到剪贴板</h2>
@@ -155,7 +155,7 @@
         <div style="float:right">Next: <a href="../Particle_Types/Particle_Types.htm">粒子类型</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Particle Systems

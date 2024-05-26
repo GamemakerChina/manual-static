@@ -1,0 +1,137 @@
+<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  <script type="text/javascript" language="JavaScript">
+    //<![CDATA[
+    function reDo() {
+      if (innerWidth != origWidth || innerHeight != origHeight)
+        location.reload();
+    }
+    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+      origWidth = innerWidth;
+      origHeight = innerHeight;
+      onresize = reDo;
+    }
+    onerror = null;
+  //]]>
+  </script>
+  <style type="text/css">/*<![CDATA[*/
+
+    < !-- div.WebHelpPopupMenu {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 4;
+      visibility: hidden;
+    }
+
+    p.WebHelpNavBar {
+      text-align: right;
+    }
+
+    -->
+  
+/*]]>*/</style>
+
+  <script type="text/javascript">//<![CDATA[
+
+    gRootRelPath = "../../../..";
+    gCommonRootRelPath = "../../../..";
+    gTopicId = "8.2.2.7.2.0_23";
+  
+//]]></script>
+
+  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
+  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
+<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
+  <meta name="topic-status" content="Draft">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>window_enable_borderless_fullscreen</title>
+  <meta name="generator" content="Adobe RoboHelp 2022">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <meta name="rh-authors" content="">
+  <meta name="topic-comment" content="">
+  <meta name="rh-index-keywords" content="window_enable_borderless_fullscreen">
+  <meta name="search-keywords" content="window_enable_borderless_fullscreen">
+  <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
+</head>
+
+<body>
+  <div class="topic-header rh-hide" id="rh-topic-header">
+    <div class="logo">
+    </div>
+    <div class="nav">
+      <div class="title" title="window_enable_borderless_fullscreen">
+        <span>window_enable_borderless_fullscreen</span>
+      </div>
+      <div class="gotohome" title="Click here to see this page in full context">
+        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
+      </div>
+    </div>
+  </div>
+  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
+
+
+
+  <h1><span data-field="title" data-format="default">window_enable_borderless_fullscreen</span></h1>
+  <p>此函数允许 <span> 在调用 <span class="inline3_func"><a href="window_set_fullscreen.htm">window_set_fullscreen</a></span> 时使用全屏无边框窗口，或者使用 <span class="shortcut">Alt + Enter</span> 组合键切换到全屏。</span></p>
+  <p>当游戏在全屏无边框窗口中运行时，它仍然在窗口中运行，但 <span data-keyref="GameMaker Name">GameMaker</span> 会调整窗口大小，使其覆盖整个屏幕。启用无边框全屏后，<span class="inline3_func"><a href="window_get_fullscreen.htm">window_get_fullscreen</a></span> 也会返回 <span class="inline2">true</span>。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要信息</span></span> 您应该在使用 <span class="inline3_func"><a href="window_set_fullscreen.htm">window_set_fullscreen</a></span> 切换到全屏 <em> 之前 </em> 调用此函数，因为当已经在全屏模式下运行时，此函数不会更改任何内容。</p>
+  <div data-conref="../../../../assets/snippets/Note_Windows_Only_Function.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 此函数仅适用于 Windows。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <h4>语法:</h4>
+  <p class="code"><span data-field="title" data-format="default">window_enable_borderless_fullscreen</span>(enable);</p>
+  <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>enable</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>是否在全屏模式下启用无边框窗口 (<span class="inline2">true</span>) 或不启用无边框窗口 (<span class="inline2">false</span>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h4>返回:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p>&nbsp;</p>
+  <h4>例子:</h4>
+  <p class="code"><span data-field="title" data-format="default">window_enable_borderless_fullscreen</span>(true);<br>
+    window_set_fullscreen(true);</p>
+  <p>上面的代码首先通过调用 <span class="inline3_func"><span data-field="title" data-format="default">window_enable_borderless_fullscreen</span></span> 来启用无边框全屏窗口。然后使用 <span class="inline3_func"><a href="window_set_fullscreen.htm">window_set_fullscreen</a></span> 切换到全屏。</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Back:&nbsp;<a href="The_Game_Window.htm">游戏窗口</a></div>
+        <div>Next:&nbsp;<a href="window_get_borderless_fullscreen.htm">window_get_borderless_fullscreen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_enable_borderless_fullscreen
+-->
+  <!-- TAGS
+window_enable_borderless_fullscreen
+-->
+
+</body></html>

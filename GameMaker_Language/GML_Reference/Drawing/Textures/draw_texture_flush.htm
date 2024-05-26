@@ -79,20 +79,20 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>draw_texture_flush</h1>
+  <h1><span data-field="title" data-format="default">draw_texture_flush</span></h1>
   <p>使用此函数，您可以从视频内存中删除所有纹理，然后将在首次使用时重新加载这些纹理。当游戏有多个纹理页面时，这是管理视频内存的唯一有效方法，并且应该刷新纹理内存并使用纹理组函数组织图形，以确保使用的纹理数量最少。</p>
-  <p>值得注意的是，默认情况下，在所有目标上的<i>，纹理页面将仅在需要时加载，并且您可以对精灵使用各种预取和刷新函数(在此处找到</i>)来管理事物以及这个函数。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在所有目标上，纹理页面 <em> 默认情况下 </em> 只会在需要时加载，您可以使用精灵的各种预取和刷新函数 (<a href="../../Asset_Management/Sprites/Sprite_Manipulation/Sprite_Manipulation.htm"> 此处 </a>) 来加载纹理页面管理事物以及此功能。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">draw_texture_flush();</p>
+  <p class="code"><span data-field="title" data-format="default">draw_texture_flush</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">draw_texture_flush();</p>
+  <p class="code_heading">Create Event</p>
+  <p class="code"><span data-field="title" data-format="default">draw_texture_flush</span>();</p>
   <p>上述代码将刷新纹理数据的视频内存，并可能放置在房间中放置的对象的第一个实例的创建事件中。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -102,7 +102,7 @@
         <div style="float:right">Next:&nbsp;<a href="texture_prefetch.htm">texture_prefetch</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 draw_texture_flush

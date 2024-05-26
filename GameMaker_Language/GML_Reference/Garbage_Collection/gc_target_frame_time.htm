@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.22.0_4";
+    gTopicId = "8.2.2.23.0_4";
   
 //]]></script>
 
@@ -79,8 +79,8 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>gc_target_frame_time</h1>
-  <p>使用此函数，您可以<span>向垃圾收集器指示它应该花费不超过运行每个帧指定的时间。该函数采用以微秒为单位指定的时间值<span>(其中1,000,000微秒等于1秒)，默认目标帧时间为100微秒。</span></span></p>
-  <p><span><span>请注意，这只是一个</span></span><span><em>目标</em>值，因为某些操作仍需要在一帧内完全运行，有时可能需要比目标时间更长。另请注意，i<span>增加目标时间将使垃圾回收器对内存使用量的快速变化做出更快的响应，并将导致更快地释放内存，尽管实际上在大多数情况下不太可能需要这样做。另请注意，将目标帧时间设置为 0 将<em>而不是</em>会导致收集器完全停止——它每帧所做的工作量仍然很少。要完全禁用收集器，请使用<span class="inline"><a href="gc_enable.htm">gc_enable()</a></span>函数。</span></span></p>
+  <p>使用此函数，您可以向垃圾收集器指示它的目标应该是花费不超过指定的运行每个帧的时间。该函数采用以微秒为单位指定的时间值 (其中 1,000,000 微秒等于一秒)，默认目标帧时间为 100 微秒。</p>
+  <p>请注意，这只是一个 <em> 目标 </em> 值，因为某些操作仍然需要在一帧内完全运行，并且有时可能需要比目标时间更长的时间。另请注意，增加目标时间将使垃圾收集器对内存使用的快速变化更加敏感，并且会导致更快地释放内存，尽管实际上在大多数情况下不太可能需要这样做。另请注意，将目标帧时间设置为 0<em> 不会 </em> 导致收集器完全停止 - 它仍会在每帧执行最少量的工作。要完全禁用收集器，请使用 <span class="inline"><a href="gc_enable.htm">gc_enable()</a></span> 函数。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">gc_target_frame_time(time);</p>
@@ -91,7 +91,7 @@
         <th>描述</th>
      </tr>
       <tr>
-        <td>time</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>time</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>垃圾收集器每帧工作的目标时间(以微秒为单位)</td>
      </tr>
     </tbody>
@@ -116,7 +116,7 @@
         <div style="float:right">Next:&nbsp;<a href="gc_get_target_frame_time.htm">gc_get_target_frame_time</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 gc_target_frame_time

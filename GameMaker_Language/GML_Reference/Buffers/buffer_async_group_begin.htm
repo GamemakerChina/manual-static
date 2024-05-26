@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.18.0_22";
+    gTopicId = "8.2.2.18.0_32";
   
 //]]></script>
 
@@ -78,12 +78,13 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>buffer_async_group_begin</h1>
-  <p>当您要开始将多个缓冲区保存到多个文件 (或加载多个缓冲区) 时，将调用此函数。<span class="inline2">groupname</span>是一个字符串，将用作文件保存位置的目录名称，并且应在稍后将文件加载回IDE时用作文件路径的一部分 (使用<a href="buffer_load.htm"><span class="inline">buffer_load()</span></a>中的任何一个函数)。此函数仅<i>用于</i><a href="buffer_save_async.htm"><span class="inline">buffer_save_async()</span></a>和<span class="inline"><a href="buffer_load_async.htm">buffer_load_async()</a></span>函数，并且您还必须通过调用<a href="buffer_async_group_end.htm"><span class="inline">buffer_async_group_end()</span></a>函数来结束异步组，否则将无法保存/加载文件。</p>
-  <p>请注意，对于控制台平台 (例如PS4)，<span class="inline2">groupname</span>将用作保存插槽描述，并且使用此函数可以帮助您避免为正在保存的每个文件显示UI。</p>
+  <h1><span data-field="title" data-format="default">buffer_async_group_begin</span></h1>
+  <p>当您想要开始将多个缓冲区保存到多个文件 (或加载多个缓冲区) 时，将调用此函数。</p>
+  <p><span class="inline2">groupname</span> 是一个字符串，将用作保存文件的目录名称，并且在稍后将文件加载回 IDE 时应用作文件路径的一部分 (使用任何 <span class="inline3_func"><a href="buffer_load.htm">buffer_load</a></span> 函数)。此函数 <i> 仅 </i> 与 <span class="inline3_func"><a href="buffer_save_async.htm">buffer_save_async</a></span> 和 <span class="inline3_func"><a href="buffer_load_async.htm">buffer_load_async</a></span> 函数一起使用，并且您还必须通过调用 <span class="inline3_func"><a href="buffer_async_group_end.htm">buffer_async_group_end</a></span> 来结束异步组} 函数，否则文件将不会被保存 / 加载。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 对于控制台平台 (例如 PS4)，<span class="inline2"> groupname </span> 将用作保存槽描述，使用此功能可以帮助您避免为每个文件显示 UI 那正在被拯救出来。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">buffer_async_group_begin(groupname);</p>
+  <p class="code"><span data-field="title" data-format="default">buffer_async_group_begin</span>(groupname);</p>
   <table>
     <tbody>
       <tr>
@@ -93,8 +94,8 @@
       </tr>
       <tr>
         <td>groupname</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
-        <td>组的名称 (作为字符串)。</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>团体名称</td>
       </tr>
     </tbody>
   </table>
@@ -103,14 +104,13 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">buffer_async_group_begin("SaveGame");<br>
+  <p class="code"><span data-field="title" data-format="default">buffer_async_group_begin</span>("SaveGame");<br>
     save1 = buffer_save_async(buff1, "Player_Save1.sav", 0, 16384);<br>
     save2 = buffer_save_async(buff2, "Player_Save2.sav", 0, 16384);<br>
     save3 = buffer_save_async(buff3, "Player_Save3.sav", 0, 16384);<br>
     save4 = buffer_save_async(buff4, "Player_Save4.sav", 0, 16384);<br>
     buffer_async_group_end();</p>
   <p>上面的代码启动一个缓冲区组，然后将其设置为异步保存4个文件。然后结束组定义 (此时将开始保存)。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -120,7 +120,7 @@
         <div style="float:right">Next:&nbsp;<a href="buffer_async_group_option.htm">buffer_async_group_option</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_async_group_begin

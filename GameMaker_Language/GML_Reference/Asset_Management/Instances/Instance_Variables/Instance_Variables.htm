@@ -79,9 +79,9 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>实例变量</h1>
-  <p>创建新对象时，它将带有某些已用默认值初始化的变量。这些变量我们称为<b>实例变量</b>，因为它们将为您在游戏室中放置对象的每个实例创建，一旦创建实例，这些变量的值对于该实例是唯一的，并且只<i>该实例</i>。这些变量中，有些将使用很多，如<span class="inline">x</span>和<span class="inline">y</span>，而其他变量则不太需要，这取决于您想做什么，但通常它们非常有用，在可能的情况下，您应该考虑使用它们，而不是创建自己的自定义变量。</p>
-  <p>大多数实例变量都可以设置和读取，允许您通过调整某个变量的值来更改实例的属性和行为，例如，只需将<span class="inline">visible</span>内置变量设置为<span class="inline">false</span>即可防止实例绘制。 下面可以找到为游戏中所有对象的所有实例初始化的不同变量。</p>
-  <p class="note"><span class="optional">重要</span> 如果实例在<a href="../../../../../The_Asset_Editors/Sequences.htm">序列</a>中，当序列在开始播放后更新每个步骤时，将覆盖这些变量，如 <span class="inline"><span style="font-size:14px;">image_xscale</span></span> / <span class="inline"><span style="font-size:14px;">image_yscale</span></span> / <span class="inline"><span style="font-size:14px;">image_angle</span></span> / <span class="inline"><span style="font-size:14px;">x</span></span> / <span class="inline"><span style="font-size:14px;">y</span></span>。</p>
+  <p>当您创建一个新对象时，它将附带某些已使用默认值初始化的变量。我们将这些变量称为 <b> 实例变量 </b>，因为将为您在游戏室中放置对象的每个实例创建它们，并且创建实例后，这些变量的值对于该实例来说是唯一的，并且 <i> 仅 </i> 那个实例。其中一些变量您会经常使用，例如 <span class="inline2"><a href="x.htm">x</a></span> 和 <span class="inline2"><a href="y.htm">y</a></span>，而其他变量则需要较少，具体取决于您想要执行的操作，但总的来说，它们非常有用有用，并且在可能的情况下您应该考虑使用它们而不是创建自己的自定义变量。</p>
+  <p>大多数实例变量都可以设置和读取，允许您只需调整某个变量的值即可更改实例的属性和行为 - 您可以阻止实例绘制，例如，只需设置 <span class="inline2"><a href="visible.htm">visible</a></span> 内置变量设置为 <span class="inline2">false</span>。您可以在下面找到为游戏中所有对象的所有实例初始化的不同变量。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要提示</span></span> 如果实例位于 <a href="../../../../../The_Asset_Editors/Sequences.htm"> 序列 </a> 中，则其中一些变量 - 例如 <span class="inline2"><a href="../../Sprites/Sprite_Instance_Variables/image_xscale.htm">image_xscale</a></span>/<span class="inline2"><a href="../../Sprites/Sprite_Instance_Variables/image_yscale.htm">image_yscale</a></span>/<span class="inline2"><a href="../../Sprites/Sprite_Instance_Variables/image_angle.htm">image_angle</a></span>/<span class="inline2"><a href="x.htm">x</a></span>/<span class="inline2"><a href="y.htm">y</a></span>- 当序列在开始播放后更新每个步骤时将被覆盖。</p>
   <p>&nbsp;</p>
   <h2><label for="one">一般变量</label></h2>
   <p>这些变量处理一般实例属性：</p>
@@ -95,8 +95,8 @@
     <li><a href="alarm.htm">alarm</a></li>
   </ul>
   <p>实例还具有一个通用变量，或者更确切地说，<a href="../../../../GML_Overview/Method_Variables.htm">方法</a>，可以定义该变量以更改此实例转换为<a href="../../../Strings/Strings.htm">字符串</a>的方式。</p>
-  <ul class="Disc">
-    <li><a href="../../../Strings/Strings.htm#h">toString 方法</a></li>
+  <ul class="colour">
+    <li><a href="../../../Strings/Strings.htm#tostring_method">toString() Method</a></li>
   </ul>
   <h2><label for="four">移动和位置</label></h2>
   <p>这些变量处理实例位置和移动：</p>
@@ -194,7 +194,7 @@
         <div style="float:right">Next: <a href="../Deactivating_Instances/Deactivating_Instances.htm">停用实例</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Instance Variables

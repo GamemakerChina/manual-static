@@ -53,11 +53,22 @@
   <title>surface_reset_target</title>
   <meta name="generator" content="Adobe RoboHelp 2022">
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
-  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content="Mark Alexander">
-  <meta name="topic-comment" content="Reference for surface_reset_target">
-  <meta name="rh-index-keywords" content="surface_reset_target">
-  <meta name="search-keywords" content="surface_reset_target">
+  <script src="../../../../assets/scripts/main_script.js" type="module">
+    //<![CDATA[
+    <
+    meta name = "rh-authors"
+    content = "Mark Alexander" / >
+      <
+      meta name = "topic-comment"
+    content = "Reference for surface_reset_target" / >
+      <
+      meta name = "rh-index-keywords"
+    content = "surface_reset_target" / >
+      <
+      meta name = "search-keywords"
+    content = "surface_reset_target" / >
+    //]]>
+  </script>
 <meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_copy.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_get_target_ext.htm"></head>
 
 <body>
@@ -81,7 +92,7 @@
   <h1 id="h"><span data-field="title" data-format="default">surface_reset_target</span></h1>
   <p>此函数将所有进一步的绘图从目标表面重置回屏幕。</p>
   <p>请注意，要开始绘制表面，您必须首先调用函数 <span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span>，然后在完成后调用此函数，<i> 对于您设置的每个表面目标 </i>，否则什么都不会被绘制在屏幕上，因为所有进一步的绘制 (即使在其他情况下) 都将在表面上完成。您还应该意识到，如果在实例的绘制事件中没有在屏幕上绘制表面本身，则什么也看不到。</p>
-  <div data-conref="../../../../assets/snippets/Note_Surface_Check_That_It_Exists.hts">
+  <div data-conref="../../../../assets/snippets/Note_Surface_Function_Silently_Fails.hts">
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您之前没有使用函数 <span class="inline3_func"><a href="surface_set_target.htm#h">surface_set_target</a></span> 设置渲染目标，则使用此函数将静默 (即没有任何错误消息) 结束该函数的所有进一步代码执行事件。</p>
 
 </div>
@@ -90,23 +101,23 @@
   <p class="code"><span data-field="title" data-format="default">surface_reset_target</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span>&nbsp;Whether the render target was reset successfully</p>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span>&nbsp;Whether the render target was reset successfully</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if view_current = 0<br>
+  <p class="code">if (view_current == 0) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;surface_set_target(surf);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;with (obj_Effect)<br>
     &nbsp; &nbsp; {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_self();<br>
     &nbsp; &nbsp; }<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;surface_reset_target();<br>
+    &nbsp; &nbsp; <span data-field="title" data-format="default">surface_reset_target</span>();<br>
     }<br>
     else<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;draw_surface(surf, 0, 0);<br>
     }</p>
-  <p>上述代码将检查当前正在绘制的视图，如果是view[ 0 ]，则会将绘制目标设置为表面，并在再次重置绘制目标之前绘制对象"obj_Effect"的所有实例。如果视图不是视图[ 0 ]，则将表面绘制到屏幕上。</p>
+  <p>上面的代码将检查当前正在绘制哪个视图，如果是 view[0]，则会将绘制目标设置为表面并绘制对象 <span class="inline2">obj_Effect</span> 的所有实例，然后再次重置绘制目标。如果视图不是 view[0]，则表面将绘制到屏幕上。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -116,7 +127,7 @@
         <div style="float:right">Next:&nbsp;<a href="surface_copy.htm">surface_copy</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 surface_reset_target

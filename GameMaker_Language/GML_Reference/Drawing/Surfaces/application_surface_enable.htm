@@ -78,14 +78,15 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>application_surface_enable</h1>
-  <p>使用此函数，您可以启用或禁用应用程序表面。默认情况下，应用程序表面处于启用状态，"绘制"事件的所有绘制都将完成，并且表面将绘制到屏幕。但是，在某些较旧的设备和特定的芯片组上，这可能会导致性能较差。在这些情况下，可以关闭对应用程序表面的绘制，然后所有绘制事件绘制都将直接对屏幕缓冲区执行。</p>
-  <p>您可以在游戏中的任何时候使用此函数启用或禁用应用程序表面，但应注意，要使更改生效，至少需要一个帧(步骤)。关闭<i><b>将关闭目标平台的</b>游戏选项</i>中设置的所有纵横比校正<i></i>。这意味着您应该使用某种方法将游戏扩展到所需的设备、窗口或屏幕尺寸。如果再次打开，<i>游戏选项</i>将在下一步再次生效。</p>
+  <h1><span data-field="title" data-format="default">application_surface_enable</span></h1>
+  <p>此函数启用或禁用应用程序表面。</p>
+  <p>默认情况下，应用程序表面处于启用状态，<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm"> 绘制事件 </a> 的所有绘制都将针对该表面进行，并将表面绘制到屏幕上。然而，在某些较旧的设备和特定芯片组上，这可能会导致性能较差。在这些情况下，您可以关闭对应用程序表面的绘制，然后所有 Draw 事件绘制将直接在 <a class="tooltip" title="显示缓冲区是最终绘制所有内容的“画布”。一些事件直接针对此事件（例如Pre Draw事件），而另一些事件将首先绘制到应用程序表面，然后将其绘制到显示缓冲区。"> 显示缓冲区 </a> 中完成。</p>
+  <p>您可以在游戏中随时使用此功能启用或禁用应用程序界面，但您应该注意，它需要至少一帧 (步骤) 才能使更改生效。将其关闭 <i><b> 将关闭所有宽高比校正 </b></i>，如目标平台的 <a href="../../../../Settings/Game_Options.htm"> 游戏选项 </a> 中的设置。这意味着您应该采取某种方法将游戏缩放到所需的设备、窗口或屏幕尺寸。如果您再次将其重新打开，则 <i> 游戏选项 </i> 将在下一步中再次生效。</p>
   <p>建议您仔细使用此函数，因为它将影响所有内容绘制到屏幕的方式。一般情况下，您会希望在游戏菜单中将其作为一个选项，或者在游戏开始时只调用一次，并围绕是否启用或禁用编写代码。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>&nbsp;禁用应用程序图面将禁用所有<a href="../../../../The_Asset_Editors/Room_Properties/Filters_and_Effects.htm">滤镜和效果</a>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">application_surface_enable(enable);</p>
+  <p class="code"><span data-field="title" data-format="default">application_surface_enable</span>(enable);</p>
   <table>
     <tbody>
       <tr>
@@ -95,8 +96,8 @@
       </tr>
       <tr>
         <td>enable</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>设置为启用(<span class="inline">true</span>)或禁用(<span class="inline">false</span>)应用程序表面。</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>设置为启用 (<span class="inline2">true</span>) 或禁用 (<span class="inline2">false</span>) 应用界面。</td>
       </tr>
     </tbody>
   </table>
@@ -105,19 +106,18 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if keyboard_check_pressed(vk_space)<br>
+  <p class="code">if (keyboard_check_pressed(vk_space)) <br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;if application_surface_is_enabled()<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (application_surface_is_enabled()) <br>
     &nbsp; &nbsp; {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;application_surface_enable(false);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; <span data-field="title" data-format="default">application_surface_enable</span>(false);<br>
     &nbsp; &nbsp; }<br>
     &nbsp;&nbsp;&nbsp;&nbsp;else<br>
     &nbsp; &nbsp; {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;application_surface_enable(true);<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; <span data-field="title" data-format="default">application_surface_enable</span>(true);<br>
     &nbsp; &nbsp; }<br>
     }</p>
-  <p>上述代码检查是否按键，以及是否根据应用程序表面的状态(如在选项菜单中)打开或关闭应用程序表面。</p>
-  <p>&nbsp;</p>
+  <p>上面的代码检查按键，然后根据其状态 (如在选项菜单中) 打开或关闭应用程序表面。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -127,7 +127,7 @@
         <div style="float:right">Next:&nbsp;<a href="application_surface_is_enabled.htm">application_surface_is_enabled</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 application_surface_enable

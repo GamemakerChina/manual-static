@@ -80,7 +80,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">network_send_packet</span></h1>
   <p>该函数通过网络发送数据 " 包"。</p>
-  <p>The function takes the&nbsp;<span data-keyref="Type_ID_Network_Socket"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">Network Socket ID</a></span><i> </i>to connect through and then you supply the&nbsp;<span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span>&nbsp;which contains the data to be sent (for more information on buffers see <a href="../Buffers/Buffers.htm">Reference - Buffers</a>) and finally the size (in bytes) of the data packet.</p>
+  <p>该函数采用 <span data-keyref="Type_ID_Network_Socket"><a target="_blank" href="network_create_socket.htm"> 网络套接字 ID</a></span><i></i> 进行连接，然后提供包含要发送的数据的 <span data-keyref="Type_ID_Buffer"><a target="_blank" href="../Buffers/buffer_create.htm"> 缓冲区 </a></span>( 有关缓冲区的更多信息，请参阅 <a href="../Buffers/Buffers.htm"> 参考 - 缓冲区 </a>)，最后是数据包的大小 (以字节为单位)。</p>
   <p>使用此函数发送的数据包经过格式化，以便接收数据的 <span data-keyref="GameMaker Name">GameMaker</span> 游戏可以正确 " 拆分 " 数据包，并且该函数将返回发送的数据的字节数，如果发送的数据有字节数，则返回小于 0 的数字失败的。值得注意的是，该函数返回的发送数据的最终大小还将包含 <span data-keyref="GameMaker Name">GameMaker</span> 标头信息，即额外的 12 个字节。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span><span data-conref="../../../assets/snippets/Networking_dont_mix_raw_reg.hts"> 您不得在游戏中混合使用常规函数和原始函数，因为这样做会导致问题。这意味着，对于使用 <span class="inline3_func"><a href="network_connect.htm" title="Cross-reference [network_connect.htm]" data-tcx-title="Cross-reference [network_connect.htm]">network_connect</a></span> 建立的连接，您必须使用 <span class="inline3_func"><a href="network_send_packet.htm" title="Cross-reference [network_send_packet.htm]" data-tcx-title="Cross-reference [network_send_packet.htm]">network_send_packet</a></span>，而对于 <span class="inline3_func"><a href="network_connect_raw.htm" title="Cross-reference [network_connect_raw.htm]" data-tcx-title="Cross-reference [network_connect_raw.htm]">network_connect_raw</a></span>，则必须使用 <span class="inline3_func"><a href="network_send_raw.htm" title="Cross-reference [network_send_raw.htm]" data-tcx-title="Cross-reference [network_send_raw.htm]">network_send_raw</a></span>.</span></p>
   <div data-conref="../../../assets/snippets/Note_Networking_TCP_like.hts">
@@ -99,29 +99,29 @@
       </tr>
       <tr>
         <td>socket</td>
-        <td><span data-keyref="Type_ID_Network_Socket"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">Network Socket ID</a></span></td>
+        <td><span data-keyref="Type_ID_Network_Socket"><a target="_blank" href="network_create_socket.htm">Network Socket ID</a></span></td>
         <td>要使用的套接字的ID。</td>
       </tr>
       <tr>
         <td>bufferid</td>
-        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span></td>
-        <td>从中获取数据的缓冲区的ID。</td>
+        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="../Buffers/buffer_create.htm">Buffer</a></span></td>
+        <td>从中获取数据的缓冲区。</td>
       </tr>
       <tr>
         <td>size</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>数据的大小(以字节表示)。</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">buff = buffer_load("player_save.dat");<br>
     network_send_packet(sock, buff, buffer_get_size(buff));</p>
-  <p>上述信息将先前保存的缓冲区数据加载到内存中，并返回要存储在变量"buffe"中的缓冲区ID。然后，使用由变量"sock"标识的套接字，将该完整缓冲区作为数据包通过网络发送。</p>
+  <p>上述代码将之前保存的数据加载到内存中的缓冲区中，并将新创建的缓冲区存储在变量 <span class="inline2">buff</span> 中。然后，使用变量 <span class="inline2">sock</span> 标识的套接字将这个完整的缓冲区作为数据包通过网络发送。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -131,7 +131,7 @@
         <div style="float:right">Next: <a href="network_send_raw.htm">network_send_raw</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 network_send_packet

@@ -91,10 +91,12 @@
   <p>除了下面列出的特定函数外，您还可以使用<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>(称为<i>访问器</i>)来添加或修改DS映射的内容。此存取器类似于1D阵列，具有以下语法：</p>
   <p class="code">map_index[? key]</p>
   <p>您可以从<a href="../../../GML_Overview/Accessors.htm">访问器</a>的GML 概述页面中找到更多信息和示例。</p>
-  <p>存在以下处理DS映射的函数：</p>
+  <h2 id="func_ref">Function Reference</h2>
+  <h3 id="func_ref_general">General</h3>
   <ul class="colour">
     <li><a href="ds_map_exists.htm">ds_map_exists</a></li>
     <li><a href="ds_map_create.htm">ds_map_create</a></li>
+    <li><a href="ds_map_destroy.htm">ds_map_destroy</a></li>
     <li><a href="ds_map_add.htm">ds_map_add</a></li>
     <li><a href="ds_map_clear.htm">ds_map_clear</a></li>
     <li><a href="ds_map_copy.htm">ds_map_copy</a></li>
@@ -110,22 +112,21 @@
     <li><a href="ds_map_keys_to_array.htm">ds_map_keys_to_array</a></li>
     <li><a href="ds_map_values_to_array.htm">ds_map_values_to_array</a></li>
     <li><a href="ds_map_set.htm">ds_map_set</a></li>
+  </ul>
+  <h3 id="func_ref_serialisation">Serialisation</h3>
+  <ul class="colour">
     <li><a href="ds_map_read.htm">ds_map_read</a></li>
     <li><a href="ds_map_write.htm">ds_map_write</a></li>
-    <li><a href="ds_map_destroy.htm">ds_map_destroy</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>还有四个函数可用于保存和加载DS映射。这些函数将模糊地图，并使用文件格式将其存储在目标平台上的安全位置，这意味着无法在设备之间传输最终文件：</p>
-  <p>&nbsp;</p>
+  <h3 id="func_ref_loading_saving">Loading &amp; Saving</h3>
+  <p>These functions will obfuscate the map and store it in a secure location on the target platform using a file format that means that the final file is not able to be transferred between devices:</p>
   <ul class="colour">
     <li><a href="ds_map_secure_save.htm">ds_map_secure_save</a></li>
     <li><a href="ds_map_secure_save_buffer.htm">ds_map_secure_save_buffer</a></li>
     <li><a href="ds_map_secure_load.htm">ds_map_secure_load</a></li>
     <li><a href="ds_map_secure_load_buffer.htm">ds_map_secure_load_buffer</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>DS 映射的一个用途是与 JSON 一起使用时，因此有一些特殊函数专用于：</p>
-  <p>&nbsp;</p>
+  <h3 id="func_ref_json">JSON</h3>
   <ul class="colour">
     <li><a href="ds_map_add_list.htm">ds_map_add_list</a></li>
     <li><a href="ds_map_add_map.htm">ds_map_add_map</a></li>
@@ -137,15 +138,14 @@
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 虽然这些函数允许您在映射中添加列表和映射，但它们对于JSON以外的任何内容都是无用的，并且如果将嵌套映射和列表写入磁盘或以任何其他方式进行访问，将无法正确读取。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构</a></div>
-        <div style="float:right">Next: <a href="../DS_Priority_Queues/DS_Priority_Queues.htm">优先队列 Priority Queues</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Data_Structures.htm">数据结构</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../DS_Priority_Queues/DS_Priority_Queues.htm">优先队列 Priority Queues</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 DS Maps

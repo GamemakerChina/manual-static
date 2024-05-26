@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.3.14.0_19";
+    gTopicId = "8.2.2.3.14.0_20";
   
 //]]></script>
 
@@ -79,55 +79,62 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>room_instance_add</h1>
-  <p>使用该函数，您可以将实例添加到当前房间以外的任何房间以及该房间中的任何位置。函数返回实例的唯一<a href="../Instances/Instance_Variables/id.htm"><span class="inline">id</span></a>，然后可用于进一步函数调用以设置属性等... 但<strong>只在游戏进入指定房间时</strong>。 如果要在当前房间中创建实例，应使用函数<a href="../Instances/instance_create_layer.htm"><span class="inline">instance_create_layer()</span></a>。 请注意，在资源浏览器<strong>中创建的房间资源上调用此函数将永久地将实例添加到房间</strong>，甚至调用<span class="inline">game_restart()</span>也不会将房间返回到其原始状态(只有结束游戏并再次打开它，房间将再次以原始状态开始)。</p>
+  <h1><span data-field="title" data-format="default">room_instance_add</span></h1>
+  <p>此函数将实例添加到除当前房间之外的任何房间中的任何位置。</p>
+  <p>该函数返回实例的唯一 <span class="inline2"><a href="../Instances/Instance_Variables/id.htm">id</a></span>，然后可以在进一步的函数调用中使用它来设置该实例的属性等，但 <strong> 仅在游戏进入指定房间后 </strong>。如果您希望在当前房间中创建实例，则应使用函数 <span class="inline3_func"><a href="../Instances/instance_create_layer.htm">instance_create_layer</a></span>。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 对在 <a href="../../../../Introduction/The_Asset_Browser.htm"> 资产浏览器 </a> 中创建的房间资产调用此函数 <strong> 会将实例永久添加到房间 </strong>，甚至调用 <span class="inline3_func"><a href="../../General_Game_Control/game_restart.htm">game_restart</a></span> 不会将房间恢复到原来的状态。只有结束游戏并再次打开时，房间才会再次回到原来的状态。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">room_instance_add(index, x, y, obj);</p>
+  <p class="code"><span data-field="title" data-format="default">room_instance_add</span>(index, x, y, obj);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>index</td><td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
-        <td>要向其中添加对象实例的房间的索引。</td>
-     </tr>
+        <td>index</td>
+        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
+        <td>要添加对象实例的房间。</td>
+      </tr>
       <tr>
-        <td>x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>新实例的X位置。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>新实例的Y位置。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>obj</td><td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
+        <td>obj</td>
+        <td><span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../../The_Asset_Editors/Objects.htm">Object Asset</a></span></td>
         <td>要添加其实例的对象。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Instance"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">Object Instance</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Instance"><a target="_blank" href="../Instances/Instance_Variables/id.htm">Object Instance</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">global.rm = room_add();<br>
-    room_assign(rm_Base, global.rm);<br>
-    room_instance_add(global.rm, 100, 100, obj_Player);</p>
-  <p>上面的代码将给游戏添加一个新房间，然后复制被索引为"rm_Base"的房间的内容。然后，它将在这个新房间的位置100，100添加对象"obj_player"的实例。</p>
-  <p>&nbsp;</p>
+    room_assign(rm_base, global.rm);<br>
+    <span data-field="title" data-format="default">room_instance_add</span>(global.rm, 100, 100, obj_player);
+  </p>
+  <p>上述代码将向游戏添加一个新房间，然后将索引为 <span class="inline2">rm_base</span> 的房间内容复制到其中。然后，它会在这个新房间的位置 (100, 100) 处添加对象 <span class="inline2">obj_player</span> 的实例。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Rooms.htm">房间</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Rooms.htm">房间</a></div>
         <div style="float:right">Next:&nbsp;<a href="room_instance_clear.htm">room_instance_clear</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 room_instance_add

@@ -80,21 +80,24 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>精灵编辑器首选项</h1>
   <p><img alt="Sprite Editor Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Prefs.png"></p>
-  <p><strong>精灵编辑器首选项</strong>用于定义<a href="../../The_Asset_Editors/Sprites.htm">精灵编辑器</a>的外观和功能。存在以下选项：</p>
+  <p><strong> 精灵编辑器首选项 </strong> 用于定义 <a href="../../The_Asset_Editors/Sprites.htm"> 精灵编辑器 </a> 的外观和功能。存在以下选项：</p>
   <ul class="colour">
-    <li><strong>默认精灵原点</strong>：此选项允许您为您创建的任何新精灵资源设置默认原点位置。默认值为左上角。</li>
+    <li><strong> 默认精灵原点 </strong>：此选项允许您为创建的任何新精灵资源设置默认原点位置。默认值为左上角。</li>
     <li><strong> 默认精灵碰撞遮罩类型 </strong>：此选项允许您设置用于新精灵的默认碰撞遮罩类型。每帧可选择 <em> 矩形 </em>、<em> 旋转矩形 </em>、<em> 椭圆 </em>、<em> 菱形 </em> 或 <em> 精确 </em>/<em> 精确到每帧。</em>&nbsp; 默认为 <em> 矩形 </em>。</li>
-    <li><strong>默认精灵动画模式</strong>：此选项允许您在精灵编辑器中设置精灵的默认动画模式。您可以选择"<em>帧/秒</em>"或"<em>帧/游戏帧</em>"，默认设置为"<em>帧/秒</em>"。</li>
+    <li><strong> 默认精灵动画模式 </strong>：此选项允许您在精灵编辑器中设置精灵的默认动画模式。您可以选择 "<em> 每秒帧数 </em>" 或 "<em> 每游戏帧帧数 </em>"，默认设置为 "<em> 每秒帧数 </em>"。</li>
     <li><strong>默认精灵动画速度</strong>：该选项允许您在创建新的精灵资源时设置默认动画速度值。请注意，此值链接到动画模式，例如，每秒 3 帧与每游戏帧 30 帧不同，因此请确保参考首选模式正确设置此值。默认值为 30。</li>
+    <li><strong>Default sprite animation speed when added to an asset layer</strong>: Determines the default speed of a sprite when it's added to an <a href="../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">Asset Layer in a room</a>, which functions as a multiplier (1 will play at the same speed as defined in the Sprite's properties, 2 will play twice as fast, 0 will make it static, etc.)</li>
     <li><strong>默认精灵宽度</strong>：此选项允许您设置所有新创建的精灵的默认宽度。默认值为 64。</li>
     <li><strong>默认精灵高度</strong>：此选项允许您设置所有新精灵的默认高度。默认值为 64。</li>
-    <li><strong>将调整大小和比例应用于精灵原点</strong>：如果选中此选项，则在调整精灵大小或缩放精灵时，将更改精灵的原点，并移动/缩放新原点以匹配精灵的新值。请注意，这仅适用于未在精灵编辑器中锁定的自定义精灵原点。如果原点被锁定，或者精灵使用默认位置之一--例如："居中"或"左上角"等。-则此选项将呈灰色显示且不可更改。默认为已启用。</li>
+    <li><strong>默认SWF精灵精度</strong>: 此选项设置SWF精度滑块. 默认值为50</li>
+    <li><strong>调整大小和缩放应用于精灵原点</strong>：选中此选项后，将在调整精灵大小或缩放时更改精灵原点，并移动/缩放新原点以匹配精灵的新值。请注意，此选项仅适用于未在精灵编辑器中锁定的自定义精灵原点。如果原点已锁定或精灵使用默认位置之一-例如："居中"或"左上角"等-则此选项将变灰且不可更改。默认为启用。</li>
   </ul>
   <p>精灵编辑器还存在以下子项：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">确认对话框</span><span data-close-text="true">确认对话框</span></a></p>
   <div class="droptext" data-targetname="drop-down6">
     <p>
-      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" class="center" alt="The Sprite Editor Confirm Dialog Preferences"></p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Sprite_Editor_Confirm_Prefs.png" class="center" alt="The Sprite Editor Confirm Dialog Preferences">
+    </p>
     <p class="dropspot">此处提供的选项控制在需要确认操作时弹出的消息。您可以更改这些设置以始终显示消息或使用特定操作(是或否)关闭消息：</p>
     <ul class="dropspotlist">
       <li class="dropspot">自动响应文件导入：当您导入新映像且已存在一个图像时，默认情况下，系统将提示您继续导入并覆盖现有映像或取消操作。此选项允许您隐藏此消息，并始终通过选择"否"取消导入，或通过选择"是"覆盖当前精灵。默认值为"显示消息"。</li>
@@ -110,7 +113,7 @@
         <div style="float:right">Next: <a href="Object_Editor_Preferences.htm">对象编辑器首选项</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences - Sprite Editor

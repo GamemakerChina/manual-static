@@ -86,12 +86,12 @@
     <li>[1]=上</li>
     <li>[2]=右</li>
     <li>[3]=下</li>
-    <li>[4]=资源编译器从精灵左侧修剪的像素数量</li>
-    <li>[5]=资源编译器从精灵顶部修剪的像素数量</li>
-    <li>[6]=已保存到纹理页面的原始精灵宽度的归一化像素数据百分比</li>
-    <li>[7]=已保存到纹理页面的原始精灵高度的归一化像素数据百分比</li>
+    <li>[4] = 资源编译器从精灵左侧修剪的像素数量</li>
+    <li>[5] = 资源编译器从精灵顶部修剪的像素数量</li>
+    <li>[6] = 已保存到纹理页面的原始精灵宽度的像素数据的归一化百分比</li>
+    <li>[7] = 已保存到纹理页面的原始精灵高度的像素数据的归一化百分比</li>
   </ul>
-  <p>然后，可以在其他绘制函数中使用此数组，特别是在3D中工作或使用<a href="../../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">2D图元</a>函数时，以及在使用<a href="../../Shaders/Shaders.htm">着色器</a>函数时。</p>
+  <p>然后可以在其他绘制函数中使用该数组，特别是在 3D 中工作或使用<a href="../../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Primitive</a>函数以及使用<a href="../../Shaders/Shaders.htm">Shader</a>函数时。</p>
   <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>：此函数<b>不</b>适用于矢量精灵或骨骼动画精灵。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -105,38 +105,37 @@
       </tr>
       <tr>
         <td>sprite</td>
-        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
+        <td><span data-keyref="Type_Asset_Sprite"><a target="_blank" href="../../../../../The_Asset_Editors/Sprites.htm">Sprite Asset</a></span></td>
         <td>要使用的精灵的索引。</td>
       </tr>
       <tr>
         <td>subimage</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要使用的精灵的子图像。</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回</h4>
-  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span> (1D, 8 elements)</p>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../GML_Overview/Arrays.htm">Array</a></span> (1D, 8 elements)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">var tex = <span data-field="title" data-format="default">sprite_get_uvs</span>(sprite, 0);<br>
-    tex_left = tex[0];<br>
-    tex_top = tex[1];<br>
-    tex_right = tex[2];<br>
-    tex_bottom = tex[3];</p>
+  <p class="code">var _tex = <span data-field="title" data-format="default">sprite_get_uvs</span>(sprite, 0);<br>
+    tex_left = _tex[0];<br>
+    tex_top = _tex[1];<br>
+    tex_right = _tex[2];<br>
+    tex_bottom = _tex[3];</p>
   <p>上面的代码将给定精灵的UV坐标存储在局部数组中，然后将值分配给实例变量。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Sprite_Information.htm">精灵信息</a></div>
-        <div style="float:right">Next: <a href="sprite_get_info.htm">sprite_get_info</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Sprite_Information.htm">精灵信息</a></div>
+        <div style="float:right">Next:&nbsp;<a href="sprite_get_info.htm">sprite_get_info</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_get_uvs

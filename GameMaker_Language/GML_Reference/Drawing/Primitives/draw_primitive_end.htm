@@ -78,21 +78,25 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>draw_primitive_end</h1>
+  <h1><span data-field="title" data-format="default">draw_primitive_end</span></h1>
   <p>当您完成定义基元的点时，必须调用此函数。如果您不调用此函数，<i>将不会绘制任何内容</i>因为这有效地告诉<span data-keyref="GameMaker Name">GameMaker</span>您已经完成并且现在可以绘制定义的基元。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">draw_primitive_end()</p>
+  <p class="code"><span data-field="title" data-format="default">draw_primitive_end</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">draw_set_colour(c_white);<br> var tex = sprite_get_texture(spr_Background, 0);<br> draw_primitive_begin_texture(pr_trianglestrip, tex);<br> draw_vertex_texture(0, 0, 0, 0);<br> draw_vertex_texture(640, 0, 1, 0);<br> draw_vertex_texture(0, 480,
-    0, 1);<br> draw_vertex_texture(640, 480, 1, 1);<br> draw_primitive_end();
-  </p>
-  <p>以上代码将绘制一个带有纹理的4顶点三角形条纹，该纹理保存在"tex"变量中。</p>
-  <p>&nbsp;</p>
+  <p class="code">draw_set_colour(c_white);<br>
+    var _tex = sprite_get_texture(spr_Background, 0);<br>
+    draw_primitive_begin_texture(pr_trianglestrip, _tex);<br>
+    draw_vertex_texture(0, 0, 0, 0);<br>
+    draw_vertex_texture(640, 0, 1, 0);<br>
+    draw_vertex_texture(0, 480, 0, 1);<br>
+    draw_vertex_texture(640, 480, 1, 1);<br>
+    draw_primitive_end();</p>
+  <p>上面的代码将绘制一个 4 顶点三角形条带，该条带的纹理保存在 <span class="inline2">_tex</span> 变量中。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -102,7 +106,7 @@
         <div style="float:right">Next:&nbsp;<a href="draw_vertex.htm">draw_vertex</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 draw_primitive_end

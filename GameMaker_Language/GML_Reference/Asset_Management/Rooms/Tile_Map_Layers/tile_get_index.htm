@@ -79,12 +79,13 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>tile_get_index</h1>
-  <p>此函数可用于从图块数据集中获取图块索引(图块在图块集图像中的位置)。指定可以使用函数<a href="tilemap_get.htm"><span class="inline">tilemap_get()</span></a>检索的图块数据，该函数将返回索引的整数值。</p>
-  <p>使用此函数时，请确保给定的图块数据有效，否则返回的索引值也将无效，这可能会导致意外行为。</p>
+  <h1><span data-field="title" data-format="default">tile_get_index</span></h1>
+  <p>This function can be used to get the tile index (the position of the tile within the tile set image) from a set of tile-data.</p>
+  <p>You specify the tile-data, which can be retrieved using the function <a href="tilemap_get.htm"><span class="inline">tilemap_get()</span></a>, and the function will return an integer value for the index.</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;When using this function, ensure that the given tile data is valid, otherwise the returned index value will not be valid either which may result in unexpected behaviour.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">tile_get_index(tiledata)</p>
+  <p class="code"><span data-field="title" data-format="default">tile_get_index</span>(tiledata)</p>
   <table>
     <tbody>
       <tr>
@@ -94,14 +95,14 @@
       </tr>
       <tr>
         <td>tiledata</td>
-        <td><span data-keyref="Type_Real_Tile_Data"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get.htm">Tile Data</a></span></td>
+        <td><span data-keyref="Type_Real_Tile_Data"><a target="_blank" href="tilemap_get.htm">Tile Data</a></span></td>
         <td>要检查的图块数据</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var lay_id = layer_get_id("Tiles_sky");<br>
@@ -115,15 +116,14 @@
   <p>上面的代码从给定层获取块映射ID，然后使用它来获取鼠标位置下单元的块数据。然后，此数据用于将图块索引设置为随机数。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Tile_Map_Layers.htm">贴图层</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Tile_Map_Layers.htm">Tile Map Elements</a></div>
         <div style="float:right">Next:&nbsp;<a href="tile_get_flip.htm">tile_get_flip</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 tile_get_index

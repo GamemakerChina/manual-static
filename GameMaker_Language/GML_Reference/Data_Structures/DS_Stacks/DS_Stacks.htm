@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>DS 堆栈</h1>
+  <h1><span data-field="title" data-format="default">DS Stacks</span></h1>
   <p>DS堆栈是所谓的"先进先出"(LIFO)数据结构，类似于<a href="../DS_Queues/DS_Queues.htm">DS队列</a>。您可以将<i>值推送到堆栈上，然后从堆栈中弹出</i>值，再次删除这些值。在堆栈中，最近推送到堆栈上的值是第一个再次从中弹出的值(只需考虑一个硬币堆栈，其中您添加的每个硬币必须先再次删除，然后才能到达下面的其余硬币)。当存在需要处理的中断时，或者当具有递归函数时，甚至当为游戏构建基本的Ai时，通常会使用堆栈。</p>
   <div data-conref="../../../../assets/snippets/Note_DS_Destroy_When_No_Longer_Needed.hts">
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 与所有动态资源一样，数据结构也会占用内存，因此在不再需要时应 <b> 始终 </b> 销毁，以防止内存泄漏，否则会减慢游戏速度并最终崩溃。</p>
@@ -88,7 +88,8 @@
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您需要检查数据结构是否存在，可以使用 <span class="inline3_func"><a href="../ds_exists.htm">ds_exists</a></span> 函数。</p>
 
 </div>
-  <p>存在以下处理DS堆栈的函数：</p>
+  <h2 id="func_ref">Function Reference</h2>
+  <h3 id="func_ref_general">General</h3>
   <ul class="colour">
     <li><a href="ds_stack_create.htm">ds_stack_create</a></li>
     <li><a href="ds_stack_destroy.htm">ds_stack_destroy</a></li>
@@ -99,20 +100,22 @@
     <li><a href="ds_stack_top.htm">ds_stack_top</a></li>
     <li><a href="ds_stack_pop.htm">ds_stack_pop</a></li>
     <li><a href="ds_stack_push.htm">ds_stack_push</a></li>
+  </ul>
+  <h3 id="func_ref_serialisation">Serialisation</h3>
+  <ul class="colour">
     <li><a href="ds_stack_read.htm">ds_stack_read</a></li>
     <li><a href="ds_stack_write.htm">ds_stack_write</a></li>
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构</a></div>
-        <div style="float:right">Next: <a href="../DS_Grids/DS_Grids.htm">DS&nbsp;Grids</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Data_Structures.htm">数据结构</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../DS_Grids/DS_Grids.htm">网格 Grid</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 DS Stacks

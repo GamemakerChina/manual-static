@@ -79,13 +79,16 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">静态变量</span></h1>
-  <p><a href="../Script_Functions.htm">脚本函数</a>和<a href="../Method_Variables.htm">方法变量</a>的一个有趣特征是，它们可以有<strong>静态变量</strong>。静态变量是指在函数第一次被调用时定义的变量，它将从那时起保持其数值。要创建静态变量，需要使用<span class="inline">static</span>关键字来定义它，如这个简单的例子所示。</p>
+  <p><a href="../Script_Functions.htm">脚本函数</a>和<a href="../Method_Variables.htm">方法变量</a>的一个有趣功能是它们可以具有<strong>静态变量</strong>。</p>
+  <p>静态变量在第一次调用函数时定义，并且从那时起将保持其值。它只能在原始函数内部更改，返回它只会为您提供其值的副本 - 本质上共享静态变量只能由包含它的函数更改。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span>不能在函数外部声明<span data-field="title" data-format="default">静态变量</span>。</p>
+  <p>要创建静态变量，您需要使用<span class="inline2">static</span>关键字定义它，如以下简单示例所示：</p>
   <p class="code">counter = function()<br>
     {<br>
     &nbsp; &nbsp; static num = 0;<br>
     &nbsp; &nbsp; return num++;<br>
     }</p>
-  <p>上面的例子中，变量 <span class="inline">num</span> 是一个静态变量，所以在第一次调用函数时将被定义为 <span class="inline">0</span>，但之后每次调用函数时，变量的初始化都会被忽略。因此，如果你再这样调用这个函数：</p>
+  <p>上面的例子中，变量 <span class="inline2">num</span> 是一个静态变量，所以在第一次调用函数时将被定义为 <span class="inline">0</span>，但之后每次调用函数时，变量的初始化都会被忽略。因此，如果你再这样调用这个函数：</p>
   <p class="code">repeat (10)<br>
     {<br>
     &nbsp; &nbsp; show_debug_message(counter());<br>
@@ -101,7 +104,17 @@
     7<br>
     8<br>
     9</p>
-  <p>如果此处没有使用<span class="inline">static</span>关键字，则循环的每次迭代的输出都将是<span class="inline">0</span>，因为在返回之前，每次调用函数时，变量<span class="inline">num</span>都将被定义为<span class="inline">0</span>。请注意，静态变量只能在原始函数内部进行更改，返回它将简单地为您提供其值的副本-实际上，共享的静态变量只能由包含它的函数进行更改。</p>
+  <p>如果您没有在此处使用<span class="inline2">static</span>关键字，则循环每次迭代的输出将仅为<span class="inline2">0</span>，因为变量<span class="inline2">num</span>每次都会被定义为<span class="inline2">0</span>返回函数之前调用该函数的时间。</p>
+  <h3>初始化顺序</h3>
+  <p>When a function is called, its static variables are initialised first, before the rest of the function body is executed.</p>
+  <p>This mean it's possible to access a static variable before the line where it's defined, as it would have already been initialised, even in the first call:</p>
+  <p class="code">function static_test()<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message(static_variable);<br>
+    &nbsp;&nbsp; &nbsp;static static_variable = 1000;<br>
+    }</p>
+  <p>However, it is not recommended to do this, and&nbsp;<a href="../../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a>&nbsp;will show a GM2043 warning if you try to access a static variable before its initialisation line.</p>
+  <p>This also means you cannot have conditionally defined static variables, as they will always exist throughout the function body. For example, if you have a static variable initialised inside an <span class="inline2">if</span> condition block, it will be initialised at the top regardless of the condition's result.</p>
   <h2>在构造函数中使用静态变量</h2>
   <p>还可以在<a href="../Structs.htm#constr">构造函数</a>中使用静态变量。这些函数用于创建包含函数中定义的变量的新结构。</p>
   <p>构造函数中的静态变量只为该构造函数初始化一次，并且<strong>不会为从该构造函数生成的每个新结构复制</strong>它们。</p>
@@ -119,6 +132,44 @@
   </p>
   <p>在上面的示例中，<span class="inline2">weapons</span> 构造函数包含一个名为 <span class="inline2">number_of_weapons</span> 的静态变量，该变量在其所有结构中共享。每次新调用 <span class="inline2">weapons</span> 构造函数时，<span class="inline2">number_of_weapons</span> 值就会增加 1。</p>
   <p>在被调用两次之后，该变量的值变成了 <span class="inline2">2</span>，可以从它的任何结构中读取，也可以通过编写 <span class="inline2">weapon.number_of_weapons</span> 直接从构造函数中读取。</p>
+  <h3>父子构造函数中的静态</h3>
+  <p>一般来说，静态变量的作用域为您定义它们的函数。在构造函数的层次结构中，静态变量的作用域为您使用<span class="inline2">static</span>关键字定义它的构造函数：</p>
+  <p class="code">function item() constructor<br>
+    {<br>
+    &nbsp; &nbsp; static number = 0;<br>
+    }<br>
+    function weapon() : item() constructor<br>
+    {<br>
+    &nbsp; &nbsp; static types = ["sword", "bow", "hammer"];<br>
+    }<br>
+    <br>
+    my_weapon = new weapon();
+  </p>
+  <p>这里，静态变量<span class="inline2">number</span>属于<span class="inline2">item</span>，静态变量<span class="inline2">types</span>属于<span class="inline2">weapon</span>。</p>
+  <p>您可以通过从<span class="inline2">weapon</span>创建的结构访问这两个静态变量：</p>
+  <p class="code">show_debug_message(my_weapon.number); // 0<br>
+    show_debug_message(my_weapon.types);&nbsp; // ["sword", "bow", "hammer"]</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在更复杂的构造函数层次结构中，您可能需要遍历<a href="../Structs/Static_Structs.htm#h">静态链</a>。</p>
+  <h3>初始化顺序</h3>
+  <p>When using inheritance with constructors, any static variables in the child constructor will only be initialised once the parent constructor function has been completely executed. See the following example:</p>
+  <p class="code">function parent() constructor<br>
+    {<br>
+    &nbsp; &nbsp;&nbsp;static value = 10;<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
+    }<br>
+    <br>
+    function child() : parent() constructor<br>
+    {<br>
+    &nbsp; &nbsp;&nbsp;static value = 20;<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
+    }<br>
+    <br>
+    var _child = new child();
+  </p>
+  <p>调用 <span class="inline2">child()</span> 构造函数会将以下内容打印到输出日志：</p>
+  <p class="code">10<br>
+    20</p>
+  <p>第一个值来自父构造函数，第二个值来自子构造函数。这表明子对象的静态变量<span class="inline2">value</span>直到父构造函数完成后才初始化。</p>
   <h2>访问静态变量</h2>
   <p>您可以使用 <span class="inline2">&lt;function_name&gt;.&lt;static_variable&gt;</span> 语法读取函数的静态值。</p>
   <p>比方说，对于一个名为 <span class="inline2">count</span> 的函数，您有一个静态变量 <span class="inline2">count</span>。您可以在它的第一次调用之后输入 <span class="inline2">counter.count</span> 来访问它。</p>
@@ -134,7 +185,10 @@
     <br>
     show_debug_message(counter.count);
   </p>
-  <p>您不能从从未调用过的函数访问静态变量，因为静态变量是在第一次调用函数时初始化的。尝试这样做会给你一个错误，并使你的游戏崩溃。</p>
+  <div data-conref="../../../assets/snippets/Note_Warning_Static_Struct_Call_Once.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_warning.hts"><span class="warning">警告</span></span>您无法从从未调用过的函数访问静态变量，因为静态变量是在第一次调用函数时初始化的。尝试这样做将会出现错误并导致游戏崩溃。</p>
+
+</div>
   <p>对于构造函数，可以直接从构造函数访问静态变量，也可以从构造函数创建的任何结构访问静态变量：</p>
   <p class="code">function weapon() constructor<br>
     {<br>
@@ -154,35 +208,6 @@
   <h3>静态结构</h3>
   <p>属于一个函数的所有静态变量都存储在一个结构中，您可以使用 <span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_get.htm">static_get</a></span> 检索该结构。您可以使用&nbsp;<span class="inline3_func"><a href="../../GML_Reference/Variable_Functions/static_set.htm">static_set</a></span> 修改函数的静态结构以更改其拥有的静态变量，但此函数仅用于反序列化目的的结构。</p>
   <p>静态结构主要用于从构造函数创建的结构。请参阅：<a href="../Structs/Static_Structs.htm">静态结构</a></p>
-  <h3>初始化顺序</h3>
-  <p>在函数内部，与其他变量一样，在<em></em>访问<em>静态变量之前，您应该始终</em>定义<em>静态变量</em>。</p>
-  <p>虽然可以在定义静态变量的行之前访问它(因为在运行函数之前，<span data-keyref="GameMaker Name">GameMaker</span>首先初始化所有静态变量)，但建议遵循自然顺序(首先定义，之后访问)：</p>
-  <p class="code">function add_health()<br>
-    {<br>
-    &nbsp; &nbsp;&nbsp;static my_health = 1;<br>
-    &nbsp;&nbsp; &nbsp;my_health++;<br>
-    &nbsp;&nbsp; &nbsp;show_debug_message(my_health);<br>
-    }</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span><a href="../../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a>将显示GM 2043警告，如果您尝试在静态变量初始化之前访问该变量。</p>
-  <p>当使用构造函数的继承时，子构造函数中的任何静态变量只有在父构造函数执行后才会初始化。请参见以下示例：</p>
-  <p class="code">function parent() constructor<br>
-    {<br>
-    &nbsp; &nbsp;&nbsp;static value = 10;<br>
-    &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
-    }<br>
-    <br>
-    function child() : parent() constructor<br>
-    {<br>
-    &nbsp; &nbsp;&nbsp;static value = 20;<br>
-    &nbsp;&nbsp; &nbsp;show_debug_message(value);<br>
-    }<br>
-    <br>
-    var _child = new child();
-  </p>
-  <p>调用 <span class="inline2">child()</span> 构造函数会将以下内容打印到输出日志：</p>
-  <p class="code">10<br>
-    20</p>
-  <p>第一个值来自父构造函数，第二个值来自子构造函数。这表明子对象的静态变量<span class="inline2">value</span>直到父构造函数完成后才初始化。</p>
   <h2>静态方法</h2>
   <p>你也可以在一个函数中使用<span class="inline">static</span>关键字来创建一个<strong>static函数</strong>，这和变量一样，只是意味着该函数只被定义一次，也就是第一次调用该函数的时候，例如。</p>
   <p class="code">function(_x, _y) Vector2 constructor<br>
@@ -207,7 +232,7 @@
         <div style="float:right">Next:&nbsp;<a href="../Arrays.htm">数组</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Static Variables

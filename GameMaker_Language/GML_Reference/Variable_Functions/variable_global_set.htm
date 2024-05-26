@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Page explaining the function variable_global_set">
   <meta name="rh-index-keywords" content="variable_global_set">
   <meta name="search-keywords" content="variable_global_set">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/variable_struct_exists.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/variable_global_get.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/nameof.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/variable_global_get.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -78,11 +78,11 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>variable_global_set</h1>
+  <h1><span data-field="title" data-format="default">variable_global_set</span></h1>
   <p>使用此函数，您可以设置给定全局变量的值。您提供全局变量的名称以将<i>的值设置为字符串</i>(请参见下面的示例代码)，然后提供要设置的值 (可以是任何有效的<a href="../../GML_Overview/Data_Types.htm">数据类型</a>)。如果全局变量在游戏中不存在，它将被创建，然后分配值。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">variable_global_set(name, val);</p>
+  <p class="code"><span data-field="title" data-format="default">variable_global_set</span>(name, val);</p>
   <table>
     <tbody>
       <tr>
@@ -92,12 +92,12 @@
       </tr>
       <tr>
         <td>name</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要设置的全局变量的名称 (作为字符串)</td>
       </tr>
       <tr>
         <td>val</td>
-        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span></td>
+        <td><span data-keyref="Type_Any"><a target="_blank" href="../../GML_Overview/Data_Types.htm#variable">Any</a></span></td>
         <td>将全局变量设置为</td>
       </tr>
     </tbody>
@@ -107,12 +107,11 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if !variable_global_exists("enemy_num")<br>
+  <p class="code">if (!variable_global_exists("enemy_num")) <br>
     {<br>
     &nbsp; &nbsp; variable_global_set("enemy_num", 0);<br>
     }</p>
   <p>上面的代码将检查是否存在全局变量，如果不存在，则创建并设置为0。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -122,7 +121,7 @@
         <div style="float:right">Next:&nbsp;<a href="nameof.htm">nameof</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 variable_global_set

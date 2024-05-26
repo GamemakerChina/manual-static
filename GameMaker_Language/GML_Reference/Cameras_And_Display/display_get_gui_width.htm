@@ -80,12 +80,16 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">display_get_gui_width</span></h1>
   <p>此函数获取 <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm"> 绘制 GUI 事件 </a> 中使用的 GUI 宽度 (以像素为单位)。</p>
+  <div data-conref="../../../assets/snippets/Note_display_result_not_reliable_before_draw.hts">
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 当您的 <span class="inline2"><a href="../Drawing/Surfaces/application_surface.htm">application_surface</a></span> 大于显示器的尺寸 (大致) 时，并且您在当前房间初始化完成之前调用此函数，例如在全局脚本、房间的创建代码或实例的创建事件中，返回的值可能不准确。为了在这种情况下获得准确的结果，请在 Draw 事件中调用它。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code"><span data-field="title" data-format="default">display_get_gui_width</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code_heading">Draw GUI Event</p>
@@ -104,7 +108,7 @@
         <div style="float:right">Next:&nbsp;<a href="display_get_gui_height.htm">display_get_gui_height</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 display_get_gui_width

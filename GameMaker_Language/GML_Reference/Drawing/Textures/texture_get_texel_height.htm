@@ -79,11 +79,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>texture_get_texel_height</h1>
-  <p>纹理或<i>纹理元素</i>是计算机图形中使用的纹理空间的基本单位。纹理由文本数组表示，就像图片由像素数组表示一样，此函数从所使用的图像资源的纹理页面返回单个文本的高度。</p>
+  <h1><span data-field="title" data-format="default">texture_get_texel_height</span></h1>
+  <p>此函数返回所用图像资源的纹理页面中单个纹理元素的高度。</p>
+  <p>纹素或 <i> 纹理元素 </i> 是计算机图形学中使用的纹理空间的基本单位。纹理由纹素数组表示，就像图片由像素数组表示一样。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">texture_get_texel_height(tex);</p>
+  <p class="code"><span data-field="title" data-format="default">texture_get_texel_height</span>(tex);</p>
   <table>
     <tbody>
       <tr>
@@ -93,21 +94,20 @@
       </tr>
       <tr>
         <td>tex</td>
-        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span></td>
+        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span></td>
         <td>要使用的纹理页面资源指针</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var tex = sprite_get_texture(sprite_index, 0);<br>
     tex_w = texture_get_texel_width(tex);<br>
     tex_h = texture_get_texel_height(tex);</p>
   <p>以上代码将获取从精灵资源获取的纹理的纹理宽度和高度。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -117,7 +117,7 @@
         <div style="float:right">Next:&nbsp;<a href="texture_get_uvs.htm">texture_get_uvs</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 texture_get_texel_height

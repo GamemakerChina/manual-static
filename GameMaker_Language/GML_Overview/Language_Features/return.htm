@@ -81,14 +81,14 @@
   <h1>return</h1>
   <p><span class="inline">return</span> 语句具有以下语法：</p>
   <p class="code">return (&lt;expression&gt;)</p>
-  <p>您只能在<span class="inline"> </span>脚本函数<span>和<a href="../Script_Functions.htm">方法</a><a href="../Method_Variables.htm">中使用 </a>return</span> 语句，它用于从函数返回一个值以用于进一步的代码或函数调用。应该注意的是，<i>函数的执行在 <span class="inline">return</span> 语句</i>处结束，这意味着调用 <span class="inline">return</span> 之后的任何代码都不会运行。下面是一个名为 <span class="inline">sqr_calc</span> 的简短示例脚本，它计算传递给它的任何值的平方，它包括错误捕获以防传递给它的参数不是实数：</p>
+  <p>您只能在 <span> <a href="../Script_Functions.htm">脚本函数 </a> 和 <a href="../Method_Variables.htm"> 方法 </a></span> 中使用 <span class="inline">return</span> 语句，它用于从函数返回一个值，以便在进一步的代码或函数调用中使用。应该注意的是，<i> 函数的执行在 <span class="inline">return</span> 语句 </i> 处结束，这意味着调用 <span class="inline">return</span> 之后的任何代码都不会运行。下面是一个名为 <span class="inline">sqr_calc</span> 的简短示例脚本函数，它计算传递给它的任何值的平方，并且它包括错误捕获，以防传递的参数不是实数：</p>
   <p class="code">/// @function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;sqr_calc(val);<br>
     /// @param {real}&nbsp;&nbsp;val &nbsp;&nbsp;The value to calculate the square of<br>
     /// @description&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;Calculate the square of the given value<br>
     <br>
     function sqr_calc(value)<br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;if !is_real(value)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (!is_real(value)) <br>
     &nbsp; &nbsp; {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
     &nbsp; &nbsp; }<br>
@@ -99,7 +99,7 @@
     }
   </p>
   <p>要从一段代码中调用一个函数，只需像调用运行时函数一样使用它——即，将函数名和参数值写在括号中。所以，上面的函数会这样调用：</p>
-  <p class="code">if keyboard_check_pressed(vk_enter)<br>
+  <p class="code">if (keyboard_check_pressed(vk_enter)) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;val = scr_sqr(amount);<br>
     }</p>
@@ -114,7 +114,7 @@
         <div style="float:right">Next: <a href="begin_end.htm">begin / end</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 return

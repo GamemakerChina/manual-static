@@ -101,23 +101,13 @@
   <p class="note"><span class="note">注意</span>如果手册中有"N/A"作为函数的返回值，则表示该函数并不意味着在其操作过程中返回任何值。如果您尝试检查这些函数的返回值，则会得到未定义的值<span class="inline">。</span></p>
   <p>有时，函数的返回值可能是要在<a class="tooltip" title="赋值只是我们为变量设置（赋值）时使用的术语。">赋值</a>中使用的值，但应注意，不可能直接将任何函数<em>用作赋值的左侧。例如，以下用于设置实例速度的代码将给出错误消息：</em></p>
   <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
-  <p>该代码示例中表达式的返回值是一个整数(最近实例的唯一Id值)，因此必须将其括在括号中才能以这种方式使用并正确处理所需的实例(有关详细信息，请参阅<a href="Addressing_Variables_In_Other_Instances.htm">其他实例中的处理变量</a>)。上述代码将正确写入为：</p>
+  <p>The return value for the expression in that code example is an instance handle (the unique ID for the nearest instance) and so it must be enclosed in brackets to be used in this way and properly address the instance required (see&nbsp;<a href="Addressing_Variables_In_Other_Instances.htm">Addressing Variables In Other Instances</a> for more information). The above code would be correctly written as:</p>
   <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
     <br>
     //or more correctly still<br>
     <br>
     var inst = instance_nearest(x, y, obj);<br>
-    inst.speed = 0;<br>
-    <br>
-    function test ()<br>
-    {<br>
-    &nbsp; &nbsp; test();<br>
-    <br>
-    &nbsp; &nbsp; if (test)<br>
-    &nbsp; &nbsp; {<br>
-    &nbsp; &nbsp; &nbsp; &nbsp; test();<br>
-    &nbsp; &nbsp; }<br>
-    }
+    inst.speed = 0;
   </p>
   <p>本手册的<a href="../GML_Reference/GML_Reference.htm">语言参考</a>部分列出了所有可用的运行时函数，并举例说明如何使用这些函数，以及它们可能返回的内容或可能触发的任何事件等其他重要信息...有关用户定义的脚本函数和方法的详细信息，请参阅<a href="Script_Functions.htm">脚本函数</a>一节和<a href="Method_Variables.htm">方法变量</a>一节。</p>
   <p>&nbsp;</p>
@@ -129,7 +119,7 @@
         <div style="float:right">Next:&nbsp;<a href="Variables_And_Variable_Scope.htm">变量和变量范围</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Runtime Functions

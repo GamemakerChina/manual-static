@@ -83,7 +83,7 @@
   <p>组成精灵编辑器的部分如下：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span data-open-text="true" data-skip-index="true">精灵名称</span><span data-close-text="true">精灵名称</span></a></p>
   <div class="droptext" data-targetname="drop-down8">
-    <p class="dropspot">在这里你可以给精灵命名。这个精灵的名字将在整个游戏项目中被用来识别这个精灵的资源，它只能是字母数字，并且只能使用下划线"_"符号。虽然你可以在精灵名称中使用数字，但名称不能以数字开头，因为这将使它在使用 GML 或 GML 可视化时成为无效的资源名称。</p>
+    <p class="dropspot">您可以在这里为精灵命名。精灵名称是在整个游戏项目中用于将精灵标识为资源的名称，只能是字母数字，并且只能使用下划线符号<span class="inline2">_</span>。虽然您可以在精灵名称中使用数字，但名称不能以数字开头，因为使用<span data-keyref="GML_Code">GML Code</span>或<span data-keyref="GML_Visual">GML Visual</span>时，这会使其成为无效的资源名称。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#"><span data-open-text="true" data-skip-index="true">图像属性</span><span data-close-text="true">图像属性</span></a></p>
@@ -95,16 +95,18 @@
       <li class="dropspot"><strong>调整画布</strong>：该选项将把画布的大小调整到新的尺寸，而不对内容进行缩放。你可以用方向箭头设置调整大小的 "锚 "点，然后设置大小值。在调整画布大小时，有一个选项可以保持长宽比，在底部你可以选择以像素或百分比来设置调整值。</li>
     </ul>
     <p class="dropspot">当你对新的尺寸感到满意时，你可以点击<em>应用</em>来应用这些变化并关闭 "调整大小 "属性窗口。请注意，当应用一个精灵的比例或大小的变化时，你可以选择把这个变化也应用到精灵的原点，方法是勾选<strong>应用到原点</strong>复选框旁边的<em>应用</em>复选框。勾选后--如果原点不是默认设置之一，也没有被锁定在精灵中--那么它的位置将被缩放以匹配精灵尺寸的变化。如果不勾选，将不会对原点进行缩放。如果原点不是自定义值或被锁定，那么它将是灰色的，不可用。你可以在<a href="../Setting_Up_And_Version_Information/IDE_Preferences/Sprite_Editor_Preferences.htm">精灵编辑器首选项</a>中为所有精灵设置这个选项。</p>
-    <div class="dropspotnote"><span class="note">注意</span> 该选项仅适用于<a class="tooltip" title="位图是用于描述任何静态图像的术语，该静态图像由以位存储的彩色像素组成（与使用数学算法存储的矢量图像不同）。 PNG，JPG和BMP是位图图像的示例，而SWF将是矢量图像的示例。">位图</a>精灵，对于SWF或骨骼动画精灵，该选项将被置为灰色。</div>
-    <p class="dropspot">在这一部分，你也可以打开<a href="Image_Editor.htm">图像编辑器</a>来绘制你的精灵，或者你可以点击"<em>导入</em>"按钮来导入一个之前创建的精灵。可以从大多数常见的位图格式（<span class="inline">PNG</span>、<span class="inline">JPG</span>、<span class="inline">GIF</span>等）导入精灵，但 <span data-keyref="GameMaker Name">GameMaker</span> 也支持矢量精灵（<span class="inline">SWF</span>）和骨骼动画精灵（<span class="inline">Spine</span>）。关于这些格式的更多信息，请参见<a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">非位图精灵</a>部分。注意，在导入位图精灵时，你可以在文件资源管理器中选择多个图像文件，每个文件都将作为独立的子图像（帧）被添加到同一个精灵中。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此选项仅适用于<a class="tooltip" title="位图是用于描述任何静态图像的术语，该静态图像由以位存储的彩色像素组成（与使用数学算法存储的矢量图像不同）。 PNG，JPG和BMP是位图图像的示例，而SWF将是矢量图像的示例。">位图</a>精灵，并且将在贴图或骨架动画精灵中灰显。</p>
+    <p class="dropspot">在本节中，如果没有为给定的精灵类型设置外部编辑器，您还可以单击<em>编辑图像</em>打开精灵，以便在<a href="Image_Editor.htm">图像编辑器</a>中进行编辑;如果在<a href="../Setting_Up_And_Version_Information/IDE_Preferences/General/Paths.htm">路径首选项</a>中提供了外部编辑器，则可以在给定精灵类型的外部编辑器中进行编辑。</p>
+    <p class="dropspot">您可以点击“<em>导入</em>”按钮导入之前创建的精灵。 可以从最常见的位图格式（<span class="inline">PNG</span>、<span class="inline">JPG</span>、<span class="inline">GIF</span> 等）导入精灵，但 <span data-keyref="GameMaker Name">GameMaker</span> 还支持矢量精灵 (<span class="inline">SWF</span>)、SVG （转换为位图）和骨骼动画精灵 (<span class="inline">Spine</span>)。 如需了解有关这些格式的更多信息，请参阅有关<a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">非位图精灵</a> 的部分。 请注意，导入位图精灵时，您可以在文件资源管理器中选择多个图像文件，每个图像文件都将作为单独的子图像（帧）添加到同一精灵中。</p>
     <p class="dropspot">您还可以导入GIF和<a href="Sprite_Properties/Sprite_Strips.htm">条带图像</a>用于动画。</p>
+    <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>当您导入具有已定义帧速度的单帧GIF时，精灵的动画速度将设置为该帧速度。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#"><span data-open-text="true" data-skip-index="true">纹理设置</span><span data-close-text="true">纹理设置</span></a></p>
   <div class="droptext" data-targetname="drop-down10">
     <p class="dropspot"><img class="center" src="../assets/Images/Settings/Texture_Page_Options.png">精灵属性窗口的这一部分涉及到<span data-keyref="GameMaker Name">GameMaker</span>如何在<a class="tooltip" title="纹理页面（也称为纹理图集）是以最佳方式组合在一起的图像（精灵，图块集，字体字符等）的集合，以便在您的游戏时占用最少的纹理内存运行。">纹理页</a><span class="glossextra"></span>上存储构成你的精灵的图像，以便在设备和浏览器上使用。对于桌面平台来说，这可能不是太重要，但当你开始为手机或网络开发时，正确管理你的图像资源（纹理）就变得非常重要，因为纹理管理不善会对你的游戏产生不利影响，导致性能问题。</p>
     <p class="dropspot">默认情况下，<strong>图块水平</strong>和<strong>图块垂直</strong>复选框是不被选中的，因为大多数情况下你并不希望对精灵进行图块。然而，在某些情况下，你可能希望它们图块，这意味着你应该勾选这些选项，特别是当你要缩放视图或房间的时候，因为如果纹理页没有正确生成，缩放会给游戏的图形带来伪影。</p>
-    <p class="dropspot">如果你的精灵将被用作3D游戏中的纹理贴图，那么你应该勾选<strong>单独的纹理页</strong>，精灵将被赋予一个属于自己的纹理页（注意，每个子图像也将得到自己的纹理页，所以如果你的精灵有10个图像，你将产生10个纹理页）。这将增加你的游戏的纹理内存需求，因此在使用这个选项时必须非常小心。还要注意的是，一般来说，如果你的精灵使用这个选项来做3D，那么纹理应该是2的幂（即：128x128, 256x256, 512x512等...）。更多信息请阅读<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页</a>。</p>
+    <p class="dropspot" id="separate_texture_page">如果你的精灵将被用作3D游戏中的纹理贴图，那么你应该选中<strong>分离纹理页面</strong>框，精灵将被赋予一个自己的纹理页面(注意每个子图像也将得到其自己的纹理页，所以如果你的精灵有10个图像，你将生成10个纹理页面)。这会增加游戏的纹理内存需求，因此在使用此选项时必须非常小心。另外请注意，通常情况下，如果您的精灵在3D中使用此选项，则纹理应该是2的幂(即：128 x128，256 x256，512 x512等)。有关详细信息，请阅读<a href="../Settings/Texture_Information/Texture_Pages.htm">纹理页面</a>。</p>
     <p class="dropspot">如果你将你的精灵标记为需要一个单独的纹理页，你可以设置该纹理页是否为<a href="../Settings/Texture_Information/Dynamic_Textures.htm">动态</a></p>
     <p class="dropspot">下一个选项是为精灵图像启用<strong>预乘 Alpha</strong>。启用后，这将对精灵的所有子图像的阿尔法进行预乘。通常只有在将精灵绘制到表面上，或者在某些特定的特殊效果下才需要这样做。对于正常的精灵使用，你不应该看到正常的精灵和预乘的精灵之间有任何明显的区别。</p>
     <p class="dropspot">我们也有一个<strong>边沿滤波</strong>选项。这个选项特别适用于当你的游戏启用了<a class="tooltip" title="线性插值是通过用一条直线连接两个相邻的已知值来估计一个新值。然后你可以通过检查直线上的任意一点来得到插值值。在图形学中，线性插值是指平滑像素边缘的一种基本方法。">线性插值</a>，而你在精灵周围看到了颜色的 "光晕"。这是由于硬件同时从纹理页面上的多个源<a class="tooltip" title="Texel（或纹理元素）是纹理空间的基本单位，就像像素是图片空间的基本元素一样。纹理由纹素阵列表示，就像图片由像素阵列表示一样。对3D表面进行纹理化（一种称为纹理贴图的过程）时，渲染器将纹理像素映射到输出图片中的适当像素。">Texel</a><span class="glossextra">s</span>进行插值造成的，当你扩大游戏的分辨率时，会特别明显。启用这个功能将过滤边缘像素，使其采用最近的全阿尔法精灵像素的颜色，从而将插值的像素混合在一起，不会出现之前的光晕。</p>
@@ -130,7 +132,7 @@
       <li class="dropspot"><strong>椭圆</strong>：创建一个椭圆的碰撞遮罩。这比矩形遮罩的解析速度要慢。</li>
       <li class="dropspot"><strong>钻石</strong>：创建一个"钻石"碰撞遮罩。与矩形和椭圆形遮罩相比，它的解析速度较慢，产生的CPU开销也更大。</li>
       <li class="dropspot"><strong>精确</strong>：这将根据精灵的轮廓创建一个精确的碰撞屏蔽。如果精灵有多个子图像，那么这将是<em>所有</em>子图像的边缘的<em>合成</em>，并相互重叠。请注意，如果模式设置为手动，并且你改变了默认值，那么精确蒙版将被剪切到<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a>。这是很慢的，而且会产生大量的CPU开销。</li>
-      <li class="dropspot"><strong>精确(每帧)</strong>：这将在每一帧的基础上创建一个精确的碰撞遮罩（即：遮罩将改变以符合每个不同帧的轮廓）。请注意，如果模式设置为手动，并且你改变了默认值，那么精确蒙版将被剪切到<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a>上。这是迄今为止解决碰撞遮罩最慢的类型，应该避免，除非在非常、非常特殊和不常见的情况下。</li>
+      <li class="dropspot"><strong>精确(每帧)</strong>：这将在每帧的基础上创建精确的碰撞掩码(即：遮罩将改变以符合每个不同帧的轮廓)。注意，如果模式设置为手动并且您更改默认值，精确遮罩将被剪切到<a class="tooltip" title="对于精灵来说，边界框是用于最初检测碰撞区域边缘的名称，它不必与它所应用的精灵大小相同。对于序列，边界框是画布中一个或多个资源占用的总空间的外缘。">边界框</a>。这是迄今为止解决冲突遮罩的最慢类型，应该避免，除非在非常，非常具体和罕见的案例。</li>
       <li class="dropspot"><strong>脊柱碰撞网格</strong>：除了矩形之外，这是脊柱精灵的唯一可选选项。 它可以对精灵中的网格进行更精确的碰撞检查。</li>
     </ul>
     <p class="dropspot">下面的图片说明了不同的遮罩选项：</p>
@@ -143,7 +145,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#"><span data-open-text="true" data-skip-index="true">九宫切片</span><span data-close-text="true">九宫切片</span></a></p>
   <div class="droptext" data-targetname="drop-down21">
-    <p class="dropspot"><strong><span data-keyref="Nine Slicing">九宫格（Nine Slicing）</span></strong>&nbsp;(又被称为 9-slicing）是一种用于缩放矩形图像以保留细节的技术，使其在缩放后保留原始形态。更多信息请参见<a href="Sprite_Properties/Nine_Slices.htm">九宫格</a>的页面。</p>
+    <p class="dropspot"><strong><span data-keyref="Nine Slicing">九宫切片</span></strong>(也称为9层切片)是一种用于缩放矩形图像以保留细节的技术，使它们在缩放后保持原始形状。有关详细信息，请参阅<a href="Sprite_Properties/Nine_Slices.htm">九宫切片</a>页面。</p>
     <p class="dropspot"><img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_0_Preview.png" style="cursor: nesw-resize;">精灵编辑器的<strong>九宫格</strong>部分允许你在精灵上启用&nbsp;<span data-keyref="Nine Slicing">九宫格</span>，并在右边的<strong>九宫格预览</strong>窗口内预览其动作。</p>
     <p class="dropspot"><strong>九宫格预览</strong>窗口允许你调整图像的大小，并显示了使用九宫格技术缩放后的最终图像的效果。这个预览精灵也可以旋转。</p>
     <p class="dropspot"><strong>九宫格</strong>部分有以下选项：</p>
@@ -158,13 +160,13 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down19" href="#"><span data-open-text="true" data-skip-index="true">广播信息</span><span data-close-text="true">广播信息</span></a></p>
   <div class="droptext" data-targetname="drop-down19">
     <p class="dropspot">这个按钮将在精灵的时间线上添加一个<strong>广播信息</strong>，打开一个对话框，你可以添加要广播的信息。消息将被添加到<a class="tooltip" title="序列文件或精灵编辑器帧视图中时间轴内的当前“播放”位置。在序列(和精灵)中，这将随着动画预览而移动，你可以将其放置在特定的帧上以查看和编辑该位置的键和关键帧。">播放头</a>在框架视图中的任何地方，并由一个简单的字符串组成，当它被触发时，可以在<a href="Sequence_Properties/Broadcast_Messages.htm">广播消息事件</a>&nbsp;中获取，然后进行操作。</p>
-    <p class="dropspot"><img alt="Add broadcast messages to a sprite" class="center" src="../assets/Images/Asset_Editors/Sprite_Broadcast_Message.gif">一旦添加，信息将显示在框架视图中，你可以点击鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">&nbsp;，打开一个菜单，你可以删除该信息或编辑它。关于广播信息的更多信息，请见<a href="Sequence_Properties/Broadcast_Messages.htm">这里</a>。</p>
+    <p class="dropspot"><img alt="Add broadcast messages to a sprite" class="center" src="../assets/Images/Asset_Editors/Sprite_Broadcast_Message.gif">添加后，消息将显示在框架视图中，您可以在其上单击鼠标右键<img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">以打开一个菜单，您可以在其中删除或编辑消息。有关详细信息，请参阅<a href="Sequence_Properties/Broadcast_Messages.htm">广播消息</a>。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#"><span data-open-text="true" data-skip-index="true">帧速率</span><span data-close-text="true">帧速率</span></a></p>
   <div class="droptext" data-targetname="drop-down12">
     <p class="dropspot">在本节中，你可以从左边的输入框中设置播放动画帧的<strong>速度</strong>。帧速设置可以基于"<strong>每秒帧数</strong>"，或"<strong>每游戏帧数</strong>"，其中 "每秒帧数 "设置为30，将在一秒钟内显示30个动画帧，而 "每游戏帧数 "设置为30，将试图在一个游戏步骤中显示所有30个帧，因此 "每游戏帧数 "的值通常设置为1或更低（例如：每游戏帧数&nbsp;；速度为0.5将每两个游戏步骤显示一个新帧）。</p>
-    <p class="dropspot">值得注意的是，帧速设置不仅会影响预览窗口中的动画回放，而且<strong>也会制约精灵在游戏中的动画效果</strong>。你在这里设置的速度将显示精灵预览，因为它将在游戏中运行，图像速度乘数为1，但这可以在代码中使用<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm"><span class="inline">image_speed</span></a>&nbsp;变量来设置，这意味着精灵可以根据编程的内容运行的更快或更慢。因此，举例来说，如果你将精灵设定为使用每秒10个 "帧"，然后将<span class="inline">image_speed</span>设置为0.5，游戏将以半速--每秒5个帧的速度绘制精灵。相反，如果我们将同一精灵的<span class="inline">image_speed</span>设置为2，在游戏中，它将以两倍的速度绘制动画--每秒20帧。注意，帧速也可以在<a href="Image_Editor.htm">图像编辑器</a>中设置。</p>
+    <p class="dropspot">请务必注意，帧速度设置不仅会影响预览窗口中动画的播放，而且<strong>还将控制精灵在游戏中的动画效果</strong>。 您在此处设置的速度将显示精灵预览，因为它将在游戏中以图像速度乘数 1 运行，但这可以使用 <span class="inline2"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">image_speed</a></span> 变量在代码中设置，这意味着精灵可以运行得更快 或者更慢，具体取决于编程内容。 因此，举例来说，如果您将精灵设置为使用 10“每秒帧数”，然后将 <span class="inline">image_speed</span> 设置为 0.5，则游戏将以半速绘制精灵 - 每秒 5 帧。 相反，如果我们将同一个精灵的 <span class="inline">image_speed</span> 设置为 2，则在游戏中绘制动画的速度会是原来的两倍 - 每秒 20 帧。 请注意，还可以在<a href="Image_Editor.htm">图像编辑器</a>中设置帧速度。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#"><span data-open-text="true" data-skip-index="true">精灵原点</span><span data-close-text="true">精灵原点</span></a></p>
@@ -187,13 +189,13 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down17" href="#"><span data-open-text="true" data-skip-index="true">播放控制</span><span data-close-text="true">播放控制</span></a></p>
   <div class="droptext" data-targetname="drop-down17">
     <p class="dropspot"><strong>播放控制</strong>用于在预览窗口中回放帧的动画，其中播放按钮<img alt="Sprite Play Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_Play.png">&nbsp;用于启动/停止动画，循环按钮<img alt="Sprite Loop Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_Loop.png">&nbsp;用于设置精灵是循环<img alt="Sprite Loop On Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_LoopOn.png">&nbsp;（到达最后一帧时回到第一帧）还是平移<img alt="Sprite Pingpong Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_PingPong.png">&nbsp;（到达最后一帧时倒退到各帧）。</p>
-    <p class="dropspot">注意，循环/平移选项<strong>不会影响精灵在游戏中的显示方式</strong>，所以在精灵中设置这些选项不会改变游戏编译和运行时的显示方式。对于可以在<strong>帧视图</strong>中设置的循环点也是如此（详见下文）--这些循环点在精灵编辑器中纯粹是可见的，旨在帮助你测试你的动画，但不会对精灵动画在游戏中的显示方式产生影响。</p>
+    <p class="dropspot">请注意，循环/乒乓选项<strong>不会影响精灵在游戏中的显示方式</strong>，所以在精灵中设置这些选项不会改变游戏编译和运行时的显示方式。对于可以在<strong>Frame View</strong>中设置的循环点也是如此。(更多信息请参见下文)-这些在精灵编辑器中完全可见，旨在帮助您测试动画，但不会影响精灵动画在游戏中的显示方式。</p>
     <p class="dropspot">帧控制的另一个部分是<strong>当前帧</strong>的显示和输入，在左边稍远的地方。该框显示了精灵动画的总帧数，以及正在显示的当前帧。你可以通过点击输入框并输入你想要查看的帧数来随时改变当前帧。</p>
-    <div class="dropspotnote"><strong>重要！</strong> 帧数显示为从1到<em>最大帧数</em>，然而在你的游戏代码中，帧数将从0到<em>最大帧数-1</em>编号。</div>
+    <div class="dropspotnote"><span data-conref="../assets/snippets/Tag_important.hts"><span class="important">重要提示</span></span>帧的编号从1到<em>最大数量帧</em>，但在您的游戏代码中，帧的编号将从0到<em>最大数量帧 - 1</em>。</div>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#"><span data-open-text="true" data-skip-index="true">帧</span><span data-close-text="true">帧</span></a></p>
   <div class="droptext" data-targetname="drop-down18">
-    <p class="dropspot">在精灵编辑器的这一部分，显示了每个不同的<strong>帧</strong>，它们沿着序列时间线组成了一个精灵集。你可以点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;任何一帧，并向左或向右拖动，以改变它们的动画顺序，你也可以双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;任何一帧，启动<a href="Image_Editor.htm">图像编辑器</a>&nbsp;并编辑它们。你可以使用标准的键盘快捷键或使用鼠标右键<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">&nbsp;菜单选项来剪切、复制和粘贴帧，你还可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">&nbsp;/&nbsp;<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">&nbsp;+<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">选择多个帧来进行操作。</p>
+    <p class="dropspot">精灵编辑器的这一部分显示每个不同的<strong>帧</strong>，这些帧沿着序列时间轴组成单个精灵集。您可以单击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">任何帧并向左或向右拖动它来更改它们的动画顺序，还可以双击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">任何帧以启动<a href="Image_Editor.htm">图像编辑器</a>并编辑它们。您可以剪切，使用标准键盘快捷键或使用鼠标右键<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">菜单选项复制和粘贴帧，还可以使用<img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">选择多个帧进行操作。</p>
     <p class="dropspot">鼠标右键菜单有以下选项：</p>
     <p class="dropspot"><img alt="RMB Frame View Menu" class="center" src="../assets/Images/Asset_Editors/Sprite_RMB_Frame_menu.png"></p>
     <ul class="dropspotlist">
@@ -204,7 +206,7 @@
     </ul>
     <p class="dropspot">除了上面给出的拉伸框架的选项外，你还可以将鼠标放在框架的边缘，然后当光标变为双箭头时，只需点击<img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">&nbsp;并拖动即可调整框架的大小，这样需要更多时间。</p>
     <p class="dropspot"><img alt="Stretch a frame using the mouse" class="center" src="../assets/Images/Asset_Editors/Sprite_Stretch_Frame.gif">一个被拉伸的框架将需要更多的时间来显示，就像你把同一个框架重复了多次一样。</p>
-    <p class="dropspot">最后，你还可以使用框架视图两侧的 "手柄 "放大框架的时间线，如下图所示。</p>
+    <p class="dropspot">最后，您还可以使用框架视图两侧的"手柄"放大框架时间轴，如下图所示：</p>
     <p class="dropspot"><img alt="Sprite frame view zoom controls" class="center" src="../assets/Images/Asset_Editors/Sprite_Loop_Markers.gif"></p>
   </div>
   <p>&nbsp;</p>
@@ -216,7 +218,7 @@
         <div style="float:right">Next:&nbsp;<a href="Tile_Sets.htm">The Tile Set Editor</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 The Sprite Editor

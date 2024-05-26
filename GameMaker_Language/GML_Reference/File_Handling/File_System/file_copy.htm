@@ -86,21 +86,30 @@
 在 HTML5 目标上，我们使用 HTML5<b> Local Storage API</b> 进行客户端保存，<br>
 并且这些函数不支持二进制文件操作，因此假设您正在复制文本文件。</p>
   <p>如果&nbsp;<span class="inline2">newname</span>&nbsp;文件已经存在，则函数将失败。</p>
-  <p class="note"><b> 警告 !</b> 由于 <span data-keyref="GameMaker Name">GameMaker</span> 被沙盒化，这个函数可能不会像你期望的那样工作! 有关更多信息，请参见 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统限制 </a> 一节。</p>
+  <div data-conref="../../../../assets/snippets/Note_Warning_GM_FileSystem_Sandboxed.hts">
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span></b> 由于 <span data-keyref="GameMaker Name">GameMaker</span> 处于沙盒状态，这可能无法按您的预期工作！请参阅有关 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统 </a> 的部分了解更多信息。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">file_copy(fname, newname);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>        <th>描述</th>
-     </tr>
+        <th>参数</th>
+        <th>类型</th>
+        <th>描述</th>
+      </tr>
       <tr>
-        <td>fname</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>        <td>要复制的文件的名称。</td>
-     </tr>
+        <td>fname</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>要复制的文件的名称。</td>
+      </tr>
       <tr>
-        <td>newname</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>        <td>新复制文件的名称。</td>
-     </tr>
+        <td>newname</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>新复制文件的名称。</td>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -108,7 +117,7 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if file_exists("level1.txt")<br>
+  <p class="code">if (file_exists("level1.txt")) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;file_copy("level1.txt", "level2.txt");<br>
     }</p>
@@ -123,7 +132,7 @@
         <div style="float:right">Next: <a href="file_find_first.htm">file_find_first</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 file_copy

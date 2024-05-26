@@ -88,10 +88,11 @@
   <h2>如何使用时间源？</h2>
   <p>创建并启动调用自定义方法的<span data-keyref="Type_Resource_TimeSource">时间源</span>：</p>
   <ul class="colour">
-    <li>调用<a href="time_source_create.htm"><span class="inline">time_source_create()</span></a>/<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">创建时间源</a>创建一个<span data-keyref="Type_Resource_TimeSource">时间源</span><ul><li>指定这是继承自全局<span data-keyref="Type_Resource_TimeSource">时间源</span>, 游戏<span data-keyref="Type_Resource_TimeSource">时间源</span>还是自定义<span data-keyref="Type_Resource_TimeSource">时间源</span></li><li>指定它运行的时间段，以及使用的单位(秒或帧)</li><li>指定自定义方法或脚本函数，并带有要传递给该方法的参数数组</li><li>可选地，指定它应该重复的次数<ul><li>默认情况下它只运行一次</li></ul></li></ul></li>
-    <li>调用<a href="time_source_start.htm"><span class="inline">time_source_start()</span></a>/<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">开始时间源</a>立即启动该<span data-keyref="Type_Resource_TimeSource">时间源</span>，或者在需要启动时稍后调用</li>
+    <li>调用<a href="time_source_create.htm"><span class="inline2">time_source_create()</span></a>/<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">创建时间源</a>创建一个<span data-keyref="Type_Resource_TimeSource">时间源</span><ul><li>指定这是继承自全局<span data-keyref="Type_Resource_TimeSource">时间源</span>, 游戏<span data-keyref="Type_Resource_TimeSource">时间源</span>还是自定义<span data-keyref="Type_Resource_TimeSource">时间源</span></li><li>指定它运行的时间段，以及使用的单位(秒或帧)</li><li>指定自定义方法或脚本函数，并带有要传递给该方法的参数数组</li><li>可选地，指定它应该重复的次数<ul><li>默认情况下它只运行一次</li></ul></li></ul></li>
+    <li>调用<a href="time_source_start.htm"><span class="inline2">time_source_start()</span></a>/<a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">开始时间源</a>立即启动该<span data-keyref="Type_Resource_TimeSource">时间源</span>，或者在需要启动时稍后调用</li>
   </ul>
   <p>这样做会导致<span data-keyref="Type_Resource_TimeSource">时间源</span>运行，并且在指定的时间段之后，它将过期并调用您指定的方法。</p>
+  <p>When you no longer need a Time Source, use&nbsp;<span class="inline3_func"><a href="time_source_destroy.htm">time_source_destroy</a></span>&nbsp;to remove it from memory.</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span> 即使<span data-field="title" data-format="default">时间源</span>随时可能过期，<span data-keyref="GameMaker Name">GameMaker</span> 只有在<span data-field="title" data-format="default">时间源</span>被更新/"勾选"后，才会"知道"这一点，这是在所有<span data-field="title" data-format="default">时间源</span>的开始步骤和步骤事件之间发生的。此时，还将对那些已过期或即将过期的<span data-field="title" data-format="default">时间源</span>执行回调函数(取决于它们的<a href="Time_Source_Expiry_Types.htm">到期类型</a>)。有关详细信息，请参阅<a href="../../../The_Asset_Editors/Object_Properties/Event_Order.htm">事件顺序</a>。</p>
   <h2>内置时间源</h2>
   <p><span data-keyref="Type_Resource_TimeSource">时间源</span>可以从两个内置的<span data-keyref="Type_Resource_TimeSource">时间源</span>中继承，也可以从自定义<span data-keyref="Type_Resource_TimeSource">时间源</span>继承。</p>
@@ -149,7 +150,7 @@
         <div>Next:&nbsp;<a href="../Physics/Physics.htm">物理</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
 
 </div>

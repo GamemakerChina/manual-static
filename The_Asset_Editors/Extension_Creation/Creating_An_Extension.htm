@@ -87,7 +87,7 @@
   <p>要向新的扩展名添加文件，你需要点击菜单图标<img alt="Estension Options Icon" class="icon" src="../../assets/Images/Icons/Icon_ExtensionMenu.png">&nbsp;并选择一个占位符文件（"添加占位符"）或导入目标平台所需的实际文件（"添加文件"）。</p>
   <p class="dropspot"><img alt="Add Files To An Extension" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Files.png"></p>
   <p>一个 "通用 "占位符是一个可以是任何类型的文件，除了那些特定平台所要求的（例如没有<span class="inline">DLL</span>或<span class="inline">SO</span>文件），它将不会被使用，除了作为一个 "链接器 "文件来连接一组函数或常量与给定的扩展（通常它只用于iOS和Android扩展，这将在下面的章节解释这些目标）。你还可以添加 "GML "和 "JS "占位符文件，以便更具体地使用。</p>
-  <h2>添加文件</h2>
+  <h2 id="h3">添加文件</h2>
   <p>通常情况下，你不需要使用占位符，除非你是为iOS和Android构建的，所以你会选择 "添加文件"&nbsp;选项，根据他们的目标平台，添加以下任何一个文件。</p>
   <ul class="colour">
     <li class="dropspot"><span class="inline">.gml</span>：这是一个只用GameMaker语言制作的文件，与所有平台兼容。（事实上，很多GML扩展无法在HTML5目标上正常兼容）</li>
@@ -126,7 +126,7 @@
   <h2>添加功能</h2>
   <p>编辑器应该自动填入我们的GML文件中的函数，但如果没有，你可以通过点击函数菜单按钮<img alt="Estension Options Icon" class="icon" src="../../assets/Images/Icons/Icon_ExtensionMenu.png">，选择你所需要的，手动添加它们。</p>
   <p class="dropspot"><img alt="Add functions/Constants To An Extension" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_AddFunctions.png"></p>
-  <p>选择 "添加函数 "将允许你添加一个函数到扩展中，然后可以在<span data-keyref="GameMaker Name">GameMaker</span>中调用，就像任何内置函数一样。<span>一旦函数被添加，下面的窗口就会打开，让你定义函数属性（或者你可以双击函数来打开它）：</span></p>
+  <p>选择"添加函数"将允许您向扩展添加函数，然后可以在<span data-keyref="GameMaker Name">GameMaker</span>中调用该函数，与任何内置函数相同。添加函数后，将打开以下窗口，供您定义函数属性(或者您可以双击函数打开它)：</p>
   <p class="dropspot"><img alt="Function Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_FunctionEditor.png"></p>
   <p>在上图中，我们在函数编辑器中填入了我们在GML扩展文件中定义的函数<span class="inline">instance_create_colour()</span>的详细信息（注意，这个函数编辑器窗口并不只是用来定义GML函数的--它在所有扩展类型中都是一样的）。让我们来看看可以为一个函数定义的每个选项。</p>
   <ul class="colour">
@@ -160,9 +160,9 @@
   <p>你也可以点击一个选项旁边的&nbsp;<img class="icon" src="../../assets/Images/Icons/Icon_Cog.png">&nbsp;齿轮图标，给它一个可选的<strong>显示名称</strong>和<strong>描述</strong>（在悬停在显示名称上时以工具提示出现）。</p>
   <p>在额外窗口中，你也可以选择将这个选项导出到与游戏捆绑的<strong>options.ini</strong>文件中。</p>
   <p>最后，你可以选择从编辑器中隐藏该选项，让使用该扩展的终端用户看不到它。</p>
-  <h3>使用扩展选项</h3>
+  <h3 id="h2">使用扩展选项</h3>
   <p>你可以通过使用&nbsp;<a href="../../GameMaker_Language/GML_Reference/Asset_Management/Extensions/Extensions.htm">扩展函数</a>在运行时检索扩展的选项值。</p>
-  <p>你也可以在你的&nbsp;<a href="../../Settings/Runner_Details/Compiler_Batch_Files.htm">编译器批处理文件/脚本</a>&nbsp;中通过使用<span class="inline2">YYEXTOPT_&lt;扩展名&gt;_&lt;选项名&gt;</span>来检索你的扩展选项。</p>
+  <p>You can also retrieve your extension options in your&nbsp;<a href="../../Settings/Runner_Details/Compiler_Batch_Files.htm">Compiler Batch Files / Scripts</a>&nbsp;and during&nbsp;<a href="Android_Extensions.htm#h1">Conditional Injection</a> by using the identifier&nbsp;<span class="inline2">YYEXTOPT_&lt;ExtensionName&gt;_&lt;OptionName&gt;</span>. Keep in mind that since these are executed at compile time, values for the extension options will be retrieved as strings.</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 您也可以在<a href="../../Settings/Runner_Details/Compiler_Batch_Files.htm">编译器批处理文件/脚本</a>中使用扩展版本号，使用名称 <span class="inline2">GMEXT_&lt;ExtensionName&gt;_version</span>。</p>
   <p>只有当扩展有在运行时使用的功能时，扩展选项才会在运行时可用。然而，无论扩展的使用情况如何，选项将始终被导出到INI文件（如果选项被启用）和批处理脚本中。</p>
   <h2>代理文件</h2>
@@ -242,7 +242,7 @@
         <div style="float:right">Next: <a href="Android_Extensions.htm">Android 扩展</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Creating Extensions

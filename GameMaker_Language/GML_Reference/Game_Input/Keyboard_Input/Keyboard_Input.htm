@@ -80,13 +80,13 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">键盘输入</span></h1>
   <p>在 <span data-keyref="GameMaker Name">GameMaker</span> 中处理键盘时，您可以使用多种函数来识别不同的键盘状态，例如按下或释放。还有一些将所有按键存储为字符串，或者可以告诉您最后按下的按键是什么，以及其他允许您完全清除键盘状态的按键。</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 这些函数仅适用于 Windows/Mac/Ubuntu 桌面平台。您可能会发现一些内置的变量和常量在其他平台上无效，并且许多函数在手机上不起作用。</p>
-  <p>来自一个键 (或多个键) 的每个输入字符都由其 <a href="https://en.wikipedia.org/wiki/UTF-8" target="_blank">UTF8</a> 代码定义，该代码是一个数值。可以使用 <span class="inline2"><a href="../../Strings/ord.htm">ord()</a></span> 函数为任何字符检索此值，但是 ，<span data-keyref="GameMaker Name">GameMaker</span> 还具有一系列 <span class="inline"> 常量 </span> 用于最常用的键盘特殊键和特殊函数。通常，您会使用 <span class="inline">ord()</span> 与 <span class="inline">keyboard_check*()</span> 函数的组合，如下:</p>
-  <p class="code">if keyboard_check(ord("A"))<br>
+  <p>一个键 (或多个键) 的每个输入字符均由其 <a href="https://en.wikipedia.org/wiki/UTF-8" target="_blank">UTF-8</a> 代码定义，该代码是一个数值。使用 <span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> 函数可以检索任何角色的该值，但是，<span data-keyref="GameMaker Name">GameMaker</span> 还为最常用的键盘特殊键和特殊函数提供了一系列 <span class="inline"> 常量 </span>。通常，您会结合使用 <span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> 和 <span class="inline3_func">keyboard_check*</span> 函数，如下所示：</p>
+  <p class="code">if (keyboard_check(ord("A"))) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;hspeed = -5;<br>
     }</p>
-  <p>因此，以上内容将检查 “A” 键，如果按下该键，则将对象的水平速度设置为-5。请注意，以这种方式使用<span class="inline">ord()</span>只有当输入字符串的长度只有一个字符并且是从0到9的数字或从a到Z的<i>大写</i>罗马字符时，才会正常工作。函数<span class="inline">ord()</span>将返回完整的UTF8值，但<span class="inline">keyboard_check*()</span>函数将<i>仅检测a-Z和0- 9</i>。但是，如果您想使用箭头键怎么办？或者如果你想使用 “shift” 键修改一个动作？好吧，对于<span data-keyref="GameMaker Name">GameMaker</span>具有一系列<span class="inline">vk_</span>常量 (<span class="inline">vk_</span>代表<i>虚拟按键</i>)，您可以使用它们代替<span class="inline">ord()</span>:</p>
+  <p>因此，上面的代码将检查 "A" 键，如果按下它，则会将对象的水平速度设置为 -5。请注意，只有当输入字符串长度只有一个字符并且是 0 到 9 之间的数字或从 A 到 <i> 大写 </i> 的罗马字符时，以这种方式使用 <span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> 才能正确运行 Z。函数 <span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span> 将返回完整的 UTF-8 值，但 <span class="inline3_func">keyboard_check*</span> 函数将 <i> 仅检测 A - Z 和 0 - 9</i>。</p>
+  <p>但是如果您想使用箭头键怎么办？或者如果您想使用 "Shift" 键修改操作？嗯，为此，<span data-keyref="GameMaker Name">GameMaker</span> 有一系列 <span class="inline2">vk_*</span> 常量 (<span class="inline2">vk_</span> 代表 <i> 虚拟键 </i>)，您可以使用它们来代替 <span class="inline3_func"><a href="../../Strings/ord.htm">ord</a></span>：</p>
   <table id="table" style="caption-side: top">
     <caption>虚拟键常量 (vk_*)</caption>
     <colgroup>
@@ -214,21 +214,6 @@
         <td><span class="inline">vk_decimal</span></td>
         <td>decimal dot keys on the numeric keypad</td>
       </tr>
-    </tbody>
-  </table>
-  <p>&nbsp;</p>
-  <p>以下常量只能与 <span class="inline2"><a href="keyboard_check_direct.htm">keyboard_check_direct</a></span> 一起使用：</p>
-  <table style="caption-side: top">
-    <caption>虚拟键常量 (vk_*) (仅 keyboard_check_direct)</caption>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <tbody>
-      <tr>
-        <th>常量</th>
-        <th>描述</th>
-      </tr>
       <tr>
         <td><span class="inline">vk_lshift</span></td>
         <td>left shift key</td>
@@ -255,19 +240,20 @@
       </tr>
     </tbody>
   </table>
-  <p><span style="text-align: justify;">以下是如何使用</span><span style="text-align: justify;"></span><span class="inline">vk_</span><span style="text-align: justify;"></span><span style="text-align: justify;">常量</span>的小例子 :</p>
-  <p class="code">if keyboard_check_pressed(vk_tab)<br>
+  <p><span style="text-align: justify;"> 以下是如何使用 <span class="inline2">vk_*</span></span><span style="text-align: justify;"> 常量的小示例：</span></p>
+  <p class="code">if (keyboard_check_pressed(vk_tab)) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;instance_create_layer(x, y, "Controllers", obj_Menu);<br>
     }</p>
-  <p>上面的代码将检测 “Tab” 键是否被<i>按下，如果是，则创建对象 “obj_Menu” 的实例。</i></p>
-  <p>如果您需要检查不是 0-9，a-Z 或 VK 常量之一的关键字符，那么您应该检查 <span class="inline">keyboard_*</span> 变量之一，例如 <span class="inline2"><a href="keyboard_lastchar.htm">keyboard_lastchar</a></span> 例如:</p>
+  <p>上述代码将检测是否 <i> 按下了 </i>"Tab" 键，如果按下则创建对象 <span class="inline2">obj_Menu</span> 的实例。</p>
+  <p>如果您需要检查不是 0 - 9、A - Z 或 <span class="inline2">vk_*</span> 常量之一的关键字符，那么您应该检查 <span class="inline2">keyboard_*</span> 变量之一，例如 <span class="inline2"><a href="keyboard_lastchar.htm">keyboard_lastchar</a></span> 例如：</p>
   <p class="code">var _key = keyboard_lastchar;<br>
     if ord(_key) == ord("ç")<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;show_debug_message("ç key pressed");<br>
     }</p>
-  <p>使用键盘时可以使用以下函数:</p>
+  <h2 id="func_ref">功能参考</h2>
+  <h3 id="general">常规</h3>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 使用屏幕上的<a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">虚拟键盘</a>时，这些函数<i>不会</i>起作用。</p>
   <ul class="colour">
     <li><a href="io_clear.htm">io_clear</a></li>
@@ -282,14 +268,12 @@
     <li><a href="keyboard_set_numlock.htm">keyboard_set_numlock</a></li>
     <li><a href="keyboard_get_numlock.htm">keyboard_get_numlock</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>还有一些函数可以用来模拟按键:</p>
+  <h3 id="simulating_keypresses">模拟按键</h3>
   <ul class="colour">
     <li><a href="keyboard_key_press.htm">keyboard_key_press</a></li>
     <li><a href="keyboard_key_release.htm">keyboard_key_release</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>最后，<span data-keyref="GameMaker Name">GameMaker</span>内置了以下变量，可以访问以获取有关键盘状态和输入的信息:</p>
+  <h3 id="keyboard_state_input">键盘状态 和 输入</h3>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 使用 <a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm"> 虚拟键盘 </a><i> 时仅 </i><span class="inline2"><a href="keyboard_string.htm">keyboard_string</a></span> 变量会随键盘输入而更新。</p>
   <ul class="colour">
     <li><a href="keyboard_key.htm">keyboard_key</a></li>
@@ -306,7 +290,7 @@
         <div style="float:right">Next:&nbsp;<a href="../Mouse_Input/Mouse_Input.htm">鼠标输入</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Keyboard Input Functions

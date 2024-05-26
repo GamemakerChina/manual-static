@@ -79,26 +79,26 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>surface_get_depth_disable</h1>
-  <p>此函数检查是否启用了表面的自动深度缓冲区生成。通常，所有表面都有深度缓冲区，因此如果绘制3D对象，则会按深度对其进行适当排序，但是，分配深度缓冲区实际上会使表面大小加倍，这可能会导致过多且不必要的开销，尤其是在游戏内存非常密集或主要是2D的情况下。在这些情况下，可以使用此函数进行检查，如果需要，可以使用函数<a href="surface_depth_disable.htm"><span class="inline">surface_depth_disable()</span></a>禁用表面的深度缓冲区。</p>
+  <h1><span data-field="title" data-format="default">surface_get_depth_disable</span></h1>
+  <p>此函数检查是否启用了表面的自动深度缓冲区生成。</p>
+  <p>通常，所有表面都有深度缓冲区，因此如果您向其中绘制 3D 对象，那么它会按深度对它们进行正确排序，但是分配深度缓冲区本质上会使表面的大小加倍，这可能是过多且不必要的开销，特别是如果您的游戏内存很大的话密集或主要是 2D。在这些情况下，您可以使用此函数进行检查，并根据需要使用函数 <span class="inline3_func"><a href="surface_depth_disable.htm">surface_depth_disable</a></span> 禁用表面的深度缓冲区。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">surface_get_depth_disable();</p>
+  <p class="code"><span data-field="title" data-format="default">surface_get_depth_disable</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">if (!surface_exists(surf))<br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;if surface_get_depth_disable() == false<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if <span data-field="title" data-format="default">surface_get_depth_disable</span>() == false<br>
     &nbsp; &nbsp; {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;surface_depth_disable(true);<br>
     &nbsp; &nbsp; }<br>
     &nbsp;&nbsp;&nbsp;&nbsp;surf = surface_create(room_width, room_height);<br>
     }</p>
   <p>上述代码将检查给定表面是否存在，如果不存在，则检查表面深度缓冲区的当前状态;如果启用了，则在最终创建表面之前，将禁用该代码。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -108,7 +108,7 @@
         <div style="float:right">Next:&nbsp;<a href="surface_getpixel.htm">surface_getpixel</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 surface_get_depth_disable

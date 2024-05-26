@@ -78,13 +78,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>buffer_seek</h1>
-  <p>此函数可用于在缓冲区中移动，在读取或写入数据时查找开始、结束或相对于上次使用的位置。该寻道位置是写入新值以及从中读取值的位置。当您从缓冲区读取或写入缓冲区时，它也会自动移动。</p>
-  <p>"offset" 值是要添加到给定查找位置的偏移量 (以字节为单位)，例如，如果基数是相对的，并且偏移量为 4，则缓冲区位置将从其当前位置沿 4 个字节移动。请注意以下事项：</p>
-  <ul class="colour">
-    <li>您可以使用偏移的负值通过缓冲区以及正值进行查找。</li>
-    <li>如果缓冲区是"包裹"类型，并且您偏移超过缓冲区的末端，则查找位置也将包裹。</li>
-    <li>如果缓冲器不是"包裹"类型，则寻道将钳制到缓冲器的开始或结束，即使偏移将使寻道超出缓冲器限制。</li>
+  <h1><span data-field="title" data-format="default">buffer_seek</span></h1>
+  <p>此函数移动缓冲区的查找位置，将其设置为相对于开始、结束或当前查找位置 (读取或写入数据时最后使用的位置)。</p>
+  <p>查找位置是距 <a href="buffer_write.htm"> 写入 </a> 新值和 <a href="buffer_read.htm"> 读取 </a> 值的缓冲区开头的偏移量 (以字节为单位)。当您读取或写入缓冲区时，它也会自动移动。</p>
+  <h3>使用说明</h3>
+  <ul class="Disc">
+    <li>"offset" 值是添加到给定查找位置的偏移量 (以字节为单位)，例如，如果基址是相对的且偏移量为 4，则缓冲区位置将从当前位置移动 4 个字节。请注意以下事项：<ul><li> 您可以使用负值作为偏移量来在缓冲区中回溯，也可以使用正值。</li><li> 如果缓冲区是 " 换行 " 类型，并且您的偏移量超过了缓冲区的末尾缓冲区中，查找位置也会换行。</li><li> 如果缓冲区不是 " 换行 " 类型，则查找将固定到缓冲区的开头或结尾，即使偏移量会使查找超出缓冲区的范围缓冲区限制。</li></ul></li>
   </ul>
   <p>接受以下常量作为"base"参数来寻求：</p>
   <table>
@@ -94,7 +93,7 @@
     </colgroup>
     <tbody>
       <tr>
-        <th colspan="2"><span data-keyref="Type_Constant_Buffer_Seek"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_seek.htm">缓冲区寻道常量</a></span></th>
+        <th colspan="2"><span data-keyref="Type_Constant_Buffer_Seek"><a target="_blank" href="buffer_seek.htm">缓冲区寻道常量</a></span></th>
       </tr>
       <tr>
         <th>常量</th>
@@ -116,7 +115,7 @@
   </table>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">buffer_seek(buffer, base, offset);</p>
+  <p class="code"><span data-field="title" data-format="default">buffer_seek</span>(buffer, base, offset);</p>
   <table>
     <tbody>
       <tr>
@@ -126,42 +125,41 @@
       </tr>
       <tr>
         <td>buffer</td>
-        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span></td>
-        <td>要使用的缓冲区的索引。</td>
+        <td><span data-keyref="Type_ID_Buffer"><a target="_blank" href="buffer_create.htm">Buffer</a></span></td>
+        <td>The buffer to use.</td>
       </tr>
       <tr>
         <td>base</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>寻求的基础位置。</td>
       </tr>
       <tr>
         <td>offset</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>数据偏移值。</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span>&nbsp;(the new seek position)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br>
+  <p class="code"><span data-field="title" data-format="default">buffer_seek</span>(buff, buffer_seek_start, 0);<br>
     buffer_write(buff, buffer_s16, 0);<br>
     buffer_write(buff, buffer_s16, x);<br>
     buffer_write(buff, buffer_s16, y);</p>
-  <p>上面的代码找到缓冲区的开始，ID存储在变量"buffe"中，它们向其写入一系列有符号的16位整数值。</p>
-  <p>&nbsp;</p>
+  <p>上面的代码找到存储在变量 <span class="inline2">buff</span> 中的缓冲区的开头，然后向其中写入一系列带符号的 16 位整数值。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Buffers.htm">缓冲区</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Buffers.htm">缓冲区</a></div>
         <div style="float:right">Next:&nbsp;<a href="buffer_tell.htm">buffer_tell</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 buffer_seek

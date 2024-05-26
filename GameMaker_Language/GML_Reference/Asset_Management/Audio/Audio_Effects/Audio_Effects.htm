@@ -61,7 +61,7 @@
   <meta name="rh-authors" content="Bart Teunis">
   <meta name="topic-comment" content="The overview page for audio effects">
   <meta name="condition-tags" content="">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Effects/audio_effect_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Listeners/audio_set_listener_mask.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -84,20 +84,20 @@
   </div>
   <div>
   <h1><span data-field="title" data-format="default">音效</span></h1>
-  <p>GameMaker offers a selection of audio effects, such as reverb, delay, bitcrusher, parametric EQ, etc.</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>提供了一系列音频效果，例如混响、延迟、bitcrusher、参数均衡器等。</p>
   <p>声音总是通过"总线"播放。<span data-keyref="GameMaker Name">GameMaker</span>中的所有声音均通过其<a href="audio_bus_main.htm">主总线</a>播放。</p>
   <p>效果应用于总线。<span data-keyref="GameMaker Name">GameMaker</span>允许您：</p>
   <ul class="colour">
     <li>将效果应用于<a href="audio_bus_main.htm">主总线</a>，因此将效果应用于<em>所有声音</em></li>
-    <li>创建<a href="audio_bus_create.htm">自定义总线</a>并将效果应用于该总线<ul><li>自定义总线只能用于<a href="../Audio_Emitters/Audio_Emitters.htm">音频发射器</a><span><span></span></span></li></ul></li>
+    <li>创建<a href="audio_bus_create.htm">自定义总线</a>并向该总线应用效果<ul><li>自定义总线只能与<a href="../Audio_Emitters/Audio_Emitters.htm">音频发射器</a></li></ul></li>
   </ul>
   <h2>设置音频效果</h2>
   <h3>音频总线</h3>
   <p>音频效果在"audio bus"上处理。</p>
   <p>默认情况下，<span data-keyref="GameMaker Name">GameMaker</span>有一条音频总线，即主音频总线，您可以通过内置的<span class="inline2"><a href="audio_bus_main.htm">audio_bus_main</a></span>struct来访问它。</p>
-  <p>在<span data-keyref="GameMaker Name">GameMaker</span>中播放的所有音频都会在此音频总线上结束，无论是<a href="../audio_play_sound.htm">2D 音频</a>、<a href="../audio_play_sound_at.htm">3D 音频</a>还是<a href="../Audio_Emitters/audio_play_sound_on.htm">发射器音频</a>。 这称为<em>路由</em>到主总线的所有音频<em>。</em></p>
+  <p>您在<span data-keyref="GameMaker Name">GameMaker</span>中播放的所有音频最终都会在此音频总线上，无论是<a href="../audio_play_sound.htm">2D 音频</a>、<a href="../audio_play_sound_at.htm">3D 音频</a>还是<a href="../Audio_Emitters/audio_play_sound_on.htm">发射器音频</a>。这指的是所有音频都<em>路由</em>到主总线。</p>
   <p>您可以<a href="audio_bus_create.htm">创建自己的总线</a>，以对一些声音应用效果。所有自定义总线均路由至主总线，因此对主总线的参数和效果适用于所有其他总线。</p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>音频总线最多可以有8个效果分配给其<span class="inline2">效果</span>阵列。将槽设置为<span class="inline2">未定义</span>以移除效果。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>音频总线最多可以为其<span data-keyref="Const_Audio_Bus_Max_Effects">effects</span>数组分配<span class="inline2">8</span>个效果。将插槽设置​​为<span class="inline2">未定义</span>以移除效果。</p>
   <h3>将效果添加到主总线</h3>
   <p>将效果应用于所有音频的最快方法是将它们添加到主总线：</p>
   <p class="code">var _ef_reverb = audio_effect_create(AudioEffectType.Reverb1);<br>
@@ -116,7 +116,7 @@
     audio_bus_main.bypass = true;</p>
   <p>将<span class="inline2">旁路</span>设置为<span class="inline2">true</span>意味着从总线或效果出来的与进入的相同，输入就是输出。</p>
   <p>对于单个效果，这意味着跳过该效果，对于总线，这意味着跳过总线上的所有效果。</p>
-  <h3><span></span>将效果应用于音频发射器</h3>
+  <h3>将效果应用到音频发射器</h3>
   <p>默认情况下，音频发射器直接输出到主总线，因此在发射器上播放的音频将在那里结束，并具有与所有其他音频相同的效果。</p>
   <p>通过使用<a href="../Audio_Emitters/Audio_Emitters.htm">audio_bus_create</a>创建新的音频总线并使用<span class="inline3_func"><a href="audio_bus_create.htm">audio_emitter_bus</a></span>将其分配给发射器，可以向<span class="inline3_func">音频发射器<a href="../Audio_Emitters/audio_emitter_bus.htm">添加效果：</a></span></p>
   <p class="code">emitter = audio_emitter_create(); // Emitter is created<br>
@@ -159,7 +159,7 @@
         <div>Next:&nbsp;<a href="../Audio_Groups/Audio_Groups.htm">音频组</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
 
 </div>

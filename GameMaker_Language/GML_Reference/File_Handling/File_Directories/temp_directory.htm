@@ -78,20 +78,23 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>temp_directory</h1>
-  <p>这可用于在每次运行游戏时返回为您的游戏创建的临时目录 (根目录不包含最后的“\”)。 此目录将保存文件并可在游戏运行时访问，但在游戏关闭时它将被删除 (连同它包含的所有文件)。</p>
-  <p class="note"><b></b><b> 警告！</b> 由于 <span data-keyref="GameMaker Name">GameMaker</span> 被沙盒化，此函数可能无法按您预期的那样工作！ 有关详细信息，请参阅 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统 </a> 部分。</p>
+  <h1><span data-field="title" data-format="default">temp_directory</span></h1>
+  <p>此函数返回每次运行游戏时为游戏创建的临时目录。</p>
+  <p>此目录将保存文件，并且可以在游戏运行时访问，但当游戏关闭时它将被删除 (连同其中包含的所有文件)。<b></b></p>
+  <div data-conref="../../../../assets/snippets/Note_Variable_Contains_Path_Including_Final_Slash.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span><span class="inline2"><span data-field="title" data-format="default">temp_directory</span></span> 变量存储路径 <b> 包括 </b> 最后的斜杠。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">temp_directory</p>
+  <p class="code"><span data-field="title" data-format="default">temp_directory</span></p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">ini_open(temp_directory + "\temp_ini.ini");</p>
-  <p>这将在游戏的临时目录中打开一个 ini 文件 (如果它不存在则创建它)。</p>
-  <p>&nbsp;</p>
+  <p class="code">ini_open(<span data-field="title" data-format="default">temp_directory</span> + "\temp_ini.ini");</p>
+  <p>这将在游戏的临时目录中打开一个 INI 文件 (如果尚不存在则创建它)。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -101,7 +104,7 @@
         <div style="float:right">Next:&nbsp;<a href="working_directory.htm">working_directory</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 temp_directory

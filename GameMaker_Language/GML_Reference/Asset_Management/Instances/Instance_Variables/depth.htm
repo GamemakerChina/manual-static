@@ -80,11 +80,14 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">depth</span></h1>
   <p>当你创建一个对象时，你可以为其分配一个初始<i>depth</i>，它定义了在玩游戏时在房间里如何绘制该物体的实例，这个变量可用于在游戏运行时获取和更改该深度值。通常情况下，您无需使用此变量，因为您应该将实例设置为隐蔽的<a href="layer.htm">层</a>，然后将其设置为特定的深度，但您可能想使用此值更改实例的深度，在这种情况下，将在给定深度下专门为实例创建 "临时层"。请注意，当没有一个实例处于相同深度时，这个临时层将从内存中移除(与普通图层不同，即使它们上面没有任何东西也会保留)。</p>
-  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;When you modify the&nbsp;<span class="inline2"><span data-field="title" data-format="default">depth</span></span>
-    <font face="menlo, consolas, monospace"><b> </b></font>variable and <span data-keyref="GameMaker Name">GameMaker</span> manages the layers, the built in <span style="font-size:1px;"><a href="layer.htm"><span class="inline">layer</span></a></span> variable will return -1 and not the layer ID, since managed layers cannot be manipulated through code.
-  </p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要事项</span></span> 当您修改 <span class="inline2"><span data-field="title" data-format="default">depth</span></span><font face="menlo, consolas, monospace"><b></b></font> 变量并且 <span data-keyref="GameMaker Name">GameMaker</span> 管理图层时，内置 <span class="inline2"><span style="font-size:1px;"><a href="layer.htm"><span class="inline">layer</span></a></span></span> 变量将返回 -1 而不是图层 ID，因为无法通过代码操作托管图层。</p>
+  <div data-conref="../../../../../assets/snippets/Note_Depth_Values_Are_Approximate.hts">
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 深度值是近似值。如果您尝试以接近最大深度和最小深度的深度值绘制事物，则可能会由于计算引入的不准确性而无法绘制它们。</p>
+
+</div>
   <p>在<span data-keyref="GameMaker Name">GameMaker</span>中，实例的深度值越低，将绘制该实例的"更靠近相机"，而深度值越高，则表示实例将被绘制为"远离相机"，即：- 1000 绘制在 - 100 的顶部，这在 0 的顶部，依此类推。</p>
   <p><img alt="Depth sorting example image" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/depth_image.png"> 请注意，具有 <b> 相同 </b> 深度的对象实例可以绘制在彼此的 <b> 上方 <i> 或 </i> 下方 </b>，即使它们在 <a href="../../../../../The_Asset_Editors/Rooms.htm"> 房间编辑器 </a>。如果您想保证某些内容绘制在其他所有内容之上或之下，则应始终显式设置深度 (或图层)。另请注意，存在最小 (<span data-keyref="Const_Depth_Min">-16000</span>) 和最大 (<span data-keyref="Const_Depth_Max">16000</span>) 深度值，超出该深度值将不会绘制实例，但它们仍然存在并处理事件。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要提示</span></span> 最小和最大深度值是近似值。因此，当您将绘制深度设置为接近这些限制的值时，您正在绘制的内容可能不会被绘制。</p>
   <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 您 <b> 无法 </b> 在 Draw 事件中设置实例的深度 (所有其他事件都可以)。不过，您可以使用 <span class="inline3_func"><a href="../../../Drawing/GPU_Control/gpu_set_depth.htm">gpu_set_depth</a></span> 设置在 Draw 事件中绘制事物的深度。</p>
   <p>请记住，修改实例的深度可能会更改哪些<a href="../../../../../The_Asset_Editors/Room_Properties/Filters_and_Effects.htm">过滤器&amp;效果</a>应用于该实例，因为将深度更改为低于FX层的深度将不再对实例应用其效果。</p>
   <p>&nbsp;</p>
@@ -92,10 +95,10 @@
   <p class="code"><span data-field="title" data-format="default">depth</span>;</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (single precision floating point value)</p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Real</a></span> (single precision floating point value)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if y != yprevious<br>
+  <p class="code">if (y != yprevious) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;depth = -y;<br>
     }</p>
@@ -109,7 +112,7 @@
         <div style="float:right">Next: <a href="layer.htm">layer</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 depth

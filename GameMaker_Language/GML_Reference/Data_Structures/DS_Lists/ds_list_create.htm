@@ -79,20 +79,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>ds_list_create</h1>
-  <p>此函数将创建一个新的列表数据结构并返回索引值。此值应存储在变量中，并用于与列表相关的所有进一步函数调用。请注意，如果您在<i>之前尝试访问列表</i>中的某个值，该值已被填充，即列表为"空"，则返回值可能为0，因为在内部，创建列表时会将列表中的前几个条目设置为最小化最初向列表中添加项时的性能问题(尽管<a href="ds_list_size.htm"><span class="inline">ds_list_size()</span></a>函数仍会在新创建的列表中返回0)。如果希望在创建时确保列表"真正"为空，则应在创建列表后调用<a href="ds_list_clear.htm"><span class="inline">ds_list_clear()</span></a>，这意味着为未填充的列表动态内容返回的任何值都将<span class="inline">未定义</span>。</p>
-  <p class="note"><b>重要!</b>创建数据结构时，用于标识它的索引值是一个从0开始的整数值。这意味着不同类型的数据结构可以具有<b>相同的</b>索引值，因此如果有疑问，您应该在访问之前使用<span style="font-size:1px;"><a href="../ds_exists.htm"><span class="inline">ds_exists()</span></a></span>函数。另请注意，索引是重复使用的，因此销毁的数据结构索引值之后可能会被新创建的索引值使用。</p>
+  <h1><span data-field="title" data-format="default">ds_list_create</span></h1>
+  <p>This function creates a new list data structure and returns a <span data-keyref="Type_Handle"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Handle</a></span>&nbsp;to it. This value should be stored in a variable and used in all further function calls relating to the list.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If you try and access a value in the list <i>before</i> it has been populated - i.e. the list is "empty" - then the return value may be 0 since internally the first few entries in the list are set when created to minimize performance issues when initially adding items to the list (although the&nbsp;<span class="inline3_func"><a href="ds_list_size.htm">ds_list_size</a></span> function will still return 0 on a newly created list). If you wish to ensure that the list is "truly" empty on create, then you should call&nbsp;<span class="inline3_func"><a href="ds_list_clear.htm">ds_list_clear</a></span> after creating the list, which will then mean that any values returned for unpopulated list slots will be <span class="inline2">undefined</span>.</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">ds_list_create();</p>
+  <p class="code"><span data-field="title" data-format="default">ds_list_create</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_DS_List"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm">DS List</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_DS_List"><a target="_blank" href="ds_list_create.htm">DS List</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">list = ds_list_create();</p>
-  <p>这将创建一个新列表，并将其索引ID分配给实例变量"list"。</p>
-  <p>&nbsp;</p>
+  <p>This will create a new list and assign its index id to the instance variable <span class="inline2">list</span>.</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -102,7 +101,7 @@
         <div style="float:right">Next:&nbsp;<a href="ds_list_destroy.htm">ds_list_destroy</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 ds_list_create

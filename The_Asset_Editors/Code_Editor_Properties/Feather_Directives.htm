@@ -59,7 +59,7 @@
   <meta name="topic-comment" content="Reference page listing all Feather directives">
   <meta name="search-keywords" content="feather,directive,directives">
   <meta name="rh-index-keywords" content="directive,directives,feather">
-</head>
+<meta name="brsnext" value="The_Asset_Editors/Code_Editor_Properties/Code_Snippets.htm"><meta name="brsprev" value="The_Asset_Editors/Code_Editor_Properties/Feather_Data_Types.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -82,7 +82,7 @@
   </div>
   <div>
   <h1><span data-field="title" data-format="default">羽毛指令</span></h1>
-  <p><span><span data-field="title" data-format="default">Feather Directives</span>&nbsp;are comments that affect how&nbsp;<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽毛(Feather)</a>&nbsp;treats your&nbsp;<span data-keyref="GML_Code">GML Code</span>, including&nbsp;which Feather rules it applies, the&nbsp;<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#message_severity_profile">Profile</a>&nbsp;it uses and whether strict type validation is applied<span>.</span></span></p>
+  <p><span data-field="title" data-format="default">Feather指令</span>是影响<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a>如何处理您的<span data-keyref="GML_Code">GML代码</span>的注释，包括它应用的Feather规则、它使用的<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#message_severity_profile">Profile</a>以及是否应用严格的类型验证。</p>
   <p>默认情况下，Feather指令应用于当前脚本和在其中声明的函数，除非您提供<a href="#path">目标路径</a>。</p>
   <div class="seealso" style="">
     <p class="seealso-caption" style="">另见</p>
@@ -106,10 +106,10 @@
   <h3>忽略一次</h3>
   <p>通过添加<span class="inline2">once</span>，GM消息只能被忽略一次：</p>
   <p class="code">// Feather ignore&nbsp;once GM1010</p>
-  <p>This c<span>ommand makes Feather ignore&nbsp;</span><span>the first&nbsp;<span>occurrence&nbsp;<span>of this type <span>o</span>f mess<span>age but not the&nbsp;ones that come after that<span>:&nbsp;</span></span></span></span></span></p>
-  <p class="code">// Feather ign<span>ore&nbsp;<span>once GM1010<br>
+  <p>这个命令使Feather忽略第一次出现的这种类型的消息，但不忽略之后出现的消息：</p>
+  <p class="code">// Feather ignore&nbsp;once GM1010<br>
         result = 5 + "5";&nbsp; &nbsp; // ignored<br>
-        result = 6 + "6";&nbsp; &nbsp; // err<span>or</span></span></span></p>
+        result = 6 + "6";&nbsp; &nbsp; // error</p>
   <h3>恢复</h3>
   <p>最后，您可以使用<span class="inline2">restore</span>/<span class="inline2">enable</span>重新启用GM消息：</p>
   <p class="code">// Feather restore GM1010<br>
@@ -128,18 +128,18 @@
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>此羽化指令对应于<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">羽化首选项</a>中的<strong>严格类型模式</strong>首选项。</p>
   <h2>组合指令</h2>
   <p>您还可以在一行中设置配置文件和类型验证模式：</p>
-  <p class="code">/// Feather <span>use all, strict</span></p>
+  <p class="code">/// Feather use all, strict</p>
   <p>上述注释将使Feather查找<strong>所有</strong>错误<em>并</em>使用<strong>严格类型模式</strong>。</p>
   <h2 id="path">路径</h2>
-  <p>Optionally you can provide a path using the <span class="inline2">in</span> directive t<span>o apply a</span> Feather directive to a specific script,&nbsp;object or gr<span>oup&nbsp;</span>in <a href="../../Introduction/The_Asset_Browser.htm">The Asset Browser</a><span><span>. This can be placed in<span><span>&nbsp;the main script&nbsp;<span><span>of an external library&nbsp;<span><span>of functi<span><span>ons, th<span><span>ough y<span><span>ou can place it in any&nbsp;<span><span>other script, e.g. a blank "FeatherC<span><span>onfig" script.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+  <p>您也可以使用<span class="inline2">in</span>指令提供路径，将Feather指令应用于<a href="../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中的特定脚本、对象或组。这可以放在外部函数库的主脚本中，也可以放在任何其他脚本中，例如空白的"FeatherConfig"脚本。</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>使用多个路径的规则可能会导致性能问题，但仅将路径专门设置为<span class="inline2">*</span>的情况除外。</p>
-  <p><span><span><span><span>You can use the following special symbols in your paths:&nbsp;</span></span></span></span></p>
+  <p>您可以在路径中使用以下特殊符号：</p>
   <ul class="colour">
-    <li><span class="inline2">/</span>&nbsp;- When used in the beginning of a path, points to the root&nbsp;<span>of the Asset Browser</span></li>
+    <li><span class="inline2">/</span>-在路径的开头使用时，指向资源浏览器的根</li>
     <li><span class="inline2">.</span>- 在路径的开头使用时，指向当前脚本的文件夹</li>
     <li><span class="inline2">*</span>是匹配前面目录中所有内容的索引</li>
   </ul>
-  <p>This way&nbsp;<span>y<span>ou can<span>&nbsp;define paths t<span>o assets in the Asset Br<span>owser, for example<span><span>:</span></span></span></span></span></span></span></p>
+  <p>通过这种方式，可以在资源浏览器中定义资源的路径，例如：</p>
   <table border="1" cellpadding="1" cellspacing="1">
     <thead>
       <tr>
@@ -203,7 +203,7 @@
         <div>Next:&nbsp;<a href="Code_Snippets.htm">代码片段</a></div>
       </div>
     </div>
-    <h5><span data-conref="../../assets/snippets/Copyright_Notice_AutoUpdate.hts">© Copyright <span data-keyref="Company Name">YoYo Games</span>&nbsp;<span data-keyref="Company Structure Suffix">Ltd.</span>&nbsp;<span data-field="date" data-format="YYYY">2023</span> All Rights Reserved</span></h5>
+    <h5><span data-conref="../../assets/snippets/Copyright_Notice_AutoUpdate.hts">© Copyright <span data-keyref="Company Name">YoYo Games</span>&nbsp;<span data-keyref="Company Structure Suffix">Ltd.</span>&nbsp;<span data-field="date" data-format="YYYY">2024</span> All Rights Reserved</span></h5>
   </div>
 
 </div>

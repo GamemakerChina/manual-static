@@ -79,49 +79,90 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>json_parse</h1>
-  <p>此函数可用于解析 JSON 字符串 (之前使用 <a href="json_stringify.htm">json_stringify</a> 创建或来自任何有效来源)，并将其转换为数组或结构的集合，其中数组等同于 JSON 数组和 结构 相当于一个 JSON 对象。 您提供要解析的字符串，该函数将返回顶级数组或结构，然后可以在您的代码中使用它们。 如果您不确定 JSON 的内容，您可以使用不同的 <a href="../../Variable_Functions/Variable_Functions.htm"> 变量函数 </a>( 例如 <a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a> 和 <a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a> 如果是一个结构) 检查返回的内容。 请注意，尝试解析无效值 (即：不是字符串) 将引发异常错误。</p>
-  <p>在使用这个函数时，有一些重要的事情需要注意:</p>
+  <h1><span data-field="title" data-format="default">json_parse</span></h1>
+  <p>This function parses a JSON string and converts it into a collection of nested arrays and structs.&nbsp;An array is the equivalent of a JSON array and a struct is the equivalent of a JSON object.</p>
+  <p>The JSON should be either previously created using&nbsp;<span class="inline3_func"><a href="json_stringify.htm">json_stringify</a></span>&nbsp;or should come from any other valid source.</p>
+  <p>You supply the string to parse, and the function will return the top-level array or struct which can then be used in your code. If you are not sure of the contents of the JSON, you can use the different&nbsp;<a href="../../Variable_Functions/Variable_Functions.htm">Variable Functions</a>&nbsp;(like&nbsp;<span class="inline3_func"><a href="../../Variable_Functions/typeof.htm">typeof</a></span> and&nbsp;<span class="inline3_func"><a href="../../Variable_Functions/variable_struct_get_names.htm">struct_get_names</a></span> in case of a struct) to check the returned contents.</p>
+  <h3>Usage Notes</h3>
   <ul class="colour">
-    <li>如果提供的 JSON 字符串包含 <span class="inline">undefined</span> 作为任何属性的值，它将在解析时转换为 <span class="inline">pointer_null</span>。</li>
-    <li>此函数仅允许您加载最大嵌套限制为 128 的 JSON 文件。</li>
+    <li>尝试解析无效值 (即：不是字符串或无效 JSON) 将引发异常错误。</li>
+    <li>This function only allows you to load JSON files with a maximum nesting limit of <span data-keyref="Const_JSON_Max_Nesting_Limit">128</span>.</li>
+    <li>Data conversions:
+      <ul>
+        <li><span class="inline2">null</span> 值被解析为 <span class="inline2"> undefined </span>。</li>
+        <li>由 <span class="inline3_func"><a href="json_stringify.htm">json_stringify</a></span> 序列化的任何运行时值都将转换回运行时值 (例如 <a href="../../../GML_Overview/Data_Types.htm">handles</a> 以及 <span class="inline2">int64</span>、<span class="inline2">NaN</span> 和 <span class="inline2">infinity</span> 等值)，不过，可以通过将 <span class="inline2">true</span> 传递到可选的 <span><span class="inline2">inhibit_string_convert</span> 参数来禁用此转换，这意味着这些转换将保留为字符串。</span></li>
+        <li>See&nbsp;<a href="../../../../Additional_Information/Guide_To_Using_JSON.htm#data_conversions">Data Conversions</a>&nbsp;for a full overview.</li>
+      </ul>
+    </li>
+    <li>See&nbsp;<a href="../../../../Additional_Information/Guide_To_Using_JSON.htm">Guide To Using JSON</a>&nbsp;for more information on how&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;interacts with the JSON format.</li>
   </ul>
+  <div data-conref="../../../../assets/snippets/Note_See_Guide_To_Using_JSON.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;See&nbsp;<a href="../../../../Additional_Information/Guide_To_Using_JSON.htm">Guide To Using JSON</a>&nbsp;for detailed information on how to work with JSON in&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>.</p>
+
+</div>
+  <div data-conref="../../../../assets/snippets/JSON_Filter_Function_Description.hts">
+  <h3>过滤功能 <span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional"> 可选 </span></span></h3>
+  <p>该函数可以选择采用 <span data-keyref="Type_Function"><a target="_blank" href="../../../GML_Overview/Script_Functions.htm">Function</a></span>，该函数对结构中的每个值运行一次，包括所有嵌套结构 / 数组及其内部的所有值。</p>
+  <p>它需要两个参数 <span class="inline2">(key, value)</span>，其中 <span class="inline2">key</span> 是结构体键名称 (<span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span>) 或数组索引 (<span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span>)，<span class="inline2"> 值 </span> 是存储在该键 / 索引中的内容。</p>
+  <p>The filter function must always return a value. It can return a new value, which replaces the key's value in the final converted format returned by&nbsp;<span class="inline3_func"><span data-field="title" data-format="lower-alpha">json_parse</span></span>. If no new value should be returned for a particular key, the function must return the original <span class="inline2">value</span>.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在过滤器函数中覆盖键的值 (使用 <a href="../../../GML_Overview/Language_Features/return.htm">return</a>) 时，请确保首先检查其类型，因为过滤器函数也会针对根结构和任何嵌套结构运行，这意味着意外覆盖它们将导致最终结构损坏。请参阅底部的 <strong> 示例 3</strong>。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">json_parse(json)</p>
+  <p class="code"><span data-field="title" data-format="default">json_parse</span>(json, [filter_func], [inhibit_string_convert])</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>json</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>json</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要解析的 JSON 字符串</td>
-     </tr>
+      </tr>
+      <tr>
+        <td>filter_func</td>
+        <td><span data-keyref="Type_Function"><a target="_blank" href="../../../GML_Overview/Script_Functions.htm">Function</a></span></td>
+        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>&nbsp;Filter function that processes each item. Don't pass a value or set this to <span class="inline2">undefined</span> if you only want to set <span class="inline2">inhibit_string_convert</span>. Syntax:&nbsp;<span class="inline2">function(key, value) -&gt; new_value</span></td>
+      </tr>
+      <tr>
+        <td>inhibit_string_convert</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-conref="../../../../assets/snippets/Tag_optional.hts"><span class="optional"> 可选</span></span> 将此设置为 <span class="inline2">true</span> 以禁止将字符串转换为运行时引用。默认值：<span class="inline2">false</span></td>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Struct"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></p>
+  <p class="code"><span data-keyref="Type_Struct"><a target="_blank" href="../../../GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Array"><a target="_blank" href="../../../GML_Overview/Arrays.htm">Array</a></span></p>
   <p>&nbsp;</p>
-  <h4>例子:</h4>
-  <p class="code">json = "{\"myObj\": { \"apples\":10, \"oranges\":12, \"potatoes\":100000, \"avocados\":0 }, \"myArray\":[0, 1, 2, 2, 4, 0, 1, 5, 1]}";<br>
+  <h4>示例1：</h4>
+  <p class="code">var json = "{\"myObj\": { \"apples\":10, \"oranges\":12, \"potatoes\":100000, \"avocados\":0 }, \"myArray\":[0, 1, 2, 2, 4, 0, 1, 5, 1]}";<br>
     <br>
-    data = json_parse(json);<br>
+    var data = json_parse(json);<br>
     show_debug_message(data);
   </p>
-  <p>上面的代码创建了一个包含有效 JSON 对象的新字符串，然后调用 <span class="inline">json_parse()</span> 将该字符串转换为 GML 结构。然后将结果打印到调试日志。</p>
-  <p class="note"><span class="note">注意</span>&nbsp;你会注意到 JSON 字符串中每个双引号 (<span class="inline2">"</span>) 之前都包含一个反斜杠 (<span class="inline2">\</span>): <br><br><span class="inline2">json = "{<strong>\"&nbsp;</strong>myObj</span><br><br> 这是为了确保双引号作为字符串中的一个实际字符被读取，而不是作为代码的一部分被读取并过早地关闭字符串。在这种情况下，我们使用反斜杠来“转义”双引号。<br><br> 但是，如果从外部文件加载 JSON，则不需要转义该文件中的字符，这样做可能会在解析过程中导致错误。</p>
+  <p>上面的代码创建一个包含有效 JSON 的新字符串，然后调用 <span class="inline3_func"><a href="json_parse.htm">json_parse</a></span> 将该字符串转换为 GML 结构。然后它将结果打印到调试日志中。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You will notice that the JSON string contains&nbsp;a backslash (<span class="inline2">\</span>) before every double quote (<span class="inline2">"</span>) inside it:<br>
+    <br>
+    <span class="inline2">json = "{&nbsp;<strong>\"&nbsp;</strong>myObj</span><br>
+    <br>
+    This is to ensure that the double quote is read as an actual character within the string, instead of being read as part of the code and closing the string prematurely. This way we are using a backslash to "escape" the double quote.<br>
+    <br>
+    If you are loading JSON from an external file however, there is no need to escape characters in that file.
+  </p>
   <hr>
-  <p>解析完上面的 JSON 字符串，如果你知道它的结构，你可以使用各种&nbsp;<a href="../../Variable_Functions/Variable_Functions.htm"> 变量函数 </a>&nbsp;来检查和读取它的内容:</p>
-  <p class="code">data = json_parse(json);<br>
+  <p>After parsing the JSON string above, if you know its structure, you can use various&nbsp;<a href="../../Variable_Functions/Variable_Functions.htm">Variable Functions</a> to check and read its contents:</p>
+  <p class="code">var data = json_parse(json);<br>
     <br>
     // Check if the struct has myObj variable<br>
-    if variable_struct_exists(data, "myObj")<br>
+    if (variable_struct_exists(data, "myObj"))<br>
     {<br>
     &nbsp; &nbsp; // Check if it's a struct<br>
-    &nbsp; &nbsp; if is_struct(data.myObj)<br>
+    &nbsp; &nbsp; if (is_struct(data.myObj))<br>
     &nbsp;&nbsp; &nbsp;{<br>
     &nbsp; &nbsp; &nbsp; &nbsp; // Print all struct members to the log<br>
     &nbsp; &nbsp; &nbsp; &nbsp; var _names = variable_struct_get_names(data.myObj);<br>
@@ -135,10 +176,10 @@
     }<br>
     <br>
     // Check if the struct has myArray variable<br>
-    if variable_struct_exists(data, "myArray")<br>
+    if (variable_struct_exists(data, "myArray"))<br>
     {<br>
     &nbsp; &nbsp; // Check if it's an array<br>
-    &nbsp; &nbsp; if is_array(data.myArray)<br>
+    &nbsp; &nbsp; if (is_array(data.myArray))<br>
     &nbsp;&nbsp; &nbsp;{<br>
     &nbsp; &nbsp; &nbsp; &nbsp; show_debug_message(data.myArray);<br>
     &nbsp;&nbsp; &nbsp;}<br>
@@ -151,6 +192,48 @@
     apples: 10<br>
     [ 0,1,2,2,4,0,1,5,1 ]</p>
   <p>&nbsp;</p>
+  <h4>示例 2：过滤功能</h4>
+  <p class="code">var json = "{\"myObj\": { \"apples\":10, \"oranges\":12, \"potatoes\":100000, \"avocados\":0 }, \"myArray\":[0, 1, 2, 2, 4, 0, 1, 5, 1]}";<br>
+    <br>
+    var data = json_parse(json, function (key, value)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;show_debug_message($"Key: {key}, Value: {value}");<br>
+    &nbsp; &nbsp; return value;<br>
+    });
+  </p>
+  <p>上面的代码采用与上一个示例相同的 JSON 字符串，并将其转换为 GML 结构，但是这次它使用了过滤器函数。</p>
+  <p>过滤器函数将每个项目的键和值打印到输出日志中：</p>
+  <p class="code_plain">Key: apples, Value: 10<br>
+    Key: oranges, Value: 12<br>
+    Key: potatoes, Value: 100000<br>
+    Key: avocados, Value: 0<br>
+    Key: myObj, Value: { apples : 10, oranges : 12, potatoes : 100000, avocados : 0 }<br>
+    Key: 8, Value: 1<br>
+    Key: 7, Value: 5<br>
+    Key: 6, Value: 1<br>
+    Key: 5, Value: 0<br>
+    Key: 4, Value: 4<br>
+    Key: 3, Value: 2<br>
+    Key: 2, Value: 2<br>
+    Key: 1, Value: 1<br>
+    Key: 0, Value: 0<br>
+    Key: myArray, Value: [ 0,1,2,2,4,0,1,5,1 ]<br>
+    Key: , Value: { myObj : { apples : 10, oranges : 12, potatoes : 100000, avocados : 0 }, myArray : [ 0,1,2,2,4,0,1,5,1 ] }</p>
+  <p>请注意过滤器函数如何在 JSON 中的结构体 (<span class="inline2">myObj</span>) 和数组 (<span class="inline2">myArray</span>) 上运行，以及如何在结构体和数组内的每个项目上运行。它还在根结构上运行，并将键设置为空字符串 (此处，如最后一行所示)。</p>
+  <p>&nbsp;</p>
+  <h4>示例 3：覆盖值</h4>
+  <p class="code">var json = "{\"prices\": [2, 5, 1, 2, 4, 5]}";<br>
+    <br>
+    var data = json_parse(json, function (key, value)<br>
+    {<br>
+    &nbsp; &nbsp;&nbsp;return is_real(value) ? value * 1000 : value;<br>
+    });<br>
+    <br>
+    show_debug_message(data);
+  </p>
+  <p>The above code takes a JSON string containing an array inside a struct. Then&nbsp;<span class="inline3_func"><span data-field="title" data-format="default">json_parse</span></span> is run with a filter function that multiplies each value with 1000, only when it's a <span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span>. Otherwise it simply returns the value itself.</p>
+  <p>结果结构如下所示：</p>
+  <p class="code_plain">{ prices : [ 2000,5000,1000,2000,4000,5000 ] }</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -160,7 +243,7 @@
         <div style="float:right">Next: <a href="base64_encode.htm">base64_encode</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 json_parse

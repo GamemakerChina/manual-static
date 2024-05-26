@@ -81,7 +81,7 @@
   <div>
   </div>
   <div>
-  <h1>滤镜效果类型和参数</h1>
+  <h1><span data-field="title" data-format="default">FX类型和参数</span></h1>
   <p>本页列出了<span data-keyref="GameMaker Name">GameMaker</span>中提供的所有滤镜/效果类型，以及有关每个FX的以下信息：</p>
   <ul class="colour">
     <li><strong>内部名称 </strong>( 一个字符串，例如 <span class="inline2">"_filter_tintfilter"</span>)，可以传递到 <span class="inline"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/fx_create.htm">fx_create()</a></span> 以在运行时创建 FX</li>
@@ -364,6 +364,23 @@
           </td>
         </tr>
         <tr>
+          <td style=""><strong>Hard Drop Shadow</strong><br>
+            <br>
+            "_filter_hard_drop_shadow"
+          </td>
+          <td>Creates a hard drop shadow that's drawn at the given (x, y)&nbsp;offset.</td>
+          <td>&nbsp;<img src="../../../assets/Images/Asset_Editors/FXs/hard_drop_shadow.png"></td>
+          <td style="">X Displacement<br>
+            Y Displacement<br>
+            Opacity<br>
+            Colour</td>
+          <td><span class="inline"><strong>g_DisplacementX</strong></span> (Real)<br>
+            <span class="inline"><strong>g_DisplacementY</strong></span> (Real)<br>
+            <span class="inline"><strong>g_Opacity</strong></span> (Real)<br>
+            <span class="inline"><strong>g_Colour</strong></span> (Array)
+          </td>
+        </tr>
+        <tr>
           <td style=""><strong>Heat Haze</strong><br>
             <br>
             "_filter_heathaze"
@@ -408,7 +425,10 @@
             <br>
             "_filter_large_blur"
           </td>
-          <td style="">Blurs the image.</td>
+          <td style="">Blurs the image.<br>
+            <br>
+            <span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;This filter may be slow on some platforms. For better performance, use the "<strong>Gaussian Blur</strong>" effect (listed under the <strong>Effects</strong> table).
+          </td>
           <td style=""><img src="../../../assets/Images/Asset_Editors/FXs/largeblur.png"></td>
           <td style="">Radius<br>
             Noise texture</td>
@@ -522,7 +542,7 @@
           <td><span class="inline">g_PanoramaDirection</span> (Array)<br>
             <span class="inline">g_PanoramaPerspective</span> (Real)<br>
             <span class="inline">g_PanoramaCylinder</span> (Real)<br>
-            <span class="inline">g_OldFilmTexture</span> (Sampler)
+            <span class="inline">g_PanoramaTexture</span> (Sampler)
           </td>
         </tr>
         <tr>
@@ -532,7 +552,7 @@
           </td>
           <td style="">Allows you to draw an image with a flat 3D perspective, with fog and texture depth parameters.<br>
             <br>
-            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;This effect may reduce your game's performance on weaker devices.</strong>
+            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;</strong>This effect may reduce your game's performance on weaker devices.
           </td>
           <td style="">&nbsp;<video src="../../../assets/Images/Asset_Editors/FXs/parallax.mp4" width="480" height="320" controls=""></video></td>
           <td style="">View Direction<br>
@@ -770,74 +790,90 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">查看效果表</span><span data-close-text="true">查看效果表</span></a></p>
   <div class="droptext" data-targetname="drop-down">
-    <table style="width: 95%;" class=" cke_show_border">
+    <table style="width: 95%;">
       <colgroup>
-        <col>
-        <col style="width: 166px;">
-        <col style="width: 286px;">
-        <col style="width: 318px;">
-        <col>
+        <col style="width: 118px;">
+        <col style="width: 252px;">
+        <col style="width: 473px;">
+        <col style="width: 197px;">
+        <col style="width: 317px;">
       </colgroup>
       <tbody>
         <tr>
           <th colspan="5" style=""><a href="../Filters_and_Effects.htm#f_vs_x">Effects</a> (in-game only)</th>
         </tr>
         <tr>
-          <th>类型</th>
-          <th style="">描述</th>
-          <th>示例</th>
+          <th style="">类型</th>
+          <th>描述</th>
+          <th style="">示例</th>
           <th>IDE 参数</th>
-          <th>运行时参数</th>
+          <th style="">运行时参数</th>
         </tr>
         <tr>
-          <td style=""><strong>Blend</strong><br>
+          <td><strong>Blend</strong><br>
             <br>
             "_effect_blend"
           </td>
-          <td>Apply a <a href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm">blend mode</a> to the layer<br>
+          <td style="">Apply a <a href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode.htm">blend mode</a> to the layer<br>
             <br>
-            <strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;Only applicable to non-FX layers</strong>
+            <strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;</strong>Only applicable to non-FX layers
           </td>
-          <td style=""><img src="../../../assets/Images/Asset_Editors/FXs/blend.png"></td>
+          <td><img src="../../../assets/Images/Asset_Editors/FXs/blend.png"></td>
           <td>Blend Mode</td>
-          <td><span class="inline">g_Blend</span> (Real)</td>
+          <td style=""><span class="inline">g_Blend</span> (Real)</td>
         </tr>
         <tr>
-          <td style=""><strong>Blend Ext</strong><br>
+          <td><strong>Blend Ext</strong><br>
             <br>
             "_effect_blend_ext"
           </td>
-          <td>Apply an <a href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode_ext_sepalpha.htm">extended blend mode</a> to the layer<br>
+          <td style="">Apply an <a href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_set_blendmode_ext_sepalpha.htm">extended blend mode</a> to the layer<br>
             <br>
-            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;Only applicable to non-FX layers</strong>
+            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;</strong>Only applicable to non-FX layers
           </td>
-          <td style=""><img src="../../../assets/Images/Asset_Editors/FXs/blend_ext.png"></td>
+          <td><img src="../../../assets/Images/Asset_Editors/FXs/blend_ext.png"></td>
           <td>Source Blend Mode<br>
             Destination Blend Mode<br>
             Alpha Source Blend Mode<br>
             Alpha Destination Blend Mode</td>
-          <td><span class="inline">g_BlendExt_Src</span> (Real)<br>
+          <td style=""><span class="inline">g_BlendExt_Src</span> (Real)<br>
             <span class="inline">g_BlendExt_Dest</span> (Real)<br>
             <span class="inline">g_BlendExt_AlphaSrc</span> (Real)<br>
             <span class="inline">g_BlendExt_AlphaDest</span> (Real)
           </td>
         </tr>
         <tr>
-          <td style=""><strong>Glow</strong><br>
+          <td><strong>Gaussian Blur</strong><br>
+            <br>
+            "_effect_gaussian_blur"
+          </td>
+          <td style="">Adds a blur to the game. You can adjust the number of times the image is downsampled when blurring, which increases the intensity of the blur but may result in blocky output. You can also adjust the number of passes, which is how many times blur is applied at each downsample level. This increases intensity of the final blur but costs performance.<br>
+            <br>
+            This is faster than the <strong>Large Blur</strong> filter.
+          </td>
+          <td><img src="../../../assets/Images/Asset_Editors/FXs/gaussian_blur.png"></td>
+          <td>Downsample Count<br>
+            Passes</td>
+          <td style=""><span class="inline">g_numDownsamples</span> (Real)<br>
+            <span class="inline">g_numPasses</span> (Real)
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Glow</strong><br>
             <br>
             "_effect_glow"
           </td>
-          <td>Adds a glow to the game.<br>
+          <td style="">Adds a glow to the game.<br>
             <br>
-            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;This effect may reduce your game's performance on weaker devices.</strong>
+            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;</strong>This effect may reduce your game's performance on weaker devices.
           </td>
-          <td style=""><img src="../../../assets/Images/Asset_Editors/FXs/glow.png"></td>
+          <td><img src="../../../assets/Images/Asset_Editors/FXs/glow.png"></td>
           <td>Radius<br>
             Quality<br>
             Intensity<br>
             Gamma<br>
             Alpha</td>
-          <td><span class="inline">g_GlowRadius</span> (Real)<br>
+          <td style=""><span class="inline">g_GlowRadius</span> (Real)<br>
             <span class="inline">g_GlowQuality</span> (Real)<br>
             <span class="inline">g_GlowIntensity</span> (Real)<br>
             <span class="inline">g_GlowGamma</span> (Real)<br>
@@ -845,33 +881,33 @@
           </td>
         </tr>
         <tr>
-          <td style=""><strong>Recursive Blur</strong><br>
+          <td><strong>Recursive Blur</strong><br>
             <br>
             "_effect_recursive_blur"
           </td>
-          <td>Adds a blur effect. "Recursive" refers to the method used for achieving the blur, as this is faster than a regular blur filter.<br>
+          <td style="">Adds a blur effect. "Recursive" refers to the method used for achieving the blur, as this is faster than a regular blur filter.<br>
             <br>
-            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;<strong><strong>This effect may reduce your game's performance on weaker devices</strong></strong>.</strong>
+            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;</strong>This effect may reduce your game's performance on weaker devices.<strong></strong>
           </td>
-          <td style=""><img src="../../../assets/Images/Asset_Editors/FXs/recur_blur.png"></td>
+          <td><img src="../../../assets/Images/Asset_Editors/FXs/recur_blur.png"></td>
           <td>Radius<br>
             Quality<br>
             Gamma</td>
-          <td><span class="inline">g_RecursiveBlurRadius</span> (Real)<br>
+          <td style=""><span class="inline">g_RecursiveBlurRadius</span> (Real)<br>
             <span class="inline">g_RecursiveBlurQuality</span> (Real)<br>
             <span class="inline">g_RecursiveBlurGamma</span> (Real)
           </td>
         </tr>
         <tr>
-          <td style=""><strong>Windblown Particles</strong><br>
+          <td><strong>Windblown Particles</strong><br>
             <br>
             "_effect_windblown_particles"
           </td>
-          <td>Creates a windblown particles effect, showing a leaf sprite by default.<br>
+          <td style="">Creates a windblown particles effect, showing a leaf sprite by default.<br>
             <br>
-            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;This effect may reduce your game's performance on weaker devices.</strong>
+            <strong><strong><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span></strong>&nbsp;</strong>This effect may reduce your game's performance on weaker devices.
           </td>
-          <td style=""><video src="../../../assets/Images/Asset_Editors/FXs/windblown_particles.mp4" width="336" height="224" controls=""></video></td>
+          <td><video src="../../../assets/Images/Asset_Editors/FXs/windblown_particles.mp4" width="336" height="224" controls=""></video></td>
           <td>Sprite<br>
             Number of particles<br>
             Spawn time<br>
@@ -946,7 +982,7 @@
             Particle drag<br>
             Gravity<br>
             Enable debug mode</td>
-          <td><span class="inline">param_sprite</span> (Sprite)<br>
+          <td style=""><span class="inline">param_sprite</span> (Sprite)<br>
             <span class="inline">param_num_particles</span> (Real)<br>
             <span class="inline">param_particle_spawn_time</span> (Real)<br>
             <span class="inline">param_particle_spawn_all_at_start</span> (Bool)<br>
@@ -980,8 +1016,8 @@
             <span class="inline">param_particle_lifetime_max</span> (Real)<br>
             <span class="inline">param_particle_update_skip</span> (Real)<br>
             <span class="inline">param_particle_spawn_border_prop</span> (Real)<br>
-            <span class="inline">param_particle_src_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
-            <span class="inline">param_particle_dest_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
+            <span class="inline">param_particle_src_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
+            <span class="inline">param_particle_dest_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
             <span class="inline">param_trails_only</span> (Bool)<br>
             <span class="inline">param_trail_chance</span> (Real)<br>
             <span class="inline">param_trail_lifetime_min</span> (Real)<br>
@@ -1001,8 +1037,8 @@
             <span class="inline">param_trail_col_4</span> (Array)<br>
             <span class="inline">param_trail_col_alt_4</span> (Array)<br>
             <span class="inline">param_trail_min_segment_length</span> (Real)<br>
-            <span class="inline">param_trail_src_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
-            <span class="inline">param_trail_dest_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
+            <span class="inline">param_trail_src_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
+            <span class="inline">param_trail_dest_blend</span> (<span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="../../../GameMaker_Language/GML_Reference/Drawing/GPU_Control/gpu_get_blendmode_ext.htm">Blend Mode Factor Constant</a></span>)<br>
             <span class="inline">param_num_blowers</span> (Real)<br>
             <span class="inline">param_blower_size_min</span> (Real)<br>
             <span class="inline">param_blower_size_max</span> (Real)<br>
@@ -1034,7 +1070,7 @@
         <div>Next:&nbsp;<a href="../../Scripts.htm">The Script Editor</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 -->

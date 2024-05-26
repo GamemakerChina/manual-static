@@ -104,27 +104,27 @@
       </tr>
       <tr>
         <td>dest</td>
-        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../GML_Overview/Arrays.htm">Array</a></span></td>
         <td>对要复制到的数组的引用。</td>
       </tr>
       <tr>
         <td>dest_index</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>数组中要复制到的索引。支持负索引，从数组末尾开始计算。偏移量-1表示数组的最后一个元素，偏移量-2表示最后一个元素之前的一个元素，依此类推(参见<a href="Array_Functions.htm#h1">偏移量和长度</a>)</td>
       </tr>
       <tr>
         <td>src</td>
-        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../GML_Overview/Arrays.htm">Array</a></span></td>
         <td>要从中复制的数组的引用。</td>
       </tr>
       <tr>
         <td>src_index</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>数组中开始复制的索引。支持负索引，从数组末尾开始计数。偏移量-1表示数组的最后一个元素，偏移量-2表示最后一个元素之前的一个元素，依此类推(参见<a href="Array_Functions.htm#h1">偏移量和长度</a>)</td>
       </tr>
       <tr>
         <td>length</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要复制的长度 (数组索引数)，从 src_index 处的值开始。可以为长度提供负值在这种情况下，复制也从索引 src_index 开始，但接下来被复制的元素是 src_index-1、src_index-2 等。即，向后复制元素。请注意，第一个值始终写入 dest_index，第二个值写入 dest_index+1，依此类推。</td>
       </tr>
     </tbody>
@@ -134,7 +134,7 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>示例1：基本使用</h4>
-  <p class="code">if !array_equals(inventory_array, item_array)<br>
+  <p class="code">if (!array_equals(inventory_array, item_array)) <br>
     {<br>
     &nbsp; &nbsp; var _len = array_length(inventory_array);<br>
     &nbsp; &nbsp; array_copy(item_array, 0, inventory_array, 0, _len);<br>
@@ -159,7 +159,7 @@
         <div style="float:right">Next:&nbsp;<a href="array_equals.htm">array_equals</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 array_copy

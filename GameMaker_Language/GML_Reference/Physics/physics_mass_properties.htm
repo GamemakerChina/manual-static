@@ -87,7 +87,7 @@
   <p>质心是根据您定义的装置 (或多个装置) 的形状自动计算的。为了得到一个大致的概念，如果您有一个与您希望创建的装置形状相同的精灵，然后选择 "中心原点 "选项，您将看到质心的大致位置。</p>
   <p>但是，这可能不正确，或者您正在查找来自物理对象的特定效果，在这种情况下，此函数还可用于更改质心的 X 和 Y 坐标。这些是 <b> 本地 / 相对 </b> 值，因此 <span class="inline2">0,0</span> 是固定装置绑定到实例的点 (实例的原点)。因此，质心 <span class="inline2">-4, 0</span> 将使质心向原点左移 4 像素。</p>
   <h3>旋转惯性</h3>
-  <p><span>惯性值定义此实例对其旋转速度变化的抵抗力。惯性越高，阻力越大，惯性越低，阻力越小。</span></p>
+  <p>惯性值定义了该实例对其旋转速度变化的抵抗力。较高的惯性使其抵抗力更强，而较低的惯性则使其抵抗力较小。</p>
   <p>旋转惯性不能为负值。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 此函数不会为单个固定装置设置质量和惯性，而是为整个启用物理的实例设置质量和惯性，无论有多少固定装置绑定到它。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 此功能应仅在必要时使用，因为物理模拟旨在根据夹具的密度和尺寸实现最佳质量和惯性。更改这些值可能会产生意外结果。</p>
@@ -103,22 +103,22 @@
       </tr>
       <tr>
         <td>mass</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>希望装置具有的新质量。</td>
       </tr>
       <tr>
         <td>local_center_x</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>新的质心的局部 X 坐标。</td>
       </tr>
       <tr>
         <td>local_center_y</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>新的质心的局部 Y 坐标。</td>
       </tr>
       <tr>
         <td>inertia</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>装置的旋转惯量。</td>
       </tr>
     </tbody>
@@ -140,7 +140,7 @@
         <div style="float:right">Next: <a href="physics_test_overlap.htm">physics_test_overlap</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 physics_mass_properties

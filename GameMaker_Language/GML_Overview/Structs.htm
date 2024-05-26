@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Page outlining the use of Structs">
   <meta name="rh-index-keywords" content="Structs">
   <meta name="search-keywords" content="structs,new,delete,struct">
-<meta name="brsnext" value="GameMaker_Language/GML_Overview/Struct_Forbidden_Variables.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Arrays.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Overview/Structs/Static_Structs.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Arrays.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -80,7 +80,8 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">Structs &amp; Constructors</span></h1>
   <p><strong><a id="struct"></a>struct (结构) </strong>是保存其他变量集合的变量。结构所持有的变量可以是前面提到的任何<a href="Data_Types.htm">数据类型</a>，这些变量可以在初始结构声明之后读取和写入，也可以在声明结构之后向其添加更多变量。</p>
-  <p>结构中使用的变量应遵循通常的变量命名方案，即：它们不能以数字开头，只能由字母数字字符和下划线"_"字符组成，并且还要注意，结构的内容与创建它的实例或函数<em>无关，因此，如果您愿意，可以使用内置变量名，如</em>image_index<span class="inline">或</span>x<span class="inline">和</span>y<span class="inline">。</span></p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 结构体和结构体之间存在细微差别。<span data-field="title" data-format="default"> 构造函数 </span> 和 <a href="../../Quick_Start_Guide/Objects_And_Instances.htm"> 对象和实例 </a>。请参阅 <a href="Structs.htm#constructors_structs_vs_objects_instances"> 构造函数和结构与对象和对象实例 </a> 了解更多信息。</p>
+  <p>结构体中使用的变量应遵循通常的变量命名方案，即：它们不能以数字开头，只能由字母数字字符和下划线"_"字符组成，还要注意结构体的内容是<em>独立于创建它的实例或函数</em>，因此，如果您愿意，您可以使用内置变量名称，例如<span class="inline2"><a href="../GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></span>或<span class="inline2"><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/x.htm">x</a></span>和<span class="inline2"><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/y.htm">y</a></span>。</p>
   <p>在初始创建之后，虽然结构<i>会占用内存空间，但它们在存在时没有处理开销。结构语法如下：</i></p>
   <p class="code"><i>&lt;variable&gt;</i> =<br>
     {<br>
@@ -121,22 +122,22 @@
     };</p>
   <p>在上面的代码中可以看到，您可以在结构中定义方法和使用运行时函数，还可以在结构声明中使用局部变量和实例变量。</p>
   <h3 id="inst_in_struct">结构声明中的实例变量?</h3>
-  <p>在上面的示例中，您将注意到结构变量"g"被设置为 <span class="inline">image_index</span>，这是一个实例变量。在本例中，您可能认为需要使用<a href="Instance_Keywords.htm">关键字</a> <span class="inline">other</span> 来获取实例变量，但这并不是必需的。本质上，当您定义结构时，<strong>冒号"："左侧的所有成员变量都是<em>结构</em>变量，而右侧的值和变量使用定义结构</strong>(在本例中为实例)的作用域。</p>
-  <p>让我们看一个简单的例子来说明这一点。假设您要使用变量"x"和"y"定义结构，并要将它们设置为定义结构的实例的"x"和"y"。实际上，代码如下所示：</p>
+  <p>您会注意到在上面的示例中，结构变量 "g" 被设置为 <span class="inline2"><a href="../GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">image_index</a></span>，它是一个实例变量。您可能认为在这种情况下需要使用 <a href="Instance_Keywords.htm"> 关键字 </a><span class="inline">other</span> 来获取实例变量，但这不是必需的。本质上，当您定义 struct 时，冒号 ":" 左侧的所有成员变量都是 <strong><em>struct</em></strong> 变量，右侧的值和变量使用任意范围( 在本例中是一个实例)。</p>
+  <p>让我们看一个简单的例子来说明这一点。假设您想要使用变量 "x" 和 "y" 定义一个结构体，并且希望将它们设置为定义该结构体的实例的 <span class="inline2"><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/x.htm">x</a></span> 和 <span class="inline2"><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/y.htm">y</a></span>。实际上，代码如下所示：</p>
   <p class="code">mystruct =<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;x : x,<br>
     &nbsp;&nbsp;&nbsp;&nbsp;y : y<br>
     };</p>
-  <p>在上述代码中，结构化成员变量<span class="inline">x</span>和<span class="inline">y</span>被设置为实例变量<span class="inline">x</span>和<span class="inline">y</span>中保留的值，因为冒号":"的右侧是指定义结构的实例。值得注意的是，这意味着<em>不能使用结构成员变量</em>来定义结构声明中的后续变量。例如，以下内容会给出一个错误：</p>
+  <p>在上述代码中，结构体成员变量 <span class="inline">x</span> 和 <span class="inline">y</span> 被设置为实例变量 <span class="inline2"><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/x.htm">x</a></span> 和 <span class="inline2"><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/y.htm">y</a></span> 中保存的值，因为冒号右侧的 <span class="inline2">:</span> 指的是定义结构体的实例。值得注意的是，这意味着您 <em> 不能 </em> 使用结构体成员变量来定义结构体声明中的后续变量。例如，以下内容会给您带来错误：</p>
   <p class="code">mystruct =<br>
     {<br>
     &nbsp; &nbsp; a : 10,<br>
     &nbsp; &nbsp; b : 10,<br>
     &nbsp; &nbsp; c : a + b<br>
     }</p>
-  <p>出现错误是因为变量<span class="inline">a</span>&nbsp;和<span class="inline">b</span>&nbsp;实际上是在定义结构的范围内计算的(它们在冒号":"的右边)，并且&nbsp;<em>不是</em>&nbsp;是在结构本身中定义的。</p>
-  <p class="note" style="padding-left: 20px;"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要!</span></span> 您不能使用任何内置的<strong>全局</strong>范围变量作为结构成员名称，例如：<span class="inline">game_id</span> 或 <span class="inline">fps</span>。您可以在<a href="Struct_Forbidden_Variables.htm">结构禁用变量</a>上找到这些全局变量的完整列表。</p>
+  <p>发生错误的原因是变量 <span class="inline">a</span> 和 <span class="inline">b</span> 实际上是在定义结构的范围内进行求值 (它们位于冒号 <span class="inline2">:</span> 的右侧)，并且 <em> 不是 </em> 结构体本身中定义的。<strong></strong></p>
+  <p class="note" style="padding-left: 20px;"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important"> 重要提示 </span></span>您不能使用任何内置的 <strong> 全局变量 </strong> 作为结构体成员名称，例如：<span class="inline2"><a href="../GML_Reference/General_Game_Control/game_id.htm">game_id</a></span><font face="menlo, consolas, monospace"><b></b></font> 或 <span class="inline2"><a href="../GML_Reference/Debugging/fps.htm">fps</a></span>。您可以在 <a href="Struct_Forbidden_Variables.htm"> 结构禁止变量 </a> 上找到这些全局变量的完整列表。</p>
   <h3>同名变量初始化的简写</h3>
   <p>使用同名的现有变量(局部变量或实例变量)的值初始化的结构变量可以使用简写表示法编写。而不是写：</p>
   <p class="code">var a = 12;<br>
@@ -201,7 +202,7 @@
   <p>和写入：</p>
   <p class="code">mystruct[$ "x"] = 200;</p>
   <p>如果你需要使用字符串来访问一个结构变量，那么<a href="../GML_Reference/Variable_Functions/variable_get_hash.htm">获取它的hash</a>并在<a href="../GML_Reference/Variable_Functions/struct_get_from_hash.htm">read</a>/<a href="../GML_Reference/Variable_Functions/struct_set_from_hash.htm">write</a>中使用它来访问变量会更快。</p>
-  <p>当一个结构不再需要时，可以使用<a href="Language_Features/delete.htm"><span class="inline">delete</span></a>操作符从内存中删除它，该操作符将该结构标记为能够被垃圾回收。这不是严格要求的，因为如果代码中不再引用该结构，<a class="tooltip" title="垃圾回收是游戏代码中的一部分，是一种自动化工具，用于在代码中不再引用某些东西（如数组和结构）时从内存中删除它们，而无需您明确删除它们。">垃圾收集器</a>可能会自动执行此操作，但这样做是很好的实践，我们建议这样做(例如，在实例的<span class="inline">清理事件</span>中调用<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">delete</a>，显式地告诉垃圾收集器要删除一个实例作用域结构)。下面是一个例子:</p>
+  <p>当不再需要某个结构体时，可以使用 <a href="Language_Features/delete.htm"><span class="inline">delete</span></a> 运算符将其从内存中删除，该运算符将该结构体标记为可以进行垃圾回收。这并不是严格要求的，因为如果您的代码中不再引用该结构，<a class="tooltip" title="垃圾回收是游戏代码中的一部分，是一种自动化工具，用于在代码中不再引用某些东西（如数组和结构）时从内存中删除它们，而无需您明确删除它们。"> 垃圾收集器 </a> 可能会自动执行此操作，但这样做是一种很好的做法，我们建议您这样做 (例如，在 <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm"> 清理事件 </a> 中调用 <span class="inline2"><a href="Language_Features/delete.htm">delete</a></span> 显式告诉垃圾收集器要删除实例范围结构)。这是一个例子：</p>
   <p class="code">// Create event<br>
     mystruct =<br>
     {<br>
@@ -326,7 +327,7 @@
 </div>
   <p>该功能利用了"静态结构"。请参阅：<a href="Structs/Static_Structs.htm">静态结构</a></p>
   <h2>字符串输出</h2>
-  <p>关于结构，最后要提到的一点是，您可以更改从它们输出到控制台以进行调试的内容。默认情况下，对结构调用函数 <a href="../GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message()</span></a>&nbsp;将输出结构的内容 (如上所示)。但是，可以通过将一个专门命名的方法添加到名为 <span class="inline"><a id="A"></a>toString</span> 的结构中来定制此消息：</p>
+  <p>关于结构的最后一件事是，您可以更改结构输出到控制台的内容以进行调试。默认情况下，在结构体上调用函数 <span class="inline3_func"><a href="../GML_Reference/Debugging/show_debug_message.htm">show_debug_message</a></span> 将输出该结构体的内容 (如上所示)。不过，可以通过向名为 <span class="inline"><a id="A"></a>toString</span> 的结构添加专门命名的方法来自定义此消息：</p>
   <p class="code">mystruct =<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;a : 20,<br>
@@ -334,21 +335,25 @@
     <br>
     &nbsp; &nbsp; toString&nbsp;: function()<br>
     &nbsp; &nbsp; {<br>
-    &nbsp; &nbsp; &nbsp; &nbsp; return "This stuct says " + b + ",&nbsp;" + string(a) + " times!";<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; return "This struct says " + b + ",&nbsp;" + string(a) + " times!";<br>
     &nbsp; &nbsp; }<br>
     }<br>
     show_debug_message(mystruct);
   </p>
-  <p>现在，当调用<span class="inline">show_debug_message()</span>函数时，<span class="inline">toString</span>方法将用于生成输出，并且-使用上面的示例-您将获得：</p>
+  <p>现在，当调用<span class="inline3_func"><a href="../GML_Reference/Debugging/show_debug_message.htm">show_debug_message</a></span>函数时，将使用<span class="inline">toString</span>方法生成输出，并且通过上面的示例，您将得到：</p>
   <p class="code">This struct says Hello World, 20 times!</p>
-  <p>请注意，您还可以对结构引用调用<a href="../GML_Reference/Strings/Strings.htm"><span class="inline">string()</span></a>函数，并使用该函数将内容或<span class="inline">toString</span>方法显示到屏幕，或将其保存到文件或其他任何内容，例如：</p>
+  <p>请注意，您还可以对结构体引用调用<span class="inline3_func"><a href="../GML_Reference/Strings/string.htm">string</a></span>函数，并使用该函数将内容(或<span class="inline">toString</span>方法)显示到屏幕上，或者将其保存到文件中，或者无论如何，例如：</p>
   <p class="code">var _str = string(mystruct);<br>
     draw_text(32, 32, _str);</p>
-  <p>最后，有许多运行时函数可用于结构，以获取它们包含的变量以及其他一些内容。您可以在以下部分中找到它们：</p>
-  <ul class="colour">
-    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">变量函数</a></li>
+  <h2 id="constructors_structs_vs_objects_instances">构造函数 和 结构与对象 和 对象实例</h2>
+  <p>构造函数和结构与<a href="../../Quick_Start_Guide/Objects_And_Instances.htm">对象和实例</a>类似，因为它们也包含可以执行的变量和方法。然而，它们之间有一些重要的区别：</p>
+  <ul class="Disc">
+    <li>结构体是通过使用<span class="inline2"><a href="Language_Features/new.htm">new</a></span>运算符调用构造函数、创建结构体文字<span class="inline2">{ }</span>或由某个函数返回来创建的。另一方面，实例是使用<span class="inline3_func"><a href="../GML_Reference/Asset_Management/Instances/instance_create_depth.htm">instance_create_depth</a></span>或<span class="inline3_func"><a href="../GML_Reference/Asset_Management/Instances/instance_create_layer.htm">instance_create_layer</a></span>从对象创建的。</li>
+    <li>结构只是变量，没有事件。<span data-keyref="GameMaker Name">GameMaker</span>为所有实例执行事件，但不为结构执行事件。与对象的事件相比，结构体的方法永远不会自行执行，您必须在游戏代码中自己调用它。这可以来自<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">对象事件</a>、<a href="../GML_Reference/Time_Sources/Time_Sources.htm">时间源</a>或更具体的位置，您可以在其中"利用"<span data-keyref="GameMaker Name">GameMaker</span>的游戏循环，例如层和相机开始/结束脚本。</li>
+    <li>结构体可以有静态变量，但对象实例不能。<a href="../../The_Asset_Editors/Object_Properties/Object_Variables.htm">对象变量</a>并不等同于静态变量;它们不属于该对象，而是为在 Create 事件运行之前分配给从该对象创建的实例的<a href="Variables/Instance_Variables.htm">实例变量</a>提供默认值。</li>
   </ul>
-  <p>&nbsp;</p>
+  <h2>结构体函数</h2>
+  <p>最后，您可以在结构上使用许多运行时函数来获取它们包含的变量以及其他一些内容。您可以在<a href="../GML_Reference/Variable_Functions/Variable_Functions.htm#struct_functions">结构函数</a>下找到它们。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -358,7 +363,7 @@
         <div style="float:right">Next:&nbsp;<a href="Structs/Static_Structs.htm">静态结构</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Structs

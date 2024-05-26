@@ -59,7 +59,7 @@
   <meta name="template" content="../../../../assets/masterpages/Manual_Page.htt">
   <meta name="search-keywords" content="audio,properties">
   <meta name="rh-index-keywords" content="audio properties">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_exists.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -83,7 +83,7 @@
   <div>
   <h1><span data-field="title" data-format="default">音频属性概述</span></h1>
   <p>本页详细概述了&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;支持的音频属性以及您可以设置/更改这些属性的不同"级别"。</p>
-  <p>下表列出了基本音频属性的所有适用级别，并列出了您可以在每个级别使用设置和获取每个属性的函数。</p>
+  <p>下表列出了基本音频属性的所有适用级别，并列出了可用于设置和获取每个级别的每个属性的函数。</p>
   <table>
     <tbody>
       <tr>
@@ -160,14 +160,18 @@
         <td>Result</td>
         <td style="">G<sub>asset</sub>&nbsp;* G<sub>group</sub>&nbsp;* G<sub>emitter</sub> * G<sub>instance</sub></td>
         <td style="">P<sub>资源</sub> * P<sub>发射器</sub> * P<sub>实例</sub></td>
-        <td>Asset-level offset unless instance-level offset is given</td>
+        <td>Asset-level offset unless instance-level offset is passed to the <span class="inline2">audio_play_sound_*</span> functions</td>
         <td>M<sub>emitter</sub> &amp; M<sub>instance</sub> (bitwise AND, see <a href="../../../../Additional_Information/Bitwise_Operators.htm">Bitwise Operators</a>)</td>
       </tr>
     </tbody>
   </table>
   <h2>注意事项</h2>
-  <p>默认的资源级别增益是声音资源的"音量"滑块的值：&nbsp;</p>
-  <p><img class="center" height="268" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Asset_Gain_IDE.png" width="432">以后仍可以在游戏中通过调用以声音<em>资源</em> ID 作为参数的 <span class="inline2"><a href="audio_sound_gain.htm">audio_sound_gain</a></span>&nbsp;来更改此设置：&nbsp;</p>
+  <div data-conref="../../../../assets/snippets/Note_Sound_Editor_Volume_Is_Asset_Gain.hts">
+  <p>默认资源级增益是<a href="../../../../The_Asset_Editors/Sounds.htm">声音编辑器</a>中"音量"滑块的值：</p>
+  <p><img class="center" height="268" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Asset_Gain_IDE.png" width="432"></p>
+
+</div>
+  <p>稍后仍可以在游戏中更改此设置，方法是使用声音<em>资产</em>ID 作为参数调用<span class="inline2"><a href="audio_sound_gain.htm">audio_sound_gain</a></span>：</p>
   <p class="code">audio_sound_gain(snd_Explode, 0, 0);&nbsp; // Set the asset-level gain to 0 (new instances of this sound play muted)</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -178,7 +182,7 @@
         <div>Next:&nbsp;<a href="audio_exists.htm">audio_exists</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
 
 </div>

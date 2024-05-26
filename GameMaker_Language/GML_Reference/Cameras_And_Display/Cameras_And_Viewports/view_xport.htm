@@ -78,18 +78,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>view_xport</h1>
+  <h1><span data-field="title" data-format="default">view_xport</span></h1>
   <p>使用此内置数组，可以获取或设置给定视口的 X 位置。视口是屏幕上绘制视图的区域，任何时候最多可以有 8 个处于活动状态(数组是 0 到 7 之间的值，包括 8 个端口)。<span data-keyref="GameMaker Name">GameMaker</span> 的默认设置是游戏窗口(或背景画布)与房间大小相同，但是当您激活视口和相机时，此行为会发生变化，并且会使用<i>所有视口的边界框的总大小</i>。因此，如果在两个不同的位置有两个不同的视口，则它们所覆盖的总区域将定义游戏窗口的大小。下图说明了这一点：</p>
   <p><img alt="Canvas with multiple view ports example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/viewport_canvas.png">如果您只有<i>一个</i>视口，则设置端口的 X 或 Y 值可能会产生一些有趣的效果，但通常不实用(请参阅下图)，因此最好将 X 和 Y 位置保持为 (0,0)。</p>
   <p><img alt="view_xport example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/view_xyport.png"></p>
   <h4>语法:</h4>
-  <p class="code">view_xport[0 .. 7];</p>
+  <p class="code"><span data-field="title" data-format="default">view_xport</span>[0 .. 7]</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">view_xport[0] = 0;<br> view_yport[0] = 0;</p>
+  <p class="code">view_xport[0] = 0;<br>
+    view_yport[0] = 0;</p>
   <p>上述代码将 viewport[0] 的位置重置为显示器的 (0,0) 位置(左上角)。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -101,7 +102,7 @@
         <div style="float:right">Next:&nbsp;<a href="view_yport.htm">view_yport</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 view_xport

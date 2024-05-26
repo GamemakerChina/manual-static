@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="array_length">
   <meta name="search-keywords" content="array_length">
   <meta name="is_pure" content="true">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/array_resize.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/array_sort.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/array_resize.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/array_shuffle.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -79,8 +79,9 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>array_length</h1>
-  <p>使用此函数，您可以获得数组维度的长度 (条目数)。您提供数组索引值，该函数将返回一个整数值，表示数组包含的条目数。该函数也可以用于多维数组，只要您指定在提供数组索引时要获取的长度，就可以按照以下模式进行:</p>
+  <h1><span data-field="title" data-format="default">array_length</span></h1>
+  <p>此函数获取数组维度的长度(条目数)。</p>
+  <p>您提供数组索引值，该函数将返回一个整数值，表示数组包含的条目数。此函数也可用于多维数组，只要您在提供数组索引时指定要获取哪个维度的长度即可，遵循以下模式：</p>
   <p class="code">// Returns the first dimension of the array<br>
     val = array_length(my_array);<br>
     <br>
@@ -90,11 +91,12 @@
     // Returns the third dimension of the array<br>
     val = array_length(my_array[0][0]);<br>
     <br>
-    // etc...
+    // etc.
   </p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>如果传递给函数的数据类型不是<span data-keyref="Type_Array"><a target="_blank" href="../../GML_Overview/Arrays.htm">数组</a></span>，则该函数将返回 0。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">array_length(array_index);</p>
+  <p class="code"><span data-field="title" data-format="default">array_length</span>(array_index);</p>
   <table>
     <tbody>
       <tr>
@@ -104,14 +106,14 @@
       </tr>
       <tr>
         <td>array_index</td>
-        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
-        <td>要检查的数组的索引。</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>The array to check.</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">for (var i = 0; i &lt; array_length(a); ++i)<br>
@@ -121,7 +123,6 @@
   <p>上面的代码将循环遍历一个数组，并将每个条目设置为-1。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
@@ -129,7 +130,7 @@
         <div style="float:right">Next:&nbsp;<a href="array_resize.htm">array_resize</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 array_length

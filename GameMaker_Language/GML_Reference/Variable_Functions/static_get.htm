@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="static_get">
   <meta name="search-keywords" content="static_get">
   <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Variable_Functions/static_set.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Variable_Functions/is_instanceof.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -79,9 +79,16 @@
 
 
   <h1><span data-field="title" data-format="default">static_get</span></h1>
-  <p>此函数&nbsp;返回给定函数的静态结构，如果没有静态结构，则返回 <span class="inline2">undefined</span>。静态结构是存储函数的所有静态变量的地方。</p>
-  <p>您还可以提供一个结构，在这种情况下，它将为您提供用于创建该结构的构造函数的静态结构 (或者，如果它是使用 <span class="inline3_func"><a href="static_set.htm">static_set</a></span> 更改的，则它可能是一个不同的结构)。</p>
-  <p>在使用构造函数继承时，静态结构是链接的，也就是说，如果构造函数有父构造函数，则可以获得静态结构的静态结构。</p>
+  <p>This function&nbsp;returns the <a href="../../GML_Overview/Structs/Static_Structs.htm">Static Struct</a> for the given function or struct.</p>
+  <p>When you supply a function or method, this function returns the static struct for that function or method.</p>
+  <p>你也可以提供一个结构体。返回的内容取决于结构体：</p>
+  <ul class="colour">
+    <li>对于使用<span class="inline2"><a href="../../GML_Overview/Language_Features/new.htm">new</a></span>关键字从构造函数创建的结构：用于创建该结构的构造函数的静态结构(如果在使用<span class="inline3_func"><a href="static_set.htm">static_set</a></span>创建后更改了该结构，则为不同的结构)。</li>
+    <li>对于静态结构：<a href="../../GML_Overview/Structs/Static_Structs.htm#h">静态链</a>中的父静态结构。当使用构造函数继承时，静态结构被链接，即如果构造函数有父构造函数，则可以获得静态结构的静态结构。</li>
+    <li>对于任何其他结构：此结构的"父"结构，它将结构链接到"根"结构。</li>
+    <li>对于"root"结构：<span class="inline2">undefined</span></li>
+  </ul>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You can pass the result of&nbsp;<span class="inline3_func"><a href="method_get_index.htm">method_get_index</a></span>&nbsp;to get the static struct of a method's function.</p>
   <p>请参阅：<a href="../../GML_Overview/Structs/Static_Structs.htm">静态结构</a></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
@@ -100,17 +107,18 @@
       </tr>
       <tr>
         <td>struct_or_func_name</td>
-        <td><span data-keyref="Type_Struct"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Function"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Function</a></span></td>
-        <td>要获取其静态结构的结构或函数</td>
+        <td><span data-keyref="Type_Struct"><a target="_blank" href="../../GML_Overview/Structs.htm">Struct</a></span>,&nbsp;<span data-keyref="Type_Function"><a target="_blank" href="../../GML_Overview/Script_Functions.htm">Function</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Method"><a target="_blank" href="../../GML_Overview/Method_Variables.htm">Method</a></span></td>
+        <td>The struct, function or method for which to get the static struct</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Struct"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Undefined"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">undefined</a></span>&nbsp;if no static struct is set</p>
+  <p class="code"><span data-keyref="Type_Struct"><a target="_blank" href="../../GML_Overview/Structs.htm">Struct</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Undefined"><a target="_blank" href="../../GML_Overview/Data_Types.htm">undefined</a></span>&nbsp;(for the root struct)</p>
   <p>&nbsp;</p>
-  <h4>例子:</h4>
-  <p class="code">function counter() {<br>
+  <h4>示例1：</h4>
+  <p class="code">function counter()<br>
+    {<br>
     &nbsp;&nbsp; &nbsp;static count = 0;<br>
     &nbsp;&nbsp; &nbsp;return count ++;<br>
     }<br>
@@ -127,6 +135,23 @@
   <p>上面的代码创建了带有静态变量的函数 <span class="inline2">counter()</span>。该函数被重复调用，因此其静态变量的值会增加。</p>
   <p>然后返回该函数的静态结构，并将其存储在变量 (<span class="inline2">_static_counter</span>) 中。然后，它打印函数中的静态变量，方法是首先直接从函数中读取静态变量 (<span class="inline2">counter.count</span>)，然后从静态结构中读取它 (<span class="inline2">_static_counter.count</span>)。两者都打印相同的值，因为它们引用完全相同的变量。</p>
   <p>&nbsp;</p>
+  <h4>示例 2：在静态链中向上移动</h4>
+  <p class="code">function item() constructor<br>
+    {<br>
+    &nbsp; &nbsp; static hello = function()<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; show_debug_message("Hello World!");<br>
+    &nbsp; &nbsp; }<br>
+    }<br>
+    function potion() : item() constructor {}<br>
+    <br>
+    my_potion = new potion();<br>
+    var _static_potion = <span data-field="title" data-format="default">static_get</span>(my_potion);<br>
+    var _static_parent = <span data-field="title" data-format="default">static_get</span>(_static_potion);<br>
+    _static_parent.hello();
+  </p>
+  <p>上面的代码首先创建两个构造函数：带有单个静态函数 <span class="inline2">hello</span> 的父构造函数 <span class="inline3_func">item</span> 和子构造函数 <span class="inline2">potion</span>。 然后，它创建一个新的 <span class="inline2">potion</span> 并将其存储在变量 <span class="inline2">my_potion</span> 中。 接下来，调用 <span class="inline3_func"><span data-field="title" data-format="default">static_get</span></span> 以获取 <span class="inline2">my_potion</span> 的静态结构。 返回的静态结构体存储在临时变量 <span class="inline2">_static_potion</span> 中，是静态链的一部分。 从此时起，对 <span class="inline3_func"><span data-field="title" data-format="default">static_get</span></span> 的所有进一步调用都将在静态链中向上移动。 再次调用 <span class="inline3_func"><span data-field="title" data-format="default">static_get</span></span>，返回 <span class="inline2">item</span> 的静态值并将其存储在另一个临时变量 <span class="inline2">_static_parent</span> 中。 最后，调用该结构体的 <span class="inline3_func">hello</span> 方法。</p>
+  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
@@ -135,7 +160,7 @@
         <div>Next:&nbsp;<a href="static_set.htm">static_set</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 static_get

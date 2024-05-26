@@ -79,15 +79,20 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>game_save_id</h1>
-  <p>此<b>只读</b>变量将返回游戏用于保存文件的目录的完整路径ID。此目录可能对其他应用程序可见，也可能不可见，具体取决于平台。</p>
-  <p>在HTML5目标上，它将返回一个空字符串。</p>
-  <p class="note"><span class="note">注意</span>此变量仅供参考，不应<b>用于获取文件路径或任何类似内容，因为它不能在所有平台上正常工作。</b></p>
+  <p>此 <b> 只读 </b> 变量指向在目标设备上为您的游戏保留的本地存储区域。请参阅 <a href="../../../Additional_Information/The_File_System.htm#h"> 保存区域位置 </a>。</p>
+  <p>一般来说，您不需要使用它来写入或读取保存区域中的文件，因为 GameMaker 在读取 / 写入文件时会自动解析保存区域的路径。例如，这个：</p>
+  <p class="code">buffer_save(buf, game_save_id + "my_file.dat");</p>
+  <p>最好这样做：</p>
+  <p class="code">buffer_save(buf, "my_file.dat");</p>
+  <p>该目录对于其他应用程序可能是可见的，也可能是不可见的，具体取决于平台。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在 HTML5 目标上，它将返回一个空字符串。</p>
+  <p>阅读：<a href="../../../Additional_Information/The_File_System.htm"> 文件系统 </a></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">game_save_id</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">save_dir = game_save_id;</p>
@@ -102,7 +107,7 @@
         <div style="float:right">Next:&nbsp;<a href="game_display_name.htm">game_display_name</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 game_save_id

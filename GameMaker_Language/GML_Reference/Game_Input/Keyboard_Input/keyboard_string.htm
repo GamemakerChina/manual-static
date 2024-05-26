@@ -79,14 +79,15 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">keyboard_string</span></h1>
-  <p>此变量保存一个字符串，该字符串包含在键盘上键入的最后 (最多) 1024字符。此字符串将仅包含键入的可打印字符，但它<i>将</i>通过擦除最后一个字符来正确响应按下退格键。此变量<i>不是</i>只读的，您可以更改它，例如，如果您已经处理过它，则将其设置为 "" (空字符串)，并且可以使用<a href="../../Strings/Strings.htm">字符串函数</a>来操作它。</p>
+  <p>该变量保存一个字符串，其中包含键盘上输入的最后 (最多 )1024 个字符。该字符串仅包含键入的可打印字符，但它 <i> 将 </i> 通过擦除最后一个字符来正确响应按退格键。该变量 <i> 不是 </i> 只读的，您可以更改它，例如，如果您已经处理过它，则将其设置为 <span class="inline2">""</span>( 空字符串)，并且您可以使用 <a href="../../Strings/Strings.htm"> 字符串函数 </a> 来操纵它。</p>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 当使用屏幕上的<a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">虚拟键盘</a>时，此变量<i>只</i>在用键盘输入时进行更新。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在 Xbox GDK 上，此变量仅在使用 <a href="../Virtual_Keys_And_Keyboards/keyboard_virtual_show.htm"> 虚拟键盘 </a> 时起作用。请参阅 <a href="https://help.gamemaker.io/hc/en-us/articles/15111170357149"> 这篇帮助台文章 </a> 了解更多信息。</p>
   <p>&nbsp;</p>
   <h4><b>语法:</b></h4>
   <p class="code"><span data-field="title" data-format="default">keyboard_string</span></p>
   <p>&nbsp;</p>
   <h4><b>返回:</b></h4>
-  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></p>
   <p>&nbsp;</p>
   <h4><b>示例:</b></h4>
   <p class="code">if string_length(<span data-field="title" data-format="default">keyboard_string</span>) &gt; 15<br>
@@ -103,7 +104,7 @@
         <div style="float:right">Next:&nbsp;<a href="io_clear.htm">io_clear</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 keyboard_string

@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Reference section for DS Lists">
   <meta name="rh-index-keywords" content="">
   <meta name="search-keywords" content="DS Lists">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_write.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_to_mp_grid.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -78,8 +78,8 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>DS 列表</h1>
-  <p>DS列表是一种数据结构，它在添加时按顺序存储信息(非常类似于<a href="../../../GML_Overview/Arrays.htm">数组</a>)。DS列表是非常灵活的数据结构，允许您在列表末尾添加值或在列表中间的某个位置插入值，并使您能够改变顺序(随机化值)或按升序或降序对其进行排序。</p>
+  <h1><span data-field="title" data-format="default">DS Lists</span></h1>
+  <p>A DS list is a data structure that stores information sequentially as it is added (much like an&nbsp;<a href="../../../GML_Overview/Arrays.htm">array</a>). DS lists are very flexible data structures that permit you to add values at the end or insert them somewhere in the middle of the list, as well as giving you the ability to shuffle the order (to randomise the values) or sort them in an ascending or descending order.</p>
   <p class="note"><strong><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span></strong> 建议使用 <a href="../../../GML_Overview/Arrays.htm"> 数组 </a> 而不是 DS 列表，因为它们具有相似的功能、更易于使用并且会自动进行垃圾收集。</p>
   <p>访问DS列表数据结构时，您应该始终尝试使用<b>整数值</b>作为列表位置，如果不这样做，所有非整数索引都将被<span data-keyref="GameMaker Name">GameMaker</span>打乱。如果这不是您所需要的，那么在传递您希望检查的索引之前，您需要自己进行四舍五入。</p>
   <div data-conref="../../../../assets/snippets/Note_DS_Destroy_When_No_Longer_Needed.hts">
@@ -88,8 +88,9 @@
 </div>
   <p>除了下面列出的特定函数外，您还可以使用<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>(称为<i>访问器</i>)来添加或修改DS列表的内容。此存取器类似于1D阵列，具有以下语法：</p>
   <p class="code">list_index[| index]</p>
-  <p>您可以从<a href="../../../GML_Overview/Accessors.htm">访问器</a>的GML概述页面中找到更多信息和示例。</p>
-  <p>存在以下处理DS列表的函数：</p>
+  <p>You can find more information, plus examples, from the GML Overview page on <a href="../../../GML_Overview/Accessors.htm">Accessors</a>.</p>
+  <h2 id="func_ref">Function Reference</h2>
+  <h3 id="func_ref_general">General</h3>
   <ul class="colour">
     <li><a href="ds_list_create.htm">ds_list_create</a></li>
     <li><a href="ds_list_destroy.htm">ds_list_destroy</a></li>
@@ -106,11 +107,14 @@
     <li><a href="ds_list_shuffle.htm">ds_list_shuffle</a></li>
     <li><a href="ds_list_sort.htm">ds_list_sort</a></li>
     <li><a href="ds_list_copy.htm">ds_list_copy</a></li>
+  </ul>
+  <h3 id="func_ref_serialisation">Serialisation</h3>
+  <ul class="colour">
     <li><a href="ds_list_read.htm">ds_list_read</a></li>
     <li><a href="ds_list_write.htm">ds_list_write</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>DS列表也可以用于保存<a href="../DS_Maps/DS_Maps.htm">DS映射</a>和其他DS列表，因此我们有一些特殊函数用于"标记"或"标记"列表中的位置以保存这些数据结构。一般来说，这不是必需的，但它的优点是，当父列表被销毁时，它会自动垃圾收集(销毁)标记的数据结构，并且当与<a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><span class="inline">json_encode</span></a>函数结合使用时，它也是必需的，以便列表及其数据得到正确编码。这方面的函数是：</p>
+  <h3 id="func_ref_json">JSON</h3>
+  <p>DS&nbsp;lists can be used hold <a href="../DS_Maps/DS_Maps.htm">DS maps</a> and other DS lists too, and so we have some special functions that are used to "flag" or "mark" positions within the list as holding these data structures. In general this is not required, but it has the advantage of automatically garbage collecting (destroying) the marked data structures when the parent list is destroyed, and it's also required when used in conjunction with the&nbsp;<span class="inline3_func"><a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm">json_encode</a></span>&nbsp;function so that the list and its data are properly encoded. The functions for this are:</p>
   <ul class="colour">
     <li><a href="ds_list_mark_as_list.htm">ds_list_mark_as_list</a></li>
     <li><a href="ds_list_mark_as_map.htm">ds_list_mark_as_map</a></li>
@@ -119,15 +123,14 @@
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构</a></div>
-        <div style="float:right">Next: <a href="../DS_Maps/DS_Maps.htm">映射 Map</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Data_Structures.htm">数据结构</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../DS_Maps/DS_Maps.htm">映射 Map</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 DS Lists

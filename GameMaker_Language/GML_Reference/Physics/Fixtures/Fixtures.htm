@@ -90,12 +90,12 @@
   </ul>
   <p>正如您所看到的，<span data-keyref="GameMaker Name">GameMaker</span> 只需几个简单的函数，就可以帮助您创建复杂的系统和交互，让您的游戏获得前所未有的真实感。</p>
   <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span></b> 您可以定义一个固定装置并将其绑定到多个实例 (想象一下台球桌，其中所有的球都具有相同的物理属性，但每个球都是一个离散的实体)。您还可以将多个夹具绑定到单个实例并组合物理属性 (例如，使用两个三角形多边形夹具创建一个星形)</p>
-  <h3 id="h"><span></span>Updating Existing Contacts</h3>
+  <h3 id="h">更新现有联系</h3>
   <p>当两个物理实例的边界框重叠 (即围绕其实际形状的矩形区域) 时，它们就 " 接触"。在这种情况下，在绑定固定装置上调用 <span class="inline3_func">physicals_set_*</span> 函数之一 <em> 将更改 </em> 属性的值，但为了强制物理引擎也 <em> 考虑此新值 </em>}，您需要使用 <span class="inline2"><a href="../Physics_Variables/phy_active.htm">phy_active</a></span> 停用并重新激活物理实例：</p>
-  <p class="code"><span>var _new_friction = 100;<br>
-      phy_active = false;</span><br>
-    <span>physics_set_friction(fixture_id, _new_friction);</span><br>
-    <span>phy_active = true;</span>
+  <p class="code">var _new_friction = 100;<br>
+      phy_active = false;<br>
+    physics_set_friction(fixture_id, _new_friction);<br>
+    phy_active = true;
   </p>
   <h2 id="func_ref">功能参考</h2>
   <h3 id="func_ref_general">常规</h3>
@@ -150,7 +150,7 @@
         <div style="float:right">Next: <a href="../Joints/Joints.htm">关节</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Fixtures

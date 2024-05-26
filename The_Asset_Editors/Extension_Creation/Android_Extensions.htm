@@ -109,8 +109,8 @@
     YYAndroidGradle<br>
     YYAndroidGradleEnd<br>
     YYAndroidGradleAndroid<br>
-    <span>YYAndroidGradleDependencies<span>&nbsp;<br>
-        YYAndroidGradleProperties</span></span><br>
+    YYAndroidGradleDependencies&nbsp;<br>
+    YYAndroidGradleProperties<br>
     YYAndroidManifestAttributes<br>
     YYAndroidManifestApplicationAttributes<br>
     YYAndroidManifestActivityAttributes<br>
@@ -155,11 +155,42 @@
     </tbody>
   </table>
   <p class="note"><span class="note">注意</span>&nbsp;这些路径仅适用于VM；对于YYC，注入的代码将进入<span class="inline">{RUNTIME}/yyc</span>目录，其中的路径可能与VM的路径不同。</p>
+  <h3 id="h1">Conditional Injection</h3>
+  <p>You can inject code conditionally, depending on the value of one of the&nbsp;<a href="../Extensions.htm#extension_options">Extension Options</a>.</p>
+  <p>Inside a code injection group, use <span class="inline2">toInject</span> with the required option in <span class="inline2">condition</span>:</p>
+  <p class="code">&lt;YYIosPlist&gt;<br>
+    &nbsp;<br>
+    &lt;toInject condition='${YYEXTOPT_MyExtension_ShouldInject}'&gt;<br>
+    ...<br>
+    &lt;/toInject&gt;<br>
+    &nbsp;<br>
+    &lt;/YYIosPlist&gt;</p>
+  <p>This will only inject the code between the <span class="inline2">toInject</span> tags when the option&nbsp;<span class="inline2">YYEXTOPT_MyExtension_ShouldInject</span> is <span class="inline2">true</span>. The option should be of the <strong>Boolean</strong> type.</p>
+  <p>You can also check against a specific value by specifying it in the <span class="inline2">match</span> attribute:</p>
+  <p class="code">&lt;YYIosPlist&gt;<br>
+    &nbsp;<br>
+    &lt;toInject condition='${YYEXTOPT_MyExtension_ShouldInject}' match='FooBar'&gt;<br>
+    &lt;string&gt;This content is injected IF condition == match&lt;/string&gt;<br>
+    &lt;/toInject&gt;<br>
+    &nbsp;<br>
+    &lt;/YYIosPlist&gt;</p>
+  <p>This will only inject the code between the <span class="inline2">toInject</span> tags when the option&nbsp;<span class="inline2">YYEXTOPT_MyExtension_ShouldInject</span> is equal to&nbsp;<span class="inline2">"FooBar"</span>. This allows you to match against a value of any type, as this check is done at compile time when all extension option values are provided as strings.</p>
+  <p>Also see:&nbsp;<a href="Creating_An_Extension.htm#h2">Using Extension Options</a></p>
   <h3>使用提示</h3>
   <ul class="colour">
     <li>您可以使用&nbsp;<span class="inline2">YYAndroidLogcat</span>将自定义日志标签与 <a href="https://developer.android.com/studio/command-line/logcat">Logcat</a> 一起使用。设置您的标签的优先级，例如:<br> <br> <span class="inline2">&lt;YYAndroidLogcat&gt;</span><br> <span class="inline2">myDebugTag:V</span><br> <span class="inline2">&lt;/YYAndroidLogcat&gt;</span><br> <br> 
 在您的扩展中，使用日志记录功能记录带有此标签的消息，例如<span class="inline2">Log.i("myDebugTag", "Hello World");</span> </li>
   </ul>
+  <h2>File Injection</h2>
+  <p>Within the text files added to your extension (see: <a href="Creating_An_Extension.htm#h3">Adding Files</a>), you can inject code from the Code Injection window by mentioning a tag inside <span class="inline2">${ }</span>. For example, say you have a file with the following contents:</p>
+  <p class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+    <br>
+    ${YYAndroidMyInjectionTag}
+  </p>
+  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;You can create your own tags for this use. Such custom tags must start with <span class="inline2">YYAndroid</span>.</p>
+  <p>The <span class="inline2">${YYAndroidMyInjectionTag}</span> part here will be replaced with the contents of the <span class="inline2">&lt;YYAndroidMyInjectionTag&gt; &lt;/YYAndroidMyInjectionTag&gt;</span> group from the extension's Code Injection window.</p>
+  <h3>Custom Files</h3>
+  <p>You can create a folder called "ProjectFiles" in the folder of your extension (alongside its <span class="inline2">.yy</span> file). Any files placed in this folder will be moved to the root of the generated Android project at compile time, and can also take injection tags as described above.</p>
   <h2>源文件</h2>
   <p>一旦你设置正确，你将需要添加你的扩展包工作所需的文件。要做到这一点，你需要点击底部的按钮，<em>添加SDK</em>或<em>添加源代码</em>，然后浏览你想添加的文件。添加的文件将和你的扩展名一起存储在<span class="inline">Android Source</span>目录中。你可以在任何时候通过右键点击<img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">&nbsp;扩展名，选择<em>在资源管理器中打开</em>，来打开这个位置。</p>
   <p>关于你为Android创建本地扩展的信息，请参见<a href="Extended_Examples.htm">示例代码</a>。</p>
@@ -172,7 +203,7 @@
         <div style="float:right">Next: <a href="iOS_Extensions.htm">iOS Extensions</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Android Extensions

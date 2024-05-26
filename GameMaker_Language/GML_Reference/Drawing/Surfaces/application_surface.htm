@@ -78,20 +78,25 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>application_surface</h1>
+  <h1><span data-field="title" data-format="default">application_surface</span></h1>
   <p>此全局内置变量可用于访问应用程序表面，用于任何<a href="Surfaces.htm">表面函数</a>。此表面是永久可用的，并且是<span data-keyref="GameMaker Name">GameMaker</span>绘制游戏的地方。</p>
   <p>默认情况下，常规绘制事件(<em>绘制开始</em>、<em>绘制</em>和<em>绘制结束</em>)将绘制到此表面。其他绘制事件(如<em>绘制前/绘制后</em>和<em>绘制 GUI</em>) 不会在应用程序表面上绘制。有关这些事件如何工作的详细信息，请参阅<a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">绘制事件</a>。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">application_surface;</p>
+  <p class="code"><span data-field="title" data-format="default">application_surface</span>;</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Surface"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm">Surface ID</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Surface"><a target="_blank" href="surface_create.htm">Surface</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">surface_resize(application_surface, display_get_gui_width(), display_get_gui_height())</p>
-  <p>上述代码将重新调整应用程序表面的大小，使其与 UI 层的比例为 1:1。</p>
-  <p>&nbsp;</p>
+  <p class="code">var _cam_width = 320;<br>
+    var _cam_height = 180;<br>
+    var _resolution_scale = 4;<br>
+    <br>
+    surface_resize(<span data-field="title" data-format="default">application_surface</span>, _cam_width * _resolution_scale, _cam_height * _resolution_scale);
+  </p>
+  <p>这定义了游戏内摄像机的尺寸 (320 x 180) 和分辨率比例值 (4x)，即目标分辨率相对于游戏内摄像机的大小。</p>
+  <p>相机尺寸乘以该分辨率比例并应用为应用程序表面的尺寸，这定义了游戏的分辨率。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -101,7 +106,7 @@
         <div style="float:right">Next:&nbsp;<a href="application_surface_enable.htm">application_surface_enable</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 application_surface

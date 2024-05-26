@@ -88,8 +88,16 @@
     <li>[3] = 目标 Alpha 组件 (默认为 <span class="inline">bm_inv_src_alpha</span>(1-As))</li>
   </ul>
   <p>数组的值将是以下常量之一("s"表示从源获取的值，而"d"表示从目标获取的值)：</p>
+  <div data-conref="../../../../assets/snippets/Table_Gpu_blend_modes_ext.hts">
   <table>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
     <tbody>
+      <tr>
+        <th colspan="2"><span data-keyref="Type_Constant_Draw_Blend_Mode_Factor"><a target="_blank" href="gpu_get_blendmode_ext.htm">混合模式因子常量</a></span></th>
+      </tr>
       <tr>
         <th>常量</th>
         <th>混合因子(红色、绿色、蓝色、透明度)</th>
@@ -140,6 +148,8 @@
       </tr>
     </tbody>
   </table>
+
+</div>
   <p>以这种方式创建扩展混合模式时，将从一个混合模式获取 RGB 组件，从另一个混合模式获取 Alpha 组件，因此，例如，如果使用 <span class="inline">bm_zero</span>(0,0,0,0) 作为 RGB 混合模式，<span class="inline">bm_one</span> 作为 Alpha 混合模式，将获得 (0,0,0,1) 的复合混合。</p>
   <p>请注意，您可以直接在数组中更改这些值，并将整个数组作为单个参数传递给函数(如下例所示)。</p>
   <p>&nbsp;</p>
@@ -147,7 +157,7 @@
   <p class="code">gpu_get_blendmode_ext_sepalpha();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span> (4 elements only; see above for constants)</p>
+  <p class="code"><span data-keyref="Type_Array"><a target="_blank" href="../../../GML_Overview/Arrays.htm">Array</a></span> (4 elements only; see above for constants)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var bm = gpu_get_blendmode_ext_sepalpha();<br>
@@ -165,7 +175,7 @@
         <div style="float:right">Next:&nbsp;<a href="gpu_get_blendmode_src.htm">gpu_get_blendmode_src</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 gpu_get_blendmode_ext_sepalpha

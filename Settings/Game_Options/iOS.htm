@@ -81,8 +81,9 @@
   <h1><span data-field="title" data-format="default">iOS</span>&nbsp;游戏设置</h1>
   <p>本节概述了可用于控制如何编译您的 iOS 游戏项目的不同选项。不同的章节是:</p>
   <h2>常规</h2>
-  <p><img alt="iOS General Options" class="center" src="../../assets/Images/Settings/iOS_General_Options.png">The first part of the General section covers the <strong>Product Information</strong> about your game, including its <strong>Display Name</strong>, its <strong>Bundle Name</strong>&nbsp;and the <strong>Version</strong> info. Note that the Bundle Name must be in the correct reverse URL format for the final build of the game to work correctly, e.g.&nbsp;<span class="inline">com.[Company].[GameName]</span>. Here you can also give the <strong>Team Identifier</strong> that you wish to use for signing the final application that <span data-keyref="GameMaker Name">GameMaker</span> creates for you. Setting it here will override the Team ID that you have supplied in the <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm">iOS Preferences</a>.</p>
-  <p>第二件事是填写游戏的<strong>构建设置</strong>。首先，您可以设置游戏可以运行的允许<strong>方向</strong>，以获得最佳用户体验。可用选项包括：</p>
+  <p><img alt="iOS General Options" class="center" src="../../assets/Images/Settings/iOS_General_Options.png"> 一般信息部分的第一部分涵盖了游戏的 <strong> 产品信息 </strong>，包括其 <strong> 显示名称 </strong>、<strong> 捆绑包名称 </strong>、<strong> 版本信息 </strong> 和 <strong> 版本号 </strong>。请注意，捆绑包名称必须采用正确的反向 URL 格式，游戏的最终版本才能正常工作，例如 <span class="inline">. com.[Company].[GameName]</span>。在这里您也可以给予您希望用于签署 <span data-keyref="GameMaker Name">GameMaker</span> 为您创建的最终应用程序的 <strong> 团队标识符 </strong>。在这里设置它将覆盖您在 <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm">iOS 偏好 </a> 设置中提供的团队 ID。</p>
+  <p>"<strong>Min Version</strong>" is the minimum version of iOS that the game can be played on.</p>
+  <p>The next thing to do is fill in the <strong>Build Settings</strong> for your game. To start with you set the allowed&nbsp;<strong>Orientation</strong>s that your game can be run on for the best user experience. The available options are:</p>
   <ul class="colour">
     <li>允许纵向</li>
     <li>允许翻转纵向方向</li>
@@ -95,22 +96,8 @@
     <li><strong>IPad</strong>: iPad 设备</li>
     <li><strong>Both</strong>: iPhone/iPod 和 iPad</li>
   </ul>
-  <p>接下来是<strong><a id="CocoaPods"></a>CocoaPods</strong>复选框。选中它可以自动让<span data-keyref="GameMaker Name">GameMaker</span>使用<a href="https://cocoapods.org/">CocoaPods</a>依赖管理器。启用后，<span data-keyref="GameMaker Name">GameMaker</span>将在构建项目时执行以下步骤：</p>
-  <ul class="colour">
-    <li>检查CocoaPods是否安装，如果没有，<span data-keyref="GameMaker Name">GameMaker</span>将安装它。</li>
-    <li>检查Podfile和Podfile.lock文件是否存在，如果不存在则创建它们。如果使用<a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm">扩展编辑器</a>将CocoaPods添加到<a href="../../The_Asset_Editors/Extensions.htm">iOS扩展</a>，则需要这些文件。这些文件包含<span data-keyref="GameMaker Name">GameMaker</span>在构建游戏时设置任何列出的CocoaPods所需的特定预生成宏。</li>
-    <li>执行<span class="inline2">pod install</span>命令。</li>
-  </ul>
-  <p>以下指南包含有关使用CocoaPods的更多信息，包括手动安装和创建Podfile和Podfile.lock文件：</p>
-  <ul class="colour">
-    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858">iOS and tvOS: Using Cocoa Pods</a></li>
-  </ul>
-  <div data-conref="../../assets/snippets/Note_important_CocoaPods.hts">
-  <p class="note"><span data-conref="../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>提示CocoaPods复选框可以在<span data-keyref="GameMaker Name">GameMaker</span> 2022.11及更高版本中找到。旧版本和LTS版本显示两个按钮; <strong>Podfile</strong>和<strong>Podfile.lock</strong>，以生成相应的文件。查看<a href="https://help.yoyogames.com/hc/en-us/articles/360008958858">iOS和tvOS：使用Cocoa Pods</a>指南了解更多信息。</p>
-
-</div>
-  <p>Finally, you can check or un-check the option to <strong>Defer Home Indicator Output</strong>. When this is checked, the home bar will always be shown at a low alpha, and the first swipe wakes the bar and the second swipe takes you home. If the option is un-checked, then the bar is not shown in-game, but the first edge swipe will take you home. Default is un-checked.</p>
-  <p>&nbsp;</p>
+  <p>您可以勾选或取消勾选<strong>延迟主指示器输出</strong>选项。勾选此选项后，主栏将始终以低alpha显示，第一次滑动将唤醒主栏，第二次滑动将带您回家。如果未勾选此选项，则主栏不会在游戏中显示，但第一次边缘滑动将带您回家。默认为未勾选。</p>
+  <p>最后，您可以<strong id="enable_broadcast_networking">启用广播网络</strong>。启用后，<span data-keyref="GameMaker Name">GameMaker</span>将向您在游戏中发送的广播或多播消息添加多播权限(<a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_networking_multicast">com.apple.developer.networking.multicast</a>)。</p>
   <h2>图形</h2>
   <p><img alt="iOS Graphics Options" class="center" src="../../assets/Images/Settings/iOS_Graphics_Options.png">这里您可以使用下列选项更改与游戏显示方式相关的下列详细信息:</p>
   <ul class="colour">
@@ -143,7 +130,7 @@
         <div style="float:right">Next: <a href="tvOS.htm">tvOS</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 iOS Game Options

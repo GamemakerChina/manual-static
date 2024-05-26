@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../../..";
     gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.3.14.0_25";
+    gTopicId = "8.2.2.3.14.0_26";
   
 //]]></script>
 
@@ -78,11 +78,12 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>room_set_viewport</h1>
-  <p>使用此函数，您可以为游戏中任何房间<i>(当前房间</i>除外)设置视口属性。 提供房间索引以在中设置视图端口，提供视图端口索引(从 0 到 7)，然后提供视图端口在房间开始是否可见(设置为<span class="inline">true</span>以使端口可见，否则设置为<span class="inline">false</span>)。然后设置x和y坐标(对应于视图端口的左上角位置)，然后设置宽度和高度(以像素为单位)。</p>
+  <h1><span data-field="title" data-format="default">room_set_viewport</span></h1>
+  <p>此函数设置游戏中 <i> 除当前房间之外的任何房间 </i> 的视口属性。</p>
+  <p>您提供用于设置视口的房间索引、视口索引 (从 0 到 7)，以及视口是否应在房间开始处可见 (设置为 <span class="inline2">true</span> 以使端口可见，否则为 <span class="inline2">false</span>)。之后，设置 x 和 y 坐标 (对应于视口的左上角位置)，然后设置宽度和高度 (以像素为单位)。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">room_set_viewport(rm, vind, vis, xport, yport, wport, hport);</p>
+  <p class="code"><span data-field="title" data-format="default">room_set_viewport</span>(rm, vind, vis, xport, yport, wport, hport);</p>
   <table>
     <tbody>
       <tr>
@@ -92,37 +93,37 @@
       </tr>
       <tr>
         <td>rm</td>
-        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
-        <td>要设置的房间的索引</td>
+        <td><span data-keyref="Type_Asset_Room"><a target="_blank" href="../../../../The_Asset_Editors/Rooms.htm">Room Asset</a></span></td>
+        <td>设定的房间</td>
       </tr>
       <tr>
         <td>vind</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要设置的视口的索引</td>
       </tr>
       <tr>
         <td>vis</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
-        <td>视口的可见性(<span class="inline">true</span>可见，<span class="inline">false</span>不可见)</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>视口的可见性(<span class="inline2">true</span>可见，<span class="inline2">false</span>不可见)</td>
       </tr>
       <tr>
         <td>xport</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
-        <td>房间中视口的X位置</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>房间中视口的 x 位置</td>
       </tr>
       <tr>
         <td>yport</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>视口在房间中的Y位置</td>
       </tr>
       <tr>
         <td>wport</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>视口的宽度(以像素为单位)</td>
       </tr>
       <tr>
         <td>hport</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>视口高度(单位：像素)</td>
       </tr>
     </tbody>
@@ -136,18 +137,17 @@
     room_set_width(global.myroom, 640);<br>
     room_set_height(global.myroom, 480);<br>
     room_set_viewport(global.myroom, 0, true, 0, 0, 640, 480);</p>
-  <p>这将设置变量"global.myroom"中索引的房间中的视图端口[ 0]属性。</p>
-  <p>&nbsp;</p>
+  <p>这将设置变量 <span class="inline2">global.myroom</span> 中索引的房间中的视口 [0] 属性。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Rooms.htm">房间</a></div>
+        <div style="float:left">Back:&nbsp;<a href="Rooms.htm">房间</a></div>
         <div style="float:right">Next:&nbsp;<a href="room_get_viewport.htm">room_get_viewport</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 room_set_viewport

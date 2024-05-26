@@ -108,21 +108,23 @@
     &nbsp;&nbsp;&nbsp;&nbsp;inventory[_i] = 0;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;_i += 1;<br>
     }</p>
-  <p>上面的代码创建了一个名为"<span class="inline">_i</span>"的局部变量，并将其设置为0，所有这些都在同一行中完成。请注意，在以前的<i>GameMaker</i>版本中<i>中，你必须先声明你的局部变量，然后</i>为它们赋值，但在目前版本中，你可以同时声明<i>和</i>为它们赋值。然后，上面的代码使用这个变量来初始化一个<a href="../Arrays.htm">数组</a>。由于变量"<span class="inline">_i</span>"不会被用于实例中除此以外的任何其他函数，所以它可以是局部范围的。下面是另外一个例子。</p>
+  <p>上面的代码创建了一个名为"<span class="inline">_i</span>"的局部变量并将其设置为 0，所有这些都在同一行中。请注意，在之前版本的<span data-keyref="GameMaker Name">GameMaker</span>中，您必须先声明局部变量，<i>然后</i>为其赋值，但在此版本中，您可以同时声明并为其赋值。<i>然后</i>，上面的代码使用该变量来初始化一个<a href="../Arrays.htm">数组</a>。由于变量"<span class="inline">_i</span>"不会用于实例中除此之外的任何其他函数，因此它的作用域可以是本地的。这里还有一个例子：</p>
   <p class="code">var _x, _y;<br>
     _x = x - 32 + irandom(64);<br>
     _y = y - 32 + irandom(64);<br>
     instance_create_layer(_x, _y, "Effects", obj_blood);</p>
   <p>这里我们使用了局部变量"<span class="inline">_x</span>"和"<span class="inline">_y</span>"来存储一些随机的坐标，然后用它们来创建一个实例。在这个例子中，你可以看到，严格来说，我们没有必要使用这些变量，但为了可读性和易用性，我们还是使用了。比起使用这段代码，我们在这里做的事情要清楚和明显得多。</p>
   <p class="code">instance_create_layer(x - 32 + irandom(64), y - 32 + irandom(64), "Effects", obj_guts);</p>
-  <p>关于<span class="inline">var</span>声明的局部变量，还有一件事需要注意......因为它们对运行它们的事件或函数来说是唯一的，所以它们也可以通过代码在任何其他实例中使用！这意味着我们可以使用这些变量来设置和改变其他实例中的东西，使用"<span class="inline">with()</span>"结构。这意味着我们可以通过"with()"结构，使用这些变量来设置和改变其他实例中的东西(更多信息请参见<a href="../Variables_And_Variable_Scope.htm">变量范围</a>部分)。实际的代码本身看起来会是这样的。</p>
+  <p>您还可以在单​​个局部变量语句中声明多个变量，并同时为每个变量分配一个值：</p>
+  <p class="code">var a = 10, b = "a text", c = {index: 0, previous: -1};</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>您还可以在<a href="../Language_Features/for.htm">for</a>循环的<span class="inline2">&lt;赋值&gt;</span>部分中使用上述多变量初始化。</p>
+  <p>关于<span class="inline">var</span>声明的局部变量的最后一件事应该注意...由于它们对于运行它们的事件或函数来说是唯一的，因此它们也可以通过代码在任何其他实例中使用！这意味着我们可以使用这些变量通过"<span class="inline">with()</span>"构造来设置和更改其他实例中的内容(有关详细信息，请参阅有关<a href="../Variables_And_Variable_Scope.htm">变量范围</a>的部分)。实际的代码本身看起来像这样：</p>
   <p class="code">var num = instance_number(obj_Enemy);<br>
     with (obj_Enemy)<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;if num&gt;10 instance_destroy();<br>
     }</p>
   <p>上述代码之所以有效，是因为<span class="inline">var</span>声明的变量是它所包含的<i>事件</i>(或函数)的局部，而不是实例，也不是游戏世界，所以只要在同一个代码块中，就可以在任何对象的任何函数中使用。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -132,7 +134,7 @@
         <div style="float:right">Next: <a href="Instance_Variables.htm">实例变量</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 local variables

@@ -107,19 +107,19 @@
       </tr>
       <tr>
         <td>url</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>您希望从中获取信息的服务器的 Web 地址</td>
       </tr>
       <tr>
         <td>string</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要发送到指定 URL 的字符串</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">Async Request ID</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../Asynchronous_Functions.htm">Async Request ID</a></span></p>
   <p>&nbsp;</p>
   <h4>扩展示例：</h4>
   <p><span class="inline">http_post_string()</span> 函数可以从任何事件调用，并且由于它是异步的，因此回调几乎可以是即时的，也可能需要几秒钟。 调用函数很简单，看起来像这样：</p>
@@ -127,9 +127,9 @@
     post = http_post_string("http://www.angusgames.com/game?game_id=" + string(global.game_id), str);</p>
   <p>上面的代码使用给定的参数向指定的 URL 发送检索请求，并发送存储在变量 str 中的附加数据(URL 编码形式的玩家名称和分数)。 如果收到回调，这将触发所有定义的 <b>异步 Http 事件</b>，并且您可以检查返回的“id”与存储在变量 <span class="inline">post</span> 中的“id”，以确保运行正确的代码(如果您有) 使用了各种 <span class="inline">http_post_string()</span> 函数。 以下示例代码显示了如何完成此操作：</p>
   <p class="code">var r_str = "null";<br>
-    if ds_map_find_value(async_load, "id") == post<br>
+    if (ds_map_find_value(async_load, "id") == post) <br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;if ds_map_find_value(async_load, "status") == 0<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (ds_map_find_value(async_load, "status") == 0) <br>
     &nbsp; &nbsp; {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r_str = ds_map_find_value(async_load, "result");<br>
     &nbsp; &nbsp; }<br>
@@ -145,7 +145,7 @@
         <div style="float:right">Next:&nbsp;<a href="http_get_request_crossorigin.htm">http_get_request_crossorigin</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 http_post_string

@@ -92,7 +92,7 @@
   <h1><span data-field="title" data-format="default">粒子使用指南</span></h1>
   <p>本指南适合那些想要了解如何在 GML 中使用和创建<strong>粒子</strong>的人。 本页将介绍粒子的 <a href="../GameMaker_Language/GML_Reference/Drawing/Particles/Particles.htm"><span data-keyref="GML_Code">GML 代码</span>函数</a>和 <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Particles/Particle_Actions.htm"><span data-keyref="GML_Visual">GML 视觉</span>操作</a>，因此，如果您以前从未使用过粒子，我们希望本指南能够帮助您 开始是因为它们非常有用并且制作起来很有趣。</p>
   <div data-conref="../assets/snippets/Note_tip_use_particle_system_editor.hts">
-  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>如果您更喜欢采用更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码</span>提供的广泛功能，您还可以创建<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a> </span> 使用<a href="../The_Asset_Editors/Particle_Systems.htm">粒子系统编辑器</a>。 此外，您还可以使用编辑器的<strong>将 GML 复制到剪贴板</strong><img class="icon" src="../assets/Images/Icons/Icon_GML_To_Clipboard.png" title="">为其生成 <span data-keyref="GML_Code">GML 代码</span>。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>如果您更喜欢采用更直观的方法来创建粒子，并且不需要 <span data-keyref="GML_Code">GML 代码</span>提供的广泛功能，您还可以创建<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a> </span> 使用<a href="../The_Asset_Editors/Particle_Systems.htm">粒子系统编辑器</a>。 此外，您还可以使用编辑器的<strong>将 GML 复制到剪贴板</strong><img class="icon" src="../assets/Images/Icons/Icon_GML_To_Clipboard.png" title="">为其生成 <span data-keyref="GML_Code">GML 代码</span>。</p>
 
 </div>
   <p>在进一步讨论之前，我们或许应该解释一下粒子实际上是什么...基本上，<a id="particle"></a>粒子是一种图形资源，具有由<strong>粒子系统</strong>定义的某些属性。 这些属性无法直接针对<em>单个</em>粒子进行操作，但可以通过用于定义其所属系统的代码或操作来集体更改。 它们对于在游戏中创建美丽而华丽的效果（或微妙而谨慎的效果）非常有用，而无需像使用实例那样产生 CPU 开销。</p>
@@ -107,7 +107,7 @@
     <p class="dropspot"><img alt="Create Particle System" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Particles_DnD_CreateSystem.png"></p>
     <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 提供的图层名称必须是使用系统的房间中的有效图层，否则将看不到任何粒子。 另请注意，我们将 <span class="inline2"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/persistent.htm">persistent</a></span> 标志（在代码和 <span data-keyref="GML_Visual">GML Visual</span> 中）设置为 <span class="inline2">false</span>。 持久性粒子系统是一种可以在各个房间“持久”的粒子系统，无需为每个房间销毁并重新创建它。 然而，为了使本指南简单起见，我们不会使用持久性。</p>
     <p class="dropspot">这就是我们创造的系统，但是粒子呢？我们也必须定义它们，否则这个系统是无用的，什么也不做。</p>
-    <p class="dropspot">如果已经有<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>，则可以使用上述函数/操作通过将资源传递到<span class="inline2">partsys</span>/"System"参数中来创建它。</p>
+    <p class="dropspot">如果已经有<span data-keyref="Type_Asset_ParticleSystem"><a target="_blank" href="../The_Asset_Editors/Particle_Systems.htm">粒子系统资源</a></span>，则可以使用上述函数/操作通过将资源传递到<span class="inline2">partsys</span>/"System"参数中来创建它。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">定义粒子类型</span><span data-close-text="true">定义粒子类型</span></a></p>
@@ -237,7 +237,7 @@
         <div style="float:right">Next:&nbsp;<a href="Guide_To_Using_Shaders.htm">着色器使用指南</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Vectors

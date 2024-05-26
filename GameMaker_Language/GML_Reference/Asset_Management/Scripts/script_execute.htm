@@ -87,7 +87,7 @@
   <p class="note"><span style="text-align: justify;"></span><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意 </span></span> 虽然此函数主要是为了旧版支持而设计的，但它并没有被弃用，因为它在网络和远程过程调用情况中仍然占有一席之地。还值得注意的是，该函数速度很慢，并且大量使用可能会对性能产生不利影响。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code"><span data-field="title" data-format="default">script_execute</span>(scr, arg0, arg1, arg2..., etc...);</p>
+  <p class="code"><span data-field="title" data-format="default">script_execute</span>(scr, arg0, arg1, arg2, etc.);</p>
   <table>
     <tbody>
       <tr>
@@ -97,23 +97,23 @@
       </tr>
       <tr>
         <td>scr</td>
-        <td><span data-keyref="Type_Asset_Script"><a target="_blank" href="../../../../../The_Asset_Editors/Scripts.htm">Script Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Function_Script"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Script_Functions.htm">Script Function</a></span></td>
+        <td><span data-keyref="Type_Asset_Script"><a target="_blank" href="../../../../The_Asset_Editors/Scripts.htm">Script Asset</a></span>&nbsp;or&nbsp;<span data-keyref="Type_Function_Script"><a target="_blank" href="../../../GML_Overview/Script_Functions.htm">Script Function</a></span></td>
         <td>要调用的函数/脚本</td>
       </tr>
       <tr>
-        <td>arg0, arg1, arg2..., etc...</td>
-        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span></td>
+        <td>arg0, arg1, arg2, etc.</td>
+        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../GML_Overview/Data_Types.htm#variable">Any</a></span></td>
         <td>要传递给函数/脚本的不同参数</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Any"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(Will depend on the return value from the script/function being called)</p>
+  <p class="code"><span data-keyref="Type_Any"><a target="_blank" href="../../../GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(Will depend on the return value from the script/function being called)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code"><span data-field="title" data-format="default">script_execute</span>(choose(move_up, move_down, move_left, move_right), irandom(5));</p>
-  <p>上面的示例代码将使用 <span class="inline2"><span data-field="title" data-format="default">script_execute</span></span> 来选择四个用户定义函数中的一个 (在本例中与移动相关)，并将一个随机整数作为第一个参数传递给它。</p>
+  <p>上面的示例代码将使用 <span class="inline3_func"><span data-field="title" data-format="default">script_execute</span></span> 来选择四个用户定义函数中的一个 (在本例中与移动相关)，并将一个随机整数作为第一个参数传递给它。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -123,7 +123,7 @@
         <div style="float:right">Next:&nbsp;<a href="script_execute_ext.htm">script_execute_ext</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 script_execute

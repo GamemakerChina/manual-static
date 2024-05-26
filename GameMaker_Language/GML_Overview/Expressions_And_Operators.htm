@@ -56,8 +56,8 @@
   <script src="../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Mark Alexander">
   <meta name="topic-comment" content="Page outlining the different GML expressions">
-  <meta name="rh-index-keywords" content="Expressions And Operators,=,&amp;&amp;,||,^^,<,>,<=,>=,==,!=,|,&amp;,^,<<,>>,+,-,*,/,++,--,div,%,mod,!,~">
-  <meta name="search-keywords" content="expressions,order of operation,operators,div,mod,&amp;&amp;,||,xor,^^,|,^,&amp;,++,--,<<,>>,<=,>=,==,=,:=,$">
+  <meta name="rh-index-keywords" content="Expressions And Operators,=,&amp;&amp;,||,^^,<,>,<=,>=,==,!=,|,&amp;,^,<<,>>,+,-,*,/,++,--,div,%,mod,!,~,??,??=">
+  <meta name="search-keywords" content="expressions,order of operation,operators,div,mod,&amp;&amp;,||,xor,^^,|,^,&amp;,++,--,<<,>>,<=,>=,==,=,:=,$,??,??=">
 <meta name="brsnext" value="GameMaker_Language/GML_Overview/Script_Functions.htm"><meta name="brsprev" value="GameMaker_Language/GML_Overview/Addressing_Variables_In_Other_Instances.htm"></head>
 
 <body>
@@ -78,14 +78,14 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>表达式和运算符</h1>
-  <h2>表达式</h2>
-  <p>表达式是一个数学短语，可以包含普通数字、变量、字符串或函数，以及一个或多个<strong>运算符</strong>(如加、减、2乘等)。表达式中使用的值可以是实数(如<span class="inline">3.4*6</span>)，以<span class="inline">$</span>符号开头的十六进制数字(如<span class="inline"> $00FFAA | $88FFAA</span>)，双引号之间的字符串(如<span class="inline">"hello"</span>+<span class="inline">"world"</span>)或使用多个运算符和值的更复杂的表达式。</p>
-  <h2>运算符</h2>
+  <h1><span data-field="title" data-format="default">Expressions And Operators</span></h1>
+  <h2 id="expressions">表达式</h2>
+  <p>表达式是一个数学短语，可以包含普通数字、变量、字符串或函数以及一个或多个<strong>运算符</strong>(例如加、减、乘等)。表达式中使用的值可以是实数(例如<span class="inline">3.4 * 6</span>)、以<span class="inline">$</span>符号开头的十六进制数(例如<span class="inline">$00FFAA | $88FFAA</span>)、双引号之间的字符串(例如<span class="inline">"hello"</span>+<span class="inline">"world"</span>) 或更复杂的使用多个运算符和值的表达式。</p>
+  <h2 id="operators">运算符</h2>
   <p>以下是提供给表达式使用的运算符。</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span data-open-text="true" data-skip-index="true">Assigning (=)</span><span data-close-text="true">Assigning (=)</span> 赋值</a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <p class="dropspot"><span class="inline2"><b>=</b></span>是用来给变量赋值的。请注意，<span data-keyref="GameMaker Name">GameMaker</span>中这也可以<i>用于在</i>中对变量进行比较。你可能会在例子和其他人的代码中看到这一点。然而，这是从<i>GameMaker</i>旧版中遗留下来的。你应该使用<b>==</b>运算符进行比较，使用<b>=</b>进行赋值，如这些例子所示:</p>
+    <p class="dropspot"><span class="inline2"><b>=</b></span>用于给变量赋值。请注意，这<i>也</i>可用于比较<span data-keyref="GameMaker Name">GameMaker</span>中的变量，您可能会在示例和其他人的代码中看到这一点。不过，这是旧的<span data-keyref="GameMaker Name">GameMaker</span>版本的遗留问题，您应该使用<span class="inline2">==</span>运算符进行比较，使用<span class="inline2">=</span>进行分配，如以下示例所示：</p>
     <p class="code">a = 12;<br>
       speed = 5;<br>
       val = (old_val + 5);</p>
@@ -93,7 +93,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">Combining (&amp;&amp;, ||, ^^)</span><span data-close-text="true">Combining (&amp;&amp;, ||, ^^)</span> 组合</a></p>
   <div class="droptext" data-targetname="drop-down3">
-    <p class="dropspot"><b><span class="inline2">&amp;&amp;</span>, <span class="inline2">||</span>, <span class="inline2">^^</span> (<span class="inline2">and</span>, <span class="inline2">or</span> 和 <span class="inline2">xor</span>)</b> 用于组合布尔值以给出 true 或 false。如果以下任何示例解析为 <span class="inline">true</span>，则代码将运行：</p>
+    <p class="dropspot"><b><span class="inline2">&amp;&amp;</span>、<span class="inline2">||</span>、<span class="inline2">^^</span>(<span class="inline2">and</span>、<span class="inline2">or</span>和<span class="inline2">xor</span>)</b>用于组合布尔值给出<span class="inline2">true</span>或<span class="inline2">false</span>的值。如果以下任何示例解析为<span class="inline2">true</span>，则代码将运行：</p>
     <p class="code">if (a == b &amp;&amp; c == d) { do something... } &nbsp;// and<br>
       if (a == b || c == d) { do something... } &nbsp;&nbsp;// or<br>
       if (a == b ^^ c == d) { do something... } &nbsp;// xor</p>
@@ -117,17 +117,17 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#"><span data-open-text="true" data-skip-index="true">Comparing (&lt;, &lt;=, ==, !=, &gt;, &gt;=)</span><span data-close-text="true">Comparing (&lt;, &lt;=, ==, !=, &gt;, &gt;=)</span> 比较</a></p>
   <div class="droptext" data-targetname="drop-down4">
-    <p class="dropspot"><b><span class="inline2">&lt;</span>, <span class="inline2">&lt;=</span>, <span class="inline2">==</span>, <span class="inline2">!=</span>, <span class="inline2">&gt;</span>, <span class="inline2">&gt;=</span></b>&nbsp;是比较，只能给出<span class="inline">true</span>或<span class="inline">false</span>结果（其中 true 也可以解释为 1，false 也可以解释为 0）。使用示例：</p>
+    <p class="dropspot"><b><span class="inline2">&lt;</span>、<span class="inline2">&lt;=</span>、<span class="inline2">==</span>、<span class="inline2">!=</span>、<span class="inline2">&gt;</span>、<span class="inline2">&gt;=</span></b>是比较，只能给出<span class="inline2">true</span>或<span class="inline2">false</span>结果(其中<span class="inline2">true</span>也可解释为 1，<span class="inline2">false</span>也可解释为 0)。使用示例：</p>
     <p class="code">if (a &lt; b) {do something...}<br>
       if (a != b) {do something...}</p>
-    <p class="dropspot">&nbsp;</p>
+    <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#"><span data-open-text="true" data-skip-index="true">Bitwise (|, &amp;, ^, &lt;&lt;, &gt;&gt;)</span><span data-close-text="true">Bitwise (|, &amp;, ^, &lt;&lt;, &gt;&gt;)</span> 位</a></p>
   <div class="droptext" data-targetname="drop-down5">
-    <p class="dropspot"><b><span class="inline2">|</span>, <span class="inline2">&amp;</span>, <span class="inline2">^</span>, <span class="inline2">&lt;&lt;</span>, <span class="inline2">&gt;&gt;</span> </b> 用于执行位操作，其中 | = 位或，&amp; = 位和 ，^=位异或，&lt;&lt; = 左移 ，&gt;&gt; = 右移 。使用的例子:</p>
+    <p class="dropspot"><b><span class="inline2">|</span>、<span class="inline2">&amp;</span>、<span class="inline2">^</span>、<span class="inline2">&lt;&lt;</span>、<span class="inline2">&gt;&gt;</span></b>用于执行按位运算，其中<span class="inline2">|</span>= 按位或，<span class="inline2">&amp;</span>= 按位与，<span class="inline2">^</span>= 按位异或，<span class="inline2">&lt;&lt;</span>= 左移，<span class="inline2">&gt;&gt;</span>= 右移。使用示例：</p>
     <p class="code">x = (x &amp; $ffffffe0) + 32;<br>
       if (y ^ $1f) &gt; 0 {do something...};</p>
-    <p class="dropspot">你可以从本节中找到更多关于如何使用位运算符和它们的作用的信息:<a href="../../Additional_Information/Bitwise_Operators.htm">位运算符</a>。</p>
+    <p class="dropspot">您可以从<a href="../../Additional_Information/Bitwise_Operators.htm">按位运算符</a>部分找到有关如何使用按位运算符及其用途的更多信息。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">Arithmetical (+, -, *, /)</span><span data-close-text="true">Arithmetical (+, -, *, /)</span> 算术</a></p>
@@ -135,7 +135,7 @@
     <p class="dropspot"><b><span class="inline2">+</span>, <span class="inline2">-</span>, <span class="inline2">*</span>, <span class="inline2">/</span></b> 分别是加、减、乘、除。使用示例：</p>
     <p class="code">c = a * b;<br>
       str = a + "world";</p>
-    <p class="note"><span class="note"><b>注意</b></span>浮点数在除以零时不会停止，因为它们会得到一个无穷大的答案。如果a和b是整数(int32或int64)，那么除法将作为整数进行(除以0会被检查并出错。否则，它将作为浮点除法进行(没有除以0的检查)。</p>
+    <p class="note"><span class="note"><b>注意</b></span>浮点数不会在除以零时停止，因为它们将得到无穷大作为答案。如果 A 和 B 是整数(int32 或 int64)，则除法将作为整数进行(并且除以 0 将被检查并出错)。否则，它将作为浮点除法完成(不进行除以 0 的检查)。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span data-open-text="true" data-skip-index="true">Increment/Decrement (++, --)</span><span data-close-text="true">Increment/Decrement (++, --)</span> 递增递减</a></p>
@@ -165,8 +165,9 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span data-open-text="true" data-skip-index="true">Division and Modulo (div, %, mod)</span><span data-close-text="true">Division and Modulo (div, %, mod)</span> 除法和模</a></p>
   <div class="droptext" data-targetname="drop-down8">
-    <p class="dropspot"><strong><span class="inline2">div</span>, <span class="inline2">mod</span> (<span class="inline2">%</span>)</strong>是除法和模，其中 div 为您提供一个值可以被划分为仅产生整数商的数量，而 mod 仅为您提供除法的余数。请注意，您只能使用整数值进行 div 或 mod。使用示例：</p>
+    <p class="dropspot"><strong><span class="inline2">div</span></strong>和<strong><span class="inline2">mod</span></strong>(或<span class="inline2">%</span>)是除法和取模，其中<span class="inline2">div</span>给出了一个值可以被划分为仅产生的数量整数商，而<span class="inline2">mod</span>(或<span class="inline2">%</span>)仅提供除法的余数。使用示例：</p>
     <p class="code">secs = time mod 60;<br>
+      secs = time % 60;&nbsp; &nbsp; // Identical to the above line<br>
       time_str = string(time div 60);</p>
     <p class="dropspot">&nbsp;</p>
   </div>
@@ -180,14 +181,14 @@
     </ul>
     <p class="dropspot">&nbsp;</p>
   </div>
-  <h2>表达式组</h2>
+  <h2 id="expression_grouping">表达式组</h2>
   <p><i></i>作为所有表达式中的值，您可以使用返回值的数字、变量或函数，子表达式也可以放置在括号之间。所有运算符都适用于实数值，但<em>比较</em>也适用于字符串，并且"<strong>+</strong>"运算符可用于连接字符串。</p>
   <p>在一个表达式中进行多个操作时，使用括号<b>()</b>来区分操作顺序是非常重要的，因为如果没有明确说明，不同的平台可能会有不同的执行方式。例如，考虑下面的代码:</p>
   <p class="code">a = b == c || d;</p>
   <p>不同的目标编译器将以不同的顺序执行操作，因为它们没有明确显示，引起 "奇怪 "的结果，当你玩你的游戏时，你可能没有想到。为了避免这种情况，使用<span class="inline">()</span>来分离出部分，像这样:</p>
   <p class="code">a = (b == c || d);&nbsp; &nbsp;//better<br>
     a = ((b == c) || d); //best</p>
-  <h2>语句分组</h2>
+  <h2 id="statement_grouping">语句分组</h2>
   <p>当在单个代码块中使用各种操作和表达式时，它们也应该分开。例如，以下<em>看起来</em>是有效代码：</p>
   <p class="code">if my_var == your_var ++their_var;</p>
   <p>然而，编译器可以用两种方式之一来解释这一点:</p>
@@ -224,11 +225,11 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="GML_Overview.htm">GML&nbsp;Overview</a></div>
+        <div style="float:left">Back:&nbsp;<a href="GML_Overview.htm">GML 代码概述</a></div>
         <div style="float:right">Next:&nbsp;<a href="Script_Functions.htm">脚本函数和变量</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 div
@@ -261,6 +262,8 @@ bitshift right
 ++
 $
 hexadecimal
+??
+??=
 -->
   <!-- TAGS
 expressions_operators

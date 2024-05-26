@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.21.1.0_1";
+    gTopicId = "8.2.2.22.1.0_1";
   
 //]]></script>
 
@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Reference page for show_debug_overlay">
   <meta name="rh-index-keywords" content="show_debug_overlay">
   <meta name="search-keywords" content="show_debug_overlay">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Debugging/code_is_compiled.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Debugging/show_debug_log.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Debugging/The_Debug_Overlay.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -79,7 +79,7 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">show_debug_overlay</span></h1>
-  <p>此函数打开<a href="The_Debug_Overlay.htm">调试覆盖</a>，同时打开<a href="The_Debug_Overlay.htm#fps"><strong>FPS</strong></a>窗口。默认情况下禁用此覆盖图。</p>
+  <p>此函数切换 <a href="The_Debug_Overlay.htm"> 调试叠加层 </a>。默认情况下禁用此覆盖。</p>
   <p>调试覆盖启用具有三个选项的菜单：<strong>FPS</strong>(默认打开)、<strong>日志</strong>和<strong>音频</strong>。它会在右上角显示<span data-keyref="GameMaker Name">GameMaker</span>版本，所属项目的版本和名称：</p>
   <p><img class="center" src="../../../assets/Images/Scripting_Reference/GML/Reference/Debug/debug_overlay_1.png" style="cursor: nesw-resize;">如果可选的 <span class="inline2">minimised(最小化)</span> 参数设置为<span class="inline2">false</span>，则覆盖打开时 <strong>FPS</strong>窗口最小化，仅在标题中显示基本信息。</p>
   <p>要创建出现在<strong>"Views"(视图)</strong>菜单下的自定义调试视图，请参阅<a href="The_Debug_Overlay.htm#creating_debug_views">"创建调试视图"</a>。</p>
@@ -97,22 +97,22 @@
       </tr>
       <tr>
         <td>enable</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td>启用(<span class="inline2">true</span>)或禁用(<span class="inline2">false</span>)调试覆盖</td>
       </tr>
       <tr>
         <td>minimised</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>是否最小化打开<strong>FPS</strong>窗口(不适用于任何其他窗口或调试视图)</td>
       </tr>
       <tr>
         <td>scale</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>用于绘制叠加的缩放系数(默认值为<span data-keyref="DebugOverlay_Scale_Default">1</span>)</td>
       </tr>
       <tr>
         <td>alpha</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span>用于绘制叠加的alpha值(默认值为<span data-keyref="DebugOverlay_Alpha_Default">0.8</span>)</td>
       </tr>
     </tbody>
@@ -122,7 +122,7 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4><b>示例1：基本使用</b></h4>
-  <p class="code">if keyboard_check_pressed(ord("O"))<br>
+  <p class="code">if (keyboard_check_pressed(ord("O"))) <br>
     {<br>
     &nbsp; &nbsp; global.debug = !global.debug;<br>
     &nbsp; &nbsp; <span data-field="title" data-format="default">show_debug_overlay</span>(global.debug);<br>
@@ -141,7 +141,7 @@
         <div style="float:right">Next:&nbsp;<a href="show_debug_log.htm">show_debug_log</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 show_debug_overlay

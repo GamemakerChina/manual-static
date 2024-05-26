@@ -78,25 +78,33 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>with</h1>
+  <h1><span data-field="title" data-format="default">with</span></h1>
   <p>正如<a href="../Addressing_Variables_In_Other_Instances.htm">在其他实例中处理变量</a>一节所指出的，可以读取和改变当前执行任何给定代码的实例和<a href="../Structs.htm">结构</a>中的变量值。然而，在很多情况下，你想做的事情远不止是在这些其他实例中改变一个变量，而且可能想执行更复杂的代码操作，需要多个函数和代码行。例如，想象一下，你想把你游戏中的一个球对象的所有实例向下移动8像素。你可能认为这只需通过下面这段代码即可实现。</p>
   <p class="code">obj_ball.y = obj_ball.y + 8;</p>
-  <p>但这是不正确的，因为赋值的右侧获取第一个球的 y 坐标值并将其加 8。接下来，这个新值被设置为<em>所有</em>球的 y 坐标，因此结果是所有球都获得相同的 y 坐标，即使您使用以下内容也是如此：</p>
+  <p>但这是不正确的，因为赋值的右侧获取第一个球的 y 坐标值并加 8。接下来，这个新值被设置为所有球的 y 坐标，因此结果是所有球都获得相同的 y 坐标，即使您使用以下命令：</p>
   <p class="code">obj_ball.y += 8;</p>
-  <p>它将具有完全相同的效果，因为它只是第一条语句的缩写。那么我们<i>如何</i>实现这样的目标呢？这就是 GML 中存在 <span class="inline">with</span> 语句的原因。 <span class="inline">with</span> 语句具有以下语法：</p>
-  <p class="code">with (&lt;expression&gt;)<br>
+  <p>它将具有完全相同的效果，因为它只是第一个语句的缩写。那么我们<i>如何</i>实现这样的目标？这就是 GML 中存在<span class="inline2"><span data-field="title" data-format="default">with</span></span>语句的原因。</p>
+  <h2 id="syntax">句法</h2>
+  <p><span class="inline2"><span data-field="title" data-format="default">with</span></span>语句采用以下形式：</p>
+  <p class="code"><span data-field="title" data-format="default">with</span>&nbsp;(&lt;expression&gt;)<br>
     {<br>
     &nbsp; &nbsp; &lt;statement&gt;;<br>
     &nbsp; &nbsp; &lt;statement&gt;;<br>
     &nbsp; &nbsp; ...<br>
     }</p>
-  <p>对于<a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>，您可以使用实例 ID 指示一个或多个实例（或结构）执行代码，对象 ID（指示此对象房间中的<i>所有实例</i>用于运行代码块）、结构 ID 或特殊<a href="../Instance_Keywords.htm">关键字</a>之一（<span class="inline">all</span> 或 <span class="inline">other</span>）。然后，这会将大括号 <strong></strong><span class="inline"> 内代码的</span>范围{}从实际保存代码的实例、结构或函数更改为表达式中给出的实例（或多个实例或结构）。</p>
-  <p>一旦表达式设置了 <span class="inline">with</span> 的范围，就会为每个指定的实例执行 <a class="tooltip" title="在编程中，语句是用编程语言合法编写的单行代码，表示要执行的操作。语句可能具有自己的内部组件，包括表达式，运算符和函数。语句的一个示例是A = B +5。GameMakerStudio 2程序不过是一系列一起执行任务（如移动玩家）的一个或多个语句的序列。">语句</a>，就像该实例是当前 (<span class="inline">self</span>) 实例一样。因此，回到我们最初的问题，要将球对象的所有实例向下移动 8 个像素，您可以键入：</p>
+  <p><a class="tooltip" title="表达式是一个或多个常量，变量，运算符和/或函数的组合，这些常量根据特定的优先级和关联规则进行解释以返回另一个值。一个简单的表达式是（5 + 5），它返回10。">表达式</a>可以接受多个不同的输入：</p>
+  <ul class="colour">
+    <li>要在其上执行代码的一个或多个实例：单个<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">对象实例</a></span>、<span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../The_Asset_Editors/Objects.htm">对象资产</a></span>(表示房间中该对象的<i>所有实例</i>是运行代码块)。</li>
+    <li>一个或多个结构体，或用于访问<a href="../Variables/Global_Variables.htm#the_global_struct">全局结构体</a>的关键字<span class="inline2">global</span>。</li>
+    <li>特殊<a href="../Instance_Keywords.htm">关键字</a>之一(<span class="inline2">self</span>、<span class="inline2">other</span>、<span class="inline2">all</span>或<span class="inline2">noone</span>)。</li>
+  </ul>
+  <p>然后，这会将大括号<span class="inline2">{ }</span>内的代码的<a href="../Variables_And_Variable_Scope.htm">范围</a>从执行<span class="inline2"><span data-field="title" data-format="default">with</span></span>的实例、结构或函数更改为实例(或实例或结构))在表达式中给出。</p>
+  <p>一旦表达式设置了<span class="inline2">with</span>的范围，就会针对每个指定的实例或结构执行<a class="tooltip" title="在编程中，语句是用编程语言合法编写的单行代码，表示要执行的操作。语句可能具有自己的内部组件，包括表达式，运算符和函数。语句的一个示例是A = B +5。GameMakerStudio 2程序不过是一系列一起执行任务（如移动玩家）的一个或多个语句的序列。">语句</a>，就像它是当前实例或结构一样(即<span class="inline2">self</span>)。因此，回到我们最初的问题，要将球对象的所有实例向下移动 8 个像素，您可以输入：</p>
   <p class="code">with (obj_ball)<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;y += 8;<br>
     }</p>
-  <p>从本质上讲，这是一个循环，循环的每次<a class="tooltip" title="迭代是对项目代码中的一组操作的一次遍历。计算机编程中一种迭代形式是通过循环。循环将重复一段代码，直到满足条件为止，然后循环可以继续进行。每次计算机运行一个循环，就称为迭代。简单来说，迭代是一遍又一遍地重复执行特定代码段以执行特定操作的过程。">迭代</a>，代码都会在对象 <span class="inline">obj_ball</span> 的一个实例上运行。</p>
+  <hp></hp>
   <p>如果你想执行多条语句，只需将它们包含在大括号中，就像你在任何其他代码块周围一样。因此，例如，要将示例中的所有球移动到随机位置并给它们随机速度和方向，您可以使用：</p>
   <p class="code">with (obj_ball)<br>
     {<br>
@@ -105,24 +113,65 @@
     &nbsp;&nbsp;&nbsp;&nbsp;speed = 1 + random(2);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;direction = random(360);<br>
     }</p>
-  <p>如上所述，在语句中，指示的实例或结构已成为运行代码块的目标 (<span class="inline">self</span>) 实例，这意味着原始实例（包含 <span class="inline">with</span> 和整个代码块）已成为 <a href="../Instance_Keywords.htm"><span class="inline">other</span></a> 实例。因此 - 例如 - 要将所有球移动到实际包含代码的当前实例的位置，您可以键入：</p>
+  <p>&nbsp;</p>
+  <div data-conref="../../../assets/snippets/Instance_creation_order_warning.hts">
+  <p class="note"><span class="note">注意</span>房间中的实例是按照特定的<a href="../../../The_Asset_Editors/Room_Properties/Room_Properties.htm#creation_order">顺序</a>创建的，它们的创建事件也会在一个接一个创建时执行。这意味着您在从 创建事件中的其他实例读取变量时必须小心，因为其他实例可能尚未运行其 创建事件！<br><br>例如：假设 <strong>ObjectA</strong> 在 <strong>ObjectB</strong> 之前创建，并且您在这些对象的创建事件中有以下代码：<br><br><strong>ObjectA </strong>创建 -<span class="inline2">myValue = objectB.myValue;</span><br><strong>ObjectB </strong>创建 -<span class="inline2">myValue = 10;</span><br><br>首先创建 ObjectA 并运行其 Create 事件，然后导致游戏崩溃：<br><br><em><strong>“变量 objectB.myValue(100003, -2147483648) 在读取之前未设置。”</strong></em><br><br>这仅仅是因为 ObjectB 甚至还没有被创建，所以在它的 创建事件中初始化的任何变量都不存在。这就是为什么在 创建事件中引用其他类似实例时必须小心，包括在 <span class="inline"><a href="with.htm">with()</a></span> 块内运行的任何代码。</p>
+
+</div>
+  <p>&nbsp;</p>
+  <h2 id="with_as_a_loop">作为循环</h2>
+  <p><span class="inline2"><span data-field="title" data-format="default">with</span></span>语句本质上执行一个循环。根据表达式的结果，大括号<span class="inline2">{ }</span>内的语句将根本不执行、执行一次或多次：</p>
+  <ul class="colour">
+    <li>当<span class="inline2">with</span>接收到<span class="inline2">noone</span>时，它会执行 0 次，即运行"noone"的代码。</li>
+    <li>当它收到<span data-keyref="Type_ID_Instance"><a target="_blank" href="../../GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm">对象实例</a></span>、<span data-keyref="Type_Struct"><a target="_blank" href="../Structs.htm">结构</a></span>或关键字<span class="inline2">self</span>、<span class="inline2">other</span>或<span class="inline2">global</span>之一时，它会运行对于被引用的实例或结构，代码一次。</li>
+    <li>当它收到<span data-keyref="Type_Asset_Object"><a target="_blank" href="../../../The_Asset_Editors/Objects.htm">对象资源</a></span>或关键字<span class="inline2">all</span>时，它会多次运行代码：循环的每次<a class="tooltip" title="迭代是对项目代码中的一组操作的一次遍历。计算机编程中一种迭代形式是通过循环。循环将重复一段代码，直到满足条件为止，然后循环可以继续进行。每次计算机运行一个循环，就称为迭代。简单来说，迭代是一遍又一遍地重复执行特定代码段以执行特定操作的过程。">迭代</a>将在对象的一个​​实例或所有实例上运行分别是实例。</li>
+  </ul>
+  <p>由于<span class="inline2"><span data-field="title" data-format="default">with</span></span>表现为循环，因此您也可以在其中使用特殊的<span class="inline2"><a href="break.htm">break</a></span>和<span class="inline2"><a href="continue.htm">continue</a></span>语句。使用<span class="inline2">break</span>将立即退出<span class="inline2"><span data-field="title" data-format="default">with</span></span>代码块，并在<span class="inline2">with</span>完成后继续执行事件或函数中的任何代码，例如：</p>
+  <p class="code">var _count = 0;<br>
+    with (obj_enemy)<br>
+    {<br>
+    &nbsp; &nbsp; if (++_count &gt; 10)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+    &nbsp; &nbsp; }<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;hp = 100;<br>
+    }</p>
+  <p>上述代码循环遍历对象<span class="inline2">obj_enemy</span>房间中的实例，并将找到的前 10 个实例的变量<span class="inline2">hp</span>设置为 100。如果存在超过 10 个实例，with 代码将调用<span class="inline2">break</span>并结束。</p>
+  <p>在 <span class="inline2">with</span> 循环中使用 <span class="inline2">continue</span> 的示例如下：</p>
+  <p class="code">with (obj_enemy_parent)<br>
+    {<br>
+    &nbsp; &nbsp; if (invulnerable == true)<br>
+    &nbsp; &nbsp; {<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; continue;<br>
+    &nbsp; &nbsp; }<br>
+    &nbsp; &nbsp; hp -= 25;<br>
+    }</p>
+  <p>此代码将循环遍历具有父级<span class="inline2">obj_enemy_parent</span>的所有实例，然后检查每个实例以查看<span class="inline2">invulnerable</span>实例变量是否为<span class="inline2">true</span>。如果是，则<span class="inline2">continue</span>关键字结束循环的当前迭代并移至下一个可用实例，否则它会从<span class="inline2">hp</span>变量中删除 25。这将重复，直到检查了具有该父级的所有实例。</p>
+  <h2 id="specific_uses">具体用途</h2>
+  <h3>"其他"实例或结构</h3>
+  <p>如上所述，在语句内，指示的实例或结构已成为运行代码块的目标(<span class="inline2">self</span>) 实例，这意味着原始实例(包含<span class="inline2"><span data-field="title" data-format="default">with</span></span>和整个代码块)已成为<a href="../Instance_Keywords.htm"><span class="inline">其他</span></a>实例。</p>
+  <p>因此，例如，要将所有球移动到实际包含代码的当前实例的位置，您可以键入以下内容：</p>
   <p class="code">with (obj_ball)<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;x = other.x;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;y = other.y;<br>
     }</p>
-  <p><span class="inline">with</span> 语句是一个极其强大的工具，在很多情况下都很有用，因此您必须充分了解如何使用它。为了提供帮助，下面还有一些使用示例：</p>
-  <p class="code">with (instance_create_layer(x, y, "Instances", obj_Ball))<br>
+  <h3>在新实例中执行代码</h3>
+  <p class="code">with (instance_create_layer(x, y, "Instances", obj_ball))<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;speed = other.speed;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;direction = other.direction;<br>
     }</p>
-  <p>上述代码将创建一个 <span class="inline">obj_Ball</span> 实例，并为其分配运行整个代码块的实例的速度和方向。</p>
-  <p class="code">with (instance_nearest(x, y, obj_Ball))<br>
+  <p>上述代码将创建一个<span class="inline2">obj_ball</span>实例，并为其分配运行整个代码块的实例的速度和方向。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>如果您只需为新实例的变量赋值，您可以通过<span class="inline3_func"><a href="../../GML_Reference/Asset_Management/Instances/instance_create_layer.htm">instance_create_layer</a></span>/<span class="inline3_func"><a href="../../GML_Reference/Asset_Management/Instances/instance_create_depth.htm">instance_create_depth</a></span>的<span class="inline2">var_struct</span>参数传递它们。</p>
+  <h3>实例检查函数</h3>
+  <p>相当多的 <a href="../../GML_Reference/Asset_Management/Instances/Instances.htm#general"> 实例函数 </a> 返回 <span data-keyref="Type_ID_Instance"><a target="_blank" href="../../GML_Reference/Asset_Management/Instances/Instance_Variables/id.htm"> 对象实例 </a></span> 或 <span class="inline2">noone</span>。这使得它们可以方便地与 <span class="inline2">with</span> 语句结合使用：</p>
+  <p class="code">with (instance_nearest(x, y, obj_ball))<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;instance_destroy();<br>
     }</p>
-  <p>上述代码将销毁离运行代码的实例最近的 <span class="inline">obj_Ball</span> 实例。</p>
+  <p>上述代码将销毁距离运行该代码的实例最近的 <span class="inline2">obj_ball</span> 实例。如果未找到实例，该函数将返回 <span class="inline2">noone</span>，以便不执行 <span class="inline2"><span data-field="title" data-format="default">with</span></span> 内的代码。</p>
+  <h3>Assigning Struct Variables</h3>
   <p class="code">with(clone_struct)<br>
     {<br>
     &nbsp; &nbsp; xx&nbsp;= other.x;<br>
@@ -130,7 +179,8 @@
     &nbsp; &nbsp; spd = other.speed;<br>
     &nbsp; &nbsp; dir = other.direction;<br>
     }</p>
-  <p>上面的代码使用 <span class="inline">with</span> 来定位结构并将给定的结构成员变量设置为存储在调用代码的实例的实例变量中的值。</p>
+  <p>上面的代码使用 <span class="inline2">with</span> 来定位结构并将给定的结构成员变量设置为存储在调用代码的实例的实例变量中的值。</p>
+  <h3>跨作用域的局部变量</h3>
   <p class="code">var _inst = noone;<br>
     with (obj_ball)<br>
     {<br>
@@ -143,33 +193,7 @@
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;target = _inst;<br>
     }</p>
-  <p>上面的代码比之前的代码稍微复杂一些，因为它使用了一个<a href="../Variables_And_Variable_Scope.htm">局部变量</a>。这个变量对<strong>事件</strong>或<em>脚本</em><em> 函数</em>而言是<em>局部 </em>，而不是对实例或结构而言，因此可以被代码块中引用的所有实例使用和访问。因此，在上面的代码中，我们将一个局部变量设置为特殊的关键字<span class="inline">noone</span>，然后使用<span class="inline">with</span>结构让<span class="inline">obj_Ball</span>的每个实例对照运行代码块的实例检查其<span class="inline">str</span>变量。如果变量的值更大，那么他们就会将自己的唯一ID存储在<span class="inline">inst</span>本地变量中，这意味着在代码结束时，只有值大于调用实例的实例（或者如果都不大则是关键字<span class="inline">noone</span>）会被存储在本地变量<span class="inline">_inst</span>中。</p>
-  <p>值得注意的是，您也可以在 <span class="inline"><a href="break.htm"></a>with</span><font face="Lucida Console"><span style="font-size: 16px;"> 调用中使用特殊的 <b></b>break</span></font> 和 <span class="inline"><a href="continue.htm">continue</a></span> 语句。使用 <span class="inline">break</span> 将立即退出 <span class="inline">with</span> 代码块，并在 <span class="inline">with</span> 应该完成后继续执行事件或函数中的任何代码，例如：</p>
-  <p class="code">var count = 0;<br>
-    with (obj_Enemy)<br>
-    {<br>
-    &nbsp; &nbsp; if (++count &gt; 10)<br>
-    &nbsp; &nbsp; {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
-    &nbsp; &nbsp; }<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;hp = 100;<br>
-    }</p>
-  <p>上面的代码循环遍历对象 <span class="inline">obj_Enemy</span> 房间中的实例，并将找到的前 10 个变量 <span class="inline">hp</span> 设置为 100。如果存在超过 10 个实例，with 代码将调用 <span class="inline">break</span> 并结束。</p>
-  <p>在 <span class="inline">with</span> 循环中使用 <span class="inline">continue</span> 的示例如下：</p>
-  <p class="code">with (obj_Enemy_Parent)<br>
-    {<br>
-    &nbsp; &nbsp; if (invulnerable == true)<br>
-    &nbsp; &nbsp; {<br>
-    &nbsp; &nbsp; &nbsp; &nbsp; continue;<br>
-    &nbsp; &nbsp; }<br>
-    &nbsp; &nbsp; hp -= 25;<br>
-    }</p>
-  <p>这段代码将循环所有父代<span class="inline">obj_Enemy_Parent</span>的实例，然后检查每个实例，看<span class="inline">invulnerable</span>实例变量是否为<span class="inline">true</span>。如果是，<span class="inline">continue</span>关键字将结束当前的循环迭代，并进入下一个可用的实例，否则将从<span class="inline">hp</span>变量中删除25。这将重复进行，直到所有具有该父类的实例都被检查过。</p>
-  <div data-conref="../../../assets/snippets/Instance_creation_order_warning.hts">
-  <p class="note"><span class="note">注意</span>房间中的实例是按照特定的<a href="../../../The_Asset_Editors/Room_Properties/Room_Properties.htm#creation_order">顺序</a>创建的，它们的创建事件也会在一个接一个创建时执行。这意味着您在从 创建事件中的其他实例读取变量时必须小心，因为其他实例可能尚未运行其 创建事件！<br><br>例如：假设 <strong>ObjectA</strong> 在 <strong>ObjectB</strong> 之前创建，并且您在这些对象的创建事件中有以下代码：<br><br><strong>ObjectA </strong>创建 -<span class="inline2">myValue = objectB.myValue;</span><br><strong>ObjectB </strong>创建 -<span class="inline2">myValue = 10;</span><br><br>首先创建 ObjectA 并运行其 Create 事件，然后导致游戏崩溃：<br><br><em><strong>“变量 objectB.myValue(100003, -2147483648) 在读取之前未设置。”</strong></em><br><br>这仅仅是因为 ObjectB 甚至还没有被创建，所以在它的 创建事件中初始化的任何变量都不存在。这就是为什么在 创建事件中引用其他类似实例时必须小心，包括在 <span class="inline"><a href="with.htm">with()</a></span> 块内运行的任何代码。</p>
-
-</div>
-  <p>&nbsp;</p>
+  <p>由于使用了 <a href="../Variables_And_Variable_Scope.htm"> 局部变量 </a>，上述代码比之前的代码稍微复杂一些。该变量是 <em> 事件 </em> 或 <em> 脚本 </em><em> 函数 </em> 的 <strong> 本地 </strong> 变量，而不是实例或结构的本地变量，因此可由在该变量中引用的所有实例使用和访问代码块。因此，在上面的代码中，我们将局部变量设置为特殊关键字 <span class="inline2">noone</span>，然后使用 <span class="inline2">with</span> 构造让 <span class="inline2">obj_ball</span> 的每个实例检查其 <span class="inline2">str</span> 变量运行代码块的实例的值。如果变量的值较大，则它们会将其唯一 ID 存储在 <span class="inline2">inst</span> 局部变量中，这意味着在代码末尾，仅存储值大于调用实例 (或关键字 <span class="inline2">noone</span>( 如果没有更大的) 将存储在局部变量 <span class="inline2">_inst</span> 中。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -179,13 +203,11 @@
         <div style="float:right">Next: <a href="return.htm">return</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
-  <!-- KEYWORDS
-with
--->
-  <!-- TAGS
-with
--->
+  <p>&nbsp;</p>
+  <p><br>
+    &nbsp;</p>
+  <p>&nbsp;</p>
 
 </body></html>

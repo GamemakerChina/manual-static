@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="game_change">
   <meta name="search-keywords" content="game_change">
   <meta name="template" content="assets/masterpages/Manual_Keyword_Page.htt">
-</head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/General_Game_Control/game_load.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/General_Game_Control/game_restart.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -81,16 +81,16 @@
   <h1><span data-field="title" data-format="default">game_change</span></h1>
   <p>此函数会结束当前游戏并启动 <a href="../../../Settings/Included_Files.htm"> 包含文件 </a> 中包含的另一个游戏。</p>
   <p>它允许您拥有一个主游戏，您可以从中启动您保留在不同 <span data-keyref="GameMaker Name">GameMaker</span> 项目中的其他游戏。可以在已启动的游戏中再次调用该函数以返回主游戏。</p>
-  <p>The functi<span>on is supp<span>orted&nbsp;<span>on the <span><span><span>Wind<span>ows, macOS, PS4, PS5 and Switch&nbsp;<span><span><span><span><span>platf<span>orms.</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+  <p>该功能支持 Windows、macOS、PS4、PS5 和 Switch 平台。</p>
   <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important"> 重要信息</span></span> 此函数仅适用于 <strong>VM</strong> 版本。</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;names the <span class="inline2">.win</span> file differently depending on whether your game is running from the IDE&nbsp;or from the final executable (created using <strong>Create Executable</strong>&nbsp;in <a href="../../../IDE_Navigation/Menus/The_Build_Menu.htm">The Build Menu</a>). When running from the IDE the name will be&nbsp;<span class="inline2">$"{game_project_name}.win"</span>, if not it will be&nbsp;<span class="inline2">"data.win"</span>. You should always make sure to refer to the right name,<span>&nbsp;e.g. by setting up a different&nbsp;<a href="../../../Settings/Configurations.htm">configuration</a>.</span></p>
-  <p class="note">&nbsp;Since the child games' external files are included in the main game's <span data-keyref="Const_IncludedFiles_FolderName">datafiles</span>, they can be accessed fr<span>om the main game as well. </span></p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important"> 重要信息</span></span> <span data-keyref="GameMaker Name">GameMaker</span> 对 <span class="inline2">.win</span> 文件的命名有所不同，具体取决于您的游戏是从 IDE 运行还是从最终可执行文件 (使用中的 <strong> 创建可执行文件 </strong>  <a href="../../../IDE_Navigation/Menus/The_Build_Menu.htm"> 创建) 运行} 构建菜单 </a>)。从 IDE 运行时，名称将为 <span class="inline2">$"{game_project_name}.win"</span>，否则名称将为 <span class="inline2">"data.win"</span>。您应该始终确保引用正确的名称，例如通过设置不同的 <a href="../../../Settings/Configurations.htm"> 配置 </a>。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 由于子游戏的外部文件包含在主游戏的 <span data-keyref="Const_IncludedFiles_FolderName"> 数据文件 </span> 中，因此也可以从主游戏访问它们。</p>
   <h3>使用说明</h3>
   <ul class="Disc">
     <li>由主游戏启动的每个游戏都应包含在 <a href="../../../Settings/Included_Files.htm"> 包含文件 </a> 的子目录中：游戏的 <span class="inline2">data.win</span> 文件和其他外部包含文件应放入此文件夹中。此文件夹结构可能如下所示 (本质上是最终游戏目录中内容的副本，不含可执行文件)：<ul><li>game1<ul><li>game1.win</li><li>bgm_groovy.ogg</li><li>texgroup1_0 .yytex</li><li>options.ini</li></ul></li><li>game2<ul><li>game2.win</li><li>game_data.json</li><li>options.ini</li></ul></li><li>...</li></ul></li>
-    <li><span>This function only works on certain platforms, and on some platforms it will only work in a packaged build.</span></li>
-    <li><span>All saves, achievements, etc. will be done under the title ID set by the launcher project.</span></li>
-    <li>As this functi<span>on <em>ends the current game bef<span>ore launching the new&nbsp;<span>one</span></span></em>, the <strong>Game End event</strong> is triggered for the current game and the <strong>Game Start event</strong> is triggered for the game that is being launched.</span></li>
+    <li>此功能仅适用于某些平台，并且在某些平台上它仅适用于打包版本。</li>
+    <li>所有保存、成就等都将在启动器项目设置的标题 ID 下完成。</li>
+    <li>由于此函数 <em> 在启动新游戏之前结束当前游戏 </em>，因此会为当前游戏触发 <strong>Game End 事件 </strong>，并为正在启动的游戏触发 <strong>Game Start 事件 </strong>。</li>
   </ul>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true"> 每个平台的参数值 </span><span data-close-text="true"> 每个平台的参数值 </span></a></p>
   <div class="droptext" data-targetname="drop-down">
@@ -104,24 +104,24 @@
             <th style="">启动参数</th>
           </tr>
           <tr>
-            <td style=""><span class="inline">Windows</span></td>
+            <td><span class="inline">Windows</span></td>
             <td><span class="inline2">"/game2"</span></td>
-            <td style=""><span class="inline2">"-game game2.win"</span></td>
+            <td><span class="inline2">"-game game2.win"</span></td>
           </tr>
           <tr>
-            <td style=""><span class="inline">macOS</span></td>
+            <td><span class="inline">macOS</span></td>
             <td><span class="inline2">"game2"</span></td>
-            <td style=""><span class="inline2">""</span></td>
-          </tr>
-          <tr>
-            <td style=""><span class="inline">PS4/PS5</span></td>
             <td><span class="inline2">""</span></td>
-            <td style=""><span class="inline2">"-game /app0/games/game2/game.win"</span></td>
           </tr>
           <tr>
-            <td style=""><span class="inline">Switch</span></td>
+            <td><span class="inline">PS4/PS5</span></td>
+            <td><span class="inline2">""</span></td>
+            <td><span class="inline2">"-game /app0/games/game2/game.win"</span></td>
+          </tr>
+          <tr>
+            <td><span class="inline">Switch</span></td>
             <td><span class="inline2">"rom:/game2/"</span></td>
-            <td style=""><span class="inline2">""</span></td>
+            <td><span class="inline2">""</span></td>
           </tr>
         </tbody>
       </table>
@@ -144,12 +144,12 @@
       </tr>
       <tr>
         <td>working_directory</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要启动的游戏的工作目录</td>
       </tr>
       <tr>
         <td>launch_parameters</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>传递给要启动的游戏的命令行参数</td>
       </tr>
     </tbody>
@@ -174,7 +174,7 @@
         <div>Next:&nbsp;<a href="game_load.htm">game_load</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 game_change

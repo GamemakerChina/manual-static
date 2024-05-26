@@ -78,12 +78,15 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>draw_primitive_begin_texture</h1>
-  <p>在定义纹理基元的顶点之前，必须调用此函数。您必须指定要使用的基元类型(有关详细信息，请参见<a href="draw_primitive_begin.htm"><span class="inline">draw_primitive_begin()</span></a>)和要使用的纹理的<b>id</b>，可以是精灵或背景图像资源。例如，可以从函数<b></b><a href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm"><span class="inline">sprite_get_texture()</span></a>获得此资源id(无纹理使用-1)。</p>
-  <p class="note"><b><span class="note">注意</span></b>要重复纹理，其大小必须为2的幂，即：32 x 32、128 x 128等...</p>
+  <h1><span data-field="title" data-format="default">draw_primitive_begin_texture</span></h1>
+  <p>在定义纹理基元的顶点之前必须调用此函数。您必须提供要使用的图元类型 (有关详细信息，请参阅 <span class="inline3_func"><a href="draw_primitive_begin.htm">draw_primitive_begin</a></span>) 以及要使用的纹理的 <b>id</b>，该纹理可以是精灵资源或表面的 ID。例如，可以通过函数 <span class="inline3_func"><a href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">sprite_get_texture</a></span> 检索此 <b>id</b>( 如果没有纹理，则使用 <span class="inline2">-1</span>)。</p>
+  <div data-conref="../../../../assets/snippets/Note_Texture_Repeat_Requires_PowerOfTwo.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 对于要重复的纹理，其大小必须是 2 的幂，即：32x32、128x128 等。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">draw_primitive_begin_texture(kind, tex)</p>
+  <p class="code"><span data-field="title" data-format="default">draw_primitive_begin_texture</span>(kind, tex)</p>
   <table>
     <tbody>
       <tr>
@@ -93,13 +96,13 @@
       </tr>
       <tr>
         <td>kind</td>
-        <td><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Drawing/Primitives/draw_primitive_begin.htm">Primitive Type Constant</a></span></td>
+        <td><span data-keyref="Type_Constant_Draw_Primitive_Type"><a target="_blank" href="draw_primitive_begin.htm">Primitive Type Constant</a></span></td>
         <td>你要画的那种基元。</td>
       </tr>
       <tr>
         <td>tex</td>
-        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span></td>
-        <td>与基元一起使用的纹理。</td>
+        <td><span data-keyref="Type_Pointer_Texture"><a target="_blank" href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm">Texture</a></span></td>
+        <td>与基元一起使用的纹理 (<span class="inline2">-1</span> 表示不使用纹理)</td>
       </tr>
     </tbody>
   </table>
@@ -109,15 +112,14 @@
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">draw_set_colour(c_white);<br>
-    var tex = sprite_get_texture(spr_Background, 0);<br>
-    draw_primitive_begin_texture(pr_trianglestrip, tex);<br>
+    var _tex = sprite_get_texture(spr_Background, 0);<br>
+    draw_primitive_begin_texture(pr_trianglestrip, _tex);<br>
     draw_vertex_texture(0, 0, 0, 0);<br>
     draw_vertex_texture(640, 0, 1, 0);<br>
     draw_vertex_texture(0, 480, 0, 1);<br>
     draw_vertex_texture(640, 480, 1, 1);<br>
     draw_primitive_end();</p>
-  <p>上面的代码将绘制一个4顶点三角形条纹(制作一个矩形)，纹理保存在"tex"变量中，并且整个纹理将覆盖完成的基元。</p>
-  <p>&nbsp;</p>
+  <p>上面的代码将绘制一个 4 顶点三角形条 (形成一个矩形)，并使用 <span class="inline2">_tex</span> 变量中保存的纹理进行纹理化，并且整个纹理将用于覆盖已完成的图元。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -127,7 +129,7 @@
         <div style="float:right">Next:&nbsp;<a href="draw_primitive_end.htm">draw_primitive_end</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 draw_primitive_begin_texture

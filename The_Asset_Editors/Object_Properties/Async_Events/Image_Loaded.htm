@@ -89,9 +89,9 @@
     <li class="dropspot">"<span class="inline">status</span>"：返回小于 0 的错误值。</li>
   </ul>
   <p>然后，在此事件中将新加载的图像分配给精灵。以下代码示例演示如何使用返回的信息：</p>
-  <p class="code">if ds_map_find_value(async_load, "id") == spr<br>
+  <p class="code">if (ds_map_find_value(async_load, "id") == spr) <br>
     {<br>
-    &nbsp; &nbsp; if ds_map_find_value(async_load, "status") &gt;= 0<br>
+    &nbsp; &nbsp; if (ds_map_find_value(async_load, "status") &gt;= 0) <br>
     &nbsp; &nbsp; {<br>
     &nbsp; &nbsp; &nbsp; &nbsp; sprite_index = spr;<br>
     &nbsp; &nbsp; }<br>
@@ -106,7 +106,7 @@
         <div style="float:right">Next: <a href="Networking.htm">网络</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Asynchronous Image Loaded Event

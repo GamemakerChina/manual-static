@@ -78,37 +78,44 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>全局变量</h1>
-  <p><strong><a id="global"></a>全局</strong>变量的基本描述是这样的：一旦声明，它就不属于特定实例，但所有实例都可以访问。就像<a href="Local_Variables.htm">局部变量</a>一样，全局变量必须使用标识符来声明，但与局部变量不同的是，全局变量会保留在内存<em>中，直到游戏结束</em>。所以，你可以创建一个全局变量来跟踪(例如)玩家拥有的子弹数量，然后在游戏中的不同点更新这个变量，创建任何实例或调用函数时，随时更新这个变量。本质上，全局变量不属于任何特定实例，并且可以被所有实例访问、更改和使用，并且对变量所做的任何更改都是"全局的"，因为使用该变量的所有实例都将受到更改的影响。让我们看一个例子：</p>
+  <h1><span data-field="title" data-format="default">全局变量</span></h1>
+  <p><strong><a id="global"></a>全局</strong>变量是一种声明后不属于任何特定实例但可供所有实例访问的变量。就像<a href="Local_Variables.htm">局部变量</a>一样，全局变量必须使用标识符声明，但与局部变量不同的是，全局变量会保留在内存中<em>直到游戏结束</em>。因此，您可以创建一个全局变量来跟踪(例如)玩家拥有的子弹数量，然后在游戏中的不同点、代码中的任何位置随时更新此变量。对变量所做的任何更改都是"全局"的，因为访问该变量的所有实例都将受到更改的影响。让我们看一个例子：</p>
   <p class="code">global.food = 5;</p>
-  <p>我们首先写入"<span class="inline">global</span>"，然后写入"<span class="inline">.</span>"来声明"<span class="inline">food</span>"变量，以告诉<span data-keyref="GameMaker Name">GameMaker</span>此变量现在是全局范围。从现在开始，当需要以任何方式访问或更改此变量时，我们都需要使用此表单。因此，我们创建了一个名为"<span class="inline">food</span>"的新变量，并将其声明为全局变量。现在，任何实例或函数都可以以任何方式使用和更改此变量，并且所有其他实例都将"看到"此变量。例如，我们可以有一个不同的食物对象，玩家与之碰撞，并且在碰撞事件中：</p>
+  <p>我们首先编写<span class="inline2">global</span>关键字，然后编写点<span class="inline2">.</span>来声明<span class="inline2">food</span>变量，以告诉<span data-keyref="GameMaker Name">GameMaker</span>该变量的作用域是全局的。从现在开始，每当我们需要以任何方式访问或更改此变量时，我们都需要使用此表单。</p>
+  <p>因此，我们创建了一个名为<span class="inline2">food</span>的新变量，并将其声明为全局变量。现在，任何实例、结构或函数都可以以任何方式使用和更改此变量，并且所有其他实例将"看到"此变量。例如，我们可以有一个不同的食物对象与玩家碰撞，在碰撞事件中我们有：</p>
   <p class="code">global.food +=1;</p>
   <p>我们还有另一个对象可以绘制此值，如下所示：</p>
   <p class="code">draw_text(32, 32, "food = " + string(global.food));</p>
   <p>使用全局变量，我们可以更改值并查看引用此变量的所有对象实例中反映的那些更改。对于<i>local</i>变量，您必须注意不要将全局变量命名为与任何实例变量相同的名称，因为这可能会导致问题，并使错误因变量重叠而渗入游戏，有时这可能是一个很难调试的问题。一般来说，您应该有一个在游戏开始时声明所有全局变量的单个对象(例如，放置在游戏第一个房间中的第一个对象实例的<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">房间开始事件</a>)或一个将所有变量声明在一起的单个<a href="../Script_Functions.htm">脚本函数</a>，因为这样，如果您需要检查变量名称或编辑值，就可以方便地返回并一次性引用所有变量。</p>
-  <p><span data-keyref="GameMaker Name">GameMaker</span>也有一系列 "内置 "的全局变量，所以你应该注意它们，因为你可能会把你的一个实例变量命名为相同的名字，或者希望有你自己的全局变量有相同的名字，并想知道为什么你会得到错误！但是它们很容易被发现，因为它们在代码编辑器中显示为不同的颜色，也会在底部的自动完成栏中出现。然而，它们很容易被发现，因为它们在代码编辑器中以不同的颜色显示，也会出现在底部的自动完成栏中。大多数内置的全局变量都有非常具体的用途，在手册的相应章节中列出，但是有两个重要的全局变量经常使用，没有在其他地方列出。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>在脚本编辑器中，您处于全局范围内，因此可以省略<span class="inline2">global.</span>前缀。然而，为了清楚起见，无论如何包含它都是好的。</p>
+  <h2 id="the_global_struct">全局结构</h2>
+  <p>全局变量存储在<a href="../Structs.htm#struct">结构体</a>中，您可以像访问任何其他结构体一样访问该结构体。要引用此结构，您可以使用<span class="inline2">global</span>关键字。</p>
+  <p>例如，要显示您定义的所有全局变量和<a href="../Script_Functions.htm">脚本函数</a>，您可以使用以下代码：</p>
+  <p class="code">show_debug_message(global);</p>
+  <h2>内置全局变量</h2>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>也有一组"内置"全局变量，因此您应该了解它们，因为您可能会为实例变量之一命名相同的名称，或者希望自己的全局变量具有相同的名称并想知道为什么你会收到错误！然而，它们很容易被发现，因为它们在代码编辑器中以不同的颜色显示，并且也会出现在底部的自动完成栏中。大多数内置全局变量都有非常具体的用途，并在手册的相应部分中列出 - 但是有两个经常使用的重要变量未在其他地方列出：</p>
   <ul class="colour">
-    <li><a href="Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span> 异步加载</a></li>
+    <li><span class="inline"><a href="Builtin_Global_Variables/async_load.htm">async_load</a></span></li>
     <li><span class="inline"><a href="../../GML_Reference/Game_Input/Gesture_Input/event_data.htm">event_data</a></span> 事件数据</li>
   </ul>
-  <p>还有三个<b>被废弃的</b>内置全局变量，你应该注意(这些变量只是为了支持GameMaker以前版本的遗留项目，不应该<b><i>用在新项目中</i></b>)。</p>
+  <p>您还应该注意三个<b>已弃用的</b>内置全局变量(这些变量仅旨在支持<span data-keyref="GameMaker Name">GameMaker</span>早期版本的旧项目，<b><i>不应在新版本中使用项目</i></b>)：</p>
   <ul class="colour">
-    <li><a href="Builtin_Global_Variables/score.htm"><span class="inline">score</span> 分数</a></li>
-    <li><a href="Builtin_Global_Variables/health.htm"><span class="inline">health</span> 血量</a></li>
-    <li><a href="Builtin_Global_Variables/lives.htm"><span class="inline">lives</span> 命数</a></li>
+    <li><span class="inline"><a href="Builtin_Global_Variables/score.htm">score</a></span></li>
+    <li><span class="inline"><a href="Builtin_Global_Variables/health.htm">health</a></span></li>
+    <li><span class="inline"><a href="Builtin_Global_Variables/lives.htm">lives</a></span></li>
   </ul>
-  <p>最后，有两个变量可以用于脚本函数和方法。</p>
+  <p>最后，有两个变量可以在脚本函数和方法中使用：</p>
   <ul class="colour">
-    <li><span class="inline"><a href="Builtin_Global_Variables/argument.htm">argument 参数</a></span></li>
-    <li><span class="inline"><a href="Builtin_Global_Variables/argument_count.htm">argument_count 参数数量</a></span> </li>
+    <li><a href="Builtin_Global_Variables/argument.htm">argument 参数</a></li>
+    <li><a href="Builtin_Global_Variables/argument_count.htm">argument_count</a></li>
   </ul>
-  <p>下面的形式也可以用来声明全局变量，但<i><b>只为向后兼容</b></i>, 不建议您为新项目使用这种形式，因为GameMaker的未来版本可能不支持。</p>
-  <p>创建全局变量的第二种形式是使用<span class="inline">globalvar</span>声明声明它们，就像使用<span class="inline">var</span>声明对局部变量进行声明一样。</p>
-  <p class="note"><span data-conref="../../../assets/snippets/Tag_important.hts"><span class="important">重要</span> globalvar</span>声明已<span class="inline">弃用</span>，仅支持用于旧版用途。您应该<b>始终</b>使用<b>global.</b>标识符来标记全局变量。</p>
+  <h2>globalvar</h2>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_deprecated.hts"><span class="warning">已弃用</span></span><span class="inline2">globalvar</span>声明已<b>弃用</b>，仅支持旧版用途。您应该<b>始终</b>使用<span class="inline2">global.</span>前缀显式引用全局范围。</p>
+  <p>创建全局变量的第二种形式是使用<span class="inline2">globalvar</span>声明来声明它们，就像使用<span class="inline2">var</span>声明来声明<a href="Local_Variables.htm">局部变量</a>一样。</p>
   <p>这个(废弃的)声明的使用方法如下。</p>
   <p class="code">globalvar food;<br>
     food = 5;</p>
-  <p>以这种方式声明之后，变量food现在被视为全局变量，并且不需要<span class="inline">global.</span>前缀-这也意味着在代码中识别全局变量要困难得多，而且由于在不同的对象中使用相同的变量名称或者从安装的扩展名中使用相同的变量名称，也更容易获得变量重叠。以这种方式声明后，将按如下方式访问全局变量：</p>
+  <p>以这种方式声明后，变量<span class="inline2">food</span>现在被视为全局变量，不需要<span class="inline2">global.</span>前缀 - 这也意味着在代码中识别全局变量要困难得多，而且获取变量也容易得多当您在不同对象或已安装的扩展中使用相同的变量名称时，会发生重叠。一旦以这种方式声明，全局变量将按如下方式访问：</p>
   <p class="code">food += 2;</p>
   <p>或:</p>
   <p class="code">draw_text(32, 32, "food = " + string(food));</p>
@@ -122,11 +129,11 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Variables_And_Variable_Scope.htm">Variables And Variables Scope</a></div>
-        <div style="float:right">Next: <a href="Constants.htm">常量</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Variables_And_Variable_Scope.htm">变量和变量范围</a></div>
+        <div style="float:right">Next:&nbsp;<a href="Constants.htm">常量</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 global

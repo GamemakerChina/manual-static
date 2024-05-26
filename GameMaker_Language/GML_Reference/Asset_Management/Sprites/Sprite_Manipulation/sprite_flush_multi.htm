@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Page explaining the function sprite_flush_multi">
   <meta name="rh-index-keywords" content="sprite_flush_multi">
   <meta name="search-keywords" content="sprite_flush_multi">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_prefetch.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_flush.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_flush.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -78,32 +78,39 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>sprite_flush_multi</h1>
-  <p>使用此函数，您可以从纹理内存中删除给定精灵的任意数量的纹理页。您以数组的形式提供sprite索引，分配给它们的纹理页将从纹理内存中删除。请注意，如果其中一个纹理页面在房间中的其他地方使用(由另一个实例Sprite或背景等使用)。您可能会受到轻微的性能影响，因为页面会立即重新加载到内存中，因此在使用此函数时应小心。请注意，如果所选资源不支持刷新，则函数将返回<span class="inline">-1</span>，或者如果一切正常，则函数将返回<span class="inline">0</span>。</p>
+  <h1><span data-field="title" data-format="default">sprite_flush_multi</span></h1>
+  <p>此函数从纹理内存(VRAM) 中删除给定精灵的任意数量的纹理页。</p>
+  <p>您以数组形式提供精灵，它们分配到的纹理页面将从纹理内存中删除。如果所选资产不支持刷新，该函数将返回<span class="inline2">-1</span>;如果一切正常，该函数将返回<span class="inline2">0</span>。</p>
+  <p class="note"><span data-conref="../../../../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>如果其中一个纹理页面在房间的其他地方使用(由另一个实例精灵、背景等)，您可能会受到轻微的性能影响，因为该页面会立即重新加载回内存，所以使用该功能时要小心。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">sprite_flush_multi(array);</p>
+  <p class="code"><span data-field="title" data-format="default">sprite_flush_multi</span>(array);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>array</td><td><span data-keyref="Type_Array"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span></td>
-        <td>包含要刷新的精灵索引的数组</td>
-     </tr>
+        <td>array</td>
+        <td><span data-keyref="Type_Array"><a target="_blank" href="../../../../GML_Overview/Arrays.htm">Array</a></span></td>
+        <td>包含要刷新的精灵的数组</td>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> (-1 or 0)</p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../GML_Overview/Data_Types.htm">Real</a></span> (-1 or 0)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">spr_a[0] = spr_Player_Aura1;<br> spr_a[1] = spr_Player_Aura2;<br> spr_a[2] = spr_Player_Aura3;<br> spr_a[3] = spr_Player_Aura4;<br> sprite_flush_multi(spr_a);
+  <p class="code">spr_a[0] = spr_Player_Aura1;<br>
+    spr_a[1] = spr_Player_Aura2;<br>
+    spr_a[2] = spr_Player_Aura3;<br>
+    spr_a[3] = spr_Player_Aura4;<br>
+    <span data-field="title" data-format="default">sprite_flush_multi</span>(spr_a);
   </p>
-  <p>上面的代码创建了一个数组，其中每个元素都保存了一个精灵索引。然后，该数组用于从内存中清除这些精灵纹理。</p>
-  <p>&nbsp;</p>
+  <p>上面的代码创建了一个数组，其中每个元素都保存一个精灵索引。然后使用该数组从内存中清除这些精灵的纹理。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -113,7 +120,7 @@
         <div style="float:right">Next:&nbsp;<a href="sprite_prefetch.htm">sprite_prefetch</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 sprite_flush_multi

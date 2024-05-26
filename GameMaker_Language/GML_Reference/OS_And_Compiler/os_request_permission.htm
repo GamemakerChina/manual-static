@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.20.0_15";
+    gTopicId = "8.2.2.21.0_15";
   
 //]]></script>
 
@@ -123,7 +123,7 @@
       </tr>
       <tr>
         <td>permissions</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>请求的权限。通过添加更多参数请求多个权限。</td>
       </tr>
     </tbody>
@@ -140,7 +140,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os_request_permission("android.permission.INTERNET");<br>
     &nbsp; &nbsp; }<br>
     }</p>
-  <p>上面的代码检查操作系统类型，如果是Android，它会检查"互联网"权限，如果尚未被授予，它会请求它。<span></span></p>
+  <p>上面的代码检查操作系统类型，如果是 Android，则会检查 "INTERNET" 权限，如果尚未授予，则会请求该权限。</p>
   <h4>示例2：</h4>
   <p class="code">var _read = "android.permission.READ_EXTERNAL_STORAGE";<br>
     var _write = "android.permission.WRITE_EXTERNAL_STORAGE";<br>
@@ -154,7 +154,7 @@
     &nbsp; &nbsp;&nbsp;os_request_permission(_write, _read);<br>
     }
   </p>
-  <p>此<span></span>函数检查用户是否具有读取和写入外部存储的权限。如果允许，它会运行扩展函数以使用这些权限进行操作。但是，如果不允许这些权限中的任何一个，它会调用<span class="inline2">os_request_permission()</span>来一次请求这两个权限。</p>
+  <p>该函数检查用户是否具有读取和写入外部存储的权限。如果允许，它会运行扩展函数来使用这些权限进行操作。不过，如果其中任何一个权限不被允许，它会调用 <span class="inline2">os_request_permission()</span> 以同时请求这两个权限。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -164,7 +164,7 @@
         <div style="float:right">Next: <a href="GM_build_date.htm">GM_build_date</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 os_request_permission

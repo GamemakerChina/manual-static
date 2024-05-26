@@ -97,12 +97,15 @@
     <li><a href="sequence_instance_override_object.htm">sequence_instance_override_object</a></li>
   </ul>
   <p>&nbsp;</p>
-  <p>There is also a&nbsp;<strong>built-in variable</strong>&nbsp;associated with instances that can be used to determine of the instance has been used in a sequence or not:</p>
+  <p>还有一个与实例关联的 <strong> 内置变量 </strong>，可用于确定实例是否已在序列中使用：</p>
   <p>&nbsp;</p>
   <ul class="colour">
     <li><a href="in_sequence.htm">in_sequence</a></li>
   </ul>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要提示</span></span> 如果您的序列中有任何实例，这些实例不应更改其 <span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_xscale.htm">image_xscale</a></span>/<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_yscale.htm">image_yscale</a></span>/<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_angle.htm">image_angle</a></span>/<span class="inline2">x</span>/<span class="inline2">y</span> 变量，因为当序列开始播放后更新每个步骤时，它们将被覆盖。</p>
+  <div data-conref="../../../../assets/snippets/Note_Instances_In_Sequence_Shouldnt_Update_Transform_Vars.hts">
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;</b>If your sequence has any instances in it, these instances shouldn't change their <span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_xscale.htm">image_xscale</a></span>&nbsp; /&nbsp;<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_yscale.htm">image_yscale</a></span> /&nbsp;<span class="inline2"><a href="../Sprites/Sprite_Instance_Variables/image_angle.htm">image_angle</a></span> /&nbsp;<span class="inline2"><a href="../Instances/Instance_Variables/x.htm">x</a></span> /&nbsp;<span class="inline2"><a href="../Instances/Instance_Variables/y.htm">y</a></span> variables as they will be&nbsp;overwritten when the sequence updates each step after starting to be played. You can check&nbsp;<span class="inline2"><a href="in_sequence.htm">in_sequence</a></span>&nbsp;and only update the properties of such an instance when this variable is <span class="inline2">false</span>.</p>
+
+</div>
   <p>&nbsp;</p>
   <p>在使用这些函数创建或编辑序列之前，我们建议您阅读下面给出的结构体属性的详细说明。如何创建新序列的一般概述是：</p>
   <ul class="colour">
@@ -110,7 +113,7 @@
   </ul>
   <p class="code">myseq = sequence_create();</p>
   <ul class="colour">
-    <li>设置序列对象顶级值，如长度、播放模式、播放速度等。例如：</li>
+    <li>Set the sequence object top-level values like length, play mode, play speed, etc. For example:</li>
   </ul>
   <p class="code">myseq.length = 120;<br>
     myseq.loopmode = seqplay_pingpong</p>
@@ -120,7 +123,7 @@
   <p class="code">var mytracks = array_create(1);<br>
     mytracks[0] = sequence_track_new(seqtracktype_graphic);</p>
   <ul class="colour">
-    <li>每个资产轨道都需要一些数据来告诉序列它的外观、位置等 ...... 并且这些数据以 <i> 关键帧 </i> 的形式添加。在资产轨道的顶层，您可以为各种内容设置关键帧 (在下面的轨道结构部分中列出)，但请注意，由于这些是资产轨道关键帧，因此它们不会被插值，只会更改当到达给定帧时它们引用的值。每个关键帧都是一个添加到数组中的结构，然后将该数组分配给资源轨道。要创建关键帧结构，我们将调用函数 <span class="inline3_func"><a href="sequence_keyframe_new.htm">sequence_keyframe_new</a></span>，并使用函数 <span class="inline3_func"><a href="sequence_keyframedata_new.htm">sequence_keyframedata_new</a></span> 填充关键帧：</li>
+    <li>Each asset track needs to have some data to tell the sequence how it will look, what its position is, etc. This is added in the form of <i>keyframes</i>. At the top level for an asset track, you can set keyframes for various things (listed in the section on the Track Struct, below), but note that as these are asset track keyframes, they won't be interpolated and will simply change the value they refer to when the given frame is reached. Each keyframe is a struct that is added to an array, and then this array is assigned to the asset track. To create the keyframe struct we would call the function&nbsp;<span class="inline3_func"><a href="sequence_keyframe_new.htm">sequence_keyframe_new</a></span> and to populate the keyframe with the required data, we would use the function <span class="inline3_func"><a href="sequence_keyframedata_new.htm">sequence_keyframedata_new</a></span>:</li>
   </ul>
   <p class="code">// Create a new keyframe struct for a graphics asset track and add it to an array (as you can have multiple keys in a frame)<br>
     var graphickeys = array_create(1);<br>
@@ -203,7 +206,7 @@
         <div style="float:right">Next: <a href="../Fonts/Fonts.htm">字体</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Sequences

@@ -102,7 +102,7 @@
     <p class="dropspot"><img alt="GML VisualActions For The Step Event" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_1_3.png"></p>
     <p class="code">var _dist = point_distance(x, y, mouse_x, mouse_y);<br>
       <br>
-      if _dist &lt;= speed<br>
+      if (_dist &lt;= speed) <br>
       {<br>
       &nbsp; &nbsp; speed = 0;<br>
       }
@@ -118,19 +118,19 @@
     <p class="dropspot">这种类型的移动称为<strong>位置</strong>移动，因为我们实质上是在每次运行代码时拿起实例并将其放在新位置。在本例中，我们要做的是向您展示如何使用这种移动方式在4个方向上移动实例：向上、向下、向左和向右。</p>
     <p class="dropspot">首先，打开一个对象并为其指定一个精灵。现在，我们可以在这一点上添加各种<strong>键盘事件</strong>，并在每个事件中让实例向所需的方向移动，但是，我们希望玩家一次只能向一个方向移动，并且只使用键盘事件来做这件事比使用代码要复杂一些。相反，我们将使用<strong>步事件</strong> - 您现在应该将其添加到对象 - 以及使用箭头键移动的以下操作或代码：</p>
     <p class="dropspot"><img alt="GML VisualStep Event Movement Actions" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_2_1.png"></p>
-    <p class="code">if keyboard_check(vk_left)<br>
+    <p class="code">if (keyboard_check(vk_left)) <br>
       {<br>
       &nbsp; &nbsp; x = x - 2;<br>
       }<br>
-      else if keyboard_check(vk_right)<br>
+      else if (keyboard_check(vk_right)) <br>
       {<br>
       &nbsp; &nbsp; x = x + 2;<br>
       }<br>
-      else if keyboard_check(vk_up)<br>
+      else if (keyboard_check(vk_up)) <br>
       {<br>
       &nbsp; &nbsp; y = y - 2;<br>
       }<br>
-      else if keyboard_check(vk_down)<br>
+      else if (keyboard_check(vk_down)) <br>
       {<br>
       &nbsp; &nbsp; y = y + 2;<br>
       }</p>
@@ -138,38 +138,38 @@
     <p class="dropspot"><img alt="Animation Showing 4-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_2_1.gif"></p>
     <p class="dropspot">我们可以修改这个代码，将4向移动转换为8向移动也很容易……。只需从代码块中删除“<span class="inline">Else</span>”命令，使一切看起来如下所示：</p>
     <p class="dropspot"><img alt="GML VisualStep Event Movement Actions" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_2_2.png"></p>
-    <p class="code">if keyboard_check(vk_left)<br>
+    <p class="code">if (keyboard_check(vk_left)) <br>
       {<br>
       &nbsp; &nbsp; x = x - 2;<br>
       }<br>
-      if keyboard_check(vk_right)<br>
+      if (keyboard_check(vk_right)) <br>
       {<br>
       &nbsp; &nbsp; x = x + 2;<br>
       }<br>
-      if keyboard_check(vk_up)<br>
+      if (keyboard_check(vk_up)) <br>
       {<br>
       &nbsp; &nbsp; y = y - 2;<br>
       }<br>
-      if keyboard_check(vk_down)<br>
+      if (keyboard_check(vk_down)) <br>
       {<br>
       &nbsp; &nbsp; y = y + 2;<br>
       }</p>
     <p class="dropspot">现在，当您按下<strong>播放</strong>按钮<img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png">时，它将如下所示：</p>
     <p class="dropspot"><img alt="Animation Showing 8-Way Keyboard Movement" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_2_2.gif"></p>
     <p class="dropspot">对于使用 GML 代码的用户来说，最后一件值得注意的事情是 ...。当使用 GML 可视化时，您可以从下拉列表中选择想要使用的键盘键，但使用 GML 就没有那么简单了。您可以使用许多 <a href="../GameMaker_Language/GML_Reference/Game_Input/Keyboard_Input/Keyboard_Input.htm"> 键盘常量 </a>&nbsp;-- 就像上面代码中显示的箭头键常量一样 -- 但字母数字键<em>没有</em>常量。它们的处理方式略有不同，需要使用函数 <a href="../GameMaker_Language/GML_Reference/Strings/ord.htm"><span class="inline">ord()</span></a>。下面的代码向您展示了如何使用 WASD 而不是箭头键来执行此操作：</p>
-    <p class="code">if keyboard_check(ord("A"))<br>
+    <p class="code">if (keyboard_check(ord("A"))) <br>
       {<br>
       &nbsp; &nbsp; x = x - 2;<br>
       }<br>
-      if keyboard_check(ord("D"))<br>
+      if (keyboard_check(ord("D"))) <br>
       {<br>
       &nbsp; &nbsp; x = x + 2;<br>
       }<br>
-      if keyboard_check(ord("W"))<br>
+      if (keyboard_check(ord("W"))) <br>
       {<br>
       &nbsp; &nbsp; y = y - 2;<br>
       }<br>
-      if keyboard_check(ord("S"))<br>
+      if (keyboard_check(ord("S"))) <br>
       {<br>
       &nbsp; &nbsp; y = y + 2;<br>
       }</p>
@@ -184,7 +184,7 @@
       <br>
       for (var i = 0; i &lt; 12; i += 1;)<br>
       {<br>
-      &nbsp; &nbsp; if gamepad_is_connected(i)<br>
+      &nbsp; &nbsp; if (gamepad_is_connected(i)) <br>
       &nbsp; &nbsp; {<br>
       &nbsp; &nbsp; &nbsp; &nbsp; gamepad_id = i;<br>
       &nbsp; &nbsp; &nbsp; &nbsp; gamepad_set_axis_deadzone(gamepad_id, 0.2);<br>
@@ -196,7 +196,7 @@
     <p class="dropspot">请注意，在上面的代码中，我们为游戏手柄设置了<strong><a class="tooltip" title="盲区是指在游戏识别到你移动模拟杆之前你必须移动的距离。一个低盲区会使任何模拟杆的轻微移动移动你的玩家或目标或任何东西。高盲区值意味着模拟棒需要一个更大的移动，在游戏将检测它和移动任何被控制。">死区</a></strong>。这是因为不同品牌的游戏手柄上的模拟杆会有不同的敏感度，有时它们会非常敏感，如果你不设置死区，它们可能会在你的游戏中造成不必要的移动。因此，我们将死区设置为类似 0.2 的值，以告诉 <span data-keyref="GameMaker Name">GameMaker</span> 忽略该 <a class="tooltip" title="绝对值是指忽略该值的符号的值，实际上将所有值都转换为正值或零。因此例如-10的绝对值为10。"> 绝对值 </a> 下的所有游戏手柄操纵杆。</p>
     <p class="dropspot">要添加实际的移动，我们需要一个<strong>步事件</strong>，因此现在添加该事件，并为其提供以下 GML 可视化或 GML：</p>
     <p class="dropspot"><img alt="Get Gamepad Input Using DnD" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_3_2.png"></p>
-    <p class="code">if gamepad_id &gt; -1<br>
+    <p class="code">if (gamepad_id &gt; -1) <br>
       {<br>
       &nbsp; &nbsp; var _h = gamepad_axis_value(gamepad_id, gp_axislh);<br>
       &nbsp; &nbsp; var _v = gamepad_axis_value(gamepad_id, gp_axislv);<br>
@@ -260,7 +260,7 @@
         <div style="float:right">Next:&nbsp;<a href="Summary.htm">总结</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Movement

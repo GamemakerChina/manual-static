@@ -82,32 +82,34 @@
   <h1>place_free</h1>
   <p>您可以使用此函数检查调用实例是否会与游戏中标记为<i>固体<b></b>的任何实例</i>发生碰撞。现在，需要注意的是，运行代码的实例必须具有有效的碰撞遮罩(对于sprite本身，或者通过<a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><span class="inline">mask_index</span></a>)，并且它只会注册与那些也具有有效遮罩的实体标记实例的碰撞。</p>
   <p>当放置在x/y参数指定的位置时，该函数本身基本上通过获取实例并测试仅具有实体标记实例的碰撞来工作。碰撞检查可以是精确的，也可以基于实例的边界框，具体取决于选择了哪种碰撞遮罩。</p>
-  <p>请注意，在执行检查之前，给定的x/y坐标将泛洪到最近的整数。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">place_free(x, y);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>x</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>x</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要检查的x位置。</td>
-     </tr>
+      </tr>
       <tr>
-        <td>y</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>y</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要检查的y位置。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if place_free(mouse_x, mouse_y)<br>
+  <p class="code">if (place_free(mouse_x, mouse_y))<br>
     {<br>
     &nbsp; &nbsp; x = mouse_x;<br>
     &nbsp; &nbsp; y = mouse_y;<br>
@@ -123,7 +125,7 @@
         <div style="float:right">Next: <a href="place_meeting.htm">place_meeting</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 place_free

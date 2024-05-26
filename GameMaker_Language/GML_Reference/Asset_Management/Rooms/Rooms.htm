@@ -79,7 +79,11 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">Rooms</span></h1>
-  <p>房间是在 <span data-keyref="GameMaker Name">GameMaker</span><span> 的 <a href="../../../../The_Asset_Editors/Rooms.htm"> 房间编辑器 </a> 中创建的，并且是游戏中所有事情发生的地方。在任何游戏中，您都必须至少拥有一个房间才能运行，但您可能需要更多房间，具体取决于游戏类型以及您构建项目的方式。本节包含与房间相关的所有通用 GML 函数和变量，用于获取有关房间的信息以及设置其中的某些属性。</span></p>
+  <p>Rooms<span>&nbsp;</span>are where everything happens in your game. You create them in the <a href="../../../../The_IDE/The_IDE.htm" title="GameMaker IDE">IDE</a> using&nbsp;<a href="../../../../The_Asset_Editors/Rooms.htm">The Room Editor</a>&nbsp;or at runtime using the functions under <a href="Rooms.htm#modifying_rooms" title="functions for Modifying Rooms">修改房间</a>.</p>
+  <p>Any&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;game must have at least one room in it for it to run, but you may need many more depending on the type of game and how you structure your project. By default, a new&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;project has a single room added to it.</p>
+  <p>This section has all the general GML functions and variables related to rooms, for getting information about them as well as for setting certain properties within them.</p>
+  <h2 id="func_ref">功能参考</h2>
+  <h3 id="global">全局</h3>
   <p>以下<a href="../../../GML_Overview/Variables/Global_Variables.htm">全局变量</a>和函数可用于获取有关任何给定房间的基本信息：</p>
   <ul class="colour">
     <li><a href="room_first.htm">room_first</a></li>
@@ -93,18 +97,24 @@
     <li><a href="room_persistent.htm">room_persistent</a></li>
   </ul>
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 上面列出的变量在脚本中无效，因为脚本是在加载第一个房间之前执行的。<br><br> 这仅适用于在脚本根部编写的代码，但不要在脚本内创建的函数，因为这些函数可以在游戏过程中随时执行。</p>
-  <p>您还可以使用以下函数来获取当前房间的名称(如<a href="../../../../Introduction/The_Asset_Browser.htm">资源浏览器</a>中所定义)以及在房间之间移动：</p>
+  <h3 id="information">信息</h3>
+  <p>您还可以使用以下函数来查明房间是否存在、获取其名称 (如 <a href="../../../../Introduction/The_Asset_Browser.htm"> 资产浏览器 </a> 中所定义) 和一般信息：</p>
   <ul class="colour">
+    <li><a href="room_exists.htm">room_exists</a></li>
     <li><a href="room_get_name.htm">room_get_name</a></li>
+    <li><a href="room_get_info.htm">room_get_info</a></li>
+  </ul>
+  <h3 id="switching_rooms">切换房间</h3>
+  <ul class="colour">
     <li><a href="room_goto.htm">room_goto</a></li>
     <li><a href="room_goto_next.htm">room_goto_next</a></li>
     <li><a href="room_goto_previous.htm">room_goto_previous</a></li>
     <li><a href="room_restart.htm">room_restart</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>接下来，我们有一系列函数可以用来更改房间及其内容，甚至可以创建新房间并添加到其中。应该注意的是，这些函数<i>不应在你想要更改的房间内运行</i>，而应先从另一个房间的实例中运行。另请注意，如果你以这种方式更改任何房间资源，则更改将是<strong>永久的</strong>，即使你调用了 room_restart() 函数(但关闭和重启游戏会重置房间属性)，更改将在游戏的整个持续时间内保持不变。</p>
+  <h3 id="modifying_rooms">修改房间</h3>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 这些函数 <i> 不应从您希望更改的房间内运行 </i>，而应首​​先从另一个房间中的实例运行。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您以这种方式更改任何房间资产，则该更改是 <strong> 永久 </strong> 的，并且将在整个游戏期间保持不变，即使您调用 <span class="inline3_func"><a href="room_restart.htm">room_restart</a></span> 函数 (关闭并重新启动游戏将重置房间属性)。</p>
   <ul class="colour">
-    <li><a href="room_exists.htm">room_exists</a></li>
     <li><a href="room_add.htm">room_add</a></li>
     <li><a href="room_duplicate.htm">room_duplicate</a></li>
     <li><a href="room_assign.htm">room_assign</a></li>
@@ -119,29 +129,30 @@
     <li><a href="room_set_camera.htm">room_set_camera</a></li>
     <li><a href="room_get_camera.htm">room_get_camera</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>还有许多与创建和操作不同类型的元素相关的不同函数，这些元素可以放置在房间中的层上。这些函数在下面列出的每个元素类型的相应部分中列出：</p>
+  <h3 id="room_layers_elements">Layers and Elements</h3>
   <ul class="colour">
-    <li><a href="General_Layer_Functions/General_Layer_Functions.htm">常规图层函数</a></li>
-    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">图块集层</a></li>
-    <li><a href="Background_Layers/Background_Layers.htm">背景图层</a></li>
-    <li><a href="Sprite_Layers/Sprite_Layers.htm">精灵图层</a></li>
-    <li><a href="Sequence_Layers/Sequence_Layers.htm">序列图层</a></li>
+    <li><a href="General_Layer_Functions/General_Layer_Functions.htm">Layers</a></li>
+    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">Tile Map Elements</a></li>
+    <li><a href="Background_Layers/Background_Layers.htm">Background Elements</a></li>
+    <li><a href="Sprite_Layers/Sprite_Layers.htm">Sprite Elements</a></li>
+    <li><a href="Sequence_Layers/Sequence_Layers.htm">Sequence Elements</a></li>
+    <li>Particle System Elements:&nbsp;<a href="../../Drawing/Particles/Particle_Systems/part_system_create_layer.htm">part_system_create_layer</a></li>
+  </ul>
+  <h3>Filters and Effects</h3>
+  <ul class="colour">
     <li><a href="Filter_Effect_Layers/Filter_Effect_Functions.htm">滤镜和效果函数</a></li>
   </ul>
-  <p>&nbsp;</p>
-  <p>创建房间图层时需要注意的是，<i>在一个层上可以有多个不同的元素类型</i>。 所以，例如，你可能有一个敌人的层，在这个层上有敌人实例以及某些与敌人有关的精灵资源。或者，您可以使用带有图块地图元素的背景元素来创建房间的外观。这在房间编辑器中是不允许的，但在动态创建对象时，可以执行此操作，这就是为什么存在类似<a href="General_Layer_Functions/layer_get_all_elements.htm"><span class="inline">layer_get_all_elements()</span></a>的函数的原因。</p>
-  <p>&nbsp;</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important"> 重要提示</span></span> 创建房间层时 <i> 您可以在一个层上拥有多种不同的元素类型 </i>。因此，例如，您可能有一个敌人层，并且该层上有敌人实例以及仅与该敌人相关的某些精灵资产。或者，您可以使用带有图块地图元素的背景元素来创建房间的外观。这在 <a href="../../../../The_Asset_Editors/Rooms.htm"> 房间编辑器 </a> 中是不允许的，但在动态创建内容时您可以这样做，这就是存在 <span class="inline3_func"><a href="General_Layer_Functions/layer_get_all_elements.htm">layer_get_all_elements</a></span> 等函数的原因。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Asset_Management.htm">资源管理</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Asset_Management.htm">资源管理</a></div>
         <div style="float:right">Next:&nbsp;<a href="../Extensions/Extensions.htm">扩展</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Rooms

@@ -79,19 +79,18 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>序列</h1>
+  <h1><span data-field="title" data-format="default">Sequences</span></h1>
   <p>我们将在本指南中讨论的最后一个资源是<strong>序列</strong>资源，然后再继续讨论<strong>房间编辑器</strong>中的所有资源。序列本质上是在一个位置收集的其他资源的集合，然后一起设置动画。最终的动画(序列)随后可以添加到游戏中的房间，就像实例一样。</p>
-  <p>序列是通过<a href="../The_Asset_Editors/Sequences.htm"><strong>序列编辑器</strong></a>创建的，每当您在<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>中创建新的序列资源时，该编辑器都会打开：</p>
+  <p>序列是通过 <a href="../The_Asset_Editors/Sequences.htm"> 序列编辑器 </a> 创建的，每当您在 <a href="../Introduction/The_Asset_Browser.htm"> 资源浏览器 </a> 中创建新序列资源时，都会打开序列编辑器 {}：</p>
   <p><img alt="The Sequences Editor" class="center" src="../assets/Images/QS_Guide/QS_Sequences_Editor.png">要创建基本序列，请将声音、精灵或实例添加到序列中<em>画布</em>然后将其定位到序列开始时希望的位置。这将创建一个<strong><a class="tooltip" title="序列轨道面板中的轨道包含单个资源，即精灵，声音，实例或序列。">资源跟踪</a></strong>在<a class="tooltip" title="序列编辑器的区域，显示你在一个序列中所有不同的轨道-资源轨道，参数轨道，轨道组和剪切蒙版组。">跟踪面板</a><em></em>，还增加了<strong></strong><strong><a class="tooltip" title="一个关键帧(也称为参数键)是在时间轴上的一个点，在这个点上定义了一个参数值的变化。">关键帧</a></strong>进入<a class="tooltip" title="关键帧清单“摄影表”是序列时间轴的直观表示，您可以在其中添加，删除和编辑不同的资源键和参数键，这些键会影响序列中不同音轨随时间的行为。">关键帧表</a>显示资源可见的持续时间。</p>
-  <p>序列的时间以帧为单位(这与实例的步数相同，即：一帧等同于一个游戏步骤)，您可以通过在摄影表中移动序列<strong><a class="tooltip" title="序列文件或精灵编辑器帧视图中时间轴内的当前“播放”位置。在序列(和精灵)中，这将随着动画预览而移动，你可以将其放置在特定的帧上以查看和编辑该位置的键和关键帧。">播放头</a></strong>来查看在任何给定的帧上会发生什么。播放头位置还用于添加<strong>关键帧</strong>，这些关键帧是您希望将某些状态更改为开始或结束的帧。参数密钥存储在给定资源的<strong><a class="tooltip" title="在轨道面板中分配给资源轨道的轨道，并改变其链接到的资源轨道的单个参数，如位置或图像索引。">参数轨道</a></strong>上。</p>
-  <p>因此，您可以在序列的第0帧定位资源并设置其比例、颜色和其他属性。然后记录资源的参数关键点，并将播放头移动到要设置下一个资源状态(位置、颜色等)的帧。在此帧上，您将再次更改不同的参数并记录它们的关键点，然后根据序列长度的需要重复此过程。当您在序列上按下播放时，资源将被设置动画，不同参数状态之间的序列<a class="tooltip" title="线性插值是通过用一条直线连接两个相邻的已知值来估计一个新值。然后你可以通过检查直线上的任意一点来得到插值值。在图形学中，线性插值是指平滑像素边缘的一种基本方法。">线性插值</a>&nbsp;，最终结果类似于：&nbsp;</p>
+  <p>序列的时间以帧为单位(这与实例的步骤相同，即：一帧与一个游戏步骤相同)，您可以通过移动摄影表中的序列<strong><a class="tooltip" title="序列文件或精灵编辑器帧视图中时间轴内的当前“播放”位置。在序列(和精灵)中，这将随着动画预览而移动，你可以将其放置在特定的帧上以查看和编辑该位置的键和关键帧。">播放头</a></strong>来查看在任何给定帧处会发生什么。播放头位置也用于添加<strong>关键帧</strong>这些帧是您希望将某些状态更改为开始或结束的帧。参数键存储在给定资源的<strong><a class="tooltip" title="在轨道面板中分配给资源轨道的轨道，并改变其链接到的资源轨道的单个参数，如位置或图像索引。">参数轨道</a></strong>上。</p>
+  <p>因此，您可以在序列的第0帧定位资源，并设置其比例、颜色和其他属性。然后，您可以记录资源的参数键，并将播放头移动到要设置下一个资源状态的帧(位置、颜色等)。在此帧上，您将再次更改不同的参数并为它们记录键，然后根据序列长度的需要重复此过程。当您按下序列上的播放时，资源将被动画化，不同参数状态之间的序列<a class="tooltip" title="线性插值是通过用一条直线连接两个相邻的已知值来估计一个新值。然后你可以通过检查直线上的任意一点来得到插值值。在图形学中，线性插值是指平滑像素边缘的一种基本方法。">线性插值</a>，最终结果如下所示：</p>
   <p><img alt="Sequence Example Image" class="center" src="../assets/Images/QS_Guide/QS_Sequence_Example.gif">我们不会在这里更详细地讨论序列是如何工作的，但足以说它们是一个令人难以置信的强大工具，可以做任何事情，从切换场景，到菜单，到角色状态等等。</p>
   <p>下面链接的页面提供了如何在游戏中使用序列的所有详细信息：</p>
   <ul class="colour">
     <li><a href="../The_Asset_Editors/Sequences.htm">序列编辑器</a></li>
   </ul>
   <p>现在我们可以继续讨论<strong>房间编辑器</strong>，游戏的所有这些部分都集中在这里……</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -101,7 +100,7 @@
         <div style="float:right">Next: <a href="Rooms.htm">房间</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Quick Start: Sequences

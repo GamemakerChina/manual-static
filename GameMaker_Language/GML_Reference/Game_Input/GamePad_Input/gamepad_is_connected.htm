@@ -80,34 +80,39 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>gamepad_is_connected</h1>
-  <p>此函数将返回游戏手柄是否连接到给定的 “插槽”(返回<span class="inline">true</span>)(返回<span class="inline">false</span>)。你通常会将此函数与<a href="gamepad_get_device_count.htm"><span class="inline">gamepad_get_device_count()</span></a>函数结合使用，以获得正确数量的可用游戏手柄和/或游戏手柄 “插槽”。请注意，用户连接游戏手柄和<span data-keyref="GameMaker Name">GameMaker</span>检测到游戏手柄处于连接状态之间可能会有轻微的延迟(在处理连接蓝牙的控制器时尤其如此)。</p>
-  <p class="note"><strong>注意</strong>: 在某些平台上-尤其是控制台-此函数可能会在已连接/选择游戏手柄后立即返回false，并且可能需要在几帧 (步骤) 后的警报中进行检查才能正确检测游戏手柄。</p>
+  <p>此函数将返回游戏手柄是否连接到给定 " 插槽 "( 返回 <span class="inline">true</span>) 或未连接 (返回 <span class="inline">false</span>)。您通常会将此函数与 <a href="gamepad_get_device_count.htm"><span class="inline">gamepad_get_device_count()</span></a> 函数结合使用，以获取可用游戏手柄和 / 或游戏手柄 " 插槽 " 的正确数量。请注意，用户连接游戏手柄和 <span data-keyref="GameMaker Name">GameMaker</span> 检测到游戏手柄已连接之间可能存在轻微延迟 (在处理蓝牙连接的控制器时尤其如此)。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 在某些平台上 - 特别是控制台 - 连接 / 选择游戏手柄后，此函数可能会立即返回 <span class="inline2">false</span>，并且可能需要在几帧 (步骤) 后在警报中进行检查让它正确检测游戏手柄。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">gamepad_is_connected(numb);</p>
+  <p class="code">gamepad_is_connected(device);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>device</td><td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td>device</td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></td>
         <td>要检查哪个游戏手柄 “插槽”。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var gp_num = gamepad_get_device_count();<br>
-    for (var i = 0; i &lt; gp_num; i++;)<br>
+    for (var i = 0; i &lt; gp_num; i++)<br>
     {<br>
-    &nbsp; &nbsp; if gamepad_is_connected(i) global.gp[i] = true else global.gp[i] = false;<br>
+    &nbsp; &nbsp; if gamepad_is_connected(i)<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; global.gp[i] = true<br>
+    &nbsp; &nbsp; else<br>
+    &nbsp; &nbsp; &nbsp; &nbsp; global.gp[i] = false;<br>
     }</p>
-  <p>上面的代码循环通过可用的游戏手柄(或游戏手柄插槽)，然后检查每个连接的游戏手柄。然后使用返回值将全局数组设置为<span class="inline">true</span>或<span class="inline">false</span>，以便在将来的检查中使用。</p>
+  <p>上面的代码循环遍历可用的游戏手柄 (或游戏手柄插槽)，然后检查每个游戏手柄是否有连接的游戏手柄。然后使用返回的值将全局数组设置为 <span class="inline">true</span> 或 <span class="inline">false</span>，以便在将来的检查中使用。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -118,7 +123,7 @@
         <div style="float:right">Next: <a href="gamepad_get_guid.htm"> gamepad_get_guid </a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_is_connected

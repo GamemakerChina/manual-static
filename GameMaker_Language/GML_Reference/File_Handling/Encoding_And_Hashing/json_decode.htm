@@ -48,17 +48,15 @@
   <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
   <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
   <meta name="topic-status" content="Draft">
-
+<link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"><script src="../../../../../assets/scripts/main_script.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>json_decode</title>
   <meta name="generator" content="Adobe RoboHelp 2022">
-  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css">
-  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content="Mark Alexander">
-  <meta name="topic-comment" content="Reference page for json_decode">
+  <title>json_decode</title>
+  <meta name="topic-status" content="Draft">
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
+  <meta name="template" content="../../../../assets/masterpages/Manual_Page.htt">
+  <meta name="search-keywords" content="json_decode,json">
   <meta name="rh-index-keywords" content="json_decode">
-  <meta name="search-keywords" content="json_decode">
-  <meta name="is_pure" content="true">
 <meta name="brsnext" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_stringify.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/File_Handling/Encoding_And_Hashing/json_encode.htm"></head>
 
 <body>
@@ -78,44 +76,49 @@
 
 
 
-  <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>json_decode</h1>
-  <h3><strong>重要!</strong>这个函数-&nbsp;虽然仍然有效-&nbsp;已经被函数<span class="inline"><a href="json_parse.htm">json_parse()</a></span>所取代，我们建议您只在遗留支持中使用这个函数。</h3>
-  <p>JSON (JSON)是一种轻量级的数据交换格式，对于人和机器来说，都很容易读写。它建立在两个基本结构之上:</p>
-  <ul class="colour">
-    <li>名称/值对的集合，在<span data-keyref="GameMaker Name"> GameMaker </span>中称为<a href="../../Data_Structures/DS_Maps/DS_Maps.htm"><span class="inline"> DS Map </span></a> ，但在其他编程语言中也称为“字典”或“对象”("dictionary" or "object")。</li>
-    <li>一个有序的值列表，在<span data-keyref="GameMaker Name"> GameMaker </span>中称为<a href="../../Data_Structures/DS_Lists/DS_Lists.htm"><span class="inline"> DS List </span></a>，但在其他编程语言中也可以称为“数组”或“序列”("array" or "sequence")。</li>
+  <div>
+  </div>
+  <div>
+  <h1><span data-field="title" data-format="default">json_decode</span></h1>
+  <p>This function decodes a&nbsp;JSON&nbsp;string and converts it into a <span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span>, ready for use in <span data-keyref="GameMaker Name">GameMaker</span>.</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>&nbsp;This function - while still valid - has been superseded by the function <span class="inline3_func"><a href="json_parse.htm">json_parse</a></span>, and we recommend that you only use this function for legacy support.</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span>&nbsp;creates the necessary DS maps and lists from the JSON, and for cleaning up you only need to delete the top-level map and&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> will automatically delete from memory all the maps and lists underneath.<br>
+    If the JSON to be decoded requires a hierarchy of lists and maps within the central DS map, these are also decoded and created for you, using the following rules (note that these rules apply to the top-level structure only):</p>
+  <ul>
+    <li><strong>JSON is a single value</strong> - returns a DS map with a single entry <span class="inline2">"default"</span> that is the value</li>
+    <li><strong>JSON is an array of objects or values</strong> - returns a DS map with a single entry <span class="inline2">"default"</span> that is a DS list of the objects or values</li>
+    <li><strong>JSON is an object</strong> - returns a DS map that has the object entries in it</li>
   </ul>
-  <p>通过这个函数，你可以解码一段JSON并将其转换为<span class="inline">DS Map</span>，准备在<span data-keyref="GameMaker Name">GameMaker</span>中使用。如果要解码的JSON需要在中央DS映射中有一个列表和映射的层次结构，这些也会被解码并创建，使用以下规则(注意这些规则只适用于顶层结构):</p>
+  <h3>Usage Notes</h3>
   <ul class="colour">
-    <li><strong><i>JSON是单个值</i></strong> - 返回一个 DS 映射，其中单个条目“默认”是该值</li>
-    <li><strong><i>JSON是一个对象或值的数组</i></strong>返回一个DS映射，其中只有一个条目“default”，即对象或值的DS列表</li>
-    <li><strong><i>JSON&nbsp;是一个对象</i></strong>-返回一个DS映射，其中包含对象条目</li>
+    <li>This function always returns a&nbsp;<span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span>, no matter the type of the top-level element.&nbsp;If this top-level element in the JSON is not an object (either a single value <span class="inline2">"5"</span> or an array <span class="inline2">"1, 2, 3, 4"</span>), it will be placed in a&nbsp;<span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span>&nbsp;under a key <span class="inline2">"default"</span>.&nbsp;Internal lists decode directly to a&nbsp;<span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span> without being enclosed in a DS map.</li>
+    <li>If you wrote&nbsp;<span data-keyref="GameMaker Name">GameMaker</span> arrays into the top level, or as the contents of a DS map or DS list, these will be decoded as DS lists, not as arrays.</li>
+    <li>Normally you'll know what keys the JSON decodes to, if not you can use the <span class="inline3_func"><a href="../../Data_Structures/DS_Maps/ds_map_size.htm">ds_map_size</a></span>, <span class="inline3_func"><a href="../../Data_Structures/DS_Maps/ds_map_find_first.htm">ds_map_find_first</a></span> and <span class="inline3_func"><a href="../../Data_Structures/DS_Maps/ds_map_find_next.htm">ds_map_find_next</a></span> functions to get this information.</li>
+    <li>You can load JSON files with a maximum nesting limit of <span data-keyref="Const_JSON_Max_Nesting_Limit">128</span>.</li>
   </ul>
-  <p class="note"><b>注意</b>：解码 JSON 数组时，只有当数组是顶级结构时，才会有键为“default”的映射，并且仅适用于该顶级数组。 内部列表直接解码为 DS 映射，而无需包含在 DS 映射中。</p>
-  <p class="note"><strong>注意</strong>:如果你将GameMaker数组写入顶层，或者作为DS映射或DS列表的内容，这些将被解码为DS列表<strong>而不是</strong>数组。</p>
-  <p>通常情况下，您应该知道JSON解码到什么键，但如果不知道，则可以使用<a href="../../Data_Structures/DS_Maps/ds_map_size.htm"><span class="inline">ds_map_size()</span></a>， <a href="../../Data_Structures/DS_Maps/ds_map_find_first.htm"><span class="inline">ds_map_find_first()</span></a>和<a href="../../Data_Structures/DS_Maps/ds_map_find_next.htm"><span class="inline">ds_map_find_next()</span></a>函数来解析映射并获得必要的信息。</p>
-  <p class="note"><b>注意</b>:<span data-keyref="GameMaker Name">GameMaker</span>从JSON中创建必要的DS&nbsp;映射和列表，为了清理，你只需要删除<b>顶层的</b>映射或列表，<span data-keyref="GameMaker Name">GameMaker</span>将自动从内存中删除下面所有的映射和列表。</p>
-  <p class="note"><strong>注意</strong>:这个函数允许你加载最大嵌套限制为128的JSON文件。</p>
-  <p class="note"><b>重要</b>:你的JSON中不能有64位的数字，因为它们不能正常工作，因为它们没有被JSON格式处理。</p>
-  <p>&nbsp;</p>
+  <div data-conref="../../../../assets/snippets/Note_See_Guide_To_Using_JSON.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;See&nbsp;<a href="../../../../Additional_Information/Guide_To_Using_JSON.htm">Guide To Using JSON</a>&nbsp;for detailed information on how to work with JSON in&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>.</p>
+
+</div>
   <h4>语法:</h4>
-  <p class="code">json_decode(string)</p>
+  <p class="code"><span data-field="title" data-format="default">json_decode</span>(string)</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>string</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
-        <td>要传递给函数进行解码的 JSON 格式字符串</td>
-     </tr>
+        <td>string</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>The JSON formatted string to decode</td>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span>&nbsp;or -1 (if it fails)</p>
+  <p class="code"><span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span>&nbsp;or -1 (if it fails)</p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">var resultMap = json_decode(requestResult);<br>
@@ -123,33 +126,38 @@
     var size = ds_list_size(list);<br>
     for (var n = 0; n &lt; ds_list_size(list); n++;)<br>
     {<br>
-    &nbsp; &nbsp; var map = ds_list_find_value(list, n);<br>
-    &nbsp; &nbsp; var curr = ds_map_find_first(map);<br>
-    &nbsp; &nbsp; while (is_string(curr))<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;var map = ds_list_find_value(list, n);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;var curr = ds_map_find_first(map);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;while (is_string(curr))<br>
     &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-    &nbsp; &nbsp; &nbsp; &nbsp; global.Name[n] = ds_map_find_value(map, "name");<br>
-    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;curr = ds_map_find_next(map, curr);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global.Name[n] = ds_map_find_value(map, "name");<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curr = ds_map_find_next(map, curr);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
     }<br>
     ds_map_destroy(resultMap);</p>
   <p>上面的代码将解码一个 JSON 字符串并解析它以生成一个全局数组。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Encoding_And_Hashing.htm">File Encoding</a></div>
-        <div style="float:right">Next:&nbsp;<a href="json_stringify.htm">json_stringify</a></div>
+        <div>Back:&nbsp;<a href="Encoding_And_Hashing.htm">编码和哈希</a></div>
+        <div>Next:&nbsp;<a href="json_stringify.htm">json_stringify</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-conref="../../../../assets/snippets/Copyright_Notice_AutoUpdate.hts">© Copyright <span data-keyref="Company Name">YoYo Games</span>&nbsp;<span data-keyref="Company Structure Suffix">Ltd.</span>&nbsp;<span data-field="date" data-format="YYYY">2024</span> All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 json_decode
 -->
   <!-- TAGS
 json_decode
+-->
+
+</div>
+  <!-- KEYWORDS
+-->
+  <!-- TAGS
 -->
 
 </body></html>

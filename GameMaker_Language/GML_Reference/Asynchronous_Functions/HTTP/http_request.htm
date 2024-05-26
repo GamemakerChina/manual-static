@@ -78,21 +78,25 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>http_request</h1>
-  <p>通过这个函数,您可以创建一个HTTP报头请求来定义HTTP事务的操作参数,如果使用 RESTful api,可以将其用于许多事情,比如通过HTTP报头进行身份验证(例如)。该函数需要请求的服务器的完整IP地址以及请求的类型(作为字符串,参见下面的注释):"GET", "HEAD", "POST", "PUT", "DELETE", "TRACE", "OPTIONS",或"CONNECT"。您还需要提供键/值对的<span class="inline"><a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS map </a></span>(作为字符串,其中键是报头字段,值是报头所需的数据),最后的参数是可以添加到请求中的可选数据字符串,如果不需要它,那么它可以是0或空字符串""。注意,你也可以发送一个缓冲区(参见<a href="../../Buffers/Buffers.htm">Buffers</a>一节了解更多细节),在这种情况下,最后一个参数将是要发送的缓冲区的索引。</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;HTTP headers normally follow the format "key:value", but since <span data-keyref="GameMaker Name">GameMaker</span>&nbsp;creates these pairs for you from the ds_map, there is no need to include the colon ":" in your map key or value strings.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;When using a buffer for the body argument, if the buffer seek position is at the start (0) then no body is sent and the buffer is filled with the response from the http call, but if the buffer seek position is non-zero, then the buffer string content is sent as the body.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;You should be aware that due to XSS protection in browsers, requests to and attempts to load resources from across domains are blocked and may appear to return blank results. Please see the part on <a href="HTTP.htm">Cross Domain Issues</a> for further details.</p>
-  <p>这个函数返回一个 <span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">异步请求ID</a></span>，可以用来标识它的回调，如下所述。</p>
+  <h1><span data-field="title" data-format="default">http_request</span></h1>
+  <p>该函数创建一个 HTTP 请求并发送它。</p>
+  <p>HTTP 请求可用于许多事情，例如，如果您使用 RESTful API，则可以通过 HTTP 标头进行身份验证。该函数需要发出请求的服务器的完整 IP 地址以及发出请求的类型 (作为字符串，请参阅下面的注释)：<span class="inline2">"GET"</span>,<span class="inline2">"HEAD"</span>,<span class="inline2">"POST"</span>、<span class="inline2">"PUT"</span>、<span class="inline2">"DELETE"</span>、<span class="inline2">"TRACE"</span>、<span class="inline2">"OPTIONS"</span> 或 <span class="inline2">"CONNECT"</span>。您还需要提供键 / 值对的 <span class="inline"><a href="../../Data_Structures/DS_Maps/DS_Maps.htm">DS 映射 </a></span>( 作为字符串，其中键是标头字段，值是标头所需的数据)，最后一个参数是您可以添加到请求中的可选数据字符串，如果不需要，则可以是 0 或空字符串 ""。请注意，您还可以发送缓冲区 (有关更多详细信息，请参阅有关 <a href="../../Buffers/Buffers.htm"> 缓冲区 </a> 的部分)，在这种情况下，最后一个参数将是要发送的缓冲区的索引。</p>
+  <h3>使用说明</h3>
+  <ul class="Disc">
+    <li>HTTP 标头通常遵循 "key:value" 格式，但由于 <span data-keyref="GameMaker Name">GameMaker</span> 从 DS 地图为您创建这些对，因此无需在地图键或值字符串中包含冒号 ":"。</li>
+    <li>当对 body 参数使用缓冲区时，如果缓冲区查找位置位于开始 (0)，则不会发送正文，并且缓冲区将填充来自 HTTP 调用的响应，但如果缓冲区查找位置非零，然后缓冲区字符串内容作为正文发送。</li>
+    <li>您应该注意，由于浏览器中的 XSS 保护，跨域的请求和加载资源的尝试会被阻止，并且可能会返回空白结果。请参阅有关 <a href="HTTP.htm#cross_domain_issues"> 跨域问题 </a> 的部分了解更多详情。</li>
+  </ul>
+  <p>这个函数返回一个 <span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../Asynchronous_Functions.htm">异步请求ID</a></span>，可以用来标识它的回调，如下所述。</p>
   <h2>异步回调</h2>
-  <p>此事件将生成由任何<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">异步HTTP事件</a>拾取的"回调"，在这种情况下，它将生成此事件独有的、存储在特殊变量 <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load</b></a> 中的 <span class="inline">DS 映射</span>。此DS映射具有与请求函数相关的以下两个键：</p>
+  <p>此事件将生成由任何<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">异步HTTP事件</a>拾取的"回调"，在这种情况下，它将生成此事件独有的、存储在特殊变量 <span class="inline2"><a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a></span> 中的 <span class="inline">DS 映射</span>。此DS映射具有与请求函数相关的以下两个键：</p>
   <ul class="colour">
     <li><b>id：</b> 函数返回的 ID。如果您发出一系列的 <span class="inline">http_</span> 请求，那么您需要知道您收到的是哪个请求的回复，因此您将使用此值与最初发送请求时存储的值进行比较，以找到正确的请求。</li>
     <li><b>response_headers：</b> 如果它的值大于或等于 0，则它保存一个 DS 映射，其中包含与对 HTTP 请求的响应一起返回的 HTTP 头。</li>
   </ul>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">http_request(url, method, header_map, body);</p>
+  <p class="code"><span data-field="title" data-format="default">http_request</span>(url, method, header_map, body);</p>
   <table>
     <tbody>
       <tr>
@@ -102,57 +106,49 @@
       </tr>
       <tr>
         <td>url</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>您希望从中获取信息的服务器的 Web 地址</td>
       </tr>
       <tr>
         <td>method</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>请求方法(通常是 <span class="inline2">"POST"</span> 或 <span class="inline2">"GET"</span> ，但是支持所有方法)</td>
       </tr>
       <tr>
         <td>header_map</td>
-        <td><span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span></td>
-        <td>一个ds_map，其中包含所需的报头字段</td>
+        <td><span data-keyref="Type_ID_DS_Map"><a target="_blank" href="../../Data_Structures/DS_Maps/ds_map_create.htm">DS Map</a></span></td>
+        <td>具有所需标头字段的 DS 映射</td>
       </tr>
       <tr>
         <td>body</td>
-        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>,&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>, or&nbsp;<span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Buffers/buffer_create.htm">Buffer ID</a></span></td>
+        <td><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span>,&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span>, or&nbsp;<span data-keyref="Type_ID_Buffer"><a target="_blank" href="../../Buffers/buffer_create.htm">Buffer</a></span></td>
         <td>在头文件后面传输的数据(可以是二进制缓冲区句柄)</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../../../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Asynchronous_Functions.htm">Async Request ID</a></span></p>
+  <p class="code"><span data-keyref="Type_ID_Async_Event"><a target="_blank" href="../Asynchronous_Functions.htm">Async Request ID</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">var map = ds_map_create();<br>
-    ds_map_add(map, "Host", "225.0.0.97:3000");<br>
-    ds_map_add(map, "Connection", "keep-alive");<br>
-    ds_map_add(map, "Content-Length", "169");<br>
-    ds_map_add(map, "Cache-Control", "max-age=0");<br>
-    ds_map_add(map, "Authorization", "Basic eW95b19hZG1pbjpjNG5lZmllbGQ=");<br>
-    ds_map_add(map, "Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");<br>
-    ds_map_add(map, "User-Agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36");<br>
-    ds_map_add(map, "Content-Type", "application/x-www-form-urlencoded");<br>
-    ds_map_add(map, "Accept-Encoding", "gzip,deflate,sdch");<br>
-    ds_map_add(map, "Accept-Language", "en-GB,en-US;q=0.8,en;q=0.6");<br>
-    ds_map_add(map, "Cookie", "request_method=GET; _InAppPurchases_session=69bb6ef6eec2b");<br>
-    var data="utf8=%E2%9C%93&amp;authenticity_token=kPmS14DcYcuKgMFZUsN3XFfj3mhs%3D&amp;product%5Bname%5D=CatchTheHaggis&amp;product%5Bproduct_id%5D=http_test&amp;commit=Create+Product";<br>
-    request = http_request("http:225.0.0.97:3000/products", "POST", map, data);</p>
-  <p>上面的代码创建了一个DS映射，其中包含函数的相关HTTP头，然后创建一个数据字符串以供使用，因为这是一个POST请求。 最后调用该函数，其 ID 值存储在变量“request”中，用于检查 HTTP 异步事件。</p>
-  <p>&nbsp;</p>
+  <p class="code">var _headers = ds_map_create();<br>
+    ds_map_add(_headers, "Authorization", "Basic eW95b19hZG1pbjpjNG5lZmllbGQ=");<br>
+    ds_map_add(_headers, "Content-Type", "application/x-www-form-urlencoded");<br>
+    ds_map_add(_headers, "Cookie", "request_method=GET; _InAppPurchases_session=69bb6ef6eec2b");<br>
+    var _data="utf8=%E2%9C%93&amp;authenticity_token=kPmS14DcYcuKgMFZUsN3XFfj3mhs%3D&amp;product%5Bname%5D=CatchTheHaggis&amp;product%5Bproduct_id%5D=http_test&amp;commit=Create+Product";<br>
+    request = <span data-field="title" data-format="default">http_request</span>("http://225.0.0.97:3000/products", "POST", _headers, _data);<br>
+    ds_map_destroy(_headers);</p>
+  <p>上面的代码创建一个 DS 映射，其中包含该函数的相关 HTTP 标头，然后创建一个数据字符串以供使用，因为这是一个 POST 请求。最后调用该函数，其 ID 值存储在实例变量 <span class="inline2">request</span> 中，用于检查 HTTP 异步事件。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="HTTP.htm">HTTP</a></div>
+        <div style="float:left">Back:&nbsp;<a href="HTTP.htm">HTTP</a></div>
         <div style="float:right">Next:&nbsp;<a href="http_get.htm">http_get</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 http_request

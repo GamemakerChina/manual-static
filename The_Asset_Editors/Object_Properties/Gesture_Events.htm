@@ -540,7 +540,7 @@
       <h4>旋转结束事件</h4>
       <p class="code">rotating = false;</p>
       <h4>步事件</h4>
-      <p class="code">if !rotating<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; var _a = camera_get_view_angle(view_camera[0]);<br> &nbsp; &nbsp; var _adif = angle_difference(view_a, _a);<br> &nbsp; &nbsp; _a += median(-5, _adif, 5);<br> &nbsp; &nbsp; camera_set_view_angle(view_camera[0], _a);<br> &nbsp; &nbsp; }</p>
+      <p class="code">if (!rotating) <br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; var _a = camera_get_view_angle(view_camera[0]);<br> &nbsp; &nbsp; var _adif = angle_difference(view_a, _a);<br> &nbsp; &nbsp; _a += median(-5, _adif, 5);<br> &nbsp; &nbsp; camera_set_view_angle(view_camera[0], _a);<br> &nbsp; &nbsp; }</p>
       <p class="dropspot">上面的代码使用旋转结束事件来检测用户何时停止手势，然后设置一个变量。然后，在步事件中使用此变量将视图相机旋转回其原始位置。</p>
       <p class="dropspot">&nbsp;</p>
     </div>
@@ -556,7 +556,7 @@
         <div style="float:right">Next: <a href="Event_Order.htm">事件顺序</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Gesture Events

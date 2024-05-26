@@ -80,28 +80,30 @@
 
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>directory_exists</h1>
-  <p>如果指示的目录存在，此函数将返回 <span class="inline">true</span>，如果不存在，则返回 <span class="inline">false</span>。 指定的名称必须包含完整路径，而不是相对路径，并且默认情况下您无法从游戏包中访问任何目录，因为所有游戏都是沙盒化的 &amp; nbsp;( 请参阅关于 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统 </a> 的部分 &nbsp; 更多信息)。</p>
+  <p>如果指定的目录存在，此函数将返回 <span class="inline">true</span>; 如果不存在，则返回 <span class="inline">false</span>。指定的名称必须包含完整路径，而不是相对路径，并且默认情况下，您无法从游戏包外部访问任何目录，因为所有游戏都已沙盒化 (请参阅有关 <a href="../../../../Additional_Information/The_File_System.htm"> 文件系统 </a> 的部分，了解更多信息)。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
   <p class="code">directory_exists(dname)</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>dname</td><td><span data-keyref="Type_String"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td>dname</td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>要查找的目录的名称。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></p>
+  <p class="code"><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if directory_exists(working_directory + "Saves/")<br>
+  <p class="code">if (directory_exists(working_directory + "Saves/")) <br>
     {<br>
     &nbsp; &nbsp; file = file_find_first(working_directory + "Saves/*.doc", fa_readonly);<br>
     }</p>
@@ -116,7 +118,7 @@
         <div style="float:right">Next:&nbsp;<a href="directory_create.htm">directory_create</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 directory_exists

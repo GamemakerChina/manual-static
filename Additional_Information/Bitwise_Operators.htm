@@ -36,7 +36,7 @@
 
     gRootRelPath = "..";
     gCommonRootRelPath = "..";
-    gTopicId = "7.0_3";
+    gTopicId = "7.0_2";
   
 //]]></script>
 
@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Page that explains how bitwise operators work">
   <meta name="rh-index-keywords" content="Bitwise Operators">
   <meta name="search-keywords" content="bitwise,bitwise operators">
-<meta name="brsnext" value="Additional_Information/Type_Tables.htm"><meta name="brsprev" value="Additional_Information/The_File_System.htm"></head>
+<meta name="brsnext" value="Additional_Information/Type_Tables.htm"><meta name="brsprev" value="Additional_Information/Best_Practices_When_Programming.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -215,10 +215,12 @@
     <p class="dropspot">假设你有一个有几扇门的关卡，每个门都有一把钥匙。你怎么能轻松地为特定的门标记一把钥匙呢？嗯，通常你只会为钥匙和门分配一个ID。那么如果你想要一把钥匙打开2或3扇门呢？很简单。你使用MASK。门会像这样分配一个位：<br></p>
     <p class="code">door_id = 1; // 0001</p>
     <p class="dropspot">其他的类似于：<br></p>
-    <p class="code">door_id=2; // 0010<br>
-      door_id=4; // 0100<br>
-      door_id=8; //&nbsp;1000<br>
-      etc...</p>
+    <p class="code">
+      door_id = 2; // 0010 <br>
+      door_id = 4; // 0100 <br>
+      door_id = 8; // 1000 <br>
+      // etc...
+    </p>
     <p class="dropspot">如果我们想让钥匙打开门1和3，那么钥匙的MASK值应该是5(二进制中是101)。如果我们执行<span class="inline">AND</span>，结果是"非零"，那么我们知道钥匙可以打开门。你也可以通过MASK为0来让钥匙什么也开不了。请参阅下面的代码来进行实际检查：</p>
     <p class="code">if ((key_id &amp; door_id) ! = 0)<br>
       {<br>
@@ -263,7 +265,7 @@
         <div style="float:right">Next: <a href="Type_Tables.htm">Type&nbsp;Tables</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Bitwise Operators

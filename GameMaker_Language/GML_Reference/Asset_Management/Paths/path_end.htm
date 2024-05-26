@@ -78,34 +78,36 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>path_end</h1>
-  <p>调用此函数将结束实例所遵循的当前路径，与调用函数<a href="path_start.htm"><span class="inline">path_start()</span></a>时设置的路径相同。</p>
+  <h1><span data-field="title" data-format="default">path_end</span></h1>
+  <p>此函数结束实例所遵循的当前路径，如调用函数<span class="inline3_func"><a href="path_start.htm">path_start</a></span> 时设置的那样。</p>
+  <div data-conref="../../../../assets/snippets/Note_Call_From_Instance_Scope.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_warning.hts"><span class="warning"> 警告</span></span> 应从实例的范围内调用此函数。如果不是，则会抛出错误。</p>
+
+</div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">path_end();</p>
+  <p class="code"><span data-field="title" data-format="default">path_end</span>();</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p>&nbsp;</p>
-  <p class="code">if place_meeting(x, y, obj_Blocker)<br>
+  <p class="code">if (place_meeting(x, y, obj_Blocker)) <br>
     {<br>
-    &nbsp; &nbsp; path_end();<br>
+    &nbsp; &nbsp; <span data-field="title" data-format="default">path_end</span>();<br>
     }</p>
   <p>如果实例检测到与给定对象的任何实例的任何冲突，则上面的代码将结束当前路径。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Paths.htm">路径</a></div>
-        <div style="float:right">Next: <a href="path_get_closed.htm">path_get_closed</a></div>
-        
+        <div style="float:left">Back:&nbsp;<a href="Paths.htm">路径</a></div>
+        <div style="float:right">Next:&nbsp;<a href="path_get_closed.htm">path_get_closed</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 path_end

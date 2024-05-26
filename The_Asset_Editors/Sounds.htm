@@ -81,23 +81,22 @@
   <h1><span data-field="title" data-format="default">声音编辑器</span></h1>
   <p><img alt="Sound Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sound.png">您可以在<strong>声音编辑器</strong>中将声音加载到新的音频资源中并设置其属性。 要加载声音，请按声音名称右侧的<strong>加载声音</strong>按钮。 弹出文件选择器对话框，您可以在其中选择声音文件。 该文件应该是 <span class="inline">WAV</span>、<span class="inline">MP3</span> 文件或 <span class="inline">OGG</span> 文件。 一般来说，<span class="inline">*.wav</span> 用于短音效，尽管它们通常是较大的文件，但它们会立即播放，因为它们不需要任何类型的解码来播放。 <span class="inline">*.mp3</span> 或 <span class="inline">*.ogg</span> 格式文件应用于背景音乐或较长或较大的音效。 这些文件比波形文件小得多，但 CPU 开销很小，因为在播放之前必须对其进行解码。</p>
   <p>一旦你加载了你的文件，你可以通过使用播放按钮来预览声音，它将连续循环。这是非常方便的，因为它意味着你可以使用窗口底部的滑块来改变音量，并听到它将对声音产生的影响。也有一个停止按钮，所以你可以在任何时候停止预览。</p>
-  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>&nbsp;使用<a href="../IDE_Tools/The_Inspector.htm">检查器</a>查看所选声音的波形。</p>
+  <p class="note"><span data-conref="../assets/snippets/Tag_tip.hts"><span class="tip">提示</span></span>使用<a href="../IDE_Tools/The_Inspector.htm">检查器</a>查看所选声音的波形。</p>
   <p>声音窗口也有其他选项，解释如下：</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">名称和文件</span><span data-close-text="true">名称和文件</span></a></p>
   <div class="droptext" data-targetname="drop-down">
     <p class="dropspot">在这里你可以点击<em>Open</em>按钮，打开文件资源管理器，选择一个音频文件来加载。你还可以从左边的 "名称 "字段中设置新资源的名称。名称只能是字母-数字，并且只能使用 _"符号，而且不能以数字开头。</p>
-    <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span data-open-text="true" data-skip-index="true">音量与播放</span><span data-close-text="true">音量与播放</span></a></p>
   <div class="droptext" data-targetname="drop-down8">
-    <p class="dropspot">这里你可以设置给定声音的播放音量。这个值是简单的<em>默认</em>值，如果滑块在中间--例如--那么在游戏中使用该声音时的音量将是 0.5。然而，这将被你的项目中使用音频函数对增益的任何改变所覆盖。</p>
+    <p class="dropspot">您可以在此处设置给定声音的播放音量。 在游戏中，该值用作该资产的资产级增益（如<a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Properties.htm">音频属性概述</a>中所列）。<br> 例如，如果滑块位于中间，则所有资产的资产级增益 游戏中此声音的实例将为 0.5。 该声音资源的实例级增益为 1 的声音实例的最终增益为 0.5 * 1 = 0.5，增益设置为 0.5 的实例的最终增益为 0.5 * 0.5 = 0.25，等等。</p>
     <p class="dropspot">除了音量控制，你还有播放控制，在这里你可以预览声音，将其设置为循环或倒退。你还可以点击<img alt="Open Mixer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_OpenMixer.png" width="24">图标，在<a href="../IDE_Tools/Sound_Mixer.htm">声音混合器</a>中打开声音。</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#"><span data-open-text="true" data-skip-index="true">OGG转换</span><span data-close-text="true">OGG转换</span></a></p>
   <div class="droptext" data-targetname="drop-down9">
     <p class="dropspot">这个选项只适用于<span class="inline">OGG</span>格式的声音，允许你选择这两个选项之一。</p>
-    <p class="dropspot"><img class="center" height="151" src="../assets/Images/Asset_Editors/Editor_Sound_Conversion_OGG.png" width="240">使用<strong>"Automatic"</strong>选项，<span class="inline">OGG</span>声音文件不会被资源编译器转换，而是原样复制到游戏可执行文件中。如果源文件和声音资源的属性不匹配，例如源音频文件是单声道的（只有一个声道），但资源的属性指定它有两个声道，这可能会造成问题。</p>
-    <p class="dropspot"><strong>"Required"</strong>选项可以用来避免此类问题，确保源音频文件总是被资源编译器转换为一个新的OGG文件，使用在声音编辑器中指定的属性。</p>
+    <p class="dropspot"><img class="center" height="151" src="../assets/Images/Asset_Editors/Editor_Sound_Conversion_OGG.png" width="240">使用<strong>自动</strong>选项时，资源编译器将不会转换<span class="inline">OGG</span>声音文件，而是将其原样复制到游戏可执行文件中。如果源文件和声音资源的属性不匹配，例如源音频文件是单声道(只有一个声道)，但资源的属性指定它有两个声道，则可能会导致问题。</p>
+    <p class="dropspot"><strong>Required</strong>选项可用于避免此类问题，并确保资源编译器始终使用声音编辑器中指定的属性将源音频文件转换为新的OGG文件。</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">属性</span><span data-close-text="true">属性</span></a></p>
   <div class="droptext" data-targetname="drop-down1">
@@ -108,7 +107,6 @@
     <p class="dropspot">需要注意的是，当针对HTML5平台时，当播放请求不是直接来源于用户交互（即：触摸事件等）时，流媒体音频将不会播放。然而，由于<span data-keyref="GameMaker Name">GameMaker</span>排队等待点击事件，并且只在下一帧处理这些事件，因此不可能在不被浏览器阻止的情况下播放流媒体音频。为了解决这个问题，任何HTML5游戏的运行都会在引擎中把所有流媒体音频视为非流媒体，但流媒体音频不被预装除外。</p>
     <p class="dropspot">这意味着，如果你的游戏在浏览器上运行，并且--例如--你有10个音乐曲目都被设置为流式<span class="inline">mp3 </span>文件，所有10个都会像非流式音频一样被初始化，但它们不会在游戏加载前立即被解码，不像正常的流式音频会在加载屏幕阶段立即被预加载/解码。</p>
     <p class="dropspot">虽然这绕过了这个问题，并防止了初始加载时间的巨大增加，但它确实意味着它可能会导致你的游戏已经加载，但某些流媒体的声音可能仍在下载或解码的状态。为了解决这个问题，你可以使用GML函数<a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/audio_sound_is_playable.htm"><span class="inline">audio_sound_is_playable()</span></a>&nbsp;来检查一个给定的声音是否真的可以被播放。在HTML5上，如果声音还没有完全加载或解码，这个函数将返回<span class="inline">false </span>；如果声音可以播放，则返回<span class="inline">true </span>（在所有其他平台上，它总是返回true）。</p>
-    <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span data-open-text="true" data-skip-index="true">目标选项</span><span data-close-text="true">目标选项</span></a></p>
   <div class="droptext" data-targetname="drop-down3">
@@ -122,7 +120,6 @@
     <p class="dropspot">一旦一个音频文件被分配到一个组，你就可以使用特定的音频组函数来改变它们，并从内存中加载/卸载它们。更多信息请参见<a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/Audio_Groups.htm">音频函数</a>的参考章节。</p>
     <p class="dropspot">如果你选择了<em>流式</em>音频，那么这个选项将被<strong>禁用</strong>，因为流式声音的包装方式与其他声音不一样，不会被加载到内存中，而是直接从存储介质中串流出来。</p>
     <p class="note"><span data-conref="../assets/snippets/Tag_note.hts"><span class="note">注意</span></span> 虽然其余的音频属性是特定的配置，但音频组的设置是<em>而不是</em>，一个声音在<em>所有你使用的配置</em>上将属于同一个组。</p>
-    <p>&nbsp;</p>
   </div>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -134,7 +131,7 @@
         <div style="float:right">Next:&nbsp;<a href="Sprites.htm">The Sprite Editor</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 The Sound Editor

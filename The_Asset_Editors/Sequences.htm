@@ -82,14 +82,14 @@
   <p><img alt="The Sequence Editor" class="center" height="972" src="../assets/Images/Asset_Editors/Editor_Sequences.png" width="1689"></p>
   <p><strong>序列</strong>实质上是随时间执行动态动画的资源的集合。它们可以包含精灵、实例、声音和其他内容，并且每个这些内容都可以设置为移动或更改颜色，或者在序列本身内随着时间的推移开始/停止动画。您添加的资源将分配给序列中的特定<strong>轨道</strong>，然后这些轨道可以应用不同的属性-称为<strong>关键点</strong>-这些属性可以是静态的，也可以随着时间的推移而变化。序列的所有编辑都在<strong>序列编辑器</strong>中进行，该编辑器基本上由三个区域组成：</p>
   <ul class="colour">
-    <li><strong>画布 </strong>- 放置构成序列的资源的位置</li>
-    <li><strong>轨道面板 </strong>- 在此向序列添加 / 删除 <strong> 资源轨道 </strong> 和 <strong> 参数轨道 </strong></li>
+    <li><strong>画布</strong>-放置组成序列的资源的位置。</li>
+    <li><strong>跟踪面板</strong>-您可以在其中向序列添加/删除<strong>资产跟踪</strong>和<strong>参数跟踪</strong>。</li>
     <li><strong>关键点表 </strong>- 您可以在其中添加 / 删除 / 编辑轨道的 <strong> 关键点 </strong>，并控制它们随时间的变化如何。</li>
   </ul>
-  <p>请注意，您可以在序列中使用序列来创建复杂的动画和效果，也可以通过代码访问和更改序列，以便尽可能多地控制它们在游戏中的显示和使用方式。有关序列编码方面的详细信息，请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequences.htm">序列函数</a>一节。</p>
-  <p>在继续解释编辑器的详细信息之前，我们将花一些时间解释如何创建序列以及描述中使用的一些关键字，以便您能够更全面地了解序列编辑器的工作原理。创建序列的常规工作流如下：</p>
+  <p>还请注意，您可以在序列中包含序列以创建复杂的动画和效果，并且序列也可以通过代码访问和更改，以便给予您尽可能多的控制权，控制它们在游戏中的显示和使用方式。有关序列编码方面的更多信息，请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequences.htm">序列函数</a>页面上的部分。</p>
+  <p>在继续解释编辑器的细节之前，我们将花一点时间来解释如何创建序列以及描述中使用的一些关键字，以便您更全面地了解序列编辑器的工作原理。创建序列的一般工作流程如下：</p>
   <ul class="colour">
-    <li>首先，您将从<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>创建序列，该浏览器将在序列编辑器中打开序列。</li>
+    <li>首先，您将从<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>创建序列，这将在序列编辑器中打开序列。</li>
     <li>接下来，将资源(精灵、对象、声音或序列)拖动到编辑器画布中。</li>
     <li>这将在<a class="tooltip" title="序列轨道面板中的轨道包含单个资源，即精灵，声音，实例或序列。">轨道面板</a>中创建<strong>轨道资源</strong>，并将<a class="tooltip" title="在序列帧动画中时间轴上放置资源的位置。资源关键帧可以使用多个帧。">资源键</a>添加到<a class="tooltip" title="关键帧清单“摄影表”是序列时间轴的直观表示，您可以在其中添加，删除和编辑不同的资源键和参数键，这些键会影响序列中不同音轨随时间的行为。">关键点表</a>中。轨道资源只是包含资源的轨道的名称，而关键字资源是一个条形图，用于表示资源将在序列中动画显示的帧数。</li>
     <li>此时，您通常希望在画布中将资源定位在序列起点的初始位置，并添加任何初始变换(如缩放或旋转)。</li>
@@ -98,7 +98,7 @@
     <li>所有参数键都存储在另外的<a class="tooltip" title="在轨道面板中分配给资源轨道的轨道，并改变其链接到的资源轨道的单个参数，如位置或图像索引。">轨道参数</a>中，这些轨道是"轨道面板"中主资源轨道下的轨道的子集，您可以在轨道编辑器中编辑每个参数的参数键数据。</li>
     <li>现在，您需要对序列的长度重复上述过程，根据需要移动、旋转和缩放资源，然后根据需要添加更多资源。</li>
   </ul>
-  <p>下面您可以找到序列编辑器的每个功能的概述，并且在此页面的底部是指向页面的链接，这些页面更深入地解释了上述三个主要功能：</p>
+  <p>您可以在下面找到序列编辑器的每个功能的概述，并且在此页面的底部是指向更深入地解释上述三个主要功能的页面的链接：</p>
   <p>&nbsp;</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">尺子/参考线</span><span data-close-text="true">尺子/参考线</span></a></p>
   <div class="droptext" data-targetname="drop-down">
@@ -143,9 +143,9 @@
     <ul class="dropspotlist">
       <li class="dropspot"><strong> 创建 </strong>- 首次创建序列的实例时会发生此事件，并且是进入房间时通过房间编辑器放置在房间中的序列中发生的第一件事。</li>
       <li class="dropspot"><strong> 销毁 </strong>- 此事件在序列的实例被销毁时执行，并将在 " 清理 " 事件之前运行 (请参阅下文)。</li>
-      <li class="dropspot"><strong> 清理 </strong>- 从房间中删除序列实例的任何事件发生后，将调用此事件。因此，如果序列被破坏，如果房间结束，或者如果游戏结束，并且被设计为在序列实例因任何原因从游戏中删除时执行一次所需要执行的任何任务，则会触发该任务。如果已使用 layer_sequence_destroy() 销毁序列实例，则在销毁事件之后将调用此事件 (请参阅上文)。</li>
-      <li class="dropspot"><strong> 步开始 </strong>/<strong> 步 </strong>/<strong> 步结束 </strong>- 步事件是在序列实例存在的情况下，每个步骤 (帧) 检查一次的事件，并分为三个部分：开始、步骤和结束。对于大多数情况，标准步骤事件可以使用，但有时您希望对运行的代码和时间进行更多控制，以便为您提供 " 开始 " 和 " 结束 " 步骤事件，并且这些事件在游戏的每个步骤 (帧) 总是以相同的顺序触发。<strong> 重要 !</strong> 如果序列暂停，则不会触发这些事件 <em>，当播放恢复时，将在序列重新开始播放后触发 </em> 下一帧 <em>。另请注意，事件的顺序不受播放头方向的影响，即使序列正在反向播放，事件仍将以 " 开始"、"步 " 和 " 结束 " 的形式运行。</em></li>
-      <li class="dropspot"><strong> 异步事件 </strong>: 这相当于对象 <a href="Object_Properties/Async_Events.htm"> 异步系统事件 </a>。<strong> 重要 !</strong> 如果序列暂停，则不会触发此事件 <em>。</em></li>
+      <li class="dropspot"><strong>清理</strong>-此事件将在从房间中删除序列实例的任何事件之后调用。因此，如果序列被销毁，如果房间结束，或者如果游戏结束，它将被触发，并且旨在执行任何任务，当序列实例因任何原因从游戏中删除时，您需要执行一次。如果您使用以下方法销毁序列实例，例如，<span class="inline3_func"><a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Sequence_Layers/layer_sequence_destroy.htm">layer_sequence_destroy</a></span>，则此事件将在销毁事件之后调用(见上文)。</li>
+      <li class="dropspot"><strong>开始步骤</strong>/<strong>步骤</strong>/<strong>结束步骤</strong> - 步骤事件是在序列实例存在时检查游戏的每个步骤（帧）的事件，并分为三个部分 ：开始、步骤和结束。 对于大多数情况，使用标准步骤事件就可以了，但有时您希望对运行哪些代码以及在何时运行有更多控制，因此为您提供了开始和结束步骤事件，并且这些事件将始终是 游戏的每个步骤（帧）都以相同的顺序触发。<br> <br> <span data-conref="../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>如果序列暂停，则这些事件将<em>不会</em>被触发，而当游戏恢复时，它们将被触发 <em>序列再次开始播放后的下一帧</em>被触发。 另请注意，事件的顺序不受播放头方向的影响，即使序列向后播放，事件仍将按 Begin、Step 和 End 运行。</li>
+      <li class="dropspot"><strong>异步事件</strong>：这相当于对象<a href="Object_Properties/Async_Events.htm">异步系统事件</a>。<br> <br> <span data-conref="../assets/snippets/Tag_important.hts"><span class="important">重要</span></span>如果序列暂停，则此事件将<em>不会</em> 触发。</li>
     </ul>
     <p class="dropspot">每个事件都可以分配一个函数，当触发事件时将调用该函数。您可以使用事件的输入框指定函数，单击箭头按钮将打开要编辑的函数的脚本编辑器。您也可以单击底部的 " 新建 " 按钮，创建一个新的脚本资源，其中 "boilerplate" 函数已定义并准备好填写。请注意，您可以将函数名称更改为所需的任何名称，而不必使用预定义的名称，还可以删除不需要的任何函数定义。需要注意的是，用于序列事件的函数不能采用任何参数。</p>
     <p class="dropspot">也可以使用代码添加和编辑序列事件。有关详细信息，请参阅<a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">此处</a>。</p>
@@ -154,7 +154,7 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#"><span data-open-text="true" data-skip-index="true">轨道面板</span><span data-close-text="true">轨道面板</span></a></p>
   <div class="droptext" data-targetname="drop-down6">
     <p class="dropspot"><strong>轨道面板</strong>是将序列中的每个资源作为轨道列出的位置，每个轨道都具有要为资源更改的任何参数的子轨道。您可以单击 <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 并在任何资源轨道上拖动以更改其在其他轨道上方或下方的位置 (任何指定的参数轨道都将随之移动)，还可以使用 <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55">/<img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55">+<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> 选择多个轨道。</p>
-    <p class="dropspot">您可以通过将资源(精灵、对象、声音、序列或粒子系统)从"资源浏览器"拖动到序列画布中来创建轨道，也可以单击底部的<img alt="Add Track Icon" class="icon" src="../assets/Images/Icons/Icon_AddAsset.png">图标来添加新轨道，然后从打开的"资源浏览器"窗口中选择要使用的资源。将创建新曲目，并在涂料表时间轴内的当前播放头位置添加资源：</p>
+    <p class="dropspot">可以通过从<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>中拖动资源来创建轨迹(一个精灵，一个物体，一个声音，一个序列或一个粒子系统)到序列画布，或者您可以单击<img alt="Add Track Icon" class="icon" src="../assets/Images/Icons/Icon_AddAsset.png">图标添加新曲目，并从打开的资源浏览器窗口中选择要使用的资源。将创建新曲目，并将资源添加到dope内的当前播放头位置工作表时间轴：</p>
     <p class="dropspot"><img alt="Add A New Asset Track" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddTrack.gif">轨道编辑器还具有许多其他功能，这些功能将在以下页面中详细讨论：</p>
     <ul class="dropspotlist">
       <li class="dropspot"><a href="Sequence_Properties/The_Track_Panel.htm">轨道面板</a></li>
@@ -254,6 +254,7 @@
     <li><a href="Sequence_Properties/The_Sequence_Canvas.htm">序列画布</a></li>
     <li><a href="Sequence_Properties/The_Track_Panel.htm">轨道面板</a></li>
     <li><a href="Sequence_Properties/Text_in_Sequences.htm">序列文本</a></li>
+    <li><a href="Sequence_Properties/Sound_in_Sequences.htm">声音序列</a></li>
     <li><a href="Sequence_Properties/Clipping_Masks.htm">剪切蒙版</a></li>
     <li><a href="Sequence_Properties/Using_The_Dope_Sheet.htm">使用关键点表</a></li>
     <li><a href="Sequence_Properties/Using_Animation_Curves.htm">使用动画曲线</a></li>
@@ -268,7 +269,7 @@
         <div style="float:right">Next:&nbsp;<a href="Shaders.htm">The Shader Editor</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 The Sequences Editor

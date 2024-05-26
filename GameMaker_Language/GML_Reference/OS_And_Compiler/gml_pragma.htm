@@ -36,7 +36,7 @@
 
     gRootRelPath = "../../..";
     gCommonRootRelPath = "../../..";
-    gTopicId = "8.2.2.20.0_22";
+    gTopicId = "8.2.2.21.0_23";
   
 //]]></script>
 
@@ -78,28 +78,127 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>gml_pragma</h1>
-  <p><span class="inline">gml_pragma</span>函数会影响给定目标编译代码的方式，应使用不同的命令调用该函数，以进一步优化项目的最终编译。这些命令在游戏编译之前得到了有效的<i>预处理</i>，因此该函数可以放置在您项目中的任何位置，并且在游戏完全编译之前仍然会得到处理。可用命令如下：</p>
+  <h1><span data-field="title" data-format="default">gml_pragma</span></h1>
+  <p><span data-field="title" data-format="default">gml_pragma</span> 函数会影响给定目标编译代码的方式，应使用不同的命令进行调用，以进一步优化项目的最终编译。这些命令会在游戏编译之前进行有效的 <i> 预处理 </i>，因此该函数可以放置在项目中的任何位置，并且在游戏完全编译之前仍然会被处理。可用的命令如下：</p>
   <ul class="colour">
     <li><b>forceinline</b>-在<b>脚本函数</b>中使用"forceinline"程序调用函数时，yyc将使用内嵌函数编译项目，而不是引用。这将进一步提高处理速度，但在使用时必须小心，因为它还会增加最终可执行文件的大小，特别是在内嵌代码较大和/或用于多个不同位置的情况下，以及大大增加编译时间。请注意，<b>只有在使用yyc生成</b>时，此命令才有效。</li>
     <li>"<b>global</b>", "<b>[gml code]</b>" - The "global" pragma permits you to call some GML code formatted as a string, at a <b>global</b> scope, at compile time, before the first room of the game executes. For example:
-      <p class="code">gml_pragma("global", "Init()");</p>
-      This will call the script function "Init" before the first room of the game is run. Note that the GML supplied as the second argument <b>must be a compile time constant</b>, and also note that you cannot use this pragma to create instances or perform any operations that require a room (or anything in a room) to function.
+      <p class="code"><span data-field="title" data-format="default">gml_pragma</span>("global", "Init()");</p>
+      This will call the script function "Init" before the first room of the game is run. Note that the GML supplied as the second argument <b>must be a compile-time constant</b>, and also note that you cannot use this pragma to create instances or perform any operations that require a room (or anything in a room) to function.
     </li>
-    <li>"<b>PNGCush</b>"-"PNGCush"程序将在创建的每个纹理上使用<a href="https://pmt.sourceforge.io/pngcrush/" target="_blank">PNGCush</a>程序。请注意，这会显着增加编译游戏所需的时间，因此您不希望它一直开着，尽管它可以显着节省最终文件大小。此选项仅适用于使用PNG格式的纹理组(请参阅<a href="../../../Settings/Texture_Groups.htm#h">组设置</a>)。</li>
-    <li>"<b>Texgroup.Scale</b>", "<b>[TextureGroupName]</b>", "<b>[Scale Divisor]</b>" - The "Texgroup.Scale" will scale the given texture group on compile. You need to give an additional two arguments here: the "[TexGroupName]", which is the name (a string) of the texture group to scale, and the "[Scale Divisor]" (also a string), which is the divisor you wish to use for the scaling, i.e:
-      <p class="code">gml_pragma("Texgroup.Scale", "level1", "2");</p>
-      This will half all the textures in the "level1" texture group.
+    <li><strong>"optimise"/"optimize", "&lt;specific_optimisation&gt;", "&lt;control&gt;"</strong> - The "optimise" (or "optimize") pragma provides an optimisation hint to the compiler. For example:&nbsp;
+      <p class="code"><span data-field="title" data-format="default">gml_pragma</span>("optimise", "js_array_check", "push, off");</p>
+      This pragma will make the compiler omit type checking code on arrays when it generates JavaScript code.<br>
+      <br>
+      See the section on <strong>Compiler Optimisations</strong> below for a full list of optimisations you can use.
+    </li>
+    <li id="pngcrush">"<b>PNGCrush</b>" - "PNGCrush" 编译指示将对创建的每个纹理使用 <a href="https://pmt.sourceforge.io/pngcrush/" target="_blank">PNGCrush</a> 程序。请注意，这会显着增加编译游戏所需的时间，因此您不希望它一直打开，尽管它可以显着节省最终文件大小。此选项仅适用于使用 PNG 格式的纹理组 (请参阅 <a href="../../../Settings/Texture_Groups.htm#texture_group_format"> 纹理组格式 </a>)。</li>
+    <li>"<b>Texgroup.Scale</b>", "<b>[TextureGroupName]</b>", "<b>[Scale Divisor]</b>" - The "Texgroup.Scale" will scale the given texture group on compile. You need to give an additional two arguments here: the "[TexGroupName]", which is the name (a string) of the texture group to scale, and the "[Scale Divisor]" (also a string), which is the divisor you wish to use for the scaling, i.e.:
+      <p class="code"><span data-field="title" data-format="default">gml_pragma</span>("Texgroup.Scale", "level1", "2");</p>
+      This will halve all the textures in the "level1" texture group.
     </li>
     <li>"<b>UnityBuild</b>", "<b>[enable/disable]</b>" - If you call the function with this pragma and set the enable/disable argument to <span class="inline">true</span> then on compile it will collapse all the .cpp files in the project into a single file which it then uses to build everything, for example:
-      <p class="code">gml_pragma("UnityBuild", "true");</p>
+      <p class="code"><span data-field="title" data-format="default">gml_pragma</span>("UnityBuild", "true");</p>
       The benefit of doing a unity build is that builds are faster but the down side is that it does a <i>full</i> build each time so even if you change a single part of the code it will build everything again without using any cached files. This has been added specifically for the Xbox One export using the YYC although it can be called for other builds (<b>YYC only</b>). For more information on unity builds, please see <a href="http://buffered.io/posts/the-magic-of-unity-builds/" target="_blank">here</a>.
     </li>
   </ul>
-  <p class="note"><b>注意</b>：<span class="inline">gml_pragma</span>函数的第一个参数<b>必须</b>是编译时字符串常量，而不是变量。</p>
+  <p class="note"><span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span><span class="inline3_func"><span data-field="title" data-format="default">gml_pragma</span></span> 函数的第一个参数 <b> 必须是编译时字符串常量 </b> 而不是变量。</p>
+  <p><a class="dropspot" data-open-text="" data-rhwidget="DropSpot" data-target="compiler-optimisations" href="#"><span data-open-text="true" data-skip-index="true"> 编译器优化 </span><span data-close-text="true"> 编译器优化 </span></a>
+    <undefined data-targetname="compiler-optimisiations"></undefined>
+  </p>
+  <div class="droptext" data-targetname="compiler-optimisations">
+    <p class="dropspot">编译器优化可以通过 <span class="inline2">"optimise"</span>( 或 <span class="inline2">"optimize"</span>) 编译指示来提供。它们的基本语法是：</p>
+    <p class="code"><span data-field="title" data-format="default">gml_pragma</span>("optimise", "&lt;specific_optimisation&gt;", "&lt;control&gt;");</p>
+    <p class="dropspot"><span class="inline2">"&lt;specific_optimisation&gt;"</span> 是包含要修改的特定优化的字符串。</p>
+    <p class="dropspot"><span class="inline2">"&lt;control&gt;"</span> 是一个字符串，其中包含以逗号分隔的命令列表，这些命令从代码中的此时开始控制优化：</p>
+    <ul class="dropspotlist">
+      <li><span class="inline2">push</span>- 将优化的当前状态推送到内部堆栈 (针对该优化)</li>
+      <li><span class="inline2">pop</span>- 从内部堆栈弹出 (用于优化) 到当前状态</li>
+      <li><span class="inline2">on</span> 或 <span class="inline2">true</span>- 开启优化</li>
+      <li><span class="inline2">off</span> 或 <span class="inline2">false</span>- 关闭优化</li>
+    </ul>
+    <p class="dropspot">下表列出了您可以使用的所有优化：</p>
+    <ul class="colour">
+    </ul>
+    <table border="1" cellpadding="1" cellspacing="1" id="table" style="caption-side: top">
+      <caption>Compiler Optimisations</caption>
+      <colgroup>
+        <col style="width:50%">
+        <col style="width:50%">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>Optimisation</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td><span class="inline">js_array_check</span></td>
+          <td>If ON then the compiled code will include checks that variables are arrays and do basic error checking on the array, omitted if OFF. These checks are done at each use of the array.<br>
+            <span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;If OFF then you need to make sure that every variable used as an array is definitely of type array before using it.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="inline">js_error_check</span></td>
+          <td>If ON then the compiled code will include <span>checks in the generated JavaScript code to bring it in line with how the VM/YYC runner handles errors</span>. These checks will be omitted if OFF.<br>
+            <span data-conref="../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This can be safely omitted if your code is not erroring when used, generally something that can be disabled once your code is working error free.
+          </td>
+        </tr>
+        <tr>
+          <td><span class="inline">js_check_index</span></td>
+          <td>If ON then the generated code will include checks on the index on array access (read and write) to catch out of range errors. If OFF you need to make sure to always use an array index that's within the array's length (i.e. from 0 to&nbsp;<span class="inline3_func"><a href="../Variable_Functions/array_length.htm">array_length</a></span>-1).</td>
+        </tr>
+        <tr>
+          <td><span class="inline">js_pre_post_no_long</span></td>
+          <td>If ON then increment&nbsp;<span class="inline2">++</span> and decrement&nbsp;<span class="inline2">--</span> expressions are not checked to see if they operate on values of type int64 (or Long in JavaScript). You need to make sure that no variables are of type <a href="../Variable_Functions/is_int64.htm">int64</a> when using the&nbsp;<span class="inline2">++</span> and <span class="inline2">--</span> operators.</td>
+        </tr>
+        <tr>
+          <td><span class="inline">js_use_infix_ops</span></td>
+          <td>If ON then JavaScript's binary operators <span class="inline2">+</span>, <span class="inline2">-</span>, <span class="inline2">*</span>, etc. are used in preference to using&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>'s type checking functions. In this case you need to make sure that all variables used in the expression are of type <a href="../Variable_Functions/is_real.htm">real</a>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>例子</h3>
+    <p class="dropspot">例如，优化以下函数：</p>
+    <p class="code">function multiples_of_two()<br>
+      {<br>
+      &nbsp; &nbsp; var a = [];<br>
+      &nbsp; &nbsp; for (var i = 0; i &lt; 100; i++)<br>
+      &nbsp; &nbsp; {<br>
+      &nbsp; &nbsp; &nbsp; &nbsp; a[i] = i * 2;<br>
+      &nbsp; &nbsp; }<br>
+      }</p>
+    <p class="dropspot">然后，您可以添加 <span class="inline3_func"><span data-field="title" data-format="default">gml_pragma</span></span> 语句，如下所示：</p>
+    <p class="code">function multiples_of_two()<br>
+      {<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_array_check", "push, off");<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_error_check", "push, off");<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_check_index", "push, off");<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_pre_post_no_long", "push, on");<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_use_infix_ops", "push, on");<br>
+      &nbsp; &nbsp; var a = [];<br>
+      &nbsp; &nbsp; for(var i = 0; i &lt; 100; i++)<br>
+      &nbsp; &nbsp; {<br>
+      &nbsp; &nbsp; &nbsp; &nbsp; a[i] = i * 2;<br>
+      &nbsp; &nbsp; }<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_use_infix_ops", "pop" );<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_pre_post_no_long", "pop" );<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_check_index", "pop" );<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_error_check", "pop" );<br>
+      &nbsp; &nbsp; gml_pragma( "optimise", "js_array_check", "pop" );<br>
+      }</p>
+    <h3>使用说明</h3>
+    <ul class="colour">
+      <li>编译器优化被视为编译器的 <em> 提示 </em>，可以随意忽略这些提示。此外，某些优化可能仅针对特定编译器，例如 JavaScript 转译器 (这些优化以 <span class="inline2">"js_"</span> 开头)。</li>
+      <li><span class="inline3_func">"optimise"</span> 命令的所有参数必须在编译时已知，因此 <strong> 必须 </strong> 是常量字符串，否则会生成错误。</li>
+      <li>如果编译器无法理解 <span class="inline2">"special_optimization"</span> 字符串，它会默默地忽略它。</li>
+    </ul>
+    <p>&nbsp;</p>
+    <ul class="colour">
+    </ul>
+  </div>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">gml_pragma(command, [optional...]);</p>
+  <p class="code"><span data-field="title" data-format="default">gml_pragma</span>(command, [optional...]);</p>
   <table>
     <tbody>
       <tr>
@@ -109,12 +208,12 @@
       </tr>
       <tr>
         <td>command</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>带有上面列出的命令之一的字符串。</td>
       </tr>
       <tr>
         <td>[optional]</td>
-        <td><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></td>
         <td>一些可用的命令需要一个或多个可选参数。上面为每个命令解释了这些。</td>
       </tr>
     </tbody>
@@ -124,9 +223,8 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">gml_pragma("forceinline");</p>
+  <p class="code"><span data-field="title" data-format="default">gml_pragma</span>("forceinline");</p>
   <p>上面的示例代码将强制编译时使用内联的脚本函数。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -136,7 +234,7 @@
         <div style="float:right">Next: <a href="parameter_count.htm">parameter_count</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 gml_pragma

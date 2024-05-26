@@ -59,7 +59,7 @@
   <meta name="rh-index-keywords" content="string">
   <meta name="search-keywords" content="string">
   <meta name="is_pure" content="true">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Strings/string_byte_at.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Strings/real.htm"></head>
+<meta name="brsnext" value="GameMaker_Language/GML_Reference/Strings/string_ext.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Strings/Strings.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -84,9 +84,10 @@
   <p>当只向函数提供一个参数时，该参数被视为一个值，该值将从其原始<a href="../../GML_Overview/Data_Types.htm">数据类型</a>转换为字符串。当给定多个参数时，第一个参数被视为<a href="string.htm#h">格式字符串</a>，其后的参数被视为要插入到格式字符串中的值。</p>
   <h2 id="h1">从非字符串类型转换</h2>
   <div data-conref="../../../assets/snippets/String_conversion_rules.hts">
-  <p><span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> 类型为整数的值在字符串中不会有小数位。具有小数部分的 <span data-keyref="Type_Real"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> 类型的值在字符串中有两个小数位。如果在输出字符串中需要更多的小数位，可以使用函数 <span class="inline2"><a href="string_format.htm">string_format</a></span>。</p>
-  <p><a href="../../GML_Overview/Structs.htm">结构</a>或<a href="../Asset_Management/Instances/Instances.htm">实例</a>类型的值将使用该结构或实例的 <a href="Strings.htm#h3">toString() 方法</a> (如果存在)转换为字符串，或者隐式转换为字符串。</p>
-  <p><a href="../../GML_Overview/Arrays.htm">数组</a>类型的值将被转换为格式为 <span class="inline2">[Element1，Element2，Element3，Element4，Element5]</span> 的字符串，即数组中所有元素的串联。如果数组中的任何元素是结构或实例，则将调用其 <a href="Strings.htm#h3">toString() 方法</a> 将其转换为字符串。</p>
+  <p><span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span> 类型为整数的值在字符串中不会有小数位。具有小数部分的 <span data-keyref="Type_Real"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Real</a></span> 类型的值在字符串中有两个小数位。如果在输出字符串中需要更多的小数位，可以使用函数 <span class="inline2"><a href="string_format.htm">string_format</a></span>。</p>
+  <p>Values of type&nbsp;<a href="../../GML_Overview/Structs.htm">Struct</a>&nbsp;or <a href="../Asset_Management/Instances/Instances.htm">Instance</a>&nbsp;will be converted to a string using that struct's or instance's&nbsp;<a href="Strings.htm#tostring_method">toString() Method</a> if one exists, or converted to a string implicitly.</p>
+  <p>Values of type&nbsp;<span data-keyref="Type_Handle"><a target="_blank" href="../../GML_Overview/Data_Types.htm">Handle</a></span>&nbsp;will be converted to a string that shows the handle info:&nbsp;<span data-conref="../../../assets/snippets/Handle_Format.hts"><span class="inline2">"ref&nbsp;&lt;type&gt;&nbsp;&lt;id&gt;"</span></span>.</p>
+  <p>Values of type&nbsp;<a href="../../GML_Overview/Arrays.htm">Array</a>&nbsp;will be converted to a string of the format <span class="inline2">[element1, element2, element3, element4, element5]</span>, i.e. the concatenation of all elements in the array. If any of the elements in the array is a struct or an instance then its&nbsp;<a href="Strings.htm#h3"> </a> will be called to convert it to a string.</p>
 
 </div>
   <h2 id="h">格式化字符串</h2>
@@ -119,19 +120,19 @@
       </tr>
       <tr>
         <td>value_or_format</td>
-        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(if value) or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span>&nbsp;(if format)</td>
+        <td><span data-keyref="Type_Any"><a target="_blank" href="../../GML_Overview/Data_Types.htm#variable">Any</a></span>&nbsp;(if value) or&nbsp;<span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span>&nbsp;(if format)</td>
         <td>要转换为字符串的值。</td>
       </tr>
       <tr>
         <td>[, value1, value2, ...]</td>
-        <td><span data-keyref="Type_Any"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable">Any</a></span></td>
+        <td><span data-keyref="Type_Any"><a target="_blank" href="../../GML_Overview/Data_Types.htm#variable">Any</a></span></td>
         <td><span data-conref="../../../assets/snippets/Tag_optional.hts"><span class="optional">可选</span></span> 要插入占位符位置的值。</td>
       </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></p>
+  <p class="code"><span data-keyref="Type_String"><a target="_blank" href="../../GML_Overview/Data_Types.htm">String</a></span></p>
   <p>&nbsp;</p>
   <h4>示例1：</h4>
   <p class="code">draw_text(100, 100, "Score: " + string(score) + " / Health: " + <span data-field="title" data-format="default">string</span>(health));</p>
@@ -149,7 +150,7 @@
         <div style="float:right">Next:&nbsp;<a href="string_ext.htm">string_ext</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 string

@@ -85,27 +85,33 @@
   <p>以下是IDE部分下的选项：</p>
   <ul class="colour">
     <li><strong>Temp directory</strong>: The location for saving all the temporary folders. By default on Windows this is:&nbsp;
-      <p class="code">\Users\&lt;Username&gt;\AppData\Local\Temp\GameMaker</p>
+      <p class="code">\Users\&lt;Username&gt;\AppData\Local\Temp\<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span></p>
       And on macOS it's:&nbsp;
-      <p class="code">/var/folders/&lt;Path_Hash&gt;/GameMaker</p>
+      <p class="code">/var/folders/&lt;Path_Hash&gt;/<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span></p>
       <p>&nbsp;</p>
     </li>
     <li><strong>IDE cache directory</strong>: The location for saving the IDE cache. By default on Windows this is:&nbsp;
-      <p class="code">\Users\&lt;Username&gt;\AppData\Roaming\GameMaker\Cache</p>
+      <p class="code">\Users\&lt;Username&gt;\AppData\Roaming\<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span>\Cache</p>
       And on macOS it's:&nbsp;
-      <p class="code">/Users/&lt;Username&gt;/.config/GameMaker/Cache</p>
+      <p class="code">/Users/&lt;Username&gt;/.config/<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span>/Cache</p>
       <p>&nbsp;</p>
     </li>
     <li><strong>Asset cache directory</strong>: The location for saving the asset cache for each project. By default on Windows this is:&nbsp;
-      <p class="code">\Users\&lt;Username&gt;\AppData\Roaming\GameMaker\Cache</p>
+      <p class="code">\Users\&lt;Username&gt;\AppData\Roaming\<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span>\Cache</p>
       And on macOS it's:&nbsp;
-      <p class="code">/Users/&lt;Username&gt;/.config/GameMaker/Cache</p>
+      <p class="code">/Users/&lt;Username&gt;/.config/<span data-keyref="GameMaker_Paths_Directory_Name">GameMakerStudio2</span>/Cache</p>
       <p>&nbsp;</p>
     </li>
-    <li><strong>"My Projects" Location</strong>: The location where <span data-keyref="GameMaker Name">GameMaker</span> will initially create new projects. By default on Windows this is:&nbsp;
-      <p class="code">\Users\&lt;Username&gt;\Documents\GameMaker</p>
+    <li><strong>"My Projects" directory</strong>: The location where <span data-keyref="GameMaker Name">GameMaker</span> will initially create new projects. By default on Windows this is:&nbsp;
+      <p class="code">\Users\&lt;Username&gt;\<span data-keyref="Const_IDE_MyProjects_Directory_Name">GameMakerProjects</span></p>
       And on macOS it's:&nbsp;
-      <p class="code">/Users/&lt;Username&gt;/GameMaker</p>
+      <p class="code">/Users/&lt;Username&gt;/<span data-keyref="Const_IDE_MyProjects_Directory_Name">GameMakerProjects</span></p>
+      <p>&nbsp;</p>
+    </li>
+    <li><strong>Template Projects directory</strong>: The location where&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;stores the custom template projects that you create. By default on Windows this is:
+      <p class="code">\Users\&lt;Username&gt;\<span data-keyref="Const_IDE_MyProjects_Directory_Name">GameMakerProjects</span>\<span data-keyref="Const_IDE_TemplateProjects_Directory_Name">TemplateProjects</span></p>
+      And on macOS it's:&nbsp;
+      <p class="code">/Users/&lt;Username&gt;/<span data-keyref="Const_IDE_MyProjects_Directory_Name">GameMakerProjects</span>/<span data-keyref="Const_IDE_TemplateProjects_Directory_Name">TemplateProjects</span></p>
       <p>&nbsp;</p>
     </li>
     <li><strong>关闭时自动删除临时目录</strong>：选中此选项将强制<span data-keyref="GameMaker Name">GameMaker</span>自动删除它为编译等每个项目创建的临时文件夹。默认情况下，此设置处于启用状态，取消选中它将关闭它(意味着您必须稍后手动删除任何临时文件)。</li>
@@ -120,14 +126,12 @@
   <p>以下是"外部编辑器"部分下的选项：</p>
   <ul class="colour">
     <li><strong> 声音文件 </strong>：用于 <a href="../../../The_Asset_Editors/Sounds.htm"> 声音 </a> 的外部编辑器的路径。如果为空 (默认值)，则使用操作系统的文件关联。</li>
-    <li><strong>SWF files</strong>:&nbsp;The path to the external editor to use for <a href="../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm#h">Vector Sprites (SWF)</a>. If empty (the default), the OS'es file associations are used.</li>
-    <li><strong>Spine files</strong>: The path to the external editor to use for&nbsp;<a href="../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm#h1">Skeletal Animation Sprites (Spine)</a>. If empty (the default), the&nbsp;OS'es file associations are used.</li>
-    <li><strong>Bitmap files</strong>: The path to the external editor to use for bitmap <a href="../../../The_Asset_Editors/Sprites.htm">Sprites</a>. If empty (the default), the&nbsp;OS'es file associations are used.</li>
-    <li><strong>Automatic response to external bitmap editor warning</strong>: When y<span>ou use b<span>oth <a href="../../../The_Asset_Editors/Image_Editor.htm">The Image Editor</a></span></span><span>&nbsp;and an external editor for editing the same bitmap <a href="../../../Quick_Start_Guide/Creating_Sprites.htm">sprite</a>, the Image Editor will overwrite the changes.&nbsp;</span>This&nbsp;<span><span>opti<span><span>on lets&nbsp;<span data-keyref="GameMaker Name">GameMaker</span>&nbsp;<span><span><span>sh<span>ow</span></span></span></span>&nbsp;a warning message</span></span></span></span><span>&nbsp;when y<span>ou</span>&nbsp;try to externally edit a bitmap sprite: <strong>Sh</strong><span><strong>ow Message</strong> sh<span>ows a warning (the default), <strong>OK</strong> sh<span>ows n<span>one.</span></span></span></span></span></li>
-    <li><strong>Automatic response to external spine re-import warning</strong>: <span>Any changes done to a sprite in the Spine external editor will need to be re-imported as a new&nbsp;sprite.&nbsp;<span><span data-keyref="GameMaker Name">GameMaker</span>&nbsp;will show a warning message f<span>or this</span></span>&nbsp;if&nbsp;<span><strong>Show Message</strong> is selected (the default),&nbsp;</span><span>or n<span><span>o message</span></span>&nbsp;<span>if y<span>ou select <strong>OK</strong>.</span></span></span></span></li>
+    <li><strong>SWF 文件 </strong>：用于 <a href="../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm#h"> 矢量精灵 (SWF)</a> 的外部编辑器的路径。如果为空 (默认值)，<span data-keyref="GameMaker Name">GameMaker</span> 会警告您没有设置路径并打开 <a href="Paths.htm"> 路径首选项 </a>。如果设置了，单击精灵编辑器中的 <strong> 编辑图像 </strong> 按钮或对象编辑器中的编辑图像按钮将在给定程序中打开精灵。</li>
+    <li><strong>Spine 文件 </strong>：用于 <a href="../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm#h1"> 脊椎动画精灵 (Spine)</a> 的外部编辑器的路径。如果为空 (默认值)，<span data-keyref="GameMaker Name">GameMaker</span> 会警告您未设置路径并打开 <a href="Paths.htm"> 路径首选项 </a>。如果设置了，单击 Sprite Editor 中的 <strong> 图像编辑 </strong> 按钮或物体编辑器中的 <strong> 图像编辑 </strong> 按钮将在给定程序中打开精灵。</li>
+    <li><strong> 位图文件 </strong>：用于位图 <a href="../../../The_Asset_Editors/Sprites.htm"> 精灵 </a> 的外部编辑器的路径。如果为空 (默认值)，则在 <a href="../../../The_Asset_Editors/Image_Editor.htm"> 图像编辑器 </a> 中打开精灵。如果设置，单击精灵编辑器中的 <strong> 编辑图像 </strong> 按钮或对象编辑器中的 <strong> 编辑图像 </strong> 按钮将在给定程序中打开精灵。</li>
+    <li><strong> 自动响应外部位图编辑器警告 </strong>：当您同时使用 <a href="../../../The_Asset_Editors/Image_Editor.htm"> 图像编辑器 </a> 和外部编辑器编辑同一位图 <a href="../../../Quick_Start_Guide/Creating_Sprites.htm"> 精灵 </a> 时，图像编辑器将覆盖更改。此选项允许 <span data-keyref="GameMaker Name">GameMaker</span> 在您尝试外部编辑位图精灵时显示警告消息：<strong> 显示消息 </strong> 显示警告 (默认)，<strong> 确定 </strong> 显示无。</li>
+    <li><strong>自动响应外部Spine重新导入警告</strong>：在Spine外部编辑器中对精灵所做的任何更改都需要作为新精灵重新导入。如果选择了<span data-keyref="GameMaker Name">显示消息</span>(默认值)，<strong>GameMaker</strong>将为此显示警告消息，如果选择了<strong>确定</strong>，则不显示消息。</li>
     <li><strong> 打开包含文件的默认选项 </strong>：该选项设置双击 <img class="icon" src="../../../assets/Images/Icons/Icon_LMB.png"><a href="../../../Settings/Included_Files.htm"> 包含文件 </a> 中的文件时的默认行为。<ul><li><strong> 属性 </strong>：这将在 <a href="../../../IDE_Tools/The_Inspector.htm"> 检查器 </a> 中打开包含文件。</li><li><strong> 外部编辑器 </strong>：这将使用操作系统的文件关联在外部编辑器中打开文件。</li></ul></li>
-    <li><strong>SWF 文件的外部编辑器 / 查看器的路径</strong>：如果您正在使用 SWF 格式的精灵，您可以将此路径设置为您首选的查看器 / 编辑器的路径，当您在精灵编辑器中单击<em>编辑图像</em>按钮时，它将打开给定的程序。这里的缺省值是没有路径。</li>
-    <li><strong>Spine 文件的外部编辑器 / 查看器的路径</strong>：如果您正在使用 Spine 格式的精灵，您可以将其设置为您首选的查看器 / 编辑器的路径，当您在精灵编辑器中单击<em>编辑图像</em>按钮时，它将打开给定的程序。这里的缺省值是没有路径。</li>
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -138,7 +142,7 @@
         <div style="float:right">Next:&nbsp;<a href="Power_Saving.htm">Power Saving Preferences</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Asset Explorer

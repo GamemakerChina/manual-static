@@ -78,15 +78,19 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>view_hport</h1>
+  <h1><span data-field="title" data-format="default">view_hport</span></h1>
   <p>此变量可用于获取或设置指定视口的高度。视口的高度(如果有多个视口处于活动状态)定义了<i>游戏开始时</i>游戏窗口或背景画布的高度，因此在游戏开始后更改此值将不会对游戏窗口大小产生可见影响，除非随函数 <a href="../The_Game_Window/window_set_size.htm"><span class="inline">window_set_size()</span></a> 一起调用。如果您的端口大小大于或小于分配给相机的端口大小，则相机视图将按比例缩小或缩小以适应游戏窗口大小，如下图所示。</p>
+  <div data-conref="../../../../assets/snippets/GML_Not_real_array.hts">
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This variable does not hold a real GML array, so you cannot run any <a href="../../Variable_Functions/Array_Functions.htm">array functions</a> on it or serialise it (convert it to a string). The only operation you can run on it is accessing a value at an index, with the <span class="inline2"><span data-field="title" data-format="default">view_hport</span>[index]</span> syntax.</p>
+
+</div>
   <p><img alt="view_hport example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/View_wh.png"></p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">view_hport[0 ... 7];</p>
+  <p class="code"><span data-field="title" data-format="default">view_hport</span>[0 ... 7]</p>
   <p>&nbsp;</p>
   <h4>返回:</h4>
-  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Real</a></span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
   <p class="code">camera_set_view_size(view_camera[0], view_wport[0], view_hport[0]);</p>
@@ -101,7 +105,7 @@
         <div style="float:right">Next:&nbsp;<a href="view_surface_id.htm">view_surface_id</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 view_hport

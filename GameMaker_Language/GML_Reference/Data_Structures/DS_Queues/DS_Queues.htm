@@ -78,7 +78,7 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>DS 队列</h1>
+  <h1><span data-field="title" data-format="default">DS Queues</span></h1>
   <p>DS队列有点类似于<a href="../DS_Stacks/DS_Stacks.htm">DS堆栈</a>，但它以先进先出(FIFO)为基础工作。首先放入队列<i>的值</i>也是第一个从其中删除的值。你可以把它想象成在商店里排队付款，排队的第一个人先付款，然后离开商店。队列通常用于存储操作或行为(例如，以脚本的形式)，这些操作或行为仍然需要由实例完成，但还有许多其他用途。</p>
   <div data-conref="../../../../assets/snippets/Note_DS_Destroy_When_No_Longer_Needed.hts">
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 与所有动态资源一样，数据结构也会占用内存，因此在不再需要时应 <b> 始终 </b> 销毁，以防止内存泄漏，否则会减慢游戏速度并最终崩溃。</p>
@@ -88,7 +88,8 @@
   <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span> 如果您需要检查数据结构是否存在，可以使用 <span class="inline3_func"><a href="../ds_exists.htm">ds_exists</a></span> 函数。</p>
 
 </div>
-  <p>存在以下处理DS队列的函数：</p>
+  <h2 id="func_ref">Function Reference</h2>
+  <h3 id="func_ref_general">General</h3>
   <ul class="colour">
     <li><a href="ds_queue_create.htm">ds_queue_create</a></li>
     <li><a href="ds_queue_destroy.htm">ds_queue_destroy</a></li>
@@ -100,20 +101,22 @@
     <li><a href="ds_queue_head.htm">ds_queue_head</a></li>
     <li><a href="ds_queue_tail.htm">ds_queue_tail</a></li>
     <li><a href="ds_queue_copy.htm">ds_queue_copy</a></li>
+  </ul>
+  <h3 id="func_ref_serialisation">Serialisation</h3>
+  <ul class="colour">
     <li><a href="ds_queue_read.htm">ds_queue_read</a></li>
     <li><a href="ds_queue_write.htm">ds_queue_write</a></li>
   </ul>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Data_Structures.htm">数据结构</a></div>
-        <div style="float:right">Next: <a href="../DS_Stacks/DS_Stacks.htm">DS&nbsp;Stacks</a></div>
+        <div style="float:left">Back:&nbsp;<a href="../Data_Structures.htm">数据结构</a></div>
+        <div style="float:right">Next:&nbsp;<a href="../DS_Stacks/DS_Stacks.htm">堆栈 Stacks</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 DS Queues

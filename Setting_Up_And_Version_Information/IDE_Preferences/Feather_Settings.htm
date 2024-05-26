@@ -94,13 +94,15 @@
   <h2 id="s1">基本选项</h2>
   <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Feather/FeatherPrefs_Base.png">基本语法检查设置包含以下选项：</p>
   <ul class="colour">
-    <li><strong>启用语法检查</strong>：在此处启用或禁用语法检查。禁用时，语法检查功能在整个 IDE 中都不可用。</li>
+    <li id="enable_feather"><strong>启用语法检查</strong>：在此处启用或禁用语法检查。禁用时，语法检查功能在整个 IDE 中都不可用。</li>
     <li><strong>文档解析延迟</strong>：在您更改脚本后，语法检查等待检查脚本的时间量。</li>
     <li><strong>压缩工具提示</strong>：启用此选项将删除将鼠标悬停在关键字上时显示的某些工具提示信息，例如函数的参数说明，最终会使工具提示变小。</li>
     <li><strong>工具提示显示的结构字段的最大数量</strong>：当您将鼠标悬停在结构引用上时，工具提示会显示该结构中的变量，直到此处输入的数字为止。</li>
-    <li><strong>在资源浏览器中重命名资源时重构对资源名称的引用</strong>：启用此选项将确保在资源浏览器中重命名资源时，代码中提及该资源的任何内容也会被编辑，以便这些引用不会中断。</li>
-    <li><strong>从快速修复创建时首选多行 JSDoc 注释样式</strong>：当您通过<a href="../../The_Asset_Editors/Code_Editor_Properties/Feather_Features.htm#h1">快速修复</a>菜单为函数生成 JSDoc 注释时，生成的 JSDoc 将使用单行或多行<a href="../../GameMaker_Language/GML_Overview/Commenting_Code.htm">注释</a>，具体取决于此选项。</li>
+    <li><strong> 在资源浏览器中重命名资源时重构对资源名称的引用 </strong>：启用此选项将确保在 <a href="../../Introduction/The_Asset_Browser.htm"> 资源浏览器 </a> 中重命名资源时，代码中对该资源的任何引用也会被编辑，因此这些引用不会中断。</li>
+    <li><strong>从快速修复创建时首选多行JSDoc注释样式</strong>：当您通过<a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">快速修复</a>菜单为函数生成<a href="../../The_Asset_Editors/Code_Editor_Properties/Feather_Features.htm#h1">JSDoc脚本注释</a>时，生成的JSDoc将使用单行或多行<a href="../../GameMaker_Language/GML_Overview/Commenting_Code.htm">注释</a>，具体取决于此选项。</li>
     <li><strong>启用严格类型模式</strong>：启用该模式后，语法检查将更加严格地确保您在代码中使用正确的数据类型。</li>
+    <li><strong>不分析自动生成名称的房间实例项目</strong>：启用此选项将使Feather不为新添加的实例分析项目。但是，当您将Room实例重命名为与其原始自动生成名称不同的名称时，Feather将再次分析您的项目。</li>
+    <li><strong>不分析房间实例</strong>：启用此功能后，Feather永远不会分析任何实例创建代码或重新解析项目以获得新的房间实例，即使您重命名它们也是如此.</li>
   </ul>
   <h2 id="s2">高亮</h2>
   <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Feather/FeatherPrefs_Highlighting.png" style="cursor: nesw-resize;"></p>
@@ -125,7 +127,7 @@
   <p>您可以将规则设置为"<strong>忽略</strong>"，这将忽略该规则被违反的所有实例。</p>
   <p>从 "<strong>GM1000</strong>" 开始的所有规则都会检查您的语法中可能出现的致命错误，而从 "<strong>GM2000</strong>" 开始的规则是帮助您防止游戏中的错误的最佳实践规则。</p>
   <h2 id="s4">命名规则</h2>
-  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Feather/FeatherPrefs_NamingRules.png">此部分允许您为资源、变量和 GML 代码的其他各个部分设置命名规则。</p>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Feather/FeatherPrefs_NamingRules.png">此部分允许您为资源、变量和<span data-keyref="GML_Code">GML代码</span>的各种其他部分设置命名规则。</p>
   <p>必须启用"消息严重性"下的 GM2017 规则才能使命名规则生效。默认情况下，它处于禁用状态。</p>
   <p>此部分中的设置如下：</p>
   <ul class="colour">
@@ -152,7 +154,7 @@
         <div style="float:right">Next:&nbsp;<a href="Marketplace_Preferences.htm">市场首选项</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Preferences - Feather Settings

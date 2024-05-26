@@ -80,13 +80,14 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><span data-field="title" data-format="default">对象编辑器</span></h1>
   <p><img alt="The Object Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Objects.png">对象是我们用来控制游戏的各个方面和做特定事情的资源。大多数时候，它们有一个与之相关的精灵，以便你在游戏室中看到它们，但有时它们被用作 "幕后 "控制器，以做与用户有关的事情或用于计时，等等。它们可以被赋予行为，它们可以对某些事件作出反应，也可以对彼此作出反应，你在游戏中看到的大多数东西都是基于物体和它们的相互作用。现在，我们说 "基于"，是因为你实际上并没有直接将物体放入游戏房间，而是将这些物体的<strong>实例</strong>放入游戏房间，它们基本上是物体资源的副本（或克隆，如果你愿意）。这是一件非常重要的事情，因为实例和对象<em>不是同一种东西</em>，它们各自有自己的一套可以影响它们的功能，所以要记住这一点。</p>
-  <p>为了说清楚这一点，想想一个用<span data-keyref="GameMaker Name">GameMaker</span>制作的游戏。所有的角色、怪物、球、墙等等......都是你在<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>中创建的对象。然后你在<a href="Rooms.htm">房间编辑器</a>中把<em>对象</em>拖入房间，创建一个从基本对象模板复制的<em>实例</em>。然后，房间里的实例可以在编辑器本身或通过代码进行更改，这样它就可以被缩放，或着色，或从 "基本 "对象中修改其他细节。因此，当我们谈论影响或改变一个<strong>实例</strong>的东西时，我们的意思是它会影响<em>房间里的一个特定对象的副本</em>。只有那个单一的实例受到影响，而其他的都没有受到影响。但是，当我们谈论影响或改变一个<strong>对象</strong>时，我们的意思是，我们正在修改资源浏览器中的对象，我们对它所做的任何事情都将反映在从这一点开始创建的所有实例上。所以，对象是实例的模板，而实例就是我们放在房间里做游戏的东西。</p>
+  <p>为了阐明这一点，请考虑使用<span data-keyref="GameMaker Name">GameMaker</span>制作的游戏。所有角色，怪物，球，墙壁等都是您在<a href="../Introduction/The_Asset_Browser.htm">资源浏览器</a>中创建的对象。然后您将<em>对象</em>拖到<a href="Rooms.htm">房间编辑器</a>中的房间中，以创建从基本对象模板复制的<em>实例</em>。然后可以在编辑器本身或通过代码更改房间中的实例，以便可以缩放，或着色，或从"基础"对象修改其他细节。因此，当我们谈论影响或改变一个<strong>实例</strong>时，我们的意思是<em>它影响房间中对象的一个特定副本</em>。只有该单个实例受到影响，而所有其他<strong>实例</strong>都没有。但是，当我们谈论影响或改变对象时，我们的意思是，我们正在修改资产浏览器中的对象，我们对它所做的任何事情都将反映在从该点创建的所有实例中。因此，对象是实例的模板，而实例是我们放置在房间中以制作游戏的东西。</p>
   <p>要在你的游戏中创建一个对象，你可以在资源浏览器上右击<img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png" style="">&nbsp;，然后点击<em>创建对象</em>选项。这将打开本页面顶部的窗口，其中有以下几个部分。</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span data-open-text="true" data-skip-index="true">详情</span><span data-close-text="true">详情</span></a></p>
   <div class="droptext" data-targetname="drop-down">
     <p class="dropspot">在这里你可以给你的对象一个名字。这个名字不应包含空格或未经授权的字符（只允许使用字母数字字符和下划线"_"），而且应该简短但易于记忆，以便以后当你可能有很多资源时，你可以很容易地识别它们。 当你可能有许多资源时，你可以很容易地识别它们。例如，许多人使用前缀或后缀来识别资源之间的差异，如"<span class="inline">obj_Ship</span>"或"<span class="inline">Ship_obj</span>"。</p>
     <p class="dropspot">接下来你可以选择对象的精灵，如果你希望它有一个。用鼠标左键<img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">&nbsp;点击精灵框，<strong>资源资源管理器</strong>将出现资源浏览器的所有可用精灵列表。</p>
-    <p class="dropspot"><img alt="The Asset Explorer" class="center" src="../assets/Images/Asset_Editors/Editor_Objects_AssetExplorer.png">然后你可以选择你想为该对象使用的精灵。在为对象分配了精灵后，你可以点击<em>编辑精灵</em>按钮<img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png">&nbsp;来改变<a href="Sprites.htm">精灵属性</a>，或者--如果你没有对象的精灵，但希望创建一个--你可以点击<em> 添加精灵</em>按钮<img alt="Add Sprite Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_NewSprite.png" width="24">&nbsp;来创建一个新的精灵资源并分配给它。你也可以通过点击<em>编辑图像</em>按钮<img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png">来编辑已经分配的精灵资源图像并打开<a href="Image_Editor.htm">图像编辑器</a>。</p>
+    <p class="dropspot"><img alt="The Asset Explorer" class="center" src="../assets/Images/Asset_Editors/Editor_Objects_AssetExplorer.png">You然后可以选择要用于对象的精灵。为对象分配精灵后，您可以单击<em>编辑精灵</em>按钮<img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png">更改<a href="Sprites.htm">精灵属性</a>，或者-如果您没有对象的精灵，但希望创建一个-您可以单击<em>添加精灵</em>按钮<img alt="Add Sprite Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_NewSprite.png" width="24">创建新的精灵资源并进行分配。</p>
+    <p class="dropspot">您还可以通过单击<em>编辑图像</em>按钮<img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png">来编辑已分配的精灵资源图像。如果未设置外部编辑器，则会在<a href="Image_Editor.htm">图像编辑器</a>中打开图像;如果<a href="../Setting_Up_And_Version_Information/IDE_Preferences/General/Paths.htm">路径首选项</a>中提供了给定精灵类型，则会在外部编辑器中打开图像。</p>
     <p class="dropspot">&nbsp;</p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span data-open-text="true" data-skip-index="true">碰撞遮罩</span><span data-close-text="true">碰撞遮罩</span></a></p>
@@ -133,7 +134,7 @@
         <div style="float:right">Next:&nbsp;<a href="Particle_Systems.htm">The Particle System Editor</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Object Editor

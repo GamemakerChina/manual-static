@@ -58,7 +58,7 @@
   <meta name="topic-comment" content="Overview of strip images in GameMaker, used for animation">
   <meta name="rh-index-keywords" content="Sprite Strips, Strip Images">
   <meta name="search-keywords" content="sprite strip, strip image, stripN">
-</head>
+<meta name="brsnext" value="Settings/Texture_Information/Non-Bitmap_Sprites.htm"><meta name="brsprev" value="The_Asset_Editors/Sprite_Properties/Nine_Slices.htm"></head>
 
 <body>
   <div class="topic-header rh-hide" id="rh-topic-header">
@@ -83,7 +83,8 @@
   <p>条带图像包含多个帧，从左开始水平布局。条带图像文件的名称必须以 "<strong>_stripN</strong>" 结尾，其中 "<strong>N</strong>" 是动画中的帧数。</p>
   <p><img class="center_shadow" src="../../assets/Images/Asset_Editors/PlayerSprite_strip5.png">上面的条带图像包含5帧。其文件名为 <span class="inline2">PlayerSprite<strong>_strip5</strong>.png</span>，表示它有 5 帧，GameMaker 使用该帧将其划分为单独的子图像。</p>
   <p>您可以立即保存此图像并将其拖动到 GameMaker 中，它将作为动画导入：</p>
-  <p><img class="center" height="465" src="../../assets/Images/Asset_Editors/Sprite_Strip_Imported.png" width="1040">您可以通过<a href="../Sprites.htm">精灵编辑器</a>中的"导入"按钮导入条带图像，方法是将其拖到 IDE 中，或者在运行时使用 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm"><span class="inline2">sprite_add()</span></a> 加载它。</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Sprite_Strip_Imported.png">您可以通过<a href="../Sprites.htm">精灵编辑器</a>中的"导入"按钮导入条带图像，方法是将其拖到 IDE 中，或者在运行时使用 <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm"><span class="inline2">sprite_add()</span></a> 加载它。</p>
+  <p>After importing, GameMaker will remove the "_stripN" part from the name of the sprite.</p>
   <p>最终精灵的宽度将等于条带图像的<strong>总宽度除以</strong>其文件名中的<strong>帧数量</strong>。例如，具有 5 个帧的 250px 宽的条带将产生 50px 宽的图像。</p>
   <h2>字体</h2>
   <p>您可以创建要用作字体的条带图像，其中每个字符都是条带图像中的一个帧。</p>
@@ -99,7 +100,7 @@
         <div style="float:right">Next:&nbsp;<a href="../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">非位图精灵</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Sprite Strips

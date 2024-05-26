@@ -78,25 +78,27 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>surface_depth_disable</h1>
+  <h1><span data-field="title" data-format="default">surface_depth_disable</span></h1>
   <p>此函数禁用在禁用后创建的<i>所有</i>表面的自动深度缓冲区生成。通常情况下，所有表面都有深度缓冲区，因此如果绘制3D对象到这些表面，它将按深度对它们进行正确排序为了在渲染到表面和渲染到后缓冲区之间保持函数奇偶校验，然而，分配深度缓冲区实际上使表面所需的内存量加倍，这可能是过度的和不必要的开销尤其是如果您的游戏非常耗费内存，并且2D游戏通常不需要这些内容。</p>
   <p>若要使用此函数，请在<i>创建表面之前调用它</i>，然后可以在创建表面之后再次启用它(如果需要)。禁用深度缓冲区时创建的所有表面在绘制到时将不再使用深度缓冲区，这将产生在具有同等深度的物体被吸引到表面上。下图说明了实践中的情况：</p>
   <p><img alt="Surface depth buffer example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Surface_Depth_Buffer.png">在上图中，我们使用3D中的顶点缓冲区绘制矩形和三角形。的红色三角形的坐标将其置于绿色矩形的后面，但绘制三角形的代码在<i>矩形的代码之后被称为</i>，并且当启用深度缓冲区时，三角形仍然绘制在矩形的后面因为3D深度受到尊重。但是，当我们禁用表面的深度缓冲区时，只遵循代码顺序，因此在矩形上绘制三角形。</p>
-  <p class="note"><b>注意</b>：要在使用表面时正确保留 3D 深度，不仅应启用深度缓冲区，还应启用 Z 写入和 Z 测试。有关详细信息，请参阅函数 <a href="../GPU_Control/gpu_get_ztestenable.htm"><span class="inline"><span style="font-size:14px;">gpu_set_ztestenable()</span></span></a> 和 <a href="../GPU_Control/gpu_get_zwriteenable.htm"><span class="inline"><span style="font-size:14px;">gpu_set_zwriteenable()</span></span></a>。</p>
-  <p class="note"><b>注意</b>：如果您的游戏为100% 2D，或者您知道不需要表面深度缓冲区，则在游戏开始时只需调用此函数一次即可禁用缓冲区。</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span></b> 为了在使用表面时正确保留 3D 深度，您不仅应该启用深度缓冲区，还应该启用 z 写入和 z 测试。有关详细信息，请参阅函数 <span class="inline3_func"><a href="../GPU_Control/gpu_set_ztestenable.htm">gpu_set_ztestenable</a></span> 和 <span class="inline3_func"><a href="../GPU_Control/gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></span>。</p>
+  <p class="note"><b><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note"> 注意</span></span></b> 如果您的游戏是 100% 2D 或者您知道不需要表面深度缓冲区，那么只需在游戏开始时调用此函数一次就可以了。游戏禁用缓冲区。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">surface_depth_disable(disable);</p>
+  <p class="code"><span data-field="title" data-format="default">surface_depth_disable</span>(disable);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>disable</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>disable</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td>如果设置为<span class="inline">true</span>，则将对创建的表面禁用深度缓冲区。</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -104,12 +106,13 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">var _depth_setting = surface_get_depth_disable();<br> surface_depth_disable(false);
-    <br> surface_with_depth = surface_create(room_width, room_height);<br> surface_depth_disable(true);
-    <br> surface_without_depth = surface_create(room_width, room_height);<br> surface_depth_disable(_depth_setting);
-  </p>
+  <p class="code">var _depth_setting = surface_get_depth_disable();<br>
+    surface_depth_disable(false);<br>
+    surface_with_depth = surface_create(room_width, room_height);<br>
+    surface_depth_disable(true);<br>
+    surface_without_depth = surface_create(room_width, room_height);<br>
+    surface_depth_disable(_depth_setting);</p>
   <p>上述代码将当前深度缓冲区设置存储在变量中，然后创建两个表面，一个启用了深度缓冲，另一个不启用，然后再次恢复原始设置。</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -119,7 +122,7 @@
         <div style="float:right">Next:&nbsp;<a href="surface_get_height.htm">surface_get_height</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 surface_depth_disable

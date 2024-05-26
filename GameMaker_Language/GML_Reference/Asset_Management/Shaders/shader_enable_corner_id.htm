@@ -81,9 +81,10 @@
   <h1><span data-field="title" data-format="default">shader_enable_corner_id</span></h1>
   <p>此函数允许在着色器中使用角ID。</p>
   <p>它为所有正在使用的着色器设置一个全局状态，当启用时，着色器从输入颜色值中"窃取"2位;一个来自红色值的最低位，一个来自蓝色值的最低位。然后可以在着色器中恢复这些值，以确定您正在处理的顶点(即哪个角落)。</p>
+  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"><span class="note">NOTE</span></span>&nbsp;This will not work when using <a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">vertex buffers and primitives</a> as the colour data for each vertex is handled by the user.</p>
   <p><em>蓝色</em>分量的最低位存储<em>最高有效位</em>，<em>红色</em>分量的最低位存储<em>最低有效位</em>。您可以通过执行以下操作来计算顶点着色器中的角ID：</p>
   <pre data-stringify-type="pre">vec2 rem = mod(in_Colour.rb * 255., 2.);
-int corner_id = int(dot(vec2(1., 2.), rem));<span></span></pre>
+int corner_id = int(dot(vec2(1., 2.), rem));</pre>
   <p>下表列出了可能的值及其对应的角点位置：</p>
   <table id="shader_corner_id" style="caption-side: top">
     <caption id="">着色器角ID</caption>
@@ -139,7 +140,7 @@ int corner_id = int(dot(vec2(1., 2.), rem));<span></span></pre>
       </tr>
       <tr>
         <td>enable</td>
-        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td>启用(<span class="inline">true</span>)或禁用(<span class="inline">false</span>)此函数。</td>
       </tr>
     </tbody>
@@ -160,7 +161,7 @@ int corner_id = int(dot(vec2(1., 2.), rem));<span></span></pre>
         <div style="float:right">Next:&nbsp;<a href="shader_get_name.htm">shader_get_name</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 shader_enable_corner_id

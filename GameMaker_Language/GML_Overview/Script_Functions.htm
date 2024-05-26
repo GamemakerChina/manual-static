@@ -93,7 +93,7 @@
     <span>}</span>
   </p>
   <p>or:</p>
-  <p class="code"><span><span>name =&nbsp;</span>function( parameter1, parameter2, ... )</span><br>
+  <p class="code">name =&nbsp;function( parameter1, parameter2, ... )<br>
     <span>{</span><br>
     <span>&nbsp; &nbsp; statement1;</span><br>
     <span>&nbsp; &nbsp; statement2;</span><br>
@@ -185,7 +185,7 @@
     <br>
     function sqr_calc(val)<br>
     {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;if !is_real(val)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (!is_real(val)) <br>
     &nbsp;&nbsp;&nbsp;&nbsp;{<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
@@ -195,13 +195,15 @@
   </p>
   <p>请注意，如果您创建的脚本函数<em>没有</em>返回值，那么在您的代码中检查是否有返回值，默认情况下您将获得值<span class="inline">未定义</span>。</p>
   <p>要从一段代码中调用脚本函数，只需使用与调用任何运行时函数相同的方式即可 - 即，在括号中写入函数名称和参数值。因此，上面的脚本将被这样调用：</p>
-  <p class="code">if keyboard_check_pressed(vk_enter)<br>
+  <p class="code">if (keyboard_check_pressed(vk_enter)) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;val = scr_sqr(amount);<br>
     }</p>
   <p class="note"><span data-conref="../../assets/snippets/Tag_note.hts"><span class="note">注意</span></span>当在代码编辑器中的脚本中使用您自己的函数时，您可以按<span><img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"></span>或在函数名称上单击鼠标中键<span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"></span>以打开脚本包含它以供直接编辑。</p>
   <h2>脚本名称与函数名称</h2>
-  <p>It is important to understand that script <i>names</i> are <b>independent of the functions that they contain</b>, so you can name your scripts in a more "common sense" way, ie: all your AI functions could go in a script "<span class="inline">Enemy_AI</span>" (following the standard asset naming conventions of alpha-numeric characters and the under-bar "_" only). However, you can still call scripts in your game - and you can name scripts the same as a function that you define in them - which can give rise to a issues due to the way that <span data-keyref="GameMaker Name">GameMaker</span> stores asset references. To give an example consider this code, called from an instance:</p>
+  <p>请务必了解脚本<i>名称</i><b>独立于它们包含的函数</b>，因此您可以用更"常识"的方式命名您的脚本，即：您的所有 AI 函数都可以采用脚本"<span class="inline">Enemy_AI</span>"并包含<span class="inline2">ai_target_pos()</span>、<span class="inline2">ai_alert_level()</span>、<span class="inline2">ai_state()</span>等函数。</p>
+  <p>但是，您仍然可以将脚本命名为与您在其中定义的函数相同的名称并调用该脚本，例如如果您想要每个脚本一个函数(这对于制作可重用库非常有用，因此所有函数都显示在资源浏览器中)。执行此操作时，由于<span data-keyref="GameMaker Name">GameMaker</span>存储资源引用的方式，了解脚本引用的行为方式以避免代码错误非常重要。</p>
+  <p>例如，考虑从实例的事件调用的以下代码：</p>
   <p class="code">function indirectCall(func, arg)<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;func(arg);<br>
@@ -209,16 +211,22 @@
     <br>
     indirectCall(myscript, arg);
   </p>
-  <p>The above code is attempting to call a script called "myscript" within a method, which in this case will fail. This is because the in-line function is actually using the <em>index</em> for the script asset and <strong>not </strong>actually calling the script function - eg: if the script index resolves to "4", essentially the function is calling <span class="inline">4(arg);</span>, which makes no sense. The code should instead be structured in one of the following two ways:</p>
-  <p class="code">function indirectCall(func, arg)<br>
+  <p>上述代码尝试在方法内调用名为<span class="inline2">myscript</span>的脚本，在本例中将会失败。这是因为内联函数实际上使用脚本资源的<em>索引</em>，而不是实际调用脚本函数 - 例如：如果脚本索引解析为"4"，则该函数本质上是调用<strong>4(arg)</strong>，这没有意义。</p>
+  <p>您可以采取以下两项措施来解决此问题：</p>
+  <ol>
+    <li>将脚本索引转换为<a href="../GML_Reference/Variable_Functions/method.htm">方法</a>，然后将其作为参数传递</li>
+    <li>使用<span class="inline3_func"><a href="../GML_Reference/Asset_Management/Scripts/script_execute.htm">script_execute</a></span>调用传递的脚本引用</li>
+  </ol>
+  <p>Both ways are shown below:</p>
+  <p class="code">// 1<br>
+    function indirectCall(func, arg)<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;func(arg);<br>
     }<br>
     <br>
     indirectCall(method(undefined, myscript), arg);<br>
     <br>
-    // OR<br>
-    <br>
+    // 2<br>
     function indirectCall(func, arg)<br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;script_execute(func, arg);<br>
@@ -226,7 +234,6 @@
     <br>
     indirectCall(myscript, arg);
   </p>
-  <p>This is important to note, especially when working with legacy projects where scripts contain one single function, and the function is named the same as the script. However, you really should&nbsp;<em>never</em>&nbsp;do this, and your scripts should be named independently of the functions they contain.</p>
   <div data-conref="../../assets/snippets/Script_empty_reference_error.hts">
   <p class="note"><span class="note">注意</span>请记住，如果您的脚本<strong>完全为空</strong>，则它不会加载到已编译的游戏中，并且将变得不存在;这意味着尝试引用此类脚本资源将使您的游戏崩溃。请注意，这仅适用于完全空的脚本，因此即使您的脚本仅包含注释，它仍然会包含在编译的游戏中。</p>
 
@@ -294,7 +301,7 @@
         <div style="float:right">Next: <a href="Method_Variables.htm">方法变量</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Script Functions

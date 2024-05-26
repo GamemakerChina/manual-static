@@ -78,21 +78,24 @@
 
 
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>texture_debug_messages</h1>
-  <p>此函数可用于启用或禁用纹理调试消息。启用时(设置为<span class="inline">true</span>)，有关纹理页面使用的其他信息将发送到输出窗口。设置为<span class="inline">false</span>以再次禁用此输出。</p>
+  <h1><span data-field="title" data-format="default">texture_debug_messages</span></h1>
+  <p>此函数启用或禁用纹理调试消息。</p>
+  <p>启用后 (设置为 <span class="inline2">true</span>)，有关纹理页面使用的附加信息将发送到输出窗口。设置为 <span class="inline2">false</span> 可再次禁用此输出。</p>
   <p>&nbsp;</p>
   <h4>语法:</h4>
-  <p class="code">texture_debug_messages(enable);</p>
+  <p class="code"><span data-field="title" data-format="default">texture_debug_messages</span>(enable);</p>
   <table>
     <tbody>
       <tr>
-        <th>参数</th><th>类型</th>
+        <th>参数</th>
+        <th>类型</th>
         <th>描述</th>
-     </tr>
+      </tr>
       <tr>
-        <td>enable</td><td><span data-keyref="Type_Bool"><a target="_blank" href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Boolean</a></span></td>
+        <td>enable</td>
+        <td><span data-keyref="Type_Bool"><a target="_blank" href="../../../GML_Overview/Data_Types.htm">Boolean</a></span></td>
         <td>启用或禁用纹理调试消息</td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p>&nbsp;</p>
@@ -100,12 +103,11 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p>&nbsp;</p>
   <h4>例子:</h4>
-  <p class="code">if global.debug<br>
+  <p class="code">if (global.debug) <br>
     {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;texture_debug_messages(true);<br>
     }</p>
-  <p>以上代码将检查全局变量的值，如果设置为<span class="inline">true</span>，则启用纹理调试消息。</p>
-  <p>&nbsp;</p>
+  <p>以上代码将检查全局变量的值，如果设置为<span class="inline2">true</span>，则启用纹理调试消息。</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <div class="footer">
@@ -115,7 +117,7 @@
         <div style="float:right">Next:&nbsp;<a href="texture_is_ready.htm">texture_is_ready</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 texture_debug_messages

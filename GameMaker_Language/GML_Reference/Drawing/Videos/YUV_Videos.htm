@@ -1,94 +1,4 @@
-<!--?xml version="1.0" encoding="utf-8" ?--><!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
-
-  <script type="text/javascript" language="JavaScript">
-    //<![CDATA[
-    function reDo() {
-      if (innerWidth != origWidth || innerHeight != origHeight)
-        location.reload();
-    }
-    if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
-      origWidth = innerWidth;
-      origHeight = innerHeight;
-      onresize = reDo;
-    }
-    onerror = null;
-  //]]>
-  </script>
-  <style type="text/css">/*<![CDATA[*/
-
-    < !-- div.WebHelpPopupMenu {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: 4;
-      visibility: hidden;
-    }
-
-    p.WebHelpNavBar {
-      text-align: right;
-    }
-
-    -->
-  
-/*]]>*/</style>
-
-  <script type="text/javascript">//<![CDATA[
-
-    gRootRelPath = "../../../..";
-    gCommonRootRelPath = "../../../..";
-    gTopicId = "8.2.2.6.12.0_4";
-  
-//]]></script>
-
-  <script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script>
-  <script type="text/javascript" src="../../../../template/scripts/common.min.js"></script>
-  <script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script>
-  <script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script>
-<script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css">
-  <meta name="topic-status" content="Draft">
-<link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"><script src="../../../../../assets/scripts/main_script.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Adobe RoboHelp 2022">
-  <title>YUV Videos</title>
-  <meta name="topic-status" content="Draft">
-  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css">
-  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
-  <meta name="rh-authors" content="Gurpreet S. Matharoo">
-  <meta name="topic-comment" content="Information on drawing YUV videos">
-  <meta name="template" content="../../../../assets/masterpages/Manual_Page.htt">
-  <meta name="rh-index-keywords" content="yuv videos">
-  <meta name="search-keywords" content="yuv videos">
-  <meta name="condition-tags" content="">
-<meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Videos/video_set_volume.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Videos/video_draw.htm"></head>
-
-<body>
-  <div class="topic-header rh-hide" id="rh-topic-header">
-    <div class="logo">
-    </div>
-    <div class="nav">
-      <div class="title" title="YUV Videos">
-        <span>YUV Videos</span>
-      </div>
-      <div class="gotohome" title="Click here to see this page in full context">
-        <a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a>
-      </div>
-    </div>
-  </div>
-  <div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div>
-
-
-
-  <div>
-  </div>
-  <div>
-  <h1>YUV 视频</h1>
-  <p>对于视频使用YUV颜色格式的平台，需要额外的步骤来绘制这些视频。这涉及到使用着色器在基本体四边形上绘制两个表面。</p>
-  <p>首先阅读<span class="inline"><a href="video_draw.htm">video_draw()</a></span>参考页，了解有关函数为 YUV  视频返回的数据的信息，然后继续阅读下面的内容，了解有关使用该数据绘制视频的说明。</p>
-  <h2>YUV 着色器</h2>
-  <p>在项目中创建着色器资源，并将其碎片着色器 (<span class="inline2">.fsh</span>) 代码替换为：</p>
-  <pre>//
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><script type="text/javascript" language="JavaScript">function reDo(){innerWidth==origWidth&&innerHeight==origHeight||location.reload()}4==parseInt(navigator.appVersion)&&"Netscape"==navigator.appName&&(origWidth=innerWidth,origHeight=innerHeight,onresize=reDo),onerror=null</script><style type="text/css">p.WebHelpNavBar{text-align:right}</style><script type="text/javascript">gCommonRootRelPath=gRootRelPath="../../../..",gTopicId="8.2.2.6.12.0_4"</script><script type="text/javascript" src="../../../../template/scripts/rh.min.js"></script><script type="text/javascript" src="../../../../template/scripts/common.min.js"></script><script type="text/javascript" src="../../../../template/scripts/topic.min.js"></script><script type="text/javascript" src="../../../../template/scripts/topicwidgets.min.js"></script><script type="text/javascript" src="../../../../whxdata/projectsettings.js"></script><link rel="stylesheet" type="text/css" href="../../../../template/styles/topic.min.css"><link rel="stylesheet" type="text/css" href="../../../../template/Charcoal_Grey/topicheader.css"><meta name="topic-status" content="Draft"><link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"><script src="../../../../../assets/scripts/main_script.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="Adobe RoboHelp 2022"><title>YUV Videos</title><meta name="topic-status" content="Draft"><link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css"><script src="../../../../assets/scripts/main_script.js" type="module"></script><meta name="rh-authors" content="Gurpreet S. Matharoo"><meta name="topic-comment" content="Information on drawing YUV videos"><meta name="template" content="../../../../assets/masterpages/Manual_Page.htt"><meta name="rh-index-keywords" content="yuv videos"><meta name="search-keywords" content="yuv videos"><meta name="condition-tags" content=""><meta name="brsnext" value="GameMaker_Language/GML_Reference/Drawing/Videos/video_set_volume.htm"><meta name="brsprev" value="GameMaker_Language/GML_Reference/Drawing/Videos/video_draw.htm"></head><body><div class="topic-header rh-hide" id="rh-topic-header"><div class="logo"></div><div class="nav"><div class="title" title="YUV Videos"><span>YUV Videos</span></div><div class="gotohome" title="Click here to see this page in full context"><a href="#" onclick="rh._.goToFullLayout()">Click here to see this page in full context</a></div></div></div><div class="topic-header-shadow rh-hide" id="rh-topic-header-shadow"></div><div></div><div><h1>YUV 视频</h1><p>对于视频使用YUV颜色格式的平台，需要额外的步骤来绘制这些视频。这涉及到使用着色器在基本体四边形上绘制两个表面。</p><p>首先阅读<span class="inline"><a href="video_draw.htm">video_draw()</a></span>参考页，了解有关函数为 YUV 视频返回的数据的信息，然后继续阅读下面的内容，了解有关使用该数据绘制视频的说明。</p><h2>YUV 着色器</h2><p>在项目中创建着色器资源，并将其碎片着色器 (<span class="inline2">.fsh</span>) 代码替换为：</p><pre>//
 // CUSTOM fragment shader for handling YUV content
 //
 varying vec2 v_vTexcoord;
@@ -111,20 +21,12 @@ void main()
     gl_FragColor = vec4(yuv, 1.0);
 }
   
-</pre>
-  <h2>获取采样器</h2>
-  <p>在创建对象事件中，获取<span class="inline2">v_chroma</span>着色器制服的采样器ID(仅当视频为 YUV  时)：</p>
-  <pre>var _format = video_get_format();
+</pre><h2>获取采样器</h2><p>在创建对象事件中，获取<span class="inline2">v_chroma</span>着色器制服的采样器ID(仅当视频为 YUV 时)：</p><pre>var _format = video_get_format();
 if (_format == video_format_yuv)
 {
     videochromasampler = shader_get_sampler_index(shader_YUV, "v_chroma");
 }
-</pre>
-  <h2 id="h">绘制视频</h2>
-  <p>在对象的"绘制"事件中，调用<span class="inline"><a href="video_draw.htm">video_draw()</a></span>，如果其第一个数组位置为<strong>0</strong>(表示正在播放视频)，请绘制视频。</p>
-  <p>在下面的代码中，我们在 <span class="inline"><a href="video_get_format.htm">video_get_format()</a></span> 函数上使用 switch 语句。如果视频使用的是 RGBA 格式，则它只是在阵列的 <span class="inline2">[1]</span> 位置绘制表面。</p>
-  <p>如果视频使用 YUV 格式，则使用着色器将两个表面 (位置 <span class="inline2">[1]</span> 和 <span class="inline2">[2]</span>) 绘制到基本体四边形上。</p>
-  <pre>var _data = video_draw();
+</pre><h2 id="h">绘制视频</h2><p>在对象的"绘制"事件中，调用<span class="inline"><a href="video_draw.htm">video_draw()</a></span>，如果其第一个数组位置为<strong>0</strong>(表示正在播放视频)，请绘制视频。</p><p>在下面的代码中，我们在 <span class="inline"><a href="video_get_format.htm">video_get_format()</a></span> 函数上使用 switch 语句。如果视频使用的是 RGBA 格式，则它只是在阵列的 <span class="inline2">[1]</span> 位置绘制表面。</p><p>如果视频使用 YUV 格式，则使用着色器将两个表面 (位置 <span class="inline2">[1]</span> 和 <span class="inline2">[2]</span>) 绘制到基本体四边形上。</p><pre>var _data = video_draw();
 if(_data[0] == 0)
 {
 	switch(video_get_format())
@@ -160,35 +62,4 @@ if(_data[0] == 0)
 		break;
 	}
 }
-  </pre>
-  <p><span class="inline2">case video_format_yuv:</span>下的代码执行以下操作：</p>
-  <ul class="colour">
-    <li>获取视频表面(<span class="inline2">_surface</span>)和色度表面(<span class="inline2">_chromasurf</span>)</li>
-    <li>使用<span class="inline"><a href="../Surfaces/surface_exists.htm">surface_exist()</a></span>确保它们存在<ul><li>将着色器设置为<span class="inline2">shader_ YUV  </span>(这是我们新创建的 YUV  着色器)</li><li>获取两个表面的纹理</li><li>将色度表面的纹理指定给在"Create"事件中检索到的采样器</li><li>禁用纹理过滤</li><li>开始绘制三角形条纹基本体，并将视频表面的纹理指定给它</li><li>绘制一个矩形以覆盖视频表面，使用该矩形的色度表面的宽度和高度</li><li>结束原语</li><li>重新启用纹理过滤并重置着色器</li></ul></li>
-  </ul>
-  <p>这里，主视频表面由基本体绘制，色度表面通过着色器与其混合。这就是为什么通过采样器将色度表面的纹理传递到着色器的原因。</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <div class="footer">
-    <div class="buttons">
-      <div class="clear">
-        <div>Back:&nbsp;<a href="Videos.htm#h1">视频播放</a></div>
-        <div>Next:&nbsp;<a href="video_set_volume.htm">video_set_volume</a></div>
-      </div>
-    </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5>
-  </div>
-  <!-- KEYWORDS
-YUV	Videos
--->
-  <!-- TAGS
--->
-
-</div>
-  <!-- KEYWORDS
--->
-  <!-- TAGS
--->
-
-</body></html>
+  </pre><p><span class="inline2">case video_format_yuv:</span>下的代码执行以下操作：</p><ul class="colour"><li>获取视频表面(<span class="inline2">_surface</span>)和色度表面(<span class="inline2">_chromasurf</span>)</li><li>使用<span class="inline"><a href="../Surfaces/surface_exists.htm">surface_exist()</a></span>确保它们存在<ul><li>将着色器设置为<span class="inline2">shader_ YUV</span> (这是我们新创建的 YUV 着色器)</li><li>获取两个表面的纹理</li><li>将色度表面的纹理指定给在"Create"事件中检索到的采样器</li><li>禁用纹理过滤</li><li>开始绘制三角形条纹基本体，并将视频表面的纹理指定给它</li><li>绘制一个矩形以覆盖视频表面，使用该矩形的色度表面的宽度和高度</li><li>结束原语</li><li>重新启用纹理过滤并重置着色器</li></ul></li></ul><p>这里，主视频表面由基本体绘制，色度表面通过着色器与其混合。这就是为什么通过采样器将色度表面的纹理传递到着色器的原因。</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><div class="footer"><div class="buttons"><div class="clear"><div>Back:&nbsp;<a href="Videos.htm#h1">视频播放</a></div><div>Next:&nbsp;<a href="video_set_volume.htm">video_set_volume</a></div></div></div><h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2024 All Rights Reserved</span></h5></div></div></body></html>
